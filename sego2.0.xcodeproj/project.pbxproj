@@ -19,10 +19,11 @@
 
 /* Begin PBXFileReference section */
 		31B103513844F6407150EB0A /* libPods-sego2.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sego2.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34E665761DD1A9CE00FA41E8 /* Definition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Definition.h; sourceTree = "<group>"; };
 		34FC41D21DD179F900A23A8F /* sego2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sego2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34FC41D61DD179F900A23A8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		34FC41D81DD179F900A23A8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		34FC41D91DD179F900A23A8F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		34FC41D81DD179F900A23A8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
+		34FC41D91DD179F900A23A8F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
 		34FC41DB1DD179F900A23A8F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		34FC41DC1DD179F900A23A8F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		34FC41DF1DD179F900A23A8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,6 +55,295 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		34E665511DD1A38600FA41E8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				34E665651DD1A66600FA41E8 /* Sephone */,
+				34E665601DD1A66600FA41E8 /* AppDelegate */,
+				34E665611DD1A66600FA41E8 /* Common */,
+				34E665621DD1A66600FA41E8 /* Managers */,
+				34E665631DD1A66600FA41E8 /* Models */,
+				34E665641DD1A66600FA41E8 /* Network */,
+				34E665661DD1A66600FA41E8 /* Vendors */,
+				34E665671DD1A66600FA41E8 /* ViewControlls */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		34E665521DD1A3CA00FA41E8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				34E665531DD1A43800FA41E8 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		34E665531DD1A43800FA41E8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				34E6655E1DD1A5BC00FA41E8 /* found */,
+				34E6655F1DD1A5BC00FA41E8 /* friend */,
+				34E6655C1DD1A57000FA41E8 /* device */,
+				34E6655D1DD1A57000FA41E8 /* me */,
+				34E665591DD1A50800FA41E8 /* home */,
+				34E6655A1DD1A50800FA41E8 /* login */,
+				34E6655B1DD1A50800FA41E8 /* registered */,
+				34E665581DD1A4CE00FA41E8 /* Guide page */,
+				34E665541DD1A43800FA41E8 /* background */,
+				34E665551DD1A43800FA41E8 /* btn */,
+				34E665561DD1A43800FA41E8 /* nav */,
+				34E665571DD1A43800FA41E8 /* tab bar */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		34E665541DD1A43800FA41E8 /* background */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = background;
+			sourceTree = "<group>";
+		};
+		34E665551DD1A43800FA41E8 /* btn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = btn;
+			sourceTree = "<group>";
+		};
+		34E665561DD1A43800FA41E8 /* nav */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = nav;
+			sourceTree = "<group>";
+		};
+		34E665571DD1A43800FA41E8 /* tab bar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "tab bar";
+			sourceTree = "<group>";
+		};
+		34E665581DD1A4CE00FA41E8 /* Guide page */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Guide page";
+			sourceTree = "<group>";
+		};
+		34E665591DD1A50800FA41E8 /* home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		34E6655A1DD1A50800FA41E8 /* login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		34E6655B1DD1A50800FA41E8 /* registered */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = registered;
+			sourceTree = "<group>";
+		};
+		34E6655C1DD1A57000FA41E8 /* device */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = device;
+			sourceTree = "<group>";
+		};
+		34E6655D1DD1A57000FA41E8 /* me */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = me;
+			sourceTree = "<group>";
+		};
+		34E6655E1DD1A5BC00FA41E8 /* found */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = found;
+			sourceTree = "<group>";
+		};
+		34E6655F1DD1A5BC00FA41E8 /* friend */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = friend;
+			sourceTree = "<group>";
+		};
+		34E665601DD1A66600FA41E8 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				34FC41D81DD179F900A23A8F /* AppDelegate.h */,
+				34FC41D91DD179F900A23A8F /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		34E665611DD1A66600FA41E8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				34E665681DD1A6F000FA41E8 /* Categories */,
+				34E665691DD1A6F000FA41E8 /* Macro */,
+				34E6656A1DD1A6F000FA41E8 /* Utils */,
+				34E6656B1DD1A6F000FA41E8 /* Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		34E665621DD1A66600FA41E8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				34E6656C1DD1A73100FA41E8 /* Account */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		34E665631DD1A66600FA41E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		34E665641DD1A66600FA41E8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		34E665651DD1A66600FA41E8 /* Sephone */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sephone;
+			sourceTree = "<group>";
+		};
+		34E665661DD1A66600FA41E8 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		34E665671DD1A66600FA41E8 /* ViewControlls */ = {
+			isa = PBXGroup;
+			children = (
+				34E665731DD1A86D00FA41E8 /* BaseV */,
+				34E665741DD1A86D00FA41E8 /* MainTab */,
+				34E665721DD1A84C00FA41E8 /* LoginV */,
+				34E6656D1DD1A81000FA41E8 /* EggV */,
+				34E6656E1DD1A81000FA41E8 /* FoundV */,
+				34E6656F1DD1A81000FA41E8 /* FriendV */,
+				34E665701DD1A81000FA41E8 /* HomeV */,
+				34E665711DD1A81000FA41E8 /* MeV */,
+			);
+			path = ViewControlls;
+			sourceTree = "<group>";
+		};
+		34E665681DD1A6F000FA41E8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		34E665691DD1A6F000FA41E8 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				34E665761DD1A9CE00FA41E8 /* Definition.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		34E6656A1DD1A6F000FA41E8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		34E6656B1DD1A6F000FA41E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		34E6656C1DD1A73100FA41E8 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		34E6656D1DD1A81000FA41E8 /* EggV */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EggV;
+			sourceTree = "<group>";
+		};
+		34E6656E1DD1A81000FA41E8 /* FoundV */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FoundV;
+			sourceTree = "<group>";
+		};
+		34E6656F1DD1A81000FA41E8 /* FriendV */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FriendV;
+			sourceTree = "<group>";
+		};
+		34E665701DD1A81000FA41E8 /* HomeV */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeV;
+			sourceTree = "<group>";
+		};
+		34E665711DD1A81000FA41E8 /* MeV */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MeV;
+			sourceTree = "<group>";
+		};
+		34E665721DD1A84C00FA41E8 /* LoginV */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoginV;
+			sourceTree = "<group>";
+		};
+		34E665731DD1A86D00FA41E8 /* BaseV */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BaseV;
+			sourceTree = "<group>";
+		};
+		34E665741DD1A86D00FA41E8 /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MainTab;
+			sourceTree = "<group>";
+		};
 		34FC41C91DD179F800A23A8F = {
 			isa = PBXGroup;
 			children = (
@@ -75,8 +365,8 @@
 		34FC41D41DD179F900A23A8F /* sego2.0 */ = {
 			isa = PBXGroup;
 			children = (
-				34FC41D81DD179F900A23A8F /* AppDelegate.h */,
-				34FC41D91DD179F900A23A8F /* AppDelegate.m */,
+				34E665511DD1A38600FA41E8 /* Classes */,
+				34E665521DD1A3CA00FA41E8 /* Resources */,
 				34FC41DB1DD179F900A23A8F /* ViewController.h */,
 				34FC41DC1DD179F900A23A8F /* ViewController.m */,
 				34FC41DE1DD179F900A23A8F /* Main.storyboard */,

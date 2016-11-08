@@ -1,0 +1,15 @@
+//
+//  Definition.pch
+//  sego2.0
+//
+//  Created by yulei on 16/11/8.
+//  Copyright © 2016年 yulei. All rights reserved.
+//
+
+#ifndef Definition_pch
+#define Definition_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* Definition_pch */
