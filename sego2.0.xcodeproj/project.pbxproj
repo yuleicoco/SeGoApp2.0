@@ -19,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		31B103513844F6407150EB0A /* libPods-sego2.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sego2.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34C495C81DD1C0E100687606 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		34E665761DD1A9CE00FA41E8 /* Definition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Definition.h; sourceTree = "<group>"; };
 		34FC41D21DD179F900A23A8F /* sego2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sego2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34FC41D61DD179F900A23A8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -383,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				34FC41D61DD179F900A23A8F /* main.m */,
+				34C495C81DD1C0E100687606 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -644,6 +646,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4UKEB375ND;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/sego2.0/PrefixHeader.pch";
 				INFOPLIST_FILE = sego2.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sego.rimi.sego2-0";
@@ -657,6 +662,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4UKEB375ND;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/sego2.0/PrefixHeader.pch";
 				INFOPLIST_FILE = sego2.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sego.rimi.sego2-0";

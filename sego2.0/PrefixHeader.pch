@@ -1,0 +1,17 @@
+//
+//  PrefixHeader.pch
+//  sego2.0
+//
+//  Created by yulei on 16/11/8.
+//  Copyright © 2016年 yulei. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import "Definition.h"
+
+#endif /* PrefixHeader_pch */
