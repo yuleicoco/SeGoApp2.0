@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "AppDelegate+Sephone.h"
+#import "AppDelegate+ShareSDK.h"
+#import "AppDelegate+Launcher.h"
 
 @interface AppDelegate ()
 
@@ -16,9 +19,21 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    //点击背景收起键盘
+    [[IQKeyboardManager sharedManager]setShouldResignOnTouchOutside:YES];
+    //影藏键盘上的自定义工具栏
+    [[IQKeyboardManager sharedManager]setEnableAutoToolbar:NO];
     
-    // 测试
+    
+    // 启动逻辑入口
+    [self launcherApplication:application didFinishLaunchingWithOptions:launchOptions];
+    //分享
+    [self shareSDKApplication:application didFinishLaunchingWithOptions:launchOptions];
+    //sephone
+    [self initSephoneVoip:application didFinishLaunchingWithOptions:launchOptions];
+    
+    
+  
     return YES;
 }
 

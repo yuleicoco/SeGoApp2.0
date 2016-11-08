@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "MainTabViewController.h"
+
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (nonatomic, strong) MainTabViewController* mainTabVC;
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 
 - (void)saveContext;

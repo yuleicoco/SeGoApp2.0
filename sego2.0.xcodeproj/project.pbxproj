@@ -8,6 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		29FAF096C9C2A421D1052AEB /* libPods-sego2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B103513844F6407150EB0A /* libPods-sego2.0.a */; };
+		34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D31DD1CAF700687606 /* AppDelegate+Sephone.m */; };
+		34C495D71DD1CB2900687606 /* AppDelegate+Launcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D61DD1CB2900687606 /* AppDelegate+Launcher.m */; };
+		34C495DA1DD1CB3900687606 /* AppDelegate+ShareSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D91DD1CB3900687606 /* AppDelegate+ShareSDK.m */; };
+		34C495EA1DD1CD5400687606 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495DD1DD1CD5400687606 /* UIActionSheet+Blocks.m */; };
+		34C495EB1DD1CD5400687606 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495E01DD1CD5400687606 /* UIAlertView+Blocks.m */; };
+		34C495EC1DD1CD5400687606 /* UIButton+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495E31DD1CD5400687606 /* UIButton+Blocks.m */; };
+		34C495ED1DD1CD5400687606 /* UIImage-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495E61DD1CD5400687606 /* UIImage-Extensions.m */; };
+		34C495EE1DD1CD5400687606 /* UIView+TapBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495E91DD1CD5400687606 /* UIView+TapBlocks.m */; };
+		34C495F71DD1CD6C00687606 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495F01DD1CD6C00687606 /* NSString+URLEncoding.m */; };
+		34C495F81DD1CD6C00687606 /* QFTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495F21DD1CD6C00687606 /* QFTableView.m */; };
+		34C495F91DD1CD6C00687606 /* UIView+Sizes.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495F41DD1CD6C00687606 /* UIView+Sizes.m */; };
+		34C495FA1DD1CD6C00687606 /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495F61DD1CD6C00687606 /* UIViewController+HUD.m */; };
+		34C495FD1DD1CF4700687606 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495FC1DD1CF4700687606 /* AccountManager.m */; };
+		34C496001DD1CFE000687606 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495FF1DD1CFE000687606 /* LoginModel.m */; };
+		34C496031DD1D15900687606 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C496021DD1D15900687606 /* MainTabViewController.m */; };
+		34C496061DD1D21700687606 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C496051DD1D21700687606 /* BaseViewController.m */; };
 		34FC41D71DD179F900A23A8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41D61DD179F900A23A8F /* main.m */; };
 		34FC41DA1DD179F900A23A8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41D91DD179F900A23A8F /* AppDelegate.m */; };
 		34FC41DD1DD179F900A23A8F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41DC1DD179F900A23A8F /* ViewController.m */; };
@@ -20,6 +36,38 @@
 /* Begin PBXFileReference section */
 		31B103513844F6407150EB0A /* libPods-sego2.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sego2.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34C495C81DD1C0E100687606 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		34C495D21DD1CAF700687606 /* AppDelegate+Sephone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Sephone.h"; sourceTree = "<group>"; };
+		34C495D31DD1CAF700687606 /* AppDelegate+Sephone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Sephone.m"; sourceTree = "<group>"; };
+		34C495D51DD1CB2900687606 /* AppDelegate+Launcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Launcher.h"; sourceTree = "<group>"; };
+		34C495D61DD1CB2900687606 /* AppDelegate+Launcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Launcher.m"; sourceTree = "<group>"; };
+		34C495D81DD1CB3900687606 /* AppDelegate+ShareSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ShareSDK.h"; sourceTree = "<group>"; };
+		34C495D91DD1CB3900687606 /* AppDelegate+ShareSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ShareSDK.m"; sourceTree = "<group>"; };
+		34C495DC1DD1CD5400687606 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
+		34C495DD1DD1CD5400687606 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
+		34C495DF1DD1CD5400687606 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
+		34C495E01DD1CD5400687606 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		34C495E21DD1CD5400687606 /* UIButton+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Blocks.h"; sourceTree = "<group>"; };
+		34C495E31DD1CD5400687606 /* UIButton+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Blocks.m"; sourceTree = "<group>"; };
+		34C495E51DD1CD5400687606 /* UIImage-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage-Extensions.h"; sourceTree = "<group>"; };
+		34C495E61DD1CD5400687606 /* UIImage-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage-Extensions.m"; sourceTree = "<group>"; };
+		34C495E81DD1CD5400687606 /* UIView+TapBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TapBlocks.h"; sourceTree = "<group>"; };
+		34C495E91DD1CD5400687606 /* UIView+TapBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TapBlocks.m"; sourceTree = "<group>"; };
+		34C495EF1DD1CD6C00687606 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		34C495F01DD1CD6C00687606 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		34C495F11DD1CD6C00687606 /* QFTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFTableView.h; sourceTree = "<group>"; };
+		34C495F21DD1CD6C00687606 /* QFTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFTableView.m; sourceTree = "<group>"; };
+		34C495F31DD1CD6C00687606 /* UIView+Sizes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Sizes.h"; sourceTree = "<group>"; };
+		34C495F41DD1CD6C00687606 /* UIView+Sizes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Sizes.m"; sourceTree = "<group>"; };
+		34C495F51DD1CD6C00687606 /* UIViewController+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HUD.h"; sourceTree = "<group>"; };
+		34C495F61DD1CD6C00687606 /* UIViewController+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HUD.m"; sourceTree = "<group>"; };
+		34C495FB1DD1CF4700687606 /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
+		34C495FC1DD1CF4700687606 /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
+		34C495FE1DD1CFE000687606 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
+		34C495FF1DD1CFE000687606 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
+		34C496011DD1D15900687606 /* MainTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabViewController.h; sourceTree = "<group>"; };
+		34C496021DD1D15900687606 /* MainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabViewController.m; sourceTree = "<group>"; };
+		34C496041DD1D21700687606 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		34C496051DD1D21700687606 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		34E665761DD1A9CE00FA41E8 /* Definition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Definition.h; sourceTree = "<group>"; };
 		34FC41D21DD179F900A23A8F /* sego2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sego2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34FC41D61DD179F900A23A8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -54,6 +102,51 @@
 				31B103513844F6407150EB0A /* libPods-sego2.0.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		34C495DB1DD1CD5400687606 /* UIActionSheet+Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				34C495DC1DD1CD5400687606 /* UIActionSheet+Blocks.h */,
+				34C495DD1DD1CD5400687606 /* UIActionSheet+Blocks.m */,
+			);
+			path = "UIActionSheet+Blocks";
+			sourceTree = "<group>";
+		};
+		34C495DE1DD1CD5400687606 /* UIAlertView+Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				34C495DF1DD1CD5400687606 /* UIAlertView+Blocks.h */,
+				34C495E01DD1CD5400687606 /* UIAlertView+Blocks.m */,
+			);
+			path = "UIAlertView+Blocks";
+			sourceTree = "<group>";
+		};
+		34C495E11DD1CD5400687606 /* UIButton+Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				34C495E21DD1CD5400687606 /* UIButton+Blocks.h */,
+				34C495E31DD1CD5400687606 /* UIButton+Blocks.m */,
+			);
+			path = "UIButton+Blocks";
+			sourceTree = "<group>";
+		};
+		34C495E41DD1CD5400687606 /* UIImage-Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				34C495E51DD1CD5400687606 /* UIImage-Extensions.h */,
+				34C495E61DD1CD5400687606 /* UIImage-Extensions.m */,
+			);
+			path = "UIImage-Extensions";
+			sourceTree = "<group>";
+		};
+		34C495E71DD1CD5400687606 /* UIView+TapBlocks */ = {
+			isa = PBXGroup;
+			children = (
+				34C495E81DD1CD5400687606 /* UIView+TapBlocks.h */,
+				34C495E91DD1CD5400687606 /* UIView+TapBlocks.m */,
+			);
+			path = "UIView+TapBlocks";
 			sourceTree = "<group>";
 		};
 		34E665511DD1A38600FA41E8 /* Classes */ = {
@@ -187,6 +280,12 @@
 			children = (
 				34FC41D81DD179F900A23A8F /* AppDelegate.h */,
 				34FC41D91DD179F900A23A8F /* AppDelegate.m */,
+				34C495D21DD1CAF700687606 /* AppDelegate+Sephone.h */,
+				34C495D31DD1CAF700687606 /* AppDelegate+Sephone.m */,
+				34C495D51DD1CB2900687606 /* AppDelegate+Launcher.h */,
+				34C495D61DD1CB2900687606 /* AppDelegate+Launcher.m */,
+				34C495D81DD1CB3900687606 /* AppDelegate+ShareSDK.h */,
+				34C495D91DD1CB3900687606 /* AppDelegate+ShareSDK.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -213,6 +312,8 @@
 		34E665631DD1A66600FA41E8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				34C495FE1DD1CFE000687606 /* LoginModel.h */,
+				34C495FF1DD1CFE000687606 /* LoginModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,6 +357,19 @@
 		34E665681DD1A6F000FA41E8 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				34C495EF1DD1CD6C00687606 /* NSString+URLEncoding.h */,
+				34C495F01DD1CD6C00687606 /* NSString+URLEncoding.m */,
+				34C495F11DD1CD6C00687606 /* QFTableView.h */,
+				34C495F21DD1CD6C00687606 /* QFTableView.m */,
+				34C495F31DD1CD6C00687606 /* UIView+Sizes.h */,
+				34C495F41DD1CD6C00687606 /* UIView+Sizes.m */,
+				34C495F51DD1CD6C00687606 /* UIViewController+HUD.h */,
+				34C495F61DD1CD6C00687606 /* UIViewController+HUD.m */,
+				34C495DB1DD1CD5400687606 /* UIActionSheet+Blocks */,
+				34C495DE1DD1CD5400687606 /* UIAlertView+Blocks */,
+				34C495E11DD1CD5400687606 /* UIButton+Blocks */,
+				34C495E41DD1CD5400687606 /* UIImage-Extensions */,
+				34C495E71DD1CD5400687606 /* UIView+TapBlocks */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -285,6 +399,8 @@
 		34E6656C1DD1A73100FA41E8 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				34C495FB1DD1CF4700687606 /* AccountManager.h */,
+				34C495FC1DD1CF4700687606 /* AccountManager.m */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -334,6 +450,8 @@
 		34E665731DD1A86D00FA41E8 /* BaseV */ = {
 			isa = PBXGroup;
 			children = (
+				34C496041DD1D21700687606 /* BaseViewController.h */,
+				34C496051DD1D21700687606 /* BaseViewController.m */,
 			);
 			path = BaseV;
 			sourceTree = "<group>";
@@ -341,6 +459,8 @@
 		34E665741DD1A86D00FA41E8 /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
+				34C496011DD1D15900687606 /* MainTabViewController.h */,
+				34C496021DD1D15900687606 /* MainTabViewController.m */,
 			);
 			path = MainTab;
 			sourceTree = "<group>";
@@ -521,10 +641,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34C495DA1DD1CB3900687606 /* AppDelegate+ShareSDK.m in Sources */,
+				34C496061DD1D21700687606 /* BaseViewController.m in Sources */,
+				34C495EC1DD1CD5400687606 /* UIButton+Blocks.m in Sources */,
+				34C495D71DD1CB2900687606 /* AppDelegate+Launcher.m in Sources */,
 				34FC41DD1DD179F900A23A8F /* ViewController.m in Sources */,
+				34C496031DD1D15900687606 /* MainTabViewController.m in Sources */,
+				34C495EE1DD1CD5400687606 /* UIView+TapBlocks.m in Sources */,
+				34C495EB1DD1CD5400687606 /* UIAlertView+Blocks.m in Sources */,
+				34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */,
 				34FC41DA1DD179F900A23A8F /* AppDelegate.m in Sources */,
+				34C495FD1DD1CF4700687606 /* AccountManager.m in Sources */,
+				34C495F81DD1CD6C00687606 /* QFTableView.m in Sources */,
 				34FC41D71DD179F900A23A8F /* main.m in Sources */,
+				34C496001DD1CFE000687606 /* LoginModel.m in Sources */,
+				34C495FA1DD1CD6C00687606 /* UIViewController+HUD.m in Sources */,
+				34C495ED1DD1CD5400687606 /* UIImage-Extensions.m in Sources */,
+				34C495F71DD1CD6C00687606 /* NSString+URLEncoding.m in Sources */,
 				34FC41E31DD179F900A23A8F /* sego2_0.xcdatamodeld in Sources */,
+				34C495F91DD1CD6C00687606 /* UIView+Sizes.m in Sources */,
+				34C495EA1DD1CD5400687606 /* UIActionSheet+Blocks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +782,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4UKEB375ND;
+				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/sego2.0/PrefixHeader.pch";
@@ -662,6 +799,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4UKEB375ND;
+				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/sego2.0/PrefixHeader.pch";
