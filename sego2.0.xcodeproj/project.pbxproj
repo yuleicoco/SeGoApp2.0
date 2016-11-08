@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29FAF096C9C2A421D1052AEB /* libPods-sego2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B103513844F6407150EB0A /* libPods-sego2.0.a */; };
 		34FC41D71DD179F900A23A8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41D61DD179F900A23A8F /* main.m */; };
 		34FC41DA1DD179F900A23A8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41D91DD179F900A23A8F /* AppDelegate.m */; };
 		34FC41DD1DD179F900A23A8F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41DC1DD179F900A23A8F /* ViewController.m */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31B103513844F6407150EB0A /* libPods-sego2.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sego2.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34FC41D21DD179F900A23A8F /* sego2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sego2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34FC41D61DD179F900A23A8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		34FC41D81DD179F900A23A8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -28,6 +30,8 @@
 		34FC41E41DD179F900A23A8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34FC41E71DD179F900A23A8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34FC41E91DD179F900A23A8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BB5CB8271F3FD7EA2EAFCC8 /* Pods-sego2.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sego2.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sego2.0/Pods-sego2.0.debug.xcconfig"; sourceTree = "<group>"; };
+		D717670192D3D82245676E28 /* Pods-sego2.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sego2.0.release.xcconfig"; path = "Pods/Target Support Files/Pods-sego2.0/Pods-sego2.0.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29FAF096C9C2A421D1052AEB /* libPods-sego2.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06230F018F49D69628202DA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31B103513844F6407150EB0A /* libPods-sego2.0.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		34FC41C91DD179F800A23A8F = {
 			isa = PBXGroup;
 			children = (
 				34FC41D41DD179F900A23A8F /* sego2.0 */,
 				34FC41D31DD179F900A23A8F /* Products */,
+				97CD43707B355603191FA43A /* Pods */,
+				06230F018F49D69628202DA8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +97,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		97CD43707B355603191FA43A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9BB5CB8271F3FD7EA2EAFCC8 /* Pods-sego2.0.debug.xcconfig */,
+				D717670192D3D82245676E28 /* Pods-sego2.0.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34FC41EC1DD179F900A23A8F /* Build configuration list for PBXNativeTarget "sego2.0" */;
 			buildPhases = (
+				F2A0F76A1570E27C30D711E7 /* [CP] Check Pods Manifest.lock */,
 				34FC41CE1DD179F900A23A8F /* Sources */,
 				34FC41CF1DD179F900A23A8F /* Frameworks */,
 				34FC41D01DD179F900A23A8F /* Resources */,
+				CCEFC983411BF468BEF9245F /* [CP] Embed Pods Frameworks */,
+				6D02CD07439866F6575BA359 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -148,6 +175,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6D02CD07439866F6575BA359 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sego2.0/Pods-sego2.0-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCEFC983411BF468BEF9245F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sego2.0/Pods-sego2.0-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2A0F76A1570E27C30D711E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		34FC41CE1DD179F900A23A8F /* Sources */ = {
@@ -275,6 +350,7 @@
 		};
 		34FC41ED1DD179F900A23A8F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BB5CB8271F3FD7EA2EAFCC8 /* Pods-sego2.0.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4UKEB375ND;
@@ -287,6 +363,7 @@
 		};
 		34FC41EE1DD179F900A23A8F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D717670192D3D82245676E28 /* Pods-sego2.0.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4UKEB375ND;
@@ -316,6 +393,7 @@
 				34FC41EE1DD179F900A23A8F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
