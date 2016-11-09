@@ -17,6 +17,16 @@
  */
 - (void)launcherApplication:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                       [UIColor grayColor], NSForegroundColorAttributeName,
+                                                       nil] forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                       GREEN_COLOR,NSForegroundColorAttributeName,
+                                                       nil] forState:UIControlStateSelected];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+
+    
+    
     
     self.mainTabVC =[[MainTabViewController alloc]init];
     self.window.rootViewController = self.mainTabVC;

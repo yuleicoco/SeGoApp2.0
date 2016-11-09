@@ -8,6 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		29FAF096C9C2A421D1052AEB /* libPods-sego2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B103513844F6407150EB0A /* libPods-sego2.0.a */; };
+		3461F52F1DD2BB0A00E56298 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F52E1DD2BB0A00E56298 /* HomeViewController.m */; };
+		3461F5321DD2BB1B00E56298 /* FriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F5311DD2BB1B00E56298 /* FriendViewController.m */; };
+		3461F5351DD2BB2B00E56298 /* FoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F5341DD2BB2B00E56298 /* FoundViewController.m */; };
+		3461F5391DD2BB5500E56298 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F5371DD2BB5500E56298 /* LoginViewController.m */; };
+		3461F53A1DD2BB5500E56298 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3461F5381DD2BB5500E56298 /* LoginViewController.xib */; };
+		3461F53F1DD2BFB800E56298 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3461F53E1DD2BFB800E56298 /* Localizable.strings */; };
+		3461F5441DD2CA0A00E56298 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F5431DD2CA0A00E56298 /* MeViewController.m */; };
+		3461F5471DD2CA2500E56298 /* EggViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F5461DD2CA2500E56298 /* EggViewController.m */; };
+		3461F5521DD2CB4800E56298 /* tab_bangdan_dian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3461F5481DD2CB4800E56298 /* tab_bangdan_dian@2x.png */; };
+		3461F5531DD2CB4800E56298 /* tab_bangdan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3461F5491DD2CB4800E56298 /* tab_bangdan@2x.png */; };
+		3461F5541DD2CB4800E56298 /* tab_budaodan_dian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3461F54A1DD2CB4800E56298 /* tab_budaodan_dian@2x.png */; };
+		3461F5551DD2CB4800E56298 /* tab_budaodan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3461F54B1DD2CB4800E56298 /* tab_budaodan@2x.png */; };
+		3461F5561DD2CB4800E56298 /* tab_faxian_dian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3461F54C1DD2CB4800E56298 /* tab_faxian_dian@2x.png */; };
+		3461F5571DD2CB4800E56298 /* tab_faxian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3461F54D1DD2CB4800E56298 /* tab_faxian@2x.png */; };
+		3461F5581DD2CB4800E56298 /* tab_my_dian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3461F54E1DD2CB4800E56298 /* tab_my_dian@2x.png */; };
+		3461F5591DD2CB4800E56298 /* tab_my@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3461F54F1DD2CB4800E56298 /* tab_my@2x.png */; };
+		3461F55A1DD2CB4800E56298 /* tab_squar_dian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3461F5501DD2CB4800E56298 /* tab_squar_dian@2x.png */; };
+		3461F55B1DD2CB4800E56298 /* tab_squar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3461F5511DD2CB4800E56298 /* tab_squar@2x.png */; };
+		3461F55F1DD2D00100E56298 /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F55E1DD2D00100E56298 /* AppUtil.m */; };
 		34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D31DD1CAF700687606 /* AppDelegate+Sephone.m */; };
 		34C495D71DD1CB2900687606 /* AppDelegate+Launcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D61DD1CB2900687606 /* AppDelegate+Launcher.m */; };
 		34C495DA1DD1CB3900687606 /* AppDelegate+ShareSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D91DD1CB3900687606 /* AppDelegate+ShareSDK.m */; };
@@ -35,6 +54,32 @@
 
 /* Begin PBXFileReference section */
 		31B103513844F6407150EB0A /* libPods-sego2.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sego2.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3461F52D1DD2BB0A00E56298 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		3461F52E1DD2BB0A00E56298 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		3461F5301DD2BB1B00E56298 /* FriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendViewController.h; sourceTree = "<group>"; };
+		3461F5311DD2BB1B00E56298 /* FriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendViewController.m; sourceTree = "<group>"; };
+		3461F5331DD2BB2B00E56298 /* FoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundViewController.h; sourceTree = "<group>"; };
+		3461F5341DD2BB2B00E56298 /* FoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundViewController.m; sourceTree = "<group>"; };
+		3461F5361DD2BB5500E56298 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		3461F5371DD2BB5500E56298 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		3461F5381DD2BB5500E56298 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		3461F53E1DD2BFB800E56298 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		3461F5421DD2CA0A00E56298 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
+		3461F5431DD2CA0A00E56298 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
+		3461F5451DD2CA2500E56298 /* EggViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggViewController.h; sourceTree = "<group>"; };
+		3461F5461DD2CA2500E56298 /* EggViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggViewController.m; sourceTree = "<group>"; };
+		3461F5481DD2CB4800E56298 /* tab_bangdan_dian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bangdan_dian@2x.png"; sourceTree = "<group>"; };
+		3461F5491DD2CB4800E56298 /* tab_bangdan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bangdan@2x.png"; sourceTree = "<group>"; };
+		3461F54A1DD2CB4800E56298 /* tab_budaodan_dian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_budaodan_dian@2x.png"; sourceTree = "<group>"; };
+		3461F54B1DD2CB4800E56298 /* tab_budaodan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_budaodan@2x.png"; sourceTree = "<group>"; };
+		3461F54C1DD2CB4800E56298 /* tab_faxian_dian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_faxian_dian@2x.png"; sourceTree = "<group>"; };
+		3461F54D1DD2CB4800E56298 /* tab_faxian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_faxian@2x.png"; sourceTree = "<group>"; };
+		3461F54E1DD2CB4800E56298 /* tab_my_dian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_my_dian@2x.png"; sourceTree = "<group>"; };
+		3461F54F1DD2CB4800E56298 /* tab_my@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_my@2x.png"; sourceTree = "<group>"; };
+		3461F5501DD2CB4800E56298 /* tab_squar_dian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_squar_dian@2x.png"; sourceTree = "<group>"; };
+		3461F5511DD2CB4800E56298 /* tab_squar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_squar@2x.png"; sourceTree = "<group>"; };
+		3461F55D1DD2D00100E56298 /* AppUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtil.h; sourceTree = "<group>"; };
+		3461F55E1DD2D00100E56298 /* AppUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtil.m; sourceTree = "<group>"; };
 		34C495C81DD1C0E100687606 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		34C495D21DD1CAF700687606 /* AppDelegate+Sephone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Sephone.h"; sourceTree = "<group>"; };
 		34C495D31DD1CAF700687606 /* AppDelegate+Sephone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Sephone.m"; sourceTree = "<group>"; };
@@ -104,6 +149,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3461F53B1DD2BBD700E56298 /* Completionv */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Completionv;
+			sourceTree = "<group>";
+		};
+		3461F53C1DD2BBD700E56298 /* RegistV */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RegistV;
+			sourceTree = "<group>";
+		};
+		3461F53D1DD2BD6500E56298 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				3461F53E1DD2BFB800E56298 /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		34C495DB1DD1CD5400687606 /* UIActionSheet+Blocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				34E665531DD1A43800FA41E8 /* Images */,
+				3461F53D1DD2BD6500E56298 /* Strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -215,6 +283,16 @@
 		34E665571DD1A43800FA41E8 /* tab bar */ = {
 			isa = PBXGroup;
 			children = (
+				3461F5481DD2CB4800E56298 /* tab_bangdan_dian@2x.png */,
+				3461F5491DD2CB4800E56298 /* tab_bangdan@2x.png */,
+				3461F54A1DD2CB4800E56298 /* tab_budaodan_dian@2x.png */,
+				3461F54B1DD2CB4800E56298 /* tab_budaodan@2x.png */,
+				3461F54C1DD2CB4800E56298 /* tab_faxian_dian@2x.png */,
+				3461F54D1DD2CB4800E56298 /* tab_faxian@2x.png */,
+				3461F54E1DD2CB4800E56298 /* tab_my_dian@2x.png */,
+				3461F54F1DD2CB4800E56298 /* tab_my@2x.png */,
+				3461F5501DD2CB4800E56298 /* tab_squar_dian@2x.png */,
+				3461F5511DD2CB4800E56298 /* tab_squar@2x.png */,
 			);
 			path = "tab bar";
 			sourceTree = "<group>";
@@ -342,6 +420,8 @@
 		34E665671DD1A66600FA41E8 /* ViewControlls */ = {
 			isa = PBXGroup;
 			children = (
+				3461F53B1DD2BBD700E56298 /* Completionv */,
+				3461F53C1DD2BBD700E56298 /* RegistV */,
 				34E665731DD1A86D00FA41E8 /* BaseV */,
 				34E665741DD1A86D00FA41E8 /* MainTab */,
 				34E665721DD1A84C00FA41E8 /* LoginV */,
@@ -385,6 +465,8 @@
 		34E6656A1DD1A6F000FA41E8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3461F55D1DD2D00100E56298 /* AppUtil.h */,
+				3461F55E1DD2D00100E56298 /* AppUtil.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -408,6 +490,8 @@
 		34E6656D1DD1A81000FA41E8 /* EggV */ = {
 			isa = PBXGroup;
 			children = (
+				3461F5451DD2CA2500E56298 /* EggViewController.h */,
+				3461F5461DD2CA2500E56298 /* EggViewController.m */,
 			);
 			path = EggV;
 			sourceTree = "<group>";
@@ -415,6 +499,8 @@
 		34E6656E1DD1A81000FA41E8 /* FoundV */ = {
 			isa = PBXGroup;
 			children = (
+				3461F5331DD2BB2B00E56298 /* FoundViewController.h */,
+				3461F5341DD2BB2B00E56298 /* FoundViewController.m */,
 			);
 			path = FoundV;
 			sourceTree = "<group>";
@@ -422,6 +508,8 @@
 		34E6656F1DD1A81000FA41E8 /* FriendV */ = {
 			isa = PBXGroup;
 			children = (
+				3461F5301DD2BB1B00E56298 /* FriendViewController.h */,
+				3461F5311DD2BB1B00E56298 /* FriendViewController.m */,
 			);
 			path = FriendV;
 			sourceTree = "<group>";
@@ -429,6 +517,8 @@
 		34E665701DD1A81000FA41E8 /* HomeV */ = {
 			isa = PBXGroup;
 			children = (
+				3461F52D1DD2BB0A00E56298 /* HomeViewController.h */,
+				3461F52E1DD2BB0A00E56298 /* HomeViewController.m */,
 			);
 			path = HomeV;
 			sourceTree = "<group>";
@@ -436,6 +526,8 @@
 		34E665711DD1A81000FA41E8 /* MeV */ = {
 			isa = PBXGroup;
 			children = (
+				3461F5421DD2CA0A00E56298 /* MeViewController.h */,
+				3461F5431DD2CA0A00E56298 /* MeViewController.m */,
 			);
 			path = MeV;
 			sourceTree = "<group>";
@@ -443,6 +535,9 @@
 		34E665721DD1A84C00FA41E8 /* LoginV */ = {
 			isa = PBXGroup;
 			children = (
+				3461F5361DD2BB5500E56298 /* LoginViewController.h */,
+				3461F5371DD2BB5500E56298 /* LoginViewController.m */,
+				3461F5381DD2BB5500E56298 /* LoginViewController.xib */,
 			);
 			path = LoginV;
 			sourceTree = "<group>";
@@ -580,9 +675,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3461F55B1DD2CB4800E56298 /* tab_squar@2x.png in Resources */,
 				34FC41E81DD179F900A23A8F /* LaunchScreen.storyboard in Resources */,
+				3461F53A1DD2BB5500E56298 /* LoginViewController.xib in Resources */,
+				3461F5581DD2CB4800E56298 /* tab_my_dian@2x.png in Resources */,
+				3461F55A1DD2CB4800E56298 /* tab_squar_dian@2x.png in Resources */,
+				3461F5591DD2CB4800E56298 /* tab_my@2x.png in Resources */,
+				3461F5521DD2CB4800E56298 /* tab_bangdan_dian@2x.png in Resources */,
+				3461F5561DD2CB4800E56298 /* tab_faxian_dian@2x.png in Resources */,
+				3461F53F1DD2BFB800E56298 /* Localizable.strings in Resources */,
+				3461F5541DD2CB4800E56298 /* tab_budaodan_dian@2x.png in Resources */,
+				3461F5551DD2CB4800E56298 /* tab_budaodan@2x.png in Resources */,
 				34FC41E51DD179F900A23A8F /* Assets.xcassets in Resources */,
 				34FC41E01DD179F900A23A8F /* Main.storyboard in Resources */,
+				3461F5571DD2CB4800E56298 /* tab_faxian@2x.png in Resources */,
+				3461F5531DD2CB4800E56298 /* tab_bangdan@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +749,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34C495DA1DD1CB3900687606 /* AppDelegate+ShareSDK.m in Sources */,
+				3461F5391DD2BB5500E56298 /* LoginViewController.m in Sources */,
 				34C496061DD1D21700687606 /* BaseViewController.m in Sources */,
 				34C495EC1DD1CD5400687606 /* UIButton+Blocks.m in Sources */,
 				34C495D71DD1CB2900687606 /* AppDelegate+Launcher.m in Sources */,
@@ -649,18 +757,24 @@
 				34C496031DD1D15900687606 /* MainTabViewController.m in Sources */,
 				34C495EE1DD1CD5400687606 /* UIView+TapBlocks.m in Sources */,
 				34C495EB1DD1CD5400687606 /* UIAlertView+Blocks.m in Sources */,
+				3461F55F1DD2D00100E56298 /* AppUtil.m in Sources */,
+				3461F52F1DD2BB0A00E56298 /* HomeViewController.m in Sources */,
 				34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */,
 				34FC41DA1DD179F900A23A8F /* AppDelegate.m in Sources */,
+				3461F5471DD2CA2500E56298 /* EggViewController.m in Sources */,
 				34C495FD1DD1CF4700687606 /* AccountManager.m in Sources */,
 				34C495F81DD1CD6C00687606 /* QFTableView.m in Sources */,
 				34FC41D71DD179F900A23A8F /* main.m in Sources */,
 				34C496001DD1CFE000687606 /* LoginModel.m in Sources */,
+				3461F5321DD2BB1B00E56298 /* FriendViewController.m in Sources */,
 				34C495FA1DD1CD6C00687606 /* UIViewController+HUD.m in Sources */,
 				34C495ED1DD1CD5400687606 /* UIImage-Extensions.m in Sources */,
 				34C495F71DD1CD6C00687606 /* NSString+URLEncoding.m in Sources */,
 				34FC41E31DD179F900A23A8F /* sego2_0.xcdatamodeld in Sources */,
+				3461F5441DD2CA0A00E56298 /* MeViewController.m in Sources */,
 				34C495F91DD1CD6C00687606 /* UIView+Sizes.m in Sources */,
 				34C495EA1DD1CD5400687606 /* UIActionSheet+Blocks.m in Sources */,
+				3461F5351DD2BB2B00E56298 /* FoundViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +804,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -738,6 +853,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

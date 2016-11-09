@@ -1,23 +1,28 @@
 //
 //  MainTabViewController.m
-//  sego2.0
+//  petegg
 //
-//  Created by yulei on 16/11/8.
-//  Copyright © 2016年 yulei. All rights reserved.
+//  Created by ldp on 16/3/14.
+//  Copyright © 2016年 ldp. All rights reserved.
 //
 
 #import "MainTabViewController.h"
 
-@interface MainTabViewController ()
-
+#import "HomeViewController.h"
+#import "FoundViewController.h"
+#import "EggViewController.h"
+#import "FriendViewController.h"
+#import "MeViewController.h"
+@interface MainTabViewController()
 {
     
+  
     
 }
 
-//广场
+//home
 @property (nonatomic, strong) UINavigationController* navHomeVC;
-//附近
+//寻找
 @property (nonatomic, strong) UINavigationController* navNearVC;
 //不倒蛋
 @property (strong, nonatomic) UINavigationController  *navEggVC;
@@ -26,18 +31,23 @@
 //个人中心
 @property (strong, nonatomic) UINavigationController  *navPersonalVC;
 
-
 @end
 
 @implementation MainTabViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad{
     [super viewDidLoad];
     [self setupSubviews];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
    
 }
 
-//子视图初始
+
+
 - (void)setupSubviews
 {
     self.tabBar.backgroundColor=[UIColor whiteColor];
@@ -54,67 +64,93 @@
     self.tabBar.layer.shadowOffset = CGSizeMake(0, -1);
     self.tabBar.layer.shadowOpacity = 0.4;
     self.tabBar.layer.shadowRadius = 2;
-
-    
 }
 
-- (UINavigationController *)navSquareVC
-{
+//广场
+- (UINavigationController *)navHomeVC{
     if (!_navHomeVC) {
+        
+        HomeViewController* vc = [[HomeViewController alloc] init];
+        vc.tabBarItem =
+        [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tabSquare", nil)
+                                      image:[[UIImage imageNamed:@"tab_squar"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                              selectedImage:[[UIImage imageNamed:@"tab_squar_dian"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        
+        _navHomeVC = [[UINavigationController alloc]initWithRootViewController:vc];
+        
         
     }
     
     return _navHomeVC;
-    
-    
-    
 }
 
-- (UINavigationController *)navNearVC
-{
+//附近
+- (UINavigationController *)navNearVC{
     if (!_navNearVC) {
         
+       FoundViewController * vc = [[FoundViewController alloc] init];
+        vc.tabBarItem =
+        [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tabNear", nil)
+                                      image:[[UIImage imageNamed:@"tab_faxian"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                              selectedImage:[[UIImage imageNamed:@"tab_faxian_dian"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        
+        _navNearVC = [[UINavigationController alloc]initWithRootViewController:vc];
     }
-    return  _navNearVC;
     
-    
+    return _navNearVC;
 }
 
-
-- (UINavigationController * )navEggVC
-{
-    
+//不倒蛋
+- (UINavigationController *)navEggVC{
     if (!_navEggVC) {
-       
+        
+        EggViewController* vc = [[EggViewController alloc] init];
+        
+        vc.tabBarItem =
+        [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tabEgg", nil)
+                                      image:[[UIImage imageNamed:@"tab_budaodan"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                              selectedImage:[[UIImage imageNamed:@"tab_budaodan_dian"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        
+        _navEggVC = [[UINavigationController alloc]initWithRootViewController:vc];
     }
     
     return _navEggVC;
-    
-    
 }
 
-- (UINavigationController *)navFriendVC
-{
-    if (_navFriendVC) {
+
+
+
+//榜单
+- (UINavigationController *)navFriendVC{
+    if (!_navFriendVC) {
         
+        FriendViewController* vc = [[FriendViewController alloc] init];
+        vc.tabBarItem =
+        [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tabRank", nil)
+                                      image:[[UIImage imageNamed:@"tab_bangdan"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                              selectedImage:[[UIImage imageNamed:@"tab_bangdan_dian"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        _navFriendVC = [[UINavigationController alloc]initWithRootViewController:vc];
     }
     
     return _navFriendVC;
-    
 }
 
-
-- (UINavigationController *)navPersonalVC
-{
-    if (_navPersonalVC) {
+//个人中心
+- (UINavigationController *)navPersonalVC{
+    
+    if (!_navPersonalVC) {
         
+        MeViewController* vc = [[MeViewController alloc] init];
         
+        vc.tabBarItem =
+        [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tabPersonal", nil)
+                                      image:[[UIImage imageNamed:@"tab_my"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                              selectedImage:[[UIImage imageNamed:@"tab_my_dian"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        _navPersonalVC = [[UINavigationController alloc]initWithRootViewController:vc];
         
     }
+    
     return _navPersonalVC;
-    
-    
-    
 }
 
 
@@ -130,16 +166,6 @@
         
     }
     
-}
-
-
-
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
