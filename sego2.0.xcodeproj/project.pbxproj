@@ -154,14 +154,16 @@
 			isa = PBXGroup;
 			children = (
 			);
-			path = Completionv;
+			name = Completionv;
+			path = ../Completionv;
 			sourceTree = "<group>";
 		};
 		3461F53C1DD2BBD700E56298 /* RegistV */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = RegistV;
+			name = RegistV;
+			path = ../RegistV;
 			sourceTree = "<group>";
 		};
 		3461F53D1DD2BD6500E56298 /* Strings */ = {
@@ -170,6 +172,41 @@
 				3461F53E1DD2BFB800E56298 /* Localizable.strings */,
 			);
 			path = Strings;
+			sourceTree = "<group>";
+		};
+		3461F5601DD2D32100E56298 /* Blooth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Blooth;
+			sourceTree = "<group>";
+		};
+		3461F5611DD2D32100E56298 /* InCall */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InCall;
+			sourceTree = "<group>";
+		};
+		3461F5621DD2D32100E56298 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		3461F5631DD2D32100E56298 /* Wifi */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Wifi;
+			sourceTree = "<group>";
+		};
+		3461F5641DD2D39C00E56298 /* Guide */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Guide;
 			sourceTree = "<group>";
 		};
 		34C495DB1DD1CD5400687606 /* UIActionSheet+Blocks */ = {
@@ -421,8 +458,6 @@
 		34E665671DD1A66600FA41E8 /* ViewControlls */ = {
 			isa = PBXGroup;
 			children = (
-				3461F53B1DD2BBD700E56298 /* Completionv */,
-				3461F53C1DD2BBD700E56298 /* RegistV */,
 				34E665731DD1A86D00FA41E8 /* BaseV */,
 				34E665741DD1A86D00FA41E8 /* MainTab */,
 				34E665721DD1A84C00FA41E8 /* LoginV */,
@@ -492,6 +527,10 @@
 		34E6656D1DD1A81000FA41E8 /* EggV */ = {
 			isa = PBXGroup;
 			children = (
+				3461F5601DD2D32100E56298 /* Blooth */,
+				3461F5611DD2D32100E56298 /* InCall */,
+				3461F5621DD2D32100E56298 /* Setting */,
+				3461F5631DD2D32100E56298 /* Wifi */,
 				3461F5451DD2CA2500E56298 /* EggViewController.h */,
 				3461F5461DD2CA2500E56298 /* EggViewController.m */,
 			);
@@ -537,6 +576,9 @@
 		34E665721DD1A84C00FA41E8 /* LoginV */ = {
 			isa = PBXGroup;
 			children = (
+				3461F53B1DD2BBD700E56298 /* Completionv */,
+				3461F53C1DD2BBD700E56298 /* RegistV */,
+				3461F5641DD2D39C00E56298 /* Guide */,
 				3461F5361DD2BB5500E56298 /* LoginViewController.h */,
 				3461F5371DD2BB5500E56298 /* LoginViewController.m */,
 				3461F5381DD2BB5500E56298 /* LoginViewController.xib */,
