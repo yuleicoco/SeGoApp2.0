@@ -125,6 +125,7 @@
 		34FC41E41DD179F900A23A8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34FC41E71DD179F900A23A8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34FC41E91DD179F900A23A8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DC9C3DF1DD2FEF60033973D /* Notification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
 		9BB5CB8271F3FD7EA2EAFCC8 /* Pods-sego2.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sego2.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sego2.0/Pods-sego2.0.debug.xcconfig"; sourceTree = "<group>"; };
 		D717670192D3D82245676E28 /* Pods-sego2.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sego2.0.release.xcconfig"; path = "Pods/Target Support Files/Pods-sego2.0/Pods-sego2.0.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -458,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				34E665761DD1A9CE00FA41E8 /* Definition.h */,
+				7DC9C3DF1DD2FEF60033973D /* Notification.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";

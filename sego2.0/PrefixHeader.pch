@@ -14,7 +14,8 @@
 
 #import "Definition.h"
 #import "AppUtil.h"
-
+#import "Notification.h"
+#import "AccountManager.h"
 #import "UIView+Sizes.h"
 #import "UIViewController+HUD.h"
 #import "UIButton+Blocks.h"
