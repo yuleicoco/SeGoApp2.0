@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  sego2.0
+
+  Created by yulei on 16/11/9.
+  Copyright © 2016年 yulei. All rights reserved.
+*/
+
+//tab
+"tabSquare" = "广场";
+"tabNear" = "发现";
+"tabEgg" = "不倒蛋";
+"tabRank" = "榜单";
+"tabPersonal" = "个人中心";
