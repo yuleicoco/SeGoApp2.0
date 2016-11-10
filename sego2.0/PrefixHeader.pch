@@ -12,6 +12,9 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+#import "AFHttpClient.h"
+#import "SephoneManager.h"
+#include "sephone/sephonecore.h"
 #import "Definition.h"
 #import "AppUtil.h"
 #import "Notification.h"

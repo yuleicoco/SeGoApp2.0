@@ -165,6 +165,8 @@
 		34DB5D2A1DD4159100C51823 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DB5D291DD4159100C51823 /* libresolv.9.tbd */; };
 		34DB5D2C1DD4159E00C51823 /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DB5D2B1DD4159E00C51823 /* libiconv.2.4.0.tbd */; };
 		34DB5D2E1DD415A900C51823 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DB5D2D1DD415A900C51823 /* libc++.1.tbd */; };
+		34DB5D341DD41AA000C51823 /* AFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DB5D331DD41AA000C51823 /* AFHttpClient.m */; };
+		34DB5D371DD423C100C51823 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DB5D361DD423C100C51823 /* BaseModel.m */; };
 		34FC41D71DD179F900A23A8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41D61DD179F900A23A8F /* main.m */; };
 		34FC41DA1DD179F900A23A8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41D91DD179F900A23A8F /* AppDelegate.m */; };
 		34FC41DD1DD179F900A23A8F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41DC1DD179F900A23A8F /* ViewController.m */; };
@@ -780,6 +782,10 @@
 		34DB5D291DD4159100C51823 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 		34DB5D2B1DD4159E00C51823 /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
 		34DB5D2D1DD415A900C51823 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		34DB5D321DD41AA000C51823 /* AFHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHttpClient.h; sourceTree = "<group>"; };
+		34DB5D331DD41AA000C51823 /* AFHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHttpClient.m; sourceTree = "<group>"; };
+		34DB5D351DD423C100C51823 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		34DB5D361DD423C100C51823 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		34E665761DD1A9CE00FA41E8 /* Definition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Definition.h; sourceTree = "<group>"; };
 		34FC41D21DD179F900A23A8F /* sego2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sego2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34FC41D61DD179F900A23A8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -2000,6 +2006,8 @@
 			children = (
 				34C495FE1DD1CFE000687606 /* LoginModel.h */,
 				34C495FF1DD1CFE000687606 /* LoginModel.m */,
+				34DB5D351DD423C100C51823 /* BaseModel.h */,
+				34DB5D361DD423C100C51823 /* BaseModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2007,6 +2015,8 @@
 		34E665641DD1A66600FA41E8 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				34DB5D321DD41AA000C51823 /* AFHttpClient.h */,
+				34DB5D331DD41AA000C51823 /* AFHttpClient.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2433,6 +2443,7 @@
 				3461F5391DD2BB5500E56298 /* LoginViewController.m in Sources */,
 				34C496061DD1D21700687606 /* BaseViewController.m in Sources */,
 				34C495EC1DD1CD5400687606 /* UIButton+Blocks.m in Sources */,
+				34DB5D341DD41AA000C51823 /* AFHttpClient.m in Sources */,
 				34C495D71DD1CB2900687606 /* AppDelegate+Launcher.m in Sources */,
 				34FC41DD1DD179F900A23A8F /* ViewController.m in Sources */,
 				34C496031DD1D15900687606 /* MainTabViewController.m in Sources */,
@@ -2448,6 +2459,7 @@
 				34FC41D71DD179F900A23A8F /* main.m in Sources */,
 				34C496001DD1CFE000687606 /* LoginModel.m in Sources */,
 				3461F5321DD2BB1B00E56298 /* FriendViewController.m in Sources */,
+				34DB5D371DD423C100C51823 /* BaseModel.m in Sources */,
 				34C495FA1DD1CD6C00687606 /* UIViewController+HUD.m in Sources */,
 				34C495ED1DD1CD5400687606 /* UIImage-Extensions.m in Sources */,
 				34C495F71DD1CD6C00687606 /* NSString+URLEncoding.m in Sources */,
@@ -2623,6 +2635,8 @@
 					"$(inherited)",
 					"COCOAPODS=1",
 					IN_SEPHONE,
+					VIDEO_ENABLED,
+					HAVE_SILK,
 				);
 				INFOPLIST_FILE = sego2.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
