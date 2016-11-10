@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "AFHttpClient+TestNetWork.h"
 
 @interface HomeViewController ()
 
@@ -16,7 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [[AFHttpClient sharedAFHttpClient]TestNet:@"13540691705" type:@"register" complete:^(BaseModel *model) {
+        
+        FuckLog(@"%@",model);
+        
+        
+    }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

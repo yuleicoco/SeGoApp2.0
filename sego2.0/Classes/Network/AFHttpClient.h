@@ -12,14 +12,20 @@
 //共用url字段
 #define BASE_URL    @"http://180.97.80.227:8082/clientAction.do?method=json&classes=appinterface"
 
-@interface AFHttpClient : AFHTTPRequestOperationManager
+@interface AFHttpClient : AFHTTPSessionManager
 
 /**
  * POST请求
  */
-- (AFHTTPRequestOperation *)POST:(NSString *)URLString parameters:(id)parameters result:(void (^)(BaseModel* model))result;
+//- (AFHTTPRequestOperation *)POST:(NSString *)URLString parameters:(id)parameters result:(void (^)(BaseModel* model))result;
 
 + (AFHttpClient *)sharedAFHttpClient;
+
+/**
+ * POST请求 拼接方式
+ */
+- (void)POST:(NSString *)URLString parameters:(id)parameters result:(void (^)(BaseModel * model))result;
+
 
 
 

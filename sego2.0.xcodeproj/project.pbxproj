@@ -27,6 +27,7 @@
 		3461F55A1DD2CB4800E56298 /* tab_squar_dian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3461F5501DD2CB4800E56298 /* tab_squar_dian@2x.png */; };
 		3461F55B1DD2CB4800E56298 /* tab_squar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3461F5511DD2CB4800E56298 /* tab_squar@2x.png */; };
 		3461F55F1DD2D00100E56298 /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F55E1DD2D00100E56298 /* AppUtil.m */; };
+		34884C861DD4678400245C24 /* AFHttpClient+TestNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */; };
 		34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D31DD1CAF700687606 /* AppDelegate+Sephone.m */; };
 		34C495D71DD1CB2900687606 /* AppDelegate+Launcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D61DD1CB2900687606 /* AppDelegate+Launcher.m */; };
 		34C495DA1DD1CB3900687606 /* AppDelegate+ShareSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D91DD1CB3900687606 /* AppDelegate+ShareSDK.m */; };
@@ -204,6 +205,8 @@
 		3461F5511DD2CB4800E56298 /* tab_squar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_squar@2x.png"; sourceTree = "<group>"; };
 		3461F55D1DD2D00100E56298 /* AppUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtil.h; sourceTree = "<group>"; };
 		3461F55E1DD2D00100E56298 /* AppUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtil.m; sourceTree = "<group>"; };
+		34884C841DD4678400245C24 /* AFHttpClient+TestNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+TestNetWork.h"; sourceTree = "<group>"; };
+		34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+TestNetWork.m"; sourceTree = "<group>"; };
 		34C495C81DD1C0E100687606 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		34C495D21DD1CAF700687606 /* AppDelegate+Sephone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Sephone.h"; sourceTree = "<group>"; };
 		34C495D31DD1CAF700687606 /* AppDelegate+Sephone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Sephone.m"; sourceTree = "<group>"; };
@@ -2017,6 +2020,8 @@
 			children = (
 				34DB5D321DD41AA000C51823 /* AFHttpClient.h */,
 				34DB5D331DD41AA000C51823 /* AFHttpClient.m */,
+				34884C841DD4678400245C24 /* AFHttpClient+TestNetWork.h */,
+				34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2454,6 +2459,7 @@
 				34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */,
 				34FC41DA1DD179F900A23A8F /* AppDelegate.m in Sources */,
 				3461F5471DD2CA2500E56298 /* EggViewController.m in Sources */,
+				34884C861DD4678400245C24 /* AFHttpClient+TestNetWork.m in Sources */,
 				34C495FD1DD1CF4700687606 /* AccountManager.m in Sources */,
 				34C495F81DD1CD6C00687606 /* QFTableView.m in Sources */,
 				34FC41D71DD179F900A23A8F /* main.m in Sources */,
