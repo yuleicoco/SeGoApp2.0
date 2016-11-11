@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "AFHttpClient+TestNetWork.h"
+#import "AFNetWorking.h"
 
 @interface HomeViewController ()
 
@@ -24,6 +25,23 @@
         
     }];
     
+  
+    
+//    NSString * str =@"clientAction.do?method=json&classes=appinterface&common=check";
+//     NSMutableDictionary * dic =[[NSMutableDictionary alloc]init];
+//    [dic setValue:@"13540691705" forKey:@"phone"];
+//    [dic setValue:@"register" forKey:@"type"];
+//    
+//    
+//    [AFNetWorking postWithApi:str parameters:dic success:^(id json) {
+//        
+//        NSLog(@"%@",json);
+//        
+//    } failure:^(NSError *error) {
+//        
+//    }];
+    
+    
     
 }
 
@@ -32,14 +50,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

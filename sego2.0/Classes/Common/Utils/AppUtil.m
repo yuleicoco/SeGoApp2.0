@@ -11,7 +11,7 @@
 @implementation AppUtil
 
 //赛果2.0测试接口
-static NSString * getServer3 =@"http://180.97.81.213/";
+static NSString * getServer3 =@"http://180.97.80.227:8082/";
 
 
 + (NSString *)getServerSego3
