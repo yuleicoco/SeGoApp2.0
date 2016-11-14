@@ -10,6 +10,7 @@
 
 @interface RegistViewController ()
 @property (nonatomic,strong)UIButton * vercationBtn;
+@property (nonatomic,strong)UIButton * registBtn;
 
 @end
 
@@ -63,6 +64,53 @@
     }];
     
     UIView * passwordView = [[UIView alloc]init];
+    passwordView.backgroundColor = [UIColor whiteColor];
+    passwordView.layer.cornerRadius = 5;
+    [self.view addSubview:passwordView];
+    [passwordView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(numberView.mas_left);
+        make.right.equalTo(numberView.mas_right);
+        make.top.equalTo(verificationView.mas_bottom).offset(8);
+        make.height.mas_equalTo(55);
+    }];
+    
+    UIView * surepasswordView = [[UIView alloc]init];
+    surepasswordView.backgroundColor = [UIColor whiteColor];
+    surepasswordView.layer.cornerRadius = 5;
+    [self.view addSubview:surepasswordView];
+    [surepasswordView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(passwordView.mas_left);
+        make.right.equalTo(passwordView.mas_right);
+        make.top.equalTo(passwordView.mas_bottom).offset(8);
+        make.height.mas_equalTo(55);
+        
+    }];
+    
+    _registBtn = [[UIButton alloc]init];
+    _registBtn.backgroundColor = GREEN_COLOR;
+    _registBtn.layer.cornerRadius = 5;
+    [self.view addSubview:_registBtn];
+    [_registBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(surepasswordView.mas_bottom).offset(25);
+        make.left.equalTo(passwordView.mas_left);
+        make.right.equalTo(passwordView.mas_right);
+        make.height.mas_equalTo(55);
+    
+    }];
+    
+    UILabel * downLabel = [[UILabel alloc]init];
+    downLabel.text = @"点击""注册""按钮，带白您已阅读并同意";
+    downLabel.textColor = [UIColor whiteColor];
+    downLabel.font = [UIFont systemFontOfSize:15];
+    [self.view addSubview:downLabel];
+    [downLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(downLabel.superview).offset(20);
+       // make.top.equalTo(_registBtn.mas_bottom).offset(250);
+        make.bottom.equalTo(downLabel.superview).offset(-23);
+        
+    }];
+    
+    
     
     
     
