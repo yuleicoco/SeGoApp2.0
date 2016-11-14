@@ -29,9 +29,6 @@
     
      [self checkLogin];
     
-//    self.mainTabVC =[[MainTabViewController alloc]init];
-//    self.window.rootViewController = self.mainTabVC;
-//    [self.window makeKeyWindow];
     
     
 }

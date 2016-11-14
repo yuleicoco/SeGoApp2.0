@@ -12,3 +12,7 @@
 "tabEgg" = "不倒蛋";
 "tabRank" = "榜单";
 "tabPersonal" = "个人中心";
+
+
+// 不倒蛋
+"tabEgg_title" = "不捣蛋";

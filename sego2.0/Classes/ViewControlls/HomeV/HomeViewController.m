@@ -18,28 +18,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setNavTitle:NSLocalizedString(@"tabEgg_title",nil)];
+    
+    
+    
+    /*
     [[AFHttpClient sharedAFHttpClient]TestNet:@"13540691705" type:@"register" complete:^(BaseModel *model) {
         
         FuckLog(@"%@",model);
         
-        
     }];
     
+     */
   
-    
-//    NSString * str =@"clientAction.do?method=json&classes=appinterface&common=check";
-//     NSMutableDictionary * dic =[[NSMutableDictionary alloc]init];
-//    [dic setValue:@"13540691705" forKey:@"phone"];
-//    [dic setValue:@"register" forKey:@"type"];
-//    
-//    
-//    [AFNetWorking postWithApi:str parameters:dic success:^(id json) {
-//        
-//        NSLog(@"%@",json);
-//        
-//    } failure:^(NSError *error) {
-//        
-//    }];
     
     
     
