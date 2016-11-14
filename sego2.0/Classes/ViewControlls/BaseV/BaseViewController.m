@@ -11,7 +11,6 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
     self.view.backgroundColor = [UIColor whiteColor];
     if (self.navigationController) {
 //        self.navigationController.navigationBar.layer.shadowColor = [UIColor whiteColor].CGColor;

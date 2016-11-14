@@ -8,6 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		29FAF096C9C2A421D1052AEB /* libPods-sego2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B103513844F6407150EB0A /* libPods-sego2.0.a */; };
+		345AB3DA1DD9AD5800025EEE /* egg_ prompt.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3D71DD9AD5800025EEE /* egg_ prompt.png */; };
+		345AB3DB1DD9AD5800025EEE /* egg_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3D81DD9AD5800025EEE /* egg_add.png */; };
+		345AB3DC1DD9AD5800025EEE /* egg_nodevcie.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3D91DD9AD5800025EEE /* egg_nodevcie.png */; };
+		345AB3EB1DD9AEA400025EEE /* 半透明.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3DF1DD9AEA400025EEE /* 半透明.png */; };
+		345AB3EC1DD9AEA400025EEE /* 开灯 点击效果.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3E01DD9AEA400025EEE /* 开灯 点击效果.png */; };
+		345AB3ED1DD9AEA400025EEE /* 开灯.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3E11DD9AEA400025EEE /* 开灯.png */; };
+		345AB3EE1DD9AEA400025EEE /* 拉出.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3E21DD9AEA400025EEE /* 拉出.png */; };
+		345AB3EF1DD9AEA400025EEE /* 拉出2.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3E31DD9AEA400025EEE /* 拉出2.png */; };
+		345AB3F01DD9AEA400025EEE /* 上下.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3E41DD9AEA400025EEE /* 上下.png */; };
+		345AB3F11DD9AEA400025EEE /* 投食 点击效果.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3E51DD9AEA400025EEE /* 投食 点击效果.png */; };
+		345AB3F21DD9AEA400025EEE /* 投食.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3E61DD9AEA400025EEE /* 投食.png */; };
+		345AB3F31DD9AEA400025EEE /* 退出.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3E71DD9AEA400025EEE /* 退出.png */; };
+		345AB3F41DD9AEA400025EEE /* 喂食 点击效果.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3E81DD9AEA400025EEE /* 喂食 点击效果.png */; };
+		345AB3F51DD9AEA400025EEE /* 喂食.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3E91DD9AEA400025EEE /* 喂食.png */; };
+		345AB3F61DD9AEA400025EEE /* 抓拍 点击效果.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3EA1DD9AEA400025EEE /* 抓拍 点击效果.png */; };
+		345AB40B1DD9AEB900025EEE /* 按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3F71DD9AEB900025EEE /* 按钮.png */; };
+		345AB40C1DD9AEB900025EEE /* 不倒蛋2_03 (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3F81DD9AEB900025EEE /* 不倒蛋2_03 (2).png */; };
+		345AB40D1DD9AEB900025EEE /* 不倒蛋2_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3F91DD9AEB900025EEE /* 不倒蛋2_03.png */; };
+		345AB40E1DD9AEB900025EEE /* 不倒蛋2_05 (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3FA1DD9AEB900025EEE /* 不倒蛋2_05 (2).png */; };
+		345AB40F1DD9AEB900025EEE /* 不倒蛋2_05.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3FB1DD9AEB900025EEE /* 不倒蛋2_05.png */; };
+		345AB4101DD9AEB900025EEE /* 不倒蛋2_07 (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3FC1DD9AEB900025EEE /* 不倒蛋2_07 (2).png */; };
+		345AB4111DD9AEB900025EEE /* 不倒蛋2_07.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3FD1DD9AEB900025EEE /* 不倒蛋2_07.png */; };
+		345AB4121DD9AEB900025EEE /* 不倒蛋2_09 (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3FE1DD9AEB900025EEE /* 不倒蛋2_09 (2).png */; };
+		345AB4131DD9AEB900025EEE /* 不倒蛋2_09.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3FF1DD9AEB900025EEE /* 不倒蛋2_09.png */; };
+		345AB4141DD9AEB900025EEE /* 不倒蛋2_11 (2).png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4001DD9AEB900025EEE /* 不倒蛋2_11 (2).png */; };
+		345AB4151DD9AEB900025EEE /* 不倒蛋2_11.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4011DD9AEB900025EEE /* 不倒蛋2_11.png */; };
+		345AB4161DD9AEB900025EEE /* 返回.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4021DD9AEB900025EEE /* 返回.png */; };
+		345AB4171DD9AEB900025EEE /* 激光.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4031DD9AEB900025EEE /* 激光.png */; };
+		345AB4181DD9AEB900025EEE /* 激光2.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4041DD9AEB900025EEE /* 激光2.png */; };
+		345AB4191DD9AEB900025EEE /* 激光笔区域.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4051DD9AEB900025EEE /* 激光笔区域.png */; };
+		345AB41A1DD9AEB900025EEE /* 全屏.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4061DD9AEB900025EEE /* 全屏.png */; };
+		345AB41B1DD9AEB900025EEE /* 上下.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4071DD9AEB900025EEE /* 上下.png */; };
+		345AB41C1DD9AEB900025EEE /* 线.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4081DD9AEB900025EEE /* 线.png */; };
+		345AB41D1DD9AEB900025EEE /* 圆环.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4091DD9AEB900025EEE /* 圆环.png */; };
+		345AB41E1DD9AEB900025EEE /* 圆角矩形.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB40A1DD9AEB900025EEE /* 圆角矩形.png */; };
+		345AB4231DD9AEED00025EEE /* 按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4201DD9AEED00025EEE /* 按钮.png */; };
+		345AB4241DD9AEED00025EEE /* 箭头.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4211DD9AEED00025EEE /* 箭头.png */; };
+		345AB4251DD9AEED00025EEE /* 小圆.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4221DD9AEED00025EEE /* 小圆.png */; };
 		3461F52F1DD2BB0A00E56298 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F52E1DD2BB0A00E56298 /* HomeViewController.m */; };
 		3461F5321DD2BB1B00E56298 /* FriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F5311DD2BB1B00E56298 /* FriendViewController.m */; };
 		3461F5351DD2BB2B00E56298 /* FoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F5341DD2BB2B00E56298 /* FoundViewController.m */; };
@@ -181,6 +219,44 @@
 
 /* Begin PBXFileReference section */
 		31B103513844F6407150EB0A /* libPods-sego2.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sego2.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		345AB3D71DD9AD5800025EEE /* egg_ prompt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "egg_ prompt.png"; sourceTree = "<group>"; };
+		345AB3D81DD9AD5800025EEE /* egg_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_add.png; sourceTree = "<group>"; };
+		345AB3D91DD9AD5800025EEE /* egg_nodevcie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_nodevcie.png; sourceTree = "<group>"; };
+		345AB3DF1DD9AEA400025EEE /* 半透明.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "半透明.png"; sourceTree = "<group>"; };
+		345AB3E01DD9AEA400025EEE /* 开灯 点击效果.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "开灯 点击效果.png"; sourceTree = "<group>"; };
+		345AB3E11DD9AEA400025EEE /* 开灯.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "开灯.png"; sourceTree = "<group>"; };
+		345AB3E21DD9AEA400025EEE /* 拉出.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "拉出.png"; sourceTree = "<group>"; };
+		345AB3E31DD9AEA400025EEE /* 拉出2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "拉出2.png"; sourceTree = "<group>"; };
+		345AB3E41DD9AEA400025EEE /* 上下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "上下.png"; sourceTree = "<group>"; };
+		345AB3E51DD9AEA400025EEE /* 投食 点击效果.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "投食 点击效果.png"; sourceTree = "<group>"; };
+		345AB3E61DD9AEA400025EEE /* 投食.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "投食.png"; sourceTree = "<group>"; };
+		345AB3E71DD9AEA400025EEE /* 退出.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "退出.png"; sourceTree = "<group>"; };
+		345AB3E81DD9AEA400025EEE /* 喂食 点击效果.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "喂食 点击效果.png"; sourceTree = "<group>"; };
+		345AB3E91DD9AEA400025EEE /* 喂食.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "喂食.png"; sourceTree = "<group>"; };
+		345AB3EA1DD9AEA400025EEE /* 抓拍 点击效果.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "抓拍 点击效果.png"; sourceTree = "<group>"; };
+		345AB3F71DD9AEB900025EEE /* 按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "按钮.png"; sourceTree = "<group>"; };
+		345AB3F81DD9AEB900025EEE /* 不倒蛋2_03 (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "不倒蛋2_03 (2).png"; sourceTree = "<group>"; };
+		345AB3F91DD9AEB900025EEE /* 不倒蛋2_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "不倒蛋2_03.png"; sourceTree = "<group>"; };
+		345AB3FA1DD9AEB900025EEE /* 不倒蛋2_05 (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "不倒蛋2_05 (2).png"; sourceTree = "<group>"; };
+		345AB3FB1DD9AEB900025EEE /* 不倒蛋2_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "不倒蛋2_05.png"; sourceTree = "<group>"; };
+		345AB3FC1DD9AEB900025EEE /* 不倒蛋2_07 (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "不倒蛋2_07 (2).png"; sourceTree = "<group>"; };
+		345AB3FD1DD9AEB900025EEE /* 不倒蛋2_07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "不倒蛋2_07.png"; sourceTree = "<group>"; };
+		345AB3FE1DD9AEB900025EEE /* 不倒蛋2_09 (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "不倒蛋2_09 (2).png"; sourceTree = "<group>"; };
+		345AB3FF1DD9AEB900025EEE /* 不倒蛋2_09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "不倒蛋2_09.png"; sourceTree = "<group>"; };
+		345AB4001DD9AEB900025EEE /* 不倒蛋2_11 (2).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "不倒蛋2_11 (2).png"; sourceTree = "<group>"; };
+		345AB4011DD9AEB900025EEE /* 不倒蛋2_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "不倒蛋2_11.png"; sourceTree = "<group>"; };
+		345AB4021DD9AEB900025EEE /* 返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回.png"; sourceTree = "<group>"; };
+		345AB4031DD9AEB900025EEE /* 激光.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "激光.png"; sourceTree = "<group>"; };
+		345AB4041DD9AEB900025EEE /* 激光2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "激光2.png"; sourceTree = "<group>"; };
+		345AB4051DD9AEB900025EEE /* 激光笔区域.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "激光笔区域.png"; sourceTree = "<group>"; };
+		345AB4061DD9AEB900025EEE /* 全屏.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "全屏.png"; sourceTree = "<group>"; };
+		345AB4071DD9AEB900025EEE /* 上下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "上下.png"; sourceTree = "<group>"; };
+		345AB4081DD9AEB900025EEE /* 线.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "线.png"; sourceTree = "<group>"; };
+		345AB4091DD9AEB900025EEE /* 圆环.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "圆环.png"; sourceTree = "<group>"; };
+		345AB40A1DD9AEB900025EEE /* 圆角矩形.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "圆角矩形.png"; sourceTree = "<group>"; };
+		345AB4201DD9AEED00025EEE /* 按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "按钮.png"; sourceTree = "<group>"; };
+		345AB4211DD9AEED00025EEE /* 箭头.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "箭头.png"; sourceTree = "<group>"; };
+		345AB4221DD9AEED00025EEE /* 小圆.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小圆.png"; sourceTree = "<group>"; };
 		3461F52D1DD2BB0A00E56298 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		3461F52E1DD2BB0A00E56298 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		3461F5301DD2BB1B00E56298 /* FriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendViewController.h; sourceTree = "<group>"; };
@@ -911,6 +987,63 @@
 				31B103513844F6407150EB0A /* libPods-sego2.0.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		345AB3DD1DD9AE3C00025EEE /* Horizontal */ = {
+			isa = PBXGroup;
+			children = (
+				345AB3DF1DD9AEA400025EEE /* 半透明.png */,
+				345AB3E01DD9AEA400025EEE /* 开灯 点击效果.png */,
+				345AB3E11DD9AEA400025EEE /* 开灯.png */,
+				345AB3E21DD9AEA400025EEE /* 拉出.png */,
+				345AB3E31DD9AEA400025EEE /* 拉出2.png */,
+				345AB3E41DD9AEA400025EEE /* 上下.png */,
+				345AB3E51DD9AEA400025EEE /* 投食 点击效果.png */,
+				345AB3E61DD9AEA400025EEE /* 投食.png */,
+				345AB3E71DD9AEA400025EEE /* 退出.png */,
+				345AB3E81DD9AEA400025EEE /* 喂食 点击效果.png */,
+				345AB3E91DD9AEA400025EEE /* 喂食.png */,
+				345AB3EA1DD9AEA400025EEE /* 抓拍 点击效果.png */,
+			);
+			path = Horizontal;
+			sourceTree = "<group>";
+		};
+		345AB3DE1DD9AE3C00025EEE /* Vertica */ = {
+			isa = PBXGroup;
+			children = (
+				345AB41F1DD9AEDA00025EEE /* R_image */,
+				345AB3F71DD9AEB900025EEE /* 按钮.png */,
+				345AB3F81DD9AEB900025EEE /* 不倒蛋2_03 (2).png */,
+				345AB3F91DD9AEB900025EEE /* 不倒蛋2_03.png */,
+				345AB3FA1DD9AEB900025EEE /* 不倒蛋2_05 (2).png */,
+				345AB3FB1DD9AEB900025EEE /* 不倒蛋2_05.png */,
+				345AB3FC1DD9AEB900025EEE /* 不倒蛋2_07 (2).png */,
+				345AB3FD1DD9AEB900025EEE /* 不倒蛋2_07.png */,
+				345AB3FE1DD9AEB900025EEE /* 不倒蛋2_09 (2).png */,
+				345AB3FF1DD9AEB900025EEE /* 不倒蛋2_09.png */,
+				345AB4001DD9AEB900025EEE /* 不倒蛋2_11 (2).png */,
+				345AB4011DD9AEB900025EEE /* 不倒蛋2_11.png */,
+				345AB4021DD9AEB900025EEE /* 返回.png */,
+				345AB4031DD9AEB900025EEE /* 激光.png */,
+				345AB4041DD9AEB900025EEE /* 激光2.png */,
+				345AB4051DD9AEB900025EEE /* 激光笔区域.png */,
+				345AB4061DD9AEB900025EEE /* 全屏.png */,
+				345AB4071DD9AEB900025EEE /* 上下.png */,
+				345AB4081DD9AEB900025EEE /* 线.png */,
+				345AB4091DD9AEB900025EEE /* 圆环.png */,
+				345AB40A1DD9AEB900025EEE /* 圆角矩形.png */,
+			);
+			path = Vertica;
+			sourceTree = "<group>";
+		};
+		345AB41F1DD9AEDA00025EEE /* R_image */ = {
+			isa = PBXGroup;
+			children = (
+				345AB4201DD9AEED00025EEE /* 按钮.png */,
+				345AB4211DD9AEED00025EEE /* 箭头.png */,
+				345AB4221DD9AEED00025EEE /* 小圆.png */,
+			);
+			path = R_image;
 			sourceTree = "<group>";
 		};
 		3461F53D1DD2BD6500E56298 /* Strings */ = {
@@ -1928,6 +2061,11 @@
 		34E6655C1DD1A57000FA41E8 /* device */ = {
 			isa = PBXGroup;
 			children = (
+				345AB3DD1DD9AE3C00025EEE /* Horizontal */,
+				345AB3DE1DD9AE3C00025EEE /* Vertica */,
+				345AB3D71DD9AD5800025EEE /* egg_ prompt.png */,
+				345AB3D81DD9AD5800025EEE /* egg_add.png */,
+				345AB3D91DD9AD5800025EEE /* egg_nodevcie.png */,
 			);
 			path = device;
 			sourceTree = "<group>";
@@ -2322,8 +2460,12 @@
 				34DB5CFC1DD4129F00C51823 /* toy-mono.wav in Resources */,
 				34DB5CE91DD4129F00C51823 /* status-offline.png in Resources */,
 				3461F53A1DD2BB5500E56298 /* LoginViewController.xib in Resources */,
+				345AB3EE1DD9AEA400025EEE /* 拉出.png in Resources */,
 				34DB5CEC1DD4129F00C51823 /* stopcall-red.png in Resources */,
+				345AB4241DD9AEED00025EEE /* 箭头.png in Resources */,
+				345AB4141DD9AEB900025EEE /* 不倒蛋2_11 (2).png in Resources */,
 				3461F5581DD2CB4800E56298 /* tab_my_dian@2x.png in Resources */,
+				345AB40F1DD9AEB900025EEE /* 不倒蛋2_05.png in Resources */,
 				34DB5CDC1DD4129F00C51823 /* hold_off.png in Resources */,
 				34DB5CEE1DD4129F00C51823 /* rootca.pem in Resources */,
 				34DB5C9F1DD4129E00C51823 /* nowebcamCIF.jpg in Resources */,
@@ -2332,67 +2474,101 @@
 				34DB5CEB1DD4129F00C51823 /* status-red.png in Resources */,
 				34DB5CCC1DD4129F00C51823 /* addcall-green.png in Resources */,
 				34DB5CEF1DD4129F00C51823 /* hello16000.wav in Resources */,
+				345AB40E1DD9AEB900025EEE /* 不倒蛋2_05 (2).png in Resources */,
 				34DB5CDF1DD4129F00C51823 /* mic_muted.png in Resources */,
+				345AB40B1DD9AEB900025EEE /* 按钮.png in Resources */,
 				34DB5CE01DD4129F00C51823 /* notok.png in Resources */,
+				345AB3EF1DD9AEA400025EEE /* 拉出2.png in Resources */,
 				34DB5CD71DD4129F00C51823 /* contact_starred.png in Resources */,
 				34DB5C9D1DD4129E00C51823 /* msg.caf in Resources */,
+				345AB3F11DD9AEA400025EEE /* 投食 点击效果.png in Resources */,
 				34DB5CD91DD4129F00C51823 /* dialer-orange.png in Resources */,
 				34DB5CFA1DD4129F00C51823 /* synth.wav in Resources */,
 				34DB5CF01DD4129F00C51823 /* hello8000.wav in Resources */,
 				34DB5C9E1DD4129E00C51823 /* msg.wav in Resources */,
+				345AB41D1DD9AEB900025EEE /* 圆环.png in Resources */,
+				345AB4181DD9AEB900025EEE /* 激光2.png in Resources */,
 				34DB5CE51DD4129F00C51823 /* speaker.png in Resources */,
 				34DB5CF91DD4129F00C51823 /* sweet.wav in Resources */,
 				34DB5CA01DD4129E00C51823 /* ring.caf in Resources */,
+				345AB4251DD9AEED00025EEE /* 小圆.png in Resources */,
+				345AB4101DD9AEB900025EEE /* 不倒蛋2_07 (2).png in Resources */,
 				34DB5CD51DD4129F00C51823 /* composing_chat.png in Resources */,
 				3461F5591DD2CB4800E56298 /* tab_my@2x.png in Resources */,
 				34DB5CE61DD4129F00C51823 /* startcall-green.png in Resources */,
+				345AB4121DD9AEB900025EEE /* 不倒蛋2_09 (2).png in Resources */,
 				3461F5521DD2CB4800E56298 /* tab_bangdan_dian@2x.png in Resources */,
 				34DB5CE81DD4129F00C51823 /* status-green.png in Resources */,
 				3461F5561DD2CB4800E56298 /* tab_faxian_dian@2x.png in Resources */,
 				3461F53F1DD2BFB800E56298 /* Localizable.strings in Resources */,
+				345AB3F31DD9AEA400025EEE /* 退出.png in Resources */,
+				345AB3DC1DD9AD5800025EEE /* egg_nodevcie.png in Resources */,
 				34DB5CE41DD4129F00C51823 /* sephone.png in Resources */,
+				345AB41E1DD9AEB900025EEE /* 圆角矩形.png in Resources */,
+				345AB3EB1DD9AEA400025EEE /* 半透明.png in Resources */,
+				345AB41A1DD9AEB900025EEE /* 全屏.png in Resources */,
+				345AB3F41DD9AEA400025EEE /* 喂食 点击效果.png in Resources */,
 				3461F5541DD2CB4800E56298 /* tab_budaodan_dian@2x.png in Resources */,
+				345AB3DB1DD9AD5800025EEE /* egg_add.png in Resources */,
 				3461F5551DD2CB4800E56298 /* tab_budaodan@2x.png in Resources */,
+				345AB4111DD9AEB900025EEE /* 不倒蛋2_07.png in Resources */,
 				34DB5CA21DD4129E00C51823 /* ringback.wav in Resources */,
 				34DB5CAA1DD4129E00C51823 /* shortring.caf in Resources */,
+				345AB4151DD9AEB900025EEE /* 不倒蛋2_11.png in Resources */,
 				34DB5CD21DD4129F00C51823 /* chat_message_inprogress.png in Resources */,
+				345AB4171DD9AEB900025EEE /* 激光.png in Resources */,
 				34DB5CE21DD4129F00C51823 /* sephone-banner.png in Resources */,
 				34DB5CDE1DD4129F00C51823 /* mic_active.png in Resources */,
+				345AB3F61DD9AEA400025EEE /* 抓拍 点击效果.png in Resources */,
 				34DB5CA51DD4129E00C51823 /* sephonerc in Resources */,
 				34DB5CE31DD4129F00C51823 /* sephone.icns in Resources */,
 				34DB5CA61DD4129E00C51823 /* sephonerc-factory in Resources */,
 				34DB5CF31DD4129F00C51823 /* bigben.wav in Resources */,
 				34DB5CF81DD4129F00C51823 /* rock.wav in Resources */,
 				34DB5CA11DD4129E00C51823 /* ring.wav in Resources */,
+				345AB40D1DD9AEB900025EEE /* 不倒蛋2_03.png in Resources */,
+				345AB41C1DD9AEB900025EEE /* 线.png in Resources */,
 				34DB5CEA1DD4129F00C51823 /* status-orange.png in Resources */,
+				345AB4231DD9AEED00025EEE /* 按钮.png in Resources */,
+				345AB4161DD9AEB900025EEE /* 返回.png in Resources */,
 				34DB5C9C1DD4129E00C51823 /* hold.wav in Resources */,
 				34DB5CCD1DD4129F00C51823 /* call.png in Resources */,
+				345AB41B1DD9AEB900025EEE /* 上下.png in Resources */,
 				34DB5CD11DD4129F00C51823 /* chat_message_delivered.png in Resources */,
 				34DB5CF21DD4129F00C51823 /* ringback.wav in Resources */,
 				34DB5CED1DD4129F00C51823 /* stopcall-small.png in Resources */,
 				34DB5CA71DD4129E00C51823 /* sephonerc-factory~ipad in Resources */,
+				345AB40C1DD9AEB900025EEE /* 不倒蛋2_03 (2).png in Resources */,
+				345AB3F01DD9AEA400025EEE /* 上下.png in Resources */,
 				34DB5CA31DD4129E00C51823 /* rootca.pem in Resources */,
+				345AB3F21DD9AEA400025EEE /* 投食.png in Resources */,
 				34DB5CD81DD4129F00C51823 /* contact_unstarred.png in Resources */,
 				34DB5CF11DD4129F00C51823 /* incoming_chat.wav in Resources */,
 				34DB5CCA1DD4129F00C51823 /* nowebcamCIF.jpg in Resources */,
 				34DB5CE11DD4129F00C51823 /* ok.png in Resources */,
+				345AB3EC1DD9AEA400025EEE /* 开灯 点击效果.png in Resources */,
 				34DB5CCF1DD4129F00C51823 /* call_status_outgoing.png in Resources */,
 				34DB5CF61DD4129F00C51823 /* oldphone.wav in Resources */,
 				34FC41E51DD179F900A23A8F /* Assets.xcassets in Resources */,
 				34DB5CF41DD4129F00C51823 /* oldphone-mono-30s.caf in Resources */,
+				345AB3ED1DD9AEA400025EEE /* 开灯.png in Resources */,
 				34FC41E01DD179F900A23A8F /* Main.storyboard in Resources */,
 				34DB5CFB1DD4129F00C51823 /* tapping.wav in Resources */,
 				34DB5CE71DD4129F00C51823 /* startcall-small.png in Resources */,
 				34DB5CD31DD4129F00C51823 /* chat_message_not_delivered.png in Resources */,
+				345AB3DA1DD9AD5800025EEE /* egg_ prompt.png in Resources */,
 				34DB5CCB1DD4129F00C51823 /* active_chat.png in Resources */,
 				34DB5CD61DD4129F00C51823 /* contact-orange.png in Resources */,
 				34DB5CF71DD4129F00C51823 /* orig.wav in Resources */,
+				345AB3F51DD9AEA400025EEE /* 喂食.png in Resources */,
 				34DB5CDB1DD4129F00C51823 /* history-orange.png in Resources */,
 				34DB5CD01DD4129F00C51823 /* chat.png in Resources */,
 				3461F5571DD2CB4800E56298 /* tab_faxian@2x.png in Resources */,
+				345AB4131DD9AEB900025EEE /* 不倒蛋2_09.png in Resources */,
 				34DB5CD41DD4129F00C51823 /* composing_active_chat.png in Resources */,
 				3461F5531DD2CB4800E56298 /* tab_bangdan@2x.png in Resources */,
 				34DB5CCE1DD4129F00C51823 /* call_status_incoming.png in Resources */,
+				345AB4191DD9AEB900025EEE /* 激光笔区域.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
