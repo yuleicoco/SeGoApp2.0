@@ -16,4 +16,7 @@
 
 @interface AppUtil : NSObject
 
++ (UIViewController *)appTopViewController;
++ (NSString *)getServerSego3;
+
 @end

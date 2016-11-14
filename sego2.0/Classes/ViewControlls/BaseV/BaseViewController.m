@@ -12,15 +12,15 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
-//    self.view.backgroundColor = [UIColor grayColor];
-//    
-//    if (self.navigationController) {
-//        self.navigationController.navigationBar.layer.shadowColor = [UIColor blackColor].CGColor;
-//        self.navigationController.navigationBar.layer.shadowOffset = CGSizeMake(0, 1);
-//        self.navigationController.navigationBar.layer.shadowOpacity = 0.4;
-//        self.navigationController.navigationBar.layer.shadowRadius = 2;
-//    }
-//    
+    self.view.backgroundColor = [UIColor grayColor];
+    
+    if (self.navigationController) {
+        self.navigationController.navigationBar.layer.shadowColor = [UIColor blackColor].CGColor;
+        self.navigationController.navigationBar.layer.shadowOffset = CGSizeMake(0, 1);
+        self.navigationController.navigationBar.layer.shadowOpacity = 0.4;
+        self.navigationController.navigationBar.layer.shadowRadius = 2;
+    }
+//
 //    [self setupView];
 //    
 //    [self setupData];
