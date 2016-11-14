@@ -11,19 +11,20 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor grayColor];
-    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+    self.view.backgroundColor = [UIColor whiteColor];
     if (self.navigationController) {
-        self.navigationController.navigationBar.layer.shadowColor = [UIColor blackColor].CGColor;
-        self.navigationController.navigationBar.layer.shadowOffset = CGSizeMake(0, 1);
-        self.navigationController.navigationBar.layer.shadowOpacity = 0.4;
+//        self.navigationController.navigationBar.layer.shadowColor = [UIColor whiteColor].CGColor;
+       self.navigationController.navigationBar.layer.shadowOffset = CGSizeMake(0, 1);
+        //self.navigationController.navigationBar.layer.shadowOpacity = 0.4;
         self.navigationController.navigationBar.layer.shadowRadius = 2;
+       //self.navigationController.navigationBar.barStyle=UIBarStyleDefault;
+        self.navigationController.navigationBar.translucent = NO;
     }
 //
-//    [self setupView];
-//    
-//    [self setupData];
+    [self setupView];
+    
+    [self setupData];
     
     
     
@@ -146,11 +147,12 @@
     CGSize titleSize =self.navigationController.navigationBar.bounds.size;
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, titleSize.width/2,titleSize.height)];
     label.backgroundColor = [UIColor clearColor];
-    label.textColor = [UIColor redColor];
+    label.textColor = [UIColor blackColor];
     label.textAlignment = NSTextAlignmentCenter;
     label.text=navTitle;
+    label.font = [UIFont systemFontOfSize:18];
     self.navigationItem.titleView=label;
-    
+   
 }
 
 - (void)doLeftButtonTouch{
