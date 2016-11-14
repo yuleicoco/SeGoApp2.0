@@ -7,6 +7,8 @@
 
 //
 #import "LoginViewController.h"
+#import "RegistViewController.h"
+
 
 @interface LoginViewController ()
 @property (nonatomic,strong)UIButton * loginBtn;
@@ -16,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden = YES;
+   // self.navigationController.navigationBarHidden = YES;
     self.view.backgroundColor = [UIColor blackColor];
     UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
     button.backgroundColor = [UIColor blackColor];
@@ -136,7 +138,10 @@
 -(void)regiestButtonTouch{
 
     FuckLog(@"haha");
-
+    RegistViewController * registVc = [[RegistViewController alloc]init];
+    //registVc.navigationController.navigationBar.tintColor = [UIColor redColor];
+    [self.navigationController pushViewController:registVc animated:NO];
+    
 }
 
 -(void)forgetpasswordButtonTouch{
@@ -152,7 +157,17 @@
 
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
+    
+}
 
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
+    
+}
 
 
 
