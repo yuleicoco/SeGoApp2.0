@@ -147,10 +147,10 @@
     CGSize titleSize =self.navigationController.navigationBar.bounds.size;
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, titleSize.width/2,titleSize.height)];
     label.backgroundColor = [UIColor clearColor];
-    label.textColor = [UIColor blackColor];
+    label.textColor = UIColorFromHex(333333);
     label.textAlignment = NSTextAlignmentCenter;
     label.text=navTitle;
-    label.font = [UIFont systemFontOfSize:18];
+    label.font = [UIFont systemFontOfSize:20];
     self.navigationItem.titleView=label;
    
 }
