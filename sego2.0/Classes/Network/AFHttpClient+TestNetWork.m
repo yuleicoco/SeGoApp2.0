@@ -21,12 +21,11 @@
     
     [self POST:@"clientAction.do?" parameters:parms result:^(BaseModel * model) {
         
-        
       //  model.list = [CheckDeviceModel arrayOfModelsFromDictionaries:model.list];
         
-        if (model) {
-            completeBlock(model);
-        }
+//        if (model) {
+//            completeBlock(model);
+//        }
         
     }];
     

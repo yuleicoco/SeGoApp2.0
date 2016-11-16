@@ -17,4 +17,9 @@
  // phone:手机号码，type:类型(register注册modifypassword修改密码)
 
 -(void)TestNet:(NSString *)phone type:(NSString *)type  complete:(void (^)(BaseModel *))completeBlock;
+
+
+
+
+
 @end
