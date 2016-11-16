@@ -10,7 +10,7 @@
 #import "GuideViewController.h"
 
 
-@interface RegistViewController ()
+@interface RegistViewController ()<UITextFieldDelegate>
 @property (nonatomic,strong)UIButton * vercationBtn;
 @property (nonatomic,strong)UIButton * registBtn;
 @property (nonatomic,strong)UITextField * numberTextfield;
