@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		29FAF096C9C2A421D1052AEB /* libPods-sego2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B103513844F6407150EB0A /* libPods-sego2.0.a */; };
+		3436EA611DDBFE0B005659B7 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436EA601DDBFE0B005659B7 /* Reachability.m */; };
+		3436EA651DDBFF5D005659B7 /* BePeripheralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436EA641DDBFF5D005659B7 /* BePeripheralViewController.m */; };
 		345AB3DA1DD9AD5800025EEE /* egg_ prompt.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3D71DD9AD5800025EEE /* egg_ prompt.png */; };
 		345AB3DB1DD9AD5800025EEE /* egg_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3D81DD9AD5800025EEE /* egg_add.png */; };
 		345AB3DC1DD9AD5800025EEE /* egg_nodevcie.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3D91DD9AD5800025EEE /* egg_nodevcie.png */; };
@@ -224,6 +226,10 @@
 
 /* Begin PBXFileReference section */
 		31B103513844F6407150EB0A /* libPods-sego2.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sego2.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3436EA5F1DDBFE0B005659B7 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		3436EA601DDBFE0B005659B7 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		3436EA631DDBFF5D005659B7 /* BePeripheralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BePeripheralViewController.h; sourceTree = "<group>"; };
+		3436EA641DDBFF5D005659B7 /* BePeripheralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BePeripheralViewController.m; sourceTree = "<group>"; };
 		345AB3D71DD9AD5800025EEE /* egg_ prompt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "egg_ prompt.png"; sourceTree = "<group>"; };
 		345AB3D81DD9AD5800025EEE /* egg_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_add.png; sourceTree = "<group>"; };
 		345AB3D91DD9AD5800025EEE /* egg_nodevcie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_nodevcie.png; sourceTree = "<group>"; };
@@ -1003,6 +1009,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3436EA621DDBFF5D005659B7 /* Peripheral */ = {
+			isa = PBXGroup;
+			children = (
+				3436EA631DDBFF5D005659B7 /* BePeripheralViewController.h */,
+				3436EA641DDBFF5D005659B7 /* BePeripheralViewController.m */,
+			);
+			path = Peripheral;
+			sourceTree = "<group>";
+		};
 		345AB3DD1DD9AE3C00025EEE /* Horizontal */ = {
 			isa = PBXGroup;
 			children = (
@@ -1071,6 +1086,7 @@
 		3461F5601DD2D32100E56298 /* Blooth */ = {
 			isa = PBXGroup;
 			children = (
+				3436EA621DDBFF5D005659B7 /* Peripheral */,
 			);
 			path = Blooth;
 			sourceTree = "<group>";
@@ -2238,6 +2254,8 @@
 		34E6656A1DD1A6F000FA41E8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3436EA5F1DDBFE0B005659B7 /* Reachability.h */,
+				3436EA601DDBFE0B005659B7 /* Reachability.m */,
 				3461F55D1DD2D00100E56298 /* AppUtil.h */,
 				3461F55E1DD2D00100E56298 /* AppUtil.m */,
 			);
@@ -2672,9 +2690,11 @@
 				34C496031DD1D15900687606 /* MainTabViewController.m in Sources */,
 				34C495EE1DD1CD5400687606 /* UIView+TapBlocks.m in Sources */,
 				34C495EB1DD1CD5400687606 /* UIAlertView+Blocks.m in Sources */,
+				3436EA611DDBFE0B005659B7 /* Reachability.m in Sources */,
 				34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */,
 				3461F55F1DD2D00100E56298 /* AppUtil.m in Sources */,
 				3461F52F1DD2BB0A00E56298 /* HomeViewController.m in Sources */,
+				3436EA651DDBFF5D005659B7 /* BePeripheralViewController.m in Sources */,
 				34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */,
 				34FC41DA1DD179F900A23A8F /* AppDelegate.m in Sources */,
 				3461F5471DD2CA2500E56298 /* EggViewController.m in Sources */,

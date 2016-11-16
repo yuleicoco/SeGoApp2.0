@@ -7,14 +7,14 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSContactsUsageDescription</key>
-	<string>contactsDesciption</string>
-	<key>NSCameraUsageDescription</key>
-	<string>cameraDesciption</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>microphoneDesciption</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>photoLibraryDesciption</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>打开蓝牙</string>
+    <key>NSCameraUsageDescription</key>
+    <string>App需要您的同意,才能访问相机</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>App需要您的同意,才能访问麦克风</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>App需要您的同意,才能访问相册</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
