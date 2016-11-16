@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "AFHttpClient+TestNetWork.h"
 #import "AFNetWorking.h"
+#import "RegistViewController.h"
 
 @interface HomeViewController ()
 
@@ -31,16 +32,22 @@
     }];
     
      */
-  
+    UIButton * bb = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+    bb.backgroundColor = [UIColor redColor];
+    [self.view addSubview:bb];
+    [bb addTarget:self action:@selector(hahaha) forControlEvents:UIControlEventTouchUpInside];
+    
     
     
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+-(void)hahaha{
+    RegistViewController * vc = [[RegistViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 
+
+
+}
 
 @end
