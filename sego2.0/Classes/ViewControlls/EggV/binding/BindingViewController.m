@@ -8,6 +8,7 @@
 
 #import "BindingViewController.h"
 #import "Reachability.h"
+#import "WifiViewController.h"
 
 
 // sego配置设备名
@@ -136,12 +137,12 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     btnBind.backgroundColor = GRAY_COLOR;
     [btnBind setTitle:@"绑定设备" forState:UIControlStateNormal];
     [btnBind addTarget:self action:@selector(BindTouch:) forControlEvents:UIControlEventTouchUpInside];
-    btnBind.enabled = FALSE;
+//    btnBind.enabled = FALSE;
     [self.view addSubview:btnBind];
     [btnBind mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.height.equalTo(@55);
-        make.top.equalTo(inCode).offset(75);
+        make.top.equalTo(inCode.mas_bottom).offset(25);
         make.left.equalTo(self.view.mas_left).with.offset(18);
         make.right.equalTo(self.view.mas_right).with.offset(-18);
         make.width.equalTo(inCode);
@@ -231,6 +232,8 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
         return;
     }
 
+    WifiViewController * wifiVC =[[WifiViewController alloc]init];
+    [self.navigationController pushViewController:wifiVC animated:YES];
     
     
     
@@ -355,9 +358,9 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
         case CBPeripheralManagerStatePoweredOn:
             NSLog(@"Bluetooth powered on");
             
-            [self SearchDevice];
+          //  [self SearchDevice];
             
-            [self setUpBleDevice];
+        //    [self setUpBleDevice];
             
             break;
             
@@ -377,7 +380,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
  *  显示打开蓝牙提示窗
  */
 - (void)showNeedBluetoothWaringDialog {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"你尚未打开蓝牙" delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:@"去设置", nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"你尚未打开蓝牙" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
     [alert show];
 }
 
@@ -385,15 +388,16 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
  *  提示窗消息处理
  *
  *  @param alertView   提示窗
- *  @param buttonIndex 按钮序号
+ *  @param buttonIndex 按钮序号 IOS 10 不允许跳转到系统设置界面
  */
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     // 进入蓝牙设置窗口。
     if (buttonIndex == 1) {
         self.view.backgroundColor = [UIColor whiteColor];
         NSURL *url = [NSURL URLWithString:@"prefs:root=Bluetooth"];
-        if ([[UIApplication sharedApplication] canOpenURL:url]) {
-            [[UIApplication sharedApplication] openURL:url];
+        if( [[UIApplication sharedApplication]canOpenURL:url] ) {
+            [[UIApplication sharedApplication]openURL:url options:@{}completionHandler:^(BOOL        success) {
+            }];
         }
     }
 }
@@ -523,6 +527,10 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
                  deviceTF.text = deviceoNum;
                  incodeTF.text = @"123456";
                 [self enableBindButton];
+                // 关闭
+                
+                [peripheralManager stopAdvertising];
+                [peripheralManager removeAllServices];
             }
             
             else {

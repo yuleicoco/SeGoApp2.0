@@ -19,7 +19,7 @@
 "tabBinding_title" = "绑定设备";
 
 // wifi
-"wifiTitle" = "设置网络";
+"wifiTitle" = "WIFI设置";
 "INFO_NetNoReachable" = "当前网络不可用";
 "INFO_ReachableViaWWAN"= "当前非WIFI环境";
 "bindDevice" = "绑定设备";

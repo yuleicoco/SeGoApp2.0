@@ -71,6 +71,8 @@
 		3461F55F1DD2D00100E56298 /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F55E1DD2D00100E56298 /* AppUtil.m */; };
 		34884C861DD4678400245C24 /* AFHttpClient+TestNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */; };
 		34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34884C881DD5742200245C24 /* CheckDeviceModel.m */; };
+		34ACCF3A1DDC510000AE2B98 /* xiala@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF381DDC510000AE2B98 /* xiala@2x.png */; };
+		34ACCF3B1DDC510000AE2B98 /* xiala@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF391DDC510000AE2B98 /* xiala@3x.png */; };
 		34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D31DD1CAF700687606 /* AppDelegate+Sephone.m */; };
 		34C495D71DD1CB2900687606 /* AppDelegate+Launcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D61DD1CB2900687606 /* AppDelegate+Launcher.m */; };
 		34C495DA1DD1CB3900687606 /* AppDelegate+ShareSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D91DD1CB3900687606 /* AppDelegate+ShareSDK.m */; };
@@ -87,6 +89,7 @@
 		34C496001DD1CFE000687606 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495FF1DD1CFE000687606 /* LoginModel.m */; };
 		34C496031DD1D15900687606 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C496021DD1D15900687606 /* MainTabViewController.m */; };
 		34C496061DD1D21700687606 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C496051DD1D21700687606 /* BaseViewController.m */; };
+		34CFC4691DDC369B00444AA2 /* WifiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CFC4681DDC369B00444AA2 /* WifiViewController.m */; };
 		34D3C6D51DDAB97300529FF5 /* BindingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3C6D41DDAB97300529FF5 /* BindingViewController.m */; };
 		34D3C6E11DDAF43600529FF5 /* ShowWarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3C6E01DDAF43600529FF5 /* ShowWarView.m */; };
 		34DB5C9C1DD4129E00C51823 /* hold.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34DB5A6F1DD4129E00C51823 /* hold.wav */; };
@@ -301,6 +304,8 @@
 		34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+TestNetWork.m"; sourceTree = "<group>"; };
 		34884C871DD5742200245C24 /* CheckDeviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckDeviceModel.h; sourceTree = "<group>"; };
 		34884C881DD5742200245C24 /* CheckDeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckDeviceModel.m; sourceTree = "<group>"; };
+		34ACCF381DDC510000AE2B98 /* xiala@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xiala@2x.png"; sourceTree = "<group>"; };
+		34ACCF391DDC510000AE2B98 /* xiala@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xiala@3x.png"; sourceTree = "<group>"; };
 		34C495C81DD1C0E100687606 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		34C495D21DD1CAF700687606 /* AppDelegate+Sephone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Sephone.h"; sourceTree = "<group>"; };
 		34C495D31DD1CAF700687606 /* AppDelegate+Sephone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Sephone.m"; sourceTree = "<group>"; };
@@ -334,6 +339,8 @@
 		34C496021DD1D15900687606 /* MainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabViewController.m; sourceTree = "<group>"; };
 		34C496041DD1D21700687606 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		34C496051DD1D21700687606 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		34CFC4671DDC369B00444AA2 /* WifiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiViewController.h; sourceTree = "<group>"; };
+		34CFC4681DDC369B00444AA2 /* WifiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiViewController.m; sourceTree = "<group>"; };
 		34D3C6D31DDAB97300529FF5 /* BindingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindingViewController.h; sourceTree = "<group>"; };
 		34D3C6D41DDAB97300529FF5 /* BindingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindingViewController.m; sourceTree = "<group>"; };
 		34D3C6DF1DDAF43600529FF5 /* ShowWarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowWarView.h; sourceTree = "<group>"; };
@@ -1111,6 +1118,8 @@
 		3461F5631DD2D32100E56298 /* Wifi */ = {
 			isa = PBXGroup;
 			children = (
+				34CFC4671DDC369B00444AA2 /* WifiViewController.h */,
+				34CFC4681DDC369B00444AA2 /* WifiViewController.m */,
 			);
 			path = Wifi;
 			sourceTree = "<group>";
@@ -2103,6 +2112,8 @@
 		34E6655C1DD1A57000FA41E8 /* device */ = {
 			isa = PBXGroup;
 			children = (
+				34ACCF381DDC510000AE2B98 /* xiala@2x.png */,
+				34ACCF391DDC510000AE2B98 /* xiala@3x.png */,
 				345AB3DD1DD9AE3C00025EEE /* Horizontal */,
 				345AB3DE1DD9AE3C00025EEE /* Vertica */,
 				345AB3D71DD9AD5800025EEE /* egg_ prompt.png */,
@@ -2518,6 +2529,7 @@
 				34DB5CDC1DD4129F00C51823 /* hold_off.png in Resources */,
 				34DB5CEE1DD4129F00C51823 /* rootca.pem in Resources */,
 				34DB5C9F1DD4129E00C51823 /* nowebcamCIF.jpg in Resources */,
+				34ACCF3B1DDC510000AE2B98 /* xiala@3x.png in Resources */,
 				34DB5CF51DD4129F00C51823 /* oldphone-mono.wav in Resources */,
 				3461F55A1DD2CB4800E56298 /* tab_squar_dian@2x.png in Resources */,
 				34DB5CEB1DD4129F00C51823 /* status-red.png in Resources */,
@@ -2552,6 +2564,7 @@
 				3461F53F1DD2BFB800E56298 /* Localizable.strings in Resources */,
 				345AB3F31DD9AEA400025EEE /* 退出.png in Resources */,
 				345AB3DC1DD9AD5800025EEE /* egg_nodevcie.png in Resources */,
+				34ACCF3A1DDC510000AE2B98 /* xiala@2x.png in Resources */,
 				345AB42A1DD9B3C000025EEE /* InCallViewController.xib in Resources */,
 				34DB5CE41DD4129F00C51823 /* sephone.png in Resources */,
 				345AB41E1DD9AEB900025EEE /* 圆角矩形.png in Resources */,
@@ -2709,6 +2722,7 @@
 				34DB5D371DD423C100C51823 /* BaseModel.m in Sources */,
 				34C495FA1DD1CD6C00687606 /* UIViewController+HUD.m in Sources */,
 				345AB4291DD9B3C000025EEE /* InCallViewController.m in Sources */,
+				34CFC4691DDC369B00444AA2 /* WifiViewController.m in Sources */,
 				34C495ED1DD1CD5400687606 /* UIImage-Extensions.m in Sources */,
 				34C495F71DD1CD6C00687606 /* NSString+URLEncoding.m in Sources */,
 				34DB5CA91DD4129E00C51823 /* SephoneUtils.m in Sources */,
