@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		29FAF096C9C2A421D1052AEB /* libPods-sego2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31B103513844F6407150EB0A /* libPods-sego2.0.a */; };
+		3436EA611DDBFE0B005659B7 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436EA601DDBFE0B005659B7 /* Reachability.m */; };
+		3436EA651DDBFF5D005659B7 /* BePeripheralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436EA641DDBFF5D005659B7 /* BePeripheralViewController.m */; };
 		345AB3DA1DD9AD5800025EEE /* egg_ prompt.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3D71DD9AD5800025EEE /* egg_ prompt.png */; };
 		345AB3DB1DD9AD5800025EEE /* egg_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3D81DD9AD5800025EEE /* egg_add.png */; };
 		345AB3DC1DD9AD5800025EEE /* egg_nodevcie.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3D91DD9AD5800025EEE /* egg_nodevcie.png */; };
@@ -218,22 +220,16 @@
 		34FC41E31DD179F900A23A8F /* sego2_0.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41E11DD179F900A23A8F /* sego2_0.xcdatamodeld */; };
 		34FC41E51DD179F900A23A8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34FC41E41DD179F900A23A8F /* Assets.xcassets */; };
 		34FC41E81DD179F900A23A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34FC41E61DD179F900A23A8F /* LaunchScreen.storyboard */; };
-		7D18D82B1DDC00FC00BA0FA0 /* loginbiyan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D18D8231DDC00FC00BA0FA0 /* loginbiyan.png */; };
-		7D18D82C1DDC00FC00BA0FA0 /* loginyan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D18D8241DDC00FC00BA0FA0 /* loginyan.png */; };
-		7D18D82D1DDC00FC00BA0FA0 /* numbertu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D18D8251DDC00FC00BA0FA0 /* numbertu.png */; };
-		7D18D82E1DDC00FC00BA0FA0 /* passtu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D18D8261DDC00FC00BA0FA0 /* passtu.png */; };
-		7D18D82F1DDC00FC00BA0FA0 /* qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D18D8271DDC00FC00BA0FA0 /* qq.png */; };
-		7D18D8301DDC00FC00BA0FA0 /* registbiyan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D18D8281DDC00FC00BA0FA0 /* registbiyan.png */; };
-		7D18D8311DDC00FC00BA0FA0 /* registyan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D18D8291DDC00FC00BA0FA0 /* registyan.png */; };
-		7D18D8321DDC00FC00BA0FA0 /* weixin.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D18D82A1DDC00FC00BA0FA0 /* weixin.png */; };
-		7D18D8351DDC452700BA0FA0 /* CompletionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D18D8341DDC452700BA0FA0 /* CompletionViewController.m */; };
-		7D18D8381DDC4B1D00BA0FA0 /* AFHttpClient+Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D18D8371DDC4B1D00BA0FA0 /* AFHttpClient+Account.m */; };
 		7D5255A51DDAE306000EB0B0 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5255A41DDAE306000EB0B0 /* GuideViewController.m */; };
 		7D626A401DD95636002C0F8B /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D626A3F1DD95636002C0F8B /* RegistViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		31B103513844F6407150EB0A /* libPods-sego2.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-sego2.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3436EA5F1DDBFE0B005659B7 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		3436EA601DDBFE0B005659B7 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		3436EA631DDBFF5D005659B7 /* BePeripheralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BePeripheralViewController.h; sourceTree = "<group>"; };
+		3436EA641DDBFF5D005659B7 /* BePeripheralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BePeripheralViewController.m; sourceTree = "<group>"; };
 		345AB3D71DD9AD5800025EEE /* egg_ prompt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "egg_ prompt.png"; sourceTree = "<group>"; };
 		345AB3D81DD9AD5800025EEE /* egg_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_add.png; sourceTree = "<group>"; };
 		345AB3D91DD9AD5800025EEE /* egg_nodevcie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_nodevcie.png; sourceTree = "<group>"; };
@@ -903,18 +899,6 @@
 		34FC41E41DD179F900A23A8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34FC41E71DD179F900A23A8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34FC41E91DD179F900A23A8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7D18D8231DDC00FC00BA0FA0 /* loginbiyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbiyan.png; sourceTree = "<group>"; };
-		7D18D8241DDC00FC00BA0FA0 /* loginyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginyan.png; sourceTree = "<group>"; };
-		7D18D8251DDC00FC00BA0FA0 /* numbertu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numbertu.png; sourceTree = "<group>"; };
-		7D18D8261DDC00FC00BA0FA0 /* passtu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = passtu.png; sourceTree = "<group>"; };
-		7D18D8271DDC00FC00BA0FA0 /* qq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qq.png; sourceTree = "<group>"; };
-		7D18D8281DDC00FC00BA0FA0 /* registbiyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registbiyan.png; sourceTree = "<group>"; };
-		7D18D8291DDC00FC00BA0FA0 /* registyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registyan.png; sourceTree = "<group>"; };
-		7D18D82A1DDC00FC00BA0FA0 /* weixin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixin.png; sourceTree = "<group>"; };
-		7D18D8331DDC452700BA0FA0 /* CompletionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletionViewController.h; sourceTree = "<group>"; };
-		7D18D8341DDC452700BA0FA0 /* CompletionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletionViewController.m; sourceTree = "<group>"; };
-		7D18D8361DDC4B1D00BA0FA0 /* AFHttpClient+Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Account.h"; sourceTree = "<group>"; };
-		7D18D8371DDC4B1D00BA0FA0 /* AFHttpClient+Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Account.m"; sourceTree = "<group>"; };
 		7D5255A31DDAE306000EB0B0 /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
 		7D5255A41DDAE306000EB0B0 /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		7D626A3E1DD95636002C0F8B /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
@@ -1025,6 +1009,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3436EA621DDBFF5D005659B7 /* Peripheral */ = {
+			isa = PBXGroup;
+			children = (
+				3436EA631DDBFF5D005659B7 /* BePeripheralViewController.h */,
+				3436EA641DDBFF5D005659B7 /* BePeripheralViewController.m */,
+			);
+			path = Peripheral;
+			sourceTree = "<group>";
+		};
 		345AB3DD1DD9AE3C00025EEE /* Horizontal */ = {
 			isa = PBXGroup;
 			children = (
@@ -1093,6 +1086,7 @@
 		3461F5601DD2D32100E56298 /* Blooth */ = {
 			isa = PBXGroup;
 			children = (
+				3436EA621DDBFF5D005659B7 /* Peripheral */,
 			);
 			path = Blooth;
 			sourceTree = "<group>";
@@ -2095,14 +2089,6 @@
 		34E6655A1DD1A50800FA41E8 /* login */ = {
 			isa = PBXGroup;
 			children = (
-				7D18D8231DDC00FC00BA0FA0 /* loginbiyan.png */,
-				7D18D8241DDC00FC00BA0FA0 /* loginyan.png */,
-				7D18D8251DDC00FC00BA0FA0 /* numbertu.png */,
-				7D18D8261DDC00FC00BA0FA0 /* passtu.png */,
-				7D18D8271DDC00FC00BA0FA0 /* qq.png */,
-				7D18D8281DDC00FC00BA0FA0 /* registbiyan.png */,
-				7D18D8291DDC00FC00BA0FA0 /* registyan.png */,
-				7D18D82A1DDC00FC00BA0FA0 /* weixin.png */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -2201,8 +2187,6 @@
 				34DB5D331DD41AA000C51823 /* AFHttpClient.m */,
 				34884C841DD4678400245C24 /* AFHttpClient+TestNetWork.h */,
 				34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */,
-				7D18D8361DDC4B1D00BA0FA0 /* AFHttpClient+Account.h */,
-				7D18D8371DDC4B1D00BA0FA0 /* AFHttpClient+Account.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2270,6 +2254,8 @@
 		34E6656A1DD1A6F000FA41E8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				3436EA5F1DDBFE0B005659B7 /* Reachability.h */,
+				3436EA601DDBFE0B005659B7 /* Reachability.m */,
 				3461F55D1DD2D00100E56298 /* AppUtil.h */,
 				3461F55E1DD2D00100E56298 /* AppUtil.m */,
 			);
@@ -2422,8 +2408,6 @@
 		7D626A3B1DD955AC002C0F8B /* Completionv */ = {
 			isa = PBXGroup;
 			children = (
-				7D18D8331DDC452700BA0FA0 /* CompletionViewController.h */,
-				7D18D8341DDC452700BA0FA0 /* CompletionViewController.m */,
 			);
 			path = Completionv;
 			sourceTree = "<group>";
@@ -2529,7 +2513,6 @@
 				34DB5CEC1DD4129F00C51823 /* stopcall-red.png in Resources */,
 				345AB4241DD9AEED00025EEE /* 箭头.png in Resources */,
 				345AB4141DD9AEB900025EEE /* 不倒蛋2_11 (2).png in Resources */,
-				7D18D82D1DDC00FC00BA0FA0 /* numbertu.png in Resources */,
 				3461F5581DD2CB4800E56298 /* tab_my_dian@2x.png in Resources */,
 				345AB40F1DD9AEB900025EEE /* 不倒蛋2_05.png in Resources */,
 				34DB5CDC1DD4129F00C51823 /* hold_off.png in Resources */,
@@ -2538,7 +2521,6 @@
 				34DB5CF51DD4129F00C51823 /* oldphone-mono.wav in Resources */,
 				3461F55A1DD2CB4800E56298 /* tab_squar_dian@2x.png in Resources */,
 				34DB5CEB1DD4129F00C51823 /* status-red.png in Resources */,
-				7D18D8321DDC00FC00BA0FA0 /* weixin.png in Resources */,
 				34DB5CCC1DD4129F00C51823 /* addcall-green.png in Resources */,
 				34DB5CEF1DD4129F00C51823 /* hello16000.wav in Resources */,
 				345AB40E1DD9AEB900025EEE /* 不倒蛋2_05 (2).png in Resources */,
@@ -2546,23 +2528,18 @@
 				345AB40B1DD9AEB900025EEE /* 按钮.png in Resources */,
 				34DB5CE01DD4129F00C51823 /* notok.png in Resources */,
 				345AB3EF1DD9AEA400025EEE /* 拉出2.png in Resources */,
-				7D18D8311DDC00FC00BA0FA0 /* registyan.png in Resources */,
 				34DB5CD71DD4129F00C51823 /* contact_starred.png in Resources */,
-				7D18D82E1DDC00FC00BA0FA0 /* passtu.png in Resources */,
 				34DB5C9D1DD4129E00C51823 /* msg.caf in Resources */,
 				345AB3F11DD9AEA400025EEE /* 投食 点击效果.png in Resources */,
 				34DB5CD91DD4129F00C51823 /* dialer-orange.png in Resources */,
 				34DB5CFA1DD4129F00C51823 /* synth.wav in Resources */,
 				34DB5CF01DD4129F00C51823 /* hello8000.wav in Resources */,
-				7D18D82B1DDC00FC00BA0FA0 /* loginbiyan.png in Resources */,
 				34DB5C9E1DD4129E00C51823 /* msg.wav in Resources */,
-				7D18D82F1DDC00FC00BA0FA0 /* qq.png in Resources */,
 				345AB41D1DD9AEB900025EEE /* 圆环.png in Resources */,
 				345AB4181DD9AEB900025EEE /* 激光2.png in Resources */,
 				34DB5CE51DD4129F00C51823 /* speaker.png in Resources */,
 				34DB5CF91DD4129F00C51823 /* sweet.wav in Resources */,
 				34DB5CA01DD4129E00C51823 /* ring.caf in Resources */,
-				7D18D82C1DDC00FC00BA0FA0 /* loginyan.png in Resources */,
 				345AB4251DD9AEED00025EEE /* 小圆.png in Resources */,
 				345AB4101DD9AEB900025EEE /* 不倒蛋2_07 (2).png in Resources */,
 				34DB5CD51DD4129F00C51823 /* composing_chat.png in Resources */,
@@ -2586,7 +2563,6 @@
 				3461F5551DD2CB4800E56298 /* tab_budaodan@2x.png in Resources */,
 				345AB4111DD9AEB900025EEE /* 不倒蛋2_07.png in Resources */,
 				34DB5CA21DD4129E00C51823 /* ringback.wav in Resources */,
-				7D18D8301DDC00FC00BA0FA0 /* registbiyan.png in Resources */,
 				34DB5CAA1DD4129E00C51823 /* shortring.caf in Resources */,
 				345AB4151DD9AEB900025EEE /* 不倒蛋2_11.png in Resources */,
 				34DB5CD21DD4129F00C51823 /* chat_message_inprogress.png in Resources */,
@@ -2714,10 +2690,11 @@
 				34C496031DD1D15900687606 /* MainTabViewController.m in Sources */,
 				34C495EE1DD1CD5400687606 /* UIView+TapBlocks.m in Sources */,
 				34C495EB1DD1CD5400687606 /* UIAlertView+Blocks.m in Sources */,
+				3436EA611DDBFE0B005659B7 /* Reachability.m in Sources */,
 				34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */,
 				3461F55F1DD2D00100E56298 /* AppUtil.m in Sources */,
 				3461F52F1DD2BB0A00E56298 /* HomeViewController.m in Sources */,
-				7D18D8351DDC452700BA0FA0 /* CompletionViewController.m in Sources */,
+				3436EA651DDBFF5D005659B7 /* BePeripheralViewController.m in Sources */,
 				34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */,
 				34FC41DA1DD179F900A23A8F /* AppDelegate.m in Sources */,
 				3461F5471DD2CA2500E56298 /* EggViewController.m in Sources */,
@@ -2740,7 +2717,6 @@
 				34C495F91DD1CD6C00687606 /* UIView+Sizes.m in Sources */,
 				34C495EA1DD1CD5400687606 /* UIActionSheet+Blocks.m in Sources */,
 				3461F5351DD2BB2B00E56298 /* FoundViewController.m in Sources */,
-				7D18D8381DDC4B1D00BA0FA0 /* AFHttpClient+Account.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
