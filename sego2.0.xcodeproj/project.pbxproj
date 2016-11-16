@@ -46,6 +46,8 @@
 		345AB4231DD9AEED00025EEE /* 按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4201DD9AEED00025EEE /* 按钮.png */; };
 		345AB4241DD9AEED00025EEE /* 箭头.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4211DD9AEED00025EEE /* 箭头.png */; };
 		345AB4251DD9AEED00025EEE /* 小圆.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4221DD9AEED00025EEE /* 小圆.png */; };
+		345AB4291DD9B3C000025EEE /* InCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345AB4271DD9B3C000025EEE /* InCallViewController.m */; };
+		345AB42A1DD9B3C000025EEE /* InCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4281DD9B3C000025EEE /* InCallViewController.xib */; };
 		3461F52F1DD2BB0A00E56298 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F52E1DD2BB0A00E56298 /* HomeViewController.m */; };
 		3461F5321DD2BB1B00E56298 /* FriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F5311DD2BB1B00E56298 /* FriendViewController.m */; };
 		3461F5351DD2BB2B00E56298 /* FoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F5341DD2BB2B00E56298 /* FoundViewController.m */; };
@@ -83,6 +85,8 @@
 		34C496001DD1CFE000687606 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495FF1DD1CFE000687606 /* LoginModel.m */; };
 		34C496031DD1D15900687606 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C496021DD1D15900687606 /* MainTabViewController.m */; };
 		34C496061DD1D21700687606 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C496051DD1D21700687606 /* BaseViewController.m */; };
+		34D3C6D51DDAB97300529FF5 /* BindingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3C6D41DDAB97300529FF5 /* BindingViewController.m */; };
+		34D3C6E11DDAF43600529FF5 /* ShowWarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3C6E01DDAF43600529FF5 /* ShowWarView.m */; };
 		34DB5C9C1DD4129E00C51823 /* hold.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34DB5A6F1DD4129E00C51823 /* hold.wav */; };
 		34DB5C9D1DD4129E00C51823 /* msg.caf in Resources */ = {isa = PBXBuildFile; fileRef = 34DB5A701DD4129E00C51823 /* msg.caf */; };
 		34DB5C9E1DD4129E00C51823 /* msg.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34DB5A711DD4129E00C51823 /* msg.wav */; };
@@ -258,6 +262,9 @@
 		345AB4201DD9AEED00025EEE /* 按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "按钮.png"; sourceTree = "<group>"; };
 		345AB4211DD9AEED00025EEE /* 箭头.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "箭头.png"; sourceTree = "<group>"; };
 		345AB4221DD9AEED00025EEE /* 小圆.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小圆.png"; sourceTree = "<group>"; };
+		345AB4261DD9B3C000025EEE /* InCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InCallViewController.h; sourceTree = "<group>"; };
+		345AB4271DD9B3C000025EEE /* InCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InCallViewController.m; sourceTree = "<group>"; };
+		345AB4281DD9B3C000025EEE /* InCallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InCallViewController.xib; sourceTree = "<group>"; };
 		3461F52D1DD2BB0A00E56298 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		3461F52E1DD2BB0A00E56298 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		3461F5301DD2BB1B00E56298 /* FriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendViewController.h; sourceTree = "<group>"; };
@@ -321,6 +328,10 @@
 		34C496021DD1D15900687606 /* MainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabViewController.m; sourceTree = "<group>"; };
 		34C496041DD1D21700687606 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		34C496051DD1D21700687606 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		34D3C6D31DDAB97300529FF5 /* BindingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindingViewController.h; sourceTree = "<group>"; };
+		34D3C6D41DDAB97300529FF5 /* BindingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindingViewController.m; sourceTree = "<group>"; };
+		34D3C6DF1DDAF43600529FF5 /* ShowWarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowWarView.h; sourceTree = "<group>"; };
+		34D3C6E01DDAF43600529FF5 /* ShowWarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowWarView.m; sourceTree = "<group>"; };
 		34DB5A6F1DD4129E00C51823 /* hold.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hold.wav; sourceTree = "<group>"; };
 		34DB5A701DD4129E00C51823 /* msg.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = msg.caf; sourceTree = "<group>"; };
 		34DB5A711DD4129E00C51823 /* msg.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = msg.wav; sourceTree = "<group>"; };
@@ -1067,6 +1078,9 @@
 		3461F5611DD2D32100E56298 /* InCall */ = {
 			isa = PBXGroup;
 			children = (
+				345AB4261DD9B3C000025EEE /* InCallViewController.h */,
+				345AB4271DD9B3C000025EEE /* InCallViewController.m */,
+				345AB4281DD9B3C000025EEE /* InCallViewController.xib */,
 			);
 			path = InCall;
 			sourceTree = "<group>";
@@ -1128,6 +1142,15 @@
 				34C495E91DD1CD5400687606 /* UIView+TapBlocks.m */,
 			);
 			path = "UIView+TapBlocks";
+			sourceTree = "<group>";
+		};
+		34D3C6D21DDAB96100529FF5 /* binding */ = {
+			isa = PBXGroup;
+			children = (
+				34D3C6D31DDAB97300529FF5 /* BindingViewController.h */,
+				34D3C6D41DDAB97300529FF5 /* BindingViewController.m */,
+			);
+			path = binding;
 			sourceTree = "<group>";
 		};
 		34DB5A6E1DD4129E00C51823 /* SP_resources */ = {
@@ -2224,6 +2247,8 @@
 		34E6656B1DD1A6F000FA41E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				34D3C6DF1DDAF43600529FF5 /* ShowWarView.h */,
+				34D3C6E01DDAF43600529FF5 /* ShowWarView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2240,6 +2265,7 @@
 		34E6656D1DD1A81000FA41E8 /* EggV */ = {
 			isa = PBXGroup;
 			children = (
+				34D3C6D21DDAB96100529FF5 /* binding */,
 				3461F5601DD2D32100E56298 /* Blooth */,
 				3461F5611DD2D32100E56298 /* InCall */,
 				3461F5621DD2D32100E56298 /* Setting */,
@@ -2508,6 +2534,7 @@
 				3461F53F1DD2BFB800E56298 /* Localizable.strings in Resources */,
 				345AB3F31DD9AEA400025EEE /* 退出.png in Resources */,
 				345AB3DC1DD9AD5800025EEE /* egg_nodevcie.png in Resources */,
+				345AB42A1DD9B3C000025EEE /* InCallViewController.xib in Resources */,
 				34DB5CE41DD4129F00C51823 /* sephone.png in Resources */,
 				345AB41E1DD9AEB900025EEE /* 圆角矩形.png in Resources */,
 				345AB3EB1DD9AEA400025EEE /* 半透明.png in Resources */,
@@ -2636,6 +2663,7 @@
 				34C495DA1DD1CB3900687606 /* AppDelegate+ShareSDK.m in Sources */,
 				3461F5391DD2BB5500E56298 /* LoginViewController.m in Sources */,
 				34C496061DD1D21700687606 /* BaseViewController.m in Sources */,
+				34D3C6D51DDAB97300529FF5 /* BindingViewController.m in Sources */,
 				34C495EC1DD1CD5400687606 /* UIButton+Blocks.m in Sources */,
 				34DB5D341DD41AA000C51823 /* AFHttpClient.m in Sources */,
 				7D626A401DD95636002C0F8B /* RegistViewController.m in Sources */,
@@ -2657,8 +2685,10 @@
 				7D5255A51DDAE306000EB0B0 /* GuideViewController.m in Sources */,
 				34C496001DD1CFE000687606 /* LoginModel.m in Sources */,
 				3461F5321DD2BB1B00E56298 /* FriendViewController.m in Sources */,
+				34D3C6E11DDAF43600529FF5 /* ShowWarView.m in Sources */,
 				34DB5D371DD423C100C51823 /* BaseModel.m in Sources */,
 				34C495FA1DD1CD6C00687606 /* UIViewController+HUD.m in Sources */,
+				345AB4291DD9B3C000025EEE /* InCallViewController.m in Sources */,
 				34C495ED1DD1CD5400687606 /* UIImage-Extensions.m in Sources */,
 				34C495F71DD1CD6C00687606 /* NSString+URLEncoding.m in Sources */,
 				34DB5CA91DD4129E00C51823 /* SephoneUtils.m in Sources */,
@@ -2793,6 +2823,7 @@
 			baseConfigurationReference = 9BB5CB8271F3FD7EA2EAFCC8 /* Pods-sego2.0.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = 4UKEB375ND;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
@@ -2816,6 +2847,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sego.rimi.sego2-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_PNG_TEXT = NO;
 			};
 			name = Debug;
 		};
@@ -2824,6 +2856,7 @@
 			baseConfigurationReference = D717670192D3D82245676E28 /* Pods-sego2.0.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = 4UKEB375ND;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
@@ -2845,6 +2878,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sego.rimi.sego2-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_PNG_TEXT = NO;
 			};
 			name = Release;
 		};

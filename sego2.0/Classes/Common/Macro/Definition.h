@@ -46,6 +46,15 @@
 #define UIColorFromHex(hex) [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16))/255.0 green:((float)((hex & 0xFF00) >> 8))/255.0 blue:((float)(hex & 0xFF))/255.0 alpha:1.0]
 
 
+// 屏幕
+
+// 状态栏 CGRect
+#define  rectStatus  [[UIApplication sharedApplication] statusBarFrame];
+// 导航栏
+#define rectNav self.navigationController.navigationBar.frame;
+// 标签栏
+#define rectTab self.tabBarController.tabBar.frame;
+
 
 
 

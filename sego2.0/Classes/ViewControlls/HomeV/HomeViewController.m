@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setNavTitle:NSLocalizedString(@"tabEgg_title",nil)];
+   
     
     
     

@@ -12,6 +12,7 @@
 
 #import <Foundation/Foundation.h>
 #define GREEN_COLOR RGB(73, 195, 241)
+#define GRAY_COLOR RGB(205, 205, 193)
 
 
 @interface AppUtil : NSObject
