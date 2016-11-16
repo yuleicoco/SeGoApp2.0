@@ -20,5 +20,5 @@
 + (UIViewController *)appTopViewController;
 + (NSString *)getServerSego3;
 + (BOOL) isBlankString:(NSString *)string;
-
++ (BOOL) isValidateMobile:(NSString *)mobile;
 @end

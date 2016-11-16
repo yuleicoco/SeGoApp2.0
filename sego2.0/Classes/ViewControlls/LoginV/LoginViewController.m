@@ -8,10 +8,13 @@
 //
 #import "LoginViewController.h"
 #import "RegistViewController.h"
-
+#import "CompletionViewController.h"
+#import "AFHttpClient+Account.h"
 
 @interface LoginViewController ()
 @property (nonatomic,strong)UIButton * loginBtn;
+@property (nonatomic,strong)UITextField * numberTextfield;
+@property (nonatomic,strong)UITextField * passwordTextfield;
 @end
 
 @implementation LoginViewController
@@ -42,6 +45,32 @@
         make.height.mas_equalTo(55);
     }];
     
+    UIImageView * numberImage = [[UIImageView alloc]init];
+    numberImage.image = [UIImage imageNamed:@"numbertu.png"];
+    [self.view addSubview:numberImage];
+    [numberImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(topView.mas_left).offset(13);
+        make.top.equalTo(topView.mas_top).offset(18);
+        make.bottom.equalTo(topView.mas_bottom).offset(-18);
+        make.width.mas_equalTo(17);
+    }];
+    
+    _numberTextfield = [[UITextField alloc]init];
+    _numberTextfield.font = [UIFont systemFontOfSize:18];
+    _numberTextfield.placeholder = @"请输入帐号";
+    _numberTextfield.textColor = [UIColor blackColor];
+     [_numberTextfield setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [self.view addSubview:_numberTextfield];
+    [_numberTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(numberImage.mas_right).offset(14);
+        make.centerY.equalTo(topView.mas_centerY).offset(1);
+        
+    }];
+    
+
+    
+    
+    
     //第二个框
     UIView * downView = [[UIView alloc]init];
     downView.backgroundColor = [UIColor clearColor];
@@ -52,10 +81,34 @@
     [downView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(downView.superview).offset(18);
         make.right.equalTo(downView.superview).offset(-18);
-        make.top.equalTo(downView.superview).offset(298);
+        make.top.equalTo(topView.mas_bottom).offset(12);
         //一般情况下，使用mas_equalTo来处理基本数据类型的封装
        // make.height.equalTo(@55);
         make.height.mas_equalTo(55);
+    }];
+    
+    UIImageView * passImage = [[UIImageView alloc]init];
+    passImage.image = [UIImage imageNamed:@"passtu.png"];
+    [self.view addSubview:passImage];
+    [passImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(downView.mas_left).offset(13);
+        make.top.equalTo(downView.mas_top).offset(18);
+        make.bottom.equalTo(downView.mas_bottom).offset(-18);
+        make.width.mas_equalTo(18);
+        
+    }];
+    
+    
+    _passwordTextfield = [[UITextField alloc]init];
+    _passwordTextfield.font = [UIFont systemFontOfSize:18];
+    _passwordTextfield.placeholder = @"请输入密码";
+    _passwordTextfield.textColor = [UIColor blackColor];
+    [_passwordTextfield setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [self.view addSubview:_passwordTextfield];
+    [_passwordTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(passImage.mas_right).offset(14);
+        make.centerY.equalTo(downView.mas_centerY).offset(1);
+        
     }];
     
     _loginBtn = [[UIButton alloc]init];
@@ -63,6 +116,7 @@
     _loginBtn.layer.cornerRadius = 5;
     [_loginBtn setTitle:@"登 录" forState:UIControlStateNormal];
     _loginBtn.titleLabel.font = [UIFont systemFontOfSize:22];
+    [_loginBtn addTarget:self action:@selector(loginbuttonTouch) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_loginBtn];
     [_loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [_loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -87,7 +141,7 @@
     UILabel * regiestLabel = [[UILabel alloc]init];
     regiestLabel.text = @"新用户注册";
     regiestLabel.textColor = [UIColor whiteColor];
-    regiestLabel.font = [UIFont systemFontOfSize:17];
+    regiestLabel.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:regiestLabel];
     [regiestLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(centerLabel.mas_left).offset(-19);
@@ -100,7 +154,7 @@
     UILabel * forgetPasswordlabel = [[UILabel alloc]init];
     forgetPasswordlabel.text = @"忘记密码?";
     forgetPasswordlabel.textColor = [UIColor whiteColor];
-    forgetPasswordlabel.font = [UIFont systemFontOfSize:17];
+    forgetPasswordlabel.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:forgetPasswordlabel];
     [forgetPasswordlabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(centerLabel.mas_right).offset(19);
@@ -127,13 +181,120 @@
         make.width.mas_equalTo(100);
     }];
     
+    UILabel * disanfangLabel = [[UILabel alloc]init];
+    disanfangLabel.text = @"第三方登录";
+    disanfangLabel.textColor = [UIColor whiteColor];
+    disanfangLabel.font = [UIFont systemFontOfSize:18];
+    [self.view addSubview:disanfangLabel];
+    [disanfangLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(_loginBtn.mas_centerX);
+        make.top.equalTo(regiestBtn.mas_bottom).offset(55);
+        
+    }];
     
+    UILabel * leftLabel = [[UILabel alloc]init];
+    leftLabel.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:leftLabel];
+    [leftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(leftLabel.superview).offset(17);
+        make.right.equalTo(disanfangLabel.mas_left).offset(-6);
+        make.centerY.equalTo(disanfangLabel.mas_centerY);
+        make.height.mas_equalTo(1);
+        
+     }];
     
+    UILabel * rightLabel = [[UILabel alloc]init];
+    rightLabel.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:rightLabel];
+    [rightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(disanfangLabel.mas_right).offset(6);
+        make.right.equalTo(rightLabel.superview).offset(-17);
+        make.centerY.equalTo(disanfangLabel.mas_centerY);
+        make.height.mas_equalTo(1);
+        
+    }];
     
+    UIImageView * qqImage = [[UIImageView alloc]init];
+    qqImage.image = [UIImage imageNamed:@"qq.png"];
+    [self.view addSubview:qqImage];
+    [qqImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(qqImage.superview).offset(133);
+        make.top.equalTo(disanfangLabel.mas_bottom).offset(29);
+        make.bottom.equalTo(qqImage.superview).offset(-35);
+        make.width.mas_equalTo(26);
+    }];
+    
+    UIImageView * weixinImage = [[UIImageView alloc]init];
+    weixinImage.image = [UIImage imageNamed:@"weixin.png"];
+    [self.view addSubview:weixinImage];
+    [weixinImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(weixinImage.superview).offset(-133);
+        make.bottom.equalTo(qqImage.superview).offset(-35);
+        make.height.mas_equalTo(25);
+        make.width.mas_equalTo(28);
+    }];
+
+    UIButton * qqBtn = [[UIButton alloc]init];
+    qqBtn.backgroundColor = [UIColor clearColor];
+    [qqBtn addTarget:self action:@selector(qqbuttonTouch) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:qqBtn];
+    [qqBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(qqImage.superview).offset(133);
+//        make.top.equalTo(disanfangLabel.mas_bottom).offset(29);
+        make.bottom.equalTo(qqImage.superview).offset(-35);
+        make.height.mas_equalTo(25);
+        make.width.mas_equalTo(26);
+    }];
+    
+    UIButton * weixinBtn = [[UIButton alloc]init];
+    weixinBtn.backgroundColor = [UIColor clearColor];
+    [weixinBtn addTarget:self action:@selector(weixinbuttonTouch) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:weixinBtn];
+    [weixinBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(weixinImage.superview).offset(-133);
+        make.bottom.equalTo(qqImage.superview).offset(-35);
+        make.height.mas_equalTo(25);
+        make.width.mas_equalTo(28);
+
+    }];
     
 
-    
 }
+
+-(void)qqbuttonTouch{
+    //qq登录
+    FuckLog(@"11");
+}
+-(void)weixinbuttonTouch{
+    //微信登录
+    FuckLog(@"22");
+}
+
+
+
+-(void)loginbuttonTouch{
+    if ([AppUtil isBlankString:_numberTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入账号"];
+        return;
+    }
+    if ([AppUtil isBlankString:_passwordTextfield.text]) {
+        [[AppUtil appTopViewController]showHint:@"请输入密码"];
+        return;
+    }
+    
+    [self showHudInView:self.view hint:@"正在登录..."];
+    [[AFHttpClient sharedAFHttpClient]loginWithAccounynumber:_numberTextfield.text password:_passwordTextfield.text complete:^(BaseModel * model) {
+        if (model) {
+            
+            LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
+            [[AccountManager sharedAccountManager]login:loginModel];
+              [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
+        }
+    }];
+
+
+}
+
 
 -(void)regiestButtonTouch{
 
@@ -146,7 +307,9 @@
 
 -(void)forgetpasswordButtonTouch{
     FuckLog(@"heihei");
-
+    CompletionViewController * commVc = [[CompletionViewController alloc]init];
+    [self.navigationController pushViewController:commVc animated:NO];
+    
 }
 
 
