@@ -137,7 +137,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     btnBind.backgroundColor = GRAY_COLOR;
     [btnBind setTitle:@"绑定设备" forState:UIControlStateNormal];
     [btnBind addTarget:self action:@selector(BindTouch:) forControlEvents:UIControlEventTouchUpInside];
-//    btnBind.enabled = FALSE;
+    btnBind.enabled = FALSE;
     [self.view addSubview:btnBind];
     [btnBind mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -176,10 +176,12 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     
     deviceTF =[UITextField new];
     incodeTF =[UITextField new];
-    deviceTF.text =@"13540691705";
-    incodeTF.text =@"125800";
+    deviceTF.text =@"";
+    incodeTF.text =@"";
     incodeTF.secureTextEntry = TRUE;
     deviceTF.enabled = NO;
+    incodeTF.enabled = NO;
+    
     
     deviceTF.borderStyle = UITextBorderStyleNone;
     incodeTF.borderStyle =UITextBorderStyleNone;
@@ -233,6 +235,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     }
 
     WifiViewController * wifiVC =[[WifiViewController alloc]init];
+    wifiVC.strDevice=deviceTF.text;
     [self.navigationController pushViewController:wifiVC animated:YES];
     
     
@@ -256,7 +259,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
 
 - (void)wariring
 {
-      [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 
     
     ShowView = [[ShowWarView alloc] initWithFrame:CGRectMake(0, 0,0 ,0)];
@@ -358,9 +361,9 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
         case CBPeripheralManagerStatePoweredOn:
             NSLog(@"Bluetooth powered on");
             
-          //  [self SearchDevice];
+            [self SearchDevice];
             
-        //    [self setUpBleDevice];
+            [self setUpBleDevice];
             
             break;
             

@@ -57,18 +57,4 @@ static NSString * getServer3 =@"http://180.97.80.227:8082/";
 
 
 
-
-+ (BOOL) isBlankString:(NSString *)string {
-    if (string == nil || string == NULL) {
-        return true;
-    }
-    if ([string isKindOfClass:[NSNull class]]) {
-        return true;
-    }
-    if ([[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] length]==0) {
-        return true;
-    }
-    return false;
-}
-
 @end

@@ -73,6 +73,17 @@
 		34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34884C881DD5742200245C24 /* CheckDeviceModel.m */; };
 		34ACCF3A1DDC510000AE2B98 /* xiala@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF381DDC510000AE2B98 /* xiala@2x.png */; };
 		34ACCF3B1DDC510000AE2B98 /* xiala@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF391DDC510000AE2B98 /* xiala@3x.png */; };
+		34ACCF441DDC5E3600AE2B98 /* loginbiyan.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF3C1DDC5E3600AE2B98 /* loginbiyan.png */; };
+		34ACCF451DDC5E3600AE2B98 /* loginyan.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF3D1DDC5E3600AE2B98 /* loginyan.png */; };
+		34ACCF461DDC5E3600AE2B98 /* numbertu.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF3E1DDC5E3600AE2B98 /* numbertu.png */; };
+		34ACCF471DDC5E3600AE2B98 /* passtu.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF3F1DDC5E3600AE2B98 /* passtu.png */; };
+		34ACCF481DDC5E3600AE2B98 /* qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF401DDC5E3600AE2B98 /* qq.png */; };
+		34ACCF491DDC5E3600AE2B98 /* registbiyan.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF411DDC5E3600AE2B98 /* registbiyan.png */; };
+		34ACCF4A1DDC5E3600AE2B98 /* registyan.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF421DDC5E3600AE2B98 /* registyan.png */; };
+		34ACCF4B1DDC5E3600AE2B98 /* weixin.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF431DDC5E3600AE2B98 /* weixin.png */; };
+		34ACCF4E1DDC5E4400AE2B98 /* CompletionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ACCF4D1DDC5E4400AE2B98 /* CompletionViewController.m */; };
+		34ACCF511DDC5E5000AE2B98 /* AFHttpClient+Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ACCF501DDC5E5000AE2B98 /* AFHttpClient+Account.m */; };
+		34ACCF541DDD521900AE2B98 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ACCF531DDD521900AE2B98 /* SetViewController.m */; };
 		34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D31DD1CAF700687606 /* AppDelegate+Sephone.m */; };
 		34C495D71DD1CB2900687606 /* AppDelegate+Launcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D61DD1CB2900687606 /* AppDelegate+Launcher.m */; };
 		34C495DA1DD1CB3900687606 /* AppDelegate+ShareSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D91DD1CB3900687606 /* AppDelegate+ShareSDK.m */; };
@@ -306,6 +317,20 @@
 		34884C881DD5742200245C24 /* CheckDeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckDeviceModel.m; sourceTree = "<group>"; };
 		34ACCF381DDC510000AE2B98 /* xiala@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xiala@2x.png"; sourceTree = "<group>"; };
 		34ACCF391DDC510000AE2B98 /* xiala@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xiala@3x.png"; sourceTree = "<group>"; };
+		34ACCF3C1DDC5E3600AE2B98 /* loginbiyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbiyan.png; sourceTree = "<group>"; };
+		34ACCF3D1DDC5E3600AE2B98 /* loginyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginyan.png; sourceTree = "<group>"; };
+		34ACCF3E1DDC5E3600AE2B98 /* numbertu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numbertu.png; sourceTree = "<group>"; };
+		34ACCF3F1DDC5E3600AE2B98 /* passtu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = passtu.png; sourceTree = "<group>"; };
+		34ACCF401DDC5E3600AE2B98 /* qq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qq.png; sourceTree = "<group>"; };
+		34ACCF411DDC5E3600AE2B98 /* registbiyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registbiyan.png; sourceTree = "<group>"; };
+		34ACCF421DDC5E3600AE2B98 /* registyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registyan.png; sourceTree = "<group>"; };
+		34ACCF431DDC5E3600AE2B98 /* weixin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixin.png; sourceTree = "<group>"; };
+		34ACCF4C1DDC5E4400AE2B98 /* CompletionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletionViewController.h; sourceTree = "<group>"; };
+		34ACCF4D1DDC5E4400AE2B98 /* CompletionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletionViewController.m; sourceTree = "<group>"; };
+		34ACCF4F1DDC5E5000AE2B98 /* AFHttpClient+Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Account.h"; sourceTree = "<group>"; };
+		34ACCF501DDC5E5000AE2B98 /* AFHttpClient+Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Account.m"; sourceTree = "<group>"; };
+		34ACCF521DDD521900AE2B98 /* SetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
+		34ACCF531DDD521900AE2B98 /* SetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
 		34C495C81DD1C0E100687606 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		34C495D21DD1CAF700687606 /* AppDelegate+Sephone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Sephone.h"; sourceTree = "<group>"; };
 		34C495D31DD1CAF700687606 /* AppDelegate+Sephone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Sephone.m"; sourceTree = "<group>"; };
@@ -1111,6 +1136,8 @@
 		3461F5621DD2D32100E56298 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				34ACCF521DDD521900AE2B98 /* SetViewController.h */,
+				34ACCF531DDD521900AE2B98 /* SetViewController.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -2098,6 +2125,14 @@
 		34E6655A1DD1A50800FA41E8 /* login */ = {
 			isa = PBXGroup;
 			children = (
+				34ACCF3C1DDC5E3600AE2B98 /* loginbiyan.png */,
+				34ACCF3D1DDC5E3600AE2B98 /* loginyan.png */,
+				34ACCF3E1DDC5E3600AE2B98 /* numbertu.png */,
+				34ACCF3F1DDC5E3600AE2B98 /* passtu.png */,
+				34ACCF401DDC5E3600AE2B98 /* qq.png */,
+				34ACCF411DDC5E3600AE2B98 /* registbiyan.png */,
+				34ACCF421DDC5E3600AE2B98 /* registyan.png */,
+				34ACCF431DDC5E3600AE2B98 /* weixin.png */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -2198,6 +2233,8 @@
 				34DB5D331DD41AA000C51823 /* AFHttpClient.m */,
 				34884C841DD4678400245C24 /* AFHttpClient+TestNetWork.h */,
 				34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */,
+				34ACCF4F1DDC5E5000AE2B98 /* AFHttpClient+Account.h */,
+				34ACCF501DDC5E5000AE2B98 /* AFHttpClient+Account.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2419,6 +2456,8 @@
 		7D626A3B1DD955AC002C0F8B /* Completionv */ = {
 			isa = PBXGroup;
 			children = (
+				34ACCF4C1DDC5E4400AE2B98 /* CompletionViewController.h */,
+				34ACCF4D1DDC5E4400AE2B98 /* CompletionViewController.m */,
 			);
 			path = Completionv;
 			sourceTree = "<group>";
@@ -2524,10 +2563,12 @@
 				34DB5CEC1DD4129F00C51823 /* stopcall-red.png in Resources */,
 				345AB4241DD9AEED00025EEE /* 箭头.png in Resources */,
 				345AB4141DD9AEB900025EEE /* 不倒蛋2_11 (2).png in Resources */,
+				34ACCF451DDC5E3600AE2B98 /* loginyan.png in Resources */,
 				3461F5581DD2CB4800E56298 /* tab_my_dian@2x.png in Resources */,
 				345AB40F1DD9AEB900025EEE /* 不倒蛋2_05.png in Resources */,
 				34DB5CDC1DD4129F00C51823 /* hold_off.png in Resources */,
 				34DB5CEE1DD4129F00C51823 /* rootca.pem in Resources */,
+				34ACCF4B1DDC5E3600AE2B98 /* weixin.png in Resources */,
 				34DB5C9F1DD4129E00C51823 /* nowebcamCIF.jpg in Resources */,
 				34ACCF3B1DDC510000AE2B98 /* xiala@3x.png in Resources */,
 				34DB5CF51DD4129F00C51823 /* oldphone-mono.wav in Resources */,
@@ -2544,6 +2585,7 @@
 				34DB5C9D1DD4129E00C51823 /* msg.caf in Resources */,
 				345AB3F11DD9AEA400025EEE /* 投食 点击效果.png in Resources */,
 				34DB5CD91DD4129F00C51823 /* dialer-orange.png in Resources */,
+				34ACCF471DDC5E3600AE2B98 /* passtu.png in Resources */,
 				34DB5CFA1DD4129F00C51823 /* synth.wav in Resources */,
 				34DB5CF01DD4129F00C51823 /* hello8000.wav in Resources */,
 				34DB5C9E1DD4129E00C51823 /* msg.wav in Resources */,
@@ -2557,6 +2599,7 @@
 				34DB5CD51DD4129F00C51823 /* composing_chat.png in Resources */,
 				3461F5591DD2CB4800E56298 /* tab_my@2x.png in Resources */,
 				34DB5CE61DD4129F00C51823 /* startcall-green.png in Resources */,
+				34ACCF491DDC5E3600AE2B98 /* registbiyan.png in Resources */,
 				345AB4121DD9AEB900025EEE /* 不倒蛋2_09 (2).png in Resources */,
 				3461F5521DD2CB4800E56298 /* tab_bangdan_dian@2x.png in Resources */,
 				34DB5CE81DD4129F00C51823 /* status-green.png in Resources */,
@@ -2576,6 +2619,7 @@
 				3461F5551DD2CB4800E56298 /* tab_budaodan@2x.png in Resources */,
 				345AB4111DD9AEB900025EEE /* 不倒蛋2_07.png in Resources */,
 				34DB5CA21DD4129E00C51823 /* ringback.wav in Resources */,
+				34ACCF4A1DDC5E3600AE2B98 /* registyan.png in Resources */,
 				34DB5CAA1DD4129E00C51823 /* shortring.caf in Resources */,
 				345AB4151DD9AEB900025EEE /* 不倒蛋2_11.png in Resources */,
 				34DB5CD21DD4129F00C51823 /* chat_message_inprogress.png in Resources */,
@@ -2584,6 +2628,7 @@
 				34DB5CDE1DD4129F00C51823 /* mic_active.png in Resources */,
 				345AB3F61DD9AEA400025EEE /* 抓拍 点击效果.png in Resources */,
 				34DB5CA51DD4129E00C51823 /* sephonerc in Resources */,
+				34ACCF461DDC5E3600AE2B98 /* numbertu.png in Resources */,
 				34DB5CE31DD4129F00C51823 /* sephone.icns in Resources */,
 				34DB5CA61DD4129E00C51823 /* sephonerc-factory in Resources */,
 				34DB5CF31DD4129F00C51823 /* bigben.wav in Resources */,
@@ -2593,6 +2638,7 @@
 				345AB41C1DD9AEB900025EEE /* 线.png in Resources */,
 				34DB5CEA1DD4129F00C51823 /* status-orange.png in Resources */,
 				345AB4231DD9AEED00025EEE /* 按钮.png in Resources */,
+				34ACCF441DDC5E3600AE2B98 /* loginbiyan.png in Resources */,
 				345AB4161DD9AEB900025EEE /* 返回.png in Resources */,
 				34DB5C9C1DD4129E00C51823 /* hold.wav in Resources */,
 				34DB5CCD1DD4129F00C51823 /* call.png in Resources */,
@@ -2603,6 +2649,7 @@
 				34DB5CA71DD4129E00C51823 /* sephonerc-factory~ipad in Resources */,
 				345AB40C1DD9AEB900025EEE /* 不倒蛋2_03 (2).png in Resources */,
 				345AB3F01DD9AEA400025EEE /* 上下.png in Resources */,
+				34ACCF481DDC5E3600AE2B98 /* qq.png in Resources */,
 				34DB5CA31DD4129E00C51823 /* rootca.pem in Resources */,
 				345AB3F21DD9AEA400025EEE /* 投食.png in Resources */,
 				34DB5CD81DD4129F00C51823 /* contact_unstarred.png in Resources */,
@@ -2706,11 +2753,13 @@
 				3436EA611DDBFE0B005659B7 /* Reachability.m in Sources */,
 				34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */,
 				3461F55F1DD2D00100E56298 /* AppUtil.m in Sources */,
+				34ACCF4E1DDC5E4400AE2B98 /* CompletionViewController.m in Sources */,
 				3461F52F1DD2BB0A00E56298 /* HomeViewController.m in Sources */,
 				3436EA651DDBFF5D005659B7 /* BePeripheralViewController.m in Sources */,
 				34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */,
 				34FC41DA1DD179F900A23A8F /* AppDelegate.m in Sources */,
 				3461F5471DD2CA2500E56298 /* EggViewController.m in Sources */,
+				34ACCF511DDC5E5000AE2B98 /* AFHttpClient+Account.m in Sources */,
 				34884C861DD4678400245C24 /* AFHttpClient+TestNetWork.m in Sources */,
 				34C495FD1DD1CF4700687606 /* AccountManager.m in Sources */,
 				34C495F81DD1CD6C00687606 /* QFTableView.m in Sources */,
@@ -2729,6 +2778,7 @@
 				34FC41E31DD179F900A23A8F /* sego2_0.xcdatamodeld in Sources */,
 				3461F5441DD2CA0A00E56298 /* MeViewController.m in Sources */,
 				34C495F91DD1CD6C00687606 /* UIView+Sizes.m in Sources */,
+				34ACCF541DDD521900AE2B98 /* SetViewController.m in Sources */,
 				34C495EA1DD1CD5400687606 /* UIActionSheet+Blocks.m in Sources */,
 				3461F5351DD2BB2B00E56298 /* FoundViewController.m in Sources */,
 			);
