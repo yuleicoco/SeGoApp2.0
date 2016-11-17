@@ -498,6 +498,8 @@
                 // 保持已配置状态。
                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                 [defaults setValue:@"1" forKey:PREF_WIFI_CONFIGURED];
+                [defaults setValue:@"ok" forKey:@"succfulValue"];
+                
                 [defaults synchronize];
                 [self stopSever];
                 [self.navigationController popToRootViewControllerAnimated:YES];

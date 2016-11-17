@@ -9,6 +9,7 @@
 #import "BindingViewController.h"
 #import "Reachability.h"
 #import "WifiViewController.h"
+#import "AFHttpClient+AddDeviceInformation.h"
 
 
 // sego配置设备名
@@ -233,17 +234,40 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
         [self showWarningTip:@"设备号不存在"];
         return;
     }
-
-    WifiViewController * wifiVC =[[WifiViewController alloc]init];
-    wifiVC.strDevice=deviceTF.text;
-    [self.navigationController pushViewController:wifiVC animated:YES];
+    
+    [[AFHttpClient sharedAFHttpClient]AddDeviceStats:[AccountManager sharedAccountManager].loginModel.mid deviceno:deviceTF.text complete:^(BaseModel *model) {
+        FuckLog(@"%@",model);
+    
+        if ([model.retCode isEqualToString:@"0000"]) {
+            [self showWarningTip:@"绑定成功"];
+            WifiViewController * wifiVC =[[WifiViewController alloc]init];
+            wifiVC.strDevice=deviceTF.text;
+            [self.navigationController pushViewController:wifiVC animated:YES];
+        }else
+        {
+            // 错误提示
+            [self wariring];
+            
+            
+        }
+        
+        
+    }];
     
     
     
-
+    
+   
+    
+    
     
     
 }
+
+
+
+
+
 
 
 - (void)SearchDevice

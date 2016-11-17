@@ -110,6 +110,8 @@ return _instance; \
 
 #define ApplicationDelegate                 ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 
+#define Defaluts  ([NSUserDefaults standardUserDefaults])
+#define Mid_S     ([AccountManager sharedAccountManager].loginModel.mid)
 
 
 #endif /* Definition_h */
