@@ -220,6 +220,18 @@
 		34FC41E31DD179F900A23A8F /* sego2_0.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41E11DD179F900A23A8F /* sego2_0.xcdatamodeld */; };
 		34FC41E51DD179F900A23A8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34FC41E41DD179F900A23A8F /* Assets.xcassets */; };
 		34FC41E81DD179F900A23A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34FC41E61DD179F900A23A8F /* LaunchScreen.storyboard */; };
+		7D15739B1DDDB4B10064F4D4 /* loginback.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D15739A1DDDB4B10064F4D4 /* loginback.png */; };
+		7D18D83B1DDC5C2E00BA0FA0 /* CompletionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D18D83A1DDC5C2E00BA0FA0 /* CompletionViewController.m */; };
+		7D18D83E1DDC5C4400BA0FA0 /* AFHttpClient+Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D18D83D1DDC5C4400BA0FA0 /* AFHttpClient+Account.m */; };
+		7D18D8471DDC5D1200BA0FA0 /* loginbiyan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D18D83F1DDC5D1200BA0FA0 /* loginbiyan.png */; };
+		7D18D8481DDC5D1200BA0FA0 /* loginyan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D18D8401DDC5D1200BA0FA0 /* loginyan.png */; };
+		7D18D8491DDC5D1200BA0FA0 /* numbertu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D18D8411DDC5D1200BA0FA0 /* numbertu.png */; };
+		7D18D84A1DDC5D1200BA0FA0 /* passtu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D18D8421DDC5D1200BA0FA0 /* passtu.png */; };
+		7D18D84B1DDC5D1200BA0FA0 /* qq.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D18D8431DDC5D1200BA0FA0 /* qq.png */; };
+		7D18D84C1DDC5D1200BA0FA0 /* registbiyan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D18D8441DDC5D1200BA0FA0 /* registbiyan.png */; };
+		7D18D84D1DDC5D1200BA0FA0 /* registyan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D18D8451DDC5D1200BA0FA0 /* registyan.png */; };
+		7D18D84E1DDC5D1200BA0FA0 /* weixin.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D18D8461DDC5D1200BA0FA0 /* weixin.png */; };
+		7D18D8501DDC66BD00BA0FA0 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D18D84F1DDC66BD00BA0FA0 /* back.png */; };
 		7D5255A51DDAE306000EB0B0 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5255A41DDAE306000EB0B0 /* GuideViewController.m */; };
 		7D626A401DD95636002C0F8B /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D626A3F1DD95636002C0F8B /* RegistViewController.m */; };
 /* End PBXBuildFile section */
@@ -899,6 +911,20 @@
 		34FC41E41DD179F900A23A8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34FC41E71DD179F900A23A8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34FC41E91DD179F900A23A8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D15739A1DDDB4B10064F4D4 /* loginback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginback.png; sourceTree = "<group>"; };
+		7D18D8391DDC5C2E00BA0FA0 /* CompletionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletionViewController.h; sourceTree = "<group>"; };
+		7D18D83A1DDC5C2E00BA0FA0 /* CompletionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletionViewController.m; sourceTree = "<group>"; };
+		7D18D83C1DDC5C4400BA0FA0 /* AFHttpClient+Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Account.h"; sourceTree = "<group>"; };
+		7D18D83D1DDC5C4400BA0FA0 /* AFHttpClient+Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Account.m"; sourceTree = "<group>"; };
+		7D18D83F1DDC5D1200BA0FA0 /* loginbiyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbiyan.png; sourceTree = "<group>"; };
+		7D18D8401DDC5D1200BA0FA0 /* loginyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginyan.png; sourceTree = "<group>"; };
+		7D18D8411DDC5D1200BA0FA0 /* numbertu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numbertu.png; sourceTree = "<group>"; };
+		7D18D8421DDC5D1200BA0FA0 /* passtu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = passtu.png; sourceTree = "<group>"; };
+		7D18D8431DDC5D1200BA0FA0 /* qq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qq.png; sourceTree = "<group>"; };
+		7D18D8441DDC5D1200BA0FA0 /* registbiyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registbiyan.png; sourceTree = "<group>"; };
+		7D18D8451DDC5D1200BA0FA0 /* registyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registyan.png; sourceTree = "<group>"; };
+		7D18D8461DDC5D1200BA0FA0 /* weixin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixin.png; sourceTree = "<group>"; };
+		7D18D84F1DDC66BD00BA0FA0 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		7D5255A31DDAE306000EB0B0 /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
 		7D5255A41DDAE306000EB0B0 /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		7D626A3E1DD95636002C0F8B /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
@@ -2075,6 +2101,7 @@
 		34E665581DD1A4CE00FA41E8 /* Guide page */ = {
 			isa = PBXGroup;
 			children = (
+				7D18D84F1DDC66BD00BA0FA0 /* back.png */,
 			);
 			path = "Guide page";
 			sourceTree = "<group>";
@@ -2089,6 +2116,15 @@
 		34E6655A1DD1A50800FA41E8 /* login */ = {
 			isa = PBXGroup;
 			children = (
+				7D15739A1DDDB4B10064F4D4 /* loginback.png */,
+				7D18D83F1DDC5D1200BA0FA0 /* loginbiyan.png */,
+				7D18D8401DDC5D1200BA0FA0 /* loginyan.png */,
+				7D18D8411DDC5D1200BA0FA0 /* numbertu.png */,
+				7D18D8421DDC5D1200BA0FA0 /* passtu.png */,
+				7D18D8431DDC5D1200BA0FA0 /* qq.png */,
+				7D18D8441DDC5D1200BA0FA0 /* registbiyan.png */,
+				7D18D8451DDC5D1200BA0FA0 /* registyan.png */,
+				7D18D8461DDC5D1200BA0FA0 /* weixin.png */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -2187,6 +2223,8 @@
 				34DB5D331DD41AA000C51823 /* AFHttpClient.m */,
 				34884C841DD4678400245C24 /* AFHttpClient+TestNetWork.h */,
 				34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */,
+				7D18D83C1DDC5C4400BA0FA0 /* AFHttpClient+Account.h */,
+				7D18D83D1DDC5C4400BA0FA0 /* AFHttpClient+Account.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2408,6 +2446,8 @@
 		7D626A3B1DD955AC002C0F8B /* Completionv */ = {
 			isa = PBXGroup;
 			children = (
+				7D18D8391DDC5C2E00BA0FA0 /* CompletionViewController.h */,
+				7D18D83A1DDC5C2E00BA0FA0 /* CompletionViewController.m */,
 			);
 			path = Completionv;
 			sourceTree = "<group>";
@@ -2513,6 +2553,7 @@
 				34DB5CEC1DD4129F00C51823 /* stopcall-red.png in Resources */,
 				345AB4241DD9AEED00025EEE /* 箭头.png in Resources */,
 				345AB4141DD9AEB900025EEE /* 不倒蛋2_11 (2).png in Resources */,
+				7D18D8491DDC5D1200BA0FA0 /* numbertu.png in Resources */,
 				3461F5581DD2CB4800E56298 /* tab_my_dian@2x.png in Resources */,
 				345AB40F1DD9AEB900025EEE /* 不倒蛋2_05.png in Resources */,
 				34DB5CDC1DD4129F00C51823 /* hold_off.png in Resources */,
@@ -2521,6 +2562,7 @@
 				34DB5CF51DD4129F00C51823 /* oldphone-mono.wav in Resources */,
 				3461F55A1DD2CB4800E56298 /* tab_squar_dian@2x.png in Resources */,
 				34DB5CEB1DD4129F00C51823 /* status-red.png in Resources */,
+				7D18D84E1DDC5D1200BA0FA0 /* weixin.png in Resources */,
 				34DB5CCC1DD4129F00C51823 /* addcall-green.png in Resources */,
 				34DB5CEF1DD4129F00C51823 /* hello16000.wav in Resources */,
 				345AB40E1DD9AEB900025EEE /* 不倒蛋2_05 (2).png in Resources */,
@@ -2528,18 +2570,25 @@
 				345AB40B1DD9AEB900025EEE /* 按钮.png in Resources */,
 				34DB5CE01DD4129F00C51823 /* notok.png in Resources */,
 				345AB3EF1DD9AEA400025EEE /* 拉出2.png in Resources */,
+				7D18D84D1DDC5D1200BA0FA0 /* registyan.png in Resources */,
 				34DB5CD71DD4129F00C51823 /* contact_starred.png in Resources */,
+				7D18D84A1DDC5D1200BA0FA0 /* passtu.png in Resources */,
 				34DB5C9D1DD4129E00C51823 /* msg.caf in Resources */,
 				345AB3F11DD9AEA400025EEE /* 投食 点击效果.png in Resources */,
 				34DB5CD91DD4129F00C51823 /* dialer-orange.png in Resources */,
+				7D18D8501DDC66BD00BA0FA0 /* back.png in Resources */,
 				34DB5CFA1DD4129F00C51823 /* synth.wav in Resources */,
 				34DB5CF01DD4129F00C51823 /* hello8000.wav in Resources */,
+				7D18D8471DDC5D1200BA0FA0 /* loginbiyan.png in Resources */,
 				34DB5C9E1DD4129E00C51823 /* msg.wav in Resources */,
+				7D18D84B1DDC5D1200BA0FA0 /* qq.png in Resources */,
 				345AB41D1DD9AEB900025EEE /* 圆环.png in Resources */,
+				7D15739B1DDDB4B10064F4D4 /* loginback.png in Resources */,
 				345AB4181DD9AEB900025EEE /* 激光2.png in Resources */,
 				34DB5CE51DD4129F00C51823 /* speaker.png in Resources */,
 				34DB5CF91DD4129F00C51823 /* sweet.wav in Resources */,
 				34DB5CA01DD4129E00C51823 /* ring.caf in Resources */,
+				7D18D8481DDC5D1200BA0FA0 /* loginyan.png in Resources */,
 				345AB4251DD9AEED00025EEE /* 小圆.png in Resources */,
 				345AB4101DD9AEB900025EEE /* 不倒蛋2_07 (2).png in Resources */,
 				34DB5CD51DD4129F00C51823 /* composing_chat.png in Resources */,
@@ -2563,6 +2612,7 @@
 				3461F5551DD2CB4800E56298 /* tab_budaodan@2x.png in Resources */,
 				345AB4111DD9AEB900025EEE /* 不倒蛋2_07.png in Resources */,
 				34DB5CA21DD4129E00C51823 /* ringback.wav in Resources */,
+				7D18D84C1DDC5D1200BA0FA0 /* registbiyan.png in Resources */,
 				34DB5CAA1DD4129E00C51823 /* shortring.caf in Resources */,
 				345AB4151DD9AEB900025EEE /* 不倒蛋2_11.png in Resources */,
 				34DB5CD21DD4129F00C51823 /* chat_message_inprogress.png in Resources */,
@@ -2698,11 +2748,13 @@
 				34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */,
 				34FC41DA1DD179F900A23A8F /* AppDelegate.m in Sources */,
 				3461F5471DD2CA2500E56298 /* EggViewController.m in Sources */,
+				7D18D83B1DDC5C2E00BA0FA0 /* CompletionViewController.m in Sources */,
 				34884C861DD4678400245C24 /* AFHttpClient+TestNetWork.m in Sources */,
 				34C495FD1DD1CF4700687606 /* AccountManager.m in Sources */,
 				34C495F81DD1CD6C00687606 /* QFTableView.m in Sources */,
 				34FC41D71DD179F900A23A8F /* main.m in Sources */,
 				7D5255A51DDAE306000EB0B0 /* GuideViewController.m in Sources */,
+				7D18D83E1DDC5C4400BA0FA0 /* AFHttpClient+Account.m in Sources */,
 				34C496001DD1CFE000687606 /* LoginModel.m in Sources */,
 				3461F5321DD2BB1B00E56298 /* FriendViewController.m in Sources */,
 				34D3C6E11DDAF43600529FF5 /* ShowWarView.m in Sources */,

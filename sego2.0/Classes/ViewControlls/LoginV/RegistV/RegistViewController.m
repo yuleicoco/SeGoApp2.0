@@ -8,7 +8,7 @@
 
 #import "RegistViewController.h"
 #import "GuideViewController.h"
-
+#import "AFHttpClient+Account.h"
 
 @interface RegistViewController ()<UITextFieldDelegate>
 @property (nonatomic,strong)UIButton * vercationBtn;
@@ -65,8 +65,7 @@
         make.centerY.equalTo(numberView.mas_centerY).offset(1);
         
     }];
-    
-    
+
     _vercationBtn = [[UIButton alloc]init];
     _vercationBtn.backgroundColor = GREEN_COLOR;
     _vercationBtn.layer.cornerRadius = 5;
@@ -74,10 +73,7 @@
     [_vercationBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
     _vercationBtn.titleLabel.font = [UIFont systemFontOfSize:17];
     [_vercationBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
-    
-    
-    
+    [_vercationBtn addTarget:self action:@selector(vercationbuttontouch) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_vercationBtn];
     [_vercationBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(_vercationBtn.superview).offset(-17);
@@ -117,11 +113,6 @@
         make.left.equalTo(verificationLabel.mas_right).offset(13);
         make.centerY.equalTo(verificationView.mas_centerY).offset(1);
     }];
-    
-    
-    
-    
-    
     
     UIView * passwordView = [[UIView alloc]init];
     passwordView.backgroundColor = [UIColor whiteColor];
@@ -191,19 +182,6 @@
     
     }];
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     _registBtn = [[UIButton alloc]init];
     _registBtn.backgroundColor = GREEN_COLOR;
     _registBtn.layer.cornerRadius = 5;
@@ -252,14 +230,7 @@
         make.bottom.equalTo(downLabel.mas_bottom);
     }];
     
-    
-    
-    
-    
-    
-    
-    
-    
+
 }
 
 -(void)xieyibuttontouch{
@@ -268,6 +239,63 @@
     [self.navigationController pushViewController:guideVc animated:NO];
 
 
+}
+
+-(void)vercationbuttontouch{
+    if ([AppUtil isBlankString:_numberTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入账号"];
+        return;
+    }
+    if (![AppUtil isValidateMobile:_numberTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入正确格式的手机号码"];
+        return;
+    }
+    
+    [self provied];
+}
+
+-(void)provied{
+    FuckLog(@"dada");
+    [self timeout];
+    
+    [[AFHttpClient sharedAFHttpClient]getCheckWithPhone:_numberTextfield.text type:@"register" complete:^(BaseModel *model) {
+        [[AppUtil appTopViewController] showHint:model.retDesc];
+        
+    }];
+    
+}
+- (void)timeout
+{
+    __block int timeout=60; //倒计时时间
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
+    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0);     dispatch_source_set_event_handler(_timer, ^{
+        if(timeout<=0){ //倒计时结束，关闭
+            dispatch_source_cancel(_timer);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                  _vercationBtn.titleLabel.font = [UIFont systemFontOfSize:18  ];
+                [_vercationBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+                _vercationBtn.userInteractionEnabled = YES;
+                _vercationBtn.backgroundColor = GREEN_COLOR;
+            });
+        }else{
+            // int seconds = timeout % 60;
+            NSString *strTime = [NSString stringWithFormat:@"%.2d", timeout];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIView beginAnimations:nil context:nil];
+                [UIView setAnimationDuration:1];
+                 _vercationBtn.titleLabel.font = [UIFont systemFontOfSize:13];
+                [_vercationBtn setTitle:[NSString stringWithFormat:@"%@秒后重新发送",strTime] forState:UIControlStateNormal];
+                [UIView commitAnimations];
+               
+                _vercationBtn.userInteractionEnabled = NO;
+                _vercationBtn.backgroundColor = [UIColor grayColor];
+            });
+            timeout--;
+        }
+    });
+    dispatch_resume(_timer);
+    
 }
 
 
