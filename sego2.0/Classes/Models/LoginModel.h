@@ -23,9 +23,13 @@
 
 @property (nonatomic, copy) NSString<Optional> *dwid;
 
+@property (nonatomic, copy) NSString<Optional> * email;
+
 @property (nonatomic, copy)  NSString<Optional> *friends;
 
 @property (nonatomic, copy) NSString<Optional> *headportrait;
+
+@property (nonatomic, copy) NSString<Optional> *incode;
 
 @property (nonatomic, copy) NSString<Optional> *isfriend;
 
@@ -49,9 +53,13 @@
 
 @property (nonatomic, copy) NSString<Optional> * pet_birthday;
 
+@property (nonatomic, copy) NSString<Optional> * pet_nickname;
+
 @property (nonatomic, copy) NSString<Optional> * pet_race;
 
 @property (nonatomic, copy) NSString<Optional> * pet_sex;
+
+@property (nonatomic ,copy) NSString<Optional> * pid;
 
 @property (nonatomic, copy) NSString<Optional> * phone;
 
@@ -70,6 +78,8 @@
 @property (nonatomic, copy) NSString<Optional> * sipno;
 
 @property (nonatomic, copy) NSString<Optional> * sippw;
+
+@property (nonatomic, copy) NSString<Optional> * state;
 
 @property (nonatomic, copy) NSString<Optional> * termid;
 

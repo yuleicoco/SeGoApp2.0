@@ -187,19 +187,6 @@
         
     }];
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     _registBtn = [[UIButton alloc]init];
     _registBtn.backgroundColor = GREEN_COLOR;
     _registBtn.layer.cornerRadius = 5;

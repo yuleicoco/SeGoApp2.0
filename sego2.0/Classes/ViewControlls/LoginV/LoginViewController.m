@@ -22,11 +22,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    // self.navigationController.navigationBarHidden = YES;
-    self.view.backgroundColor = [UIColor blackColor];
-    UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
-    button.backgroundColor = [UIColor blackColor];
-    [button addTarget:self action:@selector(logingin:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+   // self.view.backgroundColor = [UIColor blackColor];
+    UIImageView * loginbackImage = [[UIImageView alloc]init];
+    loginbackImage.image = [UIImage imageNamed:@"loginback.png"];
+    [self.view addSubview:loginbackImage];
+    [loginbackImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.left.right.equalTo(loginbackImage.superview).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+    
+    
     
     
     //第一个框
@@ -58,18 +62,16 @@
     _numberTextfield = [[UITextField alloc]init];
     _numberTextfield.font = [UIFont systemFontOfSize:18];
     _numberTextfield.placeholder = @"请输入帐号";
-    _numberTextfield.textColor = [UIColor blackColor];
-     [_numberTextfield setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    _numberTextfield.tintColor = [UIColor whiteColor];
+    _numberTextfield.textColor = [UIColor whiteColor];
+     [_numberTextfield setValue:RGB(153, 153, 153) forKeyPath:@"_placeholderLabel.textColor"];
     [self.view addSubview:_numberTextfield];
     [_numberTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(numberImage.mas_right).offset(14);
         make.centerY.equalTo(topView.mas_centerY).offset(1);
+        make.width.mas_equalTo(200);
         
     }];
-    
-
-    
-    
     
     //第二个框
     UIView * downView = [[UIView alloc]init];
@@ -102,13 +104,14 @@
     _passwordTextfield = [[UITextField alloc]init];
     _passwordTextfield.font = [UIFont systemFontOfSize:18];
     _passwordTextfield.placeholder = @"请输入密码";
-    _passwordTextfield.textColor = [UIColor blackColor];
-    [_passwordTextfield setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    _passwordTextfield.tintColor = [UIColor whiteColor];
+    _passwordTextfield.textColor = [UIColor whiteColor];
+    [_passwordTextfield setValue:RGB(153, 153, 153) forKeyPath:@"_placeholderLabel.textColor"];
     [self.view addSubview:_passwordTextfield];
     [_passwordTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(passImage.mas_right).offset(14);
         make.centerY.equalTo(downView.mas_centerY).offset(1);
-        
+        make.width.mas_equalTo(200);
     }];
     
     _loginBtn = [[UIButton alloc]init];
@@ -310,14 +313,6 @@
     CompletionViewController * commVc = [[CompletionViewController alloc]init];
     [self.navigationController pushViewController:commVc animated:NO];
     
-}
-
-
--(void)logingin:(UIButton *)sender{
-
-     [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
-
-
 }
 
 -(void)viewWillAppear:(BOOL)animated{
