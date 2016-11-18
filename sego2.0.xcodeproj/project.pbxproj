@@ -12,10 +12,10 @@
 		342F79851DDD7B380022FF09 /* setWaring.png in Resources */ = {isa = PBXBuildFile; fileRef = 342F79831DDD7B380022FF09 /* setWaring.png */; };
 		342F79881DDD7C640022FF09 /* AFHttpClient+DeviceStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 342F79871DDD7C640022FF09 /* AFHttpClient+DeviceStats.m */; };
 		342F798B1DDD7D800022FF09 /* DeviceStats.m in Sources */ = {isa = PBXBuildFile; fileRef = 342F798A1DDD7D800022FF09 /* DeviceStats.m */; };
-		342F79901DDD873D0022FF09 /* 离线.png in Resources */ = {isa = PBXBuildFile; fileRef = 342F798C1DDD873D0022FF09 /* 离线.png */; };
+		342F79901DDD873D0022FF09 /* offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 342F798C1DDD873D0022FF09 /* offline.png */; };
 		342F79911DDD873D0022FF09 /* egg_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 342F798D1DDD873D0022FF09 /* egg_up.png */; };
-		342F79921DDD873D0022FF09 /* 通话中.png in Resources */ = {isa = PBXBuildFile; fileRef = 342F798E1DDD873D0022FF09 /* 通话中.png */; };
-		342F79931DDD873D0022FF09 /* 在线.png in Resources */ = {isa = PBXBuildFile; fileRef = 342F798F1DDD873D0022FF09 /* 在线.png */; };
+		342F79921DDD873D0022FF09 /* incall.png in Resources */ = {isa = PBXBuildFile; fileRef = 342F798E1DDD873D0022FF09 /* incall.png */; };
+		342F79931DDD873D0022FF09 /* online.png in Resources */ = {isa = PBXBuildFile; fileRef = 342F798F1DDD873D0022FF09 /* online.png */; };
 		342F79951DDD8BAE0022FF09 /* new_egg_seting.png in Resources */ = {isa = PBXBuildFile; fileRef = 342F79941DDD8BAE0022FF09 /* new_egg_seting.png */; };
 		342F79971DDD9E310022FF09 /* setb.png in Resources */ = {isa = PBXBuildFile; fileRef = 342F79961DDD9E310022FF09 /* setb.png */; };
 		342F799A1DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 342F79991DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.m */; };
@@ -257,10 +257,10 @@
 		342F79871DDD7C640022FF09 /* AFHttpClient+DeviceStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+DeviceStats.m"; sourceTree = "<group>"; };
 		342F79891DDD7D800022FF09 /* DeviceStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceStats.h; sourceTree = "<group>"; };
 		342F798A1DDD7D800022FF09 /* DeviceStats.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceStats.m; sourceTree = "<group>"; };
-		342F798C1DDD873D0022FF09 /* 离线.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "离线.png"; sourceTree = "<group>"; };
+		342F798C1DDD873D0022FF09 /* offline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = offline.png; sourceTree = "<group>"; };
 		342F798D1DDD873D0022FF09 /* egg_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_up.png; sourceTree = "<group>"; };
-		342F798E1DDD873D0022FF09 /* 通话中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "通话中.png"; sourceTree = "<group>"; };
-		342F798F1DDD873D0022FF09 /* 在线.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "在线.png"; sourceTree = "<group>"; };
+		342F798E1DDD873D0022FF09 /* incall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incall.png; sourceTree = "<group>"; };
+		342F798F1DDD873D0022FF09 /* online.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = online.png; sourceTree = "<group>"; };
 		342F79941DDD8BAE0022FF09 /* new_egg_seting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_egg_seting.png; sourceTree = "<group>"; };
 		342F79961DDD9E310022FF09 /* setb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setb.png; sourceTree = "<group>"; };
 		342F79981DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+AddDeviceInformation.h"; sourceTree = "<group>"; };
@@ -2174,10 +2174,10 @@
 			children = (
 				342F79961DDD9E310022FF09 /* setb.png */,
 				342F79941DDD8BAE0022FF09 /* new_egg_seting.png */,
-				342F798C1DDD873D0022FF09 /* 离线.png */,
+				342F798C1DDD873D0022FF09 /* offline.png */,
 				342F798D1DDD873D0022FF09 /* egg_up.png */,
-				342F798E1DDD873D0022FF09 /* 通话中.png */,
-				342F798F1DDD873D0022FF09 /* 在线.png */,
+				342F798E1DDD873D0022FF09 /* incall.png */,
+				342F798F1DDD873D0022FF09 /* online.png */,
 				342F79821DDD7B380022FF09 /* konw.png */,
 				342F79831DDD7B380022FF09 /* setWaring.png */,
 				34ACCF381DDC510000AE2B98 /* xiala@2x.png */,
@@ -2618,7 +2618,7 @@
 				342F79971DDD9E310022FF09 /* setb.png in Resources */,
 				34DB5CEF1DD4129F00C51823 /* hello16000.wav in Resources */,
 				345AB40E1DD9AEB900025EEE /* 不倒蛋2_05 (2).png in Resources */,
-				342F79901DDD873D0022FF09 /* 离线.png in Resources */,
+				342F79901DDD873D0022FF09 /* offline.png in Resources */,
 				34DB5CDF1DD4129F00C51823 /* mic_muted.png in Resources */,
 				345AB40B1DD9AEB900025EEE /* 按钮.png in Resources */,
 				34DB5CE01DD4129F00C51823 /* notok.png in Resources */,
@@ -2693,7 +2693,7 @@
 				34DB5CA71DD4129E00C51823 /* sephonerc-factory~ipad in Resources */,
 				345AB40C1DD9AEB900025EEE /* 不倒蛋2_03 (2).png in Resources */,
 				345AB3F01DD9AEA400025EEE /* 上下.png in Resources */,
-				342F79931DDD873D0022FF09 /* 在线.png in Resources */,
+				342F79931DDD873D0022FF09 /* online.png in Resources */,
 				34ACCF481DDC5E3600AE2B98 /* qq.png in Resources */,
 				34DB5CA31DD4129E00C51823 /* rootca.pem in Resources */,
 				345AB3F21DD9AEA400025EEE /* 投食.png in Resources */,
@@ -2703,7 +2703,7 @@
 				342F79951DDD8BAE0022FF09 /* new_egg_seting.png in Resources */,
 				34DB5CE11DD4129F00C51823 /* ok.png in Resources */,
 				345AB3EC1DD9AEA400025EEE /* 开灯 点击效果.png in Resources */,
-				342F79921DDD873D0022FF09 /* 通话中.png in Resources */,
+				342F79921DDD873D0022FF09 /* incall.png in Resources */,
 				34DB5CCF1DD4129F00C51823 /* call_status_outgoing.png in Resources */,
 				34DB5CF61DD4129F00C51823 /* oldphone.wav in Resources */,
 				34FC41E51DD179F900A23A8F /* Assets.xcassets in Resources */,

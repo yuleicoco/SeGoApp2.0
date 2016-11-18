@@ -11,6 +11,7 @@
 #import "BindingViewController.h"
 #import "DeviceStats.h"
 #import "AFHttpClient+DeviceStats.h"
+#import "DeviceStats.h"
 
 
 
@@ -25,6 +26,8 @@
     UIButton * btn;
     // 添加按钮
     UIButton * btnAdd;
+    // 设备状态
+    NSString *str;
     
     
     
@@ -124,6 +127,12 @@
     [[AFHttpClient sharedAFHttpClient]DeviceStats: [AccountManager sharedAccountManager].loginModel.mid complete:^(BaseModel *model) {
         
         FuckLog(@"%@",model);
+        if ([model.retCode isEqualToString:@"0000"]) {
+            str = [NSString stringWithFormat:@"%@",model.retVal[@"status"]];
+            
+            [self ReshUI];
+        }
+        
         
     }];
     
@@ -186,6 +195,49 @@
     }
 }
 
+// 刷新UI
+- (void)ReshUI
+{
+    
+    
+    // 设备不存在线
+    if ([str isEqualToString:@"ds000"]) {
+        
+        [ImageBack setImage:[UIImage imageNamed:@"egg_nodevcie"]];
+        btnAdd.hidden = NO;
+        return;
+        
+    }else
+    {
+        btnAdd.hidden = YES;
+        
+        
+    }
+    // 在线
+    if ([str isEqualToString:@"ds001"]) {
+        [ImageBack setImage:[UIImage imageNamed:@"online"]];
+          return;
+    }
+    //离线
+    if ([str isEqualToString:@"ds002"]) {
+        [ImageBack setImage:[UIImage imageNamed:@"offline"]];
+          return;
+    }
+    //通话中
+    if ([str isEqualToString:@"ds003"]) {
+        [ImageBack setImage:[UIImage imageNamed:@"incall"]];
+          return;
+    }
+    // 正在上传文件
+    if ([str isEqualToString:@"ds004"]) {
+        [ImageBack setImage:[UIImage imageNamed:@"egg_up"]];
+          return;
+    }
+    
+}
+
+
+
 
 
 // 初始化界面
@@ -194,12 +246,12 @@
     [super  setupView];
     
     [self NodeviceImageUI];
-    // 背景图
-    ImageBack = [[UIImageView alloc]init];
+   
+                 
     // 300 150
     // 添加按钮
     btnAdd =[[UIButton alloc]init];
-    btnAdd.hidden = NO;
+    
     [btnAdd setImage:[UIImage imageNamed:@"egg_add"] forState:UIControlStateNormal];
    
     [btnAdd addTarget:self action:@selector(btn_add:) forControlEvents:UIControlEventTouchUpInside];
@@ -238,20 +290,39 @@
          
      }];
     
-       // 判断设备的状态
-    if (nil) {
+  
+    // 背景图
+    ImageBack = [UIImageView new];
+    [self.view addSubview:ImageBack];
+    
+    
+    if ([str isEqualToString:@"ds000"]) {
+        [ImageBack mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(self.view);
+            make.size.mas_equalTo(self.view);
+            make.top.left.right.equalTo(@0);
+            
+            
+        }];
+    }else
+        
+    {
+        
+        [ImageBack mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(self.view);
+            make.width.equalTo(self.view);
+            make.top.equalTo(self.view.mas_top).offset(100);
+            make.bottom.equalTo(self.view.mas_bottom).offset(-186);
+            
+    
+           
+        }];
+
         
     }
-    
-    [ImageBack setImage:[UIImage imageNamed:@"egg_nodevcie"]];
-    [self.view addSubview:ImageBack];
-    [ImageBack mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self.view);
-        make.size.mas_equalTo(self.view);
-        make.top.left.right.equalTo(@0);
-        
-        
-    }];
+   
+
+
     
      [self.view addSubview:btnAdd];
      [btnAdd  mas_makeConstraints:^(MASConstraintMaker *make) {
