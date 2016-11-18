@@ -12,7 +12,7 @@
 #import "DeviceStats.h"
 #import "AFHttpClient+DeviceStats.h"
 #import "DeviceStats.h"
-
+#import "AFHttpClient+VideoQuiltChoose.h"
 
 
 @interface EggViewController ()
@@ -28,6 +28,11 @@
     UIButton * btnAdd;
     // 设备状态
     NSString *str;
+    // 视频质量
+    NSString *typeStr;
+    UIButton * btnClean ;
+    UIButton * btnFluency;
+    
     
     
     
@@ -290,6 +295,10 @@
          
      }];
     
+    
+    
+    
+    
   
     // 背景图
     ImageBack = [UIImageView new];
@@ -309,10 +318,10 @@
     {
         
         [ImageBack mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.center.equalTo(self.view);
+            make.centerY.equalTo(self.view.mas_centerY);
             make.width.equalTo(self.view);
-            make.top.equalTo(self.view.mas_top).offset(100);
-            make.bottom.equalTo(self.view.mas_bottom).offset(-186);
+            make.top.equalTo(self.view.mas_top).offset(50);
+            make.bottom.equalTo(self.view.mas_bottom).offset(-220);
             
     
            
@@ -322,7 +331,115 @@
     }
    
 
+    // 画面质量
+    
+    UILabel * qualityLB =[UILabel new];
+    qualityLB.text = @"画面质量:";
+    qualityLB.font =[UIFont systemFontOfSize:18];
+    [self.view addSubview:qualityLB];
+    
+    
+    [qualityLB mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(90);
+        make.top.equalTo(ImageBack.mas_bottom).offset(44);
+        
+        
+    }];
+    
+    // 画面质量
 
+    UIButton * btnOpen =[UIButton new];
+    btnOpen.layer.cornerRadius = 4;
+    btnOpen.backgroundColor = GRAY_COLOR;
+    [btnOpen setTitle:@"开启互动" forState:UIControlStateNormal];
+    [btnOpen addTarget:self action:@selector(OpenTouch:) forControlEvents:UIControlEventTouchUpInside];
+    btnOpen.enabled = FALSE;
+    [self.view addSubview:btnOpen];
+    [btnOpen mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.height.equalTo(@45);
+        make.top.equalTo(qualityLB.mas_bottom).offset(43);
+        make.left.equalTo(self.view.mas_left).with.offset(18);
+        make.right.equalTo(self.view.mas_right).with.offset(-18);
+        
+    }];
+    
+    
+    
+     btnClean =[UIButton new];
+     btnFluency= [UIButton new];
+    btnClean.tag = 1001;
+    btnFluency.tag = 1002;
+    [btnClean setTitle:@"清晰" forState:UIControlStateNormal];
+    btnClean.layer.cornerRadius = 2;
+    btnClean.layer.borderWidth =0.6;
+    
+    [btnClean addTarget:self action:@selector(ChooseCleanbtn:) forControlEvents:UIControlEventTouchUpInside];
+    btnClean.titleLabel.font =[UIFont systemFontOfSize:15];
+    [btnFluency setTitle:@"流畅" forState:UIControlStateNormal];
+    btnFluency.layer.cornerRadius = 2;
+    btnFluency.layer.borderWidth =0.6;
+    [btnFluency addTarget:self action:@selector(ChooseBtn:) forControlEvents:UIControlEventTouchUpInside];
+    btnFluency.titleLabel.font =[UIFont systemFontOfSize:15];
+    
+    
+    // 这里还差一个条件 用户手动选择了
+    NSString * typeStr1 =  [Defaluts objectForKey:@"VC_Choose"];
+    NSString * typeStr2 =     [AccountManager sharedAccountManager].loginModel.resolution;
+    if ([AppUtil isBlankString:typeStr1]) {
+        
+        typeStr =typeStr2;
+        
+    }else
+    {
+        
+         typeStr =typeStr1;
+    }
+    
+    
+    if ([typeStr isEqualToString:@"r1"]) {
+        
+        // 流畅
+        btnFluency.selected =YES;
+        btnClean.selected = NO;
+        
+        
+    }else
+    {
+        btnFluency.selected =NO;
+        btnClean.selected = YES;
+        
+    }
+    
+    
+
+    [self colorChoose];
+    
+    
+    [self.view addSubview:btnClean];
+    [self.view addSubview:btnFluency];
+    
+    [btnClean mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(qualityLB.mas_centerY);
+        make.left.equalTo(qualityLB.mas_right).offset(15);
+        make.top.equalTo(ImageBack.mas_bottom).offset(40);
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(20);
+        
+        
+    }];
+    
+    [btnFluency mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.centerY.equalTo(qualityLB.mas_centerY);
+        make.left.equalTo(btnClean.mas_right).offset(-1);
+        make.top.equalTo(ImageBack.mas_bottom).offset(40);
+        make.width.mas_equalTo(60);
+        make.height.mas_equalTo(20);
+        
+    }];
+    
+    
     
      [self.view addSubview:btnAdd];
      [btnAdd  mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -330,7 +447,149 @@
         make.centerY.equalTo(self.view).offset(120);
         make.size.mas_equalTo(CGSizeMake(90, 60));
         make.left.equalTo(@150);
+         
     }];
+    
+    
+}
+
+- (void)colorChoose
+{
+    
+    // 只有在线的时候为可点
+    
+    if ([str isEqualToString:@"ds001"]) {
+        
+        if (btnClean.selected) {
+            btnClean.backgroundColor =GREEN_COLOR;
+            btnClean.layer.borderColor =GRAY_COLOR.CGColor;
+            [btnClean  setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            
+            btnFluency.backgroundColor =[UIColor whiteColor];
+            btnFluency.layer.borderColor =GRAY_COLOR.CGColor;
+            [btnFluency  setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        }else
+        {
+            
+            
+            btnFluency.backgroundColor =GREEN_COLOR;
+            btnFluency.layer.borderColor =GRAY_COLOR.CGColor;
+            [btnFluency  setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            
+            btnClean.backgroundColor =[UIColor whiteColor];
+            btnClean.layer.borderColor =GRAY_COLOR.CGColor;
+            [btnClean  setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            
+            
+        }
+        
+        
+    }else
+    {
+        
+        // 为灰色
+        
+        if (btnClean.selected) {
+            
+            btnClean.backgroundColor =GRAY_COLOR;
+            btnClean.layer.borderColor =GRAY_COLOR.CGColor;
+            btnFluency.backgroundColor =[UIColor whiteColor];
+            btnFluency.layer.borderColor =GRAY_COLOR.CGColor;
+            [btnClean  setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [btnFluency  setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        }else
+        {
+            
+            btnFluency.backgroundColor =GRAY_COLOR;
+            btnFluency.layer.borderColor =GRAY_COLOR.CGColor;
+            [btnFluency  setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            btnClean.backgroundColor =[UIColor whiteColor];
+            btnClean.layer.borderColor =GRAY_COLOR.CGColor;
+            
+            [btnClean  setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            
+        }
+        
+        
+        
+    }
+    
+}
+
+// 选择视频质量
+// 流畅
+- (void)ChooseBtn:(UIButton *)sender
+{
+   UIButton * btnF =  (UIButton *)[self.view viewWithTag:1001];
+    
+   
+    if (sender.selected) {
+    
+        btnF.selected = NO;
+        
+    }else
+    {
+        sender.selected = YES;
+        [self NetWorkUpChoose:@"r1"];
+        
+    }
+    
+    [self colorChoose];
+    
+    
+}
+
+// 清晰
+- (void)ChooseCleanbtn:(UIButton *)sender
+{
+    UIButton * btnCl =  (UIButton *)[self.view viewWithTag:1002];
+  
+    
+    if (sender.selected) {
+        btnCl.selected = NO;
+        
+        
+    }else
+    {
+        sender.selected = YES;
+        [self NetWorkUpChoose:@"r2"];
+        
+    }
+    
+    [self colorChoose];
+    
+    
+}
+
+- (void)NetWorkUpChoose:(NSString *)strQu
+{
+    
+    [[AFHttpClient sharedAFHttpClient]VideoQuiltChoose:[AccountManager sharedAccountManager].loginModel.mid vtype:strQu complete:^(BaseModel * model) {
+        
+        FuckLog(@"%@",model.retCode);
+        if ([model.retCode isEqualToString:@"0000"]) {
+            [Defaluts setValue:strQu forKey:@"VC_Choose"];
+            [Defaluts synchronize];
+            
+            
+            
+        }
+        
+    }];
+    
+    
+    
+
+    
+    
+}
+
+
+// 开启互动
+
+- (void)OpenTouch:(UIButton *)sender
+{
+    
     
     
 }

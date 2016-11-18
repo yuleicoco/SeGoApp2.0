@@ -82,6 +82,7 @@
 		3461F55F1DD2D00100E56298 /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F55E1DD2D00100E56298 /* AppUtil.m */; };
 		34884C861DD4678400245C24 /* AFHttpClient+TestNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */; };
 		34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34884C881DD5742200245C24 /* CheckDeviceModel.m */; };
+		349C0BF71DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 349C0BF61DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m */; };
 		34ACCF3A1DDC510000AE2B98 /* xiala@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF381DDC510000AE2B98 /* xiala@2x.png */; };
 		34ACCF3B1DDC510000AE2B98 /* xiala@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF391DDC510000AE2B98 /* xiala@3x.png */; };
 		34ACCF441DDC5E3600AE2B98 /* loginbiyan.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF3C1DDC5E3600AE2B98 /* loginbiyan.png */; };
@@ -95,6 +96,7 @@
 		34ACCF4E1DDC5E4400AE2B98 /* CompletionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ACCF4D1DDC5E4400AE2B98 /* CompletionViewController.m */; };
 		34ACCF511DDC5E5000AE2B98 /* AFHttpClient+Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ACCF501DDC5E5000AE2B98 /* AFHttpClient+Account.m */; };
 		34ACCF541DDD521900AE2B98 /* SetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34ACCF531DDD521900AE2B98 /* SetViewController.m */; };
+		34B8B3441DDE9AE800394833 /* loginback.png in Resources */ = {isa = PBXBuildFile; fileRef = 34B8B3431DDE9AE800394833 /* loginback.png */; };
 		34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D31DD1CAF700687606 /* AppDelegate+Sephone.m */; };
 		34C495D71DD1CB2900687606 /* AppDelegate+Launcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D61DD1CB2900687606 /* AppDelegate+Launcher.m */; };
 		34C495DA1DD1CB3900687606 /* AppDelegate+ShareSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C495D91DD1CB3900687606 /* AppDelegate+ShareSDK.m */; };
@@ -340,6 +342,8 @@
 		34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+TestNetWork.m"; sourceTree = "<group>"; };
 		34884C871DD5742200245C24 /* CheckDeviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckDeviceModel.h; sourceTree = "<group>"; };
 		34884C881DD5742200245C24 /* CheckDeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckDeviceModel.m; sourceTree = "<group>"; };
+		349C0BF51DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+VideoQuiltChoose.h"; sourceTree = "<group>"; };
+		349C0BF61DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+VideoQuiltChoose.m"; sourceTree = "<group>"; };
 		34ACCF381DDC510000AE2B98 /* xiala@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xiala@2x.png"; sourceTree = "<group>"; };
 		34ACCF391DDC510000AE2B98 /* xiala@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xiala@3x.png"; sourceTree = "<group>"; };
 		34ACCF3C1DDC5E3600AE2B98 /* loginbiyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbiyan.png; sourceTree = "<group>"; };
@@ -356,6 +360,7 @@
 		34ACCF501DDC5E5000AE2B98 /* AFHttpClient+Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Account.m"; sourceTree = "<group>"; };
 		34ACCF521DDD521900AE2B98 /* SetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetViewController.h; sourceTree = "<group>"; };
 		34ACCF531DDD521900AE2B98 /* SetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetViewController.m; sourceTree = "<group>"; };
+		34B8B3431DDE9AE800394833 /* loginback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginback.png; sourceTree = "<group>"; };
 		34C495C81DD1C0E100687606 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		34C495D21DD1CAF700687606 /* AppDelegate+Sephone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Sephone.h"; sourceTree = "<group>"; };
 		34C495D31DD1CAF700687606 /* AppDelegate+Sephone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Sephone.m"; sourceTree = "<group>"; };
@@ -2150,6 +2155,7 @@
 		34E6655A1DD1A50800FA41E8 /* login */ = {
 			isa = PBXGroup;
 			children = (
+				34B8B3431DDE9AE800394833 /* loginback.png */,
 				34ACCF3C1DDC5E3600AE2B98 /* loginbiyan.png */,
 				34ACCF3D1DDC5E3600AE2B98 /* loginyan.png */,
 				34ACCF3E1DDC5E3600AE2B98 /* numbertu.png */,
@@ -2274,6 +2280,8 @@
 				342F79871DDD7C640022FF09 /* AFHttpClient+DeviceStats.m */,
 				342F79981DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.h */,
 				342F79991DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.m */,
+				349C0BF51DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.h */,
+				349C0BF61DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2624,6 +2632,7 @@
 				34DB5CE01DD4129F00C51823 /* notok.png in Resources */,
 				345AB3EF1DD9AEA400025EEE /* 拉出2.png in Resources */,
 				34DB5CD71DD4129F00C51823 /* contact_starred.png in Resources */,
+				34B8B3441DDE9AE800394833 /* loginback.png in Resources */,
 				34DB5C9D1DD4129E00C51823 /* msg.caf in Resources */,
 				345AB3F11DD9AEA400025EEE /* 投食 点击效果.png in Resources */,
 				34DB5CD91DD4129F00C51823 /* dialer-orange.png in Resources */,
@@ -2802,6 +2811,7 @@
 				34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */,
 				3461F55F1DD2D00100E56298 /* AppUtil.m in Sources */,
 				34ACCF4E1DDC5E4400AE2B98 /* CompletionViewController.m in Sources */,
+				349C0BF71DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m in Sources */,
 				3461F52F1DD2BB0A00E56298 /* HomeViewController.m in Sources */,
 				3436EA651DDBFF5D005659B7 /* BePeripheralViewController.m in Sources */,
 				34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */,
