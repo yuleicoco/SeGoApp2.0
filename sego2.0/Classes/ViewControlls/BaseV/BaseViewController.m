@@ -155,7 +155,7 @@
 }
 
 - (void)doLeftButtonTouch{
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 - (void)doRightButtonTouch{

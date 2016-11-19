@@ -18,6 +18,8 @@
 @property (nonatomic,strong)UITextField * passwordTextfield;
 @property (nonatomic,strong)UITextField * surepasswordTextfield;
 
+@property (nonatomic,copy)NSString * achieveString;
+@property (nonatomic,copy)NSString * vercationNumber;
 
 @end
 
@@ -185,11 +187,10 @@
     _registBtn = [[UIButton alloc]init];
     _registBtn.backgroundColor = GREEN_COLOR;
     _registBtn.layer.cornerRadius = 5;
-    
     [_registBtn setTitle:@"注 册" forState:UIControlStateNormal];
     [_registBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     _registBtn.titleLabel.font = [UIFont systemFontOfSize:20];
-    
+    [_registBtn addTarget:self action:@selector(regiestButtontouch) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_registBtn];
     [_registBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(surepasswordView.mas_bottom).offset(25);
@@ -233,12 +234,60 @@
 
 }
 
+-(void)regiestButtontouch{
+    if ([AppUtil isBlankString:_numberTextfield.text]) {
+          [[AppUtil appTopViewController] showHint:@"请输入账号"];
+        return;
+    }
+    if (![AppUtil isValidateMobile:_numberTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入正确格式的手机号码"];
+        return;
+    }
+    if ([AppUtil isBlankString:_vercationTextfield.text]) {
+          [[AppUtil appTopViewController] showHint:@"请输入验证码"];
+        return;
+    }
+    if ([AppUtil isBlankString:_passwordTextfield.text]) {
+          [[AppUtil appTopViewController] showHint:@"请输入密码"];
+        return;
+    }
+    if ([AppUtil isBlankString:_surepasswordTextfield.text]) {
+          [[AppUtil appTopViewController] showHint:@"请再次输入密码"];
+        return;
+    }
+    if (![_passwordTextfield.text isEqualToString:_surepasswordTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"两次输入密码不一致"];
+        return;
+    }
+    
+    if (![_numberTextfield.text isEqualToString:_achieveString]) {
+        [[AppUtil appTopViewController] showHint:@"请输入正确的手机号码"];
+        return;
+    }
+    
+    if (![_vercationTextfield.text isEqualToString:_vercationNumber]) {
+           [[AppUtil appTopViewController] showHint:@"请输入正确的验证码"];
+        return;
+    }
+
+    
+    
+    
+     [self showHudInView:self.view hint:@"正在注册..."];
+    [[AFHttpClient sharedAFHttpClient]regiestWithPhone:_numberTextfield.text password:_passwordTextfield.text complete:^(BaseModel *model) {
+        
+         [self hideHud];
+         [[AppUtil appTopViewController] showHint:model.retDesc];
+    }];
+    
+    
+    
+    
+}
 -(void)xieyibuttontouch{
     FuckLog(@"hehhhh");
     GuideViewController * guideVc = [[GuideViewController alloc]init];
     [self.navigationController pushViewController:guideVc animated:NO];
-
-
 }
 
 -(void)vercationbuttontouch{
@@ -259,8 +308,12 @@
     [self timeout];
     
     [[AFHttpClient sharedAFHttpClient]getCheckWithPhone:_numberTextfield.text type:@"register" complete:^(BaseModel *model) {
-        [[AppUtil appTopViewController] showHint:model.retDesc];
-        
+      
+        if (model) {
+            _achieveString = model.totalrecords;
+            _vercationNumber = model.content;
+        }
+      [[AppUtil appTopViewController] showHint:model.retDesc];
     }];
     
 }
@@ -297,8 +350,6 @@
     dispatch_resume(_timer);
     
 }
-
-
 
 
 @end

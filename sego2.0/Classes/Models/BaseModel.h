@@ -22,6 +22,6 @@
 
 @property (nonatomic, strong) NSArray<Optional> *list;
 
-@property (nonatomic, strong) NSString<Optional> *totalrecords;
+@property (nonatomic, copy) NSString<Optional> *totalrecords;
 
 @end

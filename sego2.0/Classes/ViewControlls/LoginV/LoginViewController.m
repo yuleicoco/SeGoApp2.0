@@ -152,8 +152,6 @@
          make.top.equalTo(_loginBtn.mas_bottom).offset(30);
     }];
    
-    
-    
     UILabel * forgetPasswordlabel = [[UILabel alloc]init];
     forgetPasswordlabel.text = @"忘记密码?";
     forgetPasswordlabel.textColor = [UIColor whiteColor];
@@ -164,7 +162,6 @@
          make.top.equalTo(_loginBtn.mas_bottom).offset(30);
     
     }];
-    
     
     UIButton * regiestBtn = [[UIButton alloc]init];
     [self.view addSubview:regiestBtn];
@@ -288,11 +285,11 @@
     [self showHudInView:self.view hint:@"正在登录..."];
     [[AFHttpClient sharedAFHttpClient]loginWithAccounynumber:_numberTextfield.text password:_passwordTextfield.text complete:^(BaseModel * model) {
         if (model) {
-            
             LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
             [[AccountManager sharedAccountManager]login:loginModel];
               [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
         }
+         [self hideHud];
     }];
 
 
