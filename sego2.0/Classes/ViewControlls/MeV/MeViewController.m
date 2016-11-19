@@ -7,7 +7,9 @@
 //
 
 #import "MeViewController.h"
-
+#import "InformationViewController.h"
+#import "UIImageView+WebCache.h"
+#import "UIImage-Extensions.h"
 @interface MeViewController ()
 
 @end
@@ -18,12 +20,12 @@
     [super viewDidLoad];
    [self setNavTitle:@"个人中心"];
     
-    [self showBarButton:NAV_RIGHT title:@"设置" fontColor:GREEN_COLOR];
+  //  [self showBarButton:NAV_RIGHT title:@"设置" fontColor:GREEN_COLOR];
     
 }
 -(void)setupView{
     [super setupView];
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = GRAY_COLOR;
     UIImageView * topImage = [[UIImageView alloc]init];
     topImage.backgroundColor= [UIColor redColor];
     [self.view addSubview:topImage];
@@ -36,8 +38,12 @@
     }];
     
     UIButton * headBtn = [[UIButton alloc]init];
-    headBtn.backgroundColor = [UIColor blackColor];
+  //  headBtn.backgroundColor = [UIColor blackColor];
+    UIImage * btnImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[AccountManager sharedAccountManager].loginModel.headportrait]]];
+    [headBtn setImage:btnImage forState:UIControlStateNormal];
     headBtn.layer.cornerRadius = 40;
+    [headBtn.layer setMasksToBounds:YES];
+    [headBtn addTarget:self action:@selector(headbuttonTouch) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:headBtn];
     [headBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(headBtn.superview).offset(14);
@@ -49,7 +55,7 @@
     
     UILabel * nameLabel = [[UILabel alloc]init];
     nameLabel.textColor = [UIColor whiteColor];
-    nameLabel.text = @"陈大侠";
+    nameLabel.text = [AccountManager sharedAccountManager].loginModel.nickname;
     nameLabel.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:nameLabel];
     [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -136,6 +142,71 @@
     
     }];
     
+    UIImageView * doumaImage = [[UIImageView alloc]init];
+    doumaImage.image = [UIImage imageNamed:@"douma.png"];
+    [self.view addSubview:doumaImage];
+    [doumaImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(doumaImage.superview).offset(13);
+        make.top.equalTo(firstView.mas_top).offset(20);
+        make.bottom.equalTo(centerLabel.mas_top).offset(-20);
+        make.width.mas_equalTo(21);
+        
+        
+    }];
+    
+    UILabel * doumaLabel = [[UILabel alloc]init];
+    doumaLabel.text = @"逗码";
+    doumaLabel.textColor = [UIColor blackColor];
+    doumaLabel.font = [UIFont systemFontOfSize:18];
+    [self.view addSubview:doumaLabel];
+    [doumaLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(doumaImage.mas_right).offset(16);
+        make.centerY.equalTo(doumaImage.mas_centerY);
+        
+    }];
+    
+    UIButton * doumaBtn = [[UIButton alloc]init];
+    doumaBtn.backgroundColor = [UIColor clearColor];
+    [doumaBtn addTarget:self action:@selector(doumabuttonTouch) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:doumaBtn];
+    [doumaBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(firstView.mas_top);
+        make.bottom.equalTo(centerLabel.mas_top);
+        make.left.equalTo(doumaBtn.superview);
+        make.right.equalTo(doumaBtn.superview);
+    }];
+    
+    UIImageView * quanxianImage = [[UIImageView alloc]init];
+    quanxianImage.image=  [UIImage imageNamed:@"quanxian.png"];
+    [self.view addSubview:quanxianImage];
+    [quanxianImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(quanxianImage.superview).offset(13);
+        make.top.equalTo(centerLabel.mas_bottom).offset(19);
+        make.bottom.equalTo(firstView.mas_bottom).offset(-19);
+        make.width.mas_offset(22);
+    }];
+    
+
+    UILabel * quanxianLabel = [[UILabel alloc]init];
+    quanxianLabel.text = @"权限设置";
+    quanxianLabel.textColor = [UIColor blackColor];
+    quanxianLabel.font = [UIFont systemFontOfSize:18];
+    [self.view addSubview:quanxianLabel];
+    [quanxianLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(quanxianImage.mas_right).offset(16);
+        make.centerY.equalTo(quanxianImage.mas_centerY);
+    }];
+    UIButton * quanxianBtn = [[UIButton alloc]init];
+    quanxianBtn.backgroundColor = [UIColor clearColor];
+    [quanxianBtn addTarget:self action:@selector(quanxianbuttonTouch) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:quanxianBtn];
+    [quanxianBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(centerLabel.mas_bottom);
+        make.bottom.equalTo(firstView.mas_bottom);
+        make.left.equalTo(doumaBtn.superview);
+        make.right.equalTo(doumaBtn.superview);
+    }];
+    
     //第二坨
     UIView * secoendView = [[UIView alloc]init];
     secoendView.backgroundColor = [UIColor whiteColor];
@@ -158,6 +229,74 @@
         make.height.mas_equalTo(0.5);
     
     }];
+    
+    UIImageView * exchangeImage = [[UIImageView alloc]init];
+    exchangeImage.image = [UIImage imageNamed:@"exchangepassword.png"];
+    [self.view addSubview:exchangeImage];
+    [exchangeImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(exchangeImage.superview).offset(12);
+        make.top.equalTo(secoendView.mas_top).offset(19);
+        make.bottom.equalTo(centerlabel2.mas_top).offset(-19);
+        make.width.mas_equalTo(22);
+        
+    }];
+    
+    UILabel * exchangeLabel = [[UILabel alloc]init];
+    exchangeLabel.text = @"修改密码";
+    exchangeLabel.textColor = [UIColor blackColor];
+    exchangeLabel.font = [UIFont systemFontOfSize:18];
+    [self.view addSubview:exchangeLabel];
+    [exchangeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(exchangeImage.mas_right).offset(16);
+        make.centerY.equalTo(exchangeImage.mas_centerY);
+    }];
+    
+    UIButton * exchangBtn = [[UIButton alloc]init];
+    exchangBtn.backgroundColor = [UIColor clearColor];
+    [exchangBtn addTarget:self action:@selector(exchangebuttonTouch) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:exchangBtn];
+    [exchangBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(secoendView.mas_top);
+        make.bottom.equalTo(centerlabel2.mas_top);
+        make.left.equalTo(doumaBtn.superview);
+        make.right.equalTo(doumaBtn.superview);
+    }];
+    
+    UIImageView * aboutImage = [[UIImageView alloc]init];
+    aboutImage.image = [UIImage imageNamed:@"about.png"];
+    [self.view addSubview:aboutImage];
+    [aboutImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(aboutImage.superview).offset(13);
+        make.top.equalTo(centerlabel2.mas_bottom).offset(20);
+        make.bottom.equalTo(secoendView.mas_bottom).offset(-19);
+        make.width.mas_equalTo(22);
+    }];
+    
+    UILabel * aboutLabel = [[UILabel alloc]init];
+    aboutLabel.text = @"关于";
+    aboutLabel.textColor = [UIColor blackColor];
+    aboutLabel.font = [UIFont systemFontOfSize:18];
+    [self.view addSubview:aboutLabel];
+    [aboutLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(aboutImage.mas_right).offset(16);
+        make.centerY.equalTo(aboutImage.mas_centerY);
+        
+    }];
+    
+    
+    
+    UIButton * aboutBtn = [[UIButton alloc]init];
+    aboutBtn.backgroundColor = [UIColor clearColor];
+    [aboutBtn addTarget:self action:@selector(aboutbuttonTouch) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:aboutBtn];
+    [aboutBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(centerlabel2.mas_bottom);
+        make.bottom.equalTo(secoendView.mas_bottom);
+        make.left.equalTo(doumaBtn.superview);
+        make.right.equalTo(doumaBtn.superview);
+    }];
+
+    
     
     UIView * lastView = [[UIView alloc]init];
     lastView.backgroundColor = [UIColor whiteColor];
@@ -192,6 +331,43 @@
     }];
 }
 
+
+-(void)headbuttonTouch{
+    FuckLog(@"点击头像");
+    InformationViewController * inforVc =[[InformationViewController alloc]init];
+    [self.navigationController pushViewController:inforVc animated:NO];
+    
+}
+
+-(void)doumabuttonTouch{
+    FuckLog(@"逗码");
+
+}
+
+-(void)quanxianbuttonTouch{
+    FuckLog(@"权限设置");
+    
+}
+-(void)exchangebuttonTouch{
+    FuckLog(@"修改密码");
+    
+}
+
+-(void)aboutbuttonTouch{
+    FuckLog(@"关于");
+    
+}
+
+
+
+
+
+
+
+
+
+
+
 -(void)loginOutButtontouch{
 
     FuckLog(@"退出登录");
@@ -220,6 +396,16 @@
     [self presentViewController:alert animated:YES completion:nil];
 
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -248,6 +248,13 @@
 		34FC41E31DD179F900A23A8F /* sego2_0.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41E11DD179F900A23A8F /* sego2_0.xcdatamodeld */; };
 		34FC41E51DD179F900A23A8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34FC41E41DD179F900A23A8F /* Assets.xcassets */; };
 		34FC41E81DD179F900A23A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34FC41E61DD179F900A23A8F /* LaunchScreen.storyboard */; };
+		7D38B21E1DDFF59A00404D05 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21A1DDFF59A00404D05 /* about.png */; };
+		7D38B21F1DDFF59A00404D05 /* douma.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21B1DDFF59A00404D05 /* douma.png */; };
+		7D38B2201DDFF59A00404D05 /* exchangepassword.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21C1DDFF59A00404D05 /* exchangepassword.png */; };
+		7D38B2211DDFF59A00404D05 /* quanxian.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21D1DDFF59A00404D05 /* quanxian.png */; };
+		7D38B2281DE02B9C00404D05 /* BaseTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D38B2271DE02B9C00404D05 /* BaseTabViewController.m */; };
+		7D38B22B1DE0310100404D05 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D38B22A1DE0310100404D05 /* InformationViewController.m */; };
+		7D38B22F1DE047FA00404D05 /* InformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D38B22E1DE047FA00404D05 /* InformationTableViewCell.m */; };
 		7D5255A51DDAE306000EB0B0 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5255A41DDAE306000EB0B0 /* GuideViewController.m */; };
 		7D626A401DD95636002C0F8B /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D626A3F1DD95636002C0F8B /* RegistViewController.m */; };
 /* End PBXBuildFile section */
@@ -964,6 +971,16 @@
 		34FC41E41DD179F900A23A8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34FC41E71DD179F900A23A8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34FC41E91DD179F900A23A8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D38B21A1DDFF59A00404D05 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
+		7D38B21B1DDFF59A00404D05 /* douma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = douma.png; sourceTree = "<group>"; };
+		7D38B21C1DDFF59A00404D05 /* exchangepassword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exchangepassword.png; sourceTree = "<group>"; };
+		7D38B21D1DDFF59A00404D05 /* quanxian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quanxian.png; sourceTree = "<group>"; };
+		7D38B2261DE02B9C00404D05 /* BaseTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabViewController.h; sourceTree = "<group>"; };
+		7D38B2271DE02B9C00404D05 /* BaseTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabViewController.m; sourceTree = "<group>"; };
+		7D38B2291DE0310100404D05 /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
+		7D38B22A1DE0310100404D05 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
+		7D38B22D1DE047FA00404D05 /* InformationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationTableViewCell.h; sourceTree = "<group>"; };
+		7D38B22E1DE047FA00404D05 /* InformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationTableViewCell.m; sourceTree = "<group>"; };
 		7D5255A31DDAE306000EB0B0 /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
 		7D5255A41DDAE306000EB0B0 /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		7D626A3E1DD95636002C0F8B /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
@@ -2203,6 +2220,10 @@
 		34E6655D1DD1A57000FA41E8 /* me */ = {
 			isa = PBXGroup;
 			children = (
+				7D38B21A1DDFF59A00404D05 /* about.png */,
+				7D38B21B1DDFF59A00404D05 /* douma.png */,
+				7D38B21C1DDFF59A00404D05 /* exchangepassword.png */,
+				7D38B21D1DDFF59A00404D05 /* quanxian.png */,
 			);
 			path = me;
 			sourceTree = "<group>";
@@ -2424,6 +2445,10 @@
 		34E665711DD1A81000FA41E8 /* MeV */ = {
 			isa = PBXGroup;
 			children = (
+				7D38B2221DE012CF00404D05 /* About */,
+				7D38B2231DE012CF00404D05 /* Funnycode */,
+				7D38B2241DE012CF00404D05 /* Head */,
+				7D38B2251DE012CF00404D05 /* Permission */,
 				3461F5421DD2CA0A00E56298 /* MeViewController.h */,
 				3461F5431DD2CA0A00E56298 /* MeViewController.m */,
 			);
@@ -2448,6 +2473,8 @@
 			children = (
 				34C496041DD1D21700687606 /* BaseViewController.h */,
 				34C496051DD1D21700687606 /* BaseViewController.m */,
+				7D38B2261DE02B9C00404D05 /* BaseTabViewController.h */,
+				7D38B2271DE02B9C00404D05 /* BaseTabViewController.m */,
 			);
 			path = BaseV;
 			sourceTree = "<group>";
@@ -2503,6 +2530,46 @@
 				34C495C81DD1C0E100687606 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7D38B2221DE012CF00404D05 /* About */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		7D38B2231DE012CF00404D05 /* Funnycode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Funnycode;
+			sourceTree = "<group>";
+		};
+		7D38B2241DE012CF00404D05 /* Head */ = {
+			isa = PBXGroup;
+			children = (
+				7D38B22C1DE047C600404D05 /* Views */,
+				7D38B2291DE0310100404D05 /* InformationViewController.h */,
+				7D38B22A1DE0310100404D05 /* InformationViewController.m */,
+			);
+			path = Head;
+			sourceTree = "<group>";
+		};
+		7D38B2251DE012CF00404D05 /* Permission */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Permission;
+			sourceTree = "<group>";
+		};
+		7D38B22C1DE047C600404D05 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7D38B22D1DE047FA00404D05 /* InformationTableViewCell.h */,
+				7D38B22E1DE047FA00404D05 /* InformationTableViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7D626A3B1DD955AC002C0F8B /* Completionv */ = {
@@ -2638,6 +2705,7 @@
 				34DB5CE01DD4129F00C51823 /* notok.png in Resources */,
 				345AB3EF1DD9AEA400025EEE /* 拉出2.png in Resources */,
 				34DB5CD71DD4129F00C51823 /* contact_starred.png in Resources */,
+				7D38B2211DDFF59A00404D05 /* quanxian.png in Resources */,
 				34B8B3441DDE9AE800394833 /* loginback.png in Resources */,
 				34DB5C9D1DD4129E00C51823 /* msg.caf in Resources */,
 				345AB3F11DD9AEA400025EEE /* 投食 点击效果.png in Resources */,
@@ -2701,8 +2769,10 @@
 				34DB5C9C1DD4129E00C51823 /* hold.wav in Resources */,
 				342F79911DDD873D0022FF09 /* egg_up.png in Resources */,
 				34DB5CCD1DD4129F00C51823 /* call.png in Resources */,
+				7D38B21F1DDFF59A00404D05 /* douma.png in Resources */,
 				345AB41B1DD9AEB900025EEE /* 上下.png in Resources */,
 				34DB5CD11DD4129F00C51823 /* chat_message_delivered.png in Resources */,
+				7D38B2201DDFF59A00404D05 /* exchangepassword.png in Resources */,
 				34DB5CF21DD4129F00C51823 /* ringback.wav in Resources */,
 				34DB5CED1DD4129F00C51823 /* stopcall-small.png in Resources */,
 				34DB5CA71DD4129E00C51823 /* sephonerc-factory~ipad in Resources */,
@@ -2722,6 +2792,7 @@
 				34DB5CF61DD4129F00C51823 /* oldphone.wav in Resources */,
 				349C0BFD1DDF073100834791 /* egg_ prompt.png in Resources */,
 				34FC41E51DD179F900A23A8F /* Assets.xcassets in Resources */,
+				7D38B21E1DDFF59A00404D05 /* about.png in Resources */,
 				34DB5CF41DD4129F00C51823 /* oldphone-mono-30s.caf in Resources */,
 				345AB3ED1DD9AEA400025EEE /* 开灯.png in Resources */,
 				34FC41E01DD179F900A23A8F /* Main.storyboard in Resources */,
@@ -2816,9 +2887,11 @@
 				3436EA611DDBFE0B005659B7 /* Reachability.m in Sources */,
 				34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */,
 				3461F55F1DD2D00100E56298 /* AppUtil.m in Sources */,
+				7D38B22B1DE0310100404D05 /* InformationViewController.m in Sources */,
 				34ACCF4E1DDC5E4400AE2B98 /* CompletionViewController.m in Sources */,
 				349C0BF71DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m in Sources */,
 				3461F52F1DD2BB0A00E56298 /* HomeViewController.m in Sources */,
+				7D38B22F1DE047FA00404D05 /* InformationTableViewCell.m in Sources */,
 				3436EA651DDBFF5D005659B7 /* BePeripheralViewController.m in Sources */,
 				34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */,
 				34FC41DA1DD179F900A23A8F /* AppDelegate.m in Sources */,
@@ -2847,6 +2920,7 @@
 				34ACCF541DDD521900AE2B98 /* SetViewController.m in Sources */,
 				34C495EA1DD1CD5400687606 /* UIActionSheet+Blocks.m in Sources */,
 				3461F5351DD2BB2B00E56298 /* FoundViewController.m in Sources */,
+				7D38B2281DE02B9C00404D05 /* BaseTabViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
