@@ -240,6 +240,9 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     
         if ([model.retCode isEqualToString:@"0000"]) {
             [self showWarningTip:@"绑定成功"];
+            [Defaluts setObject:deviceTF.text forKey:@"DeviceNum"];
+            [Defaluts synchronize];
+            
             WifiViewController * wifiVC =[[WifiViewController alloc]init];
             wifiVC.strDevice=deviceTF.text;
             [self.navigationController pushViewController:wifiVC animated:YES];

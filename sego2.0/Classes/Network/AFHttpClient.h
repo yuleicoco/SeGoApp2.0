@@ -11,6 +11,8 @@
 
 //共用url字段
 #define BASE_URL    @"http://180.97.80.227:8082/"
+#define BASE_URL_Test              @"http://180.97.81.213:16202/sego2/"
+
 
 @interface AFHttpClient : AFHTTPRequestOperationManager
 

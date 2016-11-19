@@ -7,6 +7,7 @@
 //
 
 #import "AFHttpClient+DeviceStats.h"
+#import "DeviceStats.h"
 
 @implementation AFHttpClient (DeviceStats)
 
@@ -18,8 +19,8 @@
     parms[@"mid"] = mid;
     [self POST:@"clientAction.do?" parameters:parms result:^(BaseModel * model) {
         
-        //  model.list = [CheckDeviceModel arrayOfModelsFromDictionaries:model.list];
-        
+          model.list = [DeviceStats arrayOfModelsFromDictionaries:model.list];
+
                 if (model) {
                     completeBlock(model);
                 }
