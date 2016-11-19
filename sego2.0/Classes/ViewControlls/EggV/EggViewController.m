@@ -14,6 +14,8 @@
 #import "DeviceStats.h"
 #import "AFHttpClient+VideoQuiltChoose.h"
 #import "AFHttpClient+DeviceUseMember.h"
+#import "WifiViewController.h"
+
 
 
 @interface EggViewController ()
@@ -31,9 +33,21 @@
     NSString *str;
     // 视频质量
     NSString *typeStr;
+    //清晰按钮
     UIButton * btnClean ;
+    // 流畅按钮
     UIButton * btnFluency;
+    // 开启互动按钮
     UIButton * btnOpen;
+    // 背景图
+    UIImageView * setImage;
+    // 画面质量
+    UILabel * qualityLB;
+    // btn数组
+    NSArray * arrBtn;
+    
+    
+    
     
     
     
@@ -53,12 +67,16 @@
     // sephone
   //  [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
     
-   // self.view.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    
     
 }
 
+ -(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    FuckLog(@"pop");
+    
+    
+}
 
 
 // sephone的通知
@@ -68,9 +86,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(callUpdate:) name:kSephoneCallUpdate object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registrationUpdate:) name:kSephoneRegistrationUpdate object:nil];
     
-    [self checkWifi];
-    [self checkDeviceStats];
-    
+     [self checkDeviceStats];
+   //  [self checkWifi];
+
     
     
 }
@@ -100,7 +118,7 @@
     if ([[Defaluts objectForKey:@"succfulValue"] isEqualToString:@"ok"]) {
         btn.hidden = NO;
         viewGuide.hidden = NO;
-        [btnAdd removeFromSuperview];
+        btnAdd.hidden = YES;
         [Defaluts removeObjectForKey:@"succfulValue"];
         [Defaluts synchronize];
         
@@ -119,9 +137,17 @@
         FuckLog(@"%@",model);
         if ([model.retCode isEqualToString:@"0000"]) {
             str = [NSString stringWithFormat:@"%@",model.retVal[@"status"]];
+            [self updateviewMethod];
+        
+        }// 没有设备
+        else if ([model.totalrecords isEqualToString:@"0"])
+        {
+            str = [NSString stringWithFormat:@"%@",@"ds000"];
+            [self updateviewMethod];
             
-            [self ReshUI];
         }
+        
+        [self ReshUI];
         
         
     }];
@@ -196,11 +222,14 @@
         [ImageBack setImage:[UIImage imageNamed:@"egg_nodevcie"]];
         btnAdd.hidden = NO;
         btnOpen.hidden = YES;
+        [self hideSetTitle:YES];
         return;
         
     }else
     {
         btnAdd.hidden = YES;
+        [self hideSetTitle:NO];
+        setImage.hidden = NO;
         
         
     }
@@ -212,7 +241,8 @@
             btnOpen.backgroundColor = GREEN_COLOR;
             btnOpen.enabled = TRUE;
             btnOpen.hidden = NO;
-            
+            setImage.hidden = NO;
+            [self hideSetTitle:NO];
       
 
         
@@ -241,32 +271,44 @@
 }
 
 
+- (void)hideSetTitle:(BOOL)hide;
+
+{
+    
+    [self showBarButton:NAV_RIGHT title:@"设置" fontColor:GREEN_COLOR hide:hide];
+    
+}
+
+
 - (void)openGray
 {
     
     btnOpen.backgroundColor = GRAY_COLOR;
     btnOpen.hidden = NO;
     btnOpen.enabled = FALSE;
+    setImage.hidden = NO;
+
+    [self hideSetTitle:NO];
     
 }
 
+
+
+// 数据
+- (void)setupData
+{
+    [super setupData];
+    
+    
+    
+}
 
 
 // 初始化界面
 - (void)setupView
 {
     [super  setupView];
-    
-    [self NodeviceImageUI];
    
-                 
-    // 300 150
-    // 添加按钮
-    btnAdd =[[UIButton alloc]init];
-    
-    [btnAdd setImage:[UIImage imageNamed:@"egg_add"] forState:UIControlStateNormal];
-   
-    [btnAdd addTarget:self action:@selector(btn_add:) forControlEvents:UIControlEventTouchUpInside];
     
     
     // 指导界面
@@ -274,14 +316,12 @@
     viewGuide.image =[UIImage imageNamed:@"setb"];
     viewGuide.userInteractionEnabled = YES;
     viewGuide.hidden = YES;
-    
-  //  viewGuide.cli
+
     [ApplicationDelegate.window addSubview:viewGuide];
     [viewGuide mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.centerY.equalTo(ApplicationDelegate.window.mas_centerY);
         make.size.mas_equalTo(ApplicationDelegate.window);
-      //  make.top.equalTo(@20);
         
     }];
     
@@ -292,7 +332,7 @@
     
     [viewGuide addSubview:btn];
     
-     [btn mas_makeConstraints:^(MASConstraintMaker *make) {
+    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
          make.left.equalTo(ApplicationDelegate.window).offset(191);
          make.right.equalTo(ApplicationDelegate.window).offset(-79);
          make.top.equalTo(@160);
@@ -303,78 +343,68 @@
      }];
     
     
+    [self test];
     
     
     
   
+   
+    
+    
+   // 手势
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handletapPressGesture:)];
+    [self.view addGestureRecognizer:tapGesture];
+    
+    
+    
+    
+    
+}
+
+- (void)test
+{
+    
     // 背景图
+    
+    [ImageBack removeFromSuperview];
     ImageBack = [UIImageView new];
+  
     [self.view addSubview:ImageBack];
     
     
-    if ([str isEqualToString:@"ds000"]) {
-        [ImageBack mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.center.equalTo(self.view);
-            make.size.mas_equalTo(self.view);
-            make.top.left.right.equalTo(@0);
-            
-            
-        }];
-    }else
-        
-    {
-        
-        [ImageBack mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.view.mas_centerY);
-            make.width.equalTo(self.view);
-            make.top.equalTo(self.view.mas_top).offset(50);
-            make.bottom.equalTo(self.view.mas_bottom).offset(-220);
-            
+    // 添加按钮
+    btnAdd =[[UIButton alloc]init];
     
-           
-        }];
-
-        
-    }
-   
-
-    // 画面质量
+    [btnAdd setImage:[UIImage imageNamed:@"egg_add"] forState:UIControlStateNormal];
     
-    UILabel * qualityLB =[UILabel new];
+    [btnAdd addTarget:self action:@selector(btn_add:) forControlEvents:UIControlEventTouchUpInside];
+    
+    // 画面质量文字
+    qualityLB =[UILabel new];
+    btnOpen =[UIButton new];
+    btnClean =[UIButton new];
+    btnFluency= [UIButton new];
+    setImage =[UIImageView new];
+    UIButton * wifiBtn =[UIButton new];
+    UIButton * foodBtn =[UIButton new];
+    UIButton * bdinBtn =[UIButton new];
+    
+    
     qualityLB.text = @"画面质量:";
     qualityLB.font =[UIFont systemFontOfSize:18];
     [self.view addSubview:qualityLB];
     
+    //开启互动
     
-    [qualityLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view).offset(90);
-        make.top.equalTo(ImageBack.mas_bottom).offset(44);
-        
-        
-    }];
-    
-    // 画面质量
-
-    btnOpen =[UIButton new];
     btnOpen.layer.cornerRadius = 4;
-   
+    
     [btnOpen setTitle:@"开启互动" forState:UIControlStateNormal];
     [btnOpen addTarget:self action:@selector(OpenTouch:) forControlEvents:UIControlEventTouchUpInside];
-    
     [self.view addSubview:btnOpen];
-    [btnOpen mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.height.equalTo(@45);
-        make.top.equalTo(qualityLB.mas_bottom).offset(43);
-        make.left.equalTo(self.view.mas_left).with.offset(18);
-        make.right.equalTo(self.view.mas_right).with.offset(-18);
-        
-    }];
     
     
     
-     btnClean =[UIButton new];
-     btnFluency= [UIButton new];
+    
     btnClean.tag = 1001;
     btnFluency.tag = 1002;
     [btnClean setTitle:@"清晰" forState:UIControlStateNormal];
@@ -392,24 +422,17 @@
     
     // 这里还差一个条件 用户手动选择了
     NSString * typeStr1 =  [Defaluts objectForKey:@"VC_Choose"];
-    NSString * typeStr2 =     [AccountManager sharedAccountManager].loginModel.resolution;
+    NSString * typeStr2 =  [AccountManager sharedAccountManager].loginModel.resolution;
     if ([AppUtil isBlankString:typeStr1]) {
-        
         typeStr =typeStr2;
-        
     }else
     {
-        
-         typeStr =typeStr1;
+        typeStr =typeStr1;
     }
-    
-    
     if ([typeStr isEqualToString:@"r1"]) {
-        
         // 流畅
         btnFluency.selected =YES;
         btnClean.selected = NO;
-        
         
     }else
     {
@@ -417,15 +440,96 @@
         btnClean.selected = YES;
         
     }
-    
-    
-
     [self colorChoose];
     
     
     [self.view addSubview:btnClean];
     [self.view addSubview:btnFluency];
+    [self.view addSubview:btnAdd];
+   
+    
+    
+    
+    // 设置
+   
+    setImage.image =[UIImage imageNamed:@"egg_ prompt"];
+    setImage.userInteractionEnabled = YES;
+    setImage.hidden = YES;
+    [self.view addSubview:setImage];
+    
+    
+   
+    
+    
+    // 三个buton
+    
+    [wifiBtn setTitle:@"WIFI设置" forState:UIControlStateNormal];
+    [wifiBtn addTarget:self action:@selector(wifiTouch:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    [foodBtn addTarget:self action:@selector(foodTouch:) forControlEvents:UIControlEventTouchUpInside];
+    [foodBtn setTitle:@"喂食设置" forState:UIControlStateNormal];
+    
+    [bdinBtn addTarget:self action:@selector(bdinTouch:) forControlEvents:UIControlEventTouchUpInside];
+    [bdinBtn setTitle:@"解除绑定" forState:UIControlStateNormal];
+    [setImage addSubview:wifiBtn];
+    [setImage addSubview:foodBtn];
+    [setImage addSubview:bdinBtn];
+    
+    
+    arrBtn =[NSArray array];
+    arrBtn =@[wifiBtn,foodBtn,bdinBtn];
+    
+    
+   
 
+    
+    
+}
+
+
+// 更新约束
+- (void)updateviewMethod
+{
+    // 背景
+    [ImageBack mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        if ([str isEqualToString:@"ds000"]) {
+            make.center.equalTo(self.view);
+            make.size.mas_equalTo(self.view);
+            make.top.left.right.equalTo(@0);
+        }else
+            
+        {
+            make.width.equalTo(self.view.superview);
+            make.top.equalTo(self.view.superview.mas_top).offset(102);
+            make.bottom.equalTo(self.view.superview.mas_bottom).offset(-220);
+        }
+    }];
+ 
+    
+    //画面质量文字
+    [qualityLB mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view).offset(90);
+        make.top.equalTo(ImageBack.mas_bottom).offset(44);
+        
+        
+    }];
+    //开启互动按钮
+    [btnOpen mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.height.equalTo(@45);
+        make.bottom.equalTo(self.view.superview.mas_bottom).offset(-67);
+        make.left.equalTo(self.view.superview.mas_left).with.offset(18);
+        make.right.equalTo(self.view.superview.mas_right).with.offset(-18);
+        
+    }];
+    CGRect rectTab1 =  self.tabBarController.tabBar.frame;
+    
+    
+    FuckLog(@"%f",rectTab1.size.height);
+    
+    // 流畅清晰
     
     [btnClean mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(qualityLB.mas_centerY);
@@ -446,69 +550,92 @@
         make.height.mas_equalTo(20);
         
     }];
-    
-    
-    
-     [self.view addSubview:btnAdd];
-     [btnAdd  mas_makeConstraints:^(MASConstraintMaker *make) {
+
+    //添加按钮
+    [btnAdd  mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.centerY.equalTo(self.view).offset(120);
         make.size.mas_equalTo(CGSizeMake(90, 60));
         make.left.equalTo(@150);
-         
+        
     }];
     
-    
-    
-    // 设置
-    UIImageView * setImage =[UIImageView new];
-    setImage.image =[UIImage imageNamed:@"egg_ prompt"];
-    [self.view addSubview:setImage];
-    
-    
+    // 设置背景
     [setImage mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.width.equalTo(@115);
-        make.height.equalTo(@129);
+        make.size.mas_equalTo(CGSizeMake(115, 129));
         make.right.equalTo(self.view).offset(-11);
         make.top.equalTo(self.view).offset(1);
         
-        
     }];
+    // btn 数组
     
-    // 三个buton
-    UIButton * wifiBtn =[UIButton new];
-    [wifiBtn setTitle:@"WIFI设置" forState:UIControlStateNormal];
-    UIButton * foodBtn =[UIButton new];
-    [foodBtn setTitle:@"喂食设置" forState:UIControlStateNormal];
-    UIButton * bdinBtn =[UIButton new];
-    [bdinBtn setTitle:@"解除绑定" forState:UIControlStateNormal];
-    [setImage addSubview:wifiBtn];
-    [setImage addSubview:foodBtn];
-    [setImage addSubview:bdinBtn];
+    [arrBtn mas_distributeViewsAlongAxis:MASAxisTypeVertical
+                        withFixedSpacing:15
+                             leadSpacing:10
+                             tailSpacing:5];
     
-    
-    NSArray * arrBtn =[NSArray array];
-    arrBtn =@[wifiBtn,foodBtn,bdinBtn];
-    
-    [arrBtn mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedItemLength:80 leadSpacing:60 tailSpacing:60];
     [arrBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.left.equalTo(setImage).offset(20);
         make.right.equalTo(setImage).offset(-20);
-        make.top.equalTo(setImage.mas_top).offset(10);
-        
         
     }];
-    
-    
-    
-    
-    
+
     
     
     
 }
+
+
+
+
+// 设置选项
+// wifi
+- (void)wifiTouch:(UIButton *)sender
+{
+    WifiViewController * wifiVC =[[WifiViewController alloc]init];
+    [self.navigationController pushViewController:wifiVC animated:YES];
+    
+    
+    
+}
+//喂食
+- (void)foodTouch:(UIButton *)sender
+{
+    
+    
+}
+
+// 解除绑定
+- (void)bdinTouch:(UIButton *)sender
+{
+    
+    bindVC =[[BindingViewController alloc]init];
+    [self.navigationController pushViewController:bindVC animated:YES];
+    
+
+    
+}
+
+
+
+
+-(void)handletapPressGesture:(UITapGestureRecognizer*)sender{
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        setImage.alpha=0.0;
+    } completion:^(BOOL finished) {
+       // [setImage removeFromSuperview];
+    }];
+        [self dismissViewControllerAnimated:YES
+                                 completion:^{
+            [self.view removeGestureRecognizer:sender];
+                                 }];
+    
+    
+}
+
 
 - (void)colorChoose
 {
@@ -689,31 +816,25 @@
 
 
 
-// 数据
-- (void)setupData
-{
-    [super setupData];
-    
-    
-}
 
 
-
-// first
-
-- (void)NodeviceImageUI
-{
-    [self showBarButton:NAV_RIGHT title:@"设置" fontColor:GREEN_COLOR hide:YES];
-    
-    
-
-
-}
-
+// 设置按钮点击
 - (void)doRightButtonTouch
 {
-    
-    
+    if (setImage.alpha<1) {
+        setImage.alpha = 1;
+      
+    }else
+    {
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            setImage.alpha=0.0;
+        } completion:^(BOOL finished) {
+            // [setImage removeFromSuperview];
+        }];
+        return;
+        
+    }
     
 }
 
@@ -728,12 +849,6 @@
 }
 
 
--(void)settings:(UIButton *)sender
-{
-    
-    
-    
-}
 
 
 

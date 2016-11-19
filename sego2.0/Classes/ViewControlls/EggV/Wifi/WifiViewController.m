@@ -184,7 +184,14 @@
     UITextField *  deviceTF =[UITextField new];
     incodeTF =[UITextField new];
     wifiPsTF =[UITextField new];
-    deviceTF.text = self.strDevice;
+     NSString * str  =  [Defaluts objectForKey:@"DeviceNum"];
+    if ([AppUtil isBlankString:str]) {
+         deviceTF.text = self.strDevice;
+    }else
+    {
+        deviceTF.text = str;
+    }
+   
     incodeTF.text =[self fetchSSIDInfo];
     wifiPsTF.text =@"";
     wifiPsTF.delegate = self;

@@ -21,9 +21,10 @@
         self.navigationController.navigationBar.translucent = NO;
     }
 //
-    [self setupView];
+   
     
     [self setupData];
+    [self setupView];
     
     
     
@@ -89,7 +90,7 @@
     UIButton *button ;
     CGSize titleSize = [name boundingRectWithSize:CGSizeMake(999999.0f, NAV_BAR_HEIGHT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16]} context:nil].size;
     CGRect buttonFrame = CGRectZero;
-    button.hidden = hide;
+   
     buttonFrame = CGRectMake(0, 0, titleSize.width, 44);
     
     button = [[UIButton alloc] initWithFrame:buttonFrame];
@@ -97,6 +98,7 @@
     button.backgroundColor = [UIColor clearColor];
     button.titleLabel.font = [UIFont systemFontOfSize:16.0f];
     [button setTitleColor:color forState:UIControlStateNormal];
+    button.hidden = hide;
     [button setTitle:name forState:UIControlStateNormal];
     
     [self showBarButton:position button:button];

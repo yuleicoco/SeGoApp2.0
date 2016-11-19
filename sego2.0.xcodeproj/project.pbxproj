@@ -117,6 +117,7 @@
 		34CFC4691DDC369B00444AA2 /* WifiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CFC4681DDC369B00444AA2 /* WifiViewController.m */; };
 		34D3C6D51DDAB97300529FF5 /* BindingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3C6D41DDAB97300529FF5 /* BindingViewController.m */; };
 		34D3C6E11DDAF43600529FF5 /* ShowWarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3C6E01DDAF43600529FF5 /* ShowWarView.m */; };
+		34D841BB1DE003DE00C37303 /* AFHttpClient+RemoveDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D841BA1DE003DE00C37303 /* AFHttpClient+RemoveDevice.m */; };
 		34DB5C9C1DD4129E00C51823 /* hold.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34DB5A6F1DD4129E00C51823 /* hold.wav */; };
 		34DB5C9D1DD4129E00C51823 /* msg.caf in Resources */ = {isa = PBXBuildFile; fileRef = 34DB5A701DD4129E00C51823 /* msg.caf */; };
 		34DB5C9E1DD4129E00C51823 /* msg.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34DB5A711DD4129E00C51823 /* msg.wav */; };
@@ -410,6 +411,8 @@
 		34D3C6D41DDAB97300529FF5 /* BindingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindingViewController.m; sourceTree = "<group>"; };
 		34D3C6DF1DDAF43600529FF5 /* ShowWarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowWarView.h; sourceTree = "<group>"; };
 		34D3C6E01DDAF43600529FF5 /* ShowWarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowWarView.m; sourceTree = "<group>"; };
+		34D841B91DE003DE00C37303 /* AFHttpClient+RemoveDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+RemoveDevice.h"; sourceTree = "<group>"; };
+		34D841BA1DE003DE00C37303 /* AFHttpClient+RemoveDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+RemoveDevice.m"; sourceTree = "<group>"; };
 		34DB5A6F1DD4129E00C51823 /* hold.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hold.wav; sourceTree = "<group>"; };
 		34DB5A701DD4129E00C51823 /* msg.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = msg.caf; sourceTree = "<group>"; };
 		34DB5A711DD4129E00C51823 /* msg.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = msg.wav; sourceTree = "<group>"; };
@@ -2308,6 +2311,8 @@
 				349C0BF61DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m */,
 				349C0BF81DDEF00700834791 /* AFHttpClient+DeviceUseMember.h */,
 				349C0BF91DDEF00700834791 /* AFHttpClient+DeviceUseMember.m */,
+				34D841B91DE003DE00C37303 /* AFHttpClient+RemoveDevice.h */,
+				34D841BA1DE003DE00C37303 /* AFHttpClient+RemoveDevice.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2874,6 +2879,7 @@
 				3461F5391DD2BB5500E56298 /* LoginViewController.m in Sources */,
 				34C496061DD1D21700687606 /* BaseViewController.m in Sources */,
 				34D3C6D51DDAB97300529FF5 /* BindingViewController.m in Sources */,
+				34D841BB1DE003DE00C37303 /* AFHttpClient+RemoveDevice.m in Sources */,
 				34C495EC1DD1CD5400687606 /* UIButton+Blocks.m in Sources */,
 				34DB5D341DD41AA000C51823 /* AFHttpClient.m in Sources */,
 				7D626A401DD95636002C0F8B /* RegistViewController.m in Sources */,

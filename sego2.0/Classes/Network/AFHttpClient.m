@@ -65,7 +65,7 @@ singleton_implementation(AFHttpClient)
             if (result) {
                 result(nil);
             }
-            return ;
+           // return ;
         }
         
         if (result) {
