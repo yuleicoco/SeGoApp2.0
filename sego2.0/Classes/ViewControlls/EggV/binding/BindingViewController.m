@@ -10,6 +10,8 @@
 #import "Reachability.h"
 #import "WifiViewController.h"
 #import "AFHttpClient+AddDeviceInformation.h"
+#import "AFHttpClient+RemoveDevice.h"
+
 
 
 // sego配置设备名
@@ -29,6 +31,9 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     int serviceNum;   // 添加成功的service数量
     BOOL isAccecptOk; // 是否接收结果成功
     
+    NSString * str;
+
+    
     }
 
 @end
@@ -47,9 +52,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavTitle:NSLocalizedString(@"tabBinding_title",nil)];
-    
-    
-    
+   
     
 }
 
@@ -99,6 +102,8 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
 
 - (void)setupView
 {
+    str  =  [Defaluts objectForKey:@"DeviceNum"];
+
     
     [super setupView];
     
@@ -136,9 +141,19 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     btnBind =[UIButton new];
     btnBind.layer.cornerRadius = 4;
     btnBind.backgroundColor = GRAY_COLOR;
-    [btnBind setTitle:@"绑定设备" forState:UIControlStateNormal];
+    if ([AppUtil isBlankString:str]) {
+         [btnBind setTitle:@"绑定设备" forState:UIControlStateNormal];
+         btnBind.enabled = FALSE;
+    }else
+    {
+         [btnBind setTitle:@"解除设备" forState:UIControlStateNormal];
+         btnBind.enabled = TRUE;
+        btnBind.backgroundColor = GREEN_COLOR;
+        
+    }
+   
     [btnBind addTarget:self action:@selector(BindTouch:) forControlEvents:UIControlEventTouchUpInside];
-    btnBind.enabled = FALSE;
+    
     [self.view addSubview:btnBind];
     [btnBind mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -177,8 +192,20 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     
     deviceTF =[UITextField new];
     incodeTF =[UITextField new];
-    deviceTF.text =@"";
-    incodeTF.text =@"";
+    
+    
+   
+    if ([AppUtil isBlankString:str]) {
+        deviceTF.text =@"";
+        incodeTF.text =@"";
+    }else
+    {
+        deviceTF.text =str;
+        incodeTF.text =   [Defaluts objectForKey:@"incodeNum"];
+
+        
+    }
+    
     incodeTF.secureTextEntry = TRUE;
     deviceTF.enabled = NO;
     incodeTF.enabled = NO;
@@ -235,27 +262,63 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
         return;
     }
     
-    [[AFHttpClient sharedAFHttpClient]AddDeviceStats:[AccountManager sharedAccountManager].loginModel.mid deviceno:deviceTF.text complete:^(BaseModel *model) {
-        FuckLog(@"%@",model);
     
-        if ([model.retCode isEqualToString:@"0000"]) {
-            [self showWarningTip:@"绑定成功"];
-            [Defaluts setObject:deviceTF.text forKey:@"DeviceNum"];
-            [Defaluts synchronize];
+    if ([AppUtil isBlankString:str]) {
+        
+        [[AFHttpClient sharedAFHttpClient]AddDeviceStats:[AccountManager sharedAccountManager].loginModel.mid deviceno:deviceTF.text complete:^(BaseModel *model) {
+            FuckLog(@"%@",model);
             
-            WifiViewController * wifiVC =[[WifiViewController alloc]init];
-            wifiVC.strDevice=deviceTF.text;
-            [self.navigationController pushViewController:wifiVC animated:YES];
-        }else
-        {
-            // 错误提示
-            [self wariring];
+            if ([model.retCode isEqualToString:@"0000"]) {
+                [self showWarningTip:@"绑定成功"];
+                [Defaluts setObject:deviceTF.text forKey:@"DeviceNum"];
+                [Defaluts setValue:incodeTF.text forKey:@"incodeNum"];
+                
+                [Defaluts synchronize];
+                
+                WifiViewController * wifiVC =[[WifiViewController alloc]init];
+                wifiVC.strDevice=deviceTF.text;
+                [self.navigationController pushViewController:wifiVC animated:YES];
+            }else
+            {
+                // 错误提示
+                [self wariring];
+                
+                
+            }
             
             
-        }
+        }];
+    }else
+    {
+        
+        // 解除绑定
+        
+        [[AFHttpClient sharedAFHttpClient]RemoveDevice:[AccountManager sharedAccountManager].loginModel.mid complete:^(BaseModel * model) {
+            if ([model.retCode isEqualToString:@"0000"]) {
+                // 解除绑定成功
+                // 提示
+                [self showWarningTip:@"解绑成功"];
+                
+                [Defaluts removeObjectForKey:@"DeviceNum"];
+                [Defaluts removeObjectForKey:@"incodeNum"];
+                [Defaluts synchronize];
+                deviceTF.text =@"";
+                incodeTF.text =@"";
+                [self.navigationController popViewControllerAnimated:YES];
+                
+                
+            }
+            
+            
+        }];
         
         
-    }];
+        
+        
+    }
+    
+    
+   
     
     
     
@@ -388,9 +451,17 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
         case CBPeripheralManagerStatePoweredOn:
             NSLog(@"Bluetooth powered on");
             
-            [self SearchDevice];
+            if ([AppUtil isBlankString:str]) {
+                [self SearchDevice];
+                [self setUpBleDevice];
+
+
+            }else
+            {
+              
+            }
             
-            [self setUpBleDevice];
+            
             
             break;
             
