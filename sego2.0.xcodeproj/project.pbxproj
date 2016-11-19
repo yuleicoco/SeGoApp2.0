@@ -2262,8 +2262,8 @@
 			isa = PBXGroup;
 			children = (
 				34884C871DD5742200245C24 /* CheckDeviceModel.h */,
-				34884C881DD5742200245C24 /* CheckDeviceModel.m */,
 				34C495FE1DD1CFE000687606 /* LoginModel.h */,
+				34884C881DD5742200245C24 /* CheckDeviceModel.m */,
 				34C495FF1DD1CFE000687606 /* LoginModel.m */,
 				34DB5D351DD423C100C51823 /* BaseModel.h */,
 				34DB5D361DD423C100C51823 /* BaseModel.m */,

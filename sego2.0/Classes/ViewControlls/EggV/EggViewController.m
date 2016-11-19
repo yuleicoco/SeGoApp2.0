@@ -65,7 +65,7 @@
     [self setNavTitle:NSLocalizedString(@"tabEgg_title",nil)];
     
     // sephone
-  //  [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
+    [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
     
     
 }
@@ -87,7 +87,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registrationUpdate:) name:kSephoneRegistrationUpdate object:nil];
     
      [self checkDeviceStats];
-   //  [self checkWifi];
+     [self checkWifi];
 
     
     
@@ -223,15 +223,14 @@
         btnAdd.hidden = NO;
         btnOpen.hidden = YES;
         [self hideSetTitle:YES];
+        setImage.hidden = YES;
         return;
         
     }else
     {
         btnAdd.hidden = YES;
         [self hideSetTitle:NO];
-        setImage.hidden = NO;
-        
-        
+    
     }
     // 在线
     if ([str isEqualToString:@"ds001"]) {
@@ -241,7 +240,6 @@
             btnOpen.backgroundColor = GREEN_COLOR;
             btnOpen.enabled = TRUE;
             btnOpen.hidden = NO;
-            setImage.hidden = NO;
             [self hideSetTitle:NO];
       
 
@@ -774,6 +772,24 @@
 - (void)OpenTouch:(UIButton *)sender
 {
     
+    NSString * strDevicenume =[AccountManager sharedAccountManager].loginModel.deviceno;
+    NSString * strDevicenume1 =[Defaluts objectForKey:@"DeviceNum"];
+    NSString * strNum;
+    
+    
+    if ([AppUtil isBlankString:strDevicenume]) {
+        
+        strNum = strDevicenume1;
+        
+    }else
+    {
+        strNum = strDevicenume;
+        
+    }
+    
+    [self sipCall:strNum sipName:nil];
+    
+    
     if ([str isEqualToString:@"ds001"]) {
         
         // 设备号 需要判断
@@ -782,11 +798,7 @@
         NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
         [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSString *  locationString=[dateformatter stringFromDate:senddate];
-        
-        NSString * strDevice = [Defaluts objectForKey:@"DeviceNum"];
-
-        
-      [[AFHttpClient sharedAFHttpClient]DeviceUseMember:[AccountManager sharedAccountManager].loginModel.mid object:@"self" deviceno:strDevice belong:[AccountManager sharedAccountManager].loginModel.mid starttime:locationString complete:^(BaseModel *model) {
+       [[AFHttpClient sharedAFHttpClient]DeviceUseMember:[AccountManager sharedAccountManager].loginModel.mid object:@"self" deviceno:strNum belong:[AccountManager sharedAccountManager].loginModel.mid starttime:locationString complete:^(BaseModel *model) {
         
         
     }];
@@ -807,7 +819,7 @@
 
 - (void)disparrBtn:(UIButton *)sender
 {
-    
+    setImage.hidden = NO;
     [sender removeFromSuperview];
     [viewGuide removeFromSuperview];
     
@@ -821,14 +833,18 @@
 // 设置按钮点击
 - (void)doRightButtonTouch
 {
+    
     if (setImage.alpha<1) {
         setImage.alpha = 1;
+        setImage.hidden = NO;
       
     }else
     {
         
         [UIView animateWithDuration:0.5 animations:^{
             setImage.alpha=0.0;
+            setImage.hidden = YES;
+            
         } completion:^(BOOL finished) {
             // [setImage removeFromSuperview];
         }];

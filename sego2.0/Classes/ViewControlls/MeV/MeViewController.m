@@ -18,7 +18,7 @@
     [super viewDidLoad];
    [self setNavTitle:@"个人中心"];
     
-    [self showBarButton:NAV_RIGHT title:@"设置" fontColor:GREEN_COLOR];
+  //[self showBarButton:NAV_RIGHT title:@"设置" fontColor:GREEN_COLOR];
     
 }
 -(void)setupView{
