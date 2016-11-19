@@ -12,8 +12,10 @@
 
 #import <Foundation/Foundation.h>
 #define GREEN_COLOR RGB(73, 195, 241)
-#define GRAY_COLOR RGB(205, 205, 193)
-
+#define GRAY_COLOR RGB(236, 237, 241)
+//分页请求个数
+#define REQUEST_PAGE_SIZE           10
+#define START_PAGE_INDEX            1
 
 @interface AppUtil : NSObject
 
