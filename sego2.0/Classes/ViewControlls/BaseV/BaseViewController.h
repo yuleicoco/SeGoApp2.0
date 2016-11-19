@@ -24,8 +24,11 @@ typedef enum
 - (void)setupData;
 
 - (void)setupView;
+/**
+ *  隐藏
+ */
+- (void)showBarButton:(EzNavigationBar)position title:(NSString *)name fontColor:(UIColor *)color hide:(BOOL)hide;
 
-- (void)showBarButton:(EzNavigationBar)position title:(NSString *)name fontColor:(UIColor *)color;
 
 - (void)showBarButton:(EzNavigationBar)position imageName:(NSString *)imageName;
 

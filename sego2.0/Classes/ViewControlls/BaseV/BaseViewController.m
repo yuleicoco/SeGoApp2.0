@@ -84,11 +84,12 @@
     }
 }
 
-- (void)showBarButton:(EzNavigationBar)position title:(NSString *)name fontColor:(UIColor *)color{
+- (void)showBarButton:(EzNavigationBar)position title:(NSString *)name fontColor:(UIColor *)color hide:(BOOL)hide
+{
     UIButton *button ;
     CGSize titleSize = [name boundingRectWithSize:CGSizeMake(999999.0f, NAV_BAR_HEIGHT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:16]} context:nil].size;
     CGRect buttonFrame = CGRectZero;
-    
+    button.hidden = hide;
     buttonFrame = CGRectMake(0, 0, titleSize.width, 44);
     
     button = [[UIButton alloc] initWithFrame:buttonFrame];

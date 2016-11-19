@@ -16,12 +16,10 @@
 		342F79911DDD873D0022FF09 /* egg_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 342F798D1DDD873D0022FF09 /* egg_up.png */; };
 		342F79921DDD873D0022FF09 /* incall.png in Resources */ = {isa = PBXBuildFile; fileRef = 342F798E1DDD873D0022FF09 /* incall.png */; };
 		342F79931DDD873D0022FF09 /* online.png in Resources */ = {isa = PBXBuildFile; fileRef = 342F798F1DDD873D0022FF09 /* online.png */; };
-		342F79951DDD8BAE0022FF09 /* new_egg_seting.png in Resources */ = {isa = PBXBuildFile; fileRef = 342F79941DDD8BAE0022FF09 /* new_egg_seting.png */; };
 		342F79971DDD9E310022FF09 /* setb.png in Resources */ = {isa = PBXBuildFile; fileRef = 342F79961DDD9E310022FF09 /* setb.png */; };
 		342F799A1DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 342F79991DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.m */; };
 		3436EA611DDBFE0B005659B7 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436EA601DDBFE0B005659B7 /* Reachability.m */; };
 		3436EA651DDBFF5D005659B7 /* BePeripheralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436EA641DDBFF5D005659B7 /* BePeripheralViewController.m */; };
-		345AB3DA1DD9AD5800025EEE /* egg_ prompt.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3D71DD9AD5800025EEE /* egg_ prompt.png */; };
 		345AB3DB1DD9AD5800025EEE /* egg_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3D81DD9AD5800025EEE /* egg_add.png */; };
 		345AB3DC1DD9AD5800025EEE /* egg_nodevcie.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3D91DD9AD5800025EEE /* egg_nodevcie.png */; };
 		345AB3EB1DD9AEA400025EEE /* 半透明.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3DF1DD9AEA400025EEE /* 半透明.png */; };
@@ -83,6 +81,9 @@
 		34884C861DD4678400245C24 /* AFHttpClient+TestNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */; };
 		34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34884C881DD5742200245C24 /* CheckDeviceModel.m */; };
 		349C0BF71DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 349C0BF61DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m */; };
+		349C0BFA1DDEF00700834791 /* AFHttpClient+DeviceUseMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 349C0BF91DDEF00700834791 /* AFHttpClient+DeviceUseMember.m */; };
+		349C0BFD1DDF073100834791 /* egg_ prompt.png in Resources */ = {isa = PBXBuildFile; fileRef = 349C0BFB1DDF073100834791 /* egg_ prompt.png */; };
+		349C0C001DDF09A100834791 /* new_egg_seting.png in Resources */ = {isa = PBXBuildFile; fileRef = 349C0BFF1DDF09A100834791 /* new_egg_seting.png */; };
 		34ACCF3A1DDC510000AE2B98 /* xiala@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF381DDC510000AE2B98 /* xiala@2x.png */; };
 		34ACCF3B1DDC510000AE2B98 /* xiala@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF391DDC510000AE2B98 /* xiala@3x.png */; };
 		34ACCF441DDC5E3600AE2B98 /* loginbiyan.png in Resources */ = {isa = PBXBuildFile; fileRef = 34ACCF3C1DDC5E3600AE2B98 /* loginbiyan.png */; };
@@ -263,7 +264,6 @@
 		342F798D1DDD873D0022FF09 /* egg_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_up.png; sourceTree = "<group>"; };
 		342F798E1DDD873D0022FF09 /* incall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = incall.png; sourceTree = "<group>"; };
 		342F798F1DDD873D0022FF09 /* online.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = online.png; sourceTree = "<group>"; };
-		342F79941DDD8BAE0022FF09 /* new_egg_seting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_egg_seting.png; sourceTree = "<group>"; };
 		342F79961DDD9E310022FF09 /* setb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setb.png; sourceTree = "<group>"; };
 		342F79981DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+AddDeviceInformation.h"; sourceTree = "<group>"; };
 		342F79991DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+AddDeviceInformation.m"; sourceTree = "<group>"; };
@@ -271,7 +271,6 @@
 		3436EA601DDBFE0B005659B7 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		3436EA631DDBFF5D005659B7 /* BePeripheralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BePeripheralViewController.h; sourceTree = "<group>"; };
 		3436EA641DDBFF5D005659B7 /* BePeripheralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BePeripheralViewController.m; sourceTree = "<group>"; };
-		345AB3D71DD9AD5800025EEE /* egg_ prompt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "egg_ prompt.png"; sourceTree = "<group>"; };
 		345AB3D81DD9AD5800025EEE /* egg_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_add.png; sourceTree = "<group>"; };
 		345AB3D91DD9AD5800025EEE /* egg_nodevcie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_nodevcie.png; sourceTree = "<group>"; };
 		345AB3DF1DD9AEA400025EEE /* 半透明.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "半透明.png"; sourceTree = "<group>"; };
@@ -344,6 +343,10 @@
 		34884C881DD5742200245C24 /* CheckDeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckDeviceModel.m; sourceTree = "<group>"; };
 		349C0BF51DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+VideoQuiltChoose.h"; sourceTree = "<group>"; };
 		349C0BF61DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+VideoQuiltChoose.m"; sourceTree = "<group>"; };
+		349C0BF81DDEF00700834791 /* AFHttpClient+DeviceUseMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+DeviceUseMember.h"; sourceTree = "<group>"; };
+		349C0BF91DDEF00700834791 /* AFHttpClient+DeviceUseMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+DeviceUseMember.m"; sourceTree = "<group>"; };
+		349C0BFB1DDF073100834791 /* egg_ prompt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "egg_ prompt.png"; sourceTree = "<group>"; };
+		349C0BFF1DDF09A100834791 /* new_egg_seting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_egg_seting.png; sourceTree = "<group>"; };
 		34ACCF381DDC510000AE2B98 /* xiala@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xiala@2x.png"; sourceTree = "<group>"; };
 		34ACCF391DDC510000AE2B98 /* xiala@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xiala@3x.png"; sourceTree = "<group>"; };
 		34ACCF3C1DDC5E3600AE2B98 /* loginbiyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbiyan.png; sourceTree = "<group>"; };
@@ -2178,8 +2181,9 @@
 		34E6655C1DD1A57000FA41E8 /* device */ = {
 			isa = PBXGroup;
 			children = (
+				349C0BFF1DDF09A100834791 /* new_egg_seting.png */,
+				349C0BFB1DDF073100834791 /* egg_ prompt.png */,
 				342F79961DDD9E310022FF09 /* setb.png */,
-				342F79941DDD8BAE0022FF09 /* new_egg_seting.png */,
 				342F798C1DDD873D0022FF09 /* offline.png */,
 				342F798D1DDD873D0022FF09 /* egg_up.png */,
 				342F798E1DDD873D0022FF09 /* incall.png */,
@@ -2190,7 +2194,6 @@
 				34ACCF391DDC510000AE2B98 /* xiala@3x.png */,
 				345AB3DD1DD9AE3C00025EEE /* Horizontal */,
 				345AB3DE1DD9AE3C00025EEE /* Vertica */,
-				345AB3D71DD9AD5800025EEE /* egg_ prompt.png */,
 				345AB3D81DD9AD5800025EEE /* egg_add.png */,
 				345AB3D91DD9AD5800025EEE /* egg_nodevcie.png */,
 			);
@@ -2282,6 +2285,8 @@
 				342F79991DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.m */,
 				349C0BF51DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.h */,
 				349C0BF61DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m */,
+				349C0BF81DDEF00700834791 /* AFHttpClient+DeviceUseMember.h */,
+				349C0BF91DDEF00700834791 /* AFHttpClient+DeviceUseMember.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2613,6 +2618,7 @@
 				34ACCF451DDC5E3600AE2B98 /* loginyan.png in Resources */,
 				3461F5581DD2CB4800E56298 /* tab_my_dian@2x.png in Resources */,
 				345AB40F1DD9AEB900025EEE /* 不倒蛋2_05.png in Resources */,
+				349C0C001DDF09A100834791 /* new_egg_seting.png in Resources */,
 				34DB5CDC1DD4129F00C51823 /* hold_off.png in Resources */,
 				34DB5CEE1DD4129F00C51823 /* rootca.pem in Resources */,
 				342F79841DDD7B380022FF09 /* konw.png in Resources */,
@@ -2709,12 +2715,12 @@
 				34DB5CD81DD4129F00C51823 /* contact_unstarred.png in Resources */,
 				34DB5CF11DD4129F00C51823 /* incoming_chat.wav in Resources */,
 				34DB5CCA1DD4129F00C51823 /* nowebcamCIF.jpg in Resources */,
-				342F79951DDD8BAE0022FF09 /* new_egg_seting.png in Resources */,
 				34DB5CE11DD4129F00C51823 /* ok.png in Resources */,
 				345AB3EC1DD9AEA400025EEE /* 开灯 点击效果.png in Resources */,
 				342F79921DDD873D0022FF09 /* incall.png in Resources */,
 				34DB5CCF1DD4129F00C51823 /* call_status_outgoing.png in Resources */,
 				34DB5CF61DD4129F00C51823 /* oldphone.wav in Resources */,
+				349C0BFD1DDF073100834791 /* egg_ prompt.png in Resources */,
 				34FC41E51DD179F900A23A8F /* Assets.xcassets in Resources */,
 				34DB5CF41DD4129F00C51823 /* oldphone-mono-30s.caf in Resources */,
 				345AB3ED1DD9AEA400025EEE /* 开灯.png in Resources */,
@@ -2722,7 +2728,6 @@
 				34DB5CFB1DD4129F00C51823 /* tapping.wav in Resources */,
 				34DB5CE71DD4129F00C51823 /* startcall-small.png in Resources */,
 				34DB5CD31DD4129F00C51823 /* chat_message_not_delivered.png in Resources */,
-				345AB3DA1DD9AD5800025EEE /* egg_ prompt.png in Resources */,
 				34DB5CCB1DD4129F00C51823 /* active_chat.png in Resources */,
 				34DB5CD61DD4129F00C51823 /* contact-orange.png in Resources */,
 				34DB5CF71DD4129F00C51823 /* orig.wav in Resources */,
@@ -2807,6 +2812,7 @@
 				34C495EE1DD1CD5400687606 /* UIView+TapBlocks.m in Sources */,
 				342F79881DDD7C640022FF09 /* AFHttpClient+DeviceStats.m in Sources */,
 				34C495EB1DD1CD5400687606 /* UIAlertView+Blocks.m in Sources */,
+				349C0BFA1DDEF00700834791 /* AFHttpClient+DeviceUseMember.m in Sources */,
 				3436EA611DDBFE0B005659B7 /* Reachability.m in Sources */,
 				34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */,
 				3461F55F1DD2D00100E56298 /* AppUtil.m in Sources */,
