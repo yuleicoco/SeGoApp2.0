@@ -20,7 +20,9 @@
        //self.navigationController.navigationBar.barStyle=UIBarStyleDefault;
         self.navigationController.navigationBar.translucent = NO;
     }
-//
+    
+    
+   
    
     
     [self setupData];
@@ -169,4 +171,12 @@
     
     
 }
+
+
+
+
+
+
+
+
 @end

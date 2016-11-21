@@ -65,7 +65,7 @@
     [self setNavTitle:NSLocalizedString(@"tabEgg_title",nil)];
     
     // sephone
-    [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
+  //  [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
     
     
 }
@@ -787,7 +787,10 @@
         
     }
     
-    [self sipCall:strNum sipName:nil];
+  //    [self sipCall:strNum sipName:nil];
+    
+    InCallViewController *   _incallVC =[[InCallViewController alloc]initWithNibName:@"InCallViewController" bundle:nil];
+    [self presentViewController:_incallVC animated:YES completion:nil];
     
     
     if ([str isEqualToString:@"ds001"]) {
@@ -886,7 +889,10 @@
 }
 
 
-
+- (BOOL)shouldAutorotate
+{
+    return YES;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

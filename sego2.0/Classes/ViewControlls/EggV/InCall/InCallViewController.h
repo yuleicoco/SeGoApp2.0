@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "BaseViewController.h"
 
-@interface InCallViewController : ViewController
+@interface InCallViewController : BaseViewController
 
 - (void)setCall:(SephoneCall *)acall;
+
+// 别人
+@property (nonatomic,strong)UIView * videoView;
+
 @end

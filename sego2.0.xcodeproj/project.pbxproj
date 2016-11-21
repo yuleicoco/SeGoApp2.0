@@ -49,7 +49,7 @@
 		345AB4171DD9AEB900025EEE /* 激光.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4031DD9AEB900025EEE /* 激光.png */; };
 		345AB4181DD9AEB900025EEE /* 激光2.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4041DD9AEB900025EEE /* 激光2.png */; };
 		345AB4191DD9AEB900025EEE /* 激光笔区域.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4051DD9AEB900025EEE /* 激光笔区域.png */; };
-		345AB41A1DD9AEB900025EEE /* 全屏.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4061DD9AEB900025EEE /* 全屏.png */; };
+		345AB41A1DD9AEB900025EEE /* hzbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4061DD9AEB900025EEE /* hzbtn.png */; };
 		345AB41B1DD9AEB900025EEE /* 上下.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4071DD9AEB900025EEE /* 上下.png */; };
 		345AB41C1DD9AEB900025EEE /* 线.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4081DD9AEB900025EEE /* 线.png */; };
 		345AB41D1DD9AEB900025EEE /* 圆环.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4091DD9AEB900025EEE /* 圆环.png */; };
@@ -242,6 +242,7 @@
 		34DB5D2E1DD415A900C51823 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DB5D2D1DD415A900C51823 /* libc++.1.tbd */; };
 		34DB5D341DD41AA000C51823 /* AFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DB5D331DD41AA000C51823 /* AFHttpClient.m */; };
 		34DB5D371DD423C100C51823 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DB5D361DD423C100C51823 /* BaseModel.m */; };
+		34DDFE041DE2A09500956D47 /* InCallViewControllerr.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDFE031DE2A09500956D47 /* InCallViewControllerr.m */; };
 		34FC41D71DD179F900A23A8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41D61DD179F900A23A8F /* main.m */; };
 		34FC41DA1DD179F900A23A8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41D91DD179F900A23A8F /* AppDelegate.m */; };
 		34FC41DD1DD179F900A23A8F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41DC1DD179F900A23A8F /* ViewController.m */; };
@@ -308,7 +309,7 @@
 		345AB4031DD9AEB900025EEE /* 激光.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "激光.png"; sourceTree = "<group>"; };
 		345AB4041DD9AEB900025EEE /* 激光2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "激光2.png"; sourceTree = "<group>"; };
 		345AB4051DD9AEB900025EEE /* 激光笔区域.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "激光笔区域.png"; sourceTree = "<group>"; };
-		345AB4061DD9AEB900025EEE /* 全屏.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "全屏.png"; sourceTree = "<group>"; };
+		345AB4061DD9AEB900025EEE /* hzbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hzbtn.png; sourceTree = "<group>"; };
 		345AB4071DD9AEB900025EEE /* 上下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "上下.png"; sourceTree = "<group>"; };
 		345AB4081DD9AEB900025EEE /* 线.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "线.png"; sourceTree = "<group>"; };
 		345AB4091DD9AEB900025EEE /* 圆环.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "圆环.png"; sourceTree = "<group>"; };
@@ -962,6 +963,8 @@
 		34DB5D331DD41AA000C51823 /* AFHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHttpClient.m; sourceTree = "<group>"; };
 		34DB5D351DD423C100C51823 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		34DB5D361DD423C100C51823 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		34DDFE021DE2A09500956D47 /* InCallViewControllerr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InCallViewControllerr.h; sourceTree = "<group>"; };
+		34DDFE031DE2A09500956D47 /* InCallViewControllerr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InCallViewControllerr.m; sourceTree = "<group>"; };
 		34E665761DD1A9CE00FA41E8 /* Definition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Definition.h; sourceTree = "<group>"; };
 		34FC41D21DD179F900A23A8F /* sego2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sego2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34FC41D61DD179F900A23A8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1141,7 +1144,7 @@
 				345AB4031DD9AEB900025EEE /* 激光.png */,
 				345AB4041DD9AEB900025EEE /* 激光2.png */,
 				345AB4051DD9AEB900025EEE /* 激光笔区域.png */,
-				345AB4061DD9AEB900025EEE /* 全屏.png */,
+				345AB4061DD9AEB900025EEE /* hzbtn.png */,
 				345AB4071DD9AEB900025EEE /* 上下.png */,
 				345AB4081DD9AEB900025EEE /* 线.png */,
 				345AB4091DD9AEB900025EEE /* 圆环.png */,
@@ -2480,6 +2483,8 @@
 				34C496051DD1D21700687606 /* BaseViewController.m */,
 				7D38B2261DE02B9C00404D05 /* BaseTabViewController.h */,
 				7D38B2271DE02B9C00404D05 /* BaseTabViewController.m */,
+				34DDFE021DE2A09500956D47 /* InCallViewControllerr.h */,
+				34DDFE031DE2A09500956D47 /* InCallViewControllerr.m */,
 			);
 			path = BaseV;
 			sourceTree = "<group>";
@@ -2743,7 +2748,7 @@
 				34DB5CE41DD4129F00C51823 /* sephone.png in Resources */,
 				345AB41E1DD9AEB900025EEE /* 圆角矩形.png in Resources */,
 				345AB3EB1DD9AEA400025EEE /* 半透明.png in Resources */,
-				345AB41A1DD9AEB900025EEE /* 全屏.png in Resources */,
+				345AB41A1DD9AEB900025EEE /* hzbtn.png in Resources */,
 				345AB3F41DD9AEA400025EEE /* 喂食 点击效果.png in Resources */,
 				3461F5541DD2CB4800E56298 /* tab_budaodan_dian@2x.png in Resources */,
 				345AB3DB1DD9AD5800025EEE /* egg_add.png in Resources */,
@@ -2883,6 +2888,7 @@
 				34C495EC1DD1CD5400687606 /* UIButton+Blocks.m in Sources */,
 				34DB5D341DD41AA000C51823 /* AFHttpClient.m in Sources */,
 				7D626A401DD95636002C0F8B /* RegistViewController.m in Sources */,
+				34DDFE041DE2A09500956D47 /* InCallViewControllerr.m in Sources */,
 				34C495D71DD1CB2900687606 /* AppDelegate+Launcher.m in Sources */,
 				34FC41DD1DD179F900A23A8F /* ViewController.m in Sources */,
 				34C496031DD1D15900687606 /* MainTabViewController.m in Sources */,
