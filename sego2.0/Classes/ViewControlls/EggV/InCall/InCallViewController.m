@@ -10,6 +10,11 @@
 #import <CallKit/CXCallObserver.h>
 
 @interface InCallViewController ()
+{
+    NSString * strHZ;
+    
+    
+}
 
 //电话
 @property (nonatomic, strong) CTCallCenter * center;
@@ -21,10 +26,16 @@
 
 @synthesize call;
 @synthesize videoView;
+@synthesize HZbtn;
+@synthesize btnBack;
+
+
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    strHZ = @"1";
+    
     // Do any additional setup after loading the view from its nib.
 
     self.center = [[CTCallCenter alloc] init];
@@ -45,6 +56,7 @@
 //                                              object:[UIApplication sharedApplication]];
     
     [self callStream:call];
+    
 
     
     
@@ -69,76 +81,36 @@
     
 }
 
-
-
-
-- (void)initUserface
-{
-    
-    UIButton * btn =[[UIButton alloc]initWithFrame:CGRectMake(0, 40, 100, 50)];
-    [btn setTitle:@"横屏" forState:UIControlStateNormal];
-    btn.backgroundColor =[UIColor redColor];
-    [btn addTarget:self action:@selector(rightAction) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
-    UIButton * btn1 =[[UIButton alloc]initWithFrame:CGRectMake(0, 150, 100, 50)];
-    [btn1 setTitle:@"竖屏" forState:UIControlStateNormal];
-    [btn1 addTarget:self action:@selector(leftAction) forControlEvents:UIControlEventTouchUpInside];
-    btn1.backgroundColor =[UIColor redColor];
-    [self.view addSubview:btn1];
-    
-    
-}
-
+// 初始化UI控件
 - (void)setupView
 {
     [super setupView];
     
-    [UIApplication sharedApplication].statusBarHidden = YES;
-    
+   // [UIApplication sharedApplication].statusBarHidden = YES;
+
     // 视频界面
     videoView =[UIView new];
     videoView.backgroundColor =[UIColor redColor];
     [self.view addSubview:videoView];
     
-    [videoView mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.width.equalTo(self.view);
-        make.top.mas_equalTo(-8);
-        make.height.mas_equalTo(300);
-        
-    }];
+    
     
     // 返回按钮
-    UIButton * btnBack =[UIButton new];
+    btnBack =[UIButton new];
     [btnBack addTarget:self action:@selector(backBtn:) forControlEvents:UIControlEventTouchUpInside];
     [btnBack setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [self.view addSubview:btnBack];
     
     
-    
-    [btnBack mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.left.equalTo(self.view.mas_left).offset(12);
-        make.top.mas_equalTo(15);
-        make.size.mas_equalTo(CGSizeMake(40, 40));
-        
-    }];
-    
-    
     // 横竖屏
     
-    UIButton * HZbtn = [UIButton new];
+    HZbtn = [UIButton new];
     [HZbtn setImage:[UIImage imageNamed:@"hzbtn"] forState:UIControlStateNormal];
     [HZbtn addTarget:self action:@selector(HZView:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:HZbtn];
     
-    [HZbtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(videoView.mas_right).offset(-12);
-        make.bottom.equalTo(videoView.mas_bottom).offset(-12);
-        make.size.mas_equalTo(CGSizeMake(40, 40));
-        
-    }];
     
+    [self VviewUpdatRemove:NO];
     
     
     
@@ -152,31 +124,103 @@
 - (void)HZView:(UIButton *)sender
 {
     
-    videoView.transform=CGAffineTransformMakeRotation(M_PI/2);
-   
+    
+    if ([strHZ isEqualToString:@"1"]) {
+        
+        [self rightAction];
+        [self HviewUpdateView];
+    }else
+    {
+        [self leftAction];
+        [self VviewUpdatRemove:YES];
+        
+    }
+
+    
+}
+
+
+#pragma  mark ----------严肃的分割线------------------------------------------------
+
+/**
+ *   横屏的切换 约束更新
+ */
+- (void)HviewUpdateView
+{
+    
+     videoView.transform = CGAffineTransformScale(self.videoView.transform, 1.32, 1.04);
+    
+    // 视频界面
     [videoView mas_updateConstraints:^(MASConstraintMaker *make) {
         
-        make.height.mas_equalTo(self.view.height);
+        make.height.mas_equalTo(self.view.width);
+        make.width.mas_equalTo(self.view.height);
         
         
         
     }];
     
     
+    //横竖屏按钮
+    [HZbtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view.mas_right).offset(-12);
+        make.top.equalTo(self.view.mas_top).offset(220);
+        make.size.mas_equalTo(CGSizeMake(30, 30));
+        
+    }];
+
     
-//    videoView.frame =CGRectMake(0, 0, 667, 375);
-//    videoView.center = self.view.center;
-    
-    
-    
-    NSLog(@"1232");
-    [self.view layoutIfNeeded];
     
 }
 
+
+/**
+ *  竖屏的切换 约束还原
+ */
+- (void)VviewUpdatRemove:(BOOL)isTran
+{
+
+    videoView.transform = CGAffineTransformIdentity;
+    
+    
+    // 视频界面
+    [videoView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.width.equalTo(self.view);
+        make.top.mas_equalTo(-8);
+        make.height.mas_equalTo(300);
+        
+    }];
+    
+    // 返回按钮
+    [btnBack mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.equalTo(self.view.mas_left).offset(12);
+        make.top.mas_equalTo(15);
+        make.size.mas_equalTo(CGSizeMake(30, 30));
+        
+    }];
+    
+    //横竖屏按钮
+    [HZbtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view.mas_right).offset(-12);
+        make.top.equalTo(self.view.mas_top).offset(220);
+        make.size.mas_equalTo(CGSizeMake(30, 30));
+        
+    }];
+
+    
+}
+
+
+#pragma  mark ----------严肃的结尾线------------------------------------------------
+
+
+
+
 - (void)backBtn:(UIButton * )sender
 {
-    
+     [self leftAction];
      [SephoneManager terminateCurrentCallOrConference];
      [self dismissViewControllerAnimated:YES completion:nil];
 
@@ -198,11 +242,13 @@
 
 - (void)leftAction
 {
+    strHZ = @"1";
     [self interfaceOrientation:UIInterfaceOrientationPortrait];
 }
 
 - (void)rightAction
 {
+    strHZ =@"2";
     [self interfaceOrientation:UIInterfaceOrientationLandscapeRight];
 }
 
@@ -295,7 +341,7 @@
 {
     
     [super viewWillDisappear:animated];
-    [UIApplication sharedApplication].statusBarHidden = NO;
+   // [UIApplication sharedApplication].statusBarHidden = NO;
     // Clear windows
     //  必须清除，否则会因为arc导致再次视频通话时crash。
     sephone_core_set_native_video_window_id([SephoneManager getLc], (unsigned long)NULL);

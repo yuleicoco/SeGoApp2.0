@@ -59,6 +59,7 @@
 		345AB4251DD9AEED00025EEE /* 小圆.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4221DD9AEED00025EEE /* 小圆.png */; };
 		345AB4291DD9B3C000025EEE /* InCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345AB4271DD9B3C000025EEE /* InCallViewController.m */; };
 		345AB42A1DD9B3C000025EEE /* InCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345AB4281DD9B3C000025EEE /* InCallViewController.xib */; };
+		345ACD241DE427E4004C37DF /* 4_14.png in Resources */ = {isa = PBXBuildFile; fileRef = 345ACD231DE427E4004C37DF /* 4_14.png */; };
 		3461F52F1DD2BB0A00E56298 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F52E1DD2BB0A00E56298 /* HomeViewController.m */; };
 		3461F5321DD2BB1B00E56298 /* FriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F5311DD2BB1B00E56298 /* FriendViewController.m */; };
 		3461F5351DD2BB2B00E56298 /* FoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F5341DD2BB2B00E56298 /* FoundViewController.m */; };
@@ -320,6 +321,7 @@
 		345AB4261DD9B3C000025EEE /* InCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InCallViewController.h; sourceTree = "<group>"; };
 		345AB4271DD9B3C000025EEE /* InCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InCallViewController.m; sourceTree = "<group>"; };
 		345AB4281DD9B3C000025EEE /* InCallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InCallViewController.xib; sourceTree = "<group>"; };
+		345ACD231DE427E4004C37DF /* 4_14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_14.png; sourceTree = "<group>"; };
 		3461F52D1DD2BB0A00E56298 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		3461F52E1DD2BB0A00E56298 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		3461F5301DD2BB1B00E56298 /* FriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendViewController.h; sourceTree = "<group>"; };
@@ -1156,6 +1158,7 @@
 		345AB41F1DD9AEDA00025EEE /* R_image */ = {
 			isa = PBXGroup;
 			children = (
+				345ACD231DE427E4004C37DF /* 4_14.png */,
 				345AB4201DD9AEED00025EEE /* 按钮.png */,
 				345AB4211DD9AEED00025EEE /* 箭头.png */,
 				345AB4221DD9AEED00025EEE /* 小圆.png */,
@@ -2781,6 +2784,7 @@
 				34DB5CCD1DD4129F00C51823 /* call.png in Resources */,
 				7D38B21F1DDFF59A00404D05 /* douma.png in Resources */,
 				345AB41B1DD9AEB900025EEE /* 上下.png in Resources */,
+				345ACD241DE427E4004C37DF /* 4_14.png in Resources */,
 				34DB5CD11DD4129F00C51823 /* chat_message_delivered.png in Resources */,
 				7D38B2201DDFF59A00404D05 /* exchangepassword.png in Resources */,
 				34DB5CF21DD4129F00C51823 /* ringback.wav in Resources */,

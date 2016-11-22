@@ -73,7 +73,13 @@
  -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    FuckLog(@"pop");
+    
+    /*
+    CGRect rectTab1 =  self.tabBarController.tabBar.frame;
+    CGRect rectTab2  = self.navigationController.navigationBar.frame;
+    CGRect  rectTab3 = [[UIApplication sharedApplication] statusBarFrame];
+   */
+  
     
     
 }
@@ -522,10 +528,7 @@
         make.right.equalTo(self.view.superview.mas_right).with.offset(-18);
         
     }];
-    CGRect rectTab1 =  self.tabBarController.tabBar.frame;
-    
-    
-    FuckLog(@"%f",rectTab1.size.height);
+   
     
     // 流畅清晰
     
@@ -787,7 +790,7 @@
         
     }
     
-  //    [self sipCall:strNum sipName:nil];
+    //  [self sipCall:strNum sipName:nil];
     
     InCallViewController *   _incallVC =[[InCallViewController alloc]initWithNibName:@"InCallViewController" bundle:nil];
     [self presentViewController:_incallVC animated:YES completion:nil];
@@ -889,10 +892,6 @@
 }
 
 
-- (BOOL)shouldAutorotate
-{
-    return YES;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -17,10 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //横竖屏
-    
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange) name:UIDeviceOrientationDidChangeNotification object:nil];
+   
 }
 
 
