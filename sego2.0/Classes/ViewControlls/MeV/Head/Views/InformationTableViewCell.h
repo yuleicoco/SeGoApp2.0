@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface InformationTableViewCell : UITableViewCell
+@property (nonatomic,strong)UILabel * nameLabel;
+@property (nonatomic,strong)UILabel * lineLabel;
+@property (nonatomic,strong)UILabel * rightLabel;
+
 
 @end
