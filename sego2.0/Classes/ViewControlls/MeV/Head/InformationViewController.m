@@ -12,6 +12,9 @@
 static NSString * cellId = @"InformationCellId";
 @interface InformationViewController ()
 
+@property (nonatomic,strong)NSArray * nameArray;
+
+
 @end
 
 @implementation InformationViewController
@@ -89,6 +92,10 @@ static NSString * cellId = @"InformationCellId";
 
 -(void)setupData{
     [super setupData];
+    _nameArray = [[NSArray alloc]init];
+    _nameArray = @[@"帐号",@"昵称",@"性别",@"家族",@"生日",@"签名"];
+    
+    
 
 }
 #pragma mark - TableView的代理函数
@@ -111,7 +118,17 @@ static NSString * cellId = @"InformationCellId";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
        InformationTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-
+    cell.nameLabel.text = _nameArray[indexPath.row];
+    if (indexPath.row == 0) {
+        cell.rightLabel.text = [AccountManager sharedAccountManager].loginModel.accountnumber;
+    }
+    if (indexPath.row == 1) {
+        cell.rightLabel.text = [AccountManager sharedAccountManager].loginModel.nickname;
+    }
+    
+    
+    
+    
     return cell;
 
 }
