@@ -37,6 +37,8 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
+  
     [self setupSubviews];
 }
 
@@ -167,6 +169,39 @@
     }
     
 }
+
+
+#pragma mark ----- 横竖屏切换base
+
+
+
+////- (BOOL)shouldAutorotate
+////{
+////    return [[self.viewControllers lastObject] shouldAutorotate];
+////}
+//
+////- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+////{
+////    return [[self.viewControllers lastObject] supportedInterfaceOrientations];
+////}
+//
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+//{
+//    return [self.navigationController supportedInterfaceOrientations];
+//}
+//
+//
+////- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+////    return [[self.viewControllers lastObject] preferredInterfaceOrientationForPresentation];
+//}
+
+
+
+
+
+
+
+
 
 
 @end

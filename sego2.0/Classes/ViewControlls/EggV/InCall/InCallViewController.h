@@ -7,8 +7,20 @@
 //
 
 #import "ViewController.h"
+#import "BaseViewController.h"
 
-@interface InCallViewController : ViewController
+@interface InCallViewController : BaseViewController
 
 - (void)setCall:(SephoneCall *)acall;
+
+// 别人
+@property (nonatomic,strong)UIView * videoView;
+//横竖屏
+@property (nonatomic,strong)UIButton * HZbtn;
+// 返回
+@property (nonatomic,strong)UIButton * btnBack;
+
+
+
+
 @end
