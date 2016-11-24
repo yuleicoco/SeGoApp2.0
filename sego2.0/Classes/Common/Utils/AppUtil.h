@@ -17,6 +17,11 @@
 #define REQUEST_PAGE_SIZE           10
 #define START_PAGE_INDEX            1
 
+#define M_Wide 375
+#define M_Higth 667
+#define W_Wide_Zoom [UIScreen mainScreen].bounds.size.width/M_Wide
+#define W_Hight_Zoom [UIScreen mainScreen].bounds.size.height/M_Higth
+
 @interface AppUtil : NSObject
 
 + (UIViewController *)appTopViewController;
