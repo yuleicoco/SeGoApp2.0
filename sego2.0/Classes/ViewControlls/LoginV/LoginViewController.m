@@ -286,6 +286,7 @@
     [[AFHttpClient sharedAFHttpClient]loginWithAccounynumber:_numberTextfield.text password:_passwordTextfield.text complete:^(BaseModel * model) {
         if (model) {
             LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
+            
             [[AccountManager sharedAccountManager]login:loginModel];
               [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
         }
