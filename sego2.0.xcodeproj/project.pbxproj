@@ -261,6 +261,7 @@
 		34FC41E31DD179F900A23A8F /* sego2_0.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41E11DD179F900A23A8F /* sego2_0.xcdatamodeld */; };
 		34FC41E51DD179F900A23A8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34FC41E41DD179F900A23A8F /* Assets.xcassets */; };
 		34FC41E81DD179F900A23A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34FC41E61DD179F900A23A8F /* LaunchScreen.storyboard */; };
+		7D1FA3E31DE5354F00A43201 /* AFHttpClient+PersonMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1FA3E21DE5354F00A43201 /* AFHttpClient+PersonMember.m */; };
 		7D38B21E1DDFF59A00404D05 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21A1DDFF59A00404D05 /* about.png */; };
 		7D38B21F1DDFF59A00404D05 /* douma.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21B1DDFF59A00404D05 /* douma.png */; };
 		7D38B2201DDFF59A00404D05 /* exchangepassword.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21C1DDFF59A00404D05 /* exchangepassword.png */; };
@@ -998,6 +999,8 @@
 		34FC41E41DD179F900A23A8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34FC41E71DD179F900A23A8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34FC41E91DD179F900A23A8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D1FA3E11DE5354F00A43201 /* AFHttpClient+PersonMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+PersonMember.h"; sourceTree = "<group>"; };
+		7D1FA3E21DE5354F00A43201 /* AFHttpClient+PersonMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+PersonMember.m"; sourceTree = "<group>"; };
 		7D38B21A1DDFF59A00404D05 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
 		7D38B21B1DDFF59A00404D05 /* douma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = douma.png; sourceTree = "<group>"; };
 		7D38B21C1DDFF59A00404D05 /* exchangepassword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exchangepassword.png; sourceTree = "<group>"; };
@@ -2319,8 +2322,8 @@
 			isa = PBXGroup;
 			children = (
 				34884C871DD5742200245C24 /* CheckDeviceModel.h */,
-				34C495FE1DD1CFE000687606 /* LoginModel.h */,
 				34884C881DD5742200245C24 /* CheckDeviceModel.m */,
+				34C495FE1DD1CFE000687606 /* LoginModel.h */,
 				34C495FF1DD1CFE000687606 /* LoginModel.m */,
 				34DB5D351DD423C100C51823 /* BaseModel.h */,
 				34DB5D361DD423C100C51823 /* BaseModel.m */,
@@ -2339,6 +2342,8 @@
 				34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */,
 				34ACCF4F1DDC5E5000AE2B98 /* AFHttpClient+Account.h */,
 				34ACCF501DDC5E5000AE2B98 /* AFHttpClient+Account.m */,
+				7D1FA3E11DE5354F00A43201 /* AFHttpClient+PersonMember.h */,
+				7D1FA3E21DE5354F00A43201 /* AFHttpClient+PersonMember.m */,
 				342F79861DDD7C640022FF09 /* AFHttpClient+DeviceStats.h */,
 				342F79871DDD7C640022FF09 /* AFHttpClient+DeviceStats.m */,
 				342F79981DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.h */,
@@ -2970,6 +2975,7 @@
 				34DB5CA91DD4129E00C51823 /* SephoneUtils.m in Sources */,
 				34FC41E31DD179F900A23A8F /* sego2_0.xcdatamodeld in Sources */,
 				3461F5441DD2CA0A00E56298 /* MeViewController.m in Sources */,
+				7D1FA3E31DE5354F00A43201 /* AFHttpClient+PersonMember.m in Sources */,
 				34C495F91DD1CD6C00687606 /* UIView+Sizes.m in Sources */,
 				34ACCF541DDD521900AE2B98 /* SetViewController.m in Sources */,
 				34C495EA1DD1CD5400687606 /* UIActionSheet+Blocks.m in Sources */,

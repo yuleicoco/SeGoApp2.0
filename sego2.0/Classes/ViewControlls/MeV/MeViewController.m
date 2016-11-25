@@ -11,7 +11,8 @@
 #import "UIImageView+WebCache.h"
 #import "UIImage-Extensions.h"
 @interface MeViewController ()
-
+@property(nonatomic,strong)UILabel * nameLabel;
+@property(nonatomic,strong)UIButton * headBtn;
 @end
 
 @implementation MeViewController
@@ -23,6 +24,22 @@
   //  [self showBarButton:NAV_RIGHT title:@"设置" fontColor:GREEN_COLOR];
     
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeName) name:@"meshuashua" object:nil];
+}
+
+-(void)changeName{
+        _nameLabel.text = [AccountManager sharedAccountManager].loginModel.nickname;
+        UIImage * btnImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[AccountManager sharedAccountManager].loginModel.headportrait]]];
+        [_headBtn setImage:btnImage forState:UIControlStateNormal];
+    
+
+
+
+}
+
 -(void)setupView{
     [super setupView];
     self.view.backgroundColor = GRAY_COLOR;
@@ -38,30 +55,30 @@
 
     }];
     
-    UIButton * headBtn = [[UIButton alloc]init];
+   _headBtn = [[UIButton alloc]init];
   //  headBtn.backgroundColor = [UIColor blackColor];
     UIImage * btnImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[AccountManager sharedAccountManager].loginModel.headportrait]]];
-    [headBtn setImage:btnImage forState:UIControlStateNormal];
-    headBtn.layer.cornerRadius = 40;
-    [headBtn.layer setMasksToBounds:YES];
-    [headBtn addTarget:self action:@selector(headbuttonTouch) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:headBtn];
-    [headBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(headBtn.superview).offset(14);
-        make.left.equalTo(headBtn.superview).offset(147);
-        make.right.equalTo(headBtn.superview).offset(-147);
+    [_headBtn setImage:btnImage forState:UIControlStateNormal];
+    _headBtn.layer.cornerRadius = 40;
+    [_headBtn.layer setMasksToBounds:YES];
+    [_headBtn addTarget:self action:@selector(headbuttonTouch) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_headBtn];
+    [_headBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_headBtn.superview).offset(14);
+        make.left.equalTo(_headBtn.superview).offset(147);
+        make.right.equalTo(_headBtn.superview).offset(-147);
         make.height.mas_equalTo(80);
         
     }];
     
-    UILabel * nameLabel = [[UILabel alloc]init];
-    nameLabel.textColor = [UIColor whiteColor];
-    nameLabel.text = [AccountManager sharedAccountManager].loginModel.nickname;
-    nameLabel.font = [UIFont systemFontOfSize:18];
-    [self.view addSubview:nameLabel];
-    [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(headBtn.mas_centerX);
-        make.top.equalTo(headBtn.mas_bottom).offset(9);
+    _nameLabel = [[UILabel alloc]init];
+    _nameLabel.textColor = [UIColor whiteColor];
+    _nameLabel.text = [AccountManager sharedAccountManager].loginModel.nickname;
+    _nameLabel.font = [UIFont systemFontOfSize:18];
+    [self.view addSubview:_nameLabel];
+    [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(_headBtn.mas_centerX);
+        make.top.equalTo(_headBtn.mas_bottom).offset(9);
         
     }];
 
@@ -69,8 +86,8 @@
     linelabel.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:linelabel];
     [linelabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(nameLabel.mas_centerX);
-        make.top.equalTo(nameLabel.mas_bottom).offset(16);
+        make.centerX.equalTo(_nameLabel.mas_centerX);
+        make.top.equalTo(_nameLabel.mas_bottom).offset(16);
         make.width.mas_equalTo(1);
         make.bottom.equalTo(topImage.mas_bottom).offset(-18);
     
