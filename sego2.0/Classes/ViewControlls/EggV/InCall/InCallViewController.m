@@ -8,6 +8,7 @@
 
 #import "InCallViewController.h"
 #import <CallKit/CXCallObserver.h>
+#import "AppDelegate.h"
 
 @interface InCallViewController ()
 {
@@ -60,27 +61,34 @@
     
 
     self.center = [[CTCallCenter alloc] init];
-//  __weak InCallViewController *weakSelf = self;
-//    self.center.callEventHandler = ^(CTCall * call)
-//    {
-//        //TODO:检测到来电后的处理
-//        [weakSelf performSelectorOnMainThread:@selector(RefreshCellForLiveId)
-//                                   withObject:nil
-//                                waitUntilDone:NO];
-//        
-//        
-//    };
+   __weak InCallViewController *weakSelf = self;
+    self.center.callEventHandler = ^(CTCall * call)
+    {
+        //TODO:检测到来电后的处理
+        [weakSelf performSelectorOnMainThread:@selector(RefreshCellForLiveId)
+                                   withObject:nil
+                                waitUntilDone:NO];
+        
+        
+    };
     
     
     // 后台
-//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(applicationWillResignActive:)name:UIApplicationWillResignActiveNotification
-//                                              object:[UIApplication sharedApplication]];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(applicationWillResignActive:)name:UIApplicationWillResignActiveNotification
+                                              object:[UIApplication sharedApplication]];
     
    
    // [flowUI startAnimating];
     [self callStream:call];
     
 
+    
+    
+}
+
+- (void)applicationWillResignActive:(UIApplication *)application {
+    
+    
     
     
 }
@@ -203,10 +211,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     [RdownBtn addTarget:self action:@selector(RdownClickSt:) forControlEvents:UIControlEventTouchUpInside];
     
     DriArr =@[topBtn,downBtn,leftBtn,rightBtn,RtopBtn,RdownBtn];
-    NSArray * imageList =@[@"top1",@"down1",@"left1",@"right1",@"Ltopbtn",@"Ldownbtn"];
-    
     for (NSInteger i =0; i<6; i++) {
-        [DriArr[i] setImage:[UIImage imageNamed:imageList[i]] forState:UIControlStateNormal];
         [self.view addSubview:DriArr[i]];
         
         
@@ -413,7 +418,13 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
                               leadSpacing:105
                               tailSpacing:-69];
     
+    NSArray * imageList =@[@"top_egg",@"down_egg",@"left_egg",@"right_egg",@"L_top",@"L_down"];
     
+    for (NSInteger i =0; i<6; i++) {
+        [DriArr[i] setImage:[UIImage imageNamed:imageList[i]] forState:UIControlStateNormal];
+        
+    }
+
   
     [btnList mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(FiveView.mas_left).offset(28);
@@ -433,9 +444,9 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     //方向按钮
     
     [DriArr[0] mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(videoView.mas_bottom).offset(-146);
-        make.size.mas_equalTo(CGSizeMake(287/2,79));
-        make.left.mas_equalTo(56);
+        make.bottom.equalTo(videoView.mas_bottom).offset(-124);
+        make.size.mas_equalTo(CGSizeMake(143*0.75,79*0.75));
+        make.left.mas_equalTo(55);
         
         
         
@@ -444,9 +455,9 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
     
     [DriArr[1] mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(videoView.mas_bottom).offset(-26);
-        make.size.mas_equalTo(CGSizeMake(287/2,79));
-        make.left.mas_equalTo(56);
+        make.bottom.equalTo(videoView.mas_bottom).offset(-32);
+        make.size.mas_equalTo(CGSizeMake(143*0.75,79*0.75));
+        make.left.mas_equalTo(55);
         
         
         
@@ -455,8 +466,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     //左
     [DriArr[2] mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(videoView.mas_bottom).offset(-54);
-        make.size.mas_equalTo(CGSizeMake(79,287/2));
-        make.left.mas_equalTo(28);
+        make.size.mas_equalTo(CGSizeMake(79*0.75,143*0.75));
+        make.left.mas_equalTo(33);
         
         
         
@@ -465,8 +476,9 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
     [DriArr[3] mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(videoView.mas_bottom).offset(-54);
-        make.size.mas_equalTo(CGSizeMake(79,287/2));
-        make.left.mas_equalTo(148);
+        make.size.mas_equalTo(CGSizeMake(79*0.75,143*0.75));
+        make.left.mas_equalTo(125);
+        
         
         
         
@@ -474,10 +486,10 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
     
     [DriArr[4] mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(videoView.mas_bottom).offset(-120);
-        make.right.mas_equalTo(-303);
-      //  make.size.mas_equalTo(CGSizeMake(72, 101));
-        make.width.mas_equalTo(72);
+        make.bottom.equalTo(videoView.mas_bottom).offset(-110);
+        make.right.mas_equalTo(-393);
+        make.height.mas_equalTo(78);
+        make.width.mas_equalTo(53);
         
         
         
@@ -485,10 +497,10 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
     
     [DriArr[5] mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(videoView.mas_bottom).offset(-26);
-        make.right.mas_equalTo(-303);
-       // make.size.mas_equalTo(CGSizeMake(72, 101));
-        make.width.mas_equalTo(72);
+        make.bottom.equalTo(videoView.mas_bottom).offset(-32);
+        make.right.mas_equalTo(-393);
+        make.width.mas_equalTo(53);
+        make.height.mas_equalTo(78);
         
 
         
@@ -602,6 +614,14 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     [LabeArr mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:50 leadSpacing:20 tailSpacing:17];
  
     
+    
+    NSArray * imageList =@[@"top1",@"down1",@"left1",@"right1",@"Ltopbtn",@"Ldownbtn"];
+   
+    for (NSInteger i =0; i<6; i++) {
+         [DriArr[i] setImage:[UIImage imageNamed:imageList[i]] forState:UIControlStateNormal];
+        
+    }
+
     
     // 5个按钮
     

@@ -116,6 +116,12 @@
 		34C496031DD1D15900687606 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C496021DD1D15900687606 /* MainTabViewController.m */; };
 		34C496061DD1D21700687606 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C496051DD1D21700687606 /* BaseViewController.m */; };
 		34CB102A1DE6C7FD007B27BA /* Lnormal_photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CB10291DE6C7FD007B27BA /* Lnormal_photo.png */; };
+		34CD6C2A1DE7EC3F00993834 /* L_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CD6C281DE7EC3F00993834 /* L_down.png */; };
+		34CD6C2B1DE7EC3F00993834 /* L_top.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CD6C291DE7EC3F00993834 /* L_top.png */; };
+		34CD6C301DE7EC9E00993834 /* down_egg.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CD6C2C1DE7EC9E00993834 /* down_egg.png */; };
+		34CD6C311DE7EC9E00993834 /* left_egg.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CD6C2D1DE7EC9E00993834 /* left_egg.png */; };
+		34CD6C321DE7EC9E00993834 /* right_egg.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CD6C2E1DE7EC9E00993834 /* right_egg.png */; };
+		34CD6C331DE7EC9E00993834 /* top_egg.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CD6C2F1DE7EC9E00993834 /* top_egg.png */; };
 		34CFC4691DDC369B00444AA2 /* WifiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CFC4681DDC369B00444AA2 /* WifiViewController.m */; };
 		34D3C6D51DDAB97300529FF5 /* BindingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3C6D41DDAB97300529FF5 /* BindingViewController.m */; };
 		34D3C6E11DDAF43600529FF5 /* ShowWarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3C6E01DDAF43600529FF5 /* ShowWarView.m */; };
@@ -244,7 +250,6 @@
 		34DB5D2E1DD415A900C51823 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DB5D2D1DD415A900C51823 /* libc++.1.tbd */; };
 		34DB5D341DD41AA000C51823 /* AFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DB5D331DD41AA000C51823 /* AFHttpClient.m */; };
 		34DB5D371DD423C100C51823 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DB5D361DD423C100C51823 /* BaseModel.m */; };
-		34DDFE041DE2A09500956D47 /* InCallViewControllerr.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DDFE031DE2A09500956D47 /* InCallViewControllerr.m */; };
 		34E3810E1DE5973C007501E1 /* top1.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E3810A1DE5973C007501E1 /* top1.png */; };
 		34E3810F1DE5973C007501E1 /* down1.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E3810B1DE5973C007501E1 /* down1.png */; };
 		34E381101DE5973C007501E1 /* right1.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E3810C1DE5973C007501E1 /* right1.png */; };
@@ -414,6 +419,12 @@
 		34C496041DD1D21700687606 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		34C496051DD1D21700687606 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		34CB10291DE6C7FD007B27BA /* Lnormal_photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lnormal_photo.png; sourceTree = "<group>"; };
+		34CD6C281DE7EC3F00993834 /* L_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = L_down.png; sourceTree = "<group>"; };
+		34CD6C291DE7EC3F00993834 /* L_top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = L_top.png; sourceTree = "<group>"; };
+		34CD6C2C1DE7EC9E00993834 /* down_egg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down_egg.png; sourceTree = "<group>"; };
+		34CD6C2D1DE7EC9E00993834 /* left_egg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_egg.png; sourceTree = "<group>"; };
+		34CD6C2E1DE7EC9E00993834 /* right_egg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_egg.png; sourceTree = "<group>"; };
+		34CD6C2F1DE7EC9E00993834 /* top_egg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_egg.png; sourceTree = "<group>"; };
 		34CFC4671DDC369B00444AA2 /* WifiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiViewController.h; sourceTree = "<group>"; };
 		34CFC4681DDC369B00444AA2 /* WifiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiViewController.m; sourceTree = "<group>"; };
 		34D3C6D31DDAB97300529FF5 /* BindingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindingViewController.h; sourceTree = "<group>"; };
@@ -971,8 +982,6 @@
 		34DB5D331DD41AA000C51823 /* AFHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHttpClient.m; sourceTree = "<group>"; };
 		34DB5D351DD423C100C51823 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		34DB5D361DD423C100C51823 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
-		34DDFE021DE2A09500956D47 /* InCallViewControllerr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InCallViewControllerr.h; sourceTree = "<group>"; };
-		34DDFE031DE2A09500956D47 /* InCallViewControllerr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InCallViewControllerr.m; sourceTree = "<group>"; };
 		34E3810A1DE5973C007501E1 /* top1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top1.png; sourceTree = "<group>"; };
 		34E3810B1DE5973C007501E1 /* down1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down1.png; sourceTree = "<group>"; };
 		34E3810C1DE5973C007501E1 /* right1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right1.png; sourceTree = "<group>"; };
@@ -1121,6 +1130,12 @@
 		345AB3DD1DD9AE3C00025EEE /* Horizontal */ = {
 			isa = PBXGroup;
 			children = (
+				34CD6C2C1DE7EC9E00993834 /* down_egg.png */,
+				34CD6C2D1DE7EC9E00993834 /* left_egg.png */,
+				34CD6C2E1DE7EC9E00993834 /* right_egg.png */,
+				34CD6C2F1DE7EC9E00993834 /* top_egg.png */,
+				34CD6C281DE7EC3F00993834 /* L_down.png */,
+				34CD6C291DE7EC3F00993834 /* L_top.png */,
 				345AB3DF1DD9AEA400025EEE /* halfAp.png */,
 				345AB3E01DD9AEA400025EEE /* Lclick_light.png */,
 				345AB3E11DD9AEA400025EEE /* Lnormal_light.png */,
@@ -2501,8 +2516,6 @@
 				34C496051DD1D21700687606 /* BaseViewController.m */,
 				7D38B2261DE02B9C00404D05 /* BaseTabViewController.h */,
 				7D38B2271DE02B9C00404D05 /* BaseTabViewController.m */,
-				34DDFE021DE2A09500956D47 /* InCallViewControllerr.h */,
-				34DDFE031DE2A09500956D47 /* InCallViewControllerr.m */,
 			);
 			path = BaseV;
 			sourceTree = "<group>";
@@ -2722,6 +2735,7 @@
 				34ACCF4B1DDC5E3600AE2B98 /* weixin.png in Resources */,
 				34DB5C9F1DD4129E00C51823 /* nowebcamCIF.jpg in Resources */,
 				34ACCF3B1DDC510000AE2B98 /* xiala@3x.png in Resources */,
+				34CD6C311DE7EC9E00993834 /* left_egg.png in Resources */,
 				34DB5CF51DD4129F00C51823 /* oldphone-mono.wav in Resources */,
 				3461F55A1DD2CB4800E56298 /* tab_squar_dian@2x.png in Resources */,
 				34DB5CEB1DD4129F00C51823 /* status-red.png in Resources */,
@@ -2734,6 +2748,7 @@
 				34A86E681DE6840500BAA8F3 /* personcenterback.png in Resources */,
 				34DB5CDF1DD4129F00C51823 /* mic_muted.png in Resources */,
 				34DB5CE01DD4129F00C51823 /* notok.png in Resources */,
+				34CD6C2A1DE7EC3F00993834 /* L_down.png in Resources */,
 				345AB3EF1DD9AEA400025EEE /* take_off.png in Resources */,
 				34DB5CD71DD4129F00C51823 /* contact_starred.png in Resources */,
 				7D38B2211DDFF59A00404D05 /* quanxian.png in Resources */,
@@ -2756,6 +2771,7 @@
 				3461F5591DD2CB4800E56298 /* tab_my@2x.png in Resources */,
 				34DB5CE61DD4129F00C51823 /* startcall-green.png in Resources */,
 				34ACCF491DDC5E3600AE2B98 /* registbiyan.png in Resources */,
+				34CD6C301DE7EC9E00993834 /* down_egg.png in Resources */,
 				345AB4121DD9AEB900025EEE /* rool_on.png in Resources */,
 				3461F5521DD2CB4800E56298 /* tab_bangdan_dian@2x.png in Resources */,
 				34DB5CE81DD4129F00C51823 /* status-green.png in Resources */,
@@ -2783,6 +2799,7 @@
 				345AB4171DD9AEB900025EEE /* penNormal.png in Resources */,
 				34DB5CE21DD4129F00C51823 /* sephone-banner.png in Resources */,
 				34DB5CDE1DD4129F00C51823 /* mic_active.png in Resources */,
+				34CD6C321DE7EC9E00993834 /* right_egg.png in Resources */,
 				345AB3F61DD9AEA400025EEE /* Lclick_photo.png in Resources */,
 				34DB5CA51DD4129E00C51823 /* sephonerc in Resources */,
 				34ACCF461DDC5E3600AE2B98 /* numbertu.png in Resources */,
@@ -2824,6 +2841,7 @@
 				349C0BFD1DDF073100834791 /* egg_ prompt.png in Resources */,
 				34B7A0291DE56CF500763EB0 /* 箭头.png in Resources */,
 				34FC41E51DD179F900A23A8F /* Assets.xcassets in Resources */,
+				34CD6C2B1DE7EC3F00993834 /* L_top.png in Resources */,
 				34B7A0271DE56CF500763EB0 /* 按钮.png in Resources */,
 				7D38B21E1DDFF59A00404D05 /* about.png in Resources */,
 				34DB5CF41DD4129F00C51823 /* oldphone-mono-30s.caf in Resources */,
@@ -2831,6 +2849,7 @@
 				34FC41E01DD179F900A23A8F /* Main.storyboard in Resources */,
 				34DB5CFB1DD4129F00C51823 /* tapping.wav in Resources */,
 				34DB5CE71DD4129F00C51823 /* startcall-small.png in Resources */,
+				34CD6C331DE7EC9E00993834 /* top_egg.png in Resources */,
 				34DB5CD31DD4129F00C51823 /* chat_message_not_delivered.png in Resources */,
 				34DB5CCB1DD4129F00C51823 /* active_chat.png in Resources */,
 				34DB5CD61DD4129F00C51823 /* contact-orange.png in Resources */,
@@ -2912,7 +2931,6 @@
 				34C495EC1DD1CD5400687606 /* UIButton+Blocks.m in Sources */,
 				34DB5D341DD41AA000C51823 /* AFHttpClient.m in Sources */,
 				7D626A401DD95636002C0F8B /* RegistViewController.m in Sources */,
-				34DDFE041DE2A09500956D47 /* InCallViewControllerr.m in Sources */,
 				34C495D71DD1CB2900687606 /* AppDelegate+Launcher.m in Sources */,
 				34FC41DD1DD179F900A23A8F /* ViewController.m in Sources */,
 				34C496031DD1D15900687606 /* MainTabViewController.m in Sources */,
