@@ -17,6 +17,12 @@
     NSArray * btnList;
     //方向键
     NSArray * DriArr;
+    //文本
+    NSArray * LabeArr;
+    //
+    UIButton * pullBtn;
+    
+    
     
     
     
@@ -50,6 +56,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     strHZ = @"1";
+   
     
 
     self.center = [[CTCallCenter alloc] init];
@@ -175,10 +182,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     [pesnBack addSubview:penSl];
     
     // 5个按钮背景
-    FiveView =[UIView new];
-    FiveView.backgroundColor =[UIColor whiteColor];
-    FiveView.layer.borderWidth =0.6;
-    FiveView.layer.borderColor =GRAY_COLOR.CGColor;
+    FiveView =[UIImageView new];
+    FiveView.userInteractionEnabled = YES;
     [self.view addSubview:FiveView];
     
     
@@ -206,7 +211,31 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
         
         
     }
-
+    // 5个文本字体
+      UILabel * label1 =[UILabel new];
+      UILabel * label2 =[UILabel new];
+      UILabel * label3 =[UILabel new];
+      UILabel * label4 =[UILabel new];
+      UILabel * label5 =[UILabel new];
+       LabeArr =@[label1,label2,label3,label4,label5];
+    for (NSInteger  i=0; i<5; i++) {
+        
+        
+        [FiveView addSubview:LabeArr[i]];
+        
+    }
+    
+    // 推拉
+    pullBtn =[UIButton new];
+    pullBtn.userInteractionEnabled = YES;
+    pullBtn.hidden = YES;
+    [pullBtn setImage:[UIImage imageNamed:@"take_off"] forState:UIControlStateNormal];
+    [pullBtn setImage:[UIImage imageNamed:@"take_on"] forState:UIControlStateSelected];
+    [pullBtn addTarget:self action:@selector(pullBtn:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [FiveView addSubview:pullBtn];
+    
+    
     // 小圆
     UIImageView * SmallImage =[UIImageView new];
     SmallImage.tag = 10000001;
@@ -232,16 +261,13 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
     [rollbtn addTarget:self action:@selector(RollClick:) forControlEvents:UIControlEventTouchUpInside];
     [takephoto addTarget:self action:@selector(PhotoClick:) forControlEvents:UIControlEventTouchUpInside];
-    
-    NSArray * imageListS=@[@"voice_on",@"light_on",@"food_on",@"rool_on",@"takep_on"];
-    NSArray * imageListN=@[@"voice_off",@"light_off",@"food_off",@"rool_off",@"takep_off"];
+
     btnList =@[voicebtn,lightbtn,foodbtn,rollbtn,takephoto];
     for (NSInteger i =0; i<5; i++) {
-        
-        [btnList[i] setImage:[UIImage imageNamed:imageListN[i]] forState:UIControlStateNormal];
-        [btnList[i] setImage:[UIImage imageNamed:imageListS[i]] forState:UIControlStateSelected];
+       
         [FiveView addSubview:btnList[i]];
     }
+    
     [self VviewUpdatRemove:NO];
     
     
@@ -286,16 +312,16 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
  */
 - (void)HviewUpdateView
 {
+    pullBtn.hidden = NO;
+    
+    
+
     
      videoView.transform = CGAffineTransformScale(self.videoView.transform, 1.32, 1.04);
     
     // 视频界面
-    [videoView mas_updateConstraints:^(MASConstraintMaker *make) {
-        
-        make.height.mas_equalTo(self.view.width);
-        make.width.mas_equalTo(self.view.height);
-        
-        
+    [videoView mas_makeConstraints:^(MASConstraintMaker *make) {
+       make.bottom.mas_equalTo(0);
         
     }];
     
@@ -308,33 +334,100 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
         
     }];
     
-//    pesnBack.hidden = YES;
-//    penSl.hidden = YES;
-//    FiveView.hidden = YES;
     
     // 激光笔背景
-//    [pesnBack mas_remakeConstraints:^(MASConstraintMaker *make) {
-//        
-//    
-//    }];
-//    
-//    
-//    [penSl mas_remakeConstraints:^(MASConstraintMaker *make) {
-//        
-//    }];
-//    
-//    // 5个按钮背景
-//    [FiveView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//        
-//    }];
-//
-//    // 5个按钮
-//    
-//  
-//    [btnList mas_remakeConstraints:^(MASConstraintMaker *make) {
-//    
-//    }];
+    [pesnBack mas_remakeConstraints:^(MASConstraintMaker *make) {
+        
+        make.width.height.mas_equalTo(@0);
+        
+    
+    }];
+    
+    penSl.hidden = YES;
+    [penSl mas_remakeConstraints:^(MASConstraintMaker *make) {
+        
+        make.width.height.mas_equalTo(@0);
 
+    }];
+    FiveView.image =[UIImage imageNamed:@"halfAp"];
+    FiveView.backgroundColor =[UIColor clearColor];
+    FiveView.layer.borderWidth =0;
+    
+    // 5个按钮背景
+    [FiveView mas_remakeConstraints:^(MASConstraintMaker *make) {
+       
+        make.width.mas_equalTo(83);
+        make.top.bottom.right.mas_equalTo(0);
+     
+
+    }];
+
+    // 5个按钮
+    NSArray * imageListS=@[@"Lclick_light",@"Lclick_rool",@"Lclick_food",@"Lclick_photo",@"takep_on"];
+    NSArray * imageListN=@[@"Lnormal_light",@"Lnormal_rool",@"Lnormal_food",@"Lnormal_photo",@"takep_off"];
+    for (NSInteger i =0; i<5; i++) {
+        
+        [btnList[i] setImage:[UIImage imageNamed:imageListN[i]] forState:UIControlStateNormal];
+        [btnList[i] setImage:[UIImage imageNamed:imageListS[i]] forState:UIControlStateSelected];
+    }
+    
+   
+   
+    
+    
+
+    // 推拉
+    [pullBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.equalTo(FiveView.mas_left).offset(6);
+        make.size.mas_equalTo(CGSizeMake(15, 22));
+        make.bottom.equalTo(self.view.mas_bottom).offset(-187);
+        
+        
+        
+        
+    }];
+    
+    NSArray * arrText;
+    arrText = @[@"开灯",@"喂食",@"投食",@"抓拍",@"声音"];
+    for (NSInteger  i=0; i<5; i++) {
+        UILabel * newLable =LabeArr[i];
+        newLable.text =arrText[i];
+        newLable.font =[UIFont systemFontOfSize:12];
+        newLable.textColor =[UIColor whiteColor];
+        
+        
+    }
+
+    
+    // 文本字体
+    [LabeArr mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(FiveView.mas_centerX).offset(8);
+        make.height.mas_equalTo(12);
+        
+        
+    }];
+    
+    [LabeArr mas_distributeViewsAlongAxis:MASAxisTypeVertical
+                         withFixedSpacing:75
+                              leadSpacing:105
+                              tailSpacing:-69];
+    
+    
+  
+    [btnList mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(FiveView.mas_left).offset(28);
+        make.right.equalTo(self.view.mas_right).offset(-13);
+        
+
+    }];
+    
+    [btnList mas_distributeViewsAlongAxis:MASAxisTypeVertical
+                        withFixedSpacing:40
+                             leadSpacing:59
+                             tailSpacing:-52];
+    
+    
     
     
     //方向按钮
@@ -382,8 +475,10 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
     [DriArr[4] mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(videoView.mas_bottom).offset(-120);
-        make.right.mas_equalTo(-33);
-        make.size.mas_equalTo(CGSizeMake(72, 101));
+        make.right.mas_equalTo(-303);
+      //  make.size.mas_equalTo(CGSizeMake(72, 101));
+        make.width.mas_equalTo(72);
+        
         
         
         
@@ -391,9 +486,11 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
     [DriArr[5] mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(videoView.mas_bottom).offset(-26);
-        make.right.mas_equalTo(-33);
-        make.size.mas_equalTo(CGSizeMake(72, 101));
+        make.right.mas_equalTo(-303);
+       // make.size.mas_equalTo(CGSizeMake(72, 101));
+        make.width.mas_equalTo(72);
         
+
         
     }];
 
@@ -410,13 +507,15 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 {
 
     videoView.transform = CGAffineTransformIdentity;
-    pesnBack.hidden = NO;
     penSl.hidden = NO;
-    FiveView.hidden = NO;
-    
+    FiveView.backgroundColor =[UIColor whiteColor];
+    FiveView.layer.borderWidth =0.6;
+    FiveView.image =[UIImage imageNamed:@""];
+    FiveView.layer.borderColor =GRAY_COLOR.CGColor;
+    pullBtn.hidden = YES;
     
     // 视频界面
-    [videoView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [videoView mas_remakeConstraints:^(MASConstraintMaker *make) {
         
         make.width.equalTo(self.view);
         make.top.mas_equalTo(-8);
@@ -425,7 +524,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
     
     // 返回按钮
-    [btnBack mas_makeConstraints:^(MASConstraintMaker *make) {
+    [btnBack mas_remakeConstraints:^(MASConstraintMaker *make) {
         
         make.left.equalTo(self.view.mas_left).offset(12);
         make.top.mas_equalTo(15);
@@ -434,7 +533,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
     
     //横竖屏按钮
-    [HZbtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    [HZbtn mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.view.mas_right).offset(-12);
         make.top.equalTo(self.view.mas_top).offset(255);
         make.size.mas_equalTo(CGSizeMake(30, 30));
@@ -442,7 +541,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
     
     // 激光笔背景
-    [pesnBack mas_makeConstraints:^(MASConstraintMaker *make) {
+    [pesnBack mas_remakeConstraints:^(MASConstraintMaker *make) {
         
         make.top.equalTo(videoView.mas_bottom).offset(0);
         make.width.equalTo(self.view);
@@ -452,7 +551,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
     
     
-    [penSl mas_makeConstraints:^(MASConstraintMaker *make) {
+    [penSl mas_remakeConstraints:^(MASConstraintMaker *make) {
         
         make.centerY.equalTo(pesnBack.mas_centerY);
         make.height.mas_equalTo(31);
@@ -461,33 +560,68 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
     
     // 5个按钮背景
-    [FiveView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [FiveView mas_remakeConstraints:^(MASConstraintMaker *make) {
         
         make.top.equalTo(pesnBack.mas_bottom).offset(0);
         make.width.mas_equalTo(self.view);
         make.height.mas_equalTo(70);
+        make.right.mas_equalTo(0);
         
     
     }];
     
+    
+    NSArray * imageListS=@[@"voice_on",@"light_on",@"food_on",@"rool_on",@"takep_on"];
+    NSArray * imageListN=@[@"voice_off",@"light_off",@"food_off",@"rool_off",@"takep_off"];
+    for (NSInteger i =0; i<5; i++) {
+        
+        [btnList[i] setImage:[UIImage imageNamed:imageListS[i]] forState:UIControlStateNormal];
+        [btnList[i] setImage:[UIImage imageNamed:imageListN[i]] forState:UIControlStateSelected];
+    }
+
+    NSArray * arrText;
+    arrText = @[@"声音",@"开灯",@"喂食",@"投食",@"抓拍"];
+    for (NSInteger  i=0; i<5; i++) {
+        UILabel * newLable =LabeArr[i];
+        newLable.text =arrText[i];
+        newLable.font  =[UIFont systemFontOfSize:12];
+        newLable.textColor =[UIColor grayColor];
+        
+        
+    }
+    // 5个lable
+    [LabeArr mas_remakeConstraints:^(MASConstraintMaker *make) {
+        
+        make.height.mas_equalTo(12);
+        make.bottom.equalTo(FiveView.mas_bottom).offset(-6);
+        
+        
+        
+        
+    }];
+    [LabeArr mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:50 leadSpacing:20 tailSpacing:17];
+ 
     
     
     // 5个按钮
     
-    [btnList mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:41 leadSpacing:15 tailSpacing:15];
-    [btnList mas_makeConstraints:^(MASConstraintMaker *make) {
+    [btnList mas_remakeConstraints:^(MASConstraintMaker *make) {
         
         make.height.mas_equalTo(36);
-        make.centerY.equalTo(FiveView.mas_centerY);
+//        make.centerY.equalTo(FiveView.mas_centerY);
+        make.top.equalTo(FiveView.mas_top).offset(12);
+        
         
         
         
     }];
-    
+    [btnList mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:41 leadSpacing:15 tailSpacing:15];
+   
+
     
     //方向按钮
     
-    [DriArr[0] mas_makeConstraints:^(MASConstraintMaker *make) {
+    [DriArr[0] mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(FiveView.mas_bottom).offset(26);
         make.size.mas_equalTo(CGSizeMake(287/2,79));
         make.left.mas_equalTo(56);
@@ -498,7 +632,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
     
 
-    [DriArr[1] mas_makeConstraints:^(MASConstraintMaker *make) {
+    [DriArr[1] mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(FiveView.mas_bottom).offset(146);
         make.size.mas_equalTo(CGSizeMake(287/2,79));
         make.left.mas_equalTo(56);
@@ -508,7 +642,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
         
     }];
     //左
-    [DriArr[2] mas_makeConstraints:^(MASConstraintMaker *make) {
+    [DriArr[2] mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(FiveView.mas_bottom).offset(54);
         make.size.mas_equalTo(CGSizeMake(79,287/2));
         make.left.mas_equalTo(28);
@@ -518,7 +652,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
         
     }];
     
-    [DriArr[3] mas_makeConstraints:^(MASConstraintMaker *make) {
+    [DriArr[3] mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(FiveView.mas_bottom).offset(54);
         make.size.mas_equalTo(CGSizeMake(79,287/2));
         make.left.mas_equalTo(148);
@@ -528,7 +662,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
         
     }];
     
-    [DriArr[4] mas_makeConstraints:^(MASConstraintMaker *make) {
+    [DriArr[4] mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(FiveView.mas_bottom).offset(26);
         make.right.mas_equalTo(-33);
         make.size.mas_equalTo(CGSizeMake(72, 101));
@@ -537,7 +671,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
         
     }];
     
-    [DriArr[5] mas_makeConstraints:^(MASConstraintMaker *make) {
+    [DriArr[5] mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(FiveView.mas_bottom).offset(120);
         make.right.mas_equalTo(-33);
         make.size.mas_equalTo(CGSizeMake(72, 101));
@@ -549,7 +683,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     // 小圆
     
     UIImageView * imageS =[self.view viewWithTag:10000001];
-    [imageS mas_makeConstraints:^(MASConstraintMaker *make) {
+    [imageS mas_remakeConstraints:^(MASConstraintMaker *make) {
         
         make.top.equalTo(FiveView.mas_bottom).offset(104);
         make.left.mas_equalTo(105);
@@ -566,6 +700,38 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 
 
 #pragma mark  buttonMethod _________________各点击事件__________________________
+
+
+//弹出 收回
+
+- (void)pullBtn:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
+    
+    
+    if (sender.selected) {
+        // 移动view
+        [UIView animateWithDuration:0.5 animations:^{
+            FiveView.center = CGPointMake(687, FiveView.center.y);
+        } completion:^(BOOL finished) {
+            //平移结束
+            
+        }];
+    }else
+    {
+        [UIView animateWithDuration:0.5 animations:^{
+            FiveView.center = CGPointMake(625.5, FiveView.center.y);
+        } completion:^(BOOL finished) {
+            //平移结束
+            
+        }];
+
+        
+    }
+   
+    
+    
+}
 
 // 返回
 - (void)backBtn:(UIButton * )sender

@@ -26,7 +26,7 @@
 // 激光笔背景
 @property (nonatomic,strong)UIImageView * pesnBack;
 // 5个button背景
-@property (nonatomic,strong)UIView * FiveView;
+@property (nonatomic,strong)UIImageView * FiveView;
 
 
 
