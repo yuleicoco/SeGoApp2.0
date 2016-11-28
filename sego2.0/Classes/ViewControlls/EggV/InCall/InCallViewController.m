@@ -8,7 +8,7 @@
 
 #import "InCallViewController.h"
 #import <CallKit/CXCallObserver.h>
-#import "AppDelegate.h"
+#import "AFHttpClient+DeviceUseMember.h"
 
 @interface InCallViewController ()
 {
@@ -22,6 +22,11 @@
     NSArray * LabeArr;
     //
     UIButton * pullBtn;
+    // lable
+    UILabel * timeLable;
+    // 时间 lable
+    NSTimer * timerInCall;
+    
     
     
     
@@ -62,6 +67,7 @@
 
     self.center = [[CTCallCenter alloc] init];
    __weak InCallViewController *weakSelf = self;
+    //先留着 IOS10 开放了接口 方法变了
     self.center.callEventHandler = ^(CTCall * call)
     {
         //TODO:检测到来电后的处理
@@ -77,21 +83,63 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(applicationWillResignActive:)name:UIApplicationWillResignActiveNotification
                                               object:[UIApplication sharedApplication]];
     
-   
-   // [flowUI startAnimating];
+    //菊花图
+    [flowUI startAnimating];
+    //获取视频状态
     [self callStream:call];
+    // 获取视频时间
+    [self updateTime];
+    
     
 
     
     
 }
 
+// 记录时间
+- (void)updateTime
+{
+     SephoneCall *calltime= sephone_core_get_current_call([SephoneManager getLc]);
+    if (calltime == NULL) {
+        return;
+    }else
+    {
+        int duration = sephone_call_get_duration(calltime);
+        
+        //NSLog(@"=========时间======%02i:%02i",(duration/60), (duration%60));
+        timeLable.text =[NSString stringWithFormat:@"%02i:%02i", (duration/60), (duration%60), nil];
+        
+        if (duration >= 300) {
+            
+            [SephoneManager terminateCurrentCallOrConference];
+            NSLog(@"五分钟到时视频流自动断开");
+
+        }
+        
+    }
+    
+    
+}
+
+
+// 重新方法
 - (void)applicationWillResignActive:(UIApplication *)application {
     
-    
+      [self RefreshCellForLiveId];
     
     
 }
+
+// 监听用户home操作
+- (void)RefreshCellForLiveId
+{
+    
+    [SephoneManager terminateCurrentCallOrConference];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    
+}
+
 
 - (void)callStream:(SephoneCall *)calls
 {
@@ -99,6 +147,7 @@
     if (calls != NULL) {
         
         sephone_call_set_next_video_frame_decoded_callback(calls, hideSpinner, (__bridge void *)(self));
+        
     }
     
     
@@ -162,12 +211,18 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     [self.view addSubview:btnBack];
     
     
+    
     // 横竖屏
     
     HZbtn = [UIButton new];
     [HZbtn setImage:[UIImage imageNamed:@"hzbtn"] forState:UIControlStateNormal];
     [HZbtn addTarget:self action:@selector(HZView:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:HZbtn];
+    
+    timeLable =[UILabel new];
+    timeLable.font =[UIFont systemFontOfSize:14];
+    [self.view addSubview:timeLable];
+    
     
     // 激光笔背景
     pesnBack =[UIImageView new];
@@ -322,7 +377,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
 
     
-     videoView.transform = CGAffineTransformScale(self.videoView.transform, 1.32, 1.04);
+    videoView.transform = CGAffineTransformScale(self.videoView.transform, 1.32, 1.04);
     
     // 视频界面
     [videoView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -338,6 +393,15 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
         make.size.mas_equalTo(CGSizeMake(30, 30));
         
     }];
+    
+    [timeLable mas_remakeConstraints:^(MASConstraintMaker *make) {
+        
+        make.right.equalTo(self.view.mas_right).offset(-52);
+        make.top.equalTo(self.view.mas_top).offset(20);
+        make.size.mas_equalTo(CGSizeMake(60, 30));
+        
+    }];
+    
     
     
     // 激光笔背景
@@ -934,9 +998,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
  
     // 视频
     sephone_core_set_native_video_window_id([SephoneManager getLc], (unsigned long)videoView);
-    
-    
-    
+
     
 }
 
@@ -993,7 +1055,33 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 
 
 
-
+/**
+ *  结束设备使用记录
+ */
+- (void)OverDevideUseMember
+{
+    // 自己 别人
+    NSString * Did;
+    if ([AppUtil isBlankString: [Defaluts objectForKey:@"selfID"]]) {
+        
+        Did = [Defaluts objectForKey:@"otherID"];
+    }else{
+        Did = [Defaluts objectForKey:@"selfID"];
+        
+    }
+    
+    [[AFHttpClient sharedAFHttpClient]OverDeviceMember:Did complete:^(BaseModel * model) {
+        if ([model.retCode isEqualToString:@"0000"]) {
+            // 成功
+            
+            
+        }
+        
+    }];
+    
+    
+    
+}
 
 
 
