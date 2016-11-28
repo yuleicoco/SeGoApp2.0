@@ -15,4 +15,12 @@
  */
 -(void)DeviceUseMember:(NSString *)mid object :(NSString *)object deviceno:(NSString *)deviceno belong:(NSString *)belong starttime:(NSString *)starttime    complete:(void (^)(BaseModel *))completeBlock;
 
+
+/**
+ *  更新设备使用记录
+ */
+
+- (void)OverDeviceMember:(NSString *)did  complete:(void (^)(BaseModel *))completeBlock;
+
+
 @end

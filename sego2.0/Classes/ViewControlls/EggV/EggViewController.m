@@ -65,7 +65,7 @@
     [self setNavTitle:NSLocalizedString(@"tabEgg_title",nil)];
     
     // sephone
-   // [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
+    [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
     
     
 }
@@ -790,12 +790,8 @@
         
     }
     
-    //  [self sipCall:strNum sipName:nil];
-    
-    InCallViewController *   _incallVC =[[InCallViewController alloc]initWithNibName:@"InCallViewController" bundle:nil];
-    [self presentViewController:_incallVC animated:YES completion:nil];
-    
-    
+      [self sipCall:strNum sipName:nil];
+
     if ([str isEqualToString:@"ds001"]) {
         
         // 设备号 需要判断
@@ -804,8 +800,12 @@
         NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
         [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSString *  locationString=[dateformatter stringFromDate:senddate];
-       [[AFHttpClient sharedAFHttpClient]DeviceUseMember:[AccountManager sharedAccountManager].loginModel.mid object:@"self" deviceno:strNum belong:[AccountManager sharedAccountManager].loginModel.mid starttime:locationString complete:^(BaseModel *model) {
-        
+        [[AFHttpClient sharedAFHttpClient]DeviceUseMember:[AccountManager sharedAccountManager].loginModel.mid object:@"self" deviceno:strNum belong:[AccountManager sharedAccountManager].loginModel.mid starttime:locationString complete:^(BaseModel *model) {
+            
+            [Defaluts setObject:model.content forKey:@"selfID"];
+            [Defaluts synchronize];
+            
+           
         
     }];
         

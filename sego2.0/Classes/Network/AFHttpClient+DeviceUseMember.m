@@ -32,4 +32,26 @@
     
 }
 
+
+- (void)OverDeviceMember:(NSString *)did  complete:(void (^)(BaseModel *))completeBlock
+{
+    
+    NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
+    parms[@"common"] = @"updateDeviceUseRecord";
+    parms[@"id"] = did;
+    
+    [self POST:@"clientAction.do?" parameters:parms result:^(BaseModel * model) {
+        
+        
+        if (model) {
+            completeBlock(model);
+        }
+        
+    }];
+    
+    
+}
+
+
+
 @end
