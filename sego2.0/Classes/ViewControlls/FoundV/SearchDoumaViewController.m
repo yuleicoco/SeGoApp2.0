@@ -77,14 +77,36 @@
         make.width.mas_equalTo(100);
     }];
 
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.tableView.superview);
+        make.right.equalTo(self.tableView.superview);
+        make.top.equalTo(self.tableView.superview).offset(39);
+        make.bottom.equalTo(self.tableView.superview);
+    }];
+    
+    
+    
+    
+    
+    
 }
 
 -(void)searchButtontouch{
-    FuckLog(@"dad");
+  //  FuckLog(@"dad");
+    [_topTextfield resignFirstResponder];
+    self.tableView.hidden = NO;
+    [self initRefreshView];
 
 }
 
+-(void)loadDataSourceWithPage:(int)page{
+    
 
+
+
+
+
+}
 
 
 
