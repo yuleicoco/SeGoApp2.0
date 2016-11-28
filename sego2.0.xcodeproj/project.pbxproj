@@ -276,6 +276,9 @@
 		7D8AA92B1DEBDFBA00A43677 /* jiantou.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D8AA9281DEBDFBA00A43677 /* jiantou.png */; };
 		7D8AA9301DEBDFE900A43677 /* DouyidouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8AA92D1DEBDFE900A43677 /* DouyidouViewController.m */; };
 		7D8AA9311DEBDFE900A43677 /* SearchDoumaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8AA92F1DEBDFE900A43677 /* SearchDoumaViewController.m */; };
+		7D8AA9351DEC037B00A43677 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8AA9341DEC037B00A43677 /* SearchTableViewCell.m */; };
+		7D8AA9381DEC09A400A43677 /* AFHttpClient+Found.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8AA9371DEC09A400A43677 /* AFHttpClient+Found.m */; };
+		7D8AA93B1DEC119100A43677 /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8AA93A1DEC119100A43677 /* SearchModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1027,6 +1030,12 @@
 		7D8AA92D1DEBDFE900A43677 /* DouyidouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DouyidouViewController.m; sourceTree = "<group>"; };
 		7D8AA92E1DEBDFE900A43677 /* SearchDoumaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchDoumaViewController.h; sourceTree = "<group>"; };
 		7D8AA92F1DEBDFE900A43677 /* SearchDoumaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDoumaViewController.m; sourceTree = "<group>"; };
+		7D8AA9331DEC037B00A43677 /* SearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewCell.h; sourceTree = "<group>"; };
+		7D8AA9341DEC037B00A43677 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
+		7D8AA9361DEC09A400A43677 /* AFHttpClient+Found.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Found.h"; sourceTree = "<group>"; };
+		7D8AA9371DEC09A400A43677 /* AFHttpClient+Found.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Found.m"; sourceTree = "<group>"; };
+		7D8AA9391DEC119100A43677 /* SearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchModel.h; sourceTree = "<group>"; };
+		7D8AA93A1DEC119100A43677 /* SearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchModel.m; sourceTree = "<group>"; };
 		7DC9C3DF1DD2FEF60033973D /* Notification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
 		9BB5CB8271F3FD7EA2EAFCC8 /* Pods-sego2.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sego2.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sego2.0/Pods-sego2.0.debug.xcconfig"; sourceTree = "<group>"; };
 		D717670192D3D82245676E28 /* Pods-sego2.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sego2.0.release.xcconfig"; path = "Pods/Target Support Files/Pods-sego2.0/Pods-sego2.0.release.xcconfig"; sourceTree = "<group>"; };
@@ -2340,6 +2349,8 @@
 				34884C881DD5742200245C24 /* CheckDeviceModel.m */,
 				34C495FE1DD1CFE000687606 /* LoginModel.h */,
 				34C495FF1DD1CFE000687606 /* LoginModel.m */,
+				7D8AA9391DEC119100A43677 /* SearchModel.h */,
+				7D8AA93A1DEC119100A43677 /* SearchModel.m */,
 				34DB5D351DD423C100C51823 /* BaseModel.h */,
 				34DB5D361DD423C100C51823 /* BaseModel.m */,
 				342F79891DDD7D800022FF09 /* DeviceStats.h */,
@@ -2353,6 +2364,8 @@
 			children = (
 				34DB5D321DD41AA000C51823 /* AFHttpClient.h */,
 				34DB5D331DD41AA000C51823 /* AFHttpClient.m */,
+				7D8AA9361DEC09A400A43677 /* AFHttpClient+Found.h */,
+				7D8AA9371DEC09A400A43677 /* AFHttpClient+Found.m */,
 				34884C841DD4678400245C24 /* AFHttpClient+TestNetWork.h */,
 				34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */,
 				34ACCF4F1DDC5E5000AE2B98 /* AFHttpClient+Account.h */,
@@ -2479,6 +2492,7 @@
 		34E6656E1DD1A81000FA41E8 /* FoundV */ = {
 			isa = PBXGroup;
 			children = (
+				7D8AA9321DEC036000A43677 /* Views */,
 				3461F5331DD2BB2B00E56298 /* FoundViewController.h */,
 				3461F5341DD2BB2B00E56298 /* FoundViewController.m */,
 				7D8AA92C1DEBDFE900A43677 /* DouyidouViewController.h */,
@@ -2662,6 +2676,15 @@
 				7D5255A41DDAE306000EB0B0 /* GuideViewController.m */,
 			);
 			path = Guide;
+			sourceTree = "<group>";
+		};
+		7D8AA9321DEC036000A43677 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7D8AA9331DEC037B00A43677 /* SearchTableViewCell.h */,
+				7D8AA9341DEC037B00A43677 /* SearchTableViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		97CD43707B355603191FA43A /* Pods */ = {
@@ -2978,6 +3001,7 @@
 				3436EA651DDBFF5D005659B7 /* BePeripheralViewController.m in Sources */,
 				34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */,
 				34FC41DA1DD179F900A23A8F /* AppDelegate.m in Sources */,
+				7D8AA9351DEC037B00A43677 /* SearchTableViewCell.m in Sources */,
 				3461F5471DD2CA2500E56298 /* EggViewController.m in Sources */,
 				342F798B1DDD7D800022FF09 /* DeviceStats.m in Sources */,
 				34ACCF511DDC5E5000AE2B98 /* AFHttpClient+Account.m in Sources */,
@@ -2989,6 +3013,7 @@
 				34C496001DD1CFE000687606 /* LoginModel.m in Sources */,
 				3461F5321DD2BB1B00E56298 /* FriendViewController.m in Sources */,
 				34D3C6E11DDAF43600529FF5 /* ShowWarView.m in Sources */,
+				7D8AA93B1DEC119100A43677 /* SearchModel.m in Sources */,
 				34DB5D371DD423C100C51823 /* BaseModel.m in Sources */,
 				34C495FA1DD1CD6C00687606 /* UIViewController+HUD.m in Sources */,
 				342F799A1DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.m in Sources */,
@@ -3000,6 +3025,7 @@
 				34FC41E31DD179F900A23A8F /* sego2_0.xcdatamodeld in Sources */,
 				3461F5441DD2CA0A00E56298 /* MeViewController.m in Sources */,
 				7D1FA3E31DE5354F00A43201 /* AFHttpClient+PersonMember.m in Sources */,
+				7D8AA9381DEC09A400A43677 /* AFHttpClient+Found.m in Sources */,
 				34C495F91DD1CD6C00687606 /* UIView+Sizes.m in Sources */,
 				34ACCF541DDD521900AE2B98 /* SetViewController.m in Sources */,
 				34C495EA1DD1CD5400687606 /* UIActionSheet+Blocks.m in Sources */,

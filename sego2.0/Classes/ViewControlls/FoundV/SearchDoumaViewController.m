@@ -7,7 +7,11 @@
 //
 
 #import "SearchDoumaViewController.h"
+#import "SearchTableViewCell.h"
+#import "AFHttpClient+Found.h"
+#import "SearchModel.h"
 
+static NSString * cellId = @"searchtabviewId";
 @interface SearchDoumaViewController ()
 @property (nonatomic,strong)UITextField * topTextfield;
 
@@ -80,37 +84,99 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.tableView.superview);
         make.right.equalTo(self.tableView.superview);
-        make.top.equalTo(self.tableView.superview).offset(39);
+        make.top.equalTo(self.tableView.superview).offset(43);
         make.bottom.equalTo(self.tableView.superview);
     }];
     
+    [self.tableView registerClass:[SearchTableViewCell class] forCellReuseIdentifier:cellId];
     
+    self.tableView.backgroundColor = GRAY_COLOR;
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
-    
-    
+    self.tableView.hidden = YES;
     
 }
 
 -(void)searchButtontouch{
-  //  FuckLog(@"dad");
+
     [_topTextfield resignFirstResponder];
-    self.tableView.hidden = NO;
     [self initRefreshView];
-
-}
-
--(void)loadDataSourceWithPage:(int)page{
+    [[AFHttpClient sharedAFHttpClient]searchPlaycodeWithPlaycode:_topTextfield.text complete:^(BaseModel *model) {
+        if (model) {
+            if ([model.retCode isEqualToString:@"1111"]) {
+                self.tableView.hidden = YES;
+                return;
+            }
+            
+            SearchModel * Searchmodel = [[SearchModel alloc]initWithDictionary:model.retVal error:nil];
+            if ([Searchmodel.status isEqualToString:@"1"]) {
+                self.tableView.hidden = YES;
+                 [[AppUtil appTopViewController] showHint:@"逗码已失效"];
+            }else{
+                NSMutableArray * array = [[NSMutableArray alloc]init];
+                [array addObject:Searchmodel];
+                [self.dataSource removeAllObjects];
+                [self.dataSource addObjectsFromArray:array];
+                self.tableView.hidden = NO;
+                [self.tableView reloadData];
+            
+            }
+            
+        }
+       
+        [self handleEndRefresh];
     
+    }];
 
+}
+-(void)loadDataSourceWithPage:(int)page{
 
-
-
-
+    [self handleEndRefresh];
 }
 
 
+#pragma mark - TableView的代理函数
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataSource.count;
+    
+}
 
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 65;
+    
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SearchTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    SearchModel * model = self.dataSource[indexPath.row];
+    
+    [cell.headImage sd_setImageWithURL:[NSURL URLWithString:model.headportrait] placeholderImage:[UIImage imageNamed:@""]];
+    cell.nameLabel.text = model.nickname;
+
+    [cell.rightBtn addTarget:self action:@selector(rightButtontouch) forControlEvents:UIControlEventTouchUpInside];
+
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
+-(void)rightButtontouch{
+     SearchModel * model = self.dataSource[0];
+    NSString * resolution = model.resolution;
+    NSString * mid = model.mid;
+    
+    
+    
+    
+}
 
 
 
