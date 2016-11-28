@@ -8,6 +8,7 @@
 
 #import <AFNetworking/AFNetworking.h>
 #import "BaseModel.h"
+#import "SearchModel.h"
 
 //共用url字段
 #define BASE_URL    @"http://180.97.80.227:8082/"
