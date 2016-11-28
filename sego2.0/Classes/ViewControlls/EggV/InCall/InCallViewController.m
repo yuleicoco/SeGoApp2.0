@@ -9,6 +9,8 @@
 #import "InCallViewController.h"
 #import <CallKit/CXCallObserver.h>
 #import "AFHttpClient+DeviceUseMember.h"
+#import "HWWeakTimer.h"
+
 
 @interface InCallViewController ()
 {
@@ -26,6 +28,8 @@
     UILabel * timeLable;
     // 时间 lable
     NSTimer * timerInCall;
+    //设备保护时间
+    NSTimer * moveTimer;
     
     
     
@@ -87,12 +91,6 @@
     [flowUI startAnimating];
     //获取视频状态
     [self callStream:call];
-    // 获取视频时间
-    [self updateTime];
-    
-    
-
-    
     
 }
 
@@ -821,6 +819,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)backBtn:(UIButton * )sender
 {
     [self leftAction];
+    [timerInCall invalidate];
     [SephoneManager terminateCurrentCallOrConference];
     [self dismissViewControllerAnimated:YES completion:nil];
     
@@ -838,15 +837,18 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 // 声音
 - (void)VocieClick:(UIButton *)sender
 {
-    
     sender.selected = !sender.selected;
+    
     
 }
 //开灯
 - (void)LightClick:(UIButton *)sender
 {
-    
     sender.selected = !sender.selected;
+    [[AFHttpClient sharedAFHttpClient]LightOn:nil deviceno:[Defaluts objectForKey:PREF_DEVICE_NUMBER] termid:nil complete:^(BaseModel * model) {
+        
+    }];
+    
 
 }
 
@@ -854,13 +856,20 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)FoodClick:(UIButton *)sender
 {
     sender.selected = !sender.selected;
-
+   [[AFHttpClient sharedAFHttpClient]Sendfood:nil termid:nil complete:^(BaseModel * model) {
+       
+   }];
+    
     
 }
 //投食
 - (void)RollClick:(UIButton *)sender
 {
     sender.selected = !sender.selected;
+    [[AFHttpClient sharedAFHttpClient]Rollfood:nil deviceno:nil termid:nil complete:^(BaseModel * model) {
+        
+    }];
+    
 
     
 }
@@ -868,60 +877,163 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)PhotoClick:(UIButton *)sender
 {
     sender.selected = !sender.selected;
+    [[AFHttpClient sharedAFHttpClient]Takephoto:nil termid:nil complete:^(BaseModel * model) {
+        
+    }];
+    
+    
 
+    
+}
+
+//*****************************点击开始**********************************
+
+- (void)Stopclick:(UIButton *)sender
+{
+    [self MoveRobot:@"4"];
+}
+
+- (void)Sdownclick:(UIButton *)sender
+{
+    [self MoveRobot:@"3"];
+}
+
+- (void)Sleftclick:(UIButton *)sender
+{
+    [self MoveRobot:@"2"];
+    
+}
+
+- (void)Srightclick:(UIButton *)sender
+{
+    [self MoveRobot:@"1"];
+    
+}
+
+//
+- (void)Slef_toptclick:(UIButton *)sender
+{
+    [self MoveRobot:@"2"];
+    
+}
+
+- (void)Slef_downtclick:(UIButton *)sender
+{
+    [self MoveRobot:@"2"];
     
 }
 
 
 /**
- *  上下左右 点击事件 1.单击 2.释放
+ *  上下左右 点击事件 1.单击 2.释放   4321 touch down
+ *
  */
 
-//*****************************点击**********************************
+//*****************************点击结束**********************************
 - (void)topClickSt:(UIButton *)sender
 {
-    
+     [self overTime];
     
 }
 
 - (void)downClickSt:(UIButton *)sender
 {
-    
+     [self overTime];
     
 }
 
 - (void)leftClickSt:(UIButton *)sender
 {
     
-    
+     [self overTime];
 }
 - (void)rightClickSt:(UIButton *)sender
 {
-    
+     [self overTime];
     
 }
 - (void)RtopClickSt:(UIButton *)sender
 {
-    
+     [self overTime];
     
 }
 - (void)RdownClickSt:(UIButton *)sender
 {
-    
+     [self overTime];
     
 }
 
 //*****************************释放**********************************
 
-- (void)topClickFr:(UIButton *)sender
+#pragma mark  buttonMethod _____________________各点击事件结尾____________________
+
+
+
+
+
+// 移动设备
+
+-(void)MoveRobot:(NSString *)str
 {
+     NSInteger i = [str integerValue];
+    
+    switch (i) {
+        case 1:
+            
+            
+            break;
+           
+        case 2:
+            
+            
+            break;
+        case 3:
+            
+            
+            break;
+        case 4:
+            
+            
+            break;
+       
+        default:
+            break;
+    }
+    
+     moveTimer = [HWWeakTimer scheduledTimerWithTimeInterval:1.0*0.2 block:^(id userInfo) {
+        [self sendInfomationL:str];
+    } userInfo:@"Fire" repeats:YES];
+    
+    [moveTimer fire];
     
     
 }
 
 
-#pragma mark  buttonMethod _____________________各点击事件结尾____________________
+// 执行
 
+- (void)sendInfomationL:(NSString *)sender
+{
+    
+    NSString * msg =[NSString stringWithFormat:@"control_servo,0,0,2,%d,200",[sender intValue]];
+    NSLog(@"我走");
+    [self sendMessage:msg];
+}
+
+
+#pragma sendMessageTest wjb
+-(void) sendMessage:(NSString *)mess{
+    const char * message =[mess UTF8String];
+    sephone_core_send_user_message([SephoneManager getLc], message);
+    
+}
+
+- (void)overTime
+{
+    [moveTimer invalidate];
+
+    
+}
 
 
 
@@ -998,6 +1110,9 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
  
     // 视频
     sephone_core_set_native_video_window_id([SephoneManager getLc], (unsigned long)videoView);
+    
+    
+     timerInCall = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateTime) userInfo:nil repeats:YES];
 
     
 }

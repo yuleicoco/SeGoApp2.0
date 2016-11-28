@@ -23,4 +23,26 @@
 - (void)OverDeviceMember:(NSString *)did  complete:(void (^)(BaseModel *))completeBlock;
 
 
+/**
+ *  开关灯
+ */
+- (void)LightOn:(NSString *)action deviceno:(NSString *)deviceno termid:(NSString *)termid complete:(void (^)(BaseModel *))completeBlock;
+
+
+/**
+ *  投食
+ */
+- (void)Rollfood:(NSString *)Did deviceno:(NSString *)deviceno termid:(NSString *)termid complete:(void (^)(BaseModel *))completeBlock;
+
+
+/**
+ *  喂食
+ */
+- (void)Sendfood:(NSString *)deviceno  termid:(NSString *)termid complete:(void (^)(BaseModel *))completeBlock;
+
+/**
+ *  抓拍
+ */
+- (void)Takephoto:(NSString *)deviceno  termid:(NSString *)termid complete:(void (^)(BaseModel *))completeBlock;
+
 @end

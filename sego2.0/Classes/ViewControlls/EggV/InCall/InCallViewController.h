@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "BaseViewController.h"
+#import "BindingViewController.h"
+
 
 @interface InCallViewController : BaseViewController
 

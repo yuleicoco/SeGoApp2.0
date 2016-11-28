@@ -184,7 +184,7 @@
     UITextField *  deviceTF =[UITextField new];
     incodeTF =[UITextField new];
     wifiPsTF =[UITextField new];
-     NSString * str  =  [Defaluts objectForKey:@"DeviceNum"];
+     NSString * str  =  [Defaluts objectForKey:PREF_DEVICE_NUMBER];
     if ([AppUtil isBlankString:str]) {
          deviceTF.text = self.strDevice;
     }else

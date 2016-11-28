@@ -102,7 +102,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
 
 - (void)setupView
 {
-    str  =  [Defaluts objectForKey:@"DeviceNum"];
+    str  =  [Defaluts objectForKey:PREF_DEVICE_NUMBER];
 
     
     [super setupView];
@@ -270,9 +270,11 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
             
             if ([model.retCode isEqualToString:@"0000"]) {
                 [self showWarningTip:@"绑定成功"];
-                [Defaluts setObject:deviceTF.text forKey:@"DeviceNum"];
+                [Defaluts setObject:model.content forKey:TERMID_DEVICNUMER];
+                [Defaluts setObject:deviceTF.text forKey:PREF_DEVICE_NUMBER];
                 [Defaluts setValue:incodeTF.text forKey:@"incodeNum"];
                 
+                // PREF_DEVICE_NUMBER DeviceNum
                 [Defaluts synchronize];
                 
                 WifiViewController * wifiVC =[[WifiViewController alloc]init];
@@ -299,7 +301,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
                 // 提示
                 [self showWarningTip:@"解绑成功"];
                 
-                [Defaluts removeObjectForKey:@"DeviceNum"];
+                [Defaluts removeObjectForKey:PREF_DEVICE_NUMBER];
                 [Defaluts removeObjectForKey:@"incodeNum"];
                 [Defaluts synchronize];
                 deviceTF.text =@"";

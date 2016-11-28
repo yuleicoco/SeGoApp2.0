@@ -8,6 +8,15 @@
 
 #import "BaseViewController.h"
 #import <CoreBluetooth/CoreBluetooth.h>
+
+NSString * const TERMID_DEVICNUMER =@"termid";
+
+// 设备号配置项
+NSString *const PREF_DEVICE_NUMBER = @"deviceNumber";
+// wifi是否已设置配置项
+NSString *const PREF_WIFI_CONFIGURED = @"wifiConfigured";
+
+
 // sego蓝牙配置服务常量
 extern NSString *const SEGOPASS_BLE_DEVICE_NAME;
 extern NSString *const CONFIG_SERVICE_UUID;

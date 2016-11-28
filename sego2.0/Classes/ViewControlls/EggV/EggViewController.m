@@ -6,6 +6,8 @@
 //  Copyright © 2016年 yulei. All rights reserved.
 //
 
+
+
 #import "EggViewController.h"
 #import "InCallViewController.h"
 #import "BindingViewController.h"
@@ -776,7 +778,7 @@
 {
     
     NSString * strDevicenume =[AccountManager sharedAccountManager].loginModel.deviceno;
-    NSString * strDevicenume1 =[Defaluts objectForKey:@"DeviceNum"];
+    NSString * strDevicenume1 =[Defaluts objectForKey:PREF_DEVICE_NUMBER];
     NSString * strNum;
     
     

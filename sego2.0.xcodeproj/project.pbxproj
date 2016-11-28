@@ -254,6 +254,11 @@
 		34E3810F1DE5973C007501E1 /* down1.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E3810B1DE5973C007501E1 /* down1.png */; };
 		34E381101DE5973C007501E1 /* right1.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E3810C1DE5973C007501E1 /* right1.png */; };
 		34E381111DE5973C007501E1 /* left1.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E3810D1DE5973C007501E1 /* left1.png */; };
+		34FA282F1DEBE07600F13C85 /* DouyidouViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FA282C1DEBE07600F13C85 /* DouyidouViewController.m */; };
+		34FA28301DEBE07600F13C85 /* SearchDoumaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FA282E1DEBE07600F13C85 /* SearchDoumaViewController.m */; };
+		34FA28341DEBE08600F13C85 /* douyidou.png in Resources */ = {isa = PBXBuildFile; fileRef = 34FA28311DEBE08600F13C85 /* douyidou.png */; };
+		34FA28351DEBE08600F13C85 /* find.png in Resources */ = {isa = PBXBuildFile; fileRef = 34FA28321DEBE08600F13C85 /* find.png */; };
+		34FA28361DEBE08600F13C85 /* jiantou.png in Resources */ = {isa = PBXBuildFile; fileRef = 34FA28331DEBE08600F13C85 /* jiantou.png */; };
 		34FC41D71DD179F900A23A8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41D61DD179F900A23A8F /* main.m */; };
 		34FC41DA1DD179F900A23A8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41D91DD179F900A23A8F /* AppDelegate.m */; };
 		34FC41DD1DD179F900A23A8F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41DC1DD179F900A23A8F /* ViewController.m */; };
@@ -261,6 +266,7 @@
 		34FC41E31DD179F900A23A8F /* sego2_0.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41E11DD179F900A23A8F /* sego2_0.xcdatamodeld */; };
 		34FC41E51DD179F900A23A8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34FC41E41DD179F900A23A8F /* Assets.xcassets */; };
 		34FC41E81DD179F900A23A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34FC41E61DD179F900A23A8F /* LaunchScreen.storyboard */; };
+		34FFD57D1DEC0BE900A392B4 /* HWWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD57C1DEC0BE900A392B4 /* HWWeakTimer.m */; };
 		7D1FA3E31DE5354F00A43201 /* AFHttpClient+PersonMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1FA3E21DE5354F00A43201 /* AFHttpClient+PersonMember.m */; };
 		7D38B21E1DDFF59A00404D05 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21A1DDFF59A00404D05 /* about.png */; };
 		7D38B21F1DDFF59A00404D05 /* douma.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21B1DDFF59A00404D05 /* douma.png */; };
@@ -988,6 +994,13 @@
 		34E3810C1DE5973C007501E1 /* right1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right1.png; sourceTree = "<group>"; };
 		34E3810D1DE5973C007501E1 /* left1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left1.png; sourceTree = "<group>"; };
 		34E665761DD1A9CE00FA41E8 /* Definition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Definition.h; sourceTree = "<group>"; };
+		34FA282B1DEBE07600F13C85 /* DouyidouViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DouyidouViewController.h; sourceTree = "<group>"; };
+		34FA282C1DEBE07600F13C85 /* DouyidouViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DouyidouViewController.m; sourceTree = "<group>"; };
+		34FA282D1DEBE07600F13C85 /* SearchDoumaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchDoumaViewController.h; sourceTree = "<group>"; };
+		34FA282E1DEBE07600F13C85 /* SearchDoumaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDoumaViewController.m; sourceTree = "<group>"; };
+		34FA28311DEBE08600F13C85 /* douyidou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = douyidou.png; sourceTree = "<group>"; };
+		34FA28321DEBE08600F13C85 /* find.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = find.png; sourceTree = "<group>"; };
+		34FA28331DEBE08600F13C85 /* jiantou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jiantou.png; sourceTree = "<group>"; };
 		34FC41D21DD179F900A23A8F /* sego2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sego2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34FC41D61DD179F900A23A8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		34FC41D81DD179F900A23A8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
@@ -999,6 +1012,8 @@
 		34FC41E41DD179F900A23A8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34FC41E71DD179F900A23A8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34FC41E91DD179F900A23A8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34FFD57B1DEC0BE900A392B4 /* HWWeakTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWWeakTimer.h; sourceTree = "<group>"; };
+		34FFD57C1DEC0BE900A392B4 /* HWWeakTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWWeakTimer.m; sourceTree = "<group>"; };
 		7D1FA3E11DE5354F00A43201 /* AFHttpClient+PersonMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+PersonMember.h"; sourceTree = "<group>"; };
 		7D1FA3E21DE5354F00A43201 /* AFHttpClient+PersonMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+PersonMember.m"; sourceTree = "<group>"; };
 		7D38B21A1DDFF59A00404D05 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
@@ -1213,6 +1228,8 @@
 		3461F5611DD2D32100E56298 /* InCall */ = {
 			isa = PBXGroup;
 			children = (
+				34FFD57B1DEC0BE900A392B4 /* HWWeakTimer.h */,
+				34FFD57C1DEC0BE900A392B4 /* HWWeakTimer.m */,
 				34E3810A1DE5973C007501E1 /* top1.png */,
 				34E3810B1DE5973C007501E1 /* down1.png */,
 				34E3810C1DE5973C007501E1 /* right1.png */,
@@ -2273,6 +2290,9 @@
 		34E6655E1DD1A5BC00FA41E8 /* found */ = {
 			isa = PBXGroup;
 			children = (
+				34FA28311DEBE08600F13C85 /* douyidou.png */,
+				34FA28321DEBE08600F13C85 /* find.png */,
+				34FA28331DEBE08600F13C85 /* jiantou.png */,
 			);
 			path = found;
 			sourceTree = "<group>";
@@ -2464,6 +2484,10 @@
 		34E6656E1DD1A81000FA41E8 /* FoundV */ = {
 			isa = PBXGroup;
 			children = (
+				34FA282B1DEBE07600F13C85 /* DouyidouViewController.h */,
+				34FA282C1DEBE07600F13C85 /* DouyidouViewController.m */,
+				34FA282D1DEBE07600F13C85 /* SearchDoumaViewController.h */,
+				34FA282E1DEBE07600F13C85 /* SearchDoumaViewController.m */,
 				3461F5331DD2BB2B00E56298 /* FoundViewController.h */,
 				3461F5341DD2BB2B00E56298 /* FoundViewController.m */,
 			);
@@ -2827,6 +2851,7 @@
 				34DB5CD11DD4129F00C51823 /* chat_message_delivered.png in Resources */,
 				7D38B2201DDFF59A00404D05 /* exchangepassword.png in Resources */,
 				34DB5CF21DD4129F00C51823 /* ringback.wav in Resources */,
+				34FA28351DEBE08600F13C85 /* find.png in Resources */,
 				34DB5CED1DD4129F00C51823 /* stopcall-small.png in Resources */,
 				34DB5CA71DD4129E00C51823 /* sephonerc-factory~ipad in Resources */,
 				345AB40C1DD9AEB900025EEE /* voice_on.png in Resources */,
@@ -2847,8 +2872,10 @@
 				34B7A0291DE56CF500763EB0 /* 箭头.png in Resources */,
 				34FC41E51DD179F900A23A8F /* Assets.xcassets in Resources */,
 				34CD6C2B1DE7EC3F00993834 /* L_top.png in Resources */,
+				34FA28361DEBE08600F13C85 /* jiantou.png in Resources */,
 				34B7A0271DE56CF500763EB0 /* 按钮.png in Resources */,
 				7D38B21E1DDFF59A00404D05 /* about.png in Resources */,
+				34FA28341DEBE08600F13C85 /* douyidou.png in Resources */,
 				34DB5CF41DD4129F00C51823 /* oldphone-mono-30s.caf in Resources */,
 				345AB3ED1DD9AEA400025EEE /* Lnormal_light.png in Resources */,
 				34FC41E01DD179F900A23A8F /* Main.storyboard in Resources */,
@@ -2933,8 +2960,11 @@
 				34C496061DD1D21700687606 /* BaseViewController.m in Sources */,
 				34D3C6D51DDAB97300529FF5 /* BindingViewController.m in Sources */,
 				34D841BB1DE003DE00C37303 /* AFHttpClient+RemoveDevice.m in Sources */,
+				34FFD57D1DEC0BE900A392B4 /* HWWeakTimer.m in Sources */,
+				34FA282F1DEBE07600F13C85 /* DouyidouViewController.m in Sources */,
 				34C495EC1DD1CD5400687606 /* UIButton+Blocks.m in Sources */,
 				34DB5D341DD41AA000C51823 /* AFHttpClient.m in Sources */,
+				34FA28301DEBE07600F13C85 /* SearchDoumaViewController.m in Sources */,
 				7D626A401DD95636002C0F8B /* RegistViewController.m in Sources */,
 				34C495D71DD1CB2900687606 /* AppDelegate+Launcher.m in Sources */,
 				34FC41DD1DD179F900A23A8F /* ViewController.m in Sources */,
