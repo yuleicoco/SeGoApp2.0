@@ -13,6 +13,13 @@
 #import "AFHttpClient+RemoveDevice.h"
 
 
+NSString * const TERMID_DEVICNUMER =@"termid";
+
+// 设备号配置项
+NSString *const PREF_DEVICE_NUMBER = @"deviceNumber";
+// wifi是否已设置配置项
+NSString *const PREF_WIFI_CONFIGURED = @"wifiConfigured";
+
 
 // sego配置设备名
 NSString *const SEGOPASS_BLE_DEVICE_NAME = @"segopass";

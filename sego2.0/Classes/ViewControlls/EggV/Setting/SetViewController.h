@@ -7,10 +7,7 @@
 //
 
 #import "BaseViewController.h"
-// 设置相关配置项
-extern NSString *const PREF_DEVICE_NUMBER;
-extern NSString *const PREF_WIFI_CONFIGURED;
-extern NSString *const TERMID_DEVICNUMER;
+
 
 
 @interface SetViewController : BaseViewController
