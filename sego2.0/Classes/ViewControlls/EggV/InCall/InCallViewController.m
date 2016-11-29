@@ -845,7 +845,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)LightClick:(UIButton *)sender
 {
     sender.selected = !sender.selected;
-    [[AFHttpClient sharedAFHttpClient]LightOn:nil deviceno:[Defaluts objectForKey:PREF_DEVICE_NUMBER] termid:nil complete:^(BaseModel * model) {
+    [[AFHttpClient sharedAFHttpClient]LightOn:nil deviceno:[Defaluts objectForKey:PREF_DEVICE_NUMBER] termid:[Defaluts objectForKey:TERMID_DEVICNUMER] complete:^(BaseModel * model) {
+        
         
     }];
     
