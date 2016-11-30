@@ -273,12 +273,8 @@
          
          if (state == SSDKResponseStateSuccess)
          {
+             [self loginRepace:@"q" Secretkey:user.uid nick:user.nickname headportrait:user.icon];
              
-             NSLog(@"id=%@",user.uid);
-             NSLog(@"%@",user.credential);
-             NSLog(@"token=%@",user.credential.token);
-             NSLog(@"昵称=%@",user.nickname);
-             NSLog(@"头像%@",user.icon);
              
          }
          
@@ -290,6 +286,22 @@
      }];
 
 }
+
+
+- (void)loginRepace:(NSString *)type Secretkey:(NSString *)secretkey nick:(NSString *)nickname headportrait:(NSString *)headportrait
+{
+    
+    [[AFHttpClient sharedAFHttpClient]Trlogin:nil nickname:nickname secretkey:secretkey headportrait:headportrait rtype:type complete:^(BaseModel * model) {
+        
+        
+        
+    }];
+    
+    
+}
+
+
+
 -(void)weixinbuttonTouch{
     //微信登录
     FuckLog(@"22");
@@ -298,17 +310,10 @@
     [ShareSDK getUserInfo:SSDKPlatformTypeWechat
            onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error)
      {
-         
-         
+
          if (state == SSDKResponseStateSuccess)
          {
-             
-             NSLog(@"id=%@",user.uid);
-             NSLog(@"%@",user.credential);
-             NSLog(@"token=%@",user.credential.token);
-             NSLog(@"昵称=%@",user.nickname);
-             NSLog(@"头像%@",user.icon);
-             
+            [self loginRepace:@"w" Secretkey:user.uid nick:user.nickname headportrait:user.icon];
          }
          
          else

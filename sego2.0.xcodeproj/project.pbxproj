@@ -78,6 +78,8 @@
 		34624ABB1DEE72D100C7CA77 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34624ABA1DEE72D100C7CA77 /* libstdc++.tbd */; };
 		34624ABD1DEE72DE00C7CA77 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34624ABC1DEE72DE00C7CA77 /* libsqlite3.tbd */; };
 		34624ABF1DEE72F100C7CA77 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34624ABE1DEE72F100C7CA77 /* libicucore.tbd */; };
+		3470D5441DEEBCB30028EDAB /* AFHttpClient+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 3470D5431DEEBCB30028EDAB /* AFHttpClient+Login.m */; };
+		3470D5461DEEC8420028EDAB /* lanch.png in Resources */ = {isa = PBXBuildFile; fileRef = 3470D5451DEEC8420028EDAB /* lanch.png */; };
 		34884C861DD4678400245C24 /* AFHttpClient+TestNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */; };
 		34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34884C881DD5742200245C24 /* CheckDeviceModel.m */; };
 		349C0BF71DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 349C0BF61DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m */; };
@@ -379,6 +381,9 @@
 		34624ABA1DEE72D100C7CA77 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		34624ABC1DEE72DE00C7CA77 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		34624ABE1DEE72F100C7CA77 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		3470D5421DEEBCB30028EDAB /* AFHttpClient+Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Login.h"; sourceTree = "<group>"; };
+		3470D5431DEEBCB30028EDAB /* AFHttpClient+Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Login.m"; sourceTree = "<group>"; };
+		3470D5451DEEC8420028EDAB /* lanch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lanch.png; sourceTree = "<group>"; };
 		34884C841DD4678400245C24 /* AFHttpClient+TestNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+TestNetWork.h"; sourceTree = "<group>"; };
 		34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+TestNetWork.m"; sourceTree = "<group>"; };
 		34884C871DD5742200245C24 /* CheckDeviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckDeviceModel.h; sourceTree = "<group>"; };
@@ -2203,6 +2208,7 @@
 		34E665521DD1A3CA00FA41E8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3470D5451DEEC8420028EDAB /* lanch.png */,
 				34E665531DD1A43800FA41E8 /* Images */,
 				3461F53D1DD2BD6500E56298 /* Strings */,
 			);
@@ -2431,6 +2437,8 @@
 				349C0BF91DDEF00700834791 /* AFHttpClient+DeviceUseMember.m */,
 				34D841B91DE003DE00C37303 /* AFHttpClient+RemoveDevice.h */,
 				34D841BA1DE003DE00C37303 /* AFHttpClient+RemoveDevice.m */,
+				3470D5421DEEBCB30028EDAB /* AFHttpClient+Login.h */,
+				3470D5431DEEBCB30028EDAB /* AFHttpClient+Login.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2795,7 +2803,7 @@
 				TargetAttributes = {
 					34FC41D11DD179F900A23A8F = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 86LKUHCT4N;
+						DevelopmentTeam = 4UKEB375ND;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2851,6 +2859,7 @@
 				34DB5CF51DD4129F00C51823 /* oldphone-mono.wav in Resources */,
 				3461F55A1DD2CB4800E56298 /* tab_squar_dian@2x.png in Resources */,
 				34DB5CEB1DD4129F00C51823 /* status-red.png in Resources */,
+				3470D5461DEEC8420028EDAB /* lanch.png in Resources */,
 				34B7A02F1DE56CF500763EB0 /* 圆角矩形.png in Resources */,
 				34DB5CCC1DD4129F00C51823 /* addcall-green.png in Resources */,
 				342F79971DDD9E310022FF09 /* setb.png in Resources */,
@@ -3059,6 +3068,7 @@
 				342F79881DDD7C640022FF09 /* AFHttpClient+DeviceStats.m in Sources */,
 				34C495EB1DD1CD5400687606 /* UIAlertView+Blocks.m in Sources */,
 				349C0BFA1DDEF00700834791 /* AFHttpClient+DeviceUseMember.m in Sources */,
+				3470D5441DEEBCB30028EDAB /* AFHttpClient+Login.m in Sources */,
 				7D3582B11DEE721D0028F4B4 /* NewfriendViewController.m in Sources */,
 				3436EA611DDBFE0B005659B7 /* Reachability.m in Sources */,
 				34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */,
@@ -3231,7 +3241,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = 86LKUHCT4N;
+				DEVELOPMENT_TEAM = 4UKEB375ND;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3265,7 +3275,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = 86LKUHCT4N;
+				DEVELOPMENT_TEAM = 4UKEB375ND;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
