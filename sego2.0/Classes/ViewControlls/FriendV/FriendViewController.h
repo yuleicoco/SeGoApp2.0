@@ -6,8 +6,8 @@
 //  Copyright © 2016年 yulei. All rights reserved.
 //
 
-#import "BaseViewController.h"
 
-@interface FriendViewController : BaseViewController
+#import "BaseTabViewController.h"
+@interface FriendViewController : BaseTabViewController
 
 @end

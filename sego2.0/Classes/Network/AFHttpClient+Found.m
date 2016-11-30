@@ -26,10 +26,35 @@
     
     
 
-
-
-
-
-
 }
+
+
+-(void)douyidouWithMid:(NSString *)mid page:(int)page size:(int)size complete:(void (^)(BaseModel *))completeBlock{
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    params[@"common"] = @"iCanVisit";
+    params[@"mid"] = mid;
+    params[@"size"] = @(size);
+    params[@"page"] = @(page);
+    
+    [self POST:@"clientAction.do" parameters:params result:^(BaseModel *model) {
+        if (model) {
+            model.list = [SearchModel arrayOfModelsFromDictionaries:model.list];
+        }
+        
+        
+        if (completeBlock) {
+            completeBlock(model);
+        }
+        
+    }];
+    
+    
+    
+    
+    
+}
+
+
+
+
 @end
