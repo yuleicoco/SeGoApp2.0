@@ -9,6 +9,8 @@
 #import "FriendViewController.h"
 #import "FriendTableViewCell.h"
 #import "AFHttpClient+Friend.h"
+#import "NewfriendViewController.h"
+
 static NSString * cellId = @"friendtableviewcellId";
 @interface FriendViewController ()
 
@@ -29,9 +31,24 @@ static NSString * cellId = @"friendtableviewcellId";
     [topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(topView.superview);
         make.right.equalTo(topView.superview);
-        make.top.equalTo(topView.superview).offset(1);
+        make.top.equalTo(topView.superview).offset(65);
         make.height.mas_equalTo(60);
     }];
+    
+    UIButton *topBtn = [[UIButton alloc]init];
+    topBtn.backgroundColor = [UIColor clearColor];
+    [topBtn addTarget:self action:@selector(topbuttonTouch) forControlEvents:UIControlEventTouchUpInside];
+    [topView addSubview:topBtn];
+    [topBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(topView.mas_top);
+        make.right.equalTo(topBtn.superview);
+        make.left.equalTo(topBtn.superview);
+        make.height.mas_equalTo(60);
+        
+    }];
+    
+    
+    
     
     UIImageView * friendImage = [[UIImageView alloc]init];
     friendImage.image = [UIImage imageNamed:@"newfriend.png"];
@@ -54,7 +71,7 @@ static NSString * cellId = @"friendtableviewcellId";
     }];
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topView.mas_bottom).offset(3);
+        make.top.equalTo(self.tableView.superview).offset(3);
         make.bottom.equalTo(self.tableView.superview.mas_bottom);
         make.left.equalTo(self.tableView.superview);
         make.right.equalTo(self.tableView.superview);
@@ -68,11 +85,35 @@ static NSString * cellId = @"friendtableviewcellId";
     
 
 }
+-(void)topbuttonTouch{
+    NewfriendViewController * newfriendVc = [[NewfriendViewController alloc]init];
+    [self.navigationController pushViewController:newfriendVc animated:NO];
+
+
+
+}
+
+
+
 
 -(void)loadDataSourceWithPage:(int)page{
 
     [[AFHttpClient sharedAFHttpClient]queryFriendsWithMid:[AccountManager sharedAccountManager].loginModel.mid page:page size:REQUEST_PAGE_SIZE complete:^(BaseModel *model) {
+        if (page == START_PAGE_INDEX) {
+            [self.dataSource removeAllObjects];
+            [self.dataSource addObjectsFromArray:model.list];
+        } else {
+            [self.dataSource addObjectsFromArray:model.list];
+        }
         
+        if (model.list.count < REQUEST_PAGE_SIZE){
+            self.tableView.mj_footer.hidden = YES;
+        }else{
+            self.tableView.mj_footer.hidden = NO;
+        }
+        
+        [self.tableView reloadData];
+        [self handleEndRefresh];
         
     }];
 
@@ -90,8 +131,8 @@ static NSString * cellId = @"friendtableviewcellId";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //return self.dataSource.count;
-    return 3;
+    return self.dataSource.count;
+    //return 3;
     
 }
 
@@ -104,15 +145,11 @@ static NSString * cellId = @"friendtableviewcellId";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     FriendTableViewCell * cell =  [tableView dequeueReusableCellWithIdentifier:cellId];
-    
+    //还没写model
     
     if (indexPath.row == 0) {
         cell.lineLabel.hidden = YES;
     }
-
-    
-    
-    
     
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

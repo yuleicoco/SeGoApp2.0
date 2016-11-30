@@ -62,7 +62,7 @@ static NSString * cellId = @"InformationCellId";
     [topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(topView.superview);
         make.right.equalTo(topView.superview);
-        make.top.equalTo(topView.superview).offset(12);
+        make.top.equalTo(topView.superview).offset(76);
         make.height.mas_offset(80);
     }];
     
@@ -94,7 +94,7 @@ static NSString * cellId = @"InformationCellId";
     
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topView.mas_bottom).offset(12);
+        make.top.equalTo(self.tableView.superview).offset(104);
         make.left.equalTo(self.tableView.superview);
         make.right.equalTo(self.tableView.superview);
         make.height.mas_equalTo(330);
@@ -105,7 +105,7 @@ static NSString * cellId = @"InformationCellId";
 
      [self.tableView registerClass:[InformationTableViewCell class] forCellReuseIdentifier:cellId];
     
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.backgroundColor = GRAY_COLOR;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     self.tableView.scrollEnabled = NO;
     

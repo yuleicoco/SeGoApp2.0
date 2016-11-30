@@ -271,6 +271,8 @@
 		34FFD5841DEC396800A392B4 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD5831DEC396800A392B4 /* SearchTableViewCell.m */; };
 		34FFD5871DEC398500A392B4 /* AFHttpClient+Found.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD5861DEC398500A392B4 /* AFHttpClient+Found.m */; };
 		7D1FA3E31DE5354F00A43201 /* AFHttpClient+PersonMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1FA3E21DE5354F00A43201 /* AFHttpClient+PersonMember.m */; };
+		7D3582B11DEE721D0028F4B4 /* NewfriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3582B01DEE721D0028F4B4 /* NewfriendViewController.m */; };
+		7D3582B71DEE7BB60028F4B4 /* SearchFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3582B61DEE7BB60028F4B4 /* SearchFriendViewController.m */; };
 		7D38B21E1DDFF59A00404D05 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21A1DDFF59A00404D05 /* about.png */; };
 		7D38B21F1DDFF59A00404D05 /* douma.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21B1DDFF59A00404D05 /* douma.png */; };
 		7D38B2201DDFF59A00404D05 /* exchangepassword.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21C1DDFF59A00404D05 /* exchangepassword.png */; };
@@ -1029,6 +1031,10 @@
 		34FFD5861DEC398500A392B4 /* AFHttpClient+Found.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Found.m"; sourceTree = "<group>"; };
 		7D1FA3E11DE5354F00A43201 /* AFHttpClient+PersonMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+PersonMember.h"; sourceTree = "<group>"; };
 		7D1FA3E21DE5354F00A43201 /* AFHttpClient+PersonMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+PersonMember.m"; sourceTree = "<group>"; };
+		7D3582AF1DEE721C0028F4B4 /* NewfriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewfriendViewController.h; sourceTree = "<group>"; };
+		7D3582B01DEE721D0028F4B4 /* NewfriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewfriendViewController.m; sourceTree = "<group>"; };
+		7D3582B51DEE7BB60028F4B4 /* SearchFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFriendViewController.h; sourceTree = "<group>"; };
+		7D3582B61DEE7BB60028F4B4 /* SearchFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFriendViewController.m; sourceTree = "<group>"; };
 		7D38B21A1DDFF59A00404D05 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
 		7D38B21B1DDFF59A00404D05 /* douma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = douma.png; sourceTree = "<group>"; };
 		7D38B21C1DDFF59A00404D05 /* exchangepassword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exchangepassword.png; sourceTree = "<group>"; };
@@ -2528,6 +2534,10 @@
 				7DD60BF51DED5F620065D941 /* Views */,
 				3461F5301DD2BB1B00E56298 /* FriendViewController.h */,
 				3461F5311DD2BB1B00E56298 /* FriendViewController.m */,
+				7D3582AF1DEE721C0028F4B4 /* NewfriendViewController.h */,
+				7D3582B01DEE721D0028F4B4 /* NewfriendViewController.m */,
+				7D3582B51DEE7BB60028F4B4 /* SearchFriendViewController.h */,
+				7D3582B61DEE7BB60028F4B4 /* SearchFriendViewController.m */,
 			);
 			path = FriendV;
 			sourceTree = "<group>";
@@ -3025,12 +3035,14 @@
 				342F79881DDD7C640022FF09 /* AFHttpClient+DeviceStats.m in Sources */,
 				34C495EB1DD1CD5400687606 /* UIAlertView+Blocks.m in Sources */,
 				349C0BFA1DDEF00700834791 /* AFHttpClient+DeviceUseMember.m in Sources */,
+				7D3582B11DEE721D0028F4B4 /* NewfriendViewController.m in Sources */,
 				3436EA611DDBFE0B005659B7 /* Reachability.m in Sources */,
 				34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */,
 				3461F55F1DD2D00100E56298 /* AppUtil.m in Sources */,
 				7D38B22B1DE0310100404D05 /* InformationViewController.m in Sources */,
 				34ACCF4E1DDC5E4400AE2B98 /* CompletionViewController.m in Sources */,
 				349C0BF71DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m in Sources */,
+				7D3582B71DEE7BB60028F4B4 /* SearchFriendViewController.m in Sources */,
 				3461F52F1DD2BB0A00E56298 /* HomeViewController.m in Sources */,
 				7D38B22F1DE047FA00404D05 /* InformationTableViewCell.m in Sources */,
 				3436EA651DDBFF5D005659B7 /* BePeripheralViewController.m in Sources */,

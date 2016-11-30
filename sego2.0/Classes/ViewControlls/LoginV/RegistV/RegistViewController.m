@@ -42,7 +42,7 @@
     [numberView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(numberView.superview).offset(17);
         make.right.equalTo(numberView.superview).offset(-17);
-        make.top.equalTo(numberView.superview).offset(8);
+        make.top.equalTo(numberView.superview).offset(72);
         make.height.mas_equalTo(55);
         
     }];
