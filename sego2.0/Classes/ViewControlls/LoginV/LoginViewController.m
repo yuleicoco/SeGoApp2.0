@@ -10,6 +10,7 @@
 #import "RegistViewController.h"
 #import "CompletionViewController.h"
 #import "AFHttpClient+Account.h"
+#import <ShareSDKExtension/SSEThirdPartyLoginHelper.h>
 
 @interface LoginViewController ()
 @property (nonatomic,strong)UIButton * loginBtn;
@@ -264,10 +265,60 @@
 -(void)qqbuttonTouch{
     //qq登录
     FuckLog(@"11");
+    
+    [ShareSDK getUserInfo:SSDKPlatformTypeQQ
+           onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error)
+     {
+         
+         
+         if (state == SSDKResponseStateSuccess)
+         {
+             
+             NSLog(@"id=%@",user.uid);
+             NSLog(@"%@",user.credential);
+             NSLog(@"token=%@",user.credential.token);
+             NSLog(@"昵称=%@",user.nickname);
+             NSLog(@"头像%@",user.icon);
+             
+         }
+         
+         else
+         {
+             NSLog(@"%@",error);
+         }
+         
+     }];
+
 }
 -(void)weixinbuttonTouch{
     //微信登录
     FuckLog(@"22");
+    
+    
+    [ShareSDK getUserInfo:SSDKPlatformTypeWechat
+           onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error)
+     {
+         
+         
+         if (state == SSDKResponseStateSuccess)
+         {
+             
+             NSLog(@"id=%@",user.uid);
+             NSLog(@"%@",user.credential);
+             NSLog(@"token=%@",user.credential.token);
+             NSLog(@"昵称=%@",user.nickname);
+             NSLog(@"头像%@",user.icon);
+             
+         }
+         
+         else
+         {
+             NSLog(@"%@",error);
+         }
+         
+     }];
+    
+    
 }
 
 

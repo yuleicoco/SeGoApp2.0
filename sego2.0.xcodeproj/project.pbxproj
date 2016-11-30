@@ -72,6 +72,12 @@
 		3461F55A1DD2CB4800E56298 /* tab_squar_dian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3461F5501DD2CB4800E56298 /* tab_squar_dian@2x.png */; };
 		3461F55B1DD2CB4800E56298 /* tab_squar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3461F5511DD2CB4800E56298 /* tab_squar@2x.png */; };
 		3461F55F1DD2D00100E56298 /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F55E1DD2D00100E56298 /* AppUtil.m */; };
+		34624AB51DEE719B00C7CA77 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34624AB41DEE719B00C7CA77 /* ImageIO.framework */; };
+		34624AB71DEE71B100C7CA77 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34624AB61DEE71B100C7CA77 /* JavaScriptCore.framework */; };
+		34624AB91DEE72C600C7CA77 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34624AB81DEE72C600C7CA77 /* libz.tbd */; };
+		34624ABB1DEE72D100C7CA77 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34624ABA1DEE72D100C7CA77 /* libstdc++.tbd */; };
+		34624ABD1DEE72DE00C7CA77 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34624ABC1DEE72DE00C7CA77 /* libsqlite3.tbd */; };
+		34624ABF1DEE72F100C7CA77 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34624ABE1DEE72F100C7CA77 /* libicucore.tbd */; };
 		34884C861DD4678400245C24 /* AFHttpClient+TestNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */; };
 		34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34884C881DD5742200245C24 /* CheckDeviceModel.m */; };
 		349C0BF71DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 349C0BF61DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m */; };
@@ -367,6 +373,12 @@
 		3461F5511DD2CB4800E56298 /* tab_squar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_squar@2x.png"; sourceTree = "<group>"; };
 		3461F55D1DD2D00100E56298 /* AppUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtil.h; sourceTree = "<group>"; };
 		3461F55E1DD2D00100E56298 /* AppUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtil.m; sourceTree = "<group>"; };
+		34624AB41DEE719B00C7CA77 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		34624AB61DEE71B100C7CA77 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		34624AB81DEE72C600C7CA77 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		34624ABA1DEE72D100C7CA77 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		34624ABC1DEE72DE00C7CA77 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		34624ABE1DEE72F100C7CA77 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		34884C841DD4678400245C24 /* AFHttpClient+TestNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+TestNetWork.h"; sourceTree = "<group>"; };
 		34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+TestNetWork.m"; sourceTree = "<group>"; };
 		34884C871DD5742200245C24 /* CheckDeviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckDeviceModel.h; sourceTree = "<group>"; };
@@ -1066,6 +1078,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34624ABF1DEE72F100C7CA77 /* libicucore.tbd in Frameworks */,
+				34624ABD1DEE72DE00C7CA77 /* libsqlite3.tbd in Frameworks */,
+				34624ABB1DEE72D100C7CA77 /* libstdc++.tbd in Frameworks */,
+				34624AB91DEE72C600C7CA77 /* libz.tbd in Frameworks */,
+				34624AB71DEE71B100C7CA77 /* JavaScriptCore.framework in Frameworks */,
+				34624AB51DEE719B00C7CA77 /* ImageIO.framework in Frameworks */,
 				34DB5D2E1DD415A900C51823 /* libc++.1.tbd in Frameworks */,
 				34DB5D2C1DD4159E00C51823 /* libiconv.2.4.0.tbd in Frameworks */,
 				34DB5D2A1DD4159100C51823 /* libresolv.9.tbd in Frameworks */,
@@ -1132,6 +1150,12 @@
 		06230F018F49D69628202DA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				34624ABE1DEE72F100C7CA77 /* libicucore.tbd */,
+				34624ABC1DEE72DE00C7CA77 /* libsqlite3.tbd */,
+				34624ABA1DEE72D100C7CA77 /* libstdc++.tbd */,
+				34624AB81DEE72C600C7CA77 /* libz.tbd */,
+				34624AB61DEE71B100C7CA77 /* JavaScriptCore.framework */,
+				34624AB41DEE719B00C7CA77 /* ImageIO.framework */,
 				34DB5D2D1DD415A900C51823 /* libc++.1.tbd */,
 				34DB5D2B1DD4159E00C51823 /* libiconv.2.4.0.tbd */,
 				34DB5D291DD4159100C51823 /* libresolv.9.tbd */,
@@ -3228,7 +3252,7 @@
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib",
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sego.rimi.sego2-0";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.eggpet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
 			};
@@ -3260,7 +3284,7 @@
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib",
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.sego.rimi.sego2-0";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.eggpet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
 			};
