@@ -31,7 +31,7 @@ static NSString * cellId = @"friendtableviewcellId";
     [topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(topView.superview);
         make.right.equalTo(topView.superview);
-        make.top.equalTo(topView.superview).offset(65);
+        make.top.equalTo(topView.superview).offset(1);
         make.height.mas_equalTo(60);
     }];
     
@@ -40,7 +40,7 @@ static NSString * cellId = @"friendtableviewcellId";
     [topBtn addTarget:self action:@selector(topbuttonTouch) forControlEvents:UIControlEventTouchUpInside];
     [topView addSubview:topBtn];
     [topBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topView.mas_top);
+        make.top.equalTo(topBtn.mas_top);
         make.right.equalTo(topBtn.superview);
         make.left.equalTo(topBtn.superview);
         make.height.mas_equalTo(60);
@@ -71,7 +71,7 @@ static NSString * cellId = @"friendtableviewcellId";
     }];
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.tableView.superview).offset(3);
+        make.top.equalTo(topView.mas_bottom).offset(3);
         make.bottom.equalTo(self.tableView.superview.mas_bottom);
         make.left.equalTo(self.tableView.superview);
         make.right.equalTo(self.tableView.superview);
