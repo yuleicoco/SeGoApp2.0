@@ -34,7 +34,7 @@ static NSString * cellId = @"searchtabviewId";
     [topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(topView.superview).offset(5);
         make.right.equalTo(topView.superview).offset(-5);
-        make.top.equalTo(topView.superview).offset(68);
+        make.top.equalTo(topView.superview).offset(4);
         make.height.mas_equalTo(35);
     }];
     
@@ -100,7 +100,7 @@ static NSString * cellId = @"searchtabviewId";
 -(void)searchButtontouch{
 
     [_topTextfield resignFirstResponder];
-  //  [self initRefreshView];
+    [self initRefreshView];
     [[AFHttpClient sharedAFHttpClient]searchPlaycodeWithPlaycode:_topTextfield.text complete:^(BaseModel *model) {
         if (model) {
             if ([model.retCode isEqualToString:@"1111"]) {
@@ -124,7 +124,7 @@ static NSString * cellId = @"searchtabviewId";
             
         }
        
-      //  [self handleEndRefresh];
+        [self handleEndRefresh];
     
     }];
 
