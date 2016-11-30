@@ -68,6 +68,7 @@
     
     // sephone
     [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
+   
     
     
 }
