@@ -48,7 +48,7 @@
     topImage.image = [UIImage imageNamed:@"personcenterback.png"];
     [self.view addSubview:topImage];
     [topImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topImage.superview);
+        make.top.equalTo(topImage.superview).offset(64);
         make.left.equalTo(topImage.superview);
         make.right.equalTo(topImage.superview);
         make.height.mas_equalTo(172);
@@ -64,7 +64,7 @@
     [_headBtn addTarget:self action:@selector(headbuttonTouch) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_headBtn];
     [_headBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(_headBtn.superview).offset(14);
+        make.top.equalTo(_headBtn.superview).offset(78);
         make.left.equalTo(_headBtn.superview).offset(147);
         make.right.equalTo(_headBtn.superview).offset(-147);
         make.height.mas_equalTo(80);

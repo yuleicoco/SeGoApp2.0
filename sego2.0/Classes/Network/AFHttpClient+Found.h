@@ -11,7 +11,7 @@
 @interface AFHttpClient (Found)
 -(void)searchPlaycodeWithPlaycode:(NSString *)playcode complete:(void (^)(BaseModel * model))completeBlock;
 
-
+-(void)douyidouWithMid:(NSString *)mid page:(int)page size:(int)size complete:(void (^)(BaseModel * model))completeBlock;
 
 
 @end

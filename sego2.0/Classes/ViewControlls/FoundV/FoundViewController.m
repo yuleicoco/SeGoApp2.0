@@ -30,7 +30,7 @@
     [topBtn addTarget:self action:@selector(topbuttontouch) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:topBtn];
     [topBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topBtn.superview).offset(4);
+        make.top.equalTo(topBtn.superview).offset(68);
         make.left.equalTo(topBtn.superview).offset(5);
         make.right.equalTo(topBtn.superview).offset(-5);
         make.height.mas_equalTo(35);
