@@ -16,9 +16,9 @@
     params[@"page"] = @(page);
     params[@"size"] = @(size);
     [self POST:@"clientAction.do" parameters:params result:^(BaseModel *model) {
-        //        if (model) {
-        //        model.list = [SearchModel arrayOfModelsFromDictionaries:model.retVal];
-        //        }
+        if (model) {
+        model.list = [FriendModel arrayOfModelsFromDictionaries:model.list];
+        }
         if (completeBlock) {
             completeBlock(model);
         }
@@ -42,7 +42,6 @@
         if (completeBlock) {
             completeBlock(model);
         }
-        
     }];
 
 }
@@ -98,6 +97,27 @@
 
 
 }
+
+-(void)delFriendWithMid:(NSString *)mid friend:(NSString *)friendId complete:(void (^)(BaseModel *))completeBlock{
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    params[@"common"] = @"delFriend";
+    params[@"mid"] = mid;
+    params[@"friend"] = friendId;
+    [self POST:@"clientAction.do" parameters:params result:^(BaseModel *model) {
+        //        if (model) {
+        //            model.list = [NewFriendModel arrayOfModelsFromDictionaries:model.list];
+        //        }
+        if (completeBlock) {
+            completeBlock(model);
+        }
+    }];
+
+
+
+
+
+}
+
 
 
 @end

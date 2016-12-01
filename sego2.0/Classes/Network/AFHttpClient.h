@@ -11,7 +11,7 @@
 #import "SearchModel.h"
 #import "FriendModel.h"
 #import "NewFriendModel.h"
-
+#import "RecommendModel.h"
 
 //共用url字段
 #define BASE_URL    @"http://180.97.80.227:8082/"

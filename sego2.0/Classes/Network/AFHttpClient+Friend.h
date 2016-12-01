@@ -25,8 +25,8 @@
 //同意/拒绝 添加好友
 -(void)addFriendResponseWithMid:(NSString *)mid friend:(NSString *)friendId opttype:(NSString *)opttype complete:(void (^)(BaseModel * model))completeBlock;
 
-
-
+//删除好友
+-(void)delFriendWithMid:(NSString *)mid friend:(NSString *)friendId complete:(void (^)(BaseModel * model))completeBlock;
 
 
 

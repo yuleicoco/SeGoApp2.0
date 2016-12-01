@@ -10,7 +10,7 @@
 #import "FriendTableViewCell.h"
 #import "AFHttpClient+Friend.h"
 #import "NewfriendViewController.h"
-
+#import "FriendModel.h"
 static NSString * cellId = @"friendtableviewcellId";
 @interface FriendViewController ()
 
@@ -146,10 +146,24 @@ static NSString * cellId = @"friendtableviewcellId";
 {
     FriendTableViewCell * cell =  [tableView dequeueReusableCellWithIdentifier:cellId];
     //还没写model
+    FriendModel * model = self.dataSource[indexPath.row];
+    
     
     if (indexPath.row == 0) {
         cell.lineLabel.hidden = YES;
     }
+    cell.leftBtn.hidden = YES;
+    cell.rightBtn.hidden = YES;
+    cell.rightLabe.hidden = YES;
+
+    
+    
+    [cell.headImage sd_setImageWithURL:[NSURL URLWithString:model.headportrait] placeholderImage:[UIImage imageNamed:@"sego1.png"]];
+    
+    
+    cell.nameLabel.text = model.nickname;
+    
+    
     
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -158,9 +172,53 @@ static NSString * cellId = @"friendtableviewcellId";
 
 }
 
+//左滑删除
+-(NSString*)tableView:(UITableView*)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath*)indexPath
+{
+    //昨滑的文字
+    return@"删除";
+}
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 
+{
+    //让它能够滑动
+    return YES;
+}
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
+           editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //删除的属性
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:
+(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // NSUInteger row = [indexPath row];
+        // [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+        //                withRowAnimation:UITableViewRowAnimationAutomatic];
+        // [tableView reloadData];
+        // 数据源也要相应删除一项
+        FriendModel * model = self.dataSource[indexPath.row];
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您确定删除此好友吗？" preferredStyle:UIAlertControllerStyleAlert];
+//
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            [[AFHttpClient sharedAFHttpClient]delFriendWithMid:[AccountManager sharedAccountManager].loginModel.mid friend:model.mid complete:^(BaseModel *model) {
+                if (model) {
+                    [self.dataSource removeObjectAtIndex:indexPath.row];
+                    [tableView reloadData];
+                }
+            }];
+
+        }]];
+        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.tableView reloadData];
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+}
 
 
 

@@ -293,6 +293,11 @@
 		7D3C56341DEEDCA8000B2930 /* sego1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3C56331DEEDCA8000B2930 /* sego1.png */; };
 		7D5255A51DDAE306000EB0B0 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5255A41DDAE306000EB0B0 /* GuideViewController.m */; };
 		7D626A401DD95636002C0F8B /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D626A3F1DD95636002C0F8B /* RegistViewController.m */; };
+		7DC89EEA1DEFCF6900564BB3 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC89EE91DEFCF6900564BB3 /* CycleScrollView.m */; };
+		7DC89EED1DEFCF7B00564BB3 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC89EEC1DEFCF7B00564BB3 /* NSTimer+Addition.m */; };
+		7DC89EF01DEFD2B900564BB3 /* AFHttpClient+Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC89EEF1DEFD2B900564BB3 /* AFHttpClient+Article.m */; };
+		7DC89EF31DEFD47300564BB3 /* RecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC89EF21DEFD47300564BB3 /* RecommendModel.m */; };
+		7DC89EF71DEFF2F000564BB3 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC89EF61DEFF2F000564BB3 /* HomeTableViewCell.m */; };
 		7DD60BF01DED2A350065D941 /* DouyiDouTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD60BEF1DED2A350065D941 /* DouyiDouTableViewCell.m */; };
 		7DD60BF41DED5B830065D941 /* newfriend.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DD60BF31DED5B830065D941 /* newfriend.png */; };
 		7DD60BF81DED6B540065D941 /* FriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD60BF71DED6B540065D941 /* FriendTableViewCell.m */; };
@@ -1074,6 +1079,16 @@
 		7D5255A41DDAE306000EB0B0 /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		7D626A3E1DD95636002C0F8B /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
 		7D626A3F1DD95636002C0F8B /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
+		7DC89EE81DEFCF6900564BB3 /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
+		7DC89EE91DEFCF6900564BB3 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
+		7DC89EEB1DEFCF7B00564BB3 /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
+		7DC89EEC1DEFCF7B00564BB3 /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
+		7DC89EEE1DEFD2B900564BB3 /* AFHttpClient+Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Article.h"; sourceTree = "<group>"; };
+		7DC89EEF1DEFD2B900564BB3 /* AFHttpClient+Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Article.m"; sourceTree = "<group>"; };
+		7DC89EF11DEFD47300564BB3 /* RecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendModel.h; sourceTree = "<group>"; };
+		7DC89EF21DEFD47300564BB3 /* RecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendModel.m; sourceTree = "<group>"; };
+		7DC89EF51DEFF2F000564BB3 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		7DC89EF61DEFF2F000564BB3 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		7DC9C3DF1DD2FEF60033973D /* Notification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
 		7DD60BEE1DED2A350065D941 /* DouyiDouTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DouyiDouTableViewCell.h; sourceTree = "<group>"; };
 		7DD60BEF1DED2A350065D941 /* DouyiDouTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DouyiDouTableViewCell.m; sourceTree = "<group>"; };
@@ -2409,6 +2424,8 @@
 			children = (
 				34FFD57E1DEC394B00A392B4 /* SearchModel.h */,
 				34FFD57F1DEC394B00A392B4 /* SearchModel.m */,
+				7DC89EF11DEFD47300564BB3 /* RecommendModel.h */,
+				7DC89EF21DEFD47300564BB3 /* RecommendModel.m */,
 				34884C871DD5742200245C24 /* CheckDeviceModel.h */,
 				34884C881DD5742200245C24 /* CheckDeviceModel.m */,
 				34C495FE1DD1CFE000687606 /* LoginModel.h */,
@@ -2430,6 +2447,8 @@
 			children = (
 				34DB5D321DD41AA000C51823 /* AFHttpClient.h */,
 				34DB5D331DD41AA000C51823 /* AFHttpClient.m */,
+				7DC89EEE1DEFD2B900564BB3 /* AFHttpClient+Article.h */,
+				7DC89EEF1DEFD2B900564BB3 /* AFHttpClient+Article.m */,
 				7DD60BF91DED876A0065D941 /* AFHttpClient+Friend.h */,
 				7DD60BFA1DED876A0065D941 /* AFHttpClient+Friend.m */,
 				34FFD5851DEC398500A392B4 /* AFHttpClient+Found.h */,
@@ -2532,6 +2551,10 @@
 			children = (
 				34D3C6DF1DDAF43600529FF5 /* ShowWarView.h */,
 				34D3C6E01DDAF43600529FF5 /* ShowWarView.m */,
+				7DC89EE81DEFCF6900564BB3 /* CycleScrollView.h */,
+				7DC89EE91DEFCF6900564BB3 /* CycleScrollView.m */,
+				7DC89EEB1DEFCF7B00564BB3 /* NSTimer+Addition.h */,
+				7DC89EEC1DEFCF7B00564BB3 /* NSTimer+Addition.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2590,6 +2613,7 @@
 		34E665701DD1A81000FA41E8 /* HomeV */ = {
 			isa = PBXGroup;
 			children = (
+				7DC89EF41DEFF24400564BB3 /* Views */,
 				3461F52D1DD2BB0A00E56298 /* HomeViewController.h */,
 				3461F52E1DD2BB0A00E56298 /* HomeViewController.m */,
 			);
@@ -2762,6 +2786,15 @@
 				7D5255A41DDAE306000EB0B0 /* GuideViewController.m */,
 			);
 			path = Guide;
+			sourceTree = "<group>";
+		};
+		7DC89EF41DEFF24400564BB3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7DC89EF51DEFF2F000564BB3 /* HomeTableViewCell.h */,
+				7DC89EF61DEFF2F000564BB3 /* HomeTableViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7DD60BF51DED5F620065D941 /* Views */ = {
@@ -3065,6 +3098,7 @@
 				34C495DA1DD1CB3900687606 /* AppDelegate+ShareSDK.m in Sources */,
 				3461F5391DD2BB5500E56298 /* LoginViewController.m in Sources */,
 				34C496061DD1D21700687606 /* BaseViewController.m in Sources */,
+				7DC89EF71DEFF2F000564BB3 /* HomeTableViewCell.m in Sources */,
 				34D3C6D51DDAB97300529FF5 /* BindingViewController.m in Sources */,
 				34D841BB1DE003DE00C37303 /* AFHttpClient+RemoveDevice.m in Sources */,
 				34FFD57D1DEC0BE900A392B4 /* HWWeakTimer.m in Sources */,
@@ -3100,6 +3134,7 @@
 				34FFD5801DEC394B00A392B4 /* SearchModel.m in Sources */,
 				342F798B1DDD7D800022FF09 /* DeviceStats.m in Sources */,
 				34ACCF511DDC5E5000AE2B98 /* AFHttpClient+Account.m in Sources */,
+				7DC89EEA1DEFCF6900564BB3 /* CycleScrollView.m in Sources */,
 				34884C861DD4678400245C24 /* AFHttpClient+TestNetWork.m in Sources */,
 				34C495FD1DD1CF4700687606 /* AccountManager.m in Sources */,
 				34C495F81DD1CD6C00687606 /* QFTableView.m in Sources */,
@@ -3108,6 +3143,7 @@
 				7D5255A51DDAE306000EB0B0 /* GuideViewController.m in Sources */,
 				7D3582BD1DEEB8870028F4B4 /* FriendModel.m in Sources */,
 				34C496001DD1CFE000687606 /* LoginModel.m in Sources */,
+				7DC89EED1DEFCF7B00564BB3 /* NSTimer+Addition.m in Sources */,
 				7DD60BF01DED2A350065D941 /* DouyiDouTableViewCell.m in Sources */,
 				3461F5321DD2BB1B00E56298 /* FriendViewController.m in Sources */,
 				34D3C6E11DDAF43600529FF5 /* ShowWarView.m in Sources */,
@@ -3116,10 +3152,12 @@
 				342F799A1DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.m in Sources */,
 				345AB4291DD9B3C000025EEE /* InCallViewController.m in Sources */,
 				34CFC4691DDC369B00444AA2 /* WifiViewController.m in Sources */,
+				7DC89EF01DEFD2B900564BB3 /* AFHttpClient+Article.m in Sources */,
 				34C495ED1DD1CD5400687606 /* UIImage-Extensions.m in Sources */,
 				34C495F71DD1CD6C00687606 /* NSString+URLEncoding.m in Sources */,
 				7DD60BF81DED6B540065D941 /* FriendTableViewCell.m in Sources */,
 				34DB5CA91DD4129E00C51823 /* SephoneUtils.m in Sources */,
+				7DC89EF31DEFD47300564BB3 /* RecommendModel.m in Sources */,
 				34FC41E31DD179F900A23A8F /* sego2_0.xcdatamodeld in Sources */,
 				34FFD5871DEC398500A392B4 /* AFHttpClient+Found.m in Sources */,
 				3461F5441DD2CA0A00E56298 /* MeViewController.m in Sources */,

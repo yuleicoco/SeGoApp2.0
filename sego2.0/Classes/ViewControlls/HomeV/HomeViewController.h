@@ -6,8 +6,8 @@
 //  Copyright © 2016年 yulei. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "BaseTabViewController.h"
 
-@interface HomeViewController : BaseViewController
+@interface HomeViewController : BaseTabViewController
 
 @end
