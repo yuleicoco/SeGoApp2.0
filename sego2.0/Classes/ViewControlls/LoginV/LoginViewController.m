@@ -291,11 +291,15 @@
 - (void)loginRepace:(NSString *)type Secretkey:(NSString *)secretkey nick:(NSString *)nickname headportrait:(NSString *)headportrait
 {
     
-    [[AFHttpClient sharedAFHttpClient]Trlogin:nil nickname:nickname secretkey:secretkey headportrait:headportrait rtype:type complete:^(BaseModel * model) {
+    
+    [[AFHttpClient sharedAFHttpClient]Trlogin:nickname secretkey:secretkey headportrait:headportrait rtype:type complete:^(BaseModel * model) {
         
-        
+        // 会员基本信息
+        FuckLog(@"==%@",model.retVal);
         
     }];
+    
+    
     
     
 }

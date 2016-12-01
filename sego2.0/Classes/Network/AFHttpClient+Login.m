@@ -10,16 +10,19 @@
 
 @implementation AFHttpClient (Login)
 
--(void)Trlogin:(NSString *)accountnumber nickname:(NSString *)nickname secretkey :(NSString *)secretkey headportrait:(NSString *)headportrait rtype:(NSString *)rtype  complete:(void (^)(BaseModel *))completeBlock
+-(void)Trlogin:(NSString *)nickname secretkey :(NSString *)secretkey headportrait:(NSString *)headportrait rtype:(NSString *)rtype  complete:(void (^)(BaseModel *))completeBlock
 {
     
     NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
     parms[@"common"] = @"otherLogin";
-    parms[@"accountnumber"] = accountnumber;
     parms[@"nickname"] =nickname;
     parms[@"secretkey"]=secretkey;
-    parms[@"headportrait"]= headportrait;
     parms[@"rtype"] = rtype;
+    NSMutableDictionary * dataparms = [[NSMutableDictionary alloc]init];
+    dataparms[@"headportrait"]= headportrait;
+    parms[@"data"] =dataparms;
+
+    
     [self POST:@"clientAction.do?" parameters:parms result:^(BaseModel * model) {
         
         
