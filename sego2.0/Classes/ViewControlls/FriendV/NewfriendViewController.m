@@ -8,7 +8,11 @@
 
 #import "NewfriendViewController.h"
 #import "SearchFriendViewController.h"
+#import "FriendTableViewCell.h"
+#import "AFHttpClient+Friend.h"
+#import "NewFriendModel.h"
 
+static NSString * cellId = @"newfriendCellid";
 @interface NewfriendViewController ()
 
 @end
@@ -59,6 +63,19 @@
         
     }];
     
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.tableView.superview);
+        make.right.equalTo(self.tableView.superview);
+        make.top.equalTo(self.tableView.superview).offset(43);
+        make.bottom.equalTo(self.tableView.superview);
+    }];
+    
+    [self.tableView registerClass:[FriendTableViewCell class] forCellReuseIdentifier:cellId];
+    
+    self.tableView.backgroundColor = GRAY_COLOR;
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [self initRefreshView];
+ //  self.tableView.hidden = YES;
 }
 -(void)topbuttontouch{
     
@@ -68,6 +85,110 @@
 
 
 }
+-(void)loadDataSourceWithPage:(int)page{
+    [[AFHttpClient sharedAFHttpClient]newFriendsMsgWithMid:[AccountManager sharedAccountManager].loginModel.mid page:page size:REQUEST_PAGE_SIZE complete:^(BaseModel *model) {
+        if (page == START_PAGE_INDEX) {
+            [self.dataSource removeAllObjects];
+            [self.dataSource addObjectsFromArray:model.list];
+        } else {
+            [self.dataSource addObjectsFromArray:model.list];
+        }
+        
+        if (model.list.count < REQUEST_PAGE_SIZE){
+            self.tableView.mj_footer.hidden = YES;
+        }else{
+            self.tableView.mj_footer.hidden = NO;
+        }
+        [self.tableView reloadData];
+        [self handleEndRefresh];
+    }];
 
+}
+
+#pragma mark - TableView的代理函数
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataSource.count;
+    //return 3;
+    
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+    
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    FriendTableViewCell * cell =  [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (indexPath.row == 0) {
+        cell.lineLabel.hidden = YES;
+    }
+
+    NewFriendModel * model = self.dataSource[indexPath.row];
+
+    
+    cell.nameLabel.text = model.nickname;
+    [cell.headImage sd_setImageWithURL:[NSURL URLWithString:model.headportrait] placeholderImage:[UIImage imageNamed:@"sego1.png"]];
+    if ([model.stype isEqualToString:@"01"]) {
+        cell.rightLabe.hidden = YES;
+        cell.rightBtn.hidden = NO;
+        cell.leftBtn.hidden = NO;
+    }else{
+         cell.rightLabe.hidden = NO;
+        cell.rightBtn.hidden = YES;
+        cell.leftBtn.hidden = YES;
+        if ([model.stype isEqualToString:@"00"]) {
+            cell.rightLabe.text = @"等待验证";
+        }
+        if ([model.stype isEqualToString:@"1"]) {
+             cell.rightLabe.text = @"已添加";
+        }
+        if ([model.stype isEqualToString:@"2"]) {
+            cell.rightLabe.text = @"已拒绝";
+        }
+    }
+    cell.rightBtn.tag = indexPath.row + 110;
+    cell.leftBtn.tag = indexPath.row + 120;
+    
+    [cell.rightBtn addTarget:self action:@selector(cellrightButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.leftBtn addTarget:self action:@selector(cellleftButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
+
+-(void)cellrightButtonTouch:(UIButton *)sender{
+    NSInteger i = sender.tag - 110;
+        NewFriendModel * model = self.dataSource[i];
+    
+    [[AFHttpClient sharedAFHttpClient]addFriendResponseWithMid:[AccountManager sharedAccountManager].loginModel.mid friend:model.mid opttype:@"1" complete:^(BaseModel *model) {
+        
+        [self initRefreshView];
+    }];
+    
+    
+}
+
+-(void)cellleftButtonTouch:(UIButton *)sender{
+    NSInteger i = sender.tag - 120;
+    NewFriendModel * model = self.dataSource[i];
+    
+    [[AFHttpClient sharedAFHttpClient]addFriendResponseWithMid:[AccountManager sharedAccountManager].loginModel.mid friend:model.mid opttype:@"1" complete:^(BaseModel *model) {
+        
+    }];
+
+
+}
 
 @end

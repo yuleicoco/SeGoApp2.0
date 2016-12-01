@@ -18,13 +18,13 @@
         //self.navigationController.navigationBar.layer.shadowOpacity = 0.4;
         //self.navigationController.navigationBar.layer.shadowRadius = 2;
        //self.navigationController.navigationBar.barStyle=UIBarStyleDefault;
-       // self.navigationController.navigationBar.translucent = NO;
+       self.navigationController.navigationBar.translucent = NO;
         
       //  self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     
-    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange) name:UIDeviceOrientationDidChangeNotification object:nil];
+   // [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+   // [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange) name:UIDeviceOrientationDidChangeNotification object:nil];
    
    
     

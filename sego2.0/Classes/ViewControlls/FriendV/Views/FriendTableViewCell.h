@@ -13,4 +13,12 @@
 @property (nonatomic,strong)UIImageView * headImage;
 @property (nonatomic,strong)UILabel * nameLabel;
 
+//添加
+@property (nonatomic,strong)UIButton * rightBtn;
+//右边的label
+@property (nonatomic,strong)UILabel * rightLabe;
+//拒绝按钮
+@property (nonatomic,strong)UIButton * leftBtn;
+
+
 @end

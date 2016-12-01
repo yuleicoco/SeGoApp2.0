@@ -279,6 +279,8 @@
 		7D1FA3E31DE5354F00A43201 /* AFHttpClient+PersonMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1FA3E21DE5354F00A43201 /* AFHttpClient+PersonMember.m */; };
 		7D3582B11DEE721D0028F4B4 /* NewfriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3582B01DEE721D0028F4B4 /* NewfriendViewController.m */; };
 		7D3582B71DEE7BB60028F4B4 /* SearchFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3582B61DEE7BB60028F4B4 /* SearchFriendViewController.m */; };
+		7D3582BD1DEEB8870028F4B4 /* FriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3582BC1DEEB8870028F4B4 /* FriendModel.m */; };
+		7D3582C01DEECC9D0028F4B4 /* NewFriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3582BF1DEECC9D0028F4B4 /* NewFriendModel.m */; };
 		7D38B21E1DDFF59A00404D05 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21A1DDFF59A00404D05 /* about.png */; };
 		7D38B21F1DDFF59A00404D05 /* douma.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21B1DDFF59A00404D05 /* douma.png */; };
 		7D38B2201DDFF59A00404D05 /* exchangepassword.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21C1DDFF59A00404D05 /* exchangepassword.png */; };
@@ -286,6 +288,7 @@
 		7D38B2281DE02B9C00404D05 /* BaseTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D38B2271DE02B9C00404D05 /* BaseTabViewController.m */; };
 		7D38B22B1DE0310100404D05 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D38B22A1DE0310100404D05 /* InformationViewController.m */; };
 		7D38B22F1DE047FA00404D05 /* InformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D38B22E1DE047FA00404D05 /* InformationTableViewCell.m */; };
+		7D3C56341DEEDCA8000B2930 /* sego1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3C56331DEEDCA8000B2930 /* sego1.png */; };
 		7D5255A51DDAE306000EB0B0 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5255A41DDAE306000EB0B0 /* GuideViewController.m */; };
 		7D626A401DD95636002C0F8B /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D626A3F1DD95636002C0F8B /* RegistViewController.m */; };
 		7DD60BF01DED2A350065D941 /* DouyiDouTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD60BEF1DED2A350065D941 /* DouyiDouTableViewCell.m */; };
@@ -1047,6 +1050,10 @@
 		7D3582B01DEE721D0028F4B4 /* NewfriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewfriendViewController.m; sourceTree = "<group>"; };
 		7D3582B51DEE7BB60028F4B4 /* SearchFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFriendViewController.h; sourceTree = "<group>"; };
 		7D3582B61DEE7BB60028F4B4 /* SearchFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFriendViewController.m; sourceTree = "<group>"; };
+		7D3582BB1DEEB8870028F4B4 /* FriendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendModel.h; sourceTree = "<group>"; };
+		7D3582BC1DEEB8870028F4B4 /* FriendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendModel.m; sourceTree = "<group>"; };
+		7D3582BE1DEECC9D0028F4B4 /* NewFriendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFriendModel.h; sourceTree = "<group>"; };
+		7D3582BF1DEECC9D0028F4B4 /* NewFriendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFriendModel.m; sourceTree = "<group>"; };
 		7D38B21A1DDFF59A00404D05 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
 		7D38B21B1DDFF59A00404D05 /* douma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = douma.png; sourceTree = "<group>"; };
 		7D38B21C1DDFF59A00404D05 /* exchangepassword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exchangepassword.png; sourceTree = "<group>"; };
@@ -1057,6 +1064,7 @@
 		7D38B22A1DE0310100404D05 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
 		7D38B22D1DE047FA00404D05 /* InformationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationTableViewCell.h; sourceTree = "<group>"; };
 		7D38B22E1DE047FA00404D05 /* InformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationTableViewCell.m; sourceTree = "<group>"; };
+		7D3C56331DEEDCA8000B2930 /* sego1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sego1.png; sourceTree = "<group>"; };
 		7D5255A31DDAE306000EB0B0 /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
 		7D5255A41DDAE306000EB0B0 /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		7D626A3E1DD95636002C0F8B /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
@@ -2231,6 +2239,7 @@
 		34E665541DD1A43800FA41E8 /* background */ = {
 			isa = PBXGroup;
 			children = (
+				7D3C56331DEEDCA8000B2930 /* sego1.png */,
 			);
 			path = background;
 			sourceTree = "<group>";
@@ -2402,6 +2411,10 @@
 				34DB5D361DD423C100C51823 /* BaseModel.m */,
 				342F79891DDD7D800022FF09 /* DeviceStats.h */,
 				342F798A1DDD7D800022FF09 /* DeviceStats.m */,
+				7D3582BB1DEEB8870028F4B4 /* FriendModel.h */,
+				7D3582BC1DEEB8870028F4B4 /* FriendModel.m */,
+				7D3582BE1DEECC9D0028F4B4 /* NewFriendModel.h */,
+				7D3582BF1DEECC9D0028F4B4 /* NewFriendModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2944,6 +2957,7 @@
 				345AB3F21DD9AEA400025EEE /* Lnormal_rool.png in Resources */,
 				34DB5CD81DD4129F00C51823 /* contact_unstarred.png in Resources */,
 				34DB5CF11DD4129F00C51823 /* incoming_chat.wav in Resources */,
+				7D3C56341DEEDCA8000B2930 /* sego1.png in Resources */,
 				34DB5CCA1DD4129F00C51823 /* nowebcamCIF.jpg in Resources */,
 				34DB5CE11DD4129F00C51823 /* ok.png in Resources */,
 				345AB3EC1DD9AEA400025EEE /* Lclick_light.png in Resources */,
@@ -3079,8 +3093,10 @@
 				34884C861DD4678400245C24 /* AFHttpClient+TestNetWork.m in Sources */,
 				34C495FD1DD1CF4700687606 /* AccountManager.m in Sources */,
 				34C495F81DD1CD6C00687606 /* QFTableView.m in Sources */,
+				7D3582C01DEECC9D0028F4B4 /* NewFriendModel.m in Sources */,
 				34FC41D71DD179F900A23A8F /* main.m in Sources */,
 				7D5255A51DDAE306000EB0B0 /* GuideViewController.m in Sources */,
+				7D3582BD1DEEB8870028F4B4 /* FriendModel.m in Sources */,
 				34C496001DD1CFE000687606 /* LoginModel.m in Sources */,
 				7DD60BF01DED2A350065D941 /* DouyiDouTableViewCell.m in Sources */,
 				3461F5321DD2BB1B00E56298 /* FriendViewController.m in Sources */,
@@ -3252,7 +3268,7 @@
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib",
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.eggpet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.eggpet999;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
 			};
@@ -3284,7 +3300,7 @@
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib",
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.eggpet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.eggpet999;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
 			};

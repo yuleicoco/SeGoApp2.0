@@ -7,7 +7,11 @@
 //
 
 #import "SearchFriendViewController.h"
+#import "AFHttpClient+Friend.h"
+#import "FriendTableViewCell.h"
+#import "FriendModel.h"
 
+static NSString * cellId = @"friendSearchCellid";
 @interface SearchFriendViewController ()
 @property (nonatomic,strong)UITextField * topTextfield;
 @end
@@ -75,14 +79,122 @@
         make.centerY.equalTo(searechLabel.superview.mas_centerY);
         make.width.mas_equalTo(100);
     }];
+    
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.tableView.superview);
+        make.right.equalTo(self.tableView.superview);
+        make.top.equalTo(self.tableView.superview).offset(43);
+        make.bottom.equalTo(self.tableView.superview);
+    }];
+    
+    [self.tableView registerClass:[FriendTableViewCell class] forCellReuseIdentifier:cellId];
+    
+    self.tableView.backgroundColor = GRAY_COLOR;
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
+    self.tableView.hidden = YES;
+
+    
+    
+    
 }
+
+-(void)loadDataSourceWithPage:(int)page{
+    [[AFHttpClient sharedAFHttpClient]searchPeopleWithMid:[AccountManager sharedAccountManager].loginModel.mid condition:_topTextfield.text page:page size:REQUEST_PAGE_SIZE complete:^(BaseModel *model) {
+        if (model.list.count == 0) {
+            [[AppUtil appTopViewController] showHint:@"未找到相关用户"];
+             [self.dataSource removeAllObjects];
+            [self.tableView reloadData];
+               [self handleEndRefresh];
+            return;
+        }
+        if (page == START_PAGE_INDEX) {
+            [self.dataSource removeAllObjects];
+            [self.dataSource addObjectsFromArray:model.list];
+        } else {
+            [self.dataSource addObjectsFromArray:model.list];
+        }
+        
+        if (model.list.count < REQUEST_PAGE_SIZE){
+            self.tableView.mj_footer.hidden = YES;
+        }else{
+            self.tableView.mj_footer.hidden = NO;
+        }
+        [self.tableView reloadData];
+        [self handleEndRefresh];
+    }];
+}
+
+
+
 
 -(void)searchButtontouch{
+    FuckLog(@"dadadaad");
+    [_topTextfield resignFirstResponder];
+     self.tableView.hidden = NO;
+    [self initRefreshView];
 
+}
+#pragma mark - TableView的代理函数
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataSource.count;
+    //return 3;
+    
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+    
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    FriendTableViewCell * cell =  [tableView dequeueReusableCellWithIdentifier:cellId];
+    FriendModel * model = self.dataSource[indexPath.row];
+    
+    if (indexPath.row == 0) {
+        cell.lineLabel.hidden = YES;
+    }
+    cell.nameLabel.text = model.nickname;
+    [cell.headImage sd_setImageWithURL:[NSURL URLWithString:model.headportrait] placeholderImage:[UIImage imageNamed:@"sego1.png"]];
+    
+    
+    if ([model.isfriend isEqualToString:@""]) {
+        cell.rightBtn.hidden = NO;
+    }else{
+        cell.rightBtn.hidden = YES;
+    }
+    cell.rightBtn.tag = indexPath.row + 2221;
+    [cell.rightBtn addTarget:self action:@selector(rightButtonTouch22:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //这里不需要拒绝按钮
+    
+    cell.leftBtn.hidden = YES;
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+    
+}
+
+-(void)rightButtonTouch22:(UIButton *)sender{
+    NSInteger i = sender.tag - 2221;
+    FriendModel * model = self.dataSource[i];
+    [[AFHttpClient sharedAFHttpClient]addFriendRequsetWithMid:[AccountManager sharedAccountManager].loginModel.mid friend:model.mid complete:^(BaseModel *model) {
+        
+        
+        
+    }];
 
 
 }
-
 
 
 
