@@ -24,8 +24,6 @@
 
     
     [self POST:@"clientAction.do?" parameters:parms result:^(BaseModel * model) {
-        
-        
         if (model) {
             completeBlock(model);
         }
