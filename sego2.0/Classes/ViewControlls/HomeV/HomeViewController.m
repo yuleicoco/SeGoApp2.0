@@ -14,7 +14,7 @@
 
 #import "UIImage-Extensions.h"
 
-
+#import "RepositoryViewController.h"
 static NSString * cellId = @"hometableviewcellId";
 @interface HomeViewController ()
 @property (nonatomic,strong)CycleScrollView * topScrollView;
@@ -36,7 +36,8 @@ static NSString * cellId = @"hometableviewcellId";
 
     FuckLog(@"dada");
     
-
+    RepositoryViewController * repVc = [[RepositoryViewController alloc]init];
+    [self.navigationController pushViewController:repVc animated:NO];
 
 
 

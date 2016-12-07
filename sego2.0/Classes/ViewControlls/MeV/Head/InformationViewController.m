@@ -48,10 +48,11 @@ static NSString * cellId = @"InformationCellId";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:[AccountManager sharedAccountManager].loginModel.nickname];
+//    [self setNavTitle:[AccountManager sharedAccountManager].loginModel.nickname];
     _imagePicker =[[UIImagePickerController alloc]init];
     _imagePicker.delegate= self;
-    }
+
+}
 
 -(void)setupView{
     [super setupView];
@@ -81,8 +82,6 @@ static NSString * cellId = @"InformationCellId";
     //headBtn.backgroundColor = [UIColor blackColor];
     [_headBtn.layer setMasksToBounds:YES];
     _headBtn.layer.cornerRadius = 33;
-    UIImage * btnImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[AccountManager sharedAccountManager].loginModel.headportrait]]];
-    [_headBtn setImage:btnImage forState:UIControlStateNormal];
     [_headBtn addTarget:self action:@selector(headbtuttonTouch:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_headBtn];
     [_headBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -91,8 +90,6 @@ static NSString * cellId = @"InformationCellId";
         make.bottom.equalTo(topView.mas_bottom).offset(-7);
         make.width.mas_offset(66);
     }];
-    
-    
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(topView.mas_bottom).offset(12);
         make.left.equalTo(self.tableView.superview);
@@ -100,11 +97,7 @@ static NSString * cellId = @"InformationCellId";
         make.height.mas_equalTo(330);
         
     }];
-    
-  //  self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height);
-
-     [self.tableView registerClass:[InformationTableViewCell class] forCellReuseIdentifier:cellId];
-    
+    [self.tableView registerClass:[InformationTableViewCell class] forCellReuseIdentifier:cellId];
     self.tableView.backgroundColor = [UIColor whiteColor];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     self.tableView.scrollEnabled = NO;
@@ -121,6 +114,9 @@ static NSString * cellId = @"InformationCellId";
 
 -(void)setupData{
     [super setupData];
+    UIImage * btnImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[AccountManager sharedAccountManager].loginModel.headportrait]]];
+    [_headBtn setImage:btnImage forState:UIControlStateNormal];
+
     _nameArray = [[NSArray alloc]init];
     _nameArray = @[@"帐号",@"昵称",@"性别",@"家族",@"生日",@"签名"];
     

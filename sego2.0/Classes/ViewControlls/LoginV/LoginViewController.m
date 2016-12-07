@@ -345,10 +345,18 @@
     [self showHudInView:self.view hint:@"正在登录..."];
     [[AFHttpClient sharedAFHttpClient]loginWithAccounynumber:_numberTextfield.text password:_passwordTextfield.text complete:^(BaseModel * model) {
         if (model) {
-            LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
+            if ([model.retCode isEqualToString:@"0000"]) {
+
+                LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
+                
+                [[AccountManager sharedAccountManager]login:loginModel];
+                [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
+            }else{
+            [[AppUtil appTopViewController]showHint:model.retDesc];
             
-            [[AccountManager sharedAccountManager]login:loginModel];
-              [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
+            }
+          
+     
         }
          [self hideHud];
     }];
