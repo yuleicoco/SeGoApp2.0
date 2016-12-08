@@ -37,10 +37,9 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
      CBPeripheralManager *peripheralManager;
     int serviceNum;   // 添加成功的service数量
     BOOL isAccecptOk; // 是否接收结果成功
-    
+    BOOL isOpenPerOK; // 判断是否从机开始广播
     NSString * str;
 
-    
     }
 
 @end
@@ -59,6 +58,8 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavTitle:NSLocalizedString(@"tabBinding_title",nil)];
+    isOpenPerOK = NO;
+    
    
     
 }
@@ -109,7 +110,27 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
 
 - (void)setupView
 {
-    str  =  [Defaluts objectForKey:PREF_DEVICE_NUMBER];
+    
+    NSString * strBing =[Defaluts objectForKey:PREF_DEVICE_NUMBER];
+    NSString * strLogin =[AccountManager sharedAccountManager].loginModel.deviceno;
+    
+    if ([AppUtil isBlankString:strBing] && [AppUtil isBlankString:strLogin]) {
+        
+        str =@"";
+    }else
+    {
+        
+        if ([AppUtil isBlankString:strBing]) {
+            
+            str = strLogin;
+        }else
+        {
+            
+            str = strBing;
+            
+        }
+        
+    }
 
     
     [super setupView];
@@ -268,8 +289,6 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
         [self showWarningTip:@"设备号不存在"];
         return;
     }
-    
-    
     if ([AppUtil isBlankString:str]) {
         
         [[AFHttpClient sharedAFHttpClient]AddDeviceStats:[AccountManager sharedAccountManager].loginModel.mid deviceno:deviceTF.text complete:^(BaseModel *model) {
@@ -309,6 +328,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
                 [self showWarningTip:@"解绑成功"];
                 
                 [Defaluts removeObjectForKey:PREF_DEVICE_NUMBER];
+                [AccountManager sharedAccountManager].loginModel.deviceno=nil;
                 [Defaluts removeObjectForKey:@"incodeNum"];
                 [Defaluts synchronize];
                 deviceTF.text =@"";
@@ -458,7 +478,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     switch (peripheral.state) {
             // 蓝牙开启时，启动sego配置服务。
         case CBPeripheralManagerStatePoweredOn:
-            NSLog(@"Bluetooth powered on");
+            FuckLog(@"Bluetooth powered on");
             
             if ([AppUtil isBlankString:str]) {
                 [self SearchDevice];
@@ -476,7 +496,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
             
             // 蓝牙关闭时，提示用户打开蓝牙。
         case CBPeripheralManagerStatePoweredOff:
-            NSLog(@"Bluetooth powered off");
+            FuckLog(@"Bluetooth powered off");
             
             [self showNeedBluetoothWaringDialog];
             break;
@@ -524,7 +544,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
  */
 - (void)peripheralManager:(CBPeripheralManager *)peripheral didAddService:(CBService *)service error:(NSError *)error {
     if (error != nil) {
-        NSLog(@"Add service error: %@", error);
+        FuckLog(@"Add service error: %@", error);
         return;
     }
     serviceNum++;
@@ -540,8 +560,8 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
  *  @param error      错误描述
  */
 - (void)peripheralManagerDidStartAdvertising:(CBPeripheralManager *)peripheral error:(NSError *)error {
-    NSLog(@"peripheralManagerDidStartAdvertisiong");
-    NSLog(@"%@",error);
+    FuckLog(@"peripheralManagerDidStartAdvertisiong");
+    FuckLog(@"%@",error);
     
 }
 
@@ -553,7 +573,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
  *  @param characteristic 被订阅的特征
  */
 - (void)peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didSubscribeToCharacteristic:(CBCharacteristic *)characteristic {
-    NSLog(@"didSubscribeToCharacteristic %@", characteristic.UUID);
+    FuckLog(@"didSubscribeToCharacteristic %@", characteristic.UUID);
 }
 
 /**
@@ -564,7 +584,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
  *  @param characteristic 被取消订阅的特征
  */
 - (void)peripheralManager:(CBPeripheralManager *)peripheral central:(CBCentral *)central didUnsubscribeFromCharacteristic:(CBCharacteristic *)characteristic {
-    NSLog(@"didUnsubscribeFromCharacteristic %@", characteristic.UUID);
+    FuckLog(@"didUnsubscribeFromCharacteristic %@", characteristic.UUID);
 }
 
 /**
@@ -574,7 +594,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
  *  @param request    请求
  */
 - (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveReadRequest:(CBATTRequest *)request {
-    NSLog(@"didReceiveReadRequest");
+    FuckLog(@"didReceiveReadRequest");
     
     // 判断特征是否有读权限。
     if (request.characteristic.properties & CBCharacteristicPropertyRead) {
@@ -589,6 +609,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     }
 }
 
+
 /**
  *  写特征回调
  *
@@ -596,7 +617,8 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
  *  @param requests   请求
  */
 - (void)peripheralManager:(CBPeripheralManager *)peripheral didReceiveWriteRequests:(NSArray *)requests {
-    NSLog(@"didReceiveWriteRequests");
+    FuckLog(@"didReceiveWriteRequests");
+    isOpenPerOK = YES;
     
     CBATTRequest *request = requests[0];
     // 尚未收到应答，解析之。
@@ -607,7 +629,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
             vchar.value = request.value;
             Byte *bytes = (Byte *)[vchar.value bytes];
             NSString *strResult = [[NSString alloc] initWithBytes:bytes length:vchar.value.length encoding:NSUTF8StringEncoding];
-            NSLog(@"Get result: %@", strResult);
+            FuckLog(@"Get result: %@", strResult);
             
             [hud hide:YES];
             
@@ -671,7 +693,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
  *  @param peripheral 蓝牙周边管理器
  */
 - (void)peripheralManagerIsReadyToUpdateSubscribers:(CBPeripheralManager *)peripheral {
-    NSLog(@"peripheralManagerIsReadyToUpdateSubscribers");
+    FuckLog(@"peripheralManagerIsReadyToUpdateSubscribers");
 }
 
 
