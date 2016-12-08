@@ -10,7 +10,7 @@
 
 @interface HomeTableViewCell : UITableViewCell
 @property (nonatomic,strong)UIView * topView;
-@property (nonatomic,strong)UILabel * nameLabel;
+@property (nonatomic,strong)UILabel * contentLabel;
 @property (nonatomic,strong)UIImageView * centerImage;
 @property (nonatomic,strong)UIImageView * videoImage;
 

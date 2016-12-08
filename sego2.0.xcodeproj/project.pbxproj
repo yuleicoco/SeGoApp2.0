@@ -278,6 +278,8 @@
 		34FFD5801DEC394B00A392B4 /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD57F1DEC394B00A392B4 /* SearchModel.m */; };
 		34FFD5841DEC396800A392B4 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD5831DEC396800A392B4 /* SearchTableViewCell.m */; };
 		34FFD5871DEC398500A392B4 /* AFHttpClient+Found.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD5861DEC398500A392B4 /* AFHttpClient+Found.m */; };
+		7D0892B41DF8FC45001BBD98 /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0892B31DF8FC45001BBD98 /* IssueViewController.m */; };
+		7D0892B71DF9530C001BBD98 /* ArticlesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0892B61DF9530C001BBD98 /* ArticlesModel.m */; };
 		7D1C9DF21DF7E6FA0050CBB4 /* rigtBtnImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1C9DF11DF7E6FA0050CBB4 /* rigtBtnImage.png */; };
 		7D1FA3E31DE5354F00A43201 /* AFHttpClient+PersonMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1FA3E21DE5354F00A43201 /* AFHttpClient+PersonMember.m */; };
 		7D28166D1DF1101000A9E6DA /* RepositVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D28166C1DF1101000A9E6DA /* RepositVideoViewController.m */; };
@@ -1067,6 +1069,10 @@
 		34FFD5831DEC396800A392B4 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		34FFD5851DEC398500A392B4 /* AFHttpClient+Found.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Found.h"; sourceTree = "<group>"; };
 		34FFD5861DEC398500A392B4 /* AFHttpClient+Found.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Found.m"; sourceTree = "<group>"; };
+		7D0892B21DF8FC45001BBD98 /* IssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueViewController.h; sourceTree = "<group>"; };
+		7D0892B31DF8FC45001BBD98 /* IssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueViewController.m; sourceTree = "<group>"; };
+		7D0892B51DF9530C001BBD98 /* ArticlesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesModel.h; sourceTree = "<group>"; };
+		7D0892B61DF9530C001BBD98 /* ArticlesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesModel.m; sourceTree = "<group>"; };
 		7D1C9DF11DF7E6FA0050CBB4 /* rigtBtnImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rigtBtnImage.png; sourceTree = "<group>"; };
 		7D1FA3E11DE5354F00A43201 /* AFHttpClient+PersonMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+PersonMember.h"; sourceTree = "<group>"; };
 		7D1FA3E21DE5354F00A43201 /* AFHttpClient+PersonMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+PersonMember.m"; sourceTree = "<group>"; };
@@ -2460,6 +2466,8 @@
 			children = (
 				34FFD57E1DEC394B00A392B4 /* SearchModel.h */,
 				34FFD57F1DEC394B00A392B4 /* SearchModel.m */,
+				7D0892B51DF9530C001BBD98 /* ArticlesModel.h */,
+				7D0892B61DF9530C001BBD98 /* ArticlesModel.m */,
 				7DC89EF11DEFD47300564BB3 /* RecommendModel.h */,
 				7DC89EF21DEFD47300564BB3 /* RecommendModel.m */,
 				34884C871DD5742200245C24 /* CheckDeviceModel.h */,
@@ -2664,6 +2672,8 @@
 				7D28166C1DF1101000A9E6DA /* RepositVideoViewController.m */,
 				7D28166E1DF1102200A9E6DA /* RepositPictureViewController.h */,
 				7D28166F1DF1102200A9E6DA /* RepositPictureViewController.m */,
+				7D0892B21DF8FC45001BBD98 /* IssueViewController.h */,
+				7D0892B31DF8FC45001BBD98 /* IssueViewController.m */,
 			);
 			path = HomeV;
 			sourceTree = "<group>";
@@ -3168,6 +3178,7 @@
 				7D2911181DF553EF00B672F2 /* PhotoGrapgModel.m in Sources */,
 				34DB5D341DD41AA000C51823 /* AFHttpClient.m in Sources */,
 				34FFD5841DEC396800A392B4 /* SearchTableViewCell.m in Sources */,
+				7D0892B41DF8FC45001BBD98 /* IssueViewController.m in Sources */,
 				34FA28301DEBE07600F13C85 /* SearchDoumaViewController.m in Sources */,
 				7D626A401DD95636002C0F8B /* RegistViewController.m in Sources */,
 				34C495D71DD1CB2900687606 /* AppDelegate+Launcher.m in Sources */,
@@ -3206,6 +3217,7 @@
 				34FC41D71DD179F900A23A8F /* main.m in Sources */,
 				7D5255A51DDAE306000EB0B0 /* GuideViewController.m in Sources */,
 				7D3582BD1DEEB8870028F4B4 /* FriendModel.m in Sources */,
+				7D0892B71DF9530C001BBD98 /* ArticlesModel.m in Sources */,
 				34C496001DD1CFE000687606 /* LoginModel.m in Sources */,
 				7DC89EED1DEFCF7B00564BB3 /* NSTimer+Addition.m in Sources */,
 				7DD60BF01DED2A350065D941 /* DouyiDouTableViewCell.m in Sources */,

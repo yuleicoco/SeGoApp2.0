@@ -293,9 +293,21 @@
     
     
     [[AFHttpClient sharedAFHttpClient]Trlogin:nickname secretkey:secretkey headportrait:headportrait rtype:type complete:^(BaseModel * model) {
-        
         // 会员基本信息
+        
         FuckLog(@"==%@",model.retVal);
+        if ([model.retCode isEqualToString:@"0000"]) {
+            
+            LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
+            
+            [[AccountManager sharedAccountManager]login:loginModel];
+            [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
+        }else{
+            [[AppUtil appTopViewController]showHint:model.retDesc];
+            
+        }
+        
+        
         
     }];
     

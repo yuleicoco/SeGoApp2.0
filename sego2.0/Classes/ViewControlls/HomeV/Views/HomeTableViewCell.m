@@ -21,6 +21,21 @@
             make.height.mas_equalTo(12);
         }];
         
+        _contentLabel = [[UILabel alloc]init];
+        _contentLabel.textColor = [UIColor blackColor];
+        _contentLabel.font = [UIFont systemFontOfSize:18];
+        _contentLabel.text = @"开心的小鸡鸡";
+        [self addSubview:_contentLabel];
+        [_contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(_contentLabel.superview).offset(12);
+            make.top.equalTo(_topView.mas_bottom).offset(11.5);
+            
+        }];
+        
+        
+        
+        
+        
         
     
     }
