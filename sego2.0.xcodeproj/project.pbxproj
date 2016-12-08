@@ -278,7 +278,14 @@
 		34FFD5801DEC394B00A392B4 /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD57F1DEC394B00A392B4 /* SearchModel.m */; };
 		34FFD5841DEC396800A392B4 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD5831DEC396800A392B4 /* SearchTableViewCell.m */; };
 		34FFD5871DEC398500A392B4 /* AFHttpClient+Found.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD5861DEC398500A392B4 /* AFHttpClient+Found.m */; };
+		7D1C9DF21DF7E6FA0050CBB4 /* rigtBtnImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1C9DF11DF7E6FA0050CBB4 /* rigtBtnImage.png */; };
 		7D1FA3E31DE5354F00A43201 /* AFHttpClient+PersonMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1FA3E21DE5354F00A43201 /* AFHttpClient+PersonMember.m */; };
+		7D28166D1DF1101000A9E6DA /* RepositVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D28166C1DF1101000A9E6DA /* RepositVideoViewController.m */; };
+		7D2816701DF1102200A9E6DA /* RepositPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D28166F1DF1102200A9E6DA /* RepositPictureViewController.m */; };
+		7D2816731DF1160B00A9E6DA /* MyVideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2816721DF1160B00A9E6DA /* MyVideoCollectionViewCell.m */; };
+		7D2816761DF116BB00A9E6DA /* AFHttpClient+Reposit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2816751DF116BB00A9E6DA /* AFHttpClient+Reposit.m */; };
+		7D2816791DF11BD100A9E6DA /* RecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2816781DF11BD100A9E6DA /* RecordModel.m */; };
+		7D2911181DF553EF00B672F2 /* PhotoGrapgModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2911171DF553EF00B672F2 /* PhotoGrapgModel.m */; };
 		7D3582B11DEE721D0028F4B4 /* NewfriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3582B01DEE721D0028F4B4 /* NewfriendViewController.m */; };
 		7D3582B71DEE7BB60028F4B4 /* SearchFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3582B61DEE7BB60028F4B4 /* SearchFriendViewController.m */; };
 		7D3582BD1DEEB8870028F4B4 /* FriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3582BC1DEEB8870028F4B4 /* FriendModel.m */; };
@@ -293,11 +300,17 @@
 		7D3C56341DEEDCA8000B2930 /* sego1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3C56331DEEDCA8000B2930 /* sego1.png */; };
 		7D5255A51DDAE306000EB0B0 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5255A41DDAE306000EB0B0 /* GuideViewController.m */; };
 		7D626A401DD95636002C0F8B /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D626A3F1DD95636002C0F8B /* RegistViewController.m */; };
+		7DABCB0F1DF6AF0A00CA50C4 /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DABCB0E1DF6AF0A00CA50C4 /* video.png */; };
 		7DC89EEA1DEFCF6900564BB3 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC89EE91DEFCF6900564BB3 /* CycleScrollView.m */; };
 		7DC89EED1DEFCF7B00564BB3 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC89EEC1DEFCF7B00564BB3 /* NSTimer+Addition.m */; };
 		7DC89EF01DEFD2B900564BB3 /* AFHttpClient+Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC89EEF1DEFD2B900564BB3 /* AFHttpClient+Article.m */; };
 		7DC89EF31DEFD47300564BB3 /* RecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC89EF21DEFD47300564BB3 /* RecommendModel.m */; };
 		7DC89EF71DEFF2F000564BB3 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC89EF61DEFF2F000564BB3 /* HomeTableViewCell.m */; };
+		7DC89EFA1DF01A0800564BB3 /* BaseGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC89EF91DF01A0800564BB3 /* BaseGridViewController.m */; };
+		7DC89EFD1DF01A8800564BB3 /* RepositoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC89EFC1DF01A8800564BB3 /* RepositoryViewController.m */; };
+		7DC89EFF1DF01AE800564BB3 /* HeaderViewCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DC89EFE1DF01AE800564BB3 /* HeaderViewCollection.xib */; };
+		7DC89F011DF01AED00564BB3 /* SQSupplementaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DC89F001DF01AED00564BB3 /* SQSupplementaryView.xib */; };
+		7DC89F031DF01AF800564BB3 /* RecordHeaderViewCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DC89F021DF01AF800564BB3 /* RecordHeaderViewCollection.xib */; };
 		7DD60BF01DED2A350065D941 /* DouyiDouTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD60BEF1DED2A350065D941 /* DouyiDouTableViewCell.m */; };
 		7DD60BF41DED5B830065D941 /* newfriend.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DD60BF31DED5B830065D941 /* newfriend.png */; };
 		7DD60BF81DED6B540065D941 /* FriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD60BF71DED6B540065D941 /* FriendTableViewCell.m */; };
@@ -1054,8 +1067,21 @@
 		34FFD5831DEC396800A392B4 /* SearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewCell.m; sourceTree = "<group>"; };
 		34FFD5851DEC398500A392B4 /* AFHttpClient+Found.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Found.h"; sourceTree = "<group>"; };
 		34FFD5861DEC398500A392B4 /* AFHttpClient+Found.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Found.m"; sourceTree = "<group>"; };
+		7D1C9DF11DF7E6FA0050CBB4 /* rigtBtnImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rigtBtnImage.png; sourceTree = "<group>"; };
 		7D1FA3E11DE5354F00A43201 /* AFHttpClient+PersonMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+PersonMember.h"; sourceTree = "<group>"; };
 		7D1FA3E21DE5354F00A43201 /* AFHttpClient+PersonMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+PersonMember.m"; sourceTree = "<group>"; };
+		7D28166B1DF1101000A9E6DA /* RepositVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositVideoViewController.h; sourceTree = "<group>"; };
+		7D28166C1DF1101000A9E6DA /* RepositVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositVideoViewController.m; sourceTree = "<group>"; };
+		7D28166E1DF1102200A9E6DA /* RepositPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositPictureViewController.h; sourceTree = "<group>"; };
+		7D28166F1DF1102200A9E6DA /* RepositPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositPictureViewController.m; sourceTree = "<group>"; };
+		7D2816711DF1160B00A9E6DA /* MyVideoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVideoCollectionViewCell.h; sourceTree = "<group>"; };
+		7D2816721DF1160B00A9E6DA /* MyVideoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyVideoCollectionViewCell.m; sourceTree = "<group>"; };
+		7D2816741DF116BB00A9E6DA /* AFHttpClient+Reposit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Reposit.h"; sourceTree = "<group>"; };
+		7D2816751DF116BB00A9E6DA /* AFHttpClient+Reposit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Reposit.m"; sourceTree = "<group>"; };
+		7D2816771DF11BD100A9E6DA /* RecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordModel.h; sourceTree = "<group>"; };
+		7D2816781DF11BD100A9E6DA /* RecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordModel.m; sourceTree = "<group>"; };
+		7D2911161DF553EF00B672F2 /* PhotoGrapgModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGrapgModel.h; sourceTree = "<group>"; };
+		7D2911171DF553EF00B672F2 /* PhotoGrapgModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGrapgModel.m; sourceTree = "<group>"; };
 		7D3582AF1DEE721C0028F4B4 /* NewfriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewfriendViewController.h; sourceTree = "<group>"; };
 		7D3582B01DEE721D0028F4B4 /* NewfriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewfriendViewController.m; sourceTree = "<group>"; };
 		7D3582B51DEE7BB60028F4B4 /* SearchFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFriendViewController.h; sourceTree = "<group>"; };
@@ -1079,6 +1105,7 @@
 		7D5255A41DDAE306000EB0B0 /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		7D626A3E1DD95636002C0F8B /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
 		7D626A3F1DD95636002C0F8B /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
+		7DABCB0E1DF6AF0A00CA50C4 /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video.png; sourceTree = "<group>"; };
 		7DC89EE81DEFCF6900564BB3 /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
 		7DC89EE91DEFCF6900564BB3 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
 		7DC89EEB1DEFCF7B00564BB3 /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
@@ -1089,6 +1116,13 @@
 		7DC89EF21DEFD47300564BB3 /* RecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendModel.m; sourceTree = "<group>"; };
 		7DC89EF51DEFF2F000564BB3 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		7DC89EF61DEFF2F000564BB3 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		7DC89EF81DF01A0800564BB3 /* BaseGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseGridViewController.h; sourceTree = "<group>"; };
+		7DC89EF91DF01A0800564BB3 /* BaseGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseGridViewController.m; sourceTree = "<group>"; };
+		7DC89EFB1DF01A8800564BB3 /* RepositoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepositoryViewController.h; sourceTree = "<group>"; };
+		7DC89EFC1DF01A8800564BB3 /* RepositoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryViewController.m; sourceTree = "<group>"; };
+		7DC89EFE1DF01AE800564BB3 /* HeaderViewCollection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderViewCollection.xib; sourceTree = "<group>"; };
+		7DC89F001DF01AED00564BB3 /* SQSupplementaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SQSupplementaryView.xib; sourceTree = "<group>"; };
+		7DC89F021DF01AF800564BB3 /* RecordHeaderViewCollection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecordHeaderViewCollection.xib; sourceTree = "<group>"; };
 		7DC9C3DF1DD2FEF60033973D /* Notification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
 		7DD60BEE1DED2A350065D941 /* DouyiDouTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DouyiDouTableViewCell.h; sourceTree = "<group>"; };
 		7DD60BEF1DED2A350065D941 /* DouyiDouTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DouyiDouTableViewCell.m; sourceTree = "<group>"; };
@@ -2306,6 +2340,8 @@
 		34E665591DD1A50800FA41E8 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				7DABCB0E1DF6AF0A00CA50C4 /* video.png */,
+				7D1C9DF11DF7E6FA0050CBB4 /* rigtBtnImage.png */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -2438,6 +2474,10 @@
 				7D3582BC1DEEB8870028F4B4 /* FriendModel.m */,
 				7D3582BE1DEECC9D0028F4B4 /* NewFriendModel.h */,
 				7D3582BF1DEECC9D0028F4B4 /* NewFriendModel.m */,
+				7D2816771DF11BD100A9E6DA /* RecordModel.h */,
+				7D2816781DF11BD100A9E6DA /* RecordModel.m */,
+				7D2911161DF553EF00B672F2 /* PhotoGrapgModel.h */,
+				7D2911171DF553EF00B672F2 /* PhotoGrapgModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2447,6 +2487,8 @@
 			children = (
 				34DB5D321DD41AA000C51823 /* AFHttpClient.h */,
 				34DB5D331DD41AA000C51823 /* AFHttpClient.m */,
+				7D2816741DF116BB00A9E6DA /* AFHttpClient+Reposit.h */,
+				7D2816751DF116BB00A9E6DA /* AFHttpClient+Reposit.m */,
 				7DC89EEE1DEFD2B900564BB3 /* AFHttpClient+Article.h */,
 				7DC89EEF1DEFD2B900564BB3 /* AFHttpClient+Article.m */,
 				7DD60BF91DED876A0065D941 /* AFHttpClient+Friend.h */,
@@ -2616,6 +2658,12 @@
 				7DC89EF41DEFF24400564BB3 /* Views */,
 				3461F52D1DD2BB0A00E56298 /* HomeViewController.h */,
 				3461F52E1DD2BB0A00E56298 /* HomeViewController.m */,
+				7DC89EFB1DF01A8800564BB3 /* RepositoryViewController.h */,
+				7DC89EFC1DF01A8800564BB3 /* RepositoryViewController.m */,
+				7D28166B1DF1101000A9E6DA /* RepositVideoViewController.h */,
+				7D28166C1DF1101000A9E6DA /* RepositVideoViewController.m */,
+				7D28166E1DF1102200A9E6DA /* RepositPictureViewController.h */,
+				7D28166F1DF1102200A9E6DA /* RepositPictureViewController.m */,
 			);
 			path = HomeV;
 			sourceTree = "<group>";
@@ -2653,6 +2701,8 @@
 				34C496051DD1D21700687606 /* BaseViewController.m */,
 				7D38B2261DE02B9C00404D05 /* BaseTabViewController.h */,
 				7D38B2271DE02B9C00404D05 /* BaseTabViewController.m */,
+				7DC89EF81DF01A0800564BB3 /* BaseGridViewController.h */,
+				7DC89EF91DF01A0800564BB3 /* BaseGridViewController.m */,
 			);
 			path = BaseV;
 			sourceTree = "<group>";
@@ -2791,8 +2841,13 @@
 		7DC89EF41DEFF24400564BB3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7D2816711DF1160B00A9E6DA /* MyVideoCollectionViewCell.h */,
+				7D2816721DF1160B00A9E6DA /* MyVideoCollectionViewCell.m */,
 				7DC89EF51DEFF2F000564BB3 /* HomeTableViewCell.h */,
 				7DC89EF61DEFF2F000564BB3 /* HomeTableViewCell.m */,
+				7DC89EFE1DF01AE800564BB3 /* HeaderViewCollection.xib */,
+				7DC89F001DF01AED00564BB3 /* SQSupplementaryView.xib */,
+				7DC89F021DF01AF800564BB3 /* RecordHeaderViewCollection.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2849,7 +2904,7 @@
 				TargetAttributes = {
 					34FC41D11DD179F900A23A8F = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 4UKEB375ND;
+						DevelopmentTeam = 86LKUHCT4N;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2885,6 +2940,7 @@
 				34DB5CDA1DD4129F00C51823 /* dialer.png in Resources */,
 				34DB5CFC1DD4129F00C51823 /* toy-mono.wav in Resources */,
 				34DB5CE91DD4129F00C51823 /* status-offline.png in Resources */,
+				7DC89F031DF01AF800564BB3 /* RecordHeaderViewCollection.xib in Resources */,
 				3461F53A1DD2BB5500E56298 /* LoginViewController.xib in Resources */,
 				34E3810F1DE5973C007501E1 /* down1.png in Resources */,
 				345AB3EE1DD9AEA400025EEE /* take_on.png in Resources */,
@@ -2968,6 +3024,7 @@
 				34DB5CDE1DD4129F00C51823 /* mic_active.png in Resources */,
 				34CD6C321DE7EC9E00993834 /* right_egg.png in Resources */,
 				345AB3F61DD9AEA400025EEE /* Lclick_photo.png in Resources */,
+				7D1C9DF21DF7E6FA0050CBB4 /* rigtBtnImage.png in Resources */,
 				34DB5CA51DD4129E00C51823 /* sephonerc in Resources */,
 				34ACCF461DDC5E3600AE2B98 /* numbertu.png in Resources */,
 				34DB5CE31DD4129F00C51823 /* sephone.icns in Resources */,
@@ -2998,6 +3055,7 @@
 				34DB5CA31DD4129E00C51823 /* rootca.pem in Resources */,
 				345AB3F21DD9AEA400025EEE /* Lnormal_rool.png in Resources */,
 				34DB5CD81DD4129F00C51823 /* contact_unstarred.png in Resources */,
+				7DABCB0F1DF6AF0A00CA50C4 /* video.png in Resources */,
 				34DB5CF11DD4129F00C51823 /* incoming_chat.wav in Resources */,
 				7D3C56341DEEDCA8000B2930 /* sego1.png in Resources */,
 				34DB5CCA1DD4129F00C51823 /* nowebcamCIF.jpg in Resources */,
@@ -3028,8 +3086,10 @@
 				34DB5CF71DD4129F00C51823 /* orig.wav in Resources */,
 				34B7A02D1DE56CF500763EB0 /* small.png in Resources */,
 				345AB3F51DD9AEA400025EEE /* Lnormal_food.png in Resources */,
+				7DC89F011DF01AED00564BB3 /* SQSupplementaryView.xib in Resources */,
 				34DB5CDB1DD4129F00C51823 /* history-orange.png in Resources */,
 				34DB5CD01DD4129F00C51823 /* chat.png in Resources */,
+				7DC89EFF1DF01AE800564BB3 /* HeaderViewCollection.xib in Resources */,
 				3461F5571DD2CB4800E56298 /* tab_faxian@2x.png in Resources */,
 				345AB4131DD9AEB900025EEE /* rool_off.png in Resources */,
 				34DB5CD41DD4129F00C51823 /* composing_active_chat.png in Resources */,
@@ -3105,6 +3165,7 @@
 				34FA282F1DEBE07600F13C85 /* DouyidouViewController.m in Sources */,
 				34C495EC1DD1CD5400687606 /* UIButton+Blocks.m in Sources */,
 				7DD60BFB1DED876A0065D941 /* AFHttpClient+Friend.m in Sources */,
+				7D2911181DF553EF00B672F2 /* PhotoGrapgModel.m in Sources */,
 				34DB5D341DD41AA000C51823 /* AFHttpClient.m in Sources */,
 				34FFD5841DEC396800A392B4 /* SearchTableViewCell.m in Sources */,
 				34FA28301DEBE07600F13C85 /* SearchDoumaViewController.m in Sources */,
@@ -3120,6 +3181,7 @@
 				7D3582B11DEE721D0028F4B4 /* NewfriendViewController.m in Sources */,
 				3436EA611DDBFE0B005659B7 /* Reachability.m in Sources */,
 				34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */,
+				7D2816731DF1160B00A9E6DA /* MyVideoCollectionViewCell.m in Sources */,
 				3461F55F1DD2D00100E56298 /* AppUtil.m in Sources */,
 				7D38B22B1DE0310100404D05 /* InformationViewController.m in Sources */,
 				34ACCF4E1DDC5E4400AE2B98 /* CompletionViewController.m in Sources */,
@@ -3127,11 +3189,13 @@
 				7D3582B71DEE7BB60028F4B4 /* SearchFriendViewController.m in Sources */,
 				3461F52F1DD2BB0A00E56298 /* HomeViewController.m in Sources */,
 				7D38B22F1DE047FA00404D05 /* InformationTableViewCell.m in Sources */,
+				7D2816701DF1102200A9E6DA /* RepositPictureViewController.m in Sources */,
 				3436EA651DDBFF5D005659B7 /* BePeripheralViewController.m in Sources */,
 				34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */,
 				34FC41DA1DD179F900A23A8F /* AppDelegate.m in Sources */,
 				3461F5471DD2CA2500E56298 /* EggViewController.m in Sources */,
 				34FFD5801DEC394B00A392B4 /* SearchModel.m in Sources */,
+				7D2816791DF11BD100A9E6DA /* RecordModel.m in Sources */,
 				342F798B1DDD7D800022FF09 /* DeviceStats.m in Sources */,
 				34ACCF511DDC5E5000AE2B98 /* AFHttpClient+Account.m in Sources */,
 				7DC89EEA1DEFCF6900564BB3 /* CycleScrollView.m in Sources */,
@@ -3151,6 +3215,7 @@
 				34C495FA1DD1CD6C00687606 /* UIViewController+HUD.m in Sources */,
 				342F799A1DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.m in Sources */,
 				345AB4291DD9B3C000025EEE /* InCallViewController.m in Sources */,
+				7DC89EFA1DF01A0800564BB3 /* BaseGridViewController.m in Sources */,
 				34CFC4691DDC369B00444AA2 /* WifiViewController.m in Sources */,
 				7DC89EF01DEFD2B900564BB3 /* AFHttpClient+Article.m in Sources */,
 				34C495ED1DD1CD5400687606 /* UIImage-Extensions.m in Sources */,
@@ -3160,9 +3225,12 @@
 				7DC89EF31DEFD47300564BB3 /* RecommendModel.m in Sources */,
 				34FC41E31DD179F900A23A8F /* sego2_0.xcdatamodeld in Sources */,
 				34FFD5871DEC398500A392B4 /* AFHttpClient+Found.m in Sources */,
+				7D28166D1DF1101000A9E6DA /* RepositVideoViewController.m in Sources */,
 				3461F5441DD2CA0A00E56298 /* MeViewController.m in Sources */,
+				7D2816761DF116BB00A9E6DA /* AFHttpClient+Reposit.m in Sources */,
 				7D1FA3E31DE5354F00A43201 /* AFHttpClient+PersonMember.m in Sources */,
 				34C495F91DD1CD6C00687606 /* UIView+Sizes.m in Sources */,
+				7DC89EFD1DF01A8800564BB3 /* RepositoryViewController.m in Sources */,
 				34ACCF541DDD521900AE2B98 /* SetViewController.m in Sources */,
 				34C495EA1DD1CD5400687606 /* UIActionSheet+Blocks.m in Sources */,
 				3461F5351DD2BB2B00E56298 /* FoundViewController.m in Sources */,
@@ -3295,7 +3363,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = 4UKEB375ND;
+				DEVELOPMENT_TEAM = 86LKUHCT4N;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3329,7 +3397,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = 4UKEB375ND;
+				DEVELOPMENT_TEAM = 86LKUHCT4N;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

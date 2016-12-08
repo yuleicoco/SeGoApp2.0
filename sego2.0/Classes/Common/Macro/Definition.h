@@ -33,7 +33,7 @@
 //获取屏幕 宽度、高度
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
-
+#define MainScreen [UIScreen mainScreen].bounds.size
 
 //获取当前语言
 #define CurrentLanguage (［NSLocale preferredLanguages] objectAtIndex:0])

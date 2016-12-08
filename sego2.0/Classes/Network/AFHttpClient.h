@@ -12,11 +12,14 @@
 #import "FriendModel.h"
 #import "NewFriendModel.h"
 #import "RecommendModel.h"
+#import "RecordModel.h"
+#import "PhotoGrapgModel.h"
 
 //共用url字段
 #define BASE_URL    @"http://180.97.80.227:8082/"
 #define BASE_URL_Test              @"http://180.97.81.213:16202/sego2/"
 
+#define BASE_URL_Test2 @"http://180.97.81.213:15311/"
 
 @interface AFHttpClient : AFHTTPRequestOperationManager
 

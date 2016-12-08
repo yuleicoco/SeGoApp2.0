@@ -184,8 +184,8 @@ static NSString * cellId = @"newfriendCellid";
     NSInteger i = sender.tag - 120;
     NewFriendModel * model = self.dataSource[i];
     
-    [[AFHttpClient sharedAFHttpClient]addFriendResponseWithMid:[AccountManager sharedAccountManager].loginModel.mid friend:model.mid opttype:@"1" complete:^(BaseModel *model) {
-        
+    [[AFHttpClient sharedAFHttpClient]addFriendResponseWithMid:[AccountManager sharedAccountManager].loginModel.mid friend:model.mid opttype:@"2" complete:^(BaseModel *model) {
+          [self initRefreshView];
     }];
 
 
