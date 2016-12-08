@@ -32,7 +32,7 @@
     // 添加按钮
     UIButton * btnAdd;
     // 设备状态
-    NSString *str;
+    NSString *strState;
     // 视频质量
     NSString *typeStr;
     //清晰按钮
@@ -145,13 +145,13 @@
         
         FuckLog(@"%@",model);
         if ([model.retCode isEqualToString:@"0000"]) {
-            str = [NSString stringWithFormat:@"%@",model.retVal[@"status"]];
+            strState = [NSString stringWithFormat:@"%@",model.retVal[@"status"]];
             [self updateviewMethod];
         
         }// 没有设备
         else if ([model.totalrecords isEqualToString:@"0"])
         {
-            str = [NSString stringWithFormat:@"%@",@"ds000"];
+            strState = [NSString stringWithFormat:@"%@",@"ds000"];
             [self updateviewMethod];
             
         }
@@ -224,9 +224,10 @@
 - (void)ReshUI
 {
     
+    [self colorChoose];
     
     // 设备不存在线
-    if ([str isEqualToString:@"ds000"]) {
+    if ([strState isEqualToString:@"ds000"]) {
         
         [ImageBack setImage:[UIImage imageNamed:@"egg_nodevcie"]];
         btnAdd.hidden = NO;
@@ -242,7 +243,7 @@
     
     }
     // 在线
-    if ([str isEqualToString:@"ds001"]) {
+    if ([strState isEqualToString:@"ds001"]) {
         [ImageBack setImage:[UIImage imageNamed:@"online"]];
        
             //在线
@@ -256,20 +257,20 @@
           return;
     }
     //离线
-    if ([str isEqualToString:@"ds002"]) {
+    if ([strState isEqualToString:@"ds002"]) {
         [ImageBack setImage:[UIImage imageNamed:@"offline"]];
         [self openGray];
         
           return;
     }
     //通话中
-    if ([str isEqualToString:@"ds003"]) {
+    if ([strState isEqualToString:@"ds003"]) {
         [ImageBack setImage:[UIImage imageNamed:@"incall"]];
         [self openGray];
           return;
     }
     // 正在上传文件
-    if ([str isEqualToString:@"ds004"]) {
+    if ([strState isEqualToString:@"ds004"]) {
         [ImageBack setImage:[UIImage imageNamed:@"egg_up"]];
         [self openGray];
           return;
@@ -293,7 +294,6 @@
     btnOpen.backgroundColor = GRAY_COLOR;
     btnOpen.hidden = NO;
     btnOpen.enabled = FALSE;
-    setImage.hidden = NO;
 
     [self hideSetTitle:NO];
     
@@ -447,7 +447,7 @@
         btnClean.selected = YES;
         
     }
-    [self colorChoose];
+  
     
     
     [self.view addSubview:btnClean];
@@ -501,7 +501,7 @@
     // 背景
     [ImageBack mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        if ([str isEqualToString:@"ds000"]) {
+        if ([strState isEqualToString:@"ds000"]) {
             make.center.equalTo(self.view);
             make.size.mas_equalTo(self.view);
             make.top.left.right.equalTo(@0);
@@ -646,7 +646,7 @@
     
     // 只有在线的时候为可点
     
-    if ([str isEqualToString:@"ds001"]) {
+    if ([strState isEqualToString:@"ds001"]) {
         
         if (btnClean.selected) {
             btnClean.backgroundColor =GREEN_COLOR;
@@ -795,7 +795,7 @@
     
       [self sipCall:strNum sipName:nil];
 
-    if ([str isEqualToString:@"ds001"]) {
+    if ([strState isEqualToString:@"ds001"]) {
         
         // 设备号 需要判断
         //时间
