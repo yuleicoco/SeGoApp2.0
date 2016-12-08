@@ -21,6 +21,7 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
     NSMutableArray * deleteOrUpdateArr;
 }
 @property (nonatomic,strong)UIButton * numBtn;
+@property (nonatomic,strong)UIButton * rightBtn;
 
 @end
 
@@ -62,23 +63,30 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
         
     }];
     
-    
-    
-    
-    
+    _rightBtn = [[UIButton alloc]init];
+    [_rightBtn setTitle:@"确定" forState:UIControlStateNormal];
+    [_rightBtn setTitleColor:RGB(220, 220, 220) forState:UIControlStateNormal];
+    _rightBtn.titleLabel.font = [UIFont systemFontOfSize:18];
+    [_rightBtn.layer setMasksToBounds:YES];
+    [bottomview addSubview:_rightBtn];
+    [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(_rightBtn.superview).offset(-79);
+        make.centerY.equalTo(_rightBtn.superview.mas_centerY);
+        
+    }];
     
     
     _numBtn = [[UIButton alloc]init];
     _numBtn.backgroundColor = GREEN_COLOR;
-    _numBtn.layer.cornerRadius =10;
+    _numBtn.layer.cornerRadius =9;
     [_numBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     _numBtn.hidden = YES;
     [bottomview addSubview:_numBtn];
     [_numBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(_numBtn.superview).offset(-20);
+        make.left.equalTo(_rightBtn.mas_right).offset(6);
         make.centerY.equalTo(_numBtn.superview.mas_centerY);
-        make.width.mas_equalTo(20);
-        make.height.mas_equalTo(20);
+        make.width.mas_equalTo(18);
+        make.height.mas_equalTo(18);
     
     }];
     
@@ -316,9 +324,13 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
     if (deleteOrUpdateArr.count>0) {
         _numBtn.hidden = NO;
         [_numBtn setTitle:[NSString stringWithFormat:@"%ld",deleteOrUpdateArr.count] forState:UIControlStateNormal];
+        [_rightBtn setTitleColor:GREEN_COLOR forState:UIControlStateNormal];
+        _rightBtn.selected = NO;
     }else{
         _numBtn.hidden = YES;
-    
+       // _numBtn.backgroundColor = [UIColor redColor];
+        [_rightBtn setTitleColor:RGB(220, 220, 220) forState:UIControlStateNormal];
+        //_rightBtn.selected = YES;
     }
 
 

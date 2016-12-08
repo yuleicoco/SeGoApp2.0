@@ -16,7 +16,13 @@ static NSString *kfooterIdentifier = @"footerIdentifier";
 static NSString *kheaderIdentifier = @"headerIdentifier";
 static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
 @interface RepositVideoViewController ()
+{
+    NSMutableArray * deleteOrUpdateArr;
+}
+@property (nonatomic,strong)UIButton * numBtn;
+@property (nonatomic,strong)UIButton * rightBtn;
 @property (nonatomic,strong)UIView * bottomview;
+
 @end
 
 @implementation RepositVideoViewController
@@ -30,8 +36,9 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
 -(void)setupData{
     [super setupData];
   
-
+      deleteOrUpdateArr =[[NSMutableArray alloc]init];
        [self.dataSource addObject:[[RecordModel alloc] init]];
+    
 }
 
 
@@ -48,7 +55,46 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
     
     }];
     
+
+    UIButton * dancelbtn = [[UIButton alloc]init];
+    [dancelbtn setTitle:@"取消" forState:UIControlStateNormal];
+    [dancelbtn setTitleColor:GREEN_COLOR forState:UIControlStateNormal];
+    dancelbtn.titleLabel.font = [UIFont systemFontOfSize:18];
+    [_bottomview addSubview:dancelbtn];
+    [dancelbtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(dancelbtn.superview).offset(79);
+        make.centerY.equalTo(dancelbtn.superview.mas_centerY);
+        
+        
+    }];
     
+    _rightBtn = [[UIButton alloc]init];
+    [_rightBtn setTitle:@"确定" forState:UIControlStateNormal];
+    [_rightBtn setTitleColor:RGB(220, 220, 220) forState:UIControlStateNormal];
+    _rightBtn.titleLabel.font = [UIFont systemFontOfSize:18];
+    [_rightBtn.layer setMasksToBounds:YES];
+    [_bottomview addSubview:_rightBtn];
+    [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(_rightBtn.superview).offset(-79);
+        make.centerY.equalTo(_rightBtn.superview.mas_centerY);
+        
+    }];
+    
+    
+    _numBtn = [[UIButton alloc]init];
+    _numBtn.backgroundColor = GREEN_COLOR;
+    _numBtn.layer.cornerRadius =9;
+    [_numBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    _numBtn.hidden = YES;
+    [_bottomview addSubview:_numBtn];
+    [_numBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_rightBtn.mas_right).offset(6);
+        make.centerY.equalTo(_numBtn.superview.mas_centerY);
+        make.width.mas_equalTo(18);
+        make.height.mas_equalTo(18);
+        
+    }];
+
     
     
     
@@ -164,6 +210,11 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
 //        cell.startImageV.hidden = YES;
 //    }
     
+    UITapGestureRecognizer *tapMYP = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onVideo:)];
+    [cell.imageV addGestureRecognizer:tapMYP];
+    cell.rightBtn.hidden = YES;
+    
+    
     return cell;
 }
 
@@ -222,5 +273,48 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
     return view;
 }
 
+- (void)onVideo:(UITapGestureRecognizer *)imageSender
+{
+    NSInteger i = imageSender.view.tag/1000;//分区
+    int j = imageSender.view.tag%1000;//每个分区的分组
+    
+    PhotoGrapgModel *model = self.dataSource[i - 1];
+    NSArray *imageA  = model.networkaddressArray;
+    MyVideoCollectionViewCell *cell = (MyVideoCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:j inSection:i-1]];
+    
+    if (deleteOrUpdateArr.count>=1) {
+        if (cell.rightBtn.hidden == NO) {
+            cell.rightBtn.hidden = YES;
+            cell.rightBtn.selected = NO;
+            [deleteOrUpdateArr removeObject:imageA[j]];//把要删除的图片从删除数组中删除
+        }else{
+            [[AppUtil appTopViewController] showHint:@"您只能选择最多一个视频"];
+            return;
+        }
+    }else{
+        if (cell.rightBtn.hidden == YES) {
+            cell.rightBtn.hidden = NO;
+            cell.rightBtn.selected = YES;
+            [deleteOrUpdateArr addObject:imageA[j]];//把要删除的图片加入删除数组
+            
+        }else{
+            cell.rightBtn.hidden = YES;
+            cell.rightBtn.selected = NO;
+            [deleteOrUpdateArr removeObject:imageA[j]];//把要删除的图片从删除数组中删除
+        }
+    }
+    
+    if (deleteOrUpdateArr.count>0) {
+        _numBtn.hidden = NO;
+        [_numBtn setTitle:[NSString stringWithFormat:@"%ld",deleteOrUpdateArr.count] forState:UIControlStateNormal];
+        [_rightBtn setTitleColor:GREEN_COLOR forState:UIControlStateNormal];
+        _rightBtn.selected = NO;
+    }else{
+        _numBtn.hidden = YES;
+        // _numBtn.backgroundColor = [UIColor redColor];
+        [_rightBtn setTitleColor:RGB(220, 220, 220) forState:UIControlStateNormal];
+        //_rightBtn.selected = YES;
+    }
+}
 
 @end
