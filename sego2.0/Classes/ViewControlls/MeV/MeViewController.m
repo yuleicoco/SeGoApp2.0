@@ -31,9 +31,9 @@
 }
 
 -(void)changeName{
-        _nameLabel.text = [AccountManager sharedAccountManager].loginModel.nickname;
-        UIImage * btnImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[AccountManager sharedAccountManager].loginModel.headportrait]]];
-        [_headBtn setImage:btnImage forState:UIControlStateNormal];
+    _nameLabel.text = [AccountManager sharedAccountManager].loginModel.nickname;
+    UIImage * btnImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[AccountManager sharedAccountManager].loginModel.headportrait]]];
+    [_headBtn setImage:btnImage forState:UIControlStateNormal];
     
 
 
@@ -56,11 +56,7 @@
     }];
     
    _headBtn = [[UIButton alloc]init];
-  //  headBtn.backgroundColor = [UIColor blackColor];
-    UIImage * btnImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[AccountManager sharedAccountManager].loginModel.headportrait]]];
-    [_headBtn setImage:btnImage forState:UIControlStateNormal];
-    _headBtn.layer.cornerRadius = 40;
-    [_headBtn.layer setMasksToBounds:YES];
+    _headBtn.backgroundColor = [UIColor clearColor];
     [_headBtn addTarget:self action:@selector(headbuttonTouch) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_headBtn];
     [_headBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -70,6 +66,27 @@
         make.height.mas_equalTo(80);
         
     }];
+    
+    
+    UIImageView * headImage = [[UIImageView alloc]init];
+    headImage.backgroundColor = [UIColor clearColor];
+    headImage.layer.cornerRadius = 40;
+    [headImage.layer setMasksToBounds:YES];
+    [headImage sd_setImageWithURL:[NSURL URLWithString:[AccountManager sharedAccountManager].loginModel.headportrait] placeholderImage:[UIImage imageNamed:@"sego1.png"]];
+    [self.view addSubview:headImage];
+    [headImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(headImage.superview).offset(14);
+        make.left.equalTo(headImage.superview).offset(147);
+        make.right.equalTo(headImage.superview).offset(-147);
+        make.height.mas_equalTo(80);
+    }];
+    
+    
+    
+    
+    
+    
+    
     
     _nameLabel = [[UILabel alloc]init];
     _nameLabel.textColor = [UIColor whiteColor];
@@ -150,7 +167,7 @@
     }];
 
     UILabel * centerLabel = [[UILabel alloc]init];
-    centerLabel.backgroundColor = [UIColor grayColor];
+    centerLabel.backgroundColor = LIGHT_GRAYdcdc_COLOR;
     [self.view addSubview:centerLabel];
     [centerLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(firstView.mas_centerY);
@@ -238,7 +255,7 @@
     }];
     
     UILabel * centerlabel2 = [[UILabel alloc]init];
-    centerlabel2.backgroundColor = [UIColor grayColor];
+    centerlabel2.backgroundColor = LIGHT_GRAYdcdc_COLOR;
     [self.view addSubview:centerlabel2];
     [centerlabel2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(secoendView.mas_centerY);

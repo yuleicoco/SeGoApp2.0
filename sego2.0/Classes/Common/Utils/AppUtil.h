@@ -13,6 +13,7 @@
 #import <Foundation/Foundation.h>
 #define GREEN_COLOR RGB(73, 195, 241)
 #define GRAY_COLOR RGB(236, 237, 241)
+#define LIGHT_GRAYdcdc_COLOR RGB(220, 220, 220)
 //分页请求个数
 #define REQUEST_PAGE_SIZE           10
 #define START_PAGE_INDEX            1
