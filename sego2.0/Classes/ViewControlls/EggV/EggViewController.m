@@ -67,7 +67,7 @@
     [self setNavTitle:NSLocalizedString(@"tabEgg_title",nil)];
     
     // sephone
-    [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
+  //  [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
    
     
     
@@ -108,7 +108,7 @@
 
 {
     [super viewWillDisappear:animated];
-
+   
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kSephoneCallUpdate object:nil];
     
     [[NSNotificationCenter defaultCenter]removeObserver:self name:kSephoneRegistrationUpdate object:nil];
@@ -124,11 +124,11 @@
 {
     
     // 这个时候出现引导界面
-    if ([[Defaluts objectForKey:@"succfulValue"] isEqualToString:@"ok"]) {
+    if ([[Defaluts objectForKey:@"setimage"] isEqualToString:@"ok"]) {
         btn.hidden = NO;
         viewGuide.hidden = NO;
         btnAdd.hidden = YES;
-        [Defaluts removeObjectForKey:@"succfulValue"];
+        [Defaluts removeObjectForKey:@"setimage"];
         [Defaluts synchronize];
         
     }
@@ -294,7 +294,7 @@
     btnOpen.backgroundColor = GRAY_COLOR;
     btnOpen.hidden = NO;
     btnOpen.enabled = FALSE;
-
+    setImage.hidden = YES;
     [self hideSetTitle:NO];
     
 }
@@ -598,6 +598,7 @@
 // wifi
 - (void)wifiTouch:(UIButton *)sender
 {
+    setImage.hidden = YES;
     WifiViewController * wifiVC =[[WifiViewController alloc]init];
     [self.navigationController pushViewController:wifiVC animated:YES];
     
@@ -607,14 +608,14 @@
 //喂食
 - (void)foodTouch:(UIButton *)sender
 {
-    
+    setImage.hidden = YES;
     
 }
 
 // 解除绑定
 - (void)bdinTouch:(UIButton *)sender
 {
-    
+    setImage.hidden = YES;
     bindVC =[[BindingViewController alloc]init];
     [self.navigationController pushViewController:bindVC animated:YES];
     
@@ -778,6 +779,12 @@
 - (void)OpenTouch:(UIButton *)sender
 {
     
+    
+    
+     InCallViewController *   _incallVC =[[InCallViewController alloc]initWithNibName:@"InCallViewController" bundle:nil];
+    
+     [self presentViewController:_incallVC animated:YES completion:nil];
+    
     NSString * strDevicenume =[AccountManager sharedAccountManager].loginModel.deviceno;
     NSString * strDevicenume1 =[Defaluts objectForKey:PREF_DEVICE_NUMBER];
     NSString * strNum;
@@ -793,7 +800,7 @@
         
     }
     
-      [self sipCall:strNum sipName:nil];
+    //  [self sipCall:strNum sipName:nil];
 
     if ([strState isEqualToString:@"ds001"]) {
         

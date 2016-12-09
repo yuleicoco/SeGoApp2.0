@@ -30,7 +30,7 @@
 // 5个button背景
 @property (nonatomic,strong)UIImageView * FiveView;
 
-
+@property (nonatomic,strong)UIImageView * pointTouch;
 
 
 
