@@ -18,4 +18,5 @@
 @property (nonatomic,copy)NSString <Optional> * type;
 
 
+@property (nonatomic, strong) UIImage<Optional> *cutImage;
 @end

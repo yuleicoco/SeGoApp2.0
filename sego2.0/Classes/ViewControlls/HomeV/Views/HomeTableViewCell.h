@@ -13,7 +13,7 @@
 @property (nonatomic,strong)UILabel * contentLabel;
 @property (nonatomic,strong)UIImageView * centerImage;
 @property (nonatomic,strong)UIImageView * videoImage;
-
+@property (nonatomic,strong)UILabel * timeLabel;
 
 
 @end

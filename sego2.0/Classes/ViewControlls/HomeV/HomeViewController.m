@@ -11,10 +11,9 @@
 #import "AFHttpClient+Article.h"
 #import "RecommendModel.h"
 #import "HomeTableViewCell.h"
-
 #import "UIImage-Extensions.h"
-
 #import "RepositoryViewController.h"
+#import "ArticlesModel.h"
 static NSString * cellId = @"hometableviewcellId";
 @interface HomeViewController ()
 @property (nonatomic,strong)CycleScrollView * topScrollView;
@@ -147,8 +146,30 @@ static NSString * cellId = @"hometableviewcellId";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    ArticlesModel * model = self.dataSource[indexPath.row];
     HomeTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    cell.contentLabel.text = model.content;
+   // [cell.centerImage sd_setImageWithURL:[NSURL URLWithString:model.thumbnails] placeholderImage:[UIImage imageNamed:@"sego1.png"]];
     
+    if (model.cutImage) {
+        cell.centerImage.image = model.cutImage;
+    }else{
+        [cell.centerImage sd_setImageWithURL:[NSURL URLWithString:model.thumbnails] placeholderImage:[UIImage imageNamed:@"sego1.png"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if (image) {
+                cell.centerImage.image = [image imageByScalingProportionallyToSize:CGSizeMake(self.tableView.width, CGFLOAT_MAX)];
+                model.cutImage = cell.centerImage.image;
+            }
+        }];
+    }
+    
+    if ([model.type isEqualToString:@"v"]) {
+        
+    }
+    
+    
+    
+    
+    cell.timeLabel.text = model.publishtime;
     
     //tabview隐藏点击效果和分割线
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
