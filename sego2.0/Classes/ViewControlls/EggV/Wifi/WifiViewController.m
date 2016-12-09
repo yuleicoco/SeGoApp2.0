@@ -33,6 +33,7 @@
     
     
     
+    
 }
 @end
 
@@ -44,7 +45,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavTitle:NSLocalizedString(@"wifiTitle",nil)];
-    listArr = @[ @"无密码", @"WPA/WPA2", @"WEP" ];
+    listArr = @[ @"无加密", @"WPA/WPA2", @"WEP" ];
     curEncryption = [NSString stringWithFormat:@"1"];
     
     
@@ -109,7 +110,7 @@
     
     btnBind =[UIButton new];
     btnBind.layer.cornerRadius = 4;
-    btnBind.backgroundColor = GRAY_COLOR;
+    btnBind.backgroundColor = GREEN_COLOR;
     [btnBind setTitle:@"确定" forState:UIControlStateNormal];
     [btnBind addTarget:self action:@selector(Surebtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnBind];
@@ -310,17 +311,17 @@
     
     
     
-    if ([AppUtil isBlankString:wifiPsTF.text]) {
-        
-         btnBind.enabled = FALSE;
-         return;
-    }else
-    {
-        
-        btnBind.enabled = TRUE;
-        btnBind.backgroundColor = GREEN_COLOR;
-        
-    }
+//    if ([AppUtil isBlankString:wifiPsTF.text]) {
+//        
+//         btnBind.enabled = FALSE;
+//         return;
+//    }else
+//    {
+//        
+//        btnBind.enabled = TRUE;
+//        btnBind.backgroundColor = GREEN_COLOR;
+//        
+//    }
     
     
     
@@ -505,11 +506,9 @@
                 // 保持已配置状态。
                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                 [defaults setValue:@"1" forKey:PREF_WIFI_CONFIGURED];
-                [defaults setValue:@"ok" forKey:@"succfulValue"];
-                
                 [defaults synchronize];
                 [self stopSever];
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                [self.navigationController popToRootViewControllerAnimated:NO];
                 
             
                 
@@ -541,12 +540,11 @@
 - (void)timestart:(NSTimer*)sender
 {
     timeEnd++;
-    if (timeEnd>120) {
+    if (timeEnd>35) {
         // 关闭服务
         [hud hide:TRUE];
-        [self showWarningTip:@"配置失败，请重新设置网络"];
-        [timer setFireDate:[NSDate distantFuture]];
-        [self stopSever];
+        [self showWarningTip:@"配置失败，请确保打开设备蓝牙"];
+        timeEnd =0;
     }
     
 }
@@ -615,15 +613,15 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     
-    if([AppUtil isBlankString:textField.text])
-    {
-        btnBind.enabled = FALSE;
-        btnBind.backgroundColor = GRAY_COLOR;
-        
-    }else{
-    btnBind.enabled = TRUE;
-    btnBind.backgroundColor = GREEN_COLOR;
-    }
+//    if([AppUtil isBlankString:textField.text])
+//    {
+//        btnBind.enabled = FALSE;
+//        btnBind.backgroundColor = GRAY_COLOR;
+//        
+//    }else{
+//    btnBind.enabled = TRUE;
+//    btnBind.backgroundColor = GREEN_COLOR;
+//    }
     
 }
 
@@ -680,7 +678,7 @@
     // 更新选择按钮的文本。
     // OPEN
     if (indexPath.row == 0) {
-        [btn setTitle:@"无密码" forState:UIControlStateNormal];
+        [btn setTitle:@"无加密" forState:UIControlStateNormal];
     }
     // WPA/WPA2
     else if (indexPath.row == 1) {
@@ -715,6 +713,7 @@
  */
 - (void)stopSever
 {
+    [timer setFireDate:[NSDate distantFuture]];
     [peripheralManager stopAdvertising];
     [peripheralManager removeAllServices];
     
@@ -725,7 +724,7 @@
 - (void)doLeftButtonTouch
 {
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
     
     
 }

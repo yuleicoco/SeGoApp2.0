@@ -20,11 +20,11 @@
        //self.navigationController.navigationBar.barStyle=UIBarStyleDefault;
        self.navigationController.navigationBar.translucent = NO;
         
-      //  self.edgesForExtendedLayout = UIRectEdgeNone;
+        self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     
-   // [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
-   // [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange) name:UIDeviceOrientationDidChangeNotification object:nil];
+    [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange) name:UIDeviceOrientationDidChangeNotification object:nil];
    
    
     
@@ -191,6 +191,8 @@
 - (void)deviceOrientationDidChange
 {
     NSLog(@"NAV deviceOrientationDidChange:%ld",(long)[UIDevice currentDevice].orientation);
+    int st  = [UIDevice currentDevice].orientation;
+    
     if([UIDevice currentDevice].orientation == UIDeviceOrientationPortrait) {
         [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait];
         [self orientationChange:NO];

@@ -11,6 +11,10 @@
 #import "AFHttpClient+DeviceUseMember.h"
 #import "HWWeakTimer.h"
 
+#define TARGET 60
+#define DELTE_SCALE 16
+#define MAX_MOVE 90
+
 
 @interface InCallViewController ()
 {
@@ -30,6 +34,25 @@
     NSTimer * timerInCall;
     //设备保护时间
     NSTimer * moveTimer;
+    
+    NSString * strTermid;
+    NSString * strDevice;
+    
+    NSString * openLight;
+    int timeCompar;
+    int doubleTime;
+    
+    
+    // 横屏
+    int _deltaX;
+    int _deltaY;
+    int _lastMoveX;
+    int _lastMoveY;
+    int _currentX;
+    int _currentY;
+    
+    int _startX;
+    int _startY;
     
     
     
@@ -56,6 +79,8 @@
 @synthesize penSl;
 @synthesize pesnBack;
 @synthesize FiveView;
+@synthesize pointTouch;
+
 
 
 
@@ -66,7 +91,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     strHZ = @"1";
+    openLight = @"off";
+    
    
+    NSString * str = [Defaluts objectForKey:PREF_DEVICE_NUMBER];
+    NSString * str1 = [Defaluts objectForKey:TERMID_DEVICNUMER];
+    
+    if ([AppUtil isBlankString:str]) {
+        
+        strDevice = [AccountManager sharedAccountManager].loginModel.deviceno;
+        strTermid =[AccountManager sharedAccountManager].loginModel.termid;
+        
+    }else
+    {
+        strDevice = str;
+        strTermid = str1;
+        
+    }
+    
+  
+    
+    
     
 
     self.center = [[CTCallCenter alloc] init];
@@ -184,7 +229,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 
     // 视频界面
     videoView =[UIView new];
-    videoView.backgroundColor =[UIColor redColor];
+    videoView.backgroundColor =[UIColor whiteColor];
     [self.view addSubview:videoView];
     
     
@@ -200,7 +245,31 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
     
   
+    // 横屏point pointTouch
     
+    
+    
+    
+    pointTouch =[UIImageView new];
+    pointTouch.hidden  = YES;
+    [pointTouch setImage:[UIImage imageNamed:@"penSelect"]];
+    
+    
+    //屏幕尺寸
+    CGRect rect_screen = [[UIScreen mainScreen]bounds];
+    CGSize size_screen = rect_screen.size;
+    CGFloat width = size_screen.width;
+    CGFloat height = size_screen.height;
+    
+    // 屏幕分成16份
+    _deltaX = (int) (width / DELTE_SCALE);
+    _deltaY = (int) (height / DELTE_SCALE);
+    //  只需要得到滑动的最后一个点就OK
+
+    _lastMoveX = -1;
+    _lastMoveY = -1;
+    
+    [self.view addSubview:pointTouch];
     
     // 返回按钮
     btnBack =[UIButton new];
@@ -363,6 +432,99 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 }
 
 
+// 横屏激光笔
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    
+    pointTouch.hidden = NO;
+    
+    //touches ：动作的数量()  每个对象都是一个UITouch对象，而每一个事件都可以理解为一个手指触摸。
+    //获取任意一个触摸对象
+    UITouch *touch = [touches anyObject];
+    
+    //触摸对象的位置
+    CGPoint previousPoint = [touch locationInView:self.view.window];
+    
+    _startX = (int)previousPoint.x;
+    _startY = (int)previousPoint.y;
+    
+    pointTouch.frame = CGRectMake(previousPoint.y -TARGET/2,previousPoint.x - TARGET/2, TARGET, TARGET);
+    
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+     [super touchesMoved:touches withEvent:event];
+    //获取任意一个触摸对象
+    UITouch *touch = [touches anyObject];
+    
+    //触摸对象的位置
+    CGPoint previousPoint = [touch locationInView:self.view.window];
+    int currentX = (int)previousPoint.x;
+    int currentY = (int)previousPoint.y;
+    
+    pointTouch.frame = CGRectMake((previousPoint.y - TARGET/2),375-(previousPoint.x - TARGET/2), TARGET, TARGET);
+    
+    if(_lastMoveX == -1 || _lastMoveY == -1) {
+    
+        
+        _lastMoveX = currentX;
+        _lastMoveY = currentY;
+        
+        
+        
+    } else if((abs(currentX - _lastMoveX) > _deltaX) || (abs(currentY - _lastMoveY) > _deltaY)) {
+        
+        _lastMoveX = currentX;
+        _lastMoveY = currentY;
+        
+        
+        
+    }
+    
+    
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [super touchesEnded:touches withEvent:event];
+    UITouch *touch = [touches anyObject];
+    //    //触摸对象的位置
+    CGPoint previousPoint = [touch locationInView:self.view.window];
+    _lastMoveX = -1;
+    _lastMoveY = -1;
+    
+}
+
+
+
+
+
+-(void) sendMoveCommand:(int) sendX withY:(int) sendY{
+    
+    
+    int changeX = 0; //转换的x 不超过90
+    int changeY = 0; //转换的y 不超过90
+    
+    //屏幕尺寸
+    CGRect rect_screen = [[UIScreen mainScreen]bounds];
+    CGSize size_screen = rect_screen.size;
+    
+    CGFloat width = size_screen.width;
+    CGFloat height = size_screen.height;
+    
+    
+    changeX = (int) ((MAX_MOVE / width) * sendX);
+    changeY = (int) ((MAX_MOVE / height) * sendY);
+    changeY = MAX_MOVE- changeY;
+    
+    
+    NSLog(@"sendMoveCommand:changeX=%d,changeY=%d, deltaX=%d, deltaY=%d,x=%d,y=%d, sX=%d ,sY=%d, sendCX=%d, sendCY=%d" ,changeX ,changeY ,_deltaX , _deltaY, sendX ,sendY,(MAX_MOVE-changeY), (MAX_MOVE-changeX), (int)((MAX_MOVE-changeY)*1.35), (int)((MAX_MOVE-changeX)*1.35));
+
+
+}
+
 #pragma  mark ----------严肃的分割线------------------------------------------------
 
 /**
@@ -371,7 +533,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)HviewUpdateView
 {
     pullBtn.hidden = NO;
-    
+    pointTouch.hidden = YES;
     
 
     
@@ -382,6 +544,14 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
        make.bottom.mas_equalTo(0);
         
     }];
+    
+    // 横屏红外线
+    [pointTouch mas_makeConstraints:^(MASConstraintMaker *make) {
+       
+        make.width.height.mas_equalTo(TARGET);
+        
+    }];
+    
     
     
     //横竖屏按钮
@@ -430,10 +600,9 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
 
     // 5个按钮
-    NSArray * imageListS=@[@"Lclick_light",@"Lclick_rool",@"Lclick_food",@"Lclick_photo",@"takep_on"];
-    NSArray * imageListN=@[@"Lnormal_light",@"Lnormal_rool",@"Lnormal_food",@"Lnormal_photo",@"takep_off"];
+    NSArray * imageListS=@[@"takep_on",@"Lclick_light",@"Lclick_rool",@"Lclick_food",@"Lclick_photo"];
+    NSArray * imageListN=@[@"takep_off",@"Lnormal_light",@"Lnormal_rool",@"Lnormal_food",@"Lnormal_photo"];
     for (NSInteger i =0; i<5; i++) {
-        
         [btnList[i] setImage:[UIImage imageNamed:imageListN[i]] forState:UIControlStateNormal];
         [btnList[i] setImage:[UIImage imageNamed:imageListS[i]] forState:UIControlStateSelected];
     }
@@ -456,7 +625,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
     
     NSArray * arrText;
-    arrText = @[@"开灯",@"喂食",@"投食",@"抓拍",@"声音"];
+    arrText = @[@"声音",@"开灯",@"喂食",@"投食",@"抓拍"];
     for (NSInteger  i=0; i<5; i++) {
         UILabel * newLable =LabeArr[i];
         newLable.text =arrText[i];
@@ -476,9 +645,9 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
     
     [LabeArr mas_distributeViewsAlongAxis:MASAxisTypeVertical
-                         withFixedSpacing:75
-                              leadSpacing:105
-                              tailSpacing:-69];
+                         withFixedSpacing:65
+                              leadSpacing:65
+                              tailSpacing: 9];
     
     NSArray * imageList =@[@"top_egg",@"down_egg",@"left_egg",@"right_egg",@"L_top",@"L_down"];
     
@@ -496,9 +665,9 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
     
     [btnList mas_distributeViewsAlongAxis:MASAxisTypeVertical
-                        withFixedSpacing:40
-                             leadSpacing:59
-                             tailSpacing:-52];
+                        withFixedSpacing:31
+                             leadSpacing:20
+                             tailSpacing:20];
     
     
     
@@ -819,6 +988,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)backBtn:(UIButton * )sender
 {
     [self leftAction];
+    [self OverDevideUseMember];
     [timerInCall invalidate];
     [SephoneManager terminateCurrentCallOrConference];
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -829,10 +999,53 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 -(void)penClicKbtn:(UISlider *)sender
 {
     
-    FuckLog(@"121241");
+    float valu = sender.value*100;
+    int str =(int)valu;
+    NSString * msg =[NSString stringWithFormat:@"control_pantilt,0,0,1,0,%d,%d",str,30];
+    
+    doubleTime++;
+    if (doubleTime%2 ==0) {
+        
+        int timeComparSecond =[self getTimeNow];
+        if (timeComparSecond - timeCompar<100) {
+            
+            // 不执行
+        }else{
+            
+            
+            [self sendMessage:msg];
+        }
+        
+    }else{
+        
+        timeCompar = [self getTimeNow];
+        [self sendMessage:msg];
+        
+    }
+
     
     
 }
+
+- (int )getTimeNow
+{
+    NSString* date;
+    
+    NSDateFormatter * formatter = [[NSDateFormatter alloc ] init];
+    [formatter setDateFormat:@"hh:mm:ss:SSS"];
+    date = [formatter stringFromDate:[NSDate date]];
+    NSString * timeNow = [[NSString alloc] initWithFormat:@"%@", date];
+    int a =[[timeNow substringWithRange:NSMakeRange(0, 2)] intValue];
+    int b =[[timeNow substringWithRange:NSMakeRange(3, 2)] intValue];
+    int c=[[timeNow substringWithRange:NSMakeRange(6, 2)] intValue];
+    int d =[[timeNow substringFromIndex:9]intValue];
+    a= a*3600000+b*60000+c*1000+d;
+    return a;
+    
+}
+
+
+
 
 // 声音
 - (void)VocieClick:(UIButton *)sender
@@ -840,14 +1053,22 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     sender.selected = !sender.selected;
     
     
+    
+    
 }
 //开灯
 - (void)LightClick:(UIButton *)sender
 {
+    if ([openLight isEqualToString:@"off"]) {
+        
+        openLight = @"on";
+    }else
+    {
+        openLight = @"off";
+    }
     sender.selected = !sender.selected;
-    [[AFHttpClient sharedAFHttpClient]LightOn:nil deviceno:[Defaluts objectForKey:PREF_DEVICE_NUMBER] termid:[Defaluts objectForKey:TERMID_DEVICNUMER] complete:^(BaseModel * model) {
-        
-        
+    [[AFHttpClient sharedAFHttpClient]LightOn:openLight deviceno:strDevice termid:strTermid complete:^(BaseModel * model) {
+         NSLog(@"%@",model.retCode);
     }];
     
 
@@ -857,8 +1078,9 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)FoodClick:(UIButton *)sender
 {
     sender.selected = !sender.selected;
-   [[AFHttpClient sharedAFHttpClient]Sendfood:nil termid:nil complete:^(BaseModel * model) {
-       
+    [[AFHttpClient sharedAFHttpClient]Sendfood:strDevice termid:strTermid complete:^(BaseModel * model) {
+        sender.selected = !sender.selected;
+        NSLog(@"%@",model.retCode);
    }];
     
     
@@ -867,8 +1089,10 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)RollClick:(UIButton *)sender
 {
     sender.selected = !sender.selected;
-    [[AFHttpClient sharedAFHttpClient]Rollfood:nil deviceno:nil termid:nil complete:^(BaseModel * model) {
-        
+    NSString * strid =[Defaluts objectForKey:@"selfID"];
+    [[AFHttpClient sharedAFHttpClient]Rollfood:strid deviceno:strDevice termid:strTermid complete:^(BaseModel * model) {
+         sender.selected = !sender.selected;
+         NSLog(@"%@",model.retCode);
     }];
     
 
@@ -878,8 +1102,9 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)PhotoClick:(UIButton *)sender
 {
     sender.selected = !sender.selected;
-    [[AFHttpClient sharedAFHttpClient]Takephoto:nil termid:nil complete:^(BaseModel * model) {
-        
+    [[AFHttpClient sharedAFHttpClient]Takephoto:strDevice termid:strTermid complete:^(BaseModel * model) {
+        sender.selected = !sender.selected;
+        NSLog(@"%@",model.retCode);
     }];
     
     
@@ -1187,11 +1412,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }
     
     [[AFHttpClient sharedAFHttpClient]OverDeviceMember:Did complete:^(BaseModel * model) {
-        if ([model.retCode isEqualToString:@"0000"]) {
-            // 成功
-            
-            
-        }
+        FuckLog(@"%@",model.retCode);
         
     }];
     

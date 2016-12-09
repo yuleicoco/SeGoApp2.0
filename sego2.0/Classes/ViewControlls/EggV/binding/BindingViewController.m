@@ -299,13 +299,14 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
                 [Defaluts setObject:model.content forKey:TERMID_DEVICNUMER];
                 [Defaluts setObject:deviceTF.text forKey:PREF_DEVICE_NUMBER];
                 [Defaluts setValue:incodeTF.text forKey:@"incodeNum"];
+                [Defaluts setObject:@"ok" forKey:@"setimage"];
+                
                 
                 // PREF_DEVICE_NUMBER DeviceNum
                 [Defaluts synchronize];
                 
-                WifiViewController * wifiVC =[[WifiViewController alloc]init];
-                wifiVC.strDevice=deviceTF.text;
-                [self.navigationController pushViewController:wifiVC animated:YES];
+            
+                [self.navigationController popViewControllerAnimated:YES];
             }else
             {
                 // 错误提示
