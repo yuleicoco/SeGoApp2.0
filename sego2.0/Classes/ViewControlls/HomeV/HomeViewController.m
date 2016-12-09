@@ -163,11 +163,10 @@ static NSString * cellId = @"hometableviewcellId";
     }
     
     if ([model.type isEqualToString:@"v"]) {
-        
+        cell.videoImage.hidden = NO;
+    }else{
+        cell.videoImage.hidden = YES;
     }
-    
-    
-    
     
     cell.timeLabel.text = model.publishtime;
     
@@ -176,6 +175,24 @@ static NSString * cellId = @"hometableviewcellId";
     tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+     ArticlesModel * model = self.dataSource[indexPath.row];
+     NSLog(@"%@",model.content);
+    
+
+
+
+
+}
+
+
+
+
+
 
 
 @end

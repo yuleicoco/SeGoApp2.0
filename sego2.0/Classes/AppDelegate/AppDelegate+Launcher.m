@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate+Launcher.h"
+#import "PopStartView.h"
+@interface AppDelegate()<GetScrollVDelegate>
+
+@end
 
 @implementation AppDelegate (Launcher)
 
@@ -47,8 +51,27 @@
     if (loginSuccess) {
         [self enterMainTabVC];
     }else{
+        NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+        if (![[userdefaults objectForKey:@"STARTFLAG"] isEqualToString:@"1"]) {//第一次启动软件
+            [self.window makeKeyAndVisible];
+            [userdefaults setObject:@"1" forKey:@"STARTFLAG"];
+            [userdefaults synchronize];
+            PopStartView *popStartV = [[PopStartView alloc]initWithFrame:self.window.bounds];
+            popStartV.delegate = self;
+            popStartV.ParentView = self.window;
+            [self.window addSubview:popStartV];
+            
+        }else {//不是第一次启动软件
+            [self enterLoginVC];
+            
+        }
         
-     [self enterLoginVC];
+        
+        
+  //   [self enterLoginVC];
+    
+    
+    
     }
     
 

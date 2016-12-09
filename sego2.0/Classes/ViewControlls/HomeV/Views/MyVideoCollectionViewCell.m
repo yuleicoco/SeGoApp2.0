@@ -39,6 +39,13 @@
         [self addSubview:_rightBtn];
         
         
+        
+        
+        
+        
+        
+        
+        
     }
     
     return self;

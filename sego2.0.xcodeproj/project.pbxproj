@@ -279,6 +279,10 @@
 		34FFD5841DEC396800A392B4 /* SearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD5831DEC396800A392B4 /* SearchTableViewCell.m */; };
 		34FFD5871DEC398500A392B4 /* AFHttpClient+Found.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FFD5861DEC398500A392B4 /* AFHttpClient+Found.m */; };
 		7D02A9DD1DFA542A00C41A56 /* videobo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D02A9DC1DFA542A00C41A56 /* videobo.png */; };
+		7D02A9E01DFA5A9C00C41A56 /* PopStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D02A9DF1DFA5A9C00C41A56 /* PopStartView.m */; };
+		7D02A9E41DFA5BA300C41A56 /* guide1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D02A9E11DFA5BA300C41A56 /* guide1.jpg */; };
+		7D02A9E51DFA5BA300C41A56 /* guide2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D02A9E21DFA5BA300C41A56 /* guide2.jpg */; };
+		7D02A9E61DFA5BA300C41A56 /* guide3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D02A9E31DFA5BA300C41A56 /* guide3.jpg */; };
 		7D0892B41DF8FC45001BBD98 /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0892B31DF8FC45001BBD98 /* IssueViewController.m */; };
 		7D0892B71DF9530C001BBD98 /* ArticlesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0892B61DF9530C001BBD98 /* ArticlesModel.m */; };
 		7D1C9DF21DF7E6FA0050CBB4 /* rigtBtnImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1C9DF11DF7E6FA0050CBB4 /* rigtBtnImage.png */; };
@@ -1071,6 +1075,11 @@
 		34FFD5851DEC398500A392B4 /* AFHttpClient+Found.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Found.h"; sourceTree = "<group>"; };
 		34FFD5861DEC398500A392B4 /* AFHttpClient+Found.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Found.m"; sourceTree = "<group>"; };
 		7D02A9DC1DFA542A00C41A56 /* videobo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videobo.png; sourceTree = "<group>"; };
+		7D02A9DE1DFA5A9C00C41A56 /* PopStartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopStartView.h; sourceTree = "<group>"; };
+		7D02A9DF1DFA5A9C00C41A56 /* PopStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopStartView.m; sourceTree = "<group>"; };
+		7D02A9E11DFA5BA300C41A56 /* guide1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide1.jpg; sourceTree = "<group>"; };
+		7D02A9E21DFA5BA300C41A56 /* guide2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide2.jpg; sourceTree = "<group>"; };
+		7D02A9E31DFA5BA300C41A56 /* guide3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = guide3.jpg; sourceTree = "<group>"; };
 		7D0892B21DF8FC45001BBD98 /* IssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueViewController.h; sourceTree = "<group>"; };
 		7D0892B31DF8FC45001BBD98 /* IssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueViewController.m; sourceTree = "<group>"; };
 		7D0892B51DF9530C001BBD98 /* ArticlesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesModel.h; sourceTree = "<group>"; };
@@ -2341,6 +2350,9 @@
 		34E665581DD1A4CE00FA41E8 /* Guide page */ = {
 			isa = PBXGroup;
 			children = (
+				7D02A9E11DFA5BA300C41A56 /* guide1.jpg */,
+				7D02A9E21DFA5BA300C41A56 /* guide2.jpg */,
+				7D02A9E31DFA5BA300C41A56 /* guide3.jpg */,
 			);
 			path = "Guide page";
 			sourceTree = "<group>";
@@ -2710,6 +2722,8 @@
 		34E665731DD1A86D00FA41E8 /* BaseV */ = {
 			isa = PBXGroup;
 			children = (
+				7D02A9DE1DFA5A9C00C41A56 /* PopStartView.h */,
+				7D02A9DF1DFA5A9C00C41A56 /* PopStartView.m */,
 				34C496041DD1D21700687606 /* BaseViewController.h */,
 				34C496051DD1D21700687606 /* BaseViewController.m */,
 				7D38B2261DE02B9C00404D05 /* BaseTabViewController.h */,
@@ -2971,6 +2985,7 @@
 				34ACCF4B1DDC5E3600AE2B98 /* weixin.png in Resources */,
 				34DB5C9F1DD4129E00C51823 /* nowebcamCIF.jpg in Resources */,
 				34ACCF3B1DDC510000AE2B98 /* xiala@3x.png in Resources */,
+				7D02A9E61DFA5BA300C41A56 /* guide3.jpg in Resources */,
 				34CD6C311DE7EC9E00993834 /* left_egg.png in Resources */,
 				34DB5CF51DD4129F00C51823 /* oldphone-mono.wav in Resources */,
 				3461F55A1DD2CB4800E56298 /* tab_squar_dian@2x.png in Resources */,
@@ -3005,6 +3020,7 @@
 				342F79851DDD7B380022FF09 /* setWaring.png in Resources */,
 				345AB4101DD9AEB900025EEE /* food_on.png in Resources */,
 				34DB5CD51DD4129F00C51823 /* composing_chat.png in Resources */,
+				7D02A9E41DFA5BA300C41A56 /* guide1.jpg in Resources */,
 				3461F5591DD2CB4800E56298 /* tab_my@2x.png in Resources */,
 				34DB5CE61DD4129F00C51823 /* startcall-green.png in Resources */,
 				34ACCF491DDC5E3600AE2B98 /* registbiyan.png in Resources */,
@@ -3104,6 +3120,7 @@
 				34DB5CDB1DD4129F00C51823 /* history-orange.png in Resources */,
 				34DB5CD01DD4129F00C51823 /* chat.png in Resources */,
 				7DC89EFF1DF01AE800564BB3 /* HeaderViewCollection.xib in Resources */,
+				7D02A9E51DFA5BA300C41A56 /* guide2.jpg in Resources */,
 				3461F5571DD2CB4800E56298 /* tab_faxian@2x.png in Resources */,
 				345AB4131DD9AEB900025EEE /* rool_off.png in Resources */,
 				34DB5CD41DD4129F00C51823 /* composing_active_chat.png in Resources */,
@@ -3197,6 +3214,7 @@
 				3436EA611DDBFE0B005659B7 /* Reachability.m in Sources */,
 				34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */,
 				7D2816731DF1160B00A9E6DA /* MyVideoCollectionViewCell.m in Sources */,
+				7D02A9E01DFA5A9C00C41A56 /* PopStartView.m in Sources */,
 				3461F55F1DD2D00100E56298 /* AppUtil.m in Sources */,
 				7D38B22B1DE0310100404D05 /* InformationViewController.m in Sources */,
 				34ACCF4E1DDC5E4400AE2B98 /* CompletionViewController.m in Sources */,

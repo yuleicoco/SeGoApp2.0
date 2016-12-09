@@ -34,7 +34,6 @@
         }];
         
         _centerImage = [[UIImageView alloc]init];
-        _centerImage.backgroundColor = [UIColor redColor];
         _centerImage.contentMode = UIViewContentModeCenter;
         _centerImage.layer.masksToBounds = YES;
         [self addSubview:_centerImage];
@@ -58,6 +57,19 @@
             make.bottom.equalTo(_timeLabel.superview).offset(-8);
             
         }];
+        
+        
+        _videoImage = [[UIImageView alloc]init];
+        _videoImage.image = [UIImage imageNamed:@"videobo.png"];
+        [_centerImage addSubview:_videoImage];
+        [_videoImage mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.mas_equalTo(40);
+            make.height.mas_equalTo(40);
+            make.centerX.equalTo(_videoImage.superview.mas_centerX);
+            make.centerY.equalTo(_videoImage.superview.mas_centerY);
+        
+        }];
+        
         
         
         
