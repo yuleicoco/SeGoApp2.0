@@ -90,6 +90,11 @@ static NSString * cellId = @"InformationCellId";
         make.bottom.equalTo(topView.mas_bottom).offset(-7);
         make.width.mas_offset(66);
     }];
+    
+    
+    
+    
+    
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(topView.mas_bottom).offset(12);
         make.left.equalTo(self.tableView.superview);
@@ -114,9 +119,9 @@ static NSString * cellId = @"InformationCellId";
 
 -(void)setupData{
     [super setupData];
-    UIImage * btnImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[AccountManager sharedAccountManager].loginModel.headportrait]]];
-    [_headBtn setImage:btnImage forState:UIControlStateNormal];
-
+//    UIImage * btnImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[AccountManager sharedAccountManager].loginModel.headportrait]]];
+//    [_headBtn setImage:btnImage forState:UIControlStateNormal];
+//
     _nameArray = [[NSArray alloc]init];
     _nameArray = @[@"帐号",@"昵称",@"性别",@"家族",@"生日",@"签名"];
     

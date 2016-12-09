@@ -25,7 +25,7 @@ static NSString * cellId = @"hometableviewcellId";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.Imagedatasouce = [[NSMutableArray alloc]init];
+   
     [self setNavTitle:@"我的收藏"];
     [self showBarButton:NAV_RIGHT title:@"收藏" fontColor:GREEN_COLOR hide:NO];
     
@@ -33,22 +33,14 @@ static NSString * cellId = @"hometableviewcellId";
 }
 
 -(void)doRightButtonTouch{
-
-    FuckLog(@"dada");
-    
     RepositoryViewController * repVc = [[RepositoryViewController alloc]init];
     [self.navigationController pushViewController:repVc animated:NO];
 
-
-
 }
-
-
-
-
 
 -(void)setupView{
     [super setupView];
+     self.Imagedatasouce = [[NSMutableArray alloc]init];
       _topScrollView = [[CycleScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, 170 * W_Hight_Zoom) animationDuration:3];
      self.tableView.frame = CGRectMake(0, 0, self.view.width, self.view.height - STATUS_BAR_HEIGHT - NAV_BAR_HEIGHT - TAB_BAR_HEIGHT);
     [self.tableView registerClass:[HomeTableViewCell class] forCellReuseIdentifier:cellId];
@@ -56,7 +48,7 @@ static NSString * cellId = @"hometableviewcellId";
     
     self.tableView.tableHeaderView = _topScrollView;
     
-   // [self initRefreshView];
+    [self initRefreshView];
 
     
     
@@ -64,16 +56,6 @@ static NSString * cellId = @"hometableviewcellId";
 }
 -(void)setupData{
     [super setupData];
-    //topview
-//    [[AFHttpClient sharedAFHttpClient]queryRecommendWithcomplete:^(BaseModel *model) {
-//        
-//        [self.dataSourceImage addObjectsFromArray:model.list];
-//        
-//       // [self initTopView];
-//    } failure:^{
-//        
-//    }];
-//
     [[AFHttpClient sharedAFHttpClient]querRecommedcomplete:^(BaseModel *model) {
         [self.Imagedatasouce addObjectsFromArray:model.list];
         [self initTopView];
@@ -120,8 +102,27 @@ static NSString * cellId = @"hometableviewcellId";
        // NSString * i = aidList[pagIndex];
         //featureVc.number = i;
         //[self.navigationController pushViewController:featureVc animated:YES];
-        
     };
+}
+
+-(void)loadDataSourceWithPage:(int)page{
+    [[AFHttpClient sharedAFHttpClient]queryArticlesWithMid:[AccountManager sharedAccountManager].loginModel.mid page:page size:REQUEST_PAGE_SIZE complete:^(BaseModel *model) {
+        if (page == START_PAGE_INDEX) {
+            [self.dataSource removeAllObjects];
+            [self.dataSource addObjectsFromArray:model.list];
+        } else {
+            [self.dataSource addObjectsFromArray:model.list];
+        }
+        
+        if (model.list.count < REQUEST_PAGE_SIZE){
+            self.tableView.mj_footer.hidden = YES;
+        }else{
+            self.tableView.mj_footer.hidden = NO;
+        }
+        
+        [self.tableView reloadData];
+        [self handleEndRefresh];
+    }];
 
 
 }
@@ -134,14 +135,14 @@ static NSString * cellId = @"hometableviewcellId";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //return self.dataSource.count;
-    return 2;
+    return self.dataSource.count;
+    //return 2;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 270*W_Hight_Zoom;
+    return 271*W_Hight_Zoom;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -12,6 +12,8 @@
 #import "AFHttpClient+Reposit.h"
 //#import "RecordModel.h"
 #import "PhotoGrapgModel.h"
+#import "IssueViewController.h"
+
 
 static NSString *kfooterIdentifier = @"footerIdentifier";
 static NSString *kheaderIdentifier = @"headerIdentifier";
@@ -68,6 +70,7 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
     [_rightBtn setTitleColor:RGB(220, 220, 220) forState:UIControlStateNormal];
     _rightBtn.titleLabel.font = [UIFont systemFontOfSize:18];
     [_rightBtn.layer setMasksToBounds:YES];
+       [_rightBtn addTarget:self action:@selector(rightButtonTouch) forControlEvents:UIControlEventTouchUpInside];
     [bottomview addSubview:_rightBtn];
     [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(_rightBtn.superview).offset(-79);
@@ -120,6 +123,9 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
 
 }
 -(void)loadDataSourceWithPage:(int)page{
+      _numBtn.hidden = YES;
+    [_rightBtn setTitleColor:RGB(220, 220, 220) forState:UIControlStateNormal];
+    [deleteOrUpdateArr removeAllObjects];
     [[AFHttpClient sharedAFHttpClient]getPhotoGraphWithMid:[AccountManager sharedAccountManager].loginModel.mid page:page complete:^(BaseModel *model) {
         if (model) {
             if (page == START_PAGE_INDEX) {
@@ -213,9 +219,6 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
     UITapGestureRecognizer *tapMYP = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onVideo:)];
     [cell.imageV addGestureRecognizer:tapMYP];
     cell.rightBtn.hidden = YES;
-    
-    
-    
     
     
     return cell;
@@ -336,6 +339,16 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
 
 }
 
+
+-(void)rightButtonTouch{
+    NSLog(@"%@",deleteOrUpdateArr);
+    IssueViewController * issVc = [[IssueViewController alloc]init];
+    //issVc.ImageArray = thunmArray;
+    issVc.ImageArray = deleteOrUpdateArr;
+    issVc.porv = @"p";
+    [self.navigationController pushViewController:issVc animated:NO];
+    
+}
 
 
 @end

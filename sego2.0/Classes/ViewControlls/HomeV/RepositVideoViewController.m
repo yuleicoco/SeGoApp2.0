@@ -11,6 +11,7 @@
 #import "MyVideoCollectionViewCell.h"
 #import "AFHttpClient+Reposit.h"
 #import "RecordModel.h"
+#import "IssueViewController.h"
 
 static NSString *kfooterIdentifier = @"footerIdentifier";
 static NSString *kheaderIdentifier = @"headerIdentifier";
@@ -18,6 +19,7 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
 @interface RepositVideoViewController ()
 {
     NSMutableArray * deleteOrUpdateArr;
+    NSMutableArray * thunmArray;
 }
 @property (nonatomic,strong)UIButton * numBtn;
 @property (nonatomic,strong)UIButton * rightBtn;
@@ -36,8 +38,9 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
 -(void)setupData{
     [super setupData];
   
-      deleteOrUpdateArr =[[NSMutableArray alloc]init];
-       [self.dataSource addObject:[[RecordModel alloc] init]];
+    deleteOrUpdateArr =[[NSMutableArray alloc]init];
+    thunmArray = [[NSMutableArray alloc]init];
+    [self.dataSource addObject:[[RecordModel alloc] init]];
     
 }
 
@@ -74,6 +77,7 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
     _rightBtn.titleLabel.font = [UIFont systemFontOfSize:18];
     [_rightBtn.layer setMasksToBounds:YES];
     [_bottomview addSubview:_rightBtn];
+    [_rightBtn addTarget:self action:@selector(rightButtonTouch) forControlEvents:UIControlEventTouchUpInside];
     [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(_rightBtn.superview).offset(-79);
         make.centerY.equalTo(_rightBtn.superview.mas_centerY);
@@ -95,11 +99,7 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
         
     }];
 
-    
-    
-    
-    
-    
+
 //    self.collectionView.frame = CGRectMake(0, 50, self.view.width , self.view.height-50);
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.collectionView.superview);
@@ -126,6 +126,10 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
     
 }
 -(void)loadDataSourceWithPage:(int)page{
+    _numBtn.hidden = YES;
+    [_rightBtn setTitleColor:RGB(220, 220, 220) forState:UIControlStateNormal];
+    [deleteOrUpdateArr removeAllObjects];
+    [thunmArray removeAllObjects];
     [[AFHttpClient sharedAFHttpClient]getVideoWithMid:[AccountManager sharedAccountManager].loginModel.mid page:page complete:^(BaseModel *model) {
         if (model) {
             
@@ -138,6 +142,7 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
                 recordModel.networkaddressArray = [recordModel.networkaddress componentsSeparatedByString:@","];
                 recordModel.thumbailsArray = [recordModel.thumbnails componentsSeparatedByString:@","];
                 recordModel.typeArray = [recordModel.type componentsSeparatedByString:@","];
+                recordModel.filenameArray = [recordModel.filename componentsSeparatedByString:@","];
             }
             
             if (model.list.count == 0) {
@@ -278,8 +283,9 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
     NSInteger i = imageSender.view.tag/1000;//分区
     int j = imageSender.view.tag%1000;//每个分区的分组
     
-    PhotoGrapgModel *model = self.dataSource[i - 1];
-    NSArray *imageA  = model.networkaddressArray;
+    RecordModel *model = self.dataSource[i - 1];
+    NSArray *imageA  = model.filenameArray;
+    NSArray * imageB = model.thumbailsArray;
     MyVideoCollectionViewCell *cell = (MyVideoCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:j inSection:i-1]];
     
     if (deleteOrUpdateArr.count>=1) {
@@ -287,6 +293,7 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
             cell.rightBtn.hidden = YES;
             cell.rightBtn.selected = NO;
             [deleteOrUpdateArr removeObject:imageA[j]];//把要删除的图片从删除数组中删除
+            [thunmArray removeObject:imageB[j]];
         }else{
             [[AppUtil appTopViewController] showHint:@"您只能选择最多一个视频"];
             return;
@@ -296,11 +303,12 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
             cell.rightBtn.hidden = NO;
             cell.rightBtn.selected = YES;
             [deleteOrUpdateArr addObject:imageA[j]];//把要删除的图片加入删除数组
-            
+            [thunmArray addObject:imageB[j]];
         }else{
             cell.rightBtn.hidden = YES;
             cell.rightBtn.selected = NO;
             [deleteOrUpdateArr removeObject:imageA[j]];//把要删除的图片从删除数组中删除
+            [thunmArray removeObject:imageB[j]];
         }
     }
     
@@ -316,5 +324,18 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
         //_rightBtn.selected = YES;
     }
 }
+
+-(void)rightButtonTouch{
+    NSLog(@"%@",deleteOrUpdateArr);
+    IssueViewController * issVc = [[IssueViewController alloc]init];
+    issVc.ImageArray = thunmArray;
+    issVc.soureArray = deleteOrUpdateArr;
+    issVc.porv = @"v";
+    [self.navigationController pushViewController:issVc animated:NO];
+
+}
+
+
+
 
 @end
