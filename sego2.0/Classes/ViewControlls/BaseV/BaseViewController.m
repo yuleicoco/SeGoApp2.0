@@ -20,7 +20,7 @@
        //self.navigationController.navigationBar.barStyle=UIBarStyleDefault;
        self.navigationController.navigationBar.translucent = NO;
         
-        self.edgesForExtendedLayout = UIRectEdgeNone;
+      //  self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];

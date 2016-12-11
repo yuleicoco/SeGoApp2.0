@@ -18,6 +18,12 @@
 //查询收藏
 -(void)queryArticlesWithMid:(NSString *)mid page:(int)page size:(int)size complete:(void (^)(BaseModel * model))completeBlock;
 
+//收藏详情
+-(void)queryByAid:(NSString *)aid complete:(void (^)(BaseModel * model))completeBlock;
+
+//删除收藏
+-(void)delArticleWithMid:(NSString *)mid aid:(NSString *)aid complete:(void (^)(BaseModel * model))completeBlock;
+
 
 
 

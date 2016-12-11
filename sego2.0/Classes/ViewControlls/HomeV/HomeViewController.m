@@ -14,6 +14,8 @@
 #import "UIImage-Extensions.h"
 #import "RepositoryViewController.h"
 #import "ArticlesModel.h"
+#import "HomeDetailViewController.h"
+
 static NSString * cellId = @"hometableviewcellId";
 @interface HomeViewController ()
 @property (nonatomic,strong)CycleScrollView * topScrollView;
@@ -182,7 +184,9 @@ static NSString * cellId = @"hometableviewcellId";
 {
      ArticlesModel * model = self.dataSource[indexPath.row];
      NSLog(@"%@",model.content);
-    
+    HomeDetailViewController * detailVc = [[HomeDetailViewController alloc]init];
+    detailVc.aid = model.aid;
+    [self.navigationController pushViewController:detailVc animated:NO];
 
 
 

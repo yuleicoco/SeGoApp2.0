@@ -197,7 +197,7 @@
         make.left.equalTo(passwordView.mas_left);
         make.right.equalTo(passwordView.mas_right);
         make.height.mas_equalTo(55);
-        
+    
     }];
     
 }

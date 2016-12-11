@@ -10,6 +10,9 @@
 #import "InformationViewController.h"
 #import "UIImageView+WebCache.h"
 #import "UIImage-Extensions.h"
+#import "ExchangPasswordViewController.h"
+#import "AboutViewController.h"
+
 @interface MeViewController ()
 @property(nonatomic,strong)UILabel * nameLabel;
 @property(nonatomic,strong)UIButton * headBtn;
@@ -45,7 +48,7 @@
     self.view.backgroundColor = GRAY_COLOR;
     UIImageView * topImage = [[UIImageView alloc]init];
    // topImage.backgroundColor= [UIColor redColor];
-    topImage.image = [UIImage imageNamed:@"personcenterback.png"];
+    topImage.image = [UIImage imageNamed:@"newpersonback.png"];
     [self.view addSubview:topImage];
     [topImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(topImage.superview);
@@ -385,11 +388,24 @@
 }
 -(void)exchangebuttonTouch{
     FuckLog(@"修改密码");
+    if ([AppUtil isBlankString: [AccountManager sharedAccountManager].loginModel.type ]) {
+        ExchangPasswordViewController * exchangVc = [[ExchangPasswordViewController alloc]init];
+        [self.navigationController pushViewController:exchangVc animated:NO];
+        
+    }else{
+          [[AppUtil appTopViewController]showHint:@"第三方登录，不能修改密码哦亲"];
+    }
+    
+    
     
 }
 
 -(void)aboutbuttonTouch{
     FuckLog(@"关于");
+    AboutViewController * aboutVc = [[AboutViewController alloc]init];
+    [self.navigationController pushViewController:aboutVc animated:NO];
+    
+    
     
 }
 
