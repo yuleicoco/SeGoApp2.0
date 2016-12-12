@@ -49,6 +49,8 @@
     curEncryption = [NSString stringWithFormat:@"1"];
     
     
+    
+    
 }
 
 - (void)setupView

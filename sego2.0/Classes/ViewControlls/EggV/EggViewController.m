@@ -67,7 +67,7 @@
     [self setNavTitle:NSLocalizedString(@"tabEgg_title",nil)];
     
     // sephone
-  //  [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
+    [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
    
     
     
@@ -781,9 +781,9 @@
     
     
     
-     InCallViewController *   _incallVC =[[InCallViewController alloc]initWithNibName:@"InCallViewController" bundle:nil];
-    
-     [self presentViewController:_incallVC animated:YES completion:nil];
+//     InCallViewController *   _incallVC =[[InCallViewController alloc]initWithNibName:@"InCallViewController" bundle:nil];
+//    
+//     [self presentViewController:_incallVC animated:YES completion:nil];
     
     NSString * strDevicenume =[AccountManager sharedAccountManager].loginModel.deviceno;
     NSString * strDevicenume1 =[Defaluts objectForKey:PREF_DEVICE_NUMBER];
@@ -800,7 +800,7 @@
         
     }
     
-    //  [self sipCall:strNum sipName:nil];
+      [self sipCall:strNum sipName:nil];
 
     if ([strState isEqualToString:@"ds001"]) {
         

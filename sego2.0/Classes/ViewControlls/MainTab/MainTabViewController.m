@@ -175,26 +175,6 @@
 
 
 
-////- (BOOL)shouldAutorotate
-////{
-////    return [[self.viewControllers lastObject] shouldAutorotate];
-////}
-//
-////- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-////{
-////    return [[self.viewControllers lastObject] supportedInterfaceOrientations];
-////}
-//
-//- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-//{
-//    return [self.navigationController supportedInterfaceOrientations];
-//}
-//
-//
-////- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-////    return [[self.viewControllers lastObject] preferredInterfaceOrientationForPresentation];
-//}
-
 
 
 
