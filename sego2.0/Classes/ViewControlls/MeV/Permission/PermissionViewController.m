@@ -10,6 +10,8 @@
 #import "AFHttpClient+Permission.h"
 #import "PermissonTableViewCell.h"
 #import "RuleModel.h"
+#import "NewPermissionViewController.h"
+#import "ExchangPermissionViewController.h"
 
 static NSString * cellId = @"permissontableviewCellId";
 @interface PermissionViewController ()
@@ -17,6 +19,16 @@ static NSString * cellId = @"permissontableviewCellId";
 @end
 
 @implementation PermissionViewController
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(ruleShuaxinxin) name:@"ruleShuaxin" object:nil];
+}
+
+-(void)ruleShuaxinxin{
+    [self setupData];
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,23 +49,35 @@ static NSString * cellId = @"permissontableviewCellId";
     [creatBtn setTitle:@"新建访问规则" forState:UIControlStateNormal];
     [creatBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     creatBtn.titleLabel.font = [UIFont systemFontOfSize:20];
+    creatBtn.layer.cornerRadius = 3;
+    [creatBtn addTarget:self action:@selector(creatButtonTouch) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:creatBtn];
     [creatBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        
+        make.width.mas_equalTo(340);
+        make.height.mas_equalTo(55);
+        make.centerX.equalTo(creatBtn.superview.mas_centerX);
+        make.bottom.equalTo(creatBtn.superview).offset(-87);
         
     }];
     
     
-    
-    
-    
-    
+}
+
+-(void)creatButtonTouch{
+    if (self.dataSource.count >= 3) {
+              [[AppUtil appTopViewController] showHint:@"最多只能创建3条规则哦!"];
+    }else{
+        NewPermissionViewController * perVc = [[NewPermissionViewController alloc]init];
+        [self.navigationController pushViewController:perVc animated:NO];
+        
+    }
+
 }
 
 -(void)setupData{
     [super setupData];
     [[AFHttpClient sharedAFHttpClient]queryRuleWithMid:[AccountManager sharedAccountManager].loginModel.mid complete:^(BaseModel *model) {
+        [self.dataSource removeAllObjects];
         [self.dataSource addObjectsFromArray:model.list];
         [self.tableView reloadData];
     }];
@@ -87,10 +111,10 @@ static NSString * cellId = @"permissontableviewCellId";
         cell.lineLabel.hidden = YES;
     }
     cell.guizeNameLabel.text = model.rulesname;
-    if (model.tsnum>0) {
-        cell.rightLabel.text = @"允许";
-    }else{
+    if ([model.tsnum isEqualToString:@"0"]) {
         cell.rightLabel.text = @"不允许";
+    }else{
+        cell.rightLabel.text = @"允许";
     }
     
     if ([model.isuse isEqualToString:@"n"]) {
@@ -129,6 +153,28 @@ static NSString * cellId = @"permissontableviewCellId";
 
 
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+         [[AppUtil appTopViewController] showHint:@"默认规则不可以修改"];
+    }else{
+        RuleModel * model = self.dataSource[indexPath.row];
+        ExchangPermissionViewController * exchangVc = [[ExchangPermissionViewController alloc]init];
+        exchangVc.ruleName = model.rulesname;
+        exchangVc.istsNum = model.tsnum;
+        exchangVc.objectStr = model.object;
+        exchangVc.ridStr = model.rid;
+        [self.navigationController pushViewController:exchangVc animated:NO];
+        
+    
+    }
+    
+
+
+
+}
+
 
 
 //左滑删除

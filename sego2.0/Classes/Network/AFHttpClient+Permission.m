@@ -59,6 +59,49 @@
 
 }
 
+-(void)ruleSetWithMid:(NSString *)mid rulesname:(NSString *)rulesname object:(NSString *)object friends:(NSString *)friends tsnum:(NSString *)tsnum complete:(void (^)(BaseModel *))completeBlock{
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    params[@"common"] = @"ruleSet";
+    params[@"mid"] = mid;
+    params[@"rulesname"] = rulesname;
+    params[@"object"] = object;
+    params[@"friends"] = friends;
+    params[@"tsnum"] = tsnum;
+    [self POST:@"clientAction.do" parameters:params result:^(BaseModel *model) {
+        //        if (model) {
+        //            model.list = [RuleModel arrayOfModelsFromDictionaries:model.list];
+        //        }
+        if (completeBlock) {
+            completeBlock(model);
+        }
+    }];
+
+
+}
+
+-(void)ruleModifyInfoWithMid:(NSString *)mid rulesname:(NSString *)rulesname object:(NSString *)object friends:(NSString *)friends tsnum:(NSString *)tsnum complete:(void (^)(BaseModel *))completeBlock{
+    
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    params[@"common"] = @"ruleModifyInfo";
+    params[@"rid"] = mid;
+    params[@"rulesname"] = rulesname;
+    params[@"object"] = object;
+    params[@"friends"] = friends;
+    params[@"tsnum"] = tsnum;
+    [self POST:@"clientAction.do" parameters:params result:^(BaseModel *model) {
+        //        if (model) {
+        //            model.list = [RuleModel arrayOfModelsFromDictionaries:model.list];
+        //        }
+        if (completeBlock) {
+            completeBlock(model);
+        }
+    }];
+
+
+
+
+}
+
 
 
 
