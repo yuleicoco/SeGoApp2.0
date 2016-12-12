@@ -49,7 +49,6 @@
         _leftLabel = [[UILabel alloc]init];
         _leftLabel.textColor = [UIColor blackColor];
         _leftLabel.font = [UIFont systemFontOfSize:15];
-        _leftLabel.text = @"尽自己";
         [self addSubview:_leftLabel];
         [_leftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(_guizeNameLabel.mas_left);
@@ -62,7 +61,7 @@
         _toushiLabel.textColor = [UIColor blackColor];
         [self addSubview:_toushiLabel];
         [_toushiLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_leftLabel.mas_right).offset(51);
+            make.left.equalTo(_toushiLabel.superview).offset(150);
             make.bottom.equalTo(_toushiLabel.superview).offset(-9);
         }];
         

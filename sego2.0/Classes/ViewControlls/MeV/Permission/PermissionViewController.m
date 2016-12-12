@@ -11,6 +11,7 @@
 #import "PermissonTableViewCell.h"
 #import "RuleModel.h"
 #import "NewPermissionViewController.h"
+#import "ExchangPermissionViewController.h"
 
 static NSString * cellId = @"permissontableviewCellId";
 @interface PermissionViewController ()
@@ -18,6 +19,16 @@ static NSString * cellId = @"permissontableviewCellId";
 @end
 
 @implementation PermissionViewController
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(ruleShuaxinxin) name:@"ruleShuaxin" object:nil];
+}
+
+-(void)ruleShuaxinxin{
+    [self setupData];
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,21 +71,13 @@ static NSString * cellId = @"permissontableviewCellId";
         [self.navigationController pushViewController:perVc animated:NO];
         
     }
-    
-    
-    
-    
+
 }
-
-
-
-
-
-
 
 -(void)setupData{
     [super setupData];
     [[AFHttpClient sharedAFHttpClient]queryRuleWithMid:[AccountManager sharedAccountManager].loginModel.mid complete:^(BaseModel *model) {
+        [self.dataSource removeAllObjects];
         [self.dataSource addObjectsFromArray:model.list];
         [self.tableView reloadData];
     }];
@@ -108,10 +111,10 @@ static NSString * cellId = @"permissontableviewCellId";
         cell.lineLabel.hidden = YES;
     }
     cell.guizeNameLabel.text = model.rulesname;
-    if (model.tsnum>0) {
-        cell.rightLabel.text = @"允许";
-    }else{
+    if ([model.tsnum isEqualToString:@"0"]) {
         cell.rightLabel.text = @"不允许";
+    }else{
+        cell.rightLabel.text = @"允许";
     }
     
     if ([model.isuse isEqualToString:@"n"]) {
@@ -150,6 +153,28 @@ static NSString * cellId = @"permissontableviewCellId";
 
 
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+         [[AppUtil appTopViewController] showHint:@"默认规则不可以修改"];
+    }else{
+        RuleModel * model = self.dataSource[indexPath.row];
+        ExchangPermissionViewController * exchangVc = [[ExchangPermissionViewController alloc]init];
+        exchangVc.ruleName = model.rulesname;
+        exchangVc.istsNum = model.tsnum;
+        exchangVc.objectStr = model.object;
+        exchangVc.ridStr = model.rid;
+        [self.navigationController pushViewController:exchangVc animated:NO];
+        
+    
+    }
+    
+
+
+
+}
+
 
 
 //左滑删除

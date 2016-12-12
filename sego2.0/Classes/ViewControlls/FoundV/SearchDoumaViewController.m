@@ -172,7 +172,7 @@ static NSString * cellId = @"searchtabviewId";
      SearchModel * model = self.dataSource[0];
     NSString * resolution = model.resolution;
     NSString * mid = model.mid;
-    
+
     
     
     

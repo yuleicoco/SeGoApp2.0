@@ -18,9 +18,11 @@
 //删除规则
 -(void)ruleDelWithRid:(NSString *)rid complete:(void (^)(BaseModel * model))completeBlock;
 
+//新建规则
+-(void)ruleSetWithMid:(NSString *)mid rulesname:(NSString *)rulesname object:(NSString *)object friends:(NSString *)friends tsnum:(NSString *)tsnum complete:(void (^)(BaseModel * model))completeBlock;
 
-
-
+//修改规则
+-(void)ruleModifyInfoWithMid:(NSString *)mid rulesname:(NSString *)rulesname object:(NSString *)object friends:(NSString *)friends tsnum:(NSString *)tsnum complete:(void (^)(BaseModel * model))completeBlock;
 
 
 

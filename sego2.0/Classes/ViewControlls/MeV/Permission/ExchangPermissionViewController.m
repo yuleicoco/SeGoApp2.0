@@ -1,15 +1,15 @@
 //
-//  NewPermissionViewController.m
+//  ExchangPermissionViewController.m
 //  sego2.0
 //
 //  Created by czx on 16/12/12.
 //  Copyright © 2016年 yulei. All rights reserved.
 //
 
-#import "NewPermissionViewController.h"
+#import "ExchangPermissionViewController.h"
 #import "AFHttpClient+Permission.h"
 
-@interface NewPermissionViewController ()
+@interface ExchangPermissionViewController ()
 @property (nonatomic,strong)UILabel * ruleNameLabel;
 @property (nonatomic,strong)UIButton * ruleNameBtn;
 @property (nonatomic,strong)UILabel * toushiLabel;
@@ -24,18 +24,15 @@
 @property (nonatomic,strong)UIButton * friendBtn;
 @property (nonatomic,strong)UIButton * zdBtn;
 
-
-@property (nonatomic,assign)BOOL isXiugai;
-
 @end
 
-@implementation NewPermissionViewController
+@implementation ExchangPermissionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"新建规则"];
+    [self setNavTitle:@"修改规则"];
     self.view.backgroundColor = GRAY_COLOR;
-    _isXiugai = NO;
+  
 }
 
 -(void)setupData{
@@ -65,7 +62,7 @@
         
         
     }];
-
+    
     UILabel * leftLabel1 = [[UILabel alloc]init];
     leftLabel1.text = @"规则名称";
     leftLabel1.textColor = [UIColor blackColor];
@@ -91,7 +88,7 @@
     
     _ruleNameLabel = [[UILabel alloc]init];
     _ruleNameLabel.text = @"请输入规则名称";
-    _ruleNameLabel.textColor =[UIColor lightGrayColor];
+    _ruleNameLabel.textColor =[UIColor blackColor];
     _ruleNameLabel.font = [UIFont systemFontOfSize:18];
     [topView addSubview:_ruleNameLabel];
     [_ruleNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -106,7 +103,7 @@
     [_ruleNameBtn addTarget:self action:@selector(rulebuttonTouch) forControlEvents:UIControlEventTouchUpInside];
     [topView addSubview:_ruleNameBtn];
     [_ruleNameBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-      //  make.left.equalTo(_ruleNameBtn.mas_right).offset(20);
+        //  make.left.equalTo(_ruleNameBtn.mas_right).offset(20);
         make.right.equalTo(_ruleNameBtn.superview);
         make.top.equalTo(_ruleNameBtn.superview);
         make.bottom.equalTo(lineLabel.mas_bottom);
@@ -121,7 +118,7 @@
     [_toushiLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(_ruleNameLabel.mas_right);
         make.top.equalTo(lineLabel.mas_bottom).offset(20);
-    
+        
     }];
     
     _toushiBtn = [[UIButton alloc]init];
@@ -131,7 +128,7 @@
     [_toushiBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(_toushiBtn.superview);
         make.top.equalTo(lineLabel.mas_bottom);
-         make.bottom.equalTo(_toushiBtn.superview);
+        make.bottom.equalTo(_toushiBtn.superview);
         make.width.mas_equalTo(300);
         
     }];
@@ -229,18 +226,36 @@
         make.centerX.equalTo(sureBtn.superview.mas_centerX);
         make.bottom.equalTo(sureBtn.superview).offset(-87);
     }];
+    
+    _ruleNameLabel.text = _ruleName;
+    
+    if ([_istsNum isEqualToString:@"0"]) {
+        _toushiLabel.text = @"不允许";
+    }else{
+        _toushiLabel.text = @"允许";
+    }
+    if ([_objectStr isEqualToString:@"all"]) {
+        [self allButtonTouch];
+    }else if ([_objectStr isEqualToString:@"friend"]){
+        [self friendButtonTouch];
+    }else if ([_objectStr isEqualToString:@"zd"]){
+        [self zdbuttonTouch];
+    }
+    
+    
+    
 }
 
 -(void)sureButtonTouchh{
-    if (_isXiugai == NO) {
-        [[AppUtil appTopViewController] showHint:@"请输入规则名称"];
-        return;
-    }
+//    if (_isXiugai == NO) {
+//        [[AppUtil appTopViewController] showHint:@"请输入规则名称"];
+//        return;
+//    }
     if (_allBtn.selected == NO && _friendBtn.selected == NO && _zdBtn.selected == NO) {
         [[AppUtil appTopViewController] showHint:@"请选择谁能访问我的设备"];
         return;
     }
-
+    
     NSString * tsNum = @"";
     if ([_toushiLabel.text isEqualToString:@"不允许"]) {
         tsNum = @"0";
@@ -260,29 +275,23 @@
     NSString * friendStr = @"";
     //指定好友还没写
     
-    [self showHudInView:self.view hint:@"正在添加..."];
-    [[AFHttpClient sharedAFHttpClient]ruleSetWithMid:[AccountManager sharedAccountManager].loginModel.mid rulesname:_ruleNameLabel.text object:objectStr friends:friendStr tsnum:tsNum complete:^(BaseModel *model) {
-         [self hideHud];
+    [self showHudInView:self.view hint:@"正在修改..."];
+//    [[AFHttpClient sharedAFHttpClient]ruleSetWithMid:[AccountManager sharedAccountManager].loginModel.mid rulesname:_ruleNameLabel.text object:objectStr friends:friendStr tsnum:tsNum complete:^(BaseModel *model) {
+//        [self hideHud];
+//        [[AppUtil appTopViewController]showHint:model.retDesc];
+//        [self.navigationController popViewControllerAnimated:NO];
+//        [[NSNotificationCenter defaultCenter]postNotificationName:@"ruleShuaxin" object:nil];
+//    }];
+    
+    [[AFHttpClient sharedAFHttpClient]ruleModifyInfoWithMid:_ridStr rulesname:_ruleNameLabel.text  object:objectStr friends:friendStr tsnum:tsNum complete:^(BaseModel *model) {
+        [self hideHud];
         [[AppUtil appTopViewController]showHint:model.retDesc];
         [self.navigationController popViewControllerAnimated:NO];
-         [[NSNotificationCenter defaultCenter]postNotificationName:@"ruleShuaxin" object:nil];
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"ruleShuaxin" object:nil];
+
     }];
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 }
-
-
-
 
 -(void)allButtonTouch{
     _allBtn.selected = YES;
@@ -303,7 +312,7 @@
     _zdBtn.backgroundColor = [UIColor whiteColor];
     _friendBtn.selected = YES;
     _friendBtn.backgroundColor = GREEN_COLOR;
-
+    
 }
 
 -(void)zdbuttonTouch{
@@ -313,8 +322,8 @@
     _zdBtn.backgroundColor = GREEN_COLOR;
     _friendBtn.selected = NO;
     _friendBtn.backgroundColor = [UIColor whiteColor];
-
-
+    
+    
 }
 
 
@@ -358,11 +367,11 @@
     }];
     
     _exchangeTextfield = [[UITextField alloc]init];
-    if (_isXiugai == NO) {
-       _exchangeTextfield.text = @"";
-    }else{
+    //if (_isXiugai == NO) {
+       // _exchangeTextfield.text = @"";
+   // }else{
         _exchangeTextfield.text = _ruleNameLabel.text;
-    }
+   // }
     _exchangeTextfield.placeholder = @"请输入规则名称";
     _exchangeTextfield.textAlignment = NSTextAlignmentCenter;
     _exchangeTextfield.textColor = [UIColor blackColor];
@@ -438,7 +447,7 @@
         make.bottom.equalTo(sureBtn.superview.mas_bottom);
         make.height.mas_equalTo(51);
     }];
-
+    
 }
 
 -(void)namedancebuttonTouch{
@@ -448,14 +457,14 @@
 }
 -(void)namesurebuttonTouch{
     if ([AppUtil isBlankString:_exchangeTextfield.text]) {
-          [[AppUtil appTopViewController] showHint:@"请输入规则名称"];
+        [[AppUtil appTopViewController] showHint:@"请输入规则名称"];
         return;
     }
     _ruleNameLabel.text = _exchangeTextfield.text;
     _ruleNameLabel.textColor = [UIColor blackColor];
     _bigBtn.hidden = YES;
     _centerwhteView.hidden = YES;
-    _isXiugai = YES;
+  
 }
 
 -(void)bigbuttonTouch{
@@ -470,12 +479,6 @@
         _toushiLabel.text = @"允许";
     }
 }
-
-
-
-
-
-
 
 
 

@@ -341,6 +341,7 @@
 		7DDAA36F1DFC277B0039D6C2 /* aboutlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DDAA36E1DFC277B0039D6C2 /* aboutlogo.png */; };
 		7DE3D7751DFE443F00AC2695 /* NewPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3D7741DFE443F00AC2695 /* NewPermissionViewController.m */; };
 		7DE3D7771DFE95E200AC2695 /* sego.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DE3D7761DFE95E200AC2695 /* sego.png */; };
+		7DE3D77A1DFEA3FB00AC2695 /* ExchangPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3D7791DFEA3FB00AC2695 /* ExchangPermissionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1197,6 +1198,8 @@
 		7DE3D7731DFE443F00AC2695 /* NewPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewPermissionViewController.h; path = Views/NewPermissionViewController.h; sourceTree = "<group>"; };
 		7DE3D7741DFE443F00AC2695 /* NewPermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewPermissionViewController.m; path = Views/NewPermissionViewController.m; sourceTree = "<group>"; };
 		7DE3D7761DFE95E200AC2695 /* sego.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sego.png; sourceTree = "<group>"; };
+		7DE3D7781DFEA3FB00AC2695 /* ExchangPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangPermissionViewController.h; sourceTree = "<group>"; };
+		7DE3D7791DFEA3FB00AC2695 /* ExchangPermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangPermissionViewController.m; sourceTree = "<group>"; };
 		9BB5CB8271F3FD7EA2EAFCC8 /* Pods-sego2.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sego2.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sego2.0/Pods-sego2.0.debug.xcconfig"; sourceTree = "<group>"; };
 		D717670192D3D82245676E28 /* Pods-sego2.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sego2.0.release.xcconfig"; path = "Pods/Target Support Files/Pods-sego2.0/Pods-sego2.0.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -2915,6 +2918,8 @@
 				7D17DFF71DFD332800628FFC /* PermissionViewController.m */,
 				7DE3D7731DFE443F00AC2695 /* NewPermissionViewController.h */,
 				7DE3D7741DFE443F00AC2695 /* NewPermissionViewController.m */,
+				7DE3D7781DFEA3FB00AC2695 /* ExchangPermissionViewController.h */,
+				7DE3D7791DFEA3FB00AC2695 /* ExchangPermissionViewController.m */,
 			);
 			path = Permission;
 			sourceTree = "<group>";
@@ -3294,6 +3299,7 @@
 				3461F5391DD2BB5500E56298 /* LoginViewController.m in Sources */,
 				34C496061DD1D21700687606 /* BaseViewController.m in Sources */,
 				7DC89EF71DEFF2F000564BB3 /* HomeTableViewCell.m in Sources */,
+				7DE3D77A1DFEA3FB00AC2695 /* ExchangPermissionViewController.m in Sources */,
 				7D02A9F81DFAB65000C41A56 /* ExchangPasswordViewController.m in Sources */,
 				34D3C6D51DDAB97300529FF5 /* BindingViewController.m in Sources */,
 				34D841BB1DE003DE00C37303 /* AFHttpClient+RemoveDevice.m in Sources */,
