@@ -17,7 +17,7 @@
 #import "AFHttpClient+VideoQuiltChoose.h"
 #import "AFHttpClient+DeviceUseMember.h"
 #import "WifiViewController.h"
-
+#import "AFHttpClient+DeviceUseMember.h"
 
 
 @interface EggViewController ()
@@ -48,6 +48,10 @@
     // btn数组
     NSArray * arrBtn;
     
+    //别人
+    NSString * isOtherDevice;
+    //
+    NSString * isOherID;
     
     
     
@@ -61,6 +65,13 @@
 @end
 
 @implementation EggViewController
+@synthesize DouMid;
+@synthesize SearchMid;
+@synthesize isOther;
+
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -68,6 +79,58 @@
     
     // sephone
     [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
+    
+    
+    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    switch (status) {
+        case AVAuthorizationStatusNotDetermined:{
+            // 许可对话没有出现，发起授权许可
+            
+            [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+                
+                if (granted) {
+                    //第一次用户接受
+                }else{
+                    //用户拒绝
+                }
+            }];
+            break;
+        }
+        case AVAuthorizationStatusAuthorized:{
+            // 已经开启授权，可继续
+            
+            break;
+        }
+        case AVAuthorizationStatusDenied:
+        case AVAuthorizationStatusRestricted:
+            // 用户明确地拒绝授权，或者相机设备无法访问
+            
+            break;
+        default:
+            break;
+    }
+    
+    
+    
+    //麦克风
+    
+    [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
+        
+        if (granted) {
+            
+            // 用户同意获取麦克风
+            NSLog(@"用户同意获取麦克风");
+            
+        } else {
+            
+            // 用户不同意获取麦克风
+            NSLog(@"用户不同意");
+            
+        }
+        
+    }];
+    
+
    
     
     
@@ -97,7 +160,37 @@
     
      [self checkDeviceStats];
      [self checkWifi];
+    
+   
+    
 
+    if (isOther) {
+        
+        if ([AppUtil isBlankString:SearchMid]) {
+            [[AFHttpClient sharedAFHttpClient]checkMidFriend:DouMid complete:^(BaseModel * model) {
+                
+                FuckLog(@"%@",model);
+                isOtherDevice = model.retVal[@"deviceno"];
+                isOherID = model.retVal[@"mid"];
+                
+            }];
+        }else
+        {
+         [[AFHttpClient sharedAFHttpClient]checkMidFriend:SearchMid complete:^(BaseModel * model) {
+               FuckLog(@"%@",model);
+               isOtherDevice = model.retVal[@"deviceno"];
+               isOherID = model.retVal[@"mid"];
+             
+         }];
+        }
+        
+        
+    }else
+    {
+        
+        return;
+        
+    }
     
     
 }
@@ -780,27 +873,26 @@
 {
     
     
-    
-//     InCallViewController *   _incallVC =[[InCallViewController alloc]initWithNibName:@"InCallViewController" bundle:nil];
-//    
-//     [self presentViewController:_incallVC animated:YES completion:nil];
-    
     NSString * strDevicenume =[AccountManager sharedAccountManager].loginModel.deviceno;
     NSString * strDevicenume1 =[Defaluts objectForKey:PREF_DEVICE_NUMBER];
     NSString * strNum;
     
     
+    if (isOther) {
+        
+          [self sipCall:isOtherDevice sipName:nil];
+    }else
+    {
     if ([AppUtil isBlankString:strDevicenume]) {
-        
         strNum = strDevicenume1;
-        
     }else
     {
         strNum = strDevicenume;
         
     }
-    
       [self sipCall:strNum sipName:nil];
+    }
+  
 
     if ([strState isEqualToString:@"ds001"]) {
         
@@ -810,15 +902,27 @@
         NSDateFormatter  *dateformatter=[[NSDateFormatter alloc] init];
         [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSString *  locationString=[dateformatter stringFromDate:senddate];
-        [[AFHttpClient sharedAFHttpClient]DeviceUseMember:[AccountManager sharedAccountManager].loginModel.mid object:@"self" deviceno:strNum belong:[AccountManager sharedAccountManager].loginModel.mid starttime:locationString complete:^(BaseModel *model) {
+        
+        
+        if (isOther) {
             
+            [[AFHttpClient sharedAFHttpClient]DeviceUseMember:[AccountManager sharedAccountManager].loginModel.mid object:@"other" deviceno:isOtherDevice belong:isOherID starttime:locationString complete:^(BaseModel *model) {
+    
+                [Defaluts setObject:model.content forKey:@"selfID"];
+                [Defaluts synchronize];
+                
+                
+            }];
+            
+        }else{
+        [[AFHttpClient sharedAFHttpClient]DeviceUseMember:[AccountManager sharedAccountManager].loginModel.mid object:@"self" deviceno:strNum belong:[AccountManager sharedAccountManager].loginModel.mid starttime:locationString complete:^(BaseModel *model) {
             [Defaluts setObject:model.content forKey:@"selfID"];
             [Defaluts synchronize];
             
-           
-        
-    }];
-        
+
+         }];
+            
+        }
         
         
     }else

@@ -45,4 +45,11 @@
  */
 - (void)Takephoto:(NSString *)deviceno  termid:(NSString *)termid complete:(void (^)(BaseModel *))completeBlock;
 
+
+/**
+ *  查询当前用户使用权限
+ */
+
+- (void)checkMidFriend:(NSString *)mid  complete:(void (^)(BaseModel *))completeBlock;
+
 @end

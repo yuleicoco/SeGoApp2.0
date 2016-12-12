@@ -10,4 +10,11 @@
 
 @interface EggViewController : BaseViewController
 
+@property(nonatomic,strong)NSString * DouMid;
+@property(nonatomic,strong)NSString * SearchMid;
+@property(nonatomic,assign)BOOL isOther;
+
+
+
+
 @end
