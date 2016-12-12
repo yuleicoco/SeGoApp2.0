@@ -10,6 +10,7 @@
 #import "AFHttpClient+Permission.h"
 #import "PermissonTableViewCell.h"
 #import "RuleModel.h"
+#import "NewPermissionViewController.h"
 
 static NSString * cellId = @"permissontableviewCellId";
 @interface PermissionViewController ()
@@ -37,19 +38,39 @@ static NSString * cellId = @"permissontableviewCellId";
     [creatBtn setTitle:@"新建访问规则" forState:UIControlStateNormal];
     [creatBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     creatBtn.titleLabel.font = [UIFont systemFontOfSize:20];
+    creatBtn.layer.cornerRadius = 3;
+    [creatBtn addTarget:self action:@selector(creatButtonTouch) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:creatBtn];
     [creatBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        
+        make.width.mas_equalTo(340);
+        make.height.mas_equalTo(55);
+        make.centerX.equalTo(creatBtn.superview.mas_centerX);
+        make.bottom.equalTo(creatBtn.superview).offset(-87);
         
     }];
     
     
+}
+
+-(void)creatButtonTouch{
+    if (self.dataSource.count >= 3) {
+              [[AppUtil appTopViewController] showHint:@"最多只能创建3条规则哦!"];
+    }else{
+        NewPermissionViewController * perVc = [[NewPermissionViewController alloc]init];
+        [self.navigationController pushViewController:perVc animated:NO];
+        
+    }
     
     
     
     
 }
+
+
+
+
+
+
 
 -(void)setupData{
     [super setupData];
