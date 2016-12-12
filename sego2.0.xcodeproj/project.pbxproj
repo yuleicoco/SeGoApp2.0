@@ -292,6 +292,14 @@
 		7D02A9FA1DFAB7EF00C41A56 /* newpersonback.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D02A9F91DFAB7EF00C41A56 /* newpersonback.png */; };
 		7D0892B41DF8FC45001BBD98 /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0892B31DF8FC45001BBD98 /* IssueViewController.m */; };
 		7D0892B71DF9530C001BBD98 /* ArticlesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0892B61DF9530C001BBD98 /* ArticlesModel.m */; };
+		7D17DFF81DFD332800628FFC /* PermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D17DFF71DFD332800628FFC /* PermissionViewController.m */; };
+		7D17DFFB1DFD340600628FFC /* AFHttpClient+Permission.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D17DFFA1DFD340600628FFC /* AFHttpClient+Permission.m */; };
+		7D17DFFF1DFD38F400628FFC /* PermissonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D17DFFE1DFD38F400628FFC /* PermissonTableViewCell.m */; };
+		7D17E0021DFD3BA400628FFC /* yuandianbai.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D17E0001DFD3BA400628FFC /* yuandianbai.png */; };
+		7D17E0031DFD3BA400628FFC /* yuandianlan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D17E0011DFD3BA400628FFC /* yuandianlan.png */; };
+		7D17E0061DFD3C3200628FFC /* quan_guize.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D17E0041DFD3C3200628FFC /* quan_guize.png */; };
+		7D17E0071DFD3C3200628FFC /* xuanquan_guize.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D17E0051DFD3C3200628FFC /* xuanquan_guize.png */; };
+		7D17E00A1DFD4A0600628FFC /* RuleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D17E0091DFD4A0600628FFC /* RuleModel.m */; };
 		7D1C9DF21DF7E6FA0050CBB4 /* rigtBtnImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1C9DF11DF7E6FA0050CBB4 /* rigtBtnImage.png */; };
 		7D1FA3E31DE5354F00A43201 /* AFHttpClient+PersonMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1FA3E21DE5354F00A43201 /* AFHttpClient+PersonMember.m */; };
 		7D28166D1DF1101000A9E6DA /* RepositVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D28166C1DF1101000A9E6DA /* RepositVideoViewController.m */; };
@@ -1105,6 +1113,18 @@
 		7D0892B31DF8FC45001BBD98 /* IssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueViewController.m; sourceTree = "<group>"; };
 		7D0892B51DF9530C001BBD98 /* ArticlesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesModel.h; sourceTree = "<group>"; };
 		7D0892B61DF9530C001BBD98 /* ArticlesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesModel.m; sourceTree = "<group>"; };
+		7D17DFF61DFD332800628FFC /* PermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissionViewController.h; sourceTree = "<group>"; };
+		7D17DFF71DFD332800628FFC /* PermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissionViewController.m; sourceTree = "<group>"; };
+		7D17DFF91DFD340600628FFC /* AFHttpClient+Permission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Permission.h"; sourceTree = "<group>"; };
+		7D17DFFA1DFD340600628FFC /* AFHttpClient+Permission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Permission.m"; sourceTree = "<group>"; };
+		7D17DFFD1DFD38F400628FFC /* PermissonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissonTableViewCell.h; sourceTree = "<group>"; };
+		7D17DFFE1DFD38F400628FFC /* PermissonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissonTableViewCell.m; sourceTree = "<group>"; };
+		7D17E0001DFD3BA400628FFC /* yuandianbai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yuandianbai.png; sourceTree = "<group>"; };
+		7D17E0011DFD3BA400628FFC /* yuandianlan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yuandianlan.png; sourceTree = "<group>"; };
+		7D17E0041DFD3C3200628FFC /* quan_guize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quan_guize.png; sourceTree = "<group>"; };
+		7D17E0051DFD3C3200628FFC /* xuanquan_guize.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xuanquan_guize.png; sourceTree = "<group>"; };
+		7D17E0081DFD4A0600628FFC /* RuleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuleModel.h; sourceTree = "<group>"; };
+		7D17E0091DFD4A0600628FFC /* RuleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuleModel.m; sourceTree = "<group>"; };
 		7D1C9DF11DF7E6FA0050CBB4 /* rigtBtnImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rigtBtnImage.png; sourceTree = "<group>"; };
 		7D1FA3E11DE5354F00A43201 /* AFHttpClient+PersonMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+PersonMember.h"; sourceTree = "<group>"; };
 		7D1FA3E21DE5354F00A43201 /* AFHttpClient+PersonMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+PersonMember.m"; sourceTree = "<group>"; };
@@ -2439,6 +2459,10 @@
 		34E6655D1DD1A57000FA41E8 /* me */ = {
 			isa = PBXGroup;
 			children = (
+				7D17E0041DFD3C3200628FFC /* quan_guize.png */,
+				7D17E0051DFD3C3200628FFC /* xuanquan_guize.png */,
+				7D17E0001DFD3BA400628FFC /* yuandianbai.png */,
+				7D17E0011DFD3BA400628FFC /* yuandianlan.png */,
 				7D02A9F91DFAB7EF00C41A56 /* newpersonback.png */,
 				34A86E671DE6840500BAA8F3 /* personcenterback.png */,
 				7D38B21A1DDFF59A00404D05 /* about.png */,
@@ -2507,6 +2531,8 @@
 			children = (
 				34FFD57E1DEC394B00A392B4 /* SearchModel.h */,
 				34FFD57F1DEC394B00A392B4 /* SearchModel.m */,
+				7D17E0081DFD4A0600628FFC /* RuleModel.h */,
+				7D17E0091DFD4A0600628FFC /* RuleModel.m */,
 				7D02A9EA1DFA859100C41A56 /* HomeDetailModel.h */,
 				7D02A9EB1DFA859100C41A56 /* HomeDetailModel.m */,
 				7D0892B51DF9530C001BBD98 /* ArticlesModel.h */,
@@ -2538,6 +2564,8 @@
 			children = (
 				34DB5D321DD41AA000C51823 /* AFHttpClient.h */,
 				34DB5D331DD41AA000C51823 /* AFHttpClient.m */,
+				7D17DFF91DFD340600628FFC /* AFHttpClient+Permission.h */,
+				7D17DFFA1DFD340600628FFC /* AFHttpClient+Permission.m */,
 				7D2816741DF116BB00A9E6DA /* AFHttpClient+Reposit.h */,
 				7D2816751DF116BB00A9E6DA /* AFHttpClient+Reposit.m */,
 				7DC89EEE1DEFD2B900564BB3 /* AFHttpClient+Article.h */,
@@ -2838,6 +2866,15 @@
 			path = ExchangePassword;
 			sourceTree = "<group>";
 		};
+		7D17DFFC1DFD37F800628FFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7D17DFFD1DFD38F400628FFC /* PermissonTableViewCell.h */,
+				7D17DFFE1DFD38F400628FFC /* PermissonTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7D38B2221DE012CF00404D05 /* About */ = {
 			isa = PBXGroup;
 			children = (
@@ -2867,6 +2904,9 @@
 		7D38B2251DE012CF00404D05 /* Permission */ = {
 			isa = PBXGroup;
 			children = (
+				7D17DFFC1DFD37F800628FFC /* Views */,
+				7D17DFF61DFD332800628FFC /* PermissionViewController.h */,
+				7D17DFF71DFD332800628FFC /* PermissionViewController.m */,
 			);
 			path = Permission;
 			sourceTree = "<group>";
@@ -3061,6 +3101,7 @@
 				34E3810E1DE5973C007501E1 /* top1.png in Resources */,
 				34DB5CFA1DD4129F00C51823 /* synth.wav in Resources */,
 				34DB5CF01DD4129F00C51823 /* hello8000.wav in Resources */,
+				7D17E0021DFD3BA400628FFC /* yuandianbai.png in Resources */,
 				34DB5C9E1DD4129E00C51823 /* msg.wav in Resources */,
 				345AB4181DD9AEB900025EEE /* penSelect.png in Resources */,
 				34DB5CE51DD4129F00C51823 /* speaker.png in Resources */,
@@ -3090,6 +3131,7 @@
 				3461F5541DD2CB4800E56298 /* tab_budaodan_dian@2x.png in Resources */,
 				345AB3DB1DD9AD5800025EEE /* egg_add.png in Resources */,
 				3461F5551DD2CB4800E56298 /* tab_budaodan@2x.png in Resources */,
+				7D17E0031DFD3BA400628FFC /* yuandianlan.png in Resources */,
 				345AB4111DD9AEB900025EEE /* food_off.png in Resources */,
 				34E381111DE5973C007501E1 /* left1.png in Resources */,
 				34DB5CA21DD4129E00C51823 /* ringback.wav in Resources */,
@@ -3097,10 +3139,12 @@
 				34DB5CAA1DD4129E00C51823 /* shortring.caf in Resources */,
 				34E381101DE5973C007501E1 /* right1.png in Resources */,
 				345AB4151DD9AEB900025EEE /* takep_off.png in Resources */,
+				7D17E0061DFD3C3200628FFC /* quan_guize.png in Resources */,
 				34DB5CD21DD4129F00C51823 /* chat_message_inprogress.png in Resources */,
 				345AB4171DD9AEB900025EEE /* penNormal.png in Resources */,
 				34DB5CE21DD4129F00C51823 /* sephone-banner.png in Resources */,
 				34DB5CDE1DD4129F00C51823 /* mic_active.png in Resources */,
+				7D17E0071DFD3C3200628FFC /* xuanquan_guize.png in Resources */,
 				34CD6C321DE7EC9E00993834 /* right_egg.png in Resources */,
 				345AB3F61DD9AEA400025EEE /* Lclick_photo.png in Resources */,
 				7DDAA36F1DFC277B0039D6C2 /* aboutlogo.png in Resources */,
@@ -3236,6 +3280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34DB5CA41DD4129E00C51823 /* SephoneManager.m in Sources */,
+				7D17E00A1DFD4A0600628FFC /* RuleModel.m in Sources */,
 				34C495DA1DD1CB3900687606 /* AppDelegate+ShareSDK.m in Sources */,
 				3461F5391DD2BB5500E56298 /* LoginViewController.m in Sources */,
 				34C496061DD1D21700687606 /* BaseViewController.m in Sources */,
@@ -3266,6 +3311,7 @@
 				7D3582B11DEE721D0028F4B4 /* NewfriendViewController.m in Sources */,
 				3436EA611DDBFE0B005659B7 /* Reachability.m in Sources */,
 				34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */,
+				7D17DFFF1DFD38F400628FFC /* PermissonTableViewCell.m in Sources */,
 				7D2816731DF1160B00A9E6DA /* MyVideoCollectionViewCell.m in Sources */,
 				7D02A9E01DFA5A9C00C41A56 /* PopStartView.m in Sources */,
 				3461F55F1DD2D00100E56298 /* AppUtil.m in Sources */,
@@ -3282,12 +3328,14 @@
 				34C495D41DD1CAF700687606 /* AppDelegate+Sephone.m in Sources */,
 				34FC41DA1DD179F900A23A8F /* AppDelegate.m in Sources */,
 				3461F5471DD2CA2500E56298 /* EggViewController.m in Sources */,
+				7D17DFF81DFD332800628FFC /* PermissionViewController.m in Sources */,
 				34FFD5801DEC394B00A392B4 /* SearchModel.m in Sources */,
 				7D2816791DF11BD100A9E6DA /* RecordModel.m in Sources */,
 				342F798B1DDD7D800022FF09 /* DeviceStats.m in Sources */,
 				34ACCF511DDC5E5000AE2B98 /* AFHttpClient+Account.m in Sources */,
 				7DC89EEA1DEFCF6900564BB3 /* CycleScrollView.m in Sources */,
 				34884C861DD4678400245C24 /* AFHttpClient+TestNetWork.m in Sources */,
+				7D17DFFB1DFD340600628FFC /* AFHttpClient+Permission.m in Sources */,
 				34C495FD1DD1CF4700687606 /* AccountManager.m in Sources */,
 				34C495F81DD1CD6C00687606 /* QFTableView.m in Sources */,
 				7D3582C01DEECC9D0028F4B4 /* NewFriendModel.m in Sources */,

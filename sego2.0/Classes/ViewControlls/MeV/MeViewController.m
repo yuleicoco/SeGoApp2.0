@@ -12,6 +12,7 @@
 #import "UIImage-Extensions.h"
 #import "ExchangPasswordViewController.h"
 #import "AboutViewController.h"
+#import "PermissionViewController.h"
 
 @interface MeViewController ()
 @property(nonatomic,strong)UILabel * nameLabel;
@@ -384,6 +385,9 @@
 
 -(void)quanxianbuttonTouch{
     FuckLog(@"权限设置");
+    PermissionViewController * perVc = [[PermissionViewController alloc]init];
+    [self.navigationController pushViewController:perVc animated:NO];
+    
     
 }
 -(void)exchangebuttonTouch{
