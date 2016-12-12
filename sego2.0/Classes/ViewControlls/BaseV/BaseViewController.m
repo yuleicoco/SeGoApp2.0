@@ -178,7 +178,7 @@
 
 //- (BOOL)shouldAutorotate
 //{
-//    return [self.navigationController shouldAutorotate];
+//    return NO;
 //}
 //
 //- (UIInterfaceOrientationMask)supportedInterfaceOrientations
