@@ -55,6 +55,12 @@
     int _startY;
     
     
+    int stetion;
+    
+    BOOL isTurnOff;
+    
+    
+    
     
     
     
@@ -92,7 +98,14 @@
     [super viewDidLoad];
     strHZ = @"1";
     openLight = @"off";
-    
+    isTurnOff = NO;
+   
+    UISwipeGestureRecognizer * screenEdgePan =[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handScreenEdgeGesture:)];
+    screenEdgePan.direction = UISwipeGestureRecognizerDirectionUp;
+    screenEdgePan.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.view addGestureRecognizer:screenEdgePan];
+    [UIApplication sharedApplication].statusBarHidden = YES;
+
    
     NSString * str = [Defaluts objectForKey:PREF_DEVICE_NUMBER];
     NSString * str1 = [Defaluts objectForKey:TERMID_DEVICNUMER];
@@ -139,6 +152,19 @@
     
 }
 
+
+
+- (void)handScreenEdgeGesture:(UISwipeGestureRecognizer *)sender
+{
+    
+    FuckLog(@"清扫收拾");
+    isTurnOff = YES;
+    
+    
+    
+}
+
+
 // 记录时间
 - (void)updateTime
 {
@@ -168,10 +194,20 @@
 // 重新方法
 - (void)applicationWillResignActive:(UIApplication *)application {
     
+    
+    if (isTurnOff) {
+        
+        // 不管
+    }else
+    {
       [self RefreshCellForLiveId];
     
+    }
     
 }
+
+
+
 
 // 监听用户home操作
 - (void)RefreshCellForLiveId
@@ -179,6 +215,7 @@
     
     [SephoneManager terminateCurrentCallOrConference];
     [self dismissViewControllerAnimated:YES completion:nil];
+    FuckLog(@"触发home键盘");
     
     
 }
@@ -197,6 +234,7 @@
     if (![SephoneManager hasCall:calls]) {
         
         [self dismissViewControllerAnimated:YES completion:nil];
+         FuckLog(@"call 状态");
         return;
     }
     
@@ -418,7 +456,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
     
     if ([strHZ isEqualToString:@"1"]) {
-        
+        [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientationDidChange) name:UIDeviceOrientationDidChangeNotification object:nil];
         [self rightAction];
         [self HviewUpdateView];
     }else
@@ -964,8 +1003,11 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
         // 移动view
         [UIView animateWithDuration:0.5 animations:^{
             FiveView.center = CGPointMake(687, FiveView.center.y);
+            
         } completion:^(BOOL finished) {
             //平移结束
+            FuckLog(@"出去");
+            return ;
             
         }];
     }else
@@ -974,6 +1016,9 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
             FiveView.center = CGPointMake(625.5, FiveView.center.y);
         } completion:^(BOOL finished) {
             //平移结束
+            FuckLog(@"回来");
+            
+            return ;
             
         }];
 
@@ -993,7 +1038,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     [SephoneManager terminateCurrentCallOrConference];
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    
+     FuckLog(@"正常返回");
 }
 // 激光笔点击
 -(void)penClicKbtn:(UISlider *)sender
@@ -1280,6 +1325,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 
 - (BOOL)shouldAutorotate
 {
+    
+    
     return NO;
 }
 
@@ -1358,7 +1405,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
         case SephoneCallEnd:
         case SephoneCallError: {
             call = NULL;
-            NSLog(@"超时返回");
+            FuckLog(@"超时返回错误");
             [self dismissViewControllerAnimated:YES completion:nil];
             break;
         }
@@ -1383,13 +1430,13 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 {
     
     [super viewWillDisappear:animated];
-   // [UIApplication sharedApplication].statusBarHidden = NO;
+    [UIApplication sharedApplication].statusBarHidden = NO;
     // Clear windows
     //  必须清除，否则会因为arc导致再次视频通话时crash。
     sephone_core_set_native_video_window_id([SephoneManager getLc], (unsigned long)NULL);
     // Remove observer
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kSephoneCallUpdate object:nil];
-    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillResignActiveNotification object:[UIApplication sharedApplication]];
     
 }
 
@@ -1420,6 +1467,39 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
 }
 
+
+- (void)deviceOrientationDidChange
+{
+   FuckLog(@"===============:%ld",(long)[UIDevice currentDevice].orientation);
+     stetion =[UIDevice currentDevice].orientation;
+    if([UIDevice currentDevice].orientation == UIDeviceOrientationPortrait) {
+        [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait];
+        [self orientationChange:NO];
+        //注意： UIDeviceOrientationLandscapeLeft 与 UIInterfaceOrientationLandscapeRight
+    } else if ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft) {
+        [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeRight];
+        [self orientationChange:YES];
+    }
+}
+
+- (void)orientationChange:(BOOL)landscapeRight
+{
+
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    CGFloat height = [UIScreen mainScreen].bounds.size.height;
+    if (landscapeRight) {
+        [UIView animateWithDuration:0.2f animations:^{
+            self.view.transform = CGAffineTransformMakeRotation(M_PI_2);
+            self.view.bounds = CGRectMake(0, 0, width, height);
+        }];
+    } else {
+        [UIView animateWithDuration:0.2f animations:^{
+            self.view.transform = CGAffineTransformMakeRotation(0);
+            self.view.bounds = CGRectMake(0, 0, width, height);
+        }];
+    }
+    
+}
 
 
 

@@ -71,6 +71,14 @@
 }
 
 
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    
+    return  UIInterfaceOrientationMaskPortrait;
+    
+}
+
+
 #pragma mark - Core Data stack
 
 @synthesize persistentContainer = _persistentContainer;
