@@ -10,9 +10,14 @@
 #import "InformationViewController.h"
 #import "UIImageView+WebCache.h"
 #import "UIImage-Extensions.h"
+#import "ExchangPasswordViewController.h"
+#import "AboutViewController.h"
+#import "PermissionViewController.h"
+
 @interface MeViewController ()
 @property(nonatomic,strong)UILabel * nameLabel;
 @property(nonatomic,strong)UIButton * headBtn;
+@property (nonatomic,strong)UIImageView * headImage;
 @end
 
 @implementation MeViewController
@@ -32,8 +37,7 @@
 
 -(void)changeName{
     _nameLabel.text = [AccountManager sharedAccountManager].loginModel.nickname;
-    UIImage * btnImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[AccountManager sharedAccountManager].loginModel.headportrait]]];
-    [_headBtn setImage:btnImage forState:UIControlStateNormal];
+      [_headImage sd_setImageWithURL:[NSURL URLWithString:[AccountManager sharedAccountManager].loginModel.headportrait] placeholderImage:[UIImage imageNamed:@"sego1.png"]];
     
 
 
@@ -45,7 +49,7 @@
     self.view.backgroundColor = GRAY_COLOR;
     UIImageView * topImage = [[UIImageView alloc]init];
    // topImage.backgroundColor= [UIColor redColor];
-    topImage.image = [UIImage imageNamed:@"personcenterback.png"];
+    topImage.image = [UIImage imageNamed:@"newpersonback.png"];
     [self.view addSubview:topImage];
     [topImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(topImage.superview);
@@ -68,16 +72,16 @@
     }];
     
     
-    UIImageView * headImage = [[UIImageView alloc]init];
-    headImage.backgroundColor = [UIColor clearColor];
-    headImage.layer.cornerRadius = 40;
-    [headImage.layer setMasksToBounds:YES];
-    [headImage sd_setImageWithURL:[NSURL URLWithString:[AccountManager sharedAccountManager].loginModel.headportrait] placeholderImage:[UIImage imageNamed:@"sego1.png"]];
-    [self.view addSubview:headImage];
-    [headImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(headImage.superview).offset(14);
-        make.left.equalTo(headImage.superview).offset(147);
-        make.right.equalTo(headImage.superview).offset(-147);
+    _headImage = [[UIImageView alloc]init];
+    _headImage.backgroundColor = [UIColor clearColor];
+    _headImage.layer.cornerRadius = 40;
+    [_headImage.layer setMasksToBounds:YES];
+    [_headImage sd_setImageWithURL:[NSURL URLWithString:[AccountManager sharedAccountManager].loginModel.headportrait] placeholderImage:[UIImage imageNamed:@"sego1.png"]];
+    [self.view addSubview:_headImage];
+    [_headImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_headImage.superview).offset(14);
+        make.left.equalTo(_headImage.superview).offset(147);
+        make.right.equalTo(_headImage.superview).offset(-147);
         make.height.mas_equalTo(80);
     }];
     
@@ -381,15 +385,31 @@
 
 -(void)quanxianbuttonTouch{
     FuckLog(@"权限设置");
+    PermissionViewController * perVc = [[PermissionViewController alloc]init];
+    [self.navigationController pushViewController:perVc animated:NO];
+    
     
 }
 -(void)exchangebuttonTouch{
     FuckLog(@"修改密码");
+    if ([AppUtil isBlankString: [AccountManager sharedAccountManager].loginModel.type ]) {
+        ExchangPasswordViewController * exchangVc = [[ExchangPasswordViewController alloc]init];
+        [self.navigationController pushViewController:exchangVc animated:NO];
+        
+    }else{
+          [[AppUtil appTopViewController]showHint:@"第三方登录，不能修改密码哦亲"];
+    }
+    
+    
     
 }
 
 -(void)aboutbuttonTouch{
     FuckLog(@"关于");
+    AboutViewController * aboutVc = [[AboutViewController alloc]init];
+    [self.navigationController pushViewController:aboutVc animated:NO];
+    
+    
     
 }
 

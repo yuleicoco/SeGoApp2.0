@@ -39,7 +39,7 @@ static NSString * cellId = @"InformationCellId";
 @property (nonatomic,assign) long selectedDayRow;
 @property (nonatomic,retain) UIPickerView *pickViewList;
 
-
+@property (nonatomic,strong) UIImageView * headImage;
 
 
 @end
@@ -78,7 +78,7 @@ static NSString * cellId = @"InformationCellId";
 
     }];
     
-   _headBtn = [[UIButton alloc]init];
+    _headBtn = [[UIButton alloc]init];
     //headBtn.backgroundColor = [UIColor blackColor];
     [_headBtn.layer setMasksToBounds:YES];
     _headBtn.layer.cornerRadius = 33;
@@ -90,6 +90,24 @@ static NSString * cellId = @"InformationCellId";
         make.bottom.equalTo(topView.mas_bottom).offset(-7);
         make.width.mas_offset(66);
     }];
+    
+    _headImage = [[UIImageView alloc]init];
+    _headImage.backgroundColor = [UIColor clearColor];
+    _headImage.layer.cornerRadius = 33;
+    [_headImage.layer setMasksToBounds:YES];
+    [_headImage sd_setImageWithURL:[NSURL URLWithString:[AccountManager sharedAccountManager].loginModel.headportrait] placeholderImage:[UIImage imageNamed:@"sego1.png"]];
+    [self.view addSubview:_headImage];
+    [_headImage mas_makeConstraints:^(MASConstraintMaker *make) {
+         make.right.equalTo(_headImage.superview).offset(-12);
+        make.top.equalTo(topView.mas_top).offset(7);
+        make.bottom.equalTo(topView.mas_bottom).offset(-7);
+        make.width.mas_offset(66);
+    }];
+    
+    
+    
+    
+    
     
     
     
@@ -232,19 +250,18 @@ static NSString * cellId = @"InformationCellId";
     UIImage * showImage = info[UIImagePickerControllerEditedImage];
     NSLog(@"wocaocao:%@",showImage);
     
-  //  [[NSNotificationCenter defaultCenter]postNotificationName:@"handImageText" object:showImage];
+   // [[NSNotificationCenter defaultCenter]postNotificationName:@"handImageText" object:showImage];
    // _headImage.image = showImage;
-    [_headBtn setImage:showImage forState:UIControlStateNormal];
-    
+  //  [_headBtn setImage:showImage forState:UIControlStateNormal];
+    _headImage.image = showImage;
     NSData * data = UIImageJPEGRepresentation(showImage,1.0f);
     [formater setDateFormat:@"yyyy-MM-dd-HH:mm:ss"];
     [formater stringFromDate:[NSDate date]];
     NSString *picname1 = [NSString stringWithFormat:@"%@.jpg",[formater stringFromDate:[NSDate date]]];
     
-    
     NSString * pictureDataString = [data base64EncodedStringWithOptions:0];
     // NSLog(@"%@",pictureDataString);
-   
+    
     _picstr = [NSString stringWithFormat:@"[{\"%@\":\"%@\",\"%@\":\"%@\"}]",@"name",picname1,@"content",pictureDataString];
     [self changgeheadRequest];
     [self dismissViewControllerAnimated:YES completion:nil];

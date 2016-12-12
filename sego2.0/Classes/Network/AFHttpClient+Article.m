@@ -8,6 +8,7 @@
 
 #import "AFHttpClient+Article.h"
 #import "ArticlesModel.h"
+#import "HomeDetailModel.h"
 
 @implementation AFHttpClient (Article)
 -(void)querRecommedcomplete:(void (^)(BaseModel *))completeBlock{
@@ -68,6 +69,38 @@
 }
 
 
+-(void)queryByAid:(NSString *)aid complete:(void (^)(BaseModel *))completeBlock{
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    params[@"common"] = @"queryByAid";
+    params[@"aid"] = aid;
+    [self POST:@"clientAction.do" parameters:params result:^(BaseModel *model) {
+        if (model) {
+            model.list = [HomeDetailModel arrayOfModelsFromDictionaries:model.list];
+        }
+        if (completeBlock) {
+            completeBlock(model);
+        }
+    }];
+
+}
+
+-(void)delArticleWithMid:(NSString *)mid aid:(NSString *)aid complete:(void (^)(BaseModel *))completeBlock{
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    params[@"common"] = @"delArticle";
+    params[@"mid"] = mid;
+    params[@"aid"] = aid;
+    [self POST:@"clientAction.do" parameters:params result:^(BaseModel *model) {
+//        if (model) {
+//            model.list = [HomeDetailModel arrayOfModelsFromDictionaries:model.list];
+//        }
+        if (completeBlock) {
+            completeBlock(model);
+        }
+    }];
+
+
+
+}
 
 
 

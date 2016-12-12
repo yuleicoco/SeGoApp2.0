@@ -7,7 +7,7 @@
 //
 
 #import "CompletionViewController.h"
-
+#import "AFHttpClient+Account.h"
 @interface CompletionViewController ()
 @property (nonatomic,strong)UIButton * vercationBtn;
 @property (nonatomic,strong)UIButton * registBtn;
@@ -15,6 +15,9 @@
 @property (nonatomic,strong)UITextField * vercationTextfield;
 @property (nonatomic,strong)UITextField * passwordTextfield;
 @property (nonatomic,strong)UITextField * surepasswordTextfield;
+
+@property (nonatomic,copy)NSString * achieveString;
+@property (nonatomic,copy)NSString * vercationNumber;
 @end
 
 @implementation CompletionViewController
@@ -70,8 +73,7 @@
     [_vercationBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
     _vercationBtn.titleLabel.font = [UIFont systemFontOfSize:17];
     [_vercationBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
-    
+        [_vercationBtn addTarget:self action:@selector(vercationbuttontouch) forControlEvents:UIControlEventTouchUpInside];
     
     
     [self.view addSubview:_vercationBtn];
@@ -113,11 +115,6 @@
         make.left.equalTo(verificationLabel.mas_right).offset(13);
         make.centerY.equalTo(verificationView.mas_centerY).offset(1);
     }];
-    
-    
-    
-    
-    
     
     UIView * passwordView = [[UIView alloc]init];
     passwordView.backgroundColor = [UIColor whiteColor];
@@ -190,24 +187,133 @@
     _registBtn = [[UIButton alloc]init];
     _registBtn.backgroundColor = GREEN_COLOR;
     _registBtn.layer.cornerRadius = 5;
-    
     [_registBtn setTitle:@"确 定" forState:UIControlStateNormal];
     [_registBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     _registBtn.titleLabel.font = [UIFont systemFontOfSize:20];
-    
+    [_registBtn addTarget:self action:@selector(regiestButtontouch) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_registBtn];
     [_registBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(surepasswordView.mas_bottom).offset(25);
         make.left.equalTo(passwordView.mas_left);
         make.right.equalTo(passwordView.mas_right);
         make.height.mas_equalTo(55);
-        
+    
     }];
+    
+}
+-(void)regiestButtontouch{
+    if ([AppUtil isBlankString:_numberTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入账号"];
+        return;
+    }
+    if (![AppUtil isValidateMobile:_numberTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入正确格式的手机号码"];
+        return;
+    }
+    if ([AppUtil isBlankString:_vercationTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入验证码"];
+        return;
+    }
+    if ([AppUtil isBlankString:_passwordTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入密码"];
+        return;
+    }
+    if ([AppUtil isBlankString:_surepasswordTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请再次输入密码"];
+        return;
+    }
+    if (![_passwordTextfield.text isEqualToString:_surepasswordTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"两次输入密码不一致"];
+        return;
+    }
+    
+    if (![_numberTextfield.text isEqualToString:_achieveString]) {
+        [[AppUtil appTopViewController] showHint:@"请输入正确的手机号码"];
+        return;
+    }
+    
+    if (![_vercationTextfield.text isEqualToString:_vercationNumber]) {
+        [[AppUtil appTopViewController] showHint:@"请输入正确的验证码"];
+        return;
+    }
+    
+    
+    [self showHudInView:self.view hint:@"正在修改..."];
+//    [[AFHttpClient sharedAFHttpClient]regiestWithPhone:_numberTextfield.text password:_passwordTextfield.text complete:^(BaseModel *model) {
+//        
+//        [self hideHud];
+//        [[AppUtil appTopViewController] showHint:model.retDesc];
+//    }];
+//    
+        [[AFHttpClient sharedAFHttpClient]forgetPasswordWithPhone:_numberTextfield.text password:_passwordTextfield.text complete:^(BaseModel *model) {
+            
+            [self hideHud];
+            [[AppUtil appTopViewController] showHint:model.retDesc];
+        }];
     
     
 }
 
+-(void)vercationbuttontouch{
+    if ([AppUtil isBlankString:_numberTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入账号"];
+        return;
+    }
+    if (![AppUtil isValidateMobile:_numberTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入正确格式的手机号码"];
+        return;
+    }
+    
+    [self provied];
+}
 
+-(void)provied{
+    FuckLog(@"dada");
+    [self timeout];
+    
+    [[AFHttpClient sharedAFHttpClient]getCheckWithPhone:_numberTextfield.text type:@"modifypassword" complete:^(BaseModel *model) {
+        
+        if (model) {
+            _achieveString = model.totalrecords;
+            _vercationNumber = model.content;
+        }
+        [[AppUtil appTopViewController] showHint:model.retDesc];
+    }];
+    
+}
+- (void)timeout
+{
+    __block int timeout=60; //倒计时时间
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
+    dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0);     dispatch_source_set_event_handler(_timer, ^{
+        if(timeout<=0){ //倒计时结束，关闭
+            dispatch_source_cancel(_timer);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                _vercationBtn.titleLabel.font = [UIFont systemFontOfSize:18  ];
+                [_vercationBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+                _vercationBtn.userInteractionEnabled = YES;
+                _vercationBtn.backgroundColor = GREEN_COLOR;
+            });
+        }else{
+            // int seconds = timeout % 60;
+            NSString *strTime = [NSString stringWithFormat:@"%.2d", timeout];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIView beginAnimations:nil context:nil];
+                [UIView setAnimationDuration:1];
+                _vercationBtn.titleLabel.font = [UIFont systemFontOfSize:13];
+                [_vercationBtn setTitle:[NSString stringWithFormat:@"%@秒后重新发送",strTime] forState:UIControlStateNormal];
+                [UIView commitAnimations];
+                
+                _vercationBtn.userInteractionEnabled = NO;
+                _vercationBtn.backgroundColor = [UIColor grayColor];
+            });
+            timeout--;
+        }
+    });
+    dispatch_resume(_timer);
+    
+}
 
 
 @end
