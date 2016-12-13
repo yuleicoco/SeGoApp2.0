@@ -10,6 +10,8 @@
 #import "SearchTableViewCell.h"
 #import "AFHttpClient+Found.h"
 #import "SearchModel.h"
+#import "EggViewController.h"
+
 
 static NSString * cellId = @"searchtabviewId";
 @interface SearchDoumaViewController ()
@@ -170,10 +172,11 @@ static NSString * cellId = @"searchtabviewId";
 
 -(void)rightButtontouch{
      SearchModel * model = self.dataSource[0];
-    NSString * resolution = model.resolution;
-    NSString * mid = model.mid;
-
-    
+    // 通过搜索开启别人视频
+    EggViewController * eggVC =[[EggViewController alloc]init];
+    eggVC.SearchMid = model.mid;
+    eggVC.isOther = YES;
+    [self.navigationController pushViewController:eggVC animated:NO];
     
     
 }

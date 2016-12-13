@@ -10,6 +10,7 @@
 #import "DouyiDouTableViewCell.h"
 #import "AFHttpClient+Found.h"
 #import "SearchModel.h"
+#import "EggViewController.h"
 
 
 static NSString * cellId = @"douyidouCellid";
@@ -110,8 +111,13 @@ static NSString * cellId = @"douyidouCellid";
 -(void)rightButtontouch1:(UIButton *)sender{
     NSInteger i = sender.tag - 111;
     SearchModel * model = self.dataSource[i];
-    NSString * resolution = model.resolution;
-    NSString * mid = model.mid;
+    // 通过逗一逗
+    EggViewController * eggVC =[[EggViewController alloc]init];
+    eggVC.DouMid = model.mid;
+    eggVC.isOther = YES;
+    [self.navigationController pushViewController:eggVC animated:NO];
+    
+    
     
     
 }

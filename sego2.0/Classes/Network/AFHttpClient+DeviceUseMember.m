@@ -147,4 +147,25 @@
     
 }
 
+- (void)checkMidFriend:(NSString *)mid  complete:(void (^)(BaseModel *))completeBlock
+{
+    NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
+    parms[@"common"] = @"queryByRule";
+    parms[@"friend"] = mid;
+    [self POST:@"clientAction.do?" parameters:parms result:^(BaseModel * model) {
+
+        if (model) {
+            completeBlock(model);
+        }
+        
+    }];
+
+    
+
+    
+    
+    
+}
+
+
 @end
