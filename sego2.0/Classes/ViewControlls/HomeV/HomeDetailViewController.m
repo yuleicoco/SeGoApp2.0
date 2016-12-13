@@ -123,16 +123,16 @@ static NSString * cellId = @"homedetailviewellId";
     
     
      
-    
+    NSString * strUrl =[NSString stringWithFormat:@"http://180.97.81.213:15311/clientAction.do?method=client&nextPage=/s/article/article.jsp&aid=%@&mid=%@&access=outside",_aid,[AccountManager sharedAccountManager].loginModel.mid];
     //1、创建分享参数
-    NSArray* imageArray = @[[UIImage imageNamed:@"top1.png"]];
+    NSArray* imageArray = @[[UIImage imageNamed:@"sego.png"]];
     if (imageArray) {
         
         NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
-        [shareParams SSDKSetupShareParamsByText:@"分享内容"
+        [shareParams SSDKSetupShareParamsByText:@"我是不倒蛋"
                                          images:imageArray
-                                            url:[NSURL URLWithString:@"http://mob.com"]
-                                          title:@"分享标题"
+                                            url:[NSURL URLWithString:strUrl]
+                                          title:@"分享"
                                            type:SSDKContentTypeAuto];
         //2、分享（可以弹出我们的分享菜单和编辑界面）
         [ShareSDK showShareActionSheet:nil //要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，只有传这个才可以弹出我们的分享菜单，可以传分享的按钮对象或者自己创建小的view 对象，iPhone可以传nil不会影响

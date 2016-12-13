@@ -234,6 +234,40 @@
 - (void)checkDeviceStats
 {
     
+    
+
+    if (isOther) {
+        
+        NSString * midOther;
+        if ([AppUtil isBlankString:DouMid]) {
+            
+            midOther = SearchMid;
+        }else
+        {
+            midOther = DouMid;
+        }
+        
+        [[AFHttpClient sharedAFHttpClient]DeviceStats: midOther complete:^(BaseModel *model) {
+            
+            FuckLog(@"%@",model);
+            if ([model.retCode isEqualToString:@"0000"]) {
+                strState = [NSString stringWithFormat:@"%@",model.retVal[@"status"]];
+                [self updateviewMethod];
+                
+            }// 没有设备
+            else if ([model.totalrecords isEqualToString:@"0"])
+            {
+                strState = [NSString stringWithFormat:@"%@",@"ds000"];
+                [self updateviewMethod];
+                
+            }
+            
+            [self ReshUI];
+            
+            
+        }];
+    }else
+    {
     [[AFHttpClient sharedAFHttpClient]DeviceStats: [AccountManager sharedAccountManager].loginModel.mid complete:^(BaseModel *model) {
         
         FuckLog(@"%@",model);
@@ -254,6 +288,7 @@
         
     }];
     
+    }
 }
 
 

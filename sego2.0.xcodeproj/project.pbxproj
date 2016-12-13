@@ -439,6 +439,8 @@
 		34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+TestNetWork.m"; sourceTree = "<group>"; };
 		34884C871DD5742200245C24 /* CheckDeviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckDeviceModel.h; sourceTree = "<group>"; };
 		34884C881DD5742200245C24 /* CheckDeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckDeviceModel.m; sourceTree = "<group>"; };
+		34984F5E1DFF9D3300DAFA6E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		34984F5F1DFF9D3300DAFA6E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		349C0BF51DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+VideoQuiltChoose.h"; sourceTree = "<group>"; };
 		349C0BF61DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+VideoQuiltChoose.m"; sourceTree = "<group>"; };
 		349C0BF81DDEF00700834791 /* AFHttpClient+DeviceUseMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+DeviceUseMember.h"; sourceTree = "<group>"; };
@@ -3425,6 +3427,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				34FC41DF1DD179F900A23A8F /* Base */,
+				34984F5E1DFF9D3300DAFA6E /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -3433,6 +3436,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				34FC41E71DD179F900A23A8F /* Base */,
+				34984F5F1DFF9D3300DAFA6E /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
