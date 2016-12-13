@@ -13,7 +13,7 @@
 @property (nonatomic,strong)UILabel * doumaLabel;
 @property (nonatomic,strong)UILabel * toushiLabel;
 @property (nonatomic,strong)UILabel * timeoverLabel;
-
+@property (nonatomic,strong)UIButton * toushiBtn;
 @property (nonatomic,strong)UIButton * doumaBtn;
 @property (nonatomic,strong)UIButton * shixiaoBtn;
 @property (nonatomic,strong)NSDictionary * sourceDic;
@@ -111,12 +111,12 @@
 
     }];
     
-    UIButton * toushiBtn = [[UIButton alloc]init];
-    toushiBtn.backgroundColor = [UIColor clearColor];
-    [toushiBtn addTarget:self action:@selector(toushiButtonTouch) forControlEvents:UIControlEventTouchUpInside];
-    [topView addSubview:toushiBtn];
-    [toushiBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(toushiBtn.superview);
+    _toushiBtn = [[UIButton alloc]init];
+    _toushiBtn.backgroundColor = [UIColor clearColor];
+    [_toushiBtn addTarget:self action:@selector(toushiButtonTouch) forControlEvents:UIControlEventTouchUpInside];
+    [topView addSubview:_toushiBtn];
+    [_toushiBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(_toushiBtn.superview);
         make.top.equalTo(lineLabel1.mas_bottom);
         make.bottom.equalTo(lineLabel2.mas_top);
         make.width.mas_equalTo(200);
@@ -216,11 +216,14 @@
             _shixiaoBtn.hidden = YES;
             _doumaBtn.hidden = NO;
             _isShare = NO;
+            _toushiBtn.userInteractionEnabled=YES;
             [self showBarButton:NAV_RIGHT title:@"分享" fontColor:LIGHT_GRAYdcdc_COLOR hide:NO];
         }else{
             _shixiaoBtn.hidden = NO;
             _doumaBtn.hidden = YES;
             _isShare = YES;
+            _toushiLabel.textColor = LIGHT_GRAYdcdc_COLOR;
+            _toushiBtn.userInteractionEnabled = NO;
             [self showBarButton:NAV_RIGHT title:@"分享" fontColor:GREEN_COLOR hide:NO];
             _doumaLabel.text = _sourceDic[@"playcode"];
             if ([_sourceDic[@"tsnum"] isEqualToString:@"0"]) {
@@ -243,8 +246,6 @@
         //什么都不做
     }else{
         FuckLog(@"分享");
-    
-    
     
     
     }

@@ -345,6 +345,7 @@
 		7DE3D7771DFE95E200AC2695 /* sego.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DE3D7761DFE95E200AC2695 /* sego.png */; };
 		7DE3D77A1DFEA3FB00AC2695 /* ExchangPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3D7791DFEA3FB00AC2695 /* ExchangPermissionViewController.m */; };
 		7DF0758D1DFFD65A00A45824 /* AFHttpClient+FunnyCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0758C1DFFD65A00A45824 /* AFHttpClient+FunnyCode.m */; };
+		7DF075901DFFF92D00A45824 /* ZdFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0758F1DFFF92D00A45824 /* ZdFriendViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1211,6 +1212,8 @@
 		7DE3D7791DFEA3FB00AC2695 /* ExchangPermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangPermissionViewController.m; sourceTree = "<group>"; };
 		7DF0758B1DFFD65A00A45824 /* AFHttpClient+FunnyCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+FunnyCode.h"; sourceTree = "<group>"; };
 		7DF0758C1DFFD65A00A45824 /* AFHttpClient+FunnyCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+FunnyCode.m"; sourceTree = "<group>"; };
+		7DF0758E1DFFF92D00A45824 /* ZdFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZdFriendViewController.h; sourceTree = "<group>"; };
+		7DF0758F1DFFF92D00A45824 /* ZdFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZdFriendViewController.m; sourceTree = "<group>"; };
 		9BB5CB8271F3FD7EA2EAFCC8 /* Pods-sego2.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sego2.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sego2.0/Pods-sego2.0.debug.xcconfig"; sourceTree = "<group>"; };
 		D717670192D3D82245676E28 /* Pods-sego2.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sego2.0.release.xcconfig"; path = "Pods/Target Support Files/Pods-sego2.0/Pods-sego2.0.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -2936,6 +2939,8 @@
 				7DE3D7741DFE443F00AC2695 /* NewPermissionViewController.m */,
 				7DE3D7781DFEA3FB00AC2695 /* ExchangPermissionViewController.h */,
 				7DE3D7791DFEA3FB00AC2695 /* ExchangPermissionViewController.m */,
+				7DF0758E1DFFF92D00A45824 /* ZdFriendViewController.h */,
+				7DF0758F1DFFF92D00A45824 /* ZdFriendViewController.m */,
 			);
 			path = Permission;
 			sourceTree = "<group>";
@@ -3394,6 +3399,7 @@
 				34C495FA1DD1CD6C00687606 /* UIViewController+HUD.m in Sources */,
 				342F799A1DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.m in Sources */,
 				345AB4291DD9B3C000025EEE /* InCallViewController.m in Sources */,
+				7DF075901DFFF92D00A45824 /* ZdFriendViewController.m in Sources */,
 				7DC89EFA1DF01A0800564BB3 /* BaseGridViewController.m in Sources */,
 				34CFC4691DDC369B00444AA2 /* WifiViewController.m in Sources */,
 				7DC89EF01DEFD2B900564BB3 /* AFHttpClient+Article.m in Sources */,
