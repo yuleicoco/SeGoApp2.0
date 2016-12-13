@@ -319,9 +319,11 @@
 		7D38B2281DE02B9C00404D05 /* BaseTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D38B2271DE02B9C00404D05 /* BaseTabViewController.m */; };
 		7D38B22B1DE0310100404D05 /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D38B22A1DE0310100404D05 /* InformationViewController.m */; };
 		7D38B22F1DE047FA00404D05 /* InformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D38B22E1DE047FA00404D05 /* InformationTableViewCell.m */; };
-		7D3C56341DEEDCA8000B2930 /* sego1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3C56331DEEDCA8000B2930 /* sego1.png */; };
 		7D5255A51DDAE306000EB0B0 /* GuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5255A41DDAE306000EB0B0 /* GuideViewController.m */; };
 		7D626A401DD95636002C0F8B /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D626A3F1DD95636002C0F8B /* RegistViewController.m */; };
+		7D99357E1DFF8D9E006D5A17 /* sego1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D99357D1DFF8D9E006D5A17 /* sego1.png */; };
+		7D9935811DFF8F8C006D5A17 /* FunnycodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D9935801DFF8F8C006D5A17 /* FunnycodeViewController.m */; };
+		7D9935851DFF9291006D5A17 /* FunnycodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D9935841DFF9291006D5A17 /* FunnycodeTableViewCell.m */; };
 		7DABCB0F1DF6AF0A00CA50C4 /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DABCB0E1DF6AF0A00CA50C4 /* video.png */; };
 		7DC89EEA1DEFCF6900564BB3 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC89EE91DEFCF6900564BB3 /* CycleScrollView.m */; };
 		7DC89EED1DEFCF7B00564BB3 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC89EEC1DEFCF7B00564BB3 /* NSTimer+Addition.m */; };
@@ -342,6 +344,7 @@
 		7DE3D7751DFE443F00AC2695 /* NewPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3D7741DFE443F00AC2695 /* NewPermissionViewController.m */; };
 		7DE3D7771DFE95E200AC2695 /* sego.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DE3D7761DFE95E200AC2695 /* sego.png */; };
 		7DE3D77A1DFEA3FB00AC2695 /* ExchangPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3D7791DFEA3FB00AC2695 /* ExchangPermissionViewController.m */; };
+		7DF0758D1DFFD65A00A45824 /* AFHttpClient+FunnyCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0758C1DFFD65A00A45824 /* AFHttpClient+FunnyCode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1163,11 +1166,15 @@
 		7D38B22A1DE0310100404D05 /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
 		7D38B22D1DE047FA00404D05 /* InformationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationTableViewCell.h; sourceTree = "<group>"; };
 		7D38B22E1DE047FA00404D05 /* InformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationTableViewCell.m; sourceTree = "<group>"; };
-		7D3C56331DEEDCA8000B2930 /* sego1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sego1.png; sourceTree = "<group>"; };
 		7D5255A31DDAE306000EB0B0 /* GuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuideViewController.h; sourceTree = "<group>"; };
 		7D5255A41DDAE306000EB0B0 /* GuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuideViewController.m; sourceTree = "<group>"; };
 		7D626A3E1DD95636002C0F8B /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
 		7D626A3F1DD95636002C0F8B /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
+		7D99357D1DFF8D9E006D5A17 /* sego1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sego1.png; sourceTree = "<group>"; };
+		7D99357F1DFF8F8C006D5A17 /* FunnycodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunnycodeViewController.h; sourceTree = "<group>"; };
+		7D9935801DFF8F8C006D5A17 /* FunnycodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunnycodeViewController.m; sourceTree = "<group>"; };
+		7D9935831DFF9291006D5A17 /* FunnycodeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunnycodeTableViewCell.h; sourceTree = "<group>"; };
+		7D9935841DFF9291006D5A17 /* FunnycodeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunnycodeTableViewCell.m; sourceTree = "<group>"; };
 		7DABCB0E1DF6AF0A00CA50C4 /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video.png; sourceTree = "<group>"; };
 		7DC89EE81DEFCF6900564BB3 /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
 		7DC89EE91DEFCF6900564BB3 /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
@@ -1202,6 +1209,8 @@
 		7DE3D7761DFE95E200AC2695 /* sego.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sego.png; sourceTree = "<group>"; };
 		7DE3D7781DFEA3FB00AC2695 /* ExchangPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangPermissionViewController.h; sourceTree = "<group>"; };
 		7DE3D7791DFEA3FB00AC2695 /* ExchangPermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangPermissionViewController.m; sourceTree = "<group>"; };
+		7DF0758B1DFFD65A00A45824 /* AFHttpClient+FunnyCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+FunnyCode.h"; sourceTree = "<group>"; };
+		7DF0758C1DFFD65A00A45824 /* AFHttpClient+FunnyCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+FunnyCode.m"; sourceTree = "<group>"; };
 		9BB5CB8271F3FD7EA2EAFCC8 /* Pods-sego2.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sego2.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sego2.0/Pods-sego2.0.debug.xcconfig"; sourceTree = "<group>"; };
 		D717670192D3D82245676E28 /* Pods-sego2.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sego2.0.release.xcconfig"; path = "Pods/Target Support Files/Pods-sego2.0/Pods-sego2.0.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -2365,7 +2374,7 @@
 		34E665541DD1A43800FA41E8 /* background */ = {
 			isa = PBXGroup;
 			children = (
-				7D3C56331DEEDCA8000B2930 /* sego1.png */,
+				7D99357D1DFF8D9E006D5A17 /* sego1.png */,
 			);
 			path = background;
 			sourceTree = "<group>";
@@ -2576,6 +2585,8 @@
 				34DB5D331DD41AA000C51823 /* AFHttpClient.m */,
 				7D17DFF91DFD340600628FFC /* AFHttpClient+Permission.h */,
 				7D17DFFA1DFD340600628FFC /* AFHttpClient+Permission.m */,
+				7DF0758B1DFFD65A00A45824 /* AFHttpClient+FunnyCode.h */,
+				7DF0758C1DFFD65A00A45824 /* AFHttpClient+FunnyCode.m */,
 				7D2816741DF116BB00A9E6DA /* AFHttpClient+Reposit.h */,
 				7D2816751DF116BB00A9E6DA /* AFHttpClient+Reposit.m */,
 				7DC89EEE1DEFD2B900564BB3 /* AFHttpClient+Article.h */,
@@ -2898,6 +2909,9 @@
 		7D38B2231DE012CF00404D05 /* Funnycode */ = {
 			isa = PBXGroup;
 			children = (
+				7D9935821DFF9278006D5A17 /* Views */,
+				7D99357F1DFF8F8C006D5A17 /* FunnycodeViewController.h */,
+				7D9935801DFF8F8C006D5A17 /* FunnycodeViewController.m */,
 			);
 			path = Funnycode;
 			sourceTree = "<group>";
@@ -2960,6 +2974,15 @@
 				7D5255A41DDAE306000EB0B0 /* GuideViewController.m */,
 			);
 			path = Guide;
+			sourceTree = "<group>";
+		};
+		7D9935821DFF9278006D5A17 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7D9935831DFF9291006D5A17 /* FunnycodeTableViewCell.h */,
+				7D9935841DFF9291006D5A17 /* FunnycodeTableViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7DC89EF41DEFF24400564BB3 /* Views */ = {
@@ -3062,6 +3085,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34DB5CA81DD4129E00C51823 /* sephonerc~ipad in Resources */,
+				7D99357E1DFF8D9E006D5A17 /* sego1.png in Resources */,
 				34DB5CDD1DD4129F00C51823 /* hold_on.png in Resources */,
 				3461F55B1DD2CB4800E56298 /* tab_squar@2x.png in Resources */,
 				34FC41E81DD179F900A23A8F /* LaunchScreen.storyboard in Resources */,
@@ -3196,7 +3220,6 @@
 				34DB5CD81DD4129F00C51823 /* contact_unstarred.png in Resources */,
 				7DABCB0F1DF6AF0A00CA50C4 /* video.png in Resources */,
 				34DB5CF11DD4129F00C51823 /* incoming_chat.wav in Resources */,
-				7D3C56341DEEDCA8000B2930 /* sego1.png in Resources */,
 				34DB5CCA1DD4129F00C51823 /* nowebcamCIF.jpg in Resources */,
 				7DE3D7771DFE95E200AC2695 /* sego.png in Resources */,
 				34DB5CE11DD4129F00C51823 /* ok.png in Resources */,
@@ -3330,6 +3353,7 @@
 				3436EA611DDBFE0B005659B7 /* Reachability.m in Sources */,
 				34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */,
 				7D17DFFF1DFD38F400628FFC /* PermissonTableViewCell.m in Sources */,
+				7D9935851DFF9291006D5A17 /* FunnycodeTableViewCell.m in Sources */,
 				7D2816731DF1160B00A9E6DA /* MyVideoCollectionViewCell.m in Sources */,
 				7D02A9E01DFA5A9C00C41A56 /* PopStartView.m in Sources */,
 				3461F55F1DD2D00100E56298 /* AppUtil.m in Sources */,
@@ -3381,8 +3405,10 @@
 				7D02A9EC1DFA859100C41A56 /* HomeDetailModel.m in Sources */,
 				34FC41E31DD179F900A23A8F /* sego2_0.xcdatamodeld in Sources */,
 				34FFD5871DEC398500A392B4 /* AFHttpClient+Found.m in Sources */,
+				7DF0758D1DFFD65A00A45824 /* AFHttpClient+FunnyCode.m in Sources */,
 				7D28166D1DF1101000A9E6DA /* RepositVideoViewController.m in Sources */,
 				3461F5441DD2CA0A00E56298 /* MeViewController.m in Sources */,
+				7D9935811DFF8F8C006D5A17 /* FunnycodeViewController.m in Sources */,
 				7D2816761DF116BB00A9E6DA /* AFHttpClient+Reposit.m in Sources */,
 				7D1FA3E31DE5354F00A43201 /* AFHttpClient+PersonMember.m in Sources */,
 				34C495F91DD1CD6C00687606 /* UIView+Sizes.m in Sources */,

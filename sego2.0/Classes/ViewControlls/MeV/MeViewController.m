@@ -13,6 +13,7 @@
 #import "ExchangPasswordViewController.h"
 #import "AboutViewController.h"
 #import "PermissionViewController.h"
+#import "FunnycodeViewController.h"
 
 @interface MeViewController ()
 @property(nonatomic,strong)UILabel * nameLabel;
@@ -380,7 +381,10 @@
 
 -(void)doumabuttonTouch{
     FuckLog(@"逗码");
-
+    FunnycodeViewController * funnyVc = [[FunnycodeViewController alloc]init];
+    [self.navigationController pushViewController:funnyVc animated:NO];
+    
+    
 }
 
 -(void)quanxianbuttonTouch{
