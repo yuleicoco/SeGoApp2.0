@@ -24,6 +24,8 @@
 //修改密码
 -(void)exchangePasswordWithMid:(NSString *)mid password:(NSString *)password complete:(void (^)(BaseModel * model))completeBlock;
 
+//查询会员个人详细资料
+-(void)queryByIdMemberWithMid:(NSString *)mid complete:(void (^)(BaseModel * model))completeBlock;
 
 
 
