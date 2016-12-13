@@ -65,6 +65,7 @@
     _numberTextfield.placeholder = @"请输入帐号";
     _numberTextfield.tintColor = [UIColor whiteColor];
     _numberTextfield.textColor = [UIColor whiteColor];
+    _numberTextfield.keyboardType = UIKeyboardTypeNumberPad;
      [_numberTextfield setValue:RGB(153, 153, 153) forKeyPath:@"_placeholderLabel.textColor"];
     [self.view addSubview:_numberTextfield];
     [_numberTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -405,6 +406,10 @@
 }
 
 
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    textField.keyboardAppearance = UIKeyboardAppearanceAlert;
+    // textField.keyboardType = UIKeyboardTypeDefault;
+}
 
 
 

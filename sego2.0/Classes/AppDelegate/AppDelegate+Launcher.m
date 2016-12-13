@@ -8,6 +8,7 @@
 
 #import "AppDelegate+Launcher.h"
 #import "PopStartView.h"
+#import "AFHttpClient+Account.h"
 @interface AppDelegate()<GetScrollVDelegate>
 
 @end
@@ -96,7 +97,21 @@
     self.window.rootViewController = self.mainTabVC;
     
     [self.window makeKeyAndVisible];
+    [self quermember];
+    
 }
+-(void)quermember{
+    [[AFHttpClient sharedAFHttpClient]queryByIdMemberWithMid:[AccountManager sharedAccountManager].loginModel.mid complete:^(BaseModel *model) {
+        LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
+        [[AccountManager sharedAccountManager]login:loginModel];
+        
+    }];
+
+
+}
+
+
+
 
 /**
  *  进入登陆界面

@@ -161,7 +161,6 @@
     if (![[AccountManager sharedAccountManager].loginModel.password isEqualToString:_numberTextfield.text]) {
         [[AppUtil appTopViewController]showHint:@"原密码输入错误"];
         return;
-    
     }
     
     if ([AppUtil isBlankString:_passwordTextfield.text]) {
@@ -188,17 +187,7 @@
         
     }];
 
-    
-    
-    
-
 }
-
-
-
-
-
-
 
 
 
