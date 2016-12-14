@@ -8,6 +8,8 @@
 
 #import "FunnycodeViewController.h"
 #import "AFHttpClient+FunnyCode.h"
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKUI/ShareSDK+SSUI.h>
 
 @interface FunnycodeViewController ()
 @property (nonatomic,strong)UILabel * doumaLabel;
@@ -227,6 +229,7 @@
             _toushiBtn.userInteractionEnabled = NO;
             [self showBarButton:NAV_RIGHT title:@"分享" fontColor:GREEN_COLOR hide:NO];
             _doumaLabel.text = _sourceDic[@"playcode"];
+            
             if ([_sourceDic[@"tsnum"] isEqualToString:@"0"]) {
                 _toushiLabel.text = @"不允许";
             }else{
@@ -248,15 +251,65 @@
     }else{
         FuckLog(@"分享");
     
-    
+        // 1、创建分享参数
+        NSArray *imageArray = @[ [UIImage imageNamed:@"sego.png"] ];
+        //（注意：图片必须要在Xcode左边目录里面，名称必须要传正确，如果要分享网络图片，可以这样传iamge参数
+        
+        
+        // QQ空间分享失败的原因为 image url title 不能为nil 是一种图文链接的方式
+        if (imageArray) {
+            NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
+            [shareParams
+             SSDKSetupShareParamsByText:[NSString stringWithFormat:@"赛果分享[%@]此逗码%@之前有效，复制这条信息，打开赛果不倒蛋软件，即可控制分享者的设备开启远程互动(软件下载地址：http://www.segopet.com/site/download.jsp)", _doumaLabel.text,_timeoverLabel.text]
+             images:nil
+             url:nil
+             title:@"赛果逗码分享"
+             type:SSDKContentTypeAuto];
+            
+            
+            // 2、分享（可以弹出我们的分享菜单和编辑界面）
+            [ShareSDK showShareActionSheet: nil items:nil shareParams:shareParams onShareStateChanged:^(
+                                                                                                        SSDKResponseState state, SSDKPlatformType platformType,
+                                                                                                        NSDictionary *userData, SSDKContentEntity *contentEntity,
+                                                                                                        NSError *error, BOOL end) {
+                
+                switch (state) {
+                    case SSDKResponseStateSuccess: {
+                        UIAlertView *alertView =
+                        [[UIAlertView alloc] initWithTitle:@"分享成功"
+                                                   message:nil
+                                                  delegate:nil
+                                         cancelButtonTitle:@"确定"
+                                         otherButtonTitles:nil];
+                        [alertView show];
+                            break;
+                    }
+                    case SSDKResponseStateFail: {
+                        UIAlertView *alert = [[UIAlertView alloc]
+                                              initWithTitle:@"分享失败"
+                                              message:[NSString stringWithFormat:@"%@", error]
+                                              delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil, nil];
+                        
+                        [alert show];
+                        [[[UIApplication sharedApplication] keyWindow] resignFirstResponder];
+                        
+                        break;
+                    }
+                    default:
+                        break;
+                }
+            }];
+            
+        }
+        
+    }
+
+        
     }
 
 
-
-
-
-
-}
 
 
 

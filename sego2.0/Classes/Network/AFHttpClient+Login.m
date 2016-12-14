@@ -32,4 +32,23 @@
     
 }
 
+-(void)CheckDouCode:(NSString *)mid playCode :(NSString *)playcode  complete:(void (^)(BaseModel *))completeBlock
+{
+    
+    NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
+    parms[@"common"] = @"queryPlayCodeRule";
+    parms[@"mid"] =mid;
+    parms[@"playcode"]=playcode;
+    
+    
+    [self POST:@"clientAction.do?" parameters:parms result:^(BaseModel * model) {
+        if (model) {
+            completeBlock(model);
+        }
+        
+    }];
+    
+}
+
+
 @end

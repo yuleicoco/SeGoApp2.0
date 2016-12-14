@@ -320,8 +320,9 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     // 横竖屏
     
     HZbtn = [UIButton new];
+    HZbtn.hidden = YES;
     [HZbtn setImage:[UIImage imageNamed:@"hzbtn"] forState:UIControlStateNormal];
-    [HZbtn addTarget:self action:@selector(HZView:) forControlEvents:UIControlEventTouchUpInside];
+   // [HZbtn addTarget:self action:@selector(HZView:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:HZbtn];
     
     timeLable =[UILabel new];
@@ -451,6 +452,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 
 // 横竖屏切换
 
+
+/*
 - (void)HZView:(UIButton *)sender
 {
     
@@ -469,8 +472,11 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 
     
 }
+ */
 
 
+
+/*
 // 横屏激光笔
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -563,6 +569,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 
 
 }
+ 
+ */
 
 #pragma  mark ----------严肃的分割线------------------------------------------------
 
@@ -1032,7 +1040,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 // 返回
 - (void)backBtn:(UIButton * )sender
 {
-    [self leftAction];
+   // [self leftAction];
     [self OverDevideUseMember];
     [timerInCall invalidate];
     [SephoneManager terminateCurrentCallOrConference];
@@ -1133,6 +1141,13 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 //投食
 - (void)RollClick:(UIButton *)sender
 {
+    
+    if ([AppUtil isBlankString:_isTurmNum]) {
+        
+        // 不能投食
+        
+    }else
+    {
     sender.selected = !sender.selected;
     NSString * strid =[Defaluts objectForKey:@"selfID"];
     [[AFHttpClient sharedAFHttpClient]Rollfood:strid deviceno:strDevice termid:strTermid complete:^(BaseModel * model) {
@@ -1141,6 +1156,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
     
 
+    }
     
 }
 //抓拍
@@ -1319,6 +1335,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 
 
 
+/*
 
 #pragma mark -  横竖屏method **************************
 
@@ -1358,6 +1375,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
 }
 
+ */
 
 #pragma mark -  横竖屏method **************************
 

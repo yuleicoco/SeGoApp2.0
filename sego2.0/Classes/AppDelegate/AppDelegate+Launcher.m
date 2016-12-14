@@ -9,6 +9,7 @@
 #import "AppDelegate+Launcher.h"
 #import "PopStartView.h"
 #import "AFHttpClient+Account.h"
+#import "EggViewController.h"
 @interface AppDelegate()<GetScrollVDelegate>
 
 @end
@@ -130,6 +131,101 @@
     [self.window makeKeyAndVisible];
 }
 
+
+/**
+ *  粘贴快捷
+ *  直接跳到别人的视频开启界面逗宠
+ */
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    
+    UIPasteboard *pboard = [UIPasteboard generalPasteboard];
+    // 判断登录
+    
+    
+    // 判断是否是自己
+    
+    
+    
+    if ([pboard.string length]>4  &&  [[pboard.string substringWithRange:NSMakeRange(0, 4)]  isEqualToString:@"赛果分享"]) {
+        NSString * strPLAYcode = [pboard.string substringWithRange:NSMakeRange(5,14 )];
+        [self checkPlayCode:strPLAYcode];
+        pboard.string  =@"";
+    }else
+    {
+        // 正常情况
+        
+        
+    }
+}
+
+- (void)checkPlayCode:(NSString *)playStr
+{
+    
+ 
+    
+    
+    [[AFHttpClient sharedAFHttpClient]CheckDouCode:[AccountManager sharedAccountManager].loginModel.mid playCode:playStr complete:^(BaseModel * model) {
+        
+        
+        FuckLog(@"%@",model);
+        
+        if ([model.retVal[@"mid"] isEqualToString:[AccountManager sharedAccountManager].loginModel.mid]) {
+            // 自己
+            self.mainTabVC.selectedIndex =2;
+            
+        }else
+        {
+            
+            if ([model.retVal[@"status"] isEqualToString:@"0"]) {
+                // 失效
+                 [self.window.rootViewController showSuccessHudWithHint:@"此逗码已经失效"];
+            }else
+            {
+                
+                EggViewController * eggVC = [[EggViewController alloc]init];
+                eggVC.CodeMid = model.retVal[@"mid"];
+                eggVC.isOther  = YES;
+                [self.mainTabVC pushViewController:eggVC];
+            }
+            
+        }
+    
+        
+    }];
+    
+    
+  /*
+    [AFNetWorking postWithApi:str parameters:dic success:^(id json) {
+        NSMutableArray * arr =[NSMutableArray array];
+        arr = json[@"jsondata"][@"list"];
+        
+        if ([arr[0][@"mid"] isEqualToString:[AccountManager sharedAccountManager].loginModel.mid]) {
+            // 如果是自己
+            EggViewController * eggVC = [[EggViewController alloc]init];
+            [self.mainTabVC pushViewController:eggVC];
+            
+        }else
+        {
+            
+            if ([arr[0][@"status"] isEqualToString:@"0"]) {
+                [self.window.rootViewController showSuccessHudWithHint:@"此逗码已经失效"];
+            }else
+            {
+                
+                OtherEggViewController * otherVC =[[OtherEggViewController alloc]init];
+                otherVC.otherArr = arr;
+                otherVC.IScode = YES;
+                [self.window.rootViewController presentViewController:otherVC animated:YES completion:nil];
+            }
+            
+      }
+
+   */
+        
+        
+    
+}
 
 
 @end
