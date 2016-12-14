@@ -249,6 +249,10 @@
             
             [self hideHud];
             [[AppUtil appTopViewController] showHint:model.retDesc];
+            if (model) {
+                [self.navigationController popViewControllerAnimated:NO];
+            }
+            
         }];
     
     

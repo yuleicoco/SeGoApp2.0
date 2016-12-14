@@ -275,9 +275,13 @@
     
      [self showHudInView:self.view hint:@"正在注册..."];
     [[AFHttpClient sharedAFHttpClient]regiestWithPhone:_numberTextfield.text password:_passwordTextfield.text complete:^(BaseModel *model) {
-        
          [self hideHud];
          [[AppUtil appTopViewController] showHint:model.retDesc];
+        if (model) {
+            [self.navigationController popViewControllerAnimated:NO];
+        }
+        
+        
     }];
     
     
