@@ -12,6 +12,7 @@
 
 @property(nonatomic,strong)NSString * DouMid;
 @property(nonatomic,strong)NSString * SearchMid;
+@property(nonatomic,strong)NSString * CodeMid;
 @property(nonatomic,assign)BOOL isOther;
 
 

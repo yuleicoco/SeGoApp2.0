@@ -68,6 +68,8 @@
 @synthesize DouMid;
 @synthesize SearchMid;
 @synthesize isOther;
+@synthesize CodeMid;
+
 
 
 
@@ -162,27 +164,18 @@
      [self checkWifi];
     
    
-    
+
 
     if (isOther) {
         
-        if ([AppUtil isBlankString:SearchMid]) {
-            [[AFHttpClient sharedAFHttpClient]checkMidFriend:DouMid complete:^(BaseModel * model) {
-                
+        NSString * d = SearchMid.length>DouMid.length?SearchMid:(DouMid.length>CodeMid.length?DouMid:CodeMid);
+            [[AFHttpClient sharedAFHttpClient]checkMidFriend:d complete:^(BaseModel * model) {
                 FuckLog(@"%@",model);
                 isOtherDevice = model.retVal[@"deviceno"];
                 isOherID = model.retVal[@"mid"];
                 
             }];
-        }else
-        {
-         [[AFHttpClient sharedAFHttpClient]checkMidFriend:SearchMid complete:^(BaseModel * model) {
-               FuckLog(@"%@",model);
-               isOtherDevice = model.retVal[@"deviceno"];
-               isOherID = model.retVal[@"mid"];
-             
-         }];
-        }
+        
         
         
     }else
@@ -238,14 +231,7 @@
 
     if (isOther) {
         
-        NSString * midOther;
-        if ([AppUtil isBlankString:DouMid]) {
-            
-            midOther = SearchMid;
-        }else
-        {
-            midOther = DouMid;
-        }
+        NSString * midOther = SearchMid.length>DouMid.length?SearchMid:(DouMid.length>CodeMid.length?DouMid:CodeMid);
         
         [[AFHttpClient sharedAFHttpClient]DeviceStats: midOther complete:^(BaseModel *model) {
             

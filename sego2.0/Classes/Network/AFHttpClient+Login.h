@@ -15,4 +15,9 @@
  */
 -(void)Trlogin:(NSString *)nickname secretkey :(NSString *)secretkey headportrait:(NSString *)headportrait rtype:(NSString *)rtype  complete:(void (^)(BaseModel *))completeBlock;
 
+/**
+ *    检查逗码
+ */
+
+-(void)CheckDouCode:(NSString *)mid playCode :(NSString *)playcode  complete:(void (^)(BaseModel *))completeBlock;
 @end
