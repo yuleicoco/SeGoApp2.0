@@ -1141,6 +1141,13 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 //投食
 - (void)RollClick:(UIButton *)sender
 {
+    
+    if ([AppUtil isBlankString:_isTurmNum]) {
+        
+        // 不能投食
+        
+    }else
+    {
     sender.selected = !sender.selected;
     NSString * strid =[Defaluts objectForKey:@"selfID"];
     [[AFHttpClient sharedAFHttpClient]Rollfood:strid deviceno:strDevice termid:strTermid complete:^(BaseModel * model) {
@@ -1149,6 +1156,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
     
 
+    }
     
 }
 //抓拍

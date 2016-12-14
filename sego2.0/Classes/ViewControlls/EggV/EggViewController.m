@@ -52,6 +52,9 @@
     NSString * isOtherDevice;
     //
     NSString * isOherID;
+    // 投食量
+    NSString * isTsnum;
+    
     
     
     
@@ -167,12 +170,14 @@
 
 
     if (isOther) {
-        
         NSString * d = SearchMid.length>DouMid.length?SearchMid:(DouMid.length>CodeMid.length?DouMid:CodeMid);
             [[AFHttpClient sharedAFHttpClient]checkMidFriend:d complete:^(BaseModel * model) {
                 FuckLog(@"%@",model);
                 isOtherDevice = model.retVal[@"deviceno"];
                 isOherID = model.retVal[@"mid"];
+                isTsnum = model.retVal[@"tsnum"];
+                
+            
                 
             }];
         
@@ -317,6 +322,10 @@
         case SephoneCallOutgoingInit:{
             // 成功
             InCallViewController *   _incallVC =[[InCallViewController alloc]initWithNibName:@"InCallViewController" bundle:nil];
+            
+            if (isOther) {
+              _incallVC.isTurmNum = isTsnum;
+            }
             [_incallVC setCall:call];
             [self presentViewController:_incallVC animated:YES completion:nil];
             break;
