@@ -8,7 +8,7 @@
 
 #import "AFHttpClient+Permission.h"
 #import "RuleModel.h"
-
+#import "ZdFriendModel.h"
 
 @implementation AFHttpClient (Permission)
 -(void)queryRuleWithMid:(NSString *)mid complete:(void (^)(BaseModel *))completeBlock{
@@ -102,6 +102,45 @@
 
 }
 
+
+-(void)ruleSetQueryFriendWithMid:(NSString *)mid page:(int)page size:(int)size complete:(void (^)(BaseModel *))completeBlock{
+    NSMutableDictionary * params = [[ NSMutableDictionary alloc]init];
+    params[@"common"] = @"ruleSetQueryFriend";
+    params[@"mid"] = mid;
+    params[@"page"] = @(page);
+    params[@"size"] = @(size);
+    [self POST:@"clientAction.do" parameters:params result:^(BaseModel *model) {
+        if (model) {
+            model.list = [ZdFriendModel arrayOfModelsFromDictionaries:model.list];
+        }
+        if (completeBlock) {
+            completeBlock(model);
+        }
+    }];
+
+}
+
+-(void)ruleSetQueryExchangeFriendWithMid:(NSString *)mid rid:(NSString *)rid page:(int)page size:(int)size complete:(void (^)(BaseModel *))completeBlock{
+    NSMutableDictionary * params = [[ NSMutableDictionary alloc]init];
+    params[@"common"] = @"ruleSetQueryFriend";
+    params[@"mid"] = mid;
+    params[@"rid"] = rid;
+    params[@"page"] = @(page);
+    params[@"size"] = @(size);
+    [self POST:@"clientAction.do" parameters:params result:^(BaseModel *model) {
+        if (model) {
+            model.list = [ZdFriendModel arrayOfModelsFromDictionaries:model.list];
+        }
+        if (completeBlock) {
+            completeBlock(model);
+        }
+    }];
+
+    
+
+
+
+}
 
 
 

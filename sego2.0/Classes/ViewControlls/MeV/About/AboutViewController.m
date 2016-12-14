@@ -7,7 +7,10 @@
 //
 
 #import "AboutViewController.h"
+#import "AgreementViewController.h"
+#import "IntroduceViewController.h"
 
+#import "SuggestViewController.h"
 @interface AboutViewController ()
 
 @end
@@ -165,17 +168,22 @@
 
 -(void)firstButtonTouch{
     FuckLog(@"产品简介");
-
+    IntroduceViewController * introVc = [[IntroduceViewController alloc]init];
+    [self.navigationController pushViewController:introVc animated:NO];
 
 }
 
 -(void)secoendButtonTouch{
     FuckLog(@"意见反馈");
-
+    SuggestViewController * suggerVc = [[SuggestViewController alloc]init];
+    [self.navigationController pushViewController:suggerVc animated:NO];
 }
 
 -(void)lastButtonTouch{
     FuckLog(@"注册协议");
+    AgreementViewController * agreVc = [[AgreementViewController alloc]init];
+    [self.navigationController pushViewController:agreVc animated:NO];
+    
 }
 
 @end

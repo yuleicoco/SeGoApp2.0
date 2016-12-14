@@ -18,6 +18,7 @@
 #import "AFHttpClient+DeviceUseMember.h"
 #import "WifiViewController.h"
 #import "AFHttpClient+DeviceUseMember.h"
+#import "FeedSetingViewController.h"
 
 
 @interface EggViewController ()
@@ -139,7 +140,7 @@
  -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+      self.navigationController.navigationBar.translucent = NO;
     /*
     CGRect rectTab1 =  self.tabBarController.tabBar.frame;
     CGRect rectTab2  = self.navigationController.navigationBar.frame;
@@ -737,6 +738,10 @@
 - (void)foodTouch:(UIButton *)sender
 {
     setImage.hidden = YES;
+    FeedSetingViewController * feedVc = [[FeedSetingViewController alloc]init];
+    [self.navigationController pushViewController:feedVc animated:NO];
+    
+    
     
 }
 

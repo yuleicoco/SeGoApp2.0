@@ -450,7 +450,7 @@
         [userDefatluts removeObjectForKey:key];
         [userDefatluts synchronize];
     }
-
+         [userDefatluts setObject:@"1" forKey:@"STARTFLAG"];
      }]];
     [self presentViewController:alert animated:YES completion:nil];
 

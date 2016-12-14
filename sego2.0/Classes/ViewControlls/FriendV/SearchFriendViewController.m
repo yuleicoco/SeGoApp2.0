@@ -168,9 +168,13 @@ static NSString * cellId = @"friendSearchCellid";
     
     if ([model.isfriend isEqualToString:@""]) {
         cell.rightBtn.hidden = NO;
+        cell.rightLabe.hidden = YES;
     }else{
         cell.rightBtn.hidden = YES;
+        cell.rightLabe.hidden = NO;
+        cell.rightLabe.text = @"已添加";
     }
+    
     cell.rightBtn.tag = indexPath.row + 2221;
     [cell.rightBtn addTarget:self action:@selector(rightButtonTouch22:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -188,9 +192,13 @@ static NSString * cellId = @"friendSearchCellid";
     NSInteger i = sender.tag - 2221;
     FriendModel * model = self.dataSource[i];
     [[AFHttpClient sharedAFHttpClient]addFriendRequsetWithMid:[AccountManager sharedAccountManager].loginModel.mid friend:model.mid complete:^(BaseModel *model) {
-        
-        
-        
+        if (model) {
+            sender.backgroundColor = [UIColor clearColor];
+            sender.titleLabel.font = [UIFont systemFontOfSize:1];
+            [sender setTitle:@"等待验证" forState:UIControlStateNormal];
+            [sender setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        }
+
     }];
 
 

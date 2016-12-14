@@ -217,6 +217,7 @@
             _doumaBtn.hidden = NO;
             _isShare = NO;
             _toushiBtn.userInteractionEnabled=YES;
+             _toushiLabel.textColor = [UIColor blackColor];
             [self showBarButton:NAV_RIGHT title:@"分享" fontColor:LIGHT_GRAYdcdc_COLOR hide:NO];
         }else{
             _shixiaoBtn.hidden = NO;

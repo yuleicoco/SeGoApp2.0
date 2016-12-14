@@ -1,30 +1,47 @@
 //
-//  ZdFriendViewController.m
+//  ZdExchangFriendViewController.m
 //  sego2.0
 //
-//  Created by czx on 16/12/13.
+//  Created by czx on 16/12/14.
 //  Copyright © 2016年 yulei. All rights reserved.
 //
 
-#import "ZdFriendViewController.h"
+#import "ZdExchangFriendViewController.h"
 #import "ZdFriendTableViewCell.h"
 #import "AFHttpClient+Permission.h"
 #import "ZdFriendModel.h"
 
 static NSString * cellId = @"zdFriendTableviewcellId";
-@interface ZdFriendViewController ()
+@interface ZdExchangFriendViewController ()
 @property (nonatomic,strong)NSMutableArray * sourceArray;
 @property (nonatomic,strong)UIButton * sureBtn;
-
 @end
 
-@implementation ZdFriendViewController
-
+@implementation ZdExchangFriendViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     _sourceArray = [[NSMutableArray alloc]init];
     [self setNavTitle:@"指定好友"];
 }
+
+-(void)doLeftButtonTouch{
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您确定要放弃选择指定好友吗？" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
+}
+
+
 -(void)setupView{
     [super setupView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -38,7 +55,7 @@ static NSString * cellId = @"zdFriendTableviewcellId";
     [self.tableView registerClass:[ZdFriendTableViewCell class] forCellReuseIdentifier:cellId];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self initRefreshView];
-
+    
     _sureBtn = [[UIButton alloc]init];
     _sureBtn.backgroundColor = [UIColor whiteColor];
     [_sureBtn setTitle:@"确定" forState:UIControlStateNormal];
@@ -53,33 +70,36 @@ static NSString * cellId = @"zdFriendTableviewcellId";
         make.height.mas_equalTo(45);
         
     }];
-
+    
 }
 
 
 
 -(void)loadDataSourceWithPage:(int)page{
-    [[AFHttpClient sharedAFHttpClient]ruleSetQueryFriendWithMid:[AccountManager sharedAccountManager].loginModel.mid page:page size:REQUEST_PAGE_SIZE complete:^(BaseModel *model) {
-    
+    [[AFHttpClient sharedAFHttpClient]ruleSetQueryExchangeFriendWithMid:[AccountManager sharedAccountManager].loginModel.mid rid:_ridd page:page size:REQUEST_PAGE_SIZE complete:^(BaseModel *model) {
         if (page == START_PAGE_INDEX) {
             [self.dataSource removeAllObjects];
             [self.dataSource addObjectsFromArray:model.list];
         } else {
             [self.dataSource addObjectsFromArray:model.list];
         }
-        
+
         if (model.list.count < REQUEST_PAGE_SIZE){
             self.tableView.mj_footer.hidden = YES;
         }else{
             self.tableView.mj_footer.hidden = NO;
         }
-
+        
         [self.tableView reloadData];
         [self handleEndRefresh];
+
+        
         
     }];
-
-
+    
+    
+    
+    
 }
 #pragma mark - TableView的代理函数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -110,12 +130,12 @@ static NSString * cellId = @"zdFriendTableviewcellId";
     cell.nameLabel.text = model.nickname;
     
     if ([AppUtil isBlankString:model.isset]) {
-          cell.rightBtn.selected = NO;
+        cell.rightBtn.selected = NO;
     }else{
-    
         cell.rightBtn.selected = YES;
         [_sourceArray addObject:model.mid];
-
+        [_sureBtn setTitleColor:GREEN_COLOR forState:UIControlStateNormal];
+        _sureBtn.userInteractionEnabled = YES;
     }
     
     cell.rightBtn.tag = indexPath.row + 2135;
@@ -124,13 +144,13 @@ static NSString * cellId = @"zdFriendTableviewcellId";
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     return cell;
-
+    
 }
 
 -(void)rightButtontouchh:(UIButton *)sender{
     sender.selected = !sender.selected;
     NSInteger i = sender.tag - 2135;
-      ZdFriendModel * model = self.dataSource[i];
+    ZdFriendModel * model = self.dataSource[i];
     if (sender.selected == YES) {
         [_sourceArray addObject:model.mid];
     }else{
@@ -144,20 +164,18 @@ static NSString * cellId = @"zdFriendTableviewcellId";
         [_sureBtn setTitleColor:LIGHT_GRAYdcdc_COLOR forState:UIControlStateNormal];
         _sureBtn.userInteractionEnabled = NO;
     }
-
+    
 }
 
 
 -(void)sureButtonTouchhh{
+    
     NSUserDefaults * FriendUserDefaults = [NSUserDefaults standardUserDefaults];
     [FriendUserDefaults setObject:_sourceArray forKey:@"friendesId"];
     [self.navigationController popViewControllerAnimated:NO];
-
-
+    
+    
 }
-
-
-
 
 
 

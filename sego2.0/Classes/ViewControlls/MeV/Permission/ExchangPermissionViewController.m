@@ -8,6 +8,7 @@
 
 #import "ExchangPermissionViewController.h"
 #import "AFHttpClient+Permission.h"
+#import "ZdExchangFriendViewController.h"
 
 @interface ExchangPermissionViewController ()
 @property (nonatomic,strong)UILabel * ruleNameLabel;
@@ -239,7 +240,13 @@
     }else if ([_objectStr isEqualToString:@"friend"]){
         [self friendButtonTouch];
     }else if ([_objectStr isEqualToString:@"zd"]){
-        [self zdbuttonTouch];
+        _allBtn.selected = NO;
+        _allBtn.backgroundColor = [UIColor whiteColor];
+        _zdBtn.selected = YES;
+        _zdBtn.backgroundColor = GREEN_COLOR;
+        _friendBtn.selected = NO;
+        _friendBtn.backgroundColor = [UIColor whiteColor];
+        
     }
     
     
@@ -264,15 +271,20 @@
     }
     
     NSString * objectStr = @"";
+    NSMutableArray * array = [[NSMutableArray alloc]init];
+    NSString * friendstr = @"";
+
     if (_allBtn.selected == YES) {
         objectStr = @"all";
     }else if (_friendBtn.selected == YES){
         objectStr = @"friend";
     }else if (_zdBtn.selected == YES){
         objectStr = @"zd";
+        NSUserDefaults * FriendUserDefaults = [NSUserDefaults standardUserDefaults];
+        array  = [FriendUserDefaults objectForKey:@"friendesId"];
+        friendstr =  [array componentsJoinedByString:@","];
+
     }
-    
-    NSString * friendStr = @"";
     //指定好友还没写
     
     [self showHudInView:self.view hint:@"正在修改..."];
@@ -283,7 +295,7 @@
 //        [[NSNotificationCenter defaultCenter]postNotificationName:@"ruleShuaxin" object:nil];
 //    }];
     
-    [[AFHttpClient sharedAFHttpClient]ruleModifyInfoWithMid:_ridStr rulesname:_ruleNameLabel.text  object:objectStr friends:friendStr tsnum:tsNum complete:^(BaseModel *model) {
+    [[AFHttpClient sharedAFHttpClient]ruleModifyInfoWithMid:_ridStr rulesname:_ruleNameLabel.text  object:objectStr friends:friendstr tsnum:tsNum complete:^(BaseModel *model) {
         [self hideHud];
         [[AppUtil appTopViewController]showHint:model.retDesc];
         [self.navigationController popViewControllerAnimated:NO];
@@ -323,7 +335,10 @@
     _friendBtn.selected = NO;
     _friendBtn.backgroundColor = [UIColor whiteColor];
     
-    
+    ZdExchangFriendViewController   * zdFriendvc= [[ZdExchangFriendViewController alloc]init];
+    zdFriendvc.ridd = _ridStr;
+    [self.navigationController pushViewController:zdFriendvc animated:NO];
+
 }
 
 

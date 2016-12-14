@@ -106,7 +106,21 @@
 
 }
 
-
+-(void)addFeedbackWithMid:(NSString *)mid fconcent:(NSString *)fconcent fphone:(NSString *)fphone complete:(void (^)(BaseModel *))completeBlock{
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    params[@"common"] = @"addFeedback";
+    params[@"mid"] = mid;
+    params[@"type"] = @"iphone";
+    params[@"fconcent"] = fconcent;
+    params[@"fphone"] = fphone;
+    
+    [self POST:@"clientAction.do" parameters:params result:^(BaseModel *model) {
+        
+        if (completeBlock) {
+            completeBlock(model);
+        }
+    }];
+}
 
 
 

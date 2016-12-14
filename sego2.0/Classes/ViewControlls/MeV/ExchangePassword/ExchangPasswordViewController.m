@@ -180,8 +180,26 @@
     
     [[AFHttpClient sharedAFHttpClient]exchangePasswordWithMid:[AccountManager sharedAccountManager].loginModel.mid password:_passwordTextfield.text complete:^(BaseModel *model) {
         if (model) {
-               [[AppUtil appTopViewController]showHint:model.retDesc];
-            [self.navigationController popViewControllerAnimated:NO];
+            UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"修改成功，请重新登录" preferredStyle:UIAlertControllerStyleAlert];
+
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction *action) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@NO];
+                [[AccountManager sharedAccountManager]logout];
+                
+                NSUserDefaults *userDefatluts = [NSUserDefaults standardUserDefaults];
+                NSDictionary *dictionary = [userDefatluts dictionaryRepresentation];
+                for(NSString* key in [dictionary allKeys]){
+                    [userDefatluts removeObjectForKey:key];
+                    [userDefatluts synchronize];
+                }
+                [userDefatluts setObject:@"1" forKey:@"STARTFLAG"];
+
+            }];
+        
+            [alertController addAction:okAction];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }else{
+            [[AppUtil appTopViewController]showHint:model.retDesc];
         }
         
         

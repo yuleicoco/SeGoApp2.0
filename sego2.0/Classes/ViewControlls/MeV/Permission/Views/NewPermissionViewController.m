@@ -8,7 +8,7 @@
 
 #import "NewPermissionViewController.h"
 #import "AFHttpClient+Permission.h"
-
+#import "ZdFriendViewController.h"
 @interface NewPermissionViewController ()
 @property (nonatomic,strong)UILabel * ruleNameLabel;
 @property (nonatomic,strong)UIButton * ruleNameBtn;
@@ -249,19 +249,24 @@
     }
     
     NSString * objectStr = @"";
+     NSMutableArray * array = [[NSMutableArray alloc]init];
+     NSString * friendstr = @"";
     if (_allBtn.selected == YES) {
         objectStr = @"all";
     }else if (_friendBtn.selected == YES){
         objectStr = @"friend";
     }else if (_zdBtn.selected == YES){
         objectStr = @"zd";
+        NSUserDefaults * FriendUserDefaults = [NSUserDefaults standardUserDefaults];
+        array  = [FriendUserDefaults objectForKey:@"friendesId"];
+        friendstr =  [array componentsJoinedByString:@","];
     }
     
-    NSString * friendStr = @"";
+ 
     //指定好友还没写
     
     [self showHudInView:self.view hint:@"正在添加..."];
-    [[AFHttpClient sharedAFHttpClient]ruleSetWithMid:[AccountManager sharedAccountManager].loginModel.mid rulesname:_ruleNameLabel.text object:objectStr friends:friendStr tsnum:tsNum complete:^(BaseModel *model) {
+    [[AFHttpClient sharedAFHttpClient]ruleSetWithMid:[AccountManager sharedAccountManager].loginModel.mid rulesname:_ruleNameLabel.text object:objectStr friends:friendstr tsnum:tsNum complete:^(BaseModel *model) {
          [self hideHud];
         [[AppUtil appTopViewController]showHint:model.retDesc];
         [self.navigationController popViewControllerAnimated:NO];
@@ -313,7 +318,9 @@
     _zdBtn.backgroundColor = GREEN_COLOR;
     _friendBtn.selected = NO;
     _friendBtn.backgroundColor = [UIColor whiteColor];
-
+    
+    ZdFriendViewController * zdFriendvc= [[ZdFriendViewController alloc]init];
+    [self.navigationController pushViewController:zdFriendvc animated:NO];
 
 }
 

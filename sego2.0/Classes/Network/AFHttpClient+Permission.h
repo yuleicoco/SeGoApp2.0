@@ -24,6 +24,12 @@
 //修改规则
 -(void)ruleModifyInfoWithMid:(NSString *)mid rulesname:(NSString *)rulesname object:(NSString *)object friends:(NSString *)friends tsnum:(NSString *)tsnum complete:(void (^)(BaseModel * model))completeBlock;
 
+//指定好友
+-(void)ruleSetQueryFriendWithMid:(NSString *)mid page:(int)page size:(int)size complete:(void (^)(BaseModel * model))completeBlock;
+
+//指定好友rid（修改的时候）
+-(void)ruleSetQueryExchangeFriendWithMid:(NSString *)mid rid:(NSString *)rid page:(int)page size:(int)size complete:(void (^)(BaseModel * model))completeBlock;
+
 
 
 

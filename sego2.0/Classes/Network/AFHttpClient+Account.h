@@ -28,7 +28,11 @@
 -(void)queryByIdMemberWithMid:(NSString *)mid complete:(void (^)(BaseModel * model))completeBlock;
 
 
-
+//投诉建议
+-(void)addFeedbackWithMid:(NSString *)mid
+                 fconcent:(NSString *)fconcent
+                   fphone:(NSString *)fphone
+                 complete:(void(^)(BaseModel *model))completeBlock;
 
 
 @end
