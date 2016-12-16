@@ -294,13 +294,13 @@
     [ShareSDK getUserInfo:SSDKPlatformTypeQQ
            onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error)
      {
-         
+        
          
          if (state == SSDKResponseStateSuccess)
          {
              [self loginRepace:@"q" Secretkey:user.uid nick:user.nickname headportrait:user.icon];
              
-             
+             [ShareSDK cancelAuthorize:SSDKPlatformTypeQQ];
          }
          
          else
@@ -318,7 +318,6 @@
     
     [[AFHttpClient sharedAFHttpClient]Trlogin:nickname secretkey:secretkey headportrait:headportrait rtype:type complete:^(BaseModel * model) {
         // 会员基本信息
-        
         FuckLog(@"==%@",model.retVal);
         if ([model.retCode isEqualToString:@"0000"]) {
             
@@ -345,8 +344,11 @@
 -(void)weixinbuttonTouch{
     //微信登录
     FuckLog(@"22");
+
     
+   
     
+
     [ShareSDK getUserInfo:SSDKPlatformTypeWechat
            onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error)
      {
@@ -354,6 +356,8 @@
          if (state == SSDKResponseStateSuccess)
          {
             [self loginRepace:@"w" Secretkey:user.uid nick:user.nickname headportrait:user.icon];
+              [ShareSDK cancelAuthorize:SSDKPlatformTypeWechat];
+             
          }
          
          else

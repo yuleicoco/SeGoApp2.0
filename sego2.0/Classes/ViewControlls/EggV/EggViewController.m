@@ -407,6 +407,12 @@
 
 {
     
+    if (isOther) {
+        hide = YES;
+    }else
+    {
+        hide = hide;
+    }
     [self showBarButton:NAV_RIGHT title:@"设置" fontColor:GREEN_COLOR hide:hide];
     
 }
@@ -843,11 +849,12 @@
     if (sender.selected) {
     
         btnF.selected = NO;
+        [self NetWorkUpChoose:@"r1"];
+
         
     }else
     {
         sender.selected = YES;
-        [self NetWorkUpChoose:@"r1"];
         
     }
     
