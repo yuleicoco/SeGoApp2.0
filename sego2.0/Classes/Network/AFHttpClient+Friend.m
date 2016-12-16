@@ -113,10 +113,48 @@
     }];
 
 
+}
+
+-(void)newFriendsMsgCountWithMid:(NSString *)mid complete:(void (^)(BaseModel *))completeBlock{
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    params[@"common"] = @"newFriendsMsgCount";
+    params[@"mid"] = mid;
+    [self POST:@"clientAction.do" parameters:params result:^(BaseModel *model) {
+        //        if (model) {
+        //            model.list = [NewFriendModel arrayOfModelsFromDictionaries:model.list];
+        //        }
+        if (completeBlock) {
+            completeBlock(model);
+        }
+    }];
+
+
+}
+
+-(void)modifyFriendsMsgStatusWithMid:(NSString *)mid complete:(void (^)(BaseModel *))completeBlock{
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    params[@"common"] = @"modifyFriendsMsgStatus";
+    params[@"mid"] = mid;
+    [self POST:@"clientAction.do" parameters:params result:^(BaseModel *model) {
+        //        if (model) {
+        //            model.list = [NewFriendModel arrayOfModelsFromDictionaries:model.list];
+        //        }
+        if (completeBlock) {
+            completeBlock(model);
+        }
+    }];
+
 
 
 
 }
+
+
+
+
+
+
+
 
 
 

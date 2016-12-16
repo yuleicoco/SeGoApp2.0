@@ -26,6 +26,8 @@
 
 //删除喂食
 -(void)cancelFeedingtimeWithbrid:(NSString *)brid
+                        deviceno:(NSString *)deviceno
+                          termid:(NSString *)termid
                             complete:(void(^)(BaseModel *model))completeBlock;
 
 

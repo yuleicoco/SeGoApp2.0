@@ -13,7 +13,7 @@
 #import "FriendModel.h"
 static NSString * cellId = @"friendtableviewcellId";
 @interface FriendViewController ()
-
+@property (nonatomic,strong)UIButton * messageBtn;
 @end
 
 @implementation FriendViewController
@@ -23,6 +23,25 @@ static NSString * cellId = @"friendtableviewcellId";
     [self setNavTitle:@"好友"];
     self.view.backgroundColor = GRAY_COLOR;
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    NSUserDefaults * tipUser = [NSUserDefaults standardUserDefaults];
+    NSString * tipstr = [tipUser objectForKey:@"countfoucetip"];
+    if ([tipstr isEqualToString:@"0"]) {
+        _messageBtn.hidden = YES;
+    }else{
+        _messageBtn.hidden = NO;
+        [_messageBtn setTitle:tipstr forState:UIControlStateNormal];
+    }
+  //  [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(cleanTip) name:@"isreaddd" object:nil];
+    
+
+}
+
+
+
+
 -(void)setupView{
     [super setupView];
     UIView * topView= [[UIView alloc]init];
@@ -34,22 +53,7 @@ static NSString * cellId = @"friendtableviewcellId";
         make.top.equalTo(topView.superview).offset(1);
         make.height.mas_equalTo(60);
     }];
-    
-    UIButton *topBtn = [[UIButton alloc]init];
-    topBtn.backgroundColor = [UIColor clearColor];
-    [topBtn addTarget:self action:@selector(topbuttonTouch) forControlEvents:UIControlEventTouchUpInside];
-    [topView addSubview:topBtn];
-    [topBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topBtn.mas_top);
-        make.right.equalTo(topBtn.superview);
-        make.left.equalTo(topBtn.superview);
-        make.height.mas_equalTo(60);
-        
-    }];
-    
-    
-    
-    
+
     UIImageView * friendImage = [[UIImageView alloc]init];
     friendImage.image = [UIImage imageNamed:@"newfriend.png"];
     [topView addSubview:friendImage];
@@ -69,6 +73,33 @@ static NSString * cellId = @"friendtableviewcellId";
         make.centerY.equalTo(newfriendLabel.superview.mas_centerY);
         make.left.equalTo(friendImage.mas_right).offset(18);
     }];
+    
+    _messageBtn = [[UIButton alloc]init];
+    _messageBtn.backgroundColor = [UIColor redColor];
+    [_messageBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    _messageBtn.layer.cornerRadius = 10;
+    _messageBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    [topView addSubview:_messageBtn];
+    [_messageBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(_messageBtn.superview).offset(-12);
+        make.centerY.equalTo(_messageBtn.superview.mas_centerY);
+        make.width.mas_equalTo(20);
+        make.height.mas_equalTo(20);
+    }];
+ 
+    
+    UIButton *topBtn = [[UIButton alloc]init];
+    topBtn.backgroundColor = [UIColor clearColor];
+    [topBtn addTarget:self action:@selector(topbuttonTouch) forControlEvents:UIControlEventTouchUpInside];
+    [topView addSubview:topBtn];
+    [topBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(topBtn.mas_top);
+        make.right.equalTo(topBtn.superview);
+        make.left.equalTo(topBtn.superview);
+        make.height.mas_equalTo(60);
+        
+    }];
+    
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(topView.mas_bottom).offset(3);

@@ -18,6 +18,8 @@
 
 @property (nonatomic,copy)NSString * achieveString;
 @property (nonatomic,copy)NSString * vercationNumber;
+@property (nonatomic,strong)UIButton * firstShowBtn;
+@property (nonatomic,strong)UIButton * secoendBtn;
 @end
 
 @implementation CompletionViewController
@@ -57,6 +59,7 @@
     _numberTextfield = [[UITextField alloc]init];
     _numberTextfield.font = [UIFont systemFontOfSize:18];
     _numberTextfield.placeholder = @"请输入手机号码";
+     _numberTextfield.keyboardType = UIKeyboardTypeNumberPad;
     _numberTextfield.textColor = [UIColor blackColor];
     [self.view addSubview:_numberTextfield];
     [_numberTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -109,6 +112,7 @@
     _vercationTextfield = [[UITextField alloc]init];
     _vercationTextfield.font = [UIFont systemFontOfSize:18];
     _vercationTextfield.placeholder = @"请输入验证码";
+     _vercationTextfield.keyboardType = UIKeyboardTypeNumberPad;
     _vercationTextfield.textColor = [UIColor blackColor];
     [self.view addSubview:_vercationTextfield];
     [_vercationTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -127,6 +131,25 @@
         make.height.mas_equalTo(55);
     }];
     
+    _firstShowBtn = [[UIButton alloc]init];
+    [_firstShowBtn setImage:[UIImage imageNamed:@"registbiyan.png"] forState:UIControlStateNormal];
+    [_firstShowBtn setImage:[UIImage imageNamed:@"registyan.png"] forState:UIControlStateSelected];
+    [_firstShowBtn addTarget:self action:@selector(firstButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
+    [passwordView addSubview:_firstShowBtn];
+    [_firstShowBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(_firstShowBtn.superview).offset(-14);
+        make.centerY.equalTo(_firstShowBtn.superview.mas_centerY);
+        make.width.mas_equalTo(17);
+        make.height.mas_equalTo(15);
+        
+    }];
+    
+
+    
+    
+    
+    
+    
     UILabel * passwordLabel = [[UILabel alloc]init];
     passwordLabel.text = @"密码:";
     passwordLabel.textColor = [UIColor blackColor];
@@ -141,6 +164,7 @@
     _passwordTextfield = [[UITextField alloc]init];
     _passwordTextfield.font = [UIFont systemFontOfSize:18];
     _passwordTextfield.placeholder = @"请输入新密码";
+    _passwordTextfield.secureTextEntry = YES;
     _passwordTextfield.textColor = [UIColor blackColor];
     [self.view addSubview:_passwordTextfield];
     [_passwordTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -162,6 +186,22 @@
         
     }];
     
+    _secoendBtn = [[UIButton alloc]init];
+    [_secoendBtn setImage:[UIImage imageNamed:@"registbiyan.png"] forState:UIControlStateNormal];
+    [_secoendBtn setImage:[UIImage imageNamed:@"registyan.png"] forState:UIControlStateSelected];
+    [_secoendBtn addTarget:self action:@selector(secoendButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
+    [surepasswordView addSubview:_secoendBtn];
+    [_secoendBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(_secoendBtn.superview).offset(-14);
+        make.centerY.equalTo(_secoendBtn.superview.mas_centerY);
+        make.width.mas_equalTo(17);
+        make.height.mas_equalTo(15);
+        
+    }];
+
+    
+    
+    
     UILabel * surepasswordLabel = [[UILabel alloc]init];
     surepasswordLabel.text = @"确认密码:";
     surepasswordLabel.textColor = [UIColor blackColor];
@@ -176,6 +216,7 @@
     _surepasswordTextfield = [[UITextField alloc]init];
     _surepasswordTextfield.font = [UIFont systemFontOfSize:18];
     _surepasswordTextfield.placeholder = @"请再次输入密码";
+    _surepasswordTextfield.secureTextEntry = YES;
     _surepasswordTextfield.textColor = [UIColor blackColor];
     [self.view addSubview:_surepasswordTextfield];
     [_surepasswordTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -318,6 +359,34 @@
     dispatch_resume(_timer);
     
 }
+
+-(void)firstButtonTouch:(UIButton *)sender{
+    sender.selected = !sender.selected;
+    if (sender.selected == YES) {
+        _secoendBtn.selected = YES;
+        _passwordTextfield.secureTextEntry = NO;
+        _surepasswordTextfield.secureTextEntry = NO;
+    }else{
+        _secoendBtn.selected = NO;
+        _passwordTextfield.secureTextEntry = YES;
+        _surepasswordTextfield.secureTextEntry = YES;
+        
+    }
+}
+
+-(void)secoendButtonTouch:(UIButton *)sender{
+    sender.selected = !sender.selected;
+    if (sender.selected == YES) {
+        _firstShowBtn.selected = YES;
+        _passwordTextfield.secureTextEntry = NO;
+        _surepasswordTextfield.secureTextEntry = NO;
+    }else{
+        _firstShowBtn.selected = NO;
+        _passwordTextfield.secureTextEntry = YES;
+        _surepasswordTextfield.secureTextEntry = YES;
+    }
+}
+
 
 
 @end

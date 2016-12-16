@@ -111,7 +111,7 @@ static NSString * cellId = @"searchtabviewId";
             }
             
             SearchModel * Searchmodel = [[SearchModel alloc]initWithDictionary:model.retVal error:nil];
-            if ([Searchmodel.status isEqualToString:@"1"]) {
+            if ([Searchmodel.status isEqualToString:@"0"]) {
                 self.tableView.hidden = YES;
                  [[AppUtil appTopViewController] showHint:@"逗码已失效"];
             }else{

@@ -51,10 +51,14 @@
 }
 
 
--(void)cancelFeedingtimeWithbrid:(NSString *)brid complete:(void (^)(BaseModel *))completeBlock{
-     NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+
+
+-(void)cancelFeedingtimeWithbrid:(NSString *)brid deviceno:(NSString *)deviceno termid:(NSString *)termid complete:(void (^)(BaseModel *))  completeBlock{
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
     params[@"common"] = @"cancelFeedingtime";
     params[@"brid"] = brid;
+    params[@"deviceno"] = deviceno;
+    params[@"termid"] = termid;
     [self POST:@"clientAction.do" parameters:params result:^(BaseModel *model) {
         
         if (model){
@@ -68,8 +72,7 @@
 
 
 
-
-
 }
+
 
 @end

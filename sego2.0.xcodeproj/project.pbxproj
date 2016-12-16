@@ -334,6 +334,7 @@
 		7D65A4221E014887004B0B85 /* FeedSetingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D65A4201E014887004B0B85 /* FeedSetingTableViewCell.m */; };
 		7D65A4251E014E66004B0B85 /* weishi_onday.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D65A4231E014E66004B0B85 /* weishi_onday.png */; };
 		7D65A4261E014E66004B0B85 /* weishi_twoday.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D65A4241E014E66004B0B85 /* weishi_twoday.png */; };
+		7D708C701E023FC30003C981 /* UITabBar+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D708C6F1E023FC30003C981 /* UITabBar+Badge.m */; };
 		7D99357E1DFF8D9E006D5A17 /* sego1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D99357D1DFF8D9E006D5A17 /* sego1.png */; };
 		7D9935811DFF8F8C006D5A17 /* FunnycodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D9935801DFF8F8C006D5A17 /* FunnycodeViewController.m */; };
 		7D9935851DFF9291006D5A17 /* FunnycodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D9935841DFF9291006D5A17 /* FunnycodeTableViewCell.m */; };
@@ -1207,6 +1208,8 @@
 		7D65A4201E014887004B0B85 /* FeedSetingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedSetingTableViewCell.m; sourceTree = "<group>"; };
 		7D65A4231E014E66004B0B85 /* weishi_onday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weishi_onday.png; sourceTree = "<group>"; };
 		7D65A4241E014E66004B0B85 /* weishi_twoday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weishi_twoday.png; sourceTree = "<group>"; };
+		7D708C6E1E023FC30003C981 /* UITabBar+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+Badge.h"; sourceTree = "<group>"; };
+		7D708C6F1E023FC30003C981 /* UITabBar+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+Badge.m"; sourceTree = "<group>"; };
 		7D99357D1DFF8D9E006D5A17 /* sego1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sego1.png; sourceTree = "<group>"; };
 		7D99357F1DFF8F8C006D5A17 /* FunnycodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunnycodeViewController.h; sourceTree = "<group>"; };
 		7D9935801DFF8F8C006D5A17 /* FunnycodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunnycodeViewController.m; sourceTree = "<group>"; };
@@ -2862,6 +2865,8 @@
 				7D38B2271DE02B9C00404D05 /* BaseTabViewController.m */,
 				7DC89EF81DF01A0800564BB3 /* BaseGridViewController.h */,
 				7DC89EF91DF01A0800564BB3 /* BaseGridViewController.m */,
+				7D708C6E1E023FC30003C981 /* UITabBar+Badge.h */,
+				7D708C6F1E023FC30003C981 /* UITabBar+Badge.m */,
 			);
 			path = BaseV;
 			sourceTree = "<group>";
@@ -3139,7 +3144,7 @@
 				TargetAttributes = {
 					34FC41D11DD179F900A23A8F = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 4UKEB375ND;
+						DevelopmentTeam = ZMFX8728A9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -3418,6 +3423,7 @@
 				34FFD57D1DEC0BE900A392B4 /* HWWeakTimer.m in Sources */,
 				34FA282F1DEBE07600F13C85 /* DouyidouViewController.m in Sources */,
 				7D02A9EF1DFA86ED00C41A56 /* HomeDetailTableViewCell.m in Sources */,
+				7D708C701E023FC30003C981 /* UITabBar+Badge.m in Sources */,
 				34C495EC1DD1CD5400687606 /* UIButton+Blocks.m in Sources */,
 				7DD60BFB1DED876A0065D941 /* AFHttpClient+Friend.m in Sources */,
 				7D2911181DF553EF00B672F2 /* PhotoGrapgModel.m in Sources */,
@@ -3645,7 +3651,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = 4UKEB375ND;
+				DEVELOPMENT_TEAM = ZMFX8728A9;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3666,7 +3672,7 @@
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib",
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.eggpet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.eggpet1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
 			};
@@ -3679,7 +3685,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = 4UKEB375ND;
+				DEVELOPMENT_TEAM = ZMFX8728A9;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3698,7 +3704,7 @@
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib",
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.eggpet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.eggpet1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
 			};

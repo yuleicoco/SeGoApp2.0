@@ -440,7 +440,6 @@
 
      [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
     
-    
     [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@NO];
     [[AccountManager sharedAccountManager]logout];
     

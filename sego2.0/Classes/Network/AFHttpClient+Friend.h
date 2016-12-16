@@ -29,8 +29,12 @@
 -(void)delFriendWithMid:(NSString *)mid friend:(NSString *)friendId complete:(void (^)(BaseModel * model))completeBlock;
 
 
+//新的朋友消息未读数辆
+-(void)newFriendsMsgCountWithMid:(NSString *)mid complete:(void (^)(BaseModel * model))completeBlock;
 
 
+//新的朋友消息读取状态修改
+-(void)modifyFriendsMsgStatusWithMid:(NSString *)mid complete:(void (^)(BaseModel * model))completeBlock;
 
 
 

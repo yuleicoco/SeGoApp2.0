@@ -11,7 +11,7 @@
 #import "FriendTableViewCell.h"
 #import "AFHttpClient+Friend.h"
 #import "NewFriendModel.h"
-
+#import "UITabBar+Badge.h"
 static NSString * cellId = @"newfriendCellid";
 @interface NewfriendViewController ()
 
@@ -23,8 +23,30 @@ static NSString * cellId = @"newfriendCellid";
     [super viewDidLoad];
     [self setNavTitle:@"新的朋友"];
     self.view.backgroundColor = GRAY_COLOR;
-    
+    [self isreaddd];
 }
+
+-(void)isreaddd{
+    [[AFHttpClient sharedAFHttpClient]modifyFriendsMsgStatusWithMid:[AccountManager sharedAccountManager].loginModel.mid complete:^(BaseModel *model) {
+        if (model) {
+             [self.tabBarController.tabBar hideBadgeOnItemIndex:3];
+           // [[NSNotificationCenter defaultCenter]postNotificationName:@"isreaddd" object:nil];
+            NSUserDefaults * tipUser = [NSUserDefaults standardUserDefaults];
+            //NSString * tipstr = [tipUser objectForKey:@"countfoucetip"];
+          //[tipUser removeObjectForKey:@"countfoucetip"];
+            [tipUser setObject:@"0" forKey:@"countfoucetip"];
+            
+        }
+        
+        
+    }];
+
+
+}
+
+
+
+
 
 -(void)setupView{
     [super setupView];

@@ -23,6 +23,16 @@ static NSString * cellId = @"hometableviewcellId";
 @end
 
 @implementation HomeViewController
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada) name:@"shuaxin" object:nil];
+    //dianzanbian
+}
+
+-(void)dada{
+    [self initRefreshView];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

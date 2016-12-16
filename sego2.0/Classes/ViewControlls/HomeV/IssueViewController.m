@@ -66,6 +66,7 @@
             if ([model.retCode isEqualToString:@"0000"]) {
                 [[AppUtil appTopViewController]showHint:model.retDesc];
                  [self.navigationController popToRootViewControllerAnimated:NO];
+                   [[NSNotificationCenter defaultCenter]postNotificationName:@"shuaxin" object:nil];
                 }
               [self hideHud];
             
@@ -77,6 +78,7 @@
             if ([model.retCode isEqualToString:@"0000"]) {
                 [[AppUtil appTopViewController]showHint:model.retDesc];
                 [self.navigationController popToRootViewControllerAnimated:NO];
+                   [[NSNotificationCenter defaultCenter]postNotificationName:@"shuaxin" object:nil];
             }
               [self hideHud];
         }];

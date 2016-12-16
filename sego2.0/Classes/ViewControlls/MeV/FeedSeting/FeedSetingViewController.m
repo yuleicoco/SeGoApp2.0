@@ -47,6 +47,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
 @property (nonatomic,strong)UIView * bigView2;
 
 @property (nonatomic,strong)UIButton * sureBtn2;
+@property (nonatomic,strong)NSDictionary * sourceDic;
 
 @end
 
@@ -55,6 +56,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _sourceDic = [[NSDictionary alloc]init];
     _ondedayArray = [[NSMutableArray alloc]init];
     [self setNavTitle:@"喂食设置"];
     _dataArray = [[NSMutableArray alloc]init];
@@ -186,9 +188,9 @@ static NSString * cellId = @"fedseting2321232322313323231";
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您确定要停用自动喂食吗？" preferredStyle:UIAlertControllerStyleAlert];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        FeddingModel * model = self.dataSource[0];
+      //  FeddingModel * model = self.dataSource[0];
         [self showHudInView:self.view hint:@"正在停用..."];
-        [[AFHttpClient sharedAFHttpClient]cancelFeedingtimeWithbrid:model.brid complete:^(BaseModel *model) {
+        [[AFHttpClient sharedAFHttpClient]cancelFeedingtimeWithbrid:_sourceDic[@"brid"] deviceno:[AccountManager sharedAccountManager].loginModel.deviceno termid:[AccountManager sharedAccountManager].loginModel.termid complete:^(BaseModel *model) {
             [self hideHud];
             if (model) {
                 [[AppUtil appTopViewController] showHint:model.retDesc];
@@ -196,6 +198,11 @@ static NSString * cellId = @"fedseting2321232322313323231";
                 
             }
         }];
+    
+        
+        
+        
+    
     }]];
     
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -500,13 +507,16 @@ static NSString * cellId = @"fedseting2321232322313323231";
     [_timeBtn6 setTitle:@"" forState:UIControlStateNormal];
     [self.dataSource removeAllObjects];
     [[AFHttpClient sharedAFHttpClient]queryFeedingtimeWithMid:[AccountManager sharedAccountManager].loginModel.mid status:@"1" complete:^(BaseModel *model) {
-        if (model.list.count > 0 ) {
+        if (model.retVal.count > 0 ) {
             _sureBtn2.backgroundColor = GREEN_COLOR;
             _sureBtn2.userInteractionEnabled = YES;
-            [self.dataSource addObjectsFromArray:model.list];
-            FeddingModel * model = self.dataSource[0];
-            NSArray * array = [model.times componentsSeparatedByString:NSLocalizedString(@",", nil)];
-            if ([model.type isEqualToString:@"one"]) {
+            _sourceDic = model.retVal;
+           // [self.dataSource addObjectsFromArray:model.list];
+           // FeddingModel * model = self.dataSource[0];
+//            NSArray * array = [model.times componentsSeparatedByString:NSLocalizedString(@",", nil)];
+            NSArray * array = [model.retVal[@"times"] componentsSeparatedByString:NSLocalizedString(@",", nil)];
+            
+            if ([model.retVal[@"type"] isEqualToString:@"one"]) {
                 _oneDayButton.selected = YES;
                 _twoDayButton.selected = NO;
                 _isOneOrTwo = YES;
@@ -531,18 +541,19 @@ static NSString * cellId = @"fedseting2321232322313323231";
             }
 
         }else{
-            [self onedayView];
+           // [self onedayView];
             //[self onedayButtonTouch];
+            [self twoDayView];
             _sureBtn2.backgroundColor = [UIColor grayColor];
             _sureBtn2.userInteractionEnabled = NO;
-            [_timeBtn1 setTitle:@"00:00" forState:UIControlStateNormal];
-            [_timeBtn2 setTitle:@"00:00" forState:UIControlStateNormal];
-            [_timeBtn3 setTitle:@"00:00" forState:UIControlStateNormal];
-            [_timeBtn4 setTitle:@"00:00" forState:UIControlStateNormal];
-
-            _oneDayButton.selected = YES;
-            _twoDayButton.selected = NO;
-            _isOneOrTwo = YES;
+//            [_timeBtn1 setTitle:@"00:00" forState:UIControlStateNormal];
+//            [_timeBtn2 setTitle:@"00:00" forState:UIControlStateNormal];
+//            [_timeBtn3 setTitle:@"00:00" forState:UIControlStateNormal];
+//            [_timeBtn4 setTitle:@"00:00" forState:UIControlStateNormal];
+//
+            _oneDayButton.selected = NO;
+            _twoDayButton.selected = YES;
+            _isOneOrTwo = NO;
             _moveView.frame = CGRectMake(2 * W_Wide_Zoom, 2 * W_Hight_Zoom, 36 * W_Wide_Zoom, 26 * W_Hight_Zoom);
         }
     }];

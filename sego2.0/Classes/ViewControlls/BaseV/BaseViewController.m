@@ -7,6 +7,8 @@
 //
 
 #import "BaseViewController.h"
+#import "UITabBar+Badge.h"
+#import "AFHttpClient+Friend.h"
 @implementation BaseViewController
 
 - (void)viewDidLoad{
@@ -46,9 +48,33 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self setLeftBackButton];
-    
+    [self isfriendmessage];
     
 }
+
+-(void)isfriendmessage{
+    [[AFHttpClient sharedAFHttpClient]newFriendsMsgCountWithMid:[AccountManager sharedAccountManager].loginModel.mid complete:^(BaseModel *model) {
+        if ([model.content isEqualToString:@"0"]) {
+            NSUserDefaults * defeults =[NSUserDefaults standardUserDefaults];
+            [defeults setObject:model.content forKey:@"countfoucetip"];
+            [defeults synchronize];
+
+        }else{
+            NSUserDefaults * defeults =[NSUserDefaults standardUserDefaults];
+            [defeults setObject:model.content forKey:@"countfoucetip"];
+            [defeults synchronize];
+            [self.tabBarController.tabBar showBadgeOnItemIndex:3];
+            
+        }
+        
+        
+    }];
+
+
+
+
+}
+
 
 
 

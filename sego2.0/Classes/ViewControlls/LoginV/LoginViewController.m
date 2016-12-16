@@ -62,6 +62,7 @@
     
     _numberTextfield = [[UITextField alloc]init];
     _numberTextfield.font = [UIFont systemFontOfSize:18];
+    _numberTextfield.keyboardAppearance = UIKeyboardAppearanceDark;
     _numberTextfield.placeholder = @"请输入帐号";
     _numberTextfield.tintColor = [UIColor whiteColor];
     _numberTextfield.textColor = [UIColor whiteColor];
@@ -91,6 +92,26 @@
         make.height.mas_equalTo(55);
     }];
     
+    UIButton * showPassBtn = [[UIButton alloc]init];
+    [showPassBtn setImage:[UIImage imageNamed:@"registbiyan.png"] forState:UIControlStateNormal];
+    [showPassBtn setImage:[UIImage imageNamed:@"registyan.png"] forState:UIControlStateSelected];
+    [showPassBtn addTarget:self action:@selector(showpasswordButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
+    [downView addSubview:showPassBtn];
+    [showPassBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(showPassBtn.superview).offset(-14);
+        make.width.mas_equalTo(17);
+        make.height.mas_equalTo(15);
+        make.centerY.equalTo(showPassBtn.superview);
+        
+        
+    }];
+    
+    
+    
+    
+    
+    
+    
     UIImageView * passImage = [[UIImageView alloc]init];
     passImage.image = [UIImage imageNamed:@"passtu.png"];
     [self.view addSubview:passImage];
@@ -102,12 +123,13 @@
         
     }];
     
-    
     _passwordTextfield = [[UITextField alloc]init];
     _passwordTextfield.font = [UIFont systemFontOfSize:18];
     _passwordTextfield.placeholder = @"请输入密码";
+    _passwordTextfield.keyboardAppearance = UIKeyboardAppearanceDark;
     _passwordTextfield.tintColor = [UIColor whiteColor];
     _passwordTextfield.textColor = [UIColor whiteColor];
+    _passwordTextfield.secureTextEntry = YES;
     [_passwordTextfield setValue:RGB(153, 153, 153) forKeyPath:@"_placeholderLabel.textColor"];
     [self.view addSubview:_passwordTextfield];
     [_passwordTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -260,6 +282,8 @@
 
     }];
     
+    
+    
 
 }
 
@@ -410,6 +434,19 @@
     textField.keyboardAppearance = UIKeyboardAppearanceAlert;
     // textField.keyboardType = UIKeyboardTypeDefault;
 }
+
+-(void)showpasswordButtonTouch:(UIButton *)sender{
+    sender.selected = !sender.selected;
+    if (sender.selected == YES) {
+        _passwordTextfield.secureTextEntry = NO;
+    }else{
+        _passwordTextfield.secureTextEntry = YES;
+    }
+    
+    
+
+}
+
 
 
 
