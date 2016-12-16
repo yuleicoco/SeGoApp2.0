@@ -18,9 +18,10 @@
     parms[@"nickname"] =nickname;
     parms[@"secretkey"]=secretkey;
     parms[@"rtype"] = rtype;
-    NSMutableDictionary * dataparms = [[NSMutableDictionary alloc]init];
-    dataparms[@"headportrait"]= headportrait;
-    parms[@"data"] =dataparms;
+//    NSMutableDictionary * dataparms = [[NSMutableDictionary alloc]init];
+//    dataparms[@"name"]= @"";
+//    dataparms[@"content"] = headportrait;
+    parms[@"headportrait"] =headportrait;
 
     
     [self POST:@"clientAction.do?" parameters:parms result:^(BaseModel * model) {

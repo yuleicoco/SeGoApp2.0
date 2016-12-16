@@ -113,24 +113,8 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     
     NSString * strBing =[Defaluts objectForKey:PREF_DEVICE_NUMBER];
     NSString * strLogin =[AccountManager sharedAccountManager].loginModel.deviceno;
+    str = strBing.length>strLogin.length?strBing:strLogin;
     
-    if ([AppUtil isBlankString:strBing] && [AppUtil isBlankString:strLogin]) {
-        
-        str =@"";
-    }else
-    {
-        
-        if ([AppUtil isBlankString:strBing]) {
-            
-            str = strLogin;
-        }else
-        {
-            
-            str = strBing;
-            
-        }
-        
-    }
 
     
     [super setupView];
