@@ -38,7 +38,12 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     int serviceNum;   // 添加成功的service数量
     BOOL isAccecptOk; // 是否接收结果成功
     BOOL isOpenPerOK; // 判断是否从机开始广播
-    NSString * str;
+    NSString * strTT;
+    NSString * strYY;
+    NSTimer * timerCheck;
+    NSInteger  timerEnd;
+    
+    
 
     }
 
@@ -113,7 +118,16 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     
     NSString * strBing =[Defaluts objectForKey:PREF_DEVICE_NUMBER];
     NSString * strLogin =[AccountManager sharedAccountManager].loginModel.deviceno;
-    str = strBing.length>strLogin.length?strBing:strLogin;
+    
+   strYY =[Defaluts objectForKey:@"incodeNum"];
+   // NSString * st2 =[AccountManager sharedAccountManager].loginModel.incode;
+    
+    
+    
+    strTT = strBing.length>strLogin.length?strBing:strLogin;
+  //  strYY = st1.length>st2.length?st1:st2;
+    
+    
     
 
     
@@ -153,7 +167,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     btnBind =[UIButton new];
     btnBind.layer.cornerRadius = 4;
     btnBind.backgroundColor = GRAY_COLOR;
-    if ([AppUtil isBlankString:str]) {
+    if ([AppUtil isBlankString:strTT]) {
          [btnBind setTitle:@"绑定设备" forState:UIControlStateNormal];
          btnBind.enabled = FALSE;
     }else
@@ -207,13 +221,14 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     
     
    
-    if ([AppUtil isBlankString:str]) {
+    if ([AppUtil isBlankString:strTT]) {
         deviceTF.text =@"";
         incodeTF.text =@"";
     }else
     {
-        deviceTF.text =str;
-        incodeTF.text =   [Defaluts objectForKey:@"incodeNum"];
+        deviceTF.text =strTT;
+        incodeTF.text =strYY;
+        
 
         
     }
@@ -273,8 +288,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
         [self showWarningTip:@"设备号不存在"];
         return;
     }
-    if ([AppUtil isBlankString:str]) {
-        
+    if ([AppUtil isBlankString:strTT]) {
         [[AFHttpClient sharedAFHttpClient]AddDeviceStats:[AccountManager sharedAccountManager].loginModel.mid deviceno:deviceTF.text complete:^(BaseModel *model) {
             FuckLog(@"%@",model);
             
@@ -294,7 +308,9 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
             }else
             {
                 // 错误提示
-                [self wariring];
+               // [self wariring];
+                
+                return ;
                 
                 
             }
@@ -360,7 +376,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
 }
 
 
-
+// 提示框
 - (void)wariring
 {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -397,6 +413,22 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
 }
 - (void)TryAgainMethod
 {
+     [ShowView removeFromSuperview];
+    
+}
+
+
+// 断掉服务
+- (void)timestart:(NSTimer *)timer
+{
+    timerEnd++;
+    if (timerEnd>35 && [AppUtil isBlankString:deviceTF.text]) {
+        // 关闭服务
+        [hud hide:TRUE];
+        [self showWarningTip:@"配置失败，请确保打开设备蓝牙"];
+        timerEnd=0;
+    }
+    
     
     
 }
@@ -412,8 +444,8 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
  */
 - (void)setUpBleDevice {
     
-    //    timer =  [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timestart:) userInfo:nil repeats:YES];
-    //    [timer setFireDate:[NSDate distantPast]];
+        timerCheck =  [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timestart:) userInfo:nil repeats:YES];
+    [timerCheck setFireDate:[NSDate distantPast]];
     
     // bind请求的参数json对象。
     NSString *strUserid = [AccountManager sharedAccountManager].loginModel.mid;
@@ -465,7 +497,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
         case CBPeripheralManagerStatePoweredOn:
             FuckLog(@"Bluetooth powered on");
             
-            if ([AppUtil isBlankString:str]) {
+            if ([AppUtil isBlankString:strTT]) {
                 [self SearchDevice];
                 [self setUpBleDevice];
 
@@ -622,14 +654,14 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
             NSArray *array = [strResult componentsSeparatedByString:@","];
             if (array == nil || array.count != 2) {
                 [self showWarningTip:@"配置失败，请重新搜索设备"];
-                //[timer setFireDate:[NSDate distantFuture]];
+                [self stopOverService];
                 return;
             }
             strResult = array[0];
             // 出错了。
             if (![strResult isEqualToString:@"OK"]) {
                 [self showWarningTip:@"配置失败，请重新搜索设备"];
-                //[timer setFireDate:[NSDate distantFuture]];
+                [self stopOverService];
                 return;
                 
             }
@@ -646,8 +678,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
                 [self enableBindButton];
                 // 关闭
                 
-                [peripheralManager stopAdvertising];
-                [peripheralManager removeAllServices];
+                [self stopOverService];
             }
             
             else {
@@ -656,7 +687,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
                 deviceTF.text = @"";
                 incodeTF.text = @"";
                 btnBind.enabled = FALSE;
-                
+                [self stopOverService];
                 return;
             }
             
@@ -703,14 +734,26 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
 /**
  *  显示警告提示
  */
-- (void)showWarningTip:(NSString *)str {
+- (void)showWarningTip:(NSString *)strWarring {
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDModeText;
-    hud.labelText = str;
+    hud.labelText = strWarring;
     hud.minSize = CGSizeMake(132.f, 66.0f);
     [hud hide:YES afterDelay:1.0];
     
 }
 
+/**
+ *  停止蓝牙和时间服务
+ */
+
+- (void)stopOverService
+{
+    [timerCheck setFireDate:[NSDate distantFuture]];
+    [peripheralManager stopAdvertising];
+    [peripheralManager removeAllServices];
+    
+    
+}
 
 @end
