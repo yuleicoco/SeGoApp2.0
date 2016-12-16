@@ -187,13 +187,15 @@
                 [[AccountManager sharedAccountManager]logout];
                 
                 NSUserDefaults *userDefatluts = [NSUserDefaults standardUserDefaults];
+                NSString * incodeNumStr = [userDefatluts objectForKey:@"incodeNum"];
+
                 NSDictionary *dictionary = [userDefatluts dictionaryRepresentation];
                 for(NSString* key in [dictionary allKeys]){
                     [userDefatluts removeObjectForKey:key];
                     [userDefatluts synchronize];
                 }
                 [userDefatluts setObject:@"1" forKey:@"STARTFLAG"];
-
+                [userDefatluts setObject:incodeNumStr forKey:@"incodeNum"];
             }];
         
             [alertController addAction:okAction];

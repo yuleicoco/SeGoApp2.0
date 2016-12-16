@@ -194,7 +194,8 @@ static NSString * cellId = @"friendSearchCellid";
     [[AFHttpClient sharedAFHttpClient]addFriendRequsetWithMid:[AccountManager sharedAccountManager].loginModel.mid friend:model.mid complete:^(BaseModel *model) {
         if (model) {
             sender.backgroundColor = [UIColor clearColor];
-            sender.titleLabel.font = [UIFont systemFontOfSize:1];
+            sender.titleLabel.font = [UIFont systemFontOfSize:13];
+            
             [sender setTitle:@"等待验证" forState:UIControlStateNormal];
             [sender setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         }

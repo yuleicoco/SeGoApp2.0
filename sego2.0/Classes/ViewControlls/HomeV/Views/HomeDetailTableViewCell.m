@@ -14,7 +14,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         _centerImage = [[UIImageView alloc]init];
-        //_centerImage.contentMode = UIViewContentModeCenter;
+        _centerImage.contentMode = UIViewContentModeCenter;
         _centerImage.layer.masksToBounds = YES;
         [self addSubview:_centerImage];
         [_centerImage mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -23,7 +23,7 @@
             make.top.equalTo(_centerImage.superview).offset(12);
             //   make.bottom.equalTo(_centerImage.superview.mas_bottom);
             make.height.mas_equalTo(220);
-            make.width.mas_offset(375 * W_Wide_Zoom);
+        //     make.width.mas_offset(375 * W_Wide_Zoom);
             
         }];
         

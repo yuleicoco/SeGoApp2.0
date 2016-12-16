@@ -67,11 +67,14 @@
                 [[AppUtil appTopViewController]showHint:model.retDesc];
                  [self.navigationController popToRootViewControllerAnimated:NO];
                    [[NSNotificationCenter defaultCenter]postNotificationName:@"shuaxin" object:nil];
-                }
+               
+            }
+            _isfabu = NO;
               [self hideHud];
+            sender.userInteractionEnabled = YES;
             
         }];
-        _isfabu = NO;
+       // _isfabu = NO;
     }else{
         NSString * soureceString = [_ImageArray componentsJoinedByString:@","];
         [[AFHttpClient sharedAFHttpClient]addArticleWithMid:[AccountManager sharedAccountManager].loginModel.mid content:_topTextView.text type:@"p" resources:soureceString complete:^(BaseModel *model) {
@@ -79,12 +82,14 @@
                 [[AppUtil appTopViewController]showHint:model.retDesc];
                 [self.navigationController popToRootViewControllerAnimated:NO];
                    [[NSNotificationCenter defaultCenter]postNotificationName:@"shuaxin" object:nil];
-            }
-              [self hideHud];
+        }
+            _isfabu = NO;
+            [self hideHud];
+            sender.userInteractionEnabled = YES;
         }];
     
 
-        _isfabu = NO;
+       // _isfabu = NO;
     
     }
 

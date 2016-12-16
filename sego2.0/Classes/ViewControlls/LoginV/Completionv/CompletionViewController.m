@@ -65,7 +65,7 @@
     [_numberTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(numberLabel.mas_right).offset(13);
         make.centerY.equalTo(numberView.mas_centerY).offset(1);
-        
+        make.width.mas_equalTo(230);
     }];
     
     
@@ -170,6 +170,7 @@
     [_passwordTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(passwordLabel.mas_right).offset(13);
         make.centerY.equalTo(passwordView.mas_centerY).offset(1);
+        make.width.mas_equalTo(230);
     }];
     
     
@@ -222,6 +223,7 @@
     [_surepasswordTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(surepasswordLabel.mas_right).offset(13);
         make.centerY.equalTo(surepasswordView.mas_centerY).offset(1);
+        make.width.mas_equalTo(230);
         
     }];
     

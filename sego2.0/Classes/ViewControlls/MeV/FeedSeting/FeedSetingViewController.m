@@ -189,8 +189,15 @@ static NSString * cellId = @"fedseting2321232322313323231";
     
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
       //  FeddingModel * model = self.dataSource[0];
+        NSString * str  =  [Defaluts objectForKey:@"deviceNumber"];
+        NSString * str1  = [AccountManager sharedAccountManager].loginModel.deviceno;
+        NSString * deviceNum = str.length>str1.length?str:str1;
+        
+        NSString * str3 = [Defaluts objectForKey:@"termid"];
+        NSString * str4 = [AccountManager sharedAccountManager].loginModel.termid;
+        NSString * termidstr = str3.length>str4.length?str3:str4;
         [self showHudInView:self.view hint:@"正在停用..."];
-        [[AFHttpClient sharedAFHttpClient]cancelFeedingtimeWithbrid:_sourceDic[@"brid"] deviceno:[AccountManager sharedAccountManager].loginModel.deviceno termid:[AccountManager sharedAccountManager].loginModel.termid complete:^(BaseModel *model) {
+        [[AFHttpClient sharedAFHttpClient]cancelFeedingtimeWithbrid:_sourceDic[@"brid"] deviceno:deviceNum termid:termidstr complete:^(BaseModel *model) {
             [self hideHud];
             if (model) {
                 [[AppUtil appTopViewController] showHint:model.retDesc];

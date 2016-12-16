@@ -381,17 +381,32 @@
 
 -(void)doumabuttonTouch{
     FuckLog(@"逗码");
-    FunnycodeViewController * funnyVc = [[FunnycodeViewController alloc]init];
-    [self.navigationController pushViewController:funnyVc animated:NO];
+    NSString * str  =  [Defaluts objectForKey:@"deviceNumber"];
+    NSString * str1  = [AccountManager sharedAccountManager].loginModel.deviceno;
+    if ([AppUtil isBlankString:str] && [AppUtil isBlankString:str1]) {
+         [[AppUtil appTopViewController]showHint:@"您还未绑定设备"];
+    }else{
+        FunnycodeViewController * funnyVc = [[FunnycodeViewController alloc]init];
+        [self.navigationController pushViewController:funnyVc animated:NO];
+
+    }
+    
     
     
 }
 
 -(void)quanxianbuttonTouch{
     FuckLog(@"权限设置");
+    NSString * str  =  [Defaluts objectForKey:@"deviceNumber"];
+    NSString * str1  = [AccountManager sharedAccountManager].loginModel.deviceno;
+    if ([AppUtil isBlankString:str] && [AppUtil isBlankString:str1]) {
+        [[AppUtil appTopViewController]showHint:@"您还未绑定设备"];
+
+    }else{
     PermissionViewController * perVc = [[PermissionViewController alloc]init];
     [self.navigationController pushViewController:perVc animated:NO];
     
+    }
     
 }
 -(void)exchangebuttonTouch{
@@ -445,11 +460,14 @@
     
     NSUserDefaults *userDefatluts = [NSUserDefaults standardUserDefaults];
     NSDictionary *dictionary = [userDefatluts dictionaryRepresentation];
+    NSString * incodeNumStr = [userDefatluts objectForKey:@"incodeNum"];
+        
     for(NSString* key in [dictionary allKeys]){
         [userDefatluts removeObjectForKey:key];
         [userDefatluts synchronize];
     }
          [userDefatluts setObject:@"1" forKey:@"STARTFLAG"];
+         [userDefatluts setObject:incodeNumStr forKey:@"incodeNum"];
      }]];
     [self presentViewController:alert animated:YES completion:nil];
 

@@ -213,12 +213,21 @@ static NSString * cellId = @"homedetailviewellId";
         cell.topView.hidden = YES;
     }
 
+    NSMutableArray * wocaca = [[NSMutableArray alloc]init];
     if ([model.type isEqualToString:@"p"]) {
         cell.videoImage.hidden = YES;
-        [cell.centerImage sd_setImageWithURL:[NSURL URLWithString:_resoucesArray[indexPath.row]] placeholderImage:[UIImage imageNamed:@"sego1.png"]];
-        [cell.centerImage .image imageByScalingProportionallyToSize:CGSizeMake(375, CGFLOAT_MAX)];
+        if (wocaca.count>0) {
+            cell.centerImage.image = wocaca[indexPath.row];
+        }else{
+        [cell.centerImage sd_setImageWithURL:[NSURL URLWithString:_resoucesArray[indexPath.row]] placeholderImage:[UIImage imageNamed:@"sego1.png"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if (image) {
+                cell.centerImage.image = [image imageByScalingProportionallyToSize:CGSizeMake(self.tableView.width, CGFLOAT_MAX)];
+                [wocaca addObject:cell.centerImage.image];
+            }
+        }];
+        
+}
     }else{
-     //  [cell.centerImage sd_setImageWithURL:[NSURL URLWithString:model.thumbnails] placeholderImage:[UIImage imageNamed:@"sego1.png"]];
         cell.videoImage.hidden = NO;
         if (model.cutImage) {
             cell.centerImage.image = model.cutImage;
