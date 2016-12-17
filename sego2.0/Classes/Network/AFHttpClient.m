@@ -60,7 +60,7 @@ singleton_implementation(AFHttpClient)
         BaseModel* model = [[BaseModel alloc] initWithDictionary:responseObject[@"jsondata"] error:&error];
         
         if (error || [model.retCode integerValue] != 0) {
-          //  [[AppUtil appTopViewController] showHint:error ? [error localizedDescription] : model.retDesc];
+            [[AppUtil appTopViewController] showHint:error ? [error localizedDescription] : model.retDesc];
             
             if (result) {
                 result(nil);

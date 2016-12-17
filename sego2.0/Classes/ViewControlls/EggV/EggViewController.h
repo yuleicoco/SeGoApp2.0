@@ -14,6 +14,8 @@
 @property(nonatomic,strong)NSString * SearchMid;
 @property(nonatomic,strong)NSString * CodeMid;
 @property(nonatomic,assign)BOOL isOther;
+@property(nonatomic,assign)NSInteger tsumNum;
+
 
 
 

@@ -33,6 +33,8 @@
 @property (nonatomic,strong)UIImageView * pointTouch;
 
 @property (nonatomic,strong)NSString * isTurmNum;
+@property (nonatomic,assign)BOOL isOther;
+
 
 
 

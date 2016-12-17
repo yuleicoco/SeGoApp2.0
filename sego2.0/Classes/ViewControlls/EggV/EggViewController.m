@@ -167,8 +167,6 @@
      [self checkDeviceStats];
      [self checkWifi];
     
-   
-
 
     if (isOther) {
         NSString * d = SearchMid.length>DouMid.length?SearchMid:(DouMid.length>CodeMid.length?DouMid:CodeMid);
@@ -177,9 +175,6 @@
                 isOtherDevice = model.retVal[@"deviceno"];
                 isOherID = model.retVal[@"mid"];
                 isTsnum = model.retVal[@"tsnum"];
-                
-            
-                
             }];
         
         
@@ -325,7 +320,9 @@
             InCallViewController *   _incallVC =[[InCallViewController alloc]initWithNibName:@"InCallViewController" bundle:nil];
             
             if (isOther) {
-              _incallVC.isTurmNum = isTsnum;
+                _incallVC.isOther = YES;
+                _incallVC.isTurmNum = isTsnum;
+                
             }
             [_incallVC setCall:call];
             [self presentViewController:_incallVC animated:YES completion:nil];

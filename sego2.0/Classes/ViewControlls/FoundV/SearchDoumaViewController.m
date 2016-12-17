@@ -173,10 +173,19 @@ static NSString * cellId = @"searchtabviewId";
 -(void)rightButtontouch{
      SearchModel * model = self.dataSource[0];
     // 通过搜索开启别人视频
-    EggViewController * eggVC =[[EggViewController alloc]init];
-    eggVC.SearchMid = model.mid;
-    eggVC.isOther = YES;
-    [self.navigationController pushViewController:eggVC animated:NO];
+    [[AFHttpClient sharedAFHttpClient]CheckDouCode:model.mid complete:^(BaseModel * model) {
+        if ([model.retCode isEqualToString:@"0000"]) {
+         SearchModel * model1 = self.dataSource[0];
+         EggViewController * eggVC =[[EggViewController alloc]init];
+         eggVC.SearchMid = model1.mid;
+         eggVC.isOther = YES;
+         eggVC.tsumNum = [model.retVal[@"tsnum"] integerValue];
+        [self.navigationController pushViewController:eggVC animated:NO];
+        }
+
+    }];
+    
+    
     
     
 }

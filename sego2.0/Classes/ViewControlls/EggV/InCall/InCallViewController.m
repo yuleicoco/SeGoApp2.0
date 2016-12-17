@@ -58,6 +58,8 @@
     int stetion;
     
     BOOL isTurnOff;
+    NSInteger tsumNum;
+    
     
     
     
@@ -86,6 +88,8 @@
 @synthesize pesnBack;
 @synthesize FiveView;
 @synthesize pointTouch;
+@synthesize isOther;
+
 
 
 
@@ -363,13 +367,34 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     UIButton * rightBtn = [UIButton new];
     UIButton * RtopBtn = [UIButton new];
     UIButton * RdownBtn =[UIButton new];
+    topBtn.tag =1000001;
+    downBtn.tag=1000002;
+    leftBtn.tag =1000003;
+    rightBtn.tag =1000004;
+    RtopBtn.tag =1000005;
+    RdownBtn.tag =1000006;
+    
     
     [topBtn addTarget:self action:@selector(topClickSt:) forControlEvents:UIControlEventTouchUpInside];
+    [topBtn addTarget:self action:@selector(Stopclick:) forControlEvents:UIControlEventTouchDown];
+    
+    
     [downBtn addTarget:self action:@selector(downClickSt:) forControlEvents:UIControlEventTouchUpInside];
+    [downBtn addTarget:self action:@selector(Sdownclick:) forControlEvents:UIControlEventTouchDown];
+    
     [leftBtn addTarget:self action:@selector(leftClickSt:) forControlEvents:UIControlEventTouchUpInside];
+    [leftBtn addTarget:self action:@selector(Sleftclick:) forControlEvents:UIControlEventTouchDown];
+    
+    
     [rightBtn addTarget:self action:@selector(rightClickSt:) forControlEvents:UIControlEventTouchUpInside];
+    [rightBtn addTarget:self action:@selector(Srightclick:) forControlEvents:UIControlEventTouchDown];
+    
     [RtopBtn addTarget:self action:@selector(RtopClickSt:) forControlEvents:UIControlEventTouchUpInside];
+    [RtopBtn addTarget:self action:@selector(Slef_toptclick:) forControlEvents:UIControlEventTouchDown];
+    
     [RdownBtn addTarget:self action:@selector(RdownClickSt:) forControlEvents:UIControlEventTouchUpInside];
+     [RdownBtn addTarget:self action:@selector(Slef_downtclick:) forControlEvents:UIControlEventTouchDown];
+    
     
     DriArr =@[topBtn,downBtn,leftBtn,rightBtn,RtopBtn,RdownBtn];
     for (NSInteger i =0; i<6; i++) {
@@ -1142,21 +1167,41 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)RollClick:(UIButton *)sender
 {
     
-    if ([AppUtil isBlankString:_isTurmNum]) {
+    // 第三方进来的
+    if (isOther) {
         
-        // 不能投食
+        if([_isTurmNum integerValue] <0){
+           [self showSuccessHudWithHint:@"没有投食量"];
+    }else
+    {
+        tsumNum++;
+        if ([_isTurmNum integerValue]<tsumNum ) {
+            [self showSuccessHudWithHint:@"超过最大投食量"];
+        }else
+        {
+            sender.selected = !sender.selected;
+            NSString * strid =[Defaluts objectForKey:@"selfID"];
+            [[AFHttpClient sharedAFHttpClient]Rollfood:strid deviceno:strDevice termid:strTermid complete:^(BaseModel * model) {
+                sender.selected = !sender.selected;
+                NSLog(@"%@",model.retCode);
+                
+            }];
+        }
+    }
         
     }else
     {
-    sender.selected = !sender.selected;
-    NSString * strid =[Defaluts objectForKey:@"selfID"];
-    [[AFHttpClient sharedAFHttpClient]Rollfood:strid deviceno:strDevice termid:strTermid complete:^(BaseModel * model) {
-         sender.selected = !sender.selected;
-         NSLog(@"%@",model.retCode);
-    }];
-    
+        
+        sender.selected = !sender.selected;
+        NSString * strid =[Defaluts objectForKey:@"selfID"];
+        [[AFHttpClient sharedAFHttpClient]Rollfood:strid deviceno:strDevice termid:strTermid complete:^(BaseModel * model) {
+            sender.selected = !sender.selected;
+            NSLog(@"%@",model.retCode);
+            
+        }];
 
     }
+
     
 }
 //抓拍
@@ -1210,6 +1255,46 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
 }
 
+-(void)moverobot:(NSString *)str
+{
+    NSInteger i = [str integerValue];
+    switch (i) {
+        case 1:
+            [self.view viewWithTag:100001].userInteractionEnabled = NO;
+            [self.view viewWithTag:100002].userInteractionEnabled = NO;
+            [self.view viewWithTag:100003].userInteractionEnabled = NO;
+            [self.view viewWithTag:100004].userInteractionEnabled = NO;
+            [self.view viewWithTag:100005].userInteractionEnabled = YES;
+            [self.view viewWithTag:100006].userInteractionEnabled = NO;
+
+            break;
+            
+        case 2:
+           
+            [self.view viewWithTag:100001].userInteractionEnabled = NO;
+            [self.view viewWithTag:100002].userInteractionEnabled = NO;
+            [self.view viewWithTag:100003].userInteractionEnabled = NO;
+            [self.view viewWithTag:100004].userInteractionEnabled = NO;
+            [self.view viewWithTag:100005].userInteractionEnabled = NO;
+            [self.view viewWithTag:100006].userInteractionEnabled = YES;
+
+            break;
+            
+        default:
+            break;
+    }
+    
+    
+    moveTimer = [HWWeakTimer scheduledTimerWithTimeInterval:1.0*0.2 block:^(id userInfo) {
+        
+        [self sendInfomationL:str];
+    } userInfo:@"Fire" repeats:YES];
+    [moveTimer fire];
+    
+    
+}
+
+
 
 /**
  *  上下左右 点击事件 1.单击 2.释放   4321 touch down
@@ -1219,6 +1304,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 //*****************************点击结束**********************************
 - (void)topClickSt:(UIButton *)sender
 {
+  
      [self overTime];
     
 }
@@ -1267,20 +1353,40 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     switch (i) {
         case 1:
             
-            
+            [self.view viewWithTag:i].userInteractionEnabled = YES;
+            [self.view viewWithTag:100002].userInteractionEnabled = NO;
+            [self.view viewWithTag:100003].userInteractionEnabled = NO;
+            [self.view viewWithTag:100004].userInteractionEnabled = NO;
+            [self.view viewWithTag:100005].userInteractionEnabled = NO;
+            [self.view viewWithTag:100006].userInteractionEnabled = NO;
             break;
            
         case 2:
-            
+            [self.view viewWithTag:i].userInteractionEnabled = YES;
+            [self.view viewWithTag:100001].userInteractionEnabled = NO;
+            [self.view viewWithTag:100003].userInteractionEnabled = NO;
+            [self.view viewWithTag:100004].userInteractionEnabled = NO;
+            [self.view viewWithTag:100005].userInteractionEnabled = NO;
+            [self.view viewWithTag:100006].userInteractionEnabled = NO;
             
             break;
         case 3:
-            
+            [self.view viewWithTag:i].userInteractionEnabled = YES;
+            [self.view viewWithTag:100002].userInteractionEnabled = NO;
+            [self.view viewWithTag:100001].userInteractionEnabled = NO;
+            [self.view viewWithTag:100004].userInteractionEnabled = NO;
+            [self.view viewWithTag:100005].userInteractionEnabled = NO;
+            [self.view viewWithTag:100006].userInteractionEnabled = NO;
             
             break;
         case 4:
             
-            
+            [self.view viewWithTag:i].userInteractionEnabled = YES;
+            [self.view viewWithTag:100002].userInteractionEnabled = NO;
+            [self.view viewWithTag:100003].userInteractionEnabled = NO;
+            [self.view viewWithTag:100001].userInteractionEnabled = NO;
+            [self.view viewWithTag:100005].userInteractionEnabled = NO;
+            [self.view viewWithTag:100006].userInteractionEnabled = NO;
             break;
        
         default:
@@ -1288,13 +1394,23 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }
     
      moveTimer = [HWWeakTimer scheduledTimerWithTimeInterval:1.0*0.2 block:^(id userInfo) {
-        [self sendInfomationL:str];
+        [self sendInfomation:str];
     } userInfo:@"Fire" repeats:YES];
     
     [moveTimer fire];
     
     
 }
+
+- (void)sendInfomation:(NSString *)sender
+{
+    
+    NSString * msg =[NSString stringWithFormat:@"control_servo,0,0,1,%d,200",[sender intValue]];
+    [self sendMessage:msg];
+    
+    
+}
+
 
 
 // 执行
