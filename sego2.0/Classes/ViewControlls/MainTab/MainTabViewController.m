@@ -75,8 +75,8 @@
         HomeViewController* vc = [[HomeViewController alloc] init];
         vc.tabBarItem =
         [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tabSquare", nil)
-                                      image:[[UIImage imageNamed:@"tab_squar"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                              selectedImage:[[UIImage imageNamed:@"tab_squar_dian"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                                      image:[[UIImage imageNamed:@"tab_home"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                              selectedImage:[[UIImage imageNamed:@"tab_homedian"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         
         _navHomeVC = [[UINavigationController alloc]initWithRootViewController:vc];
         
@@ -122,15 +122,15 @@
 
 
 
-//榜单
+//好友
 - (UINavigationController *)navFriendVC{
     if (!_navFriendVC) {
         
         FriendViewController* vc = [[FriendViewController alloc] init];
         vc.tabBarItem =
         [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tabRank", nil)
-                                      image:[[UIImage imageNamed:@"tab_bangdan"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                              selectedImage:[[UIImage imageNamed:@"tab_bangdan_dian"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                                      image:[[UIImage imageNamed:@"tab_friend"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                              selectedImage:[[UIImage imageNamed:@"tab_frienddian"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         _navFriendVC = [[UINavigationController alloc]initWithRootViewController:vc];
     }
     
@@ -146,8 +146,8 @@
         
         vc.tabBarItem =
         [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tabPersonal", nil)
-                                      image:[[UIImage imageNamed:@"tab_my"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                              selectedImage:[[UIImage imageNamed:@"tab_my_dian"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                                      image:[[UIImage imageNamed:@"tab_person"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                              selectedImage:[[UIImage imageNamed:@"tab_persondian"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         _navPersonalVC = [[UINavigationController alloc]initWithRootViewController:vc];
         
     }
