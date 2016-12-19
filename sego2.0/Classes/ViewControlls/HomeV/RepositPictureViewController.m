@@ -57,6 +57,7 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
     [dancelbtn setTitle:@"取消" forState:UIControlStateNormal];
     [dancelbtn setTitleColor:GREEN_COLOR forState:UIControlStateNormal];
     dancelbtn.titleLabel.font = [UIFont systemFontOfSize:18];
+     [dancelbtn addTarget:self action:@selector(dancelBtnToucch) forControlEvents:UIControlEventTouchUpInside];
     [bottomview addSubview:dancelbtn];
     [dancelbtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(dancelbtn.superview).offset(79);
@@ -342,13 +343,21 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
 
 -(void)rightButtonTouch{
     NSLog(@"%@",deleteOrUpdateArr);
-    IssueViewController * issVc = [[IssueViewController alloc]init];
-    //issVc.ImageArray = thunmArray;
-    issVc.ImageArray = deleteOrUpdateArr;
-    issVc.porv = @"p";
-    [self.navigationController pushViewController:issVc animated:NO];
+    if (deleteOrUpdateArr.count > 0) {
+        IssueViewController * issVc = [[IssueViewController alloc]init];
+        //issVc.ImageArray = thunmArray;
+        issVc.ImageArray = deleteOrUpdateArr;
+        issVc.porv = @"p";
+        [self.navigationController pushViewController:issVc animated:NO];
+    }else{
+    
+    }
+   
     
 }
-
+-(void)dancelBtnToucch{
+    [self.navigationController popViewControllerAnimated:NO];
+    
+}
 
 @end

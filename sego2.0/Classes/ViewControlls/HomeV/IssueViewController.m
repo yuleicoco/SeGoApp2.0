@@ -64,13 +64,14 @@
         NSString * soureceString = [_soureArray componentsJoinedByString:@","];
         [[AFHttpClient sharedAFHttpClient]addArticleWithMid:[AccountManager sharedAccountManager].loginModel.mid content:_topTextView.text type:@"v" resources:soureceString complete:^(BaseModel *model) {
             if ([model.retCode isEqualToString:@"0000"]) {
-                [[AppUtil appTopViewController]showHint:model.retDesc];
+               // [[AppUtil appTopViewController]showHint:model.retDesc];
                  [self.navigationController popToRootViewControllerAnimated:NO];
                    [[NSNotificationCenter defaultCenter]postNotificationName:@"shuaxin" object:nil];
                
             }
+            [self hideHud];
+            [[AppUtil appTopViewController]showHint:model.retDesc];
             _isfabu = NO;
-              [self hideHud];
             sender.userInteractionEnabled = YES;
             
         }];
@@ -79,10 +80,11 @@
         NSString * soureceString = [_ImageArray componentsJoinedByString:@","];
         [[AFHttpClient sharedAFHttpClient]addArticleWithMid:[AccountManager sharedAccountManager].loginModel.mid content:_topTextView.text type:@"p" resources:soureceString complete:^(BaseModel *model) {
             if ([model.retCode isEqualToString:@"0000"]) {
-                [[AppUtil appTopViewController]showHint:model.retDesc];
+               // [[AppUtil appTopViewController]showHint:model.retDesc];
                 [self.navigationController popToRootViewControllerAnimated:NO];
                    [[NSNotificationCenter defaultCenter]postNotificationName:@"shuaxin" object:nil];
         }
+              [[AppUtil appTopViewController]showHint:model.retDesc];
             _isfabu = NO;
             [self hideHud];
             sender.userInteractionEnabled = YES;

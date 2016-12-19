@@ -284,6 +284,7 @@
 		7D02600D1E03E4F2009CBCA2 /* tab_frienddian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D02600B1E03E4F2009CBCA2 /* tab_frienddian@2x.png */; };
 		7D0260101E03E5EB009CBCA2 /* tab_person@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D02600E1E03E5EB009CBCA2 /* tab_person@2x.png */; };
 		7D0260111E03E5EB009CBCA2 /* tab_persondian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D02600F1E03E5EB009CBCA2 /* tab_persondian@2x.png */; };
+		7D0260141E03F44B009CBCA2 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0260131E03F44B009CBCA2 /* RecommendViewController.m */; };
 		7D02A9DD1DFA542A00C41A56 /* videobo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D02A9DC1DFA542A00C41A56 /* videobo.png */; };
 		7D02A9E01DFA5A9C00C41A56 /* PopStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D02A9DF1DFA5A9C00C41A56 /* PopStartView.m */; };
 		7D02A9E41DFA5BA300C41A56 /* guide1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D02A9E11DFA5BA300C41A56 /* guide1.jpg */; };
@@ -1127,6 +1128,8 @@
 		7D02600B1E03E4F2009CBCA2 /* tab_frienddian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_frienddian@2x.png"; sourceTree = "<group>"; };
 		7D02600E1E03E5EB009CBCA2 /* tab_person@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_person@2x.png"; sourceTree = "<group>"; };
 		7D02600F1E03E5EB009CBCA2 /* tab_persondian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_persondian@2x.png"; sourceTree = "<group>"; };
+		7D0260121E03F44B009CBCA2 /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
+		7D0260131E03F44B009CBCA2 /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
 		7D02A9DC1DFA542A00C41A56 /* videobo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videobo.png; sourceTree = "<group>"; };
 		7D02A9DE1DFA5A9C00C41A56 /* PopStartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopStartView.h; sourceTree = "<group>"; };
 		7D02A9DF1DFA5A9C00C41A56 /* PopStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopStartView.m; sourceTree = "<group>"; };
@@ -2840,6 +2843,8 @@
 				7D28166F1DF1102200A9E6DA /* RepositPictureViewController.m */,
 				7D0892B21DF8FC45001BBD98 /* IssueViewController.h */,
 				7D0892B31DF8FC45001BBD98 /* IssueViewController.m */,
+				7D0260121E03F44B009CBCA2 /* RecommendViewController.h */,
+				7D0260131E03F44B009CBCA2 /* RecommendViewController.m */,
 			);
 			path = HomeV;
 			sourceTree = "<group>";
@@ -3527,6 +3532,7 @@
 				34C495ED1DD1CD5400687606 /* UIImage-Extensions.m in Sources */,
 				34C495F71DD1CD6C00687606 /* NSString+URLEncoding.m in Sources */,
 				7D65A3FB1E012B66004B0B85 /* ZdExchangFriendViewController.m in Sources */,
+				7D0260141E03F44B009CBCA2 /* RecommendViewController.m in Sources */,
 				7DD60BF81DED6B540065D941 /* FriendTableViewCell.m in Sources */,
 				34DB5CA91DD4129E00C51823 /* SephoneUtils.m in Sources */,
 				7DC89EF31DEFD47300564BB3 /* RecommendModel.m in Sources */,
