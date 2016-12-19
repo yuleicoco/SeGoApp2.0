@@ -165,11 +165,10 @@
  
     
     
-    [[AFHttpClient sharedAFHttpClient]CheckDouCode:[AccountManager sharedAccountManager].loginModel.mid playCode:playStr complete:^(BaseModel * model) {
-        
-        
+  [[AFHttpClient sharedAFHttpClient]CheckCode:playStr complete:^(BaseModel * model) {
+      
+
         FuckLog(@"%@",model);
-        
         if ([model.retVal[@"mid"] isEqualToString:[AccountManager sharedAccountManager].loginModel.mid]) {
             // 自己
             self.mainTabVC.selectedIndex =2;
@@ -186,6 +185,7 @@
                 EggViewController * eggVC = [[EggViewController alloc]init];
                 eggVC.CodeMid = model.retVal[@"mid"];
                 eggVC.isOther  = YES;
+                eggVC.tsumNum = [model.retVal[@"tsnum"] integerValue];
                 [self.mainTabVC pushViewController:eggVC];
             }
             
@@ -195,35 +195,7 @@
     }];
     
     
-  /*
-    [AFNetWorking postWithApi:str parameters:dic success:^(id json) {
-        NSMutableArray * arr =[NSMutableArray array];
-        arr = json[@"jsondata"][@"list"];
-        
-        if ([arr[0][@"mid"] isEqualToString:[AccountManager sharedAccountManager].loginModel.mid]) {
-            // 如果是自己
-            EggViewController * eggVC = [[EggViewController alloc]init];
-            [self.mainTabVC pushViewController:eggVC];
-            
-        }else
-        {
-            
-            if ([arr[0][@"status"] isEqualToString:@"0"]) {
-                [self.window.rootViewController showSuccessHudWithHint:@"此逗码已经失效"];
-            }else
-            {
-                
-                OtherEggViewController * otherVC =[[OtherEggViewController alloc]init];
-                otherVC.otherArr = arr;
-                otherVC.IScode = YES;
-                [self.window.rootViewController presentViewController:otherVC animated:YES completion:nil];
-            }
-            
-      }
 
-   */
-        
-        
     
 }
 

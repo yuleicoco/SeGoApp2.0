@@ -110,12 +110,26 @@ static NSString * cellId = @"douyidouCellid";
 
 -(void)rightButtontouch1:(UIButton *)sender{
     NSInteger i = sender.tag - 111;
-    SearchModel * model = self.dataSource[i];
+     SearchModel * model = self.dataSource[i];
     // 通过逗一逗
-    EggViewController * eggVC =[[EggViewController alloc]init];
-    eggVC.DouMid = model.mid;
-    eggVC.isOther = YES;
-    [self.navigationController pushViewController:eggVC animated:NO];
+    
+    [[AFHttpClient sharedAFHttpClient]CheckDouCode:model.mid complete:^(BaseModel * model) {
+        
+        if ([model.retCode isEqualToString:@"0000"]) {
+            
+            EggViewController * eggVC =[[EggViewController alloc]init];
+             SearchModel * model1 = self.dataSource[i];
+             eggVC.DouMid = model1.mid;
+             eggVC.isOther = YES;
+             eggVC.tsumNum = [model.retVal[@"tsnum"] integerValue];
+            [self.navigationController pushViewController:eggVC animated:NO];
+        }
+        
+        
+    }];
+
+    
+    
     
     
     
