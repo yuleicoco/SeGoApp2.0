@@ -118,7 +118,7 @@
     UILabel * wenzhangNum = [[UILabel alloc]init];
     wenzhangNum.textColor = [UIColor whiteColor];
     wenzhangNum.font = [UIFont systemFontOfSize:15];
-    wenzhangNum.text = @"10";
+    wenzhangNum.text = [AccountManager sharedAccountManager].loginModel.articles;
     [self.view addSubview:wenzhangNum];
     [wenzhangNum mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(linelabel.mas_left).offset(-16);
@@ -150,7 +150,7 @@
     
     UILabel * haoyouNum = [[UILabel alloc]init];
     haoyouNum.textColor = [UIColor whiteColor];
-    haoyouNum.text = @"20";
+    haoyouNum.text = [AccountManager sharedAccountManager].loginModel.friends;
     haoyouNum.font = [UIFont systemFontOfSize:15];
     [self.view addSubview:haoyouNum];
     [haoyouNum mas_makeConstraints:^(MASConstraintMaker *make) {

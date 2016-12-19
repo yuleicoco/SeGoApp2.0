@@ -15,6 +15,7 @@
 #import "RepositoryViewController.h"
 #import "ArticlesModel.h"
 #import "HomeDetailViewController.h"
+#import "RecommendViewController.h"
 
 static NSString * cellId = @"hometableviewcellId";
 @interface HomeViewController ()
@@ -110,9 +111,13 @@ static NSString * cellId = @"hometableviewcellId";
         // NSLog(@"%@",aidList[pagIndex]);
      //   FeaturedViewController * featureVc = [[FeaturedViewController alloc]init];
         //  NSInteger i  = (NSInteger)aidList[pagIndex];
-       // NSString * i = aidList[pagIndex];
+        RecommendViewController * recommVc = [[RecommendViewController alloc]init];
+        NSString * i = aidList[pagIndex];
+        recommVc.aid = i;
         //featureVc.number = i;
-        //[self.navigationController pushViewController:featureVc animated:YES];
+        [self.navigationController pushViewController:recommVc animated:NO];
+        
+        
     };
 }
 

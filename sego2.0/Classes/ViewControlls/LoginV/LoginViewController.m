@@ -93,8 +93,8 @@
     }];
     
     UIButton * showPassBtn = [[UIButton alloc]init];
-    [showPassBtn setImage:[UIImage imageNamed:@"registbiyan.png"] forState:UIControlStateNormal];
-    [showPassBtn setImage:[UIImage imageNamed:@"registyan.png"] forState:UIControlStateSelected];
+    [showPassBtn setImage:[UIImage imageNamed:@"loginbiyan.png"] forState:UIControlStateNormal];
+    [showPassBtn setImage:[UIImage imageNamed:@"loginyan.png"] forState:UIControlStateSelected];
     [showPassBtn addTarget:self action:@selector(showpasswordButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
     [downView addSubview:showPassBtn];
     [showPassBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -266,7 +266,7 @@
         make.left.equalTo(qqImage.superview).offset(133);
 //        make.top.equalTo(disanfangLabel.mas_bottom).offset(29);
         make.bottom.equalTo(qqImage.superview).offset(-35);
-        make.height.mas_equalTo(25);
+        make.height.mas_equalTo(21);
         make.width.mas_equalTo(26);
     }];
     

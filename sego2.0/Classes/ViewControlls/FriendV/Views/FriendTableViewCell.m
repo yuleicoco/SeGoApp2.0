@@ -24,7 +24,7 @@
 //        }];
         
         _lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(12 * W_Wide_Zoom, 0 * W_Hight_Zoom, 351 * W_Wide_Zoom, 0.5 * W_Hight_Zoom)];
-        _lineLabel.backgroundColor = [UIColor lightGrayColor];
+        _lineLabel.backgroundColor = LIGHT_GRAYdcdc_COLOR;
         [self addSubview:_lineLabel];
         
 
