@@ -119,13 +119,14 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     NSString * strBing =[Defaluts objectForKey:PREF_DEVICE_NUMBER];
     NSString * strLogin =[AccountManager sharedAccountManager].loginModel.deviceno;
     
-   strYY =[Defaluts objectForKey:@"incodeNum"];
-   // NSString * st2 =[AccountManager sharedAccountManager].loginModel.incode;
+   NSString * st1 =[Defaluts objectForKey:@"incodeNum"];
+   NSString * st2 =[AccountManager sharedAccountManager].loginModel.termid;
     
     
     
     strTT = strBing.length>strLogin.length?strBing:strLogin;
-  //  strYY = st1.length>st2.length?st1:st2;
+    strYY = st1.length>st2.length?st1:st2;
+    
     
     
     

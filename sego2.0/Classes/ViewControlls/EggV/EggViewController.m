@@ -259,7 +259,13 @@
         
         FuckLog(@"%@",model);
         if ([model.retCode isEqualToString:@"0000"]) {
+            
+            
+            if ([AppUtil isBlankString:model.retVal[@"status"]]) {
+                strState = [NSString stringWithFormat:@"%@",@"ds000"];
+            }else{
             strState = [NSString stringWithFormat:@"%@",model.retVal[@"status"]];
+            }
             [self updateviewMethod];
         
         }// 没有设备

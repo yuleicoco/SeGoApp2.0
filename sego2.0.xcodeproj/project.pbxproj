@@ -80,6 +80,7 @@
 		34624ABF1DEE72F100C7CA77 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34624ABE1DEE72F100C7CA77 /* libicucore.tbd */; };
 		3470D5441DEEBCB30028EDAB /* AFHttpClient+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 3470D5431DEEBCB30028EDAB /* AFHttpClient+Login.m */; };
 		3470D5461DEEC8420028EDAB /* lanch.png in Resources */ = {isa = PBXBuildFile; fileRef = 3470D5451DEEC8420028EDAB /* lanch.png */; };
+		3486D6001E07AC7900F7A82D /* sego.png in Resources */ = {isa = PBXBuildFile; fileRef = 3486D5FF1E07AC7900F7A82D /* sego.png */; };
 		34884C861DD4678400245C24 /* AFHttpClient+TestNetWork.m in Sources */ = {isa = PBXBuildFile; fileRef = 34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */; };
 		34884C891DD5742200245C24 /* CheckDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34884C881DD5742200245C24 /* CheckDeviceModel.m */; };
 		349C0BF71DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 349C0BF61DDED2DF00834791 /* AFHttpClient+VideoQuiltChoose.m */; };
@@ -363,7 +364,6 @@
 		7DDAA36D1DFC20520039D6C2 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDAA36C1DFC20520039D6C2 /* AboutViewController.m */; };
 		7DDAA36F1DFC277B0039D6C2 /* aboutlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DDAA36E1DFC277B0039D6C2 /* aboutlogo.png */; };
 		7DE3D7751DFE443F00AC2695 /* NewPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3D7741DFE443F00AC2695 /* NewPermissionViewController.m */; };
-		7DE3D7771DFE95E200AC2695 /* sego.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DE3D7761DFE95E200AC2695 /* sego.png */; };
 		7DE3D77A1DFEA3FB00AC2695 /* ExchangPermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3D7791DFEA3FB00AC2695 /* ExchangPermissionViewController.m */; };
 		7DF0758D1DFFD65A00A45824 /* AFHttpClient+FunnyCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0758C1DFFD65A00A45824 /* AFHttpClient+FunnyCode.m */; };
 		7DF075901DFFF92D00A45824 /* ZdFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0758F1DFFF92D00A45824 /* ZdFriendViewController.m */; };
@@ -458,6 +458,7 @@
 		3470D5421DEEBCB30028EDAB /* AFHttpClient+Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Login.h"; sourceTree = "<group>"; };
 		3470D5431DEEBCB30028EDAB /* AFHttpClient+Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Login.m"; sourceTree = "<group>"; };
 		3470D5451DEEC8420028EDAB /* lanch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lanch.png; sourceTree = "<group>"; };
+		3486D5FF1E07AC7900F7A82D /* sego.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sego.png; path = Resources/sego.png; sourceTree = "<group>"; };
 		34884C841DD4678400245C24 /* AFHttpClient+TestNetWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+TestNetWork.h"; sourceTree = "<group>"; };
 		34884C851DD4678400245C24 /* AFHttpClient+TestNetWork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+TestNetWork.m"; sourceTree = "<group>"; };
 		34884C871DD5742200245C24 /* CheckDeviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckDeviceModel.h; sourceTree = "<group>"; };
@@ -1261,7 +1262,6 @@
 		7DDAA36E1DFC277B0039D6C2 /* aboutlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutlogo.png; sourceTree = "<group>"; };
 		7DE3D7731DFE443F00AC2695 /* NewPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewPermissionViewController.h; path = Views/NewPermissionViewController.h; sourceTree = "<group>"; };
 		7DE3D7741DFE443F00AC2695 /* NewPermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewPermissionViewController.m; path = Views/NewPermissionViewController.m; sourceTree = "<group>"; };
-		7DE3D7761DFE95E200AC2695 /* sego.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sego.png; sourceTree = "<group>"; };
 		7DE3D7781DFEA3FB00AC2695 /* ExchangPermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangPermissionViewController.h; sourceTree = "<group>"; };
 		7DE3D7791DFEA3FB00AC2695 /* ExchangPermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangPermissionViewController.m; sourceTree = "<group>"; };
 		7DF0758B1DFFD65A00A45824 /* AFHttpClient+FunnyCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+FunnyCode.h"; sourceTree = "<group>"; };
@@ -2926,9 +2926,9 @@
 			children = (
 				34E665511DD1A38600FA41E8 /* Classes */,
 				34E665521DD1A3CA00FA41E8 /* Resources */,
+				3486D5FF1E07AC7900F7A82D /* sego.png */,
 				34FC41DB1DD179F900A23A8F /* ViewController.h */,
 				34FC41DC1DD179F900A23A8F /* ViewController.m */,
-				7DE3D7761DFE95E200AC2695 /* sego.png */,
 				34FC41DE1DD179F900A23A8F /* Main.storyboard */,
 				34FC41E41DD179F900A23A8F /* Assets.xcassets */,
 				34FC41E61DD179F900A23A8F /* LaunchScreen.storyboard */,
@@ -3341,7 +3341,6 @@
 				7DABCB0F1DF6AF0A00CA50C4 /* video.png in Resources */,
 				34DB5CF11DD4129F00C51823 /* incoming_chat.wav in Resources */,
 				34DB5CCA1DD4129F00C51823 /* nowebcamCIF.jpg in Resources */,
-				7DE3D7771DFE95E200AC2695 /* sego.png in Resources */,
 				34DB5CE11DD4129F00C51823 /* ok.png in Resources */,
 				345AB3EC1DD9AEA400025EEE /* Lclick_light.png in Resources */,
 				34B7A0281DE56CF500763EB0 /* Ldownbtn.png in Resources */,
@@ -3357,6 +3356,7 @@
 				34B7A0271DE56CF500763EB0 /* 按钮.png in Resources */,
 				7D38B21E1DDFF59A00404D05 /* about.png in Resources */,
 				7DD60BF41DED5B830065D941 /* newfriend.png in Resources */,
+				3486D6001E07AC7900F7A82D /* sego.png in Resources */,
 				34FA28341DEBE08600F13C85 /* douyidou.png in Resources */,
 				34DB5CF41DD4129F00C51823 /* oldphone-mono-30s.caf in Resources */,
 				345AB3ED1DD9AEA400025EEE /* Lnormal_light.png in Resources */,
