@@ -14,6 +14,8 @@
 #import "AboutViewController.h"
 #import "PermissionViewController.h"
 #import "FunnycodeViewController.h"
+#import "AppDelegate+ShareSDK.h"
+
 
 @interface MeViewController ()
 @property(nonatomic,strong)UILabel * nameLabel;
@@ -469,6 +471,8 @@
          [userDefatluts setObject:@"1" forKey:@"STARTFLAG"];
          [userDefatluts setObject:incodeNumStr forKey:@"incodeNum"];
      }]];
+    [ShareSDK cancelAuthorize:SSDKPlatformTypeQQ];
+    [ShareSDK cancelAuthorize:SSDKPlatformTypeWechat];
     [self presentViewController:alert animated:YES completion:nil];
 
 }
