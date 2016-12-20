@@ -92,26 +92,21 @@
         make.height.mas_equalTo(55);
     }];
     
-    UIButton * showPassBtn = [[UIButton alloc]init];
-    [showPassBtn setImage:[UIImage imageNamed:@"loginbiyan.png"] forState:UIControlStateNormal];
-    [showPassBtn setImage:[UIImage imageNamed:@"loginyan.png"] forState:UIControlStateSelected];
-    [showPassBtn addTarget:self action:@selector(showpasswordButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
-    [downView addSubview:showPassBtn];
-    [showPassBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(showPassBtn.superview).offset(-14);
-        make.width.mas_equalTo(17);
-        make.height.mas_equalTo(15);
-        make.centerY.equalTo(showPassBtn.superview);
-        
-        
-    }];
+//    UIButton * showPassBtn = [[UIButton alloc]init];
+//    [showPassBtn setImage:[UIImage imageNamed:@"loginbiyan.png"] forState:UIControlStateNormal];
+//    [showPassBtn setImage:[UIImage imageNamed:@"loginyan.png"] forState:UIControlStateSelected];
+//    [showPassBtn addTarget:self action:@selector(showpasswordButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
+//    [downView addSubview:showPassBtn];
+//    [showPassBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.equalTo(showPassBtn.superview).offset(-14);
+//        make.width.mas_equalTo(17);
+//        make.height.mas_equalTo(15);
+//        make.centerY.equalTo(showPassBtn.superview);
+//        
+//        
+//    }];
     
-    
-    
-    
-    
-    
-    
+
     UIImageView * passImage = [[UIImageView alloc]init];
     passImage.image = [UIImage imageNamed:@"passtu.png"];
     [self.view addSubview:passImage];
@@ -129,7 +124,7 @@
     _passwordTextfield.keyboardAppearance = UIKeyboardAppearanceDark;
     _passwordTextfield.tintColor = [UIColor whiteColor];
     _passwordTextfield.textColor = [UIColor whiteColor];
-    _passwordTextfield.secureTextEntry = YES;
+    _passwordTextfield.secureTextEntry = NO;
     [_passwordTextfield setValue:RGB(153, 153, 153) forKeyPath:@"_placeholderLabel.textColor"];
     [self.view addSubview:_passwordTextfield];
     [_passwordTextfield mas_makeConstraints:^(MASConstraintMaker *make) {

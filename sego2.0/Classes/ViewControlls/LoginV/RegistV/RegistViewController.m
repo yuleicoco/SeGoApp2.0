@@ -132,19 +132,19 @@
         make.top.equalTo(verificationView.mas_bottom).offset(8);
         make.height.mas_equalTo(55);
     }];
-
-    _firstShowBtn = [[UIButton alloc]init];
-    [_firstShowBtn setImage:[UIImage imageNamed:@"registbiyan.png"] forState:UIControlStateNormal];
-    [_firstShowBtn setImage:[UIImage imageNamed:@"registyan.png"] forState:UIControlStateSelected];
-    [_firstShowBtn addTarget:self action:@selector(firstButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
-    [passwordView addSubview:_firstShowBtn];
-    [_firstShowBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(_firstShowBtn.superview).offset(-14);
-        make.centerY.equalTo(_firstShowBtn.superview.mas_centerY);
-        make.width.mas_equalTo(17);
-        make.height.mas_equalTo(15);
-    
-    }];
+//
+//    _firstShowBtn = [[UIButton alloc]init];
+//    [_firstShowBtn setImage:[UIImage imageNamed:@"registbiyan.png"] forState:UIControlStateNormal];
+//    [_firstShowBtn setImage:[UIImage imageNamed:@"registyan.png"] forState:UIControlStateSelected];
+//    [_firstShowBtn addTarget:self action:@selector(firstButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
+//    [passwordView addSubview:_firstShowBtn];
+//    [_firstShowBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.equalTo(_firstShowBtn.superview).offset(-14);
+//        make.centerY.equalTo(_firstShowBtn.superview.mas_centerY);
+//        make.width.mas_equalTo(17);
+//        make.height.mas_equalTo(15);
+//    
+//    }];
     
 
     
@@ -173,56 +173,56 @@
     }];
     
     
-    
-    UIView * surepasswordView = [[UIView alloc]init];
-    surepasswordView.backgroundColor = [UIColor whiteColor];
-    surepasswordView.layer.cornerRadius = 5;
-    [self.view addSubview:surepasswordView];
-    [surepasswordView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(passwordView.mas_left);
-        make.right.equalTo(passwordView.mas_right);
-        make.top.equalTo(passwordView.mas_bottom).offset(8);
-        make.height.mas_equalTo(55);
-        
-    }];
-    
-    _secoendBtn = [[UIButton alloc]init];
-    [_secoendBtn setImage:[UIImage imageNamed:@"registbiyan.png"] forState:UIControlStateNormal];
-    [_secoendBtn setImage:[UIImage imageNamed:@"registyan.png"] forState:UIControlStateSelected];
-    [_secoendBtn addTarget:self action:@selector(secoendButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
-    [surepasswordView addSubview:_secoendBtn];
-    [_secoendBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(_secoendBtn.superview).offset(-14);
-        make.centerY.equalTo(_secoendBtn.superview.mas_centerY);
-        make.width.mas_equalTo(17);
-        make.height.mas_equalTo(15);
-        
-    }];
-    
-    
-    UILabel * surepasswordLabel = [[UILabel alloc]init];
-    surepasswordLabel.text = @"确认密码:";
-    surepasswordLabel.textColor = [UIColor blackColor];
-    surepasswordLabel.font = [UIFont systemFontOfSize:18];
-    [self.view addSubview:surepasswordLabel];
-    [surepasswordLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(surepasswordView.mas_centerY);
-        make.right.equalTo(numberLabel.mas_right);
-    
-    }];
-    
-    _surepasswordTextfield = [[UITextField alloc]init];
-    _surepasswordTextfield.font = [UIFont systemFontOfSize:18];
-    _surepasswordTextfield.placeholder = @"请再次输入密码";
-    _surepasswordTextfield.secureTextEntry = YES;
-    _surepasswordTextfield.textColor = [UIColor blackColor];
-    [self.view addSubview:_surepasswordTextfield];
-    [_surepasswordTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(surepasswordLabel.mas_right).offset(13);
-        make.centerY.equalTo(surepasswordView.mas_centerY).offset(1);
-        make.width.mas_equalTo(230);
-        
-    }];
+//    
+//    UIView * surepasswordView = [[UIView alloc]init];
+//    surepasswordView.backgroundColor = [UIColor whiteColor];
+//    surepasswordView.layer.cornerRadius = 5;
+//    [self.view addSubview:surepasswordView];
+//    [surepasswordView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(passwordView.mas_left);
+//        make.right.equalTo(passwordView.mas_right);
+//        make.top.equalTo(passwordView.mas_bottom).offset(8);
+//        make.height.mas_equalTo(55);
+//        
+//    }];
+//    
+//    _secoendBtn = [[UIButton alloc]init];
+//    [_secoendBtn setImage:[UIImage imageNamed:@"registbiyan.png"] forState:UIControlStateNormal];
+//    [_secoendBtn setImage:[UIImage imageNamed:@"registyan.png"] forState:UIControlStateSelected];
+//    [_secoendBtn addTarget:self action:@selector(secoendButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
+//    [surepasswordView addSubview:_secoendBtn];
+//    [_secoendBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.right.equalTo(_secoendBtn.superview).offset(-14);
+//        make.centerY.equalTo(_secoendBtn.superview.mas_centerY);
+//        make.width.mas_equalTo(17);
+//        make.height.mas_equalTo(15);
+//        
+//    }];
+//    
+//    
+//    UILabel * surepasswordLabel = [[UILabel alloc]init];
+//    surepasswordLabel.text = @"确认密码:";
+//    surepasswordLabel.textColor = [UIColor blackColor];
+//    surepasswordLabel.font = [UIFont systemFontOfSize:18];
+//    [self.view addSubview:surepasswordLabel];
+//    [surepasswordLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerY.equalTo(surepasswordView.mas_centerY);
+//        make.right.equalTo(numberLabel.mas_right);
+//    
+//    }];
+//    
+//    _surepasswordTextfield = [[UITextField alloc]init];
+//    _surepasswordTextfield.font = [UIFont systemFontOfSize:18];
+//    _surepasswordTextfield.placeholder = @"请再次输入密码";
+//    _surepasswordTextfield.secureTextEntry = YES;
+//    _surepasswordTextfield.textColor = [UIColor blackColor];
+//    [self.view addSubview:_surepasswordTextfield];
+//    [_surepasswordTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(surepasswordLabel.mas_right).offset(13);
+//        make.centerY.equalTo(surepasswordView.mas_centerY).offset(1);
+//        make.width.mas_equalTo(230);
+//        
+//    }];
     
     _registBtn = [[UIButton alloc]init];
     _registBtn.backgroundColor = GREEN_COLOR;
@@ -233,7 +233,7 @@
     [_registBtn addTarget:self action:@selector(regiestButtontouch) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_registBtn];
     [_registBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(surepasswordView.mas_bottom).offset(25);
+        make.top.equalTo(passwordView.mas_bottom).offset(25);
         make.left.equalTo(passwordView.mas_left);
         make.right.equalTo(passwordView.mas_right);
         make.height.mas_equalTo(55);

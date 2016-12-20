@@ -24,40 +24,40 @@
 
 -(void)setupView{
     [super setupView];
-    UIButton * topBtn = [[UIButton alloc]init];
-    topBtn.backgroundColor = [UIColor whiteColor];
-    topBtn.layer.cornerRadius = 5;
-    [topBtn addTarget:self action:@selector(topbuttontouch) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:topBtn];
-    [topBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topBtn.superview).offset(4);
-        make.left.equalTo(topBtn.superview).offset(5);
-        make.right.equalTo(topBtn.superview).offset(-5);
-        make.height.mas_equalTo(35);
-    }];
-    
-    UIImageView * foundImage = [[UIImageView alloc]init];
-    foundImage.image = [UIImage imageNamed:@"find.png"];
-    [topBtn addSubview:foundImage];
-    [foundImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(foundImage.superview).offset(7);
-        make.width.mas_equalTo(18);
-        make.height.mas_equalTo(17);
-        make.top.equalTo(foundImage.superview).offset(8);
-        
-        
-    }];
-    
-    UILabel * placeholderLabel = [[UILabel alloc]init];
-    placeholderLabel.text = @"请输入逗码";
-    placeholderLabel.textColor = RGB(153, 153, 153);
-    placeholderLabel.font = [UIFont systemFontOfSize:18];
-    [topBtn addSubview:placeholderLabel];
-    [placeholderLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(foundImage.mas_right).offset(8);
-        make.centerY.equalTo(placeholderLabel.superview.mas_centerY);
-        
-    }];
+//    UIButton * topBtn = [[UIButton alloc]init];
+//    topBtn.backgroundColor = [UIColor whiteColor];
+//    topBtn.layer.cornerRadius = 5;
+//    [topBtn addTarget:self action:@selector(topbuttontouch) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:topBtn];
+//    [topBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(topBtn.superview).offset(4);
+//        make.left.equalTo(topBtn.superview).offset(5);
+//        make.right.equalTo(topBtn.superview).offset(-5);
+//        make.height.mas_equalTo(35);
+//    }];
+//    
+//    UIImageView * foundImage = [[UIImageView alloc]init];
+//    foundImage.image = [UIImage imageNamed:@"find.png"];
+//    [topBtn addSubview:foundImage];
+//    [foundImage mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(foundImage.superview).offset(7);
+//        make.width.mas_equalTo(18);
+//        make.height.mas_equalTo(17);
+//        make.top.equalTo(foundImage.superview).offset(8);
+//        
+//        
+//    }];
+//    
+//    UILabel * placeholderLabel = [[UILabel alloc]init];
+//    placeholderLabel.text = @"请输入逗码";
+//    placeholderLabel.textColor = RGB(153, 153, 153);
+//    placeholderLabel.font = [UIFont systemFontOfSize:18];
+//    [topBtn addSubview:placeholderLabel];
+//    [placeholderLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(foundImage.mas_right).offset(8);
+//        make.centerY.equalTo(placeholderLabel.superview.mas_centerY);
+//        
+//    }];
     
     UIButton * whiteBtn = [[UIButton alloc]init];
     whiteBtn.backgroundColor = [UIColor whiteColor];
@@ -66,7 +66,7 @@
     [whiteBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(whiteBtn.superview);
         make.right.equalTo(whiteBtn.superview);
-        make.top.equalTo(topBtn.mas_bottom).offset(4);
+        make.top.equalTo(whiteBtn.superview);
         make.height.mas_equalTo(60);
         
     }];
