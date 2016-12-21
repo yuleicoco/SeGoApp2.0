@@ -81,8 +81,10 @@
     [self.view addSubview:_headImage];
     [_headImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_headImage.superview).offset(14);
-        make.left.equalTo(_headImage.superview).offset(147);
-        make.right.equalTo(_headImage.superview).offset(-147);
+      //  make.left.equalTo(_headImage.superview).offset(147);
+        make.centerX.equalTo(_headImage.superview);
+      //  make.right.equalTo(_headImage.superview).offset(-147);
+        make.width.mas_equalTo(80);
         make.height.mas_equalTo(80);
     }];
     

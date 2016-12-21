@@ -241,6 +241,7 @@
         make.top.equalTo(disanfangLabel.mas_bottom).offset(29);
         make.bottom.equalTo(qqImage.superview).offset(-35);
         make.width.mas_equalTo(26);
+        make.height.mas_equalTo(28);
     }];
     
     UIImageView * weixinImage = [[UIImageView alloc]init];

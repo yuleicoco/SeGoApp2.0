@@ -21,23 +21,33 @@ static NSString * cellId = @"hometableviewcellId";
 @interface HomeViewController ()
 @property (nonatomic,strong)CycleScrollView * topScrollView;
 @property (nonatomic,strong)NSMutableArray * Imagedatasouce;
+
 @end
 
 @implementation HomeViewController
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+   // _indexp = [[NSIndexPath alloc]init];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada) name:@"shuaxin" object:nil];
     //dianzanbian
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada12:) name:@"deleshuaxin" object:nil];
+    
+    
 }
 
 -(void)dada{
     [self initRefreshView];
 }
 
+-(void)dada12:(NSNotification *)nsnotifiction{
+    [self initRefreshView];
+}
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
     [self setNavTitle:@"我的收藏"];
     [self showBarButton:NAV_RIGHT title:@"收藏" fontColor:GREEN_COLOR hide:NO];
     
@@ -54,12 +64,11 @@ static NSString * cellId = @"hometableviewcellId";
     [super setupView];
      self.Imagedatasouce = [[NSMutableArray alloc]init];
       _topScrollView = [[CycleScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, 170 * W_Hight_Zoom) animationDuration:3];
-     self.tableView.frame = CGRectMake(0, 0, self.view.width, self.view.height - STATUS_BAR_HEIGHT - NAV_BAR_HEIGHT - TAB_BAR_HEIGHT);
+     self.tableView.frame = CGRectMake(0, 0, self.view.width, self.view.height - STATUS_BAR_HEIGHT);
     [self.tableView registerClass:[HomeTableViewCell class] forCellReuseIdentifier:cellId];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     self.tableView.tableHeaderView = _topScrollView;
-    
     [self initRefreshView];
 
     
@@ -163,6 +172,7 @@ static NSString * cellId = @"hometableviewcellId";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+     //_indexp = indexPath;
     ArticlesModel * model = self.dataSource[indexPath.row];
     HomeTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     cell.contentLabel.text = model.content;
@@ -197,13 +207,15 @@ static NSString * cellId = @"hometableviewcellId";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+   
      ArticlesModel * model = self.dataSource[indexPath.row];
      NSLog(@"%@",model.content);
     HomeDetailViewController * detailVc = [[HomeDetailViewController alloc]init];
     detailVc.aid = model.aid;
+    //detailVc.index = indexPath;
+    //NSInteger i = indexPath.row;
+    //detailVc.index = i;
     [self.navigationController pushViewController:detailVc animated:NO];
-
-
 
 
 }

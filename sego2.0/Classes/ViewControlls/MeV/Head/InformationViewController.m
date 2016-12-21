@@ -9,6 +9,7 @@
 #import "InformationViewController.h"
 #import "InformationTableViewCell.h"
 #import "AFHttpClient+PersonMember.h"
+#import "AFHttpClient+Account.h"
 
 static NSString * cellId = @"InformationCellId";
 @interface InformationViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
@@ -48,11 +49,18 @@ static NSString * cellId = @"InformationCellId";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self setNavTitle:[AccountManager sharedAccountManager].loginModel.nickname];
+    [self setNavTitle:[AccountManager sharedAccountManager].loginModel.nickname];
     _imagePicker =[[UIImagePickerController alloc]init];
     _imagePicker.delegate= self;
 
 }
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+
+}
+
+
 
 -(void)setupView{
     [super setupView];
@@ -105,14 +113,6 @@ static NSString * cellId = @"InformationCellId";
     }];
     
     
-    
-    
-    
-    
-    
-    
-    
-    
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(topView.mas_bottom).offset(12);
         make.left.equalTo(self.tableView.superview);
@@ -140,6 +140,13 @@ static NSString * cellId = @"InformationCellId";
 //    UIImage * btnImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[AccountManager sharedAccountManager].loginModel.headportrait]]];
 //    [_headBtn setImage:btnImage forState:UIControlStateNormal];
 //
+    [[AFHttpClient sharedAFHttpClient]queryByIdMemberWithMid:[AccountManager sharedAccountManager].loginModel.mid complete:^(BaseModel *model) {
+        LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
+        [[AccountManager sharedAccountManager]login:loginModel];
+        
+    }];
+    
+    
     _nameArray = [[NSArray alloc]init];
     _nameArray = @[@"帐号",@"昵称",@"性别",@"家族",@"生日",@"签名"];
     
@@ -334,6 +341,8 @@ static NSString * cellId = @"InformationCellId";
     }
     if (indexPath.row == 5) {
         cell.rightLabel.text = [AccountManager sharedAccountManager].loginModel.signature;
+        cell.rightLabel.numberOfLines = 2;
+        
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -461,8 +470,11 @@ static NSString * cellId = @"InformationCellId";
     
 }
 -(void)bigbuttonTouch{
-    _bigBtn.hidden = YES;
-    _centerwhteView.hidden = YES;
+   // _bigBtn.hidden = YES;
+    //_centerwhteView.hidden = YES;
+    [_exchangeTextfield resignFirstResponder];
+    
+    
 }
 
 #pragma mark - 改名字
@@ -562,12 +574,14 @@ static NSString * cellId = @"InformationCellId";
 
 -(void)namedancebuttonTouch{
     FuckLog(@"不改名字了");
+       [_exchangeTextfield resignFirstResponder];
     _bigBtn.hidden = YES;
     _centerwhteView.hidden = YES;
 }
 
 -(void)namesurebuttonTouch{
     FuckLog(@"还是改个名字吧");
+       [_exchangeTextfield resignFirstResponder];
     _bigBtn.hidden = YES;
     _centerwhteView.hidden = YES;
         [self showHudInView:self.view hint:@"正在修改..."];
@@ -913,6 +927,7 @@ static NSString * cellId = @"InformationCellId";
 }
 -(void)exchangesinertouch{
     FuckLog(@"改个签名吧");
+       [_exchangeTextfield resignFirstResponder];
     _bigBtn.hidden = YES;
     _centerwhteView.hidden = YES;
       [self showHudInView:self.view hint:@"正在修改..."];

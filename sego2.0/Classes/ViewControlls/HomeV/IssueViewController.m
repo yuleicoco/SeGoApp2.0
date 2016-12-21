@@ -154,7 +154,7 @@
         make.top.equalTo(_topTextView.mas_bottom).offset(8);
         make.left.equalTo(downView.superview);
         make.right.equalTo(downView.superview);
-        make.height.mas_equalTo(100);
+        make.height.mas_equalTo(100 * W_Hight_Zoom);
     
     }];
     
