@@ -294,9 +294,15 @@
          
          if (state == SSDKResponseStateSuccess)
          {
+             
+             
+             
              [self loginRepace:@"q" Secretkey:user.uid nick:user.nickname headportrait:user.icon];
              
              [ShareSDK cancelAuthorize:SSDKPlatformTypeQQ];
+             user.credential = nil;
+             user.uid = nil;
+            
          }
          
          else
@@ -341,16 +347,14 @@
     //微信登录
     FuckLog(@"22");
 
-    
-   
-    
-
     [ShareSDK getUserInfo:SSDKPlatformTypeWechat
            onStateChanged:^(SSDKResponseState state, SSDKUser *user, NSError *error)
      {
 
          if (state == SSDKResponseStateSuccess)
          {
+            
+             
             [self loginRepace:@"w" Secretkey:user.uid nick:user.nickname headportrait:user.icon];
               [ShareSDK cancelAuthorize:SSDKPlatformTypeWechat];
              

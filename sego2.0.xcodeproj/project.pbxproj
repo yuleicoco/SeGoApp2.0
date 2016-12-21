@@ -3167,7 +3167,7 @@
 				TargetAttributes = {
 					34FC41D11DD179F900A23A8F = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 454LPD78S8;
+						DevelopmentTeam = T39KL6EZZX;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -3680,9 +3680,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = 454LPD78S8;
+				DEVELOPMENT_TEAM = T39KL6EZZX;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3703,7 +3702,7 @@
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib",
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.eggpet112;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.company;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
 			};
@@ -3715,9 +3714,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = 454LPD78S8;
+				DEVELOPMENT_TEAM = T39KL6EZZX;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3736,7 +3734,7 @@
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib",
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.eggpet112;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.company;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
 			};
