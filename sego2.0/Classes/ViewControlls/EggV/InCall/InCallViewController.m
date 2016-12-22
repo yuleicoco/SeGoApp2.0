@@ -365,14 +365,14 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     UIButton * downBtn =[UIButton new] ;
     UIButton * leftBtn  =[UIButton new];
     UIButton * rightBtn = [UIButton new];
-    UIButton * RtopBtn = [UIButton new];
-    UIButton * RdownBtn =[UIButton new];
+//    UIButton * RtopBtn = [UIButton new];
+//    UIButton * RdownBtn =[UIButton new];
     topBtn.tag =1000001;
     downBtn.tag=1000002;
     leftBtn.tag =1000003;
     rightBtn.tag =1000004;
-    RtopBtn.tag =1000005;
-    RdownBtn.tag =1000006;
+//    RtopBtn.tag =1000005;
+//    RdownBtn.tag =1000006;
     
     
     [topBtn addTarget:self action:@selector(topClickSt:) forControlEvents:UIControlEventTouchUpInside];
@@ -388,16 +388,16 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
     [rightBtn addTarget:self action:@selector(rightClickSt:) forControlEvents:UIControlEventTouchUpInside];
     [rightBtn addTarget:self action:@selector(Srightclick:) forControlEvents:UIControlEventTouchDown];
+//    
+//    [RtopBtn addTarget:self action:@selector(RtopClickSt:) forControlEvents:UIControlEventTouchUpInside];
+//    [RtopBtn addTarget:self action:@selector(Slef_toptclick:) forControlEvents:UIControlEventTouchDown];
+//    
+//    [RdownBtn addTarget:self action:@selector(RdownClickSt:) forControlEvents:UIControlEventTouchUpInside];
+//     [RdownBtn addTarget:self action:@selector(Slef_downtclick:) forControlEvents:UIControlEventTouchDown];
     
-    [RtopBtn addTarget:self action:@selector(RtopClickSt:) forControlEvents:UIControlEventTouchUpInside];
-    [RtopBtn addTarget:self action:@selector(Slef_toptclick:) forControlEvents:UIControlEventTouchDown];
     
-    [RdownBtn addTarget:self action:@selector(RdownClickSt:) forControlEvents:UIControlEventTouchUpInside];
-     [RdownBtn addTarget:self action:@selector(Slef_downtclick:) forControlEvents:UIControlEventTouchDown];
-    
-    
-    DriArr =@[topBtn,downBtn,leftBtn,rightBtn,RtopBtn,RdownBtn];
-    for (NSInteger i =0; i<6; i++) {
+    DriArr =@[topBtn,downBtn,leftBtn,rightBtn];
+    for (NSInteger i =0; i<4; i++) {
         [self.view addSubview:DriArr[i]];
         
         
@@ -721,9 +721,9 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
                               leadSpacing:65
                               tailSpacing: 9];
     
-    NSArray * imageList =@[@"top_egg",@"down_egg",@"left_egg",@"right_egg",@"L_top",@"L_down"];
+    NSArray * imageList =@[@"top_egg",@"down_egg",@"left_egg",@"right_egg"];
     
-    for (NSInteger i =0; i<6; i++) {
+    for (NSInteger i =0; i<4; i++) {
         [DriArr[i] setImage:[UIImage imageNamed:imageList[i]] forState:UIControlStateNormal];
         
     }
@@ -732,6 +732,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     [btnList mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(FiveView.mas_left).offset(28);
         make.right.equalTo(self.view.mas_right).offset(-13);
+        make.width.height.mas_equalTo(30);
+        
         
 
     }];
@@ -788,6 +790,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
         
     }];
     
+    
+    /*
     [DriArr[4] mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(videoView.mas_bottom).offset(-110);
         make.right.mas_equalTo(-393);
@@ -808,6 +812,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 
         
     }];
+     */
 
     
     
@@ -920,7 +925,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
     NSArray * imageList =@[@"top1",@"down1",@"left1",@"right1",@"Ltopbtn",@"Ldownbtn"];
    
-    for (NSInteger i =0; i<6; i++) {
+    for (NSInteger i =0; i<4; i++) {
          [DriArr[i] setImage:[UIImage imageNamed:imageList[i]] forState:UIControlStateNormal];
         
     }
@@ -945,9 +950,11 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     //方向按钮
     
     [DriArr[0] mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(FiveView.mas_bottom).offset(26);
+       // make.top.equalTo(FiveView.mas_bottom).offset(26);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-146);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
         make.size.mas_equalTo(CGSizeMake(287/2,79));
-        make.left.mas_equalTo(56);
+      //  make.left.mas_equalTo(56);
         
         
         
@@ -956,9 +963,11 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
 
     [DriArr[1] mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(FiveView.mas_bottom).offset(146);
+       // make.top.equalTo(FiveView.mas_bottom).offset(146);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-26);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
         make.size.mas_equalTo(CGSizeMake(287/2,79));
-        make.left.mas_equalTo(56);
+       // make.left.mas_equalTo(56);
         
         
         
@@ -966,9 +975,10 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
     //左
     [DriArr[2] mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(FiveView.mas_bottom).offset(54);
+       // make.top.equalTo(FiveView.mas_bottom).offset(54);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-54);
         make.size.mas_equalTo(CGSizeMake(79,287/2));
-        make.left.mas_equalTo(28);
+        make.left.mas_equalTo(88);
         
         
         
@@ -976,15 +986,20 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
     
     [DriArr[3] mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(FiveView.mas_bottom).offset(54);
+       // make.top.equalTo(FiveView.mas_bottom).offset(54);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-54);
         make.size.mas_equalTo(CGSizeMake(79,287/2));
-        make.left.mas_equalTo(148);
+        make.left.mas_equalTo(208);
         
         
         
         
     }];
     
+    
+    
+    
+    /*
     [DriArr[4] mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(FiveView.mas_bottom).offset(26);
         make.right.mas_equalTo(-33);
@@ -1001,6 +1016,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 
         
     }];
+     */
     
     
     // 小圆
@@ -1008,8 +1024,10 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     UIImageView * imageS =[self.view viewWithTag:10000001];
     [imageS mas_remakeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.equalTo(FiveView.mas_bottom).offset(104);
-        make.left.mas_equalTo(105);
+     //   make.top.equalTo(FiveView.mas_bottom).offset(104);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-104);
+        make.centerX.mas_equalTo(self.view.mas_centerX);
+      //  make.left.mas_equalTo(105);
         make.size.mas_equalTo(CGSizeMake(44, 44));
         
     }];
