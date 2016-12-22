@@ -63,6 +63,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavTitle:NSLocalizedString(@"tabBinding_title",nil)];
+    self.view.backgroundColor =GRAY_COLOR;
     isOpenPerOK = NO;
     
    
@@ -170,6 +171,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     btnBind.backgroundColor = GRAY_COLOR;
     if ([AppUtil isBlankString:strTT]) {
          [btnBind setTitle:@"绑定设备" forState:UIControlStateNormal];
+         btnBind.backgroundColor = GRAY_COLOR;
          btnBind.enabled = FALSE;
     }else
     {
