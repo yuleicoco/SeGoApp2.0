@@ -323,48 +323,57 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     }else
     {
         
-        // 解除绑定
+        UIAlertController * alert =[UIAlertController alertControllerWithTitle:@"提示" message:@"确定解除绑定吗" preferredStyle:UIAlertControllerStyleAlert];
         
-        [[AFHttpClient sharedAFHttpClient]RemoveDevice:[AccountManager sharedAccountManager].loginModel.mid complete:^(BaseModel * model) {
-            if ([model.retCode isEqualToString:@"0000"]) {
-                // 解除绑定成功
-                // 提示
-                [self showWarningTip:@"解绑成功"];
-                
-                [Defaluts removeObjectForKey:PREF_DEVICE_NUMBER];
-                [AccountManager sharedAccountManager].loginModel.deviceno=nil;
-                [Defaluts removeObjectForKey:@"incodeNum"];
-                [Defaluts synchronize];
-                deviceTF.text =@"";
-                incodeTF.text =@"";
-                [self.navigationController popViewControllerAnimated:YES];
-                
-                
-            }
+      
+      
+        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
             
-        }];
+        }]];
         
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            [self jiechuband];
+            
+        }]];
         
-        
-        
+        [self presentViewController:alert animated:YES completion:nil];
     }
-    
-    
-   
-    
-    
-    
-    
-   
-    
-    
     
     
 }
 
 
 
+
+- (void)jiechuband
+{
+    
+    // 解除绑定
+    
+    [[AFHttpClient sharedAFHttpClient]RemoveDevice:[AccountManager sharedAccountManager].loginModel.mid complete:^(BaseModel * model) {
+        if ([model.retCode isEqualToString:@"0000"]) {
+            // 解除绑定成功
+            // 提示
+            [self showWarningTip:@"解绑成功"];
+            
+            [Defaluts removeObjectForKey:PREF_DEVICE_NUMBER];
+            [AccountManager sharedAccountManager].loginModel.deviceno=nil;
+            [Defaluts removeObjectForKey:@"incodeNum"];
+            [Defaluts synchronize];
+            deviceTF.text =@"";
+            incodeTF.text =@"";
+            [self.navigationController popViewControllerAnimated:NO];
+            
+            
+        }
+        
+        
+    }];
+
+    
+}
 
 
 

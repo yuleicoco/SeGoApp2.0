@@ -936,16 +936,21 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
     [btnList mas_remakeConstraints:^(MASConstraintMaker *make) {
         
-        //make.size.mas_equalTo(CGSizeMake(36, 40));
-        make.height.mas_equalTo(36);
+        make.height.width.mas_equalTo(36);
+        
 //      make.centerY.equalTo(FiveView.mas_centerY);
-        make.top.equalTo(FiveView.mas_top).offset(6);
+        make.top.equalTo(FiveView.mas_top).offset(12);
         
         
         
         
     }];
-   [btnList mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:36 leadSpacing:15 tailSpacing:15];
+   // [btnList mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:41 leadSpacing:15 tailSpacing:15];
+   
+    
+    
+    [btnList mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:36 leadSpacing:15 tailSpacing:15];
+    
 
     
     //方向按钮
