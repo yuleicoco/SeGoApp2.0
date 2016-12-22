@@ -59,6 +59,8 @@
     
     BOOL isTurnOff;
     NSInteger tsumNum;
+    NSString * isEnlable;
+    
     
     
     
@@ -104,10 +106,11 @@
     openLight = @"off";
     isTurnOff = NO;
    
-    UISwipeGestureRecognizer * screenEdgePan =[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handScreenEdgeGesture:)];
-    screenEdgePan.direction = UISwipeGestureRecognizerDirectionUp;
-    screenEdgePan.direction = UISwipeGestureRecognizerDirectionDown;
-    [self.view addGestureRecognizer:screenEdgePan];
+//    UISwipeGestureRecognizer * screenEdgePan =[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(handScreenEdgeGesture:)];
+//    screenEdgePan.direction = UISwipeGestureRecognizerDirectionUp;
+//    screenEdgePan.direction = UISwipeGestureRecognizerDirectionDown;
+//    [self.view addGestureRecognizer:screenEdgePan];
+    
     [UIApplication sharedApplication].statusBarHidden = YES;
 
    
@@ -1269,18 +1272,19 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 }
 
 //
-- (void)Slef_toptclick:(UIButton *)sender
-{
-    [self moverobot:@"2"];
-    
-}
+//- (void)Slef_toptclick:(UIButton *)sender
+//{
+//    [self moverobot:@"2"];
+//    
+//}
+//
+//- (void)Slef_downtclick:(UIButton *)sender
+//{
+//    [self moverobot:@"2"];
+//    
+//}
 
-- (void)Slef_downtclick:(UIButton *)sender
-{
-    [self moverobot:@"2"];
-    
-}
-
+/*
 -(void)moverobot:(NSString *)str
 {
     NSInteger i = [str integerValue];
@@ -1319,6 +1323,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
     
 }
+*/
 
 
 
@@ -1351,17 +1356,17 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
      [self overTime];
     
 }
-- (void)RtopClickSt:(UIButton *)sender
-{
-     [self overTime];
-    
-    
-}
-- (void)RdownClickSt:(UIButton *)sender
-{
-     [self overTime];
-    
-}
+//- (void)RtopClickSt:(UIButton *)sender
+//{
+//     [self overTime];
+//    
+//    
+//}
+//- (void)RdownClickSt:(UIButton *)sender
+//{
+//     [self overTime];
+//    
+//}
 
 //*****************************释放**********************************
 
@@ -1376,12 +1381,13 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 -(void)MoveRobot:(NSString *)str
 {
      NSInteger i = [str integerValue];
-    NSLog(@"==========");
     
     
+    if ([isEnlable isEqualToString:@"2"]
+        || [AppUtil isBlankString:isEnlable]) {
+
      switch (i) {
         case 1:
-            
             [self.view viewWithTag:1000001].userInteractionEnabled = YES;
             [self.view viewWithTag:1000002].userInteractionEnabled = NO;
             [self.view viewWithTag:1000003].userInteractionEnabled = NO;
@@ -1422,35 +1428,44 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
             break;
     }
     
+
+    
      moveTimer = [HWWeakTimer scheduledTimerWithTimeInterval:1.0*0.2 block:^(id userInfo) {
         [self sendInfomation:str];
     } userInfo:@"Fire" repeats:YES];
-    
     [moveTimer fire];
+    }else
+    {
+        
+            return;
+    }
     
     
 }
 
 - (void)sendInfomation:(NSString *)sender
 {
+      NSLog(@"=======%@",isEnlable);
     
     NSString * msg =[NSString stringWithFormat:@"control_servo,0,0,1,%d,200",[sender intValue]];
     [self sendMessage:msg];
-    
-    
+   //
+      isEnlable =@"1";
 }
+
+
 
 
 
 // 执行
 
-- (void)sendInfomationL:(NSString *)sender
-{
-    
-    NSString * msg =[NSString stringWithFormat:@"control_servo,0,0,2,%d,200",[sender intValue]];
-    NSLog(@"我走");
-    [self sendMessage:msg];
-}
+//- (void)sendInfomationL:(NSString *)sender
+//{
+//    
+//    NSString * msg =[NSString stringWithFormat:@"control_servo,0,0,2,%d,200",[sender intValue]];
+//    NSLog(@"我走");
+//    [self sendMessage:msg];
+//}
 
 
 #pragma sendMessageTest wjb
@@ -1462,6 +1477,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 
 - (void)overTime
 {
+    NSLog(@"结束");
+    isEnlable =@"2";
     [moveTimer invalidate];
     [self.view viewWithTag:1000001].userInteractionEnabled = YES;
     [self.view viewWithTag:1000002].userInteractionEnabled = YES;
