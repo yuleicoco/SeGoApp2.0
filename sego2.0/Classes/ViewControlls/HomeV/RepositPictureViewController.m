@@ -188,12 +188,12 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
     //  return CGSizeMake(88.5 * W_Wide_Zoom, 85.5 * W_Hight_Zoom);
     //  return CGSizeMake(110 * W_Wide_Zoom, 110 * W_Hight_Zoom);
   //  return CGSizeMake(MainScreen.width/5+5, MainScreen.width/5+5);
-    return CGSizeMake(81,81);
+    return CGSizeMake((collectionView.width - 4 * 10 ) / 4 , (collectionView.width - 4 * 10 ) / 4);
 }
 
 //定义每个UICollectionView 的 margin
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(4, 9, 1,9);
+    return UIEdgeInsetsMake(5, 5, 5,5);
     //return UIEdgeInsetsMake(13, 11 , 0, 11);
 }
 
