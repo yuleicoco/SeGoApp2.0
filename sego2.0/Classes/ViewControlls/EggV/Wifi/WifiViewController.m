@@ -300,7 +300,7 @@
         make.top.equalTo(methodView.mas_bottom).offset(0);
         make.width.equalTo(methodView);
         make.left.equalTo(labelMess.mas_right).offset(147);
-        make.height.mas_equalTo(@100);
+        make.height.mas_equalTo(@98);
         
         
     }];
