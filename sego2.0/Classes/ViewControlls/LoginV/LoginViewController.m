@@ -373,33 +373,33 @@
 
 
 -(void)loginbuttonTouch{
-//    if ([AppUtil isBlankString:_numberTextfield.text]) {
-//        [[AppUtil appTopViewController] showHint:@"请输入账号"];
-//        return;
-//    }
-//    if ([AppUtil isBlankString:_passwordTextfield.text]) {
-//        [[AppUtil appTopViewController]showHint:@"请输入密码"];
-//        return;
-//    }
-//    
-//    [self showHudInView:self.view hint:@"正在登录..."];
-//    [[AFHttpClient sharedAFHttpClient]loginWithAccounynumber:_numberTextfield.text password:_passwordTextfield.text complete:^(BaseModel * model) {
-//        if (model) {
-//            if ([model.retCode isEqualToString:@"0000"]) {
-//
-//                LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
-//                
-//                [[AccountManager sharedAccountManager]login:loginModel];
-//                [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
-//            }else{
-//            [[AppUtil appTopViewController]showHint:model.retDesc];
-//            
-//            }
-//          
-//     
-//        }
-//         [self hideHud];
-//    }];
+    if ([AppUtil isBlankString:_numberTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入账号"];
+        return;
+    }
+    if ([AppUtil isBlankString:_passwordTextfield.text]) {
+        [[AppUtil appTopViewController]showHint:@"请输入密码"];
+        return;
+    }
+    
+    [self showHudInView:self.view hint:@"正在登录..."];
+    [[AFHttpClient sharedAFHttpClient]loginWithAccounynumber:_numberTextfield.text password:_passwordTextfield.text complete:^(BaseModel * model) {
+        if (model) {
+            if ([model.retCode isEqualToString:@"0000"]) {
+
+                LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
+                
+                [[AccountManager sharedAccountManager]login:loginModel];
+                [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
+            }else{
+            [[AppUtil appTopViewController]showHint:model.retDesc];
+            
+            }
+          
+     
+        }
+         [self hideHud];
+    }];
    
 }
 
