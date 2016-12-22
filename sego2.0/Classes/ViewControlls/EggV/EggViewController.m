@@ -173,6 +173,7 @@
     moveTimer =[HWWeakTimer scheduledTimerWithTimeInterval:5.0 block:^(id userInfo) {
         [self checkDeviceStats];
     } userInfo:@"Fire" repeats:YES];
+     [self checkDeviceStats];
      [self checkWifi];
     
 
@@ -650,9 +651,17 @@
         }else
             
         {
-            make.width.equalTo(self.view.superview);
-            make.top.equalTo(self.view.superview.mas_top).offset(102);
-            make.bottom.equalTo(self.view.superview.mas_bottom).offset(-220);
+//            make.width.equalTo(self.view.superview);
+//            make.top.equalTo(self.view.superview.mas_top).offset(102);
+//            make.bottom.equalTo(self.view.superview.mas_bottom).offset(-220);
+            
+            make.centerX.mas_equalTo(self.view.mas_centerX);
+            make.height.mas_equalTo(330);
+            make.top.equalTo(self.view.superview.mas_top).offset(90);
+            make.width.mas_equalTo(350);
+            
+            
+            
         }
     }];
  
@@ -668,7 +677,7 @@
     [btnOpen mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.height.equalTo(@45);
-        make.bottom.equalTo(self.view.superview.mas_bottom).offset(-67);
+        make.bottom.equalTo(qualityLB.mas_bottom).offset(90);
         make.left.equalTo(self.view.superview.mas_left).with.offset(18);
         make.right.equalTo(self.view.superview.mas_right).with.offset(-18);
         
@@ -682,7 +691,7 @@
         make.left.equalTo(qualityLB.mas_right).offset(15);
         make.top.equalTo(ImageBack.mas_bottom).offset(40);
         make.width.mas_equalTo(50);
-        make.height.mas_equalTo(20);
+        make.height.mas_equalTo(23);
         
         
     }];
@@ -692,8 +701,8 @@
         make.centerY.equalTo(qualityLB.mas_centerY);
         make.left.equalTo(btnClean.mas_right).offset(-1);
         make.top.equalTo(ImageBack.mas_bottom).offset(40);
-        make.width.mas_equalTo(60);
-        make.height.mas_equalTo(20);
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(23);
         
     }];
 

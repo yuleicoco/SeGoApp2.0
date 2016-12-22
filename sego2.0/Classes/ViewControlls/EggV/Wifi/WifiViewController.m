@@ -48,6 +48,7 @@
     listArr = @[ @"无加密", @"WPA/WPA2", @"WEP" ];
     curEncryption = [NSString stringWithFormat:@"1"];
     
+    self.view.backgroundColor = GRAY_COLOR;
     
     
     
@@ -239,7 +240,7 @@
         make.left.equalTo(labelMess.mas_right).offset(147);
         make.top.equalTo(wifiCode.mas_bottom).offset(24);
 //        make.bottom.equalTo(btnBind.mas_top).offset(-36);
-        make.height.mas_equalTo(20);
+        make.height.mas_equalTo(30);
         
         make.right.equalTo(self.view).offset(-17);
         
