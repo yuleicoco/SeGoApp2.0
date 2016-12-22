@@ -19,6 +19,7 @@
 #import "WifiViewController.h"
 #import "AFHttpClient+DeviceUseMember.h"
 #import "FeedSetingViewController.h"
+#import "HWWeakTimer.h"
 
 
 @interface EggViewController ()
@@ -56,6 +57,7 @@
     // 投食量
     NSString * isTsnum;
     
+    NSTimer * moveTimer;
     
     
     
@@ -85,6 +87,10 @@
     
     // sephone
     [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
+    
+  
+    
+    
     
     
     AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
@@ -164,7 +170,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(callUpdate:) name:kSephoneCallUpdate object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registrationUpdate:) name:kSephoneRegistrationUpdate object:nil];
     
-     [self checkDeviceStats];
+    moveTimer =[HWWeakTimer scheduledTimerWithTimeInterval:5.0 block:^(id userInfo) {
+        [self checkDeviceStats];
+    } userInfo:@"Fire" repeats:YES];
      [self checkWifi];
     
 
@@ -200,7 +208,8 @@
     
     [[NSNotificationCenter defaultCenter]removeObserver:self name:kSephoneRegistrationUpdate object:nil];
     
-
+    [moveTimer invalidate];
+    
     
     
 }
