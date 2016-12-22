@@ -261,15 +261,7 @@
         [[AppUtil appTopViewController] showHint:@"请输入密码"];
         return;
     }
-    if ([AppUtil isBlankString:_surepasswordTextfield.text]) {
-        [[AppUtil appTopViewController] showHint:@"请再次输入密码"];
-        return;
-    }
-    if (![_passwordTextfield.text isEqualToString:_surepasswordTextfield.text]) {
-        [[AppUtil appTopViewController] showHint:@"两次输入密码不一致"];
-        return;
-    }
-    
+
     if (![_numberTextfield.text isEqualToString:_achieveString]) {
         [[AppUtil appTopViewController] showHint:@"请输入正确的手机号码"];
         return;
@@ -316,11 +308,12 @@
 
 -(void)provied{
     FuckLog(@"dada");
-    [self timeout];
+    
     
     [[AFHttpClient sharedAFHttpClient]getCheckWithPhone:_numberTextfield.text type:@"modifypassword" complete:^(BaseModel *model) {
         
-        if (model) {
+        if ([model.retCode isEqualToString:@"0000"]) {
+            [self timeout];
             _achieveString = model.totalrecords;
             _vercationNumber = model.content;
         }
@@ -341,6 +334,7 @@
                 [_vercationBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
                 _vercationBtn.userInteractionEnabled = YES;
                 _vercationBtn.backgroundColor = GREEN_COLOR;
+                [_vercationBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
             });
         }else{
             // int seconds = timeout % 60;
@@ -349,11 +343,12 @@
                 [UIView beginAnimations:nil context:nil];
                 [UIView setAnimationDuration:1];
                 _vercationBtn.titleLabel.font = [UIFont systemFontOfSize:13];
-                [_vercationBtn setTitle:[NSString stringWithFormat:@"%@秒后重新发送",strTime] forState:UIControlStateNormal];
+                [_vercationBtn setTitle:[NSString stringWithFormat:@"%@s",strTime] forState:UIControlStateNormal];
+                [_vercationBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
                 [UIView commitAnimations];
                 
                 _vercationBtn.userInteractionEnabled = NO;
-                _vercationBtn.backgroundColor = [UIColor grayColor];
+                _vercationBtn.backgroundColor = [UIColor whiteColor];
             });
             timeout--;
         }

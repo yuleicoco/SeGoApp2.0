@@ -37,11 +37,12 @@
         _rightLabel.text = @"dada";
         _rightLabel.textColor = [UIColor blackColor];
         _rightLabel.font = [UIFont systemFontOfSize:18];
+        _rightLabel.textAlignment = NSTextAlignmentRight;
         [self addSubview:_rightLabel];
         [_rightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(_rightLabel.superview).offset(-12);
             make.centerY.equalTo(_rightLabel.superview.mas_centerY);
-            
+            make.width.mas_equalTo(300);
         }];
         
         

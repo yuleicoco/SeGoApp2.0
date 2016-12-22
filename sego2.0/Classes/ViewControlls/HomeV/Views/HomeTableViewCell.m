@@ -26,11 +26,12 @@
         _contentLabel.textColor = [UIColor blackColor];
         _contentLabel.font = [UIFont systemFontOfSize:18];
         _contentLabel.text = @"开心的小柯基";
+        _contentLabel.numberOfLines = 2;
         [self addSubview:_contentLabel];
         [_contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(_contentLabel.superview).offset(12);
             make.top.equalTo(_topView.mas_bottom).offset(11.5);
-            
+              make.width.mas_equalTo(360 * W_Wide_Zoom);
         }];
         
         _centerImage = [[UIImageView alloc]init];

@@ -282,7 +282,14 @@ static NSString * cellId = @"homedetailviewellId";
         [[AFHttpClient sharedAFHttpClient]delArticleWithMid:[AccountManager sharedAccountManager].loginModel.mid aid:_aid complete:^(BaseModel *model) {
             if (model) {
                 [[AppUtil appTopViewController]showHint:model.retDesc];
-                [self.navigationController popToRootViewControllerAnimated:NO];
+              //  [self.navigationController popToRootViewControllerAnimated:NO];
+                [self.navigationController popViewControllerAnimated:NO];
+//                NSUserDefaults * userdafaults = [NSUserDefaults standardUserDefaults];
+//                NSString * str = [NSString stringWithFormat:@"%ld",(long)_index];
+//                [userdafaults setObject:str forKey:@"wocaonimama"];
+                
+                   [[NSNotificationCenter defaultCenter]postNotificationName:@"deleshuaxin" object:nil];
+                
             }
             [self hideHud];
             

@@ -10,5 +10,5 @@
 
 @interface HomeDetailViewController : BaseTabViewController
 @property (nonatomic,strong)NSString * aid;
-
+@property (nonatomic,assign)NSInteger index;
 @end

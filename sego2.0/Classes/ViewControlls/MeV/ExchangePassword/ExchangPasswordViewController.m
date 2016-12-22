@@ -168,16 +168,16 @@
           [[AppUtil appTopViewController]showHint:@"请输入新密码"];
         return;
     }
-    if ([AppUtil isBlankString:_surepasswordTextfield.text]) {
-          [[AppUtil appTopViewController]showHint:@"请再次输入密码"];
-        return;
-    }
-  
-    if (![_passwordTextfield.text isEqualToString:_surepasswordTextfield.text]) {
-        [[AppUtil appTopViewController]showHint:@"两次输入密码不一致"];
-        return;
-    
-    }
+//    if ([AppUtil isBlankString:_surepasswordTextfield.text]) {
+//          [[AppUtil appTopViewController]showHint:@"请再次输入密码"];
+//        return;
+//    }
+//  
+//    if (![_passwordTextfield.text isEqualToString:_surepasswordTextfield.text]) {
+//        [[AppUtil appTopViewController]showHint:@"两次输入密码不一致"];
+//        return;
+//    
+//    }
     
     [[AFHttpClient sharedAFHttpClient]exchangePasswordWithMid:[AccountManager sharedAccountManager].loginModel.mid password:_passwordTextfield.text complete:^(BaseModel *model) {
         if (model) {
