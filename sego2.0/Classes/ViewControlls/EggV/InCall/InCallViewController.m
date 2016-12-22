@@ -768,11 +768,11 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
         
         
     }];
-    //左
+    //左 33
     [DriArr[2] mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(videoView.mas_bottom).offset(-54);
         make.size.mas_equalTo(CGSizeMake(79*0.75,143*0.75));
-        make.left.mas_equalTo(33);
+        make.left.mas_equalTo(self.view.mas_centerX).offset(22);
         
         
         
@@ -782,7 +782,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     [DriArr[3] mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(videoView.mas_bottom).offset(-54);
         make.size.mas_equalTo(CGSizeMake(79*0.75,143*0.75));
-        make.left.mas_equalTo(125);
+       // make.left.mas_equalTo(125);
+        make.left.mas_equalTo(self.view.mas_centerX).offset(60);
         
         
         
@@ -978,7 +979,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
        // make.top.equalTo(FiveView.mas_bottom).offset(54);
         make.bottom.equalTo(self.view.mas_bottom).offset(-54);
         make.size.mas_equalTo(CGSizeMake(79,287/2));
-        make.left.mas_equalTo(88);
+         make.left.mas_equalTo(self.view.mas_centerX).offset(-100);
+        // make.left.mas_equalTo(88);
         
         
         
@@ -988,9 +990,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     [DriArr[3] mas_remakeConstraints:^(MASConstraintMaker *make) {
        // make.top.equalTo(FiveView.mas_bottom).offset(54);
         make.bottom.equalTo(self.view.mas_bottom).offset(-54);
-        make.size.mas_equalTo(CGSizeMake(79,287/2));
-        make.left.mas_equalTo(208);
-        
+      //  make.size.mas_equalTo(CGSizeMake(79,287/2));
+        make.left.mas_equalTo(self.view.mas_centerX).offset(100);
         
         
         
