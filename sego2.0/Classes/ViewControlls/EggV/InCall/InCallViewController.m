@@ -1247,13 +1247,13 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 //
 - (void)Slef_toptclick:(UIButton *)sender
 {
-    [self MoveRobot:@"2"];
+    [self moverobot:@"2"];
     
 }
 
 - (void)Slef_downtclick:(UIButton *)sender
 {
-    [self MoveRobot:@"2"];
+    [self moverobot:@"2"];
     
 }
 
@@ -1262,23 +1262,23 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     NSInteger i = [str integerValue];
     switch (i) {
         case 1:
-            [self.view viewWithTag:100001].userInteractionEnabled = NO;
-            [self.view viewWithTag:100002].userInteractionEnabled = NO;
-            [self.view viewWithTag:100003].userInteractionEnabled = NO;
-            [self.view viewWithTag:100004].userInteractionEnabled = NO;
-            [self.view viewWithTag:100005].userInteractionEnabled = YES;
-            [self.view viewWithTag:100006].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000001].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000002].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000003].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000004].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000005].userInteractionEnabled = YES;
+            [self.view viewWithTag:1000006].userInteractionEnabled = NO;
 
             break;
             
         case 2:
            
-            [self.view viewWithTag:100001].userInteractionEnabled = NO;
-            [self.view viewWithTag:100002].userInteractionEnabled = NO;
-            [self.view viewWithTag:100003].userInteractionEnabled = NO;
-            [self.view viewWithTag:100004].userInteractionEnabled = NO;
-            [self.view viewWithTag:100005].userInteractionEnabled = NO;
-            [self.view viewWithTag:100006].userInteractionEnabled = YES;
+            [self.view viewWithTag:1000001].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000002].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000003].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000004].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000005].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000006].userInteractionEnabled = YES;
 
             break;
             
@@ -1331,6 +1331,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 {
      [self overTime];
     
+    
 }
 - (void)RdownClickSt:(UIButton *)sender
 {
@@ -1351,44 +1352,46 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 -(void)MoveRobot:(NSString *)str
 {
      NSInteger i = [str integerValue];
+    NSLog(@"==========");
     
-    switch (i) {
+    
+     switch (i) {
         case 1:
             
-            [self.view viewWithTag:i].userInteractionEnabled = YES;
-            [self.view viewWithTag:100002].userInteractionEnabled = NO;
-            [self.view viewWithTag:100003].userInteractionEnabled = NO;
-            [self.view viewWithTag:100004].userInteractionEnabled = NO;
-            [self.view viewWithTag:100005].userInteractionEnabled = NO;
-            [self.view viewWithTag:100006].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000001].userInteractionEnabled = YES;
+            [self.view viewWithTag:1000002].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000003].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000004].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000005].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000006].userInteractionEnabled = NO;
             break;
            
         case 2:
-            [self.view viewWithTag:i].userInteractionEnabled = YES;
-            [self.view viewWithTag:100001].userInteractionEnabled = NO;
-            [self.view viewWithTag:100003].userInteractionEnabled = NO;
-            [self.view viewWithTag:100004].userInteractionEnabled = NO;
-            [self.view viewWithTag:100005].userInteractionEnabled = NO;
-            [self.view viewWithTag:100006].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000002].userInteractionEnabled = YES;
+            [self.view viewWithTag:1000001].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000003].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000004].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000005].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000006].userInteractionEnabled = NO;
             
             break;
         case 3:
-            [self.view viewWithTag:i].userInteractionEnabled = YES;
-            [self.view viewWithTag:100002].userInteractionEnabled = NO;
-            [self.view viewWithTag:100001].userInteractionEnabled = NO;
-            [self.view viewWithTag:100004].userInteractionEnabled = NO;
-            [self.view viewWithTag:100005].userInteractionEnabled = NO;
-            [self.view viewWithTag:100006].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000003].userInteractionEnabled = YES;
+            [self.view viewWithTag:1000002].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000001].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000004].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000005].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000006].userInteractionEnabled = NO;
             
             break;
         case 4:
             
-            [self.view viewWithTag:i].userInteractionEnabled = YES;
-            [self.view viewWithTag:100002].userInteractionEnabled = NO;
-            [self.view viewWithTag:100003].userInteractionEnabled = NO;
-            [self.view viewWithTag:100001].userInteractionEnabled = NO;
-            [self.view viewWithTag:100005].userInteractionEnabled = NO;
-            [self.view viewWithTag:100006].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000004].userInteractionEnabled = YES;
+            [self.view viewWithTag:1000002].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000003].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000001].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000005].userInteractionEnabled = NO;
+            [self.view viewWithTag:1000006].userInteractionEnabled = NO;
             break;
        
         default:
@@ -1436,7 +1439,12 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)overTime
 {
     [moveTimer invalidate];
-
+    [self.view viewWithTag:1000001].userInteractionEnabled = YES;
+    [self.view viewWithTag:1000002].userInteractionEnabled = YES;
+    [self.view viewWithTag:1000003].userInteractionEnabled = YES;
+    [self.view viewWithTag:1000004].userInteractionEnabled = YES;
+    [self.view viewWithTag:1000005].userInteractionEnabled = YES;
+    [self.view viewWithTag:1000006].userInteractionEnabled = YES;
     
 }
 
@@ -1571,6 +1579,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     //  必须清除，否则会因为arc导致再次视频通话时crash。
     sephone_core_set_native_video_window_id([SephoneManager getLc], (unsigned long)NULL);
     // Remove observer
+    [moveTimer invalidate];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kSephoneCallUpdate object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillResignActiveNotification object:[UIApplication sharedApplication]];
     
