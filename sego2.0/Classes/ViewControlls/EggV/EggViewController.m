@@ -651,15 +651,14 @@
         }else
             
         {
-//            make.width.equalTo(self.view.superview);
+//
 //            make.top.equalTo(self.view.superview.mas_top).offset(102);
 //            make.bottom.equalTo(self.view.superview.mas_bottom).offset(-220);
             
             make.centerX.mas_equalTo(self.view.mas_centerX);
-            make.height.mas_equalTo(330);
-            make.top.equalTo(self.view.superview.mas_top).offset(90);
-            make.width.mas_equalTo(350);
-            
+            make.width.equalTo(self.view.superview);
+            make.top.equalTo(self.view.superview.mas_top).offset(102);
+            make.bottom.equalTo(self.view.superview.mas_bottom).offset(-260);
             
             
         }
