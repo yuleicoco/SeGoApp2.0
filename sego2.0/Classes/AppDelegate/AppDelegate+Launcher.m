@@ -148,7 +148,24 @@
     
     
     if ([pboard.string length]>4  &&  [[pboard.string substringWithRange:NSMakeRange(0, 4)]  isEqualToString:@"赛果分享"]) {
-        NSString * strPLAYcode = [pboard.string substringWithRange:NSMakeRange(5,14 )];
+      
+//        NSString *string1 = @"Thi[sisastring";
+//        NSString *string2 = @"[";
+//        NSRange range = [string1 rangeOfString:string2];
+//        NSInteger location = range.location;
+//        NSInteger leight = range.length;
+//        NSString *astring = [[NSString alloc] initWithString:[NSString stringWithFormat:@"Location:%ld,Leight:%ld",(long)location,(long)leight]];
+//        NSLog(@"astring:%@",astring);
+//
+        
+        
+        NSString * str11 = @"[";
+        NSString * str22 = @"]";
+        NSRange rang1 = [pboard.string rangeOfString:str11];
+        NSRange rang2 = [pboard.string rangeOfString:str22];
+        
+        NSString * strPLAYcode = [pboard.string substringWithRange:NSMakeRange(rang1.location + 1,rang2.location - 5)];
+        
         [self checkPlayCode:strPLAYcode];
         pboard.string  =@"";
     }else
