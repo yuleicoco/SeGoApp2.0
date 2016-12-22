@@ -920,7 +920,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
         
         
     }];
-    [LabeArr mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:50 leadSpacing:20 tailSpacing:17];
+    [LabeArr mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:30 leadSpacing:22 tailSpacing:17];
  
     
     
@@ -936,16 +936,16 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
     [btnList mas_remakeConstraints:^(MASConstraintMaker *make) {
         
+        //make.size.mas_equalTo(CGSizeMake(36, 40));
         make.height.mas_equalTo(36);
-//        make.centerY.equalTo(FiveView.mas_centerY);
-        make.top.equalTo(FiveView.mas_top).offset(12);
+//      make.centerY.equalTo(FiveView.mas_centerY);
+        make.top.equalTo(FiveView.mas_top).offset(6);
         
         
         
         
     }];
-    [btnList mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:41 leadSpacing:15 tailSpacing:15];
-   
+   [btnList mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:36 leadSpacing:15 tailSpacing:15];
 
     
     //方向按钮
@@ -990,8 +990,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     [DriArr[3] mas_remakeConstraints:^(MASConstraintMaker *make) {
        // make.top.equalTo(FiveView.mas_bottom).offset(54);
         make.bottom.equalTo(self.view.mas_bottom).offset(-54);
-      //  make.size.mas_equalTo(CGSizeMake(79,287/2));
-        make.left.mas_equalTo(self.view.mas_centerX).offset(100);
+        make.size.mas_equalTo(CGSizeMake(79,287/2));
+        make.right.mas_equalTo(self.view.mas_centerX).offset(100);
         
         
         
