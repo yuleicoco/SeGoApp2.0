@@ -274,7 +274,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 
     // 视频界面
     videoView =[UIView new];
-    videoView.backgroundColor =[UIColor whiteColor];
+    videoView.backgroundColor =[UIColor blackColor];
     [self.view addSubview:videoView];
     
     
