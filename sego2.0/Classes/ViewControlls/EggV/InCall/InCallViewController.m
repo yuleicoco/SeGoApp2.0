@@ -971,7 +971,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
                 
                 [DriArr[0] mas_remakeConstraints:^(MASConstraintMaker *make) {
                     // make.top.equalTo(FiveView.mas_bottom).offset(26);
-                    make.bottom.equalTo(self.view.mas_bottom).offset(-166);
+                    make.bottom.equalTo(self.view.mas_bottom).offset(-186);
                     make.centerX.mas_equalTo(self.view.mas_centerX);
                     make.size.mas_equalTo(CGSizeMake(287/2,79));
                     //  make.left.mas_equalTo(56);
@@ -984,7 +984,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
                 
                 [DriArr[1] mas_remakeConstraints:^(MASConstraintMaker *make) {
                     // make.top.equalTo(FiveView.mas_bottom).offset(146);
-                    make.bottom.equalTo(self.view.mas_bottom).offset(-46);
+                    make.bottom.equalTo(self.view.mas_bottom).offset(-66);
                     make.centerX.mas_equalTo(self.view.mas_centerX);
                     make.size.mas_equalTo(CGSizeMake(287/2,79));
                     // make.left.mas_equalTo(56);
@@ -996,7 +996,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
                 //左
                 [DriArr[2] mas_remakeConstraints:^(MASConstraintMaker *make) {
                     // make.top.equalTo(FiveView.mas_bottom).offset(54);
-                    make.bottom.equalTo(self.view.mas_bottom).offset(-74);
+                    make.bottom.equalTo(self.view.mas_bottom).offset(-94);
                     make.size.mas_equalTo(CGSizeMake(79,287/2));
                     make.left.mas_equalTo(self.view.mas_centerX).offset(-100);
                     // make.left.mas_equalTo(88);
@@ -1008,13 +1008,26 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
                 
                 [DriArr[3] mas_remakeConstraints:^(MASConstraintMaker *make) {
                     // make.top.equalTo(FiveView.mas_bottom).offset(54);
-                    make.bottom.equalTo(self.view.mas_bottom).offset(-74);
+                    make.bottom.equalTo(self.view.mas_bottom).offset(-94);
                     make.size.mas_equalTo(CGSizeMake(79,287/2));
                     make.right.mas_equalTo(self.view.mas_centerX).offset(100);
                     
                     
                     
                 }];
+                // 小圆
+                
+                UIImageView * imageS =[self.view viewWithTag:10000001];
+                [imageS mas_remakeConstraints:^(MASConstraintMaker *make) {
+                    
+                    //   make.top.equalTo(FiveView.mas_bottom).offset(104);
+                    make.bottom.equalTo(self.view.mas_bottom).offset(-144);
+                    make.centerX.mas_equalTo(self.view.mas_centerX);
+                    //  make.left.mas_equalTo(105);
+                    make.size.mas_equalTo(CGSizeMake(44, 44));
+                    
+                }];
+
 
             
         }else
@@ -1069,6 +1082,20 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
                 
             }];
 
+            
+            // 小圆
+            
+            UIImageView * imageS =[self.view viewWithTag:10000001];
+            [imageS mas_remakeConstraints:^(MASConstraintMaker *make) {
+                
+                //   make.top.equalTo(FiveView.mas_bottom).offset(104);
+                make.bottom.equalTo(self.view.mas_bottom).offset(-104);
+                make.centerX.mas_equalTo(self.view.mas_centerX);
+                //  make.left.mas_equalTo(105);
+                make.size.mas_equalTo(CGSizeMake(44, 44));
+                
+            }];
+
         }
         
     }
@@ -1099,18 +1126,6 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
      */
     
     
-    // 小圆
-    
-    UIImageView * imageS =[self.view viewWithTag:10000001];
-    [imageS mas_remakeConstraints:^(MASConstraintMaker *make) {
-        
-     //   make.top.equalTo(FiveView.mas_bottom).offset(104);
-        make.bottom.equalTo(self.view.mas_bottom).offset(-104);
-        make.centerX.mas_equalTo(self.view.mas_centerX);
-      //  make.left.mas_equalTo(105);
-        make.size.mas_equalTo(CGSizeMake(44, 44));
-        
-    }];
     
     
     
