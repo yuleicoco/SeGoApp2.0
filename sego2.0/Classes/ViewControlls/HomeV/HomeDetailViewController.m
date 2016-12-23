@@ -250,7 +250,7 @@ static NSString * cellId = @"homedetailviewellId";
 
 
 -(void)celltouchubuttonTouch:(UIButton *)sender{
-    //NSInteger i = sender.tag - 6777;
+    NSInteger i = sender.tag - 6777;
 //    NSLog(@"%ld",i);
     //感觉多此一举，这里只需要点击时间就行了，反正传值
     HomeDetailModel * model = self.dataSource[0];
@@ -258,6 +258,7 @@ static NSString * cellId = @"homedetailviewellId";
     if ([model.type isEqualToString:@"p"]) {
         LargeViewController * largeVC =[[LargeViewController alloc]initWithNibName:@"LargeViewController" bundle:nil];
         largeVC.dataArray = _resoucesArray;
+        largeVC.indexxx = i;
         [self.navigationController pushViewController:largeVC animated:NO];
         
         

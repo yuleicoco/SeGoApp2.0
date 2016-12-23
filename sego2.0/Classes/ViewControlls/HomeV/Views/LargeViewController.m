@@ -46,7 +46,7 @@
     mytableView.backgroundColor =[UIColor blackColor];
     mytableView.pagingEnabled = YES;
     [self.view addSubview:mytableView];
-
+  //  mytableView.currentIndex = _indexxx;
     [mytableView reloadData];
     
 }
