@@ -237,11 +237,11 @@
     
     [methodView mas_makeConstraints:^(MASConstraintMaker *make) {
         
-       // make.right.equalTo(self).offset(147);
+      //  make.left.equalTo(labelMess.mas_right).offset(147);
         make.top.equalTo(wifiCode.mas_bottom).offset(24);
 //        make.bottom.equalTo(btnBind.mas_top).offset(-36);
         make.height.mas_equalTo(30);
-        
+        make.width.mas_equalTo(100);
         make.right.equalTo(self.view).offset(-17);
         
         
@@ -299,7 +299,7 @@
         
         make.top.equalTo(methodView.mas_bottom).offset(0);
         make.width.equalTo(methodView);
-        make.left.equalTo(labelMess.mas_right).offset(147);
+        make.right.equalTo(self.view).offset(-17);
         make.height.mas_equalTo(@98);
         
         

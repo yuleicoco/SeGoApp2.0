@@ -107,7 +107,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
       [_oneDayButton addTarget:self action:@selector(onedayButtonTouch) forControlEvents:UIControlEventTouchUpInside];
     
     UILabel * wenzi1 =[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_oneDayButton.frame) + 5, 15 * W_Hight_Zoom, 50 * W_Wide_Zoom, 20 * W_Hight_Zoom)];
-    wenzi1.text = @"一天";
+    wenzi1.text = @"四餐";
     wenzi1.textColor = GREEN_COLOR;
     wenzi1.font = [UIFont systemFontOfSize:13];
     [whiteView addSubview:wenzi1];
@@ -122,7 +122,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
 
     
     UILabel * wenzi2 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_twoDayButton.frame) + 5, 15 * W_Hight_Zoom, 50 * W_Wide_Zoom, 20 * W_Hight_Zoom)];
-    wenzi2.text = @"两天";
+    wenzi2.text = @"两餐";
     wenzi2.textColor = GREEN_COLOR;
     wenzi2.font = [UIFont systemFontOfSize:13];
     [whiteView addSubview:wenzi2];

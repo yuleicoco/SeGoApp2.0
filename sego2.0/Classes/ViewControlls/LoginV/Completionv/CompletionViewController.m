@@ -164,7 +164,7 @@
     _passwordTextfield = [[UITextField alloc]init];
     _passwordTextfield.font = [UIFont systemFontOfSize:18];
     _passwordTextfield.placeholder = @"请输入新密码";
-  //  _passwordTextfield.secureTextEntry = YES;
+    //  _passwordTextfield.secureTextEntry = YES;
     _passwordTextfield.textColor = [UIColor blackColor];
     [self.view addSubview:_passwordTextfield];
     [_passwordTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
