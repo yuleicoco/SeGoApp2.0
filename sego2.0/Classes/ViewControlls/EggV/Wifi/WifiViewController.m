@@ -274,6 +274,7 @@
     [imaeV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(methodView.mas_right).offset(-12);
         make.height.equalTo(methodView);
+        make.width.mas_equalTo(10);
         make.top.equalTo(methodView.mas_top).offset(1);
 
         

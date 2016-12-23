@@ -856,13 +856,21 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
         
     }];
     
-    //横竖屏按钮
-    [HZbtn mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [timeLable mas_remakeConstraints:^(MASConstraintMaker *make) {
+        
         make.right.equalTo(self.view.mas_right).offset(-12);
         make.top.equalTo(self.view.mas_top).offset(255);
-        make.size.mas_equalTo(CGSizeMake(30, 30));
+        make.size.mas_equalTo(CGSizeMake(60, 30));
         
     }];
+    
+    //横竖屏按钮
+//    [HZbtn mas_remakeConstraints:^(MASConstraintMaker *make) {
+//        make.right.equalTo(self.view.mas_right).offset(-12);
+//        make.top.equalTo(self.view.mas_top).offset(255);
+//        make.size.mas_equalTo(CGSizeMake(30, 30));
+//        
+//    }];
     
     // 激光笔背景
     [pesnBack mas_remakeConstraints:^(MASConstraintMaker *make) {
