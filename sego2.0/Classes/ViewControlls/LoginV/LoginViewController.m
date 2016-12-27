@@ -295,8 +295,6 @@
          if (state == SSDKResponseStateSuccess)
          {
              
-             
-             
              [self loginRepace:@"q" Secretkey:user.uid nick:user.nickname headportrait:user.icon];
              
              [ShareSDK cancelAuthorize:SSDKPlatformTypeQQ];
@@ -304,7 +302,6 @@
              user.uid = nil;
             
          }
-         
          else
          {
              NSLog(@"%@",error);
@@ -324,7 +321,6 @@
         if ([model.retCode isEqualToString:@"0000"]) {
             
             LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
-            
             [[AccountManager sharedAccountManager]login:loginModel];
             [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
         }else{
