@@ -450,6 +450,7 @@
 
 -(void)namedancebuttonTouch{
     FuckLog(@"不改名字了");
+      [_exchangeTextfield resignFirstResponder];
     _bigBtn.hidden = YES;
     _centerwhteView.hidden = YES;
 }
@@ -458,6 +459,11 @@
           [[AppUtil appTopViewController] showHint:@"请输入规则名称"];
         return;
     }
+    if (_exchangeTextfield.text.length > 11) {
+        [[AppUtil appTopViewController] showHint:@"规则名称不能超过11个字哦!"];
+        return;
+    }
+      [_exchangeTextfield resignFirstResponder];
     _ruleNameLabel.text = _exchangeTextfield.text;
     _ruleNameLabel.textColor = [UIColor blackColor];
     _bigBtn.hidden = YES;
@@ -466,8 +472,8 @@
 }
 
 -(void)bigbuttonTouch{
-    _bigBtn.hidden = YES;
-    _centerwhteView.hidden = YES;
+//    _bigBtn.hidden = YES;
+//    _centerwhteView.hidden = YES;
 }
 
 -(void)toushubuttonTouch{

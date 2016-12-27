@@ -296,6 +296,15 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
 
 - (void)onVideo:(UITapGestureRecognizer *)imageSender
 {
+    NSUserDefaults * userdefautls = [NSUserDefaults standardUserDefaults];
+    NSMutableArray * videoArrray = [userdefautls objectForKey:@"respositVideo"];
+    if (videoArrray.count >0) {
+        [[AppUtil appTopViewController] showHint:@"只能单独选择视频或图片发布"];
+        return;
+    }
+    
+    
+    
     NSInteger i = imageSender.view.tag/1000;//分区
     int j = imageSender.view.tag%1000;//每个分区的分组
     
@@ -336,8 +345,11 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
         [_rightBtn setTitleColor:RGB(220, 220, 220) forState:UIControlStateNormal];
         //_rightBtn.selected = YES;
     }
-
-
+    
+    NSUserDefaults * userdefautls2 = [NSUserDefaults standardUserDefaults];
+    [userdefautls2 setObject:deleteOrUpdateArr forKey:@"repositImage"];
+    [userdefautls2 synchronize];
+    
 }
 
 

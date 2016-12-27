@@ -15,7 +15,7 @@
     if (self) {
         
         _lineLabel = [[UILabel alloc]init];
-        _lineLabel.backgroundColor = [UIColor grayColor];
+        _lineLabel.backgroundColor = LIGHT_GRAYdcdc_COLOR;
         [self addSubview:_lineLabel];
         [_lineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(_lineLabel.superview).offset(12);

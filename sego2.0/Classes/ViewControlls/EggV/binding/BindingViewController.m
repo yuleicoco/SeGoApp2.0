@@ -175,7 +175,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
          btnBind.enabled = FALSE;
     }else
     {
-         [btnBind setTitle:@"解除设备" forState:UIControlStateNormal];
+         [btnBind setTitle:@"解除绑定" forState:UIControlStateNormal];
          btnBind.enabled = TRUE;
         btnBind.backgroundColor = GREEN_COLOR;
         

@@ -53,8 +53,8 @@
         [self addSubview:_rightBtn];
         [_rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(_rightBtn.superview).offset(-12);
-            make.width.mas_equalTo(20);
-            make.height.mas_equalTo(20);
+            make.width.mas_equalTo(25);
+            make.height.mas_equalTo(25);
             make.centerY.mas_equalTo(_rightBtn.superview.mas_centerY);
             
         }];

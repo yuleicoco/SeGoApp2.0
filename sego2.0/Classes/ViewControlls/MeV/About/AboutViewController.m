@@ -43,12 +43,13 @@
         make.top.equalTo(aboutImage.superview).offset(28);
         make.width.mas_equalTo(102);
         make.height.mas_equalTo(111);
-        make.left.equalTo(aboutImage.superview).offset(137);
+       // make.left.equalTo(aboutImage.superview).offset(137);
+        make.centerX.equalTo(aboutImage.superview.mas_centerX);
         
     }];
     
     UILabel * banbenLabel = [[UILabel alloc]init];
-    banbenLabel.text = @"SEGO  V1.5";
+    banbenLabel.text = @"SEGO  V2.0";
     banbenLabel.textColor = [UIColor blackColor];
     banbenLabel.font = [UIFont systemFontOfSize:18];
     [topView addSubview:banbenLabel];

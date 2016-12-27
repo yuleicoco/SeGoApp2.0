@@ -87,9 +87,8 @@ static NSString * cellId = @"InformationCellId";
     }];
     
     _headBtn = [[UIButton alloc]init];
-    //headBtn.backgroundColor = [UIColor blackColor];
-    [_headBtn.layer setMasksToBounds:YES];
-    _headBtn.layer.cornerRadius = 33;
+   // [_headBtn.layer setMasksToBounds:YES];
+ //   _headBtn.layer.cornerRadius = 33;
     [_headBtn addTarget:self action:@selector(headbtuttonTouch:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_headBtn];
     [_headBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -581,7 +580,18 @@ static NSString * cellId = @"InformationCellId";
 
 -(void)namesurebuttonTouch{
     FuckLog(@"还是改个名字吧");
-       [_exchangeTextfield resignFirstResponder];
+    if ([AppUtil isBlankString:_exchangeTextfield.text]) {
+         [[AppUtil appTopViewController] showHint:@"名字不能为空哦!"];
+        return;
+    }
+    if (_exchangeTextfield.text.length > 11) {
+        [[AppUtil appTopViewController] showHint:@"昵称不能超过11个字哦!"];
+        return;
+    }
+    
+
+    
+    [_exchangeTextfield resignFirstResponder];
     _bigBtn.hidden = YES;
     _centerwhteView.hidden = YES;
         [self showHudInView:self.view hint:@"正在修改..."];
@@ -727,6 +737,7 @@ static NSString * cellId = @"InformationCellId";
     str2 = [str2 substringToIndex:[str2 length]-1];
     NSString * str3 = [NSString stringWithFormat:@"%@",[self.daysArray objectAtIndex:[self.pickViewList selectedRowInComponent:2]]];
     str3 = [str3 substringToIndex:[str3 length]-1];
+    
     NSString * newStr = [NSString stringWithFormat:@"%@-%@-%@",str,str2,str3];
     [[AFHttpClient sharedAFHttpClient]modifyMemberWithMid:[AccountManager sharedAccountManager].loginModel.mid nickname:[AccountManager sharedAccountManager].loginModel.nickname address:[AccountManager sharedAccountManager].loginModel.address signature:[AccountManager sharedAccountManager].loginModel.signature pet_sex:[AccountManager sharedAccountManager].loginModel.pet_sex pet_birthday:newStr pet_race:[AccountManager sharedAccountManager].loginModel.pet_race complete:^(BaseModel *model) {
         if (model) {
@@ -927,6 +938,12 @@ static NSString * cellId = @"InformationCellId";
 }
 -(void)exchangesinertouch{
     FuckLog(@"改个签名吧");
+    if (_exchangeTextfield.text.length>30) {
+           [[AppUtil appTopViewController] showHint:@"签名不能超过30个字哦!"];
+        return;
+    }
+    
+    
        [_exchangeTextfield resignFirstResponder];
     _bigBtn.hidden = YES;
     _centerwhteView.hidden = YES;
@@ -943,11 +960,6 @@ static NSString * cellId = @"InformationCellId";
 
 
 }
-
-
-
-
-
 
 
 

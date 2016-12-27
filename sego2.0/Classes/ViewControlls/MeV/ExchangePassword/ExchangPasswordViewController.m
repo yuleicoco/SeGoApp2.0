@@ -168,6 +168,13 @@
           [[AppUtil appTopViewController]showHint:@"请输入新密码"];
         return;
     }
+    
+    if ([_passwordTextfield.text isEqualToString:[AccountManager sharedAccountManager].loginModel.password]) {
+        [[AppUtil appTopViewController]showHint:@"新旧密码不能相同哦"];
+        return;
+        
+    }
+    
 //    if ([AppUtil isBlankString:_surepasswordTextfield.text]) {
 //          [[AppUtil appTopViewController]showHint:@"请再次输入密码"];
 //        return;
