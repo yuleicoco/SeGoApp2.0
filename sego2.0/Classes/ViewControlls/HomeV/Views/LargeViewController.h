@@ -14,4 +14,5 @@
 @interface LargeViewController : BaseViewController<QFTableViewDataSource,QFTableViewDelegate>
 @property (nonatomic,strong)NSArray * dataArray;
 //@property (nonatomic,strong)ImageModel * model;
+@property (nonatomic,assign)NSInteger indexxx;
 @end

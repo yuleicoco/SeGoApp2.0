@@ -7,7 +7,7 @@
 //
 
 #import "RegistViewController.h"
-#import "GuideViewController.h"
+#import "AgreementViewController.h"
 #import "AFHttpClient+Account.h"
 
 @interface RegistViewController ()<UITextFieldDelegate>
@@ -68,8 +68,9 @@
     [self.view addSubview:_numberTextfield];
     [_numberTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(numberLabel.mas_right).offset(13);
-        make.width.mas_equalTo(230);
         make.centerY.equalTo(numberView.mas_centerY).offset(1);
+        make.right.equalTo(numberView.mas_right);
+        make.height.mas_equalTo(50);
         
     }];
 
@@ -120,6 +121,9 @@
     [_vercationTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(verificationLabel.mas_right).offset(13);
         make.centerY.equalTo(verificationView.mas_centerY).offset(1);
+        make.right.equalTo(verificationView.mas_right);
+        make.height.mas_equalTo(50);
+        
     }];
     
     UIView * passwordView = [[UIView alloc]init];
@@ -169,7 +173,8 @@
     [_passwordTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(passwordLabel.mas_right).offset(13);
         make.centerY.equalTo(passwordView.mas_centerY).offset(1);
-        make.width.mas_equalTo(230);
+        make.right.equalTo(passwordView.mas_right);
+        make.height.mas_equalTo(50);
     }];
     
     
@@ -322,8 +327,8 @@
 }
 -(void)xieyibuttontouch{
     FuckLog(@"hehhhh");
-    GuideViewController * guideVc = [[GuideViewController alloc]init];
-    [self.navigationController pushViewController:guideVc animated:NO];
+    AgreementViewController * agreVc = [[AgreementViewController alloc]init];
+    [self.navigationController pushViewController:agreVc animated:NO];
 }
 
 -(void)vercationbuttontouch{

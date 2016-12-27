@@ -343,6 +343,7 @@
 		7D65A4251E014E66004B0B85 /* weishi_onday.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D65A4231E014E66004B0B85 /* weishi_onday.png */; };
 		7D65A4261E014E66004B0B85 /* weishi_twoday.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D65A4241E014E66004B0B85 /* weishi_twoday.png */; };
 		7D708C701E023FC30003C981 /* UITabBar+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D708C6F1E023FC30003C981 /* UITabBar+Badge.m */; };
+		7D72DAB41E10F66C0069AFE8 /* bigsego.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D72DAB31E10F66C0069AFE8 /* bigsego.png */; };
 		7D99357E1DFF8D9E006D5A17 /* sego1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D99357D1DFF8D9E006D5A17 /* sego1.png */; };
 		7D9935811DFF8F8C006D5A17 /* FunnycodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D9935801DFF8F8C006D5A17 /* FunnycodeViewController.m */; };
 		7D9935851DFF9291006D5A17 /* FunnycodeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D9935841DFF9291006D5A17 /* FunnycodeTableViewCell.m */; };
@@ -1226,6 +1227,7 @@
 		7D65A4241E014E66004B0B85 /* weishi_twoday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weishi_twoday.png; sourceTree = "<group>"; };
 		7D708C6E1E023FC30003C981 /* UITabBar+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+Badge.h"; sourceTree = "<group>"; };
 		7D708C6F1E023FC30003C981 /* UITabBar+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+Badge.m"; sourceTree = "<group>"; };
+		7D72DAB31E10F66C0069AFE8 /* bigsego.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigsego.png; sourceTree = "<group>"; };
 		7D99357D1DFF8D9E006D5A17 /* sego1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sego1.png; sourceTree = "<group>"; };
 		7D99357F1DFF8F8C006D5A17 /* FunnycodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunnycodeViewController.h; sourceTree = "<group>"; };
 		7D9935801DFF8F8C006D5A17 /* FunnycodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunnycodeViewController.m; sourceTree = "<group>"; };
@@ -2448,6 +2450,7 @@
 		34E665561DD1A43800FA41E8 /* nav */ = {
 			isa = PBXGroup;
 			children = (
+				7D72DAB31E10F66C0069AFE8 /* bigsego.png */,
 			);
 			path = nav;
 			sourceTree = "<group>";
@@ -3281,6 +3284,7 @@
 				34ACCF3A1DDC510000AE2B98 /* xiala@2x.png in Resources */,
 				345AB42A1DD9B3C000025EEE /* InCallViewController.xib in Resources */,
 				34DB5CE41DD4129F00C51823 /* sephone.png in Resources */,
+				7D72DAB41E10F66C0069AFE8 /* bigsego.png in Resources */,
 				345AB3EB1DD9AEA400025EEE /* halfAp.png in Resources */,
 				345AB41A1DD9AEB900025EEE /* hzbtn.png in Resources */,
 				345AB3F41DD9AEA400025EEE /* Lclick_food.png in Resources */,

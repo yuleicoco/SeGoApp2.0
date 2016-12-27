@@ -19,7 +19,7 @@
 #define BASE_URL    @"http://180.97.80.227:8082/"
 #define BASE_URL_Test              @"http://180.97.81.213:16202/sego2/"
 
-#define BASE_URL_Test2 @"http://180.97.81.213:15311/"
+#define BASE_URL_Test2 @"http://180.97.80.227:15102/"
 
 @interface AFHttpClient : AFHTTPRequestOperationManager
 

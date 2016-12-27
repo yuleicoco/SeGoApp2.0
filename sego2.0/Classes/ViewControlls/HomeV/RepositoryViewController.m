@@ -37,15 +37,15 @@
 
 -(void)setupView{
     [super setupView];
-    UIView * topView = [[UIView alloc]init];
+    UIView * topView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 375 * W_Wide_Zoom, 44 * W_Hight_Zoom)];
     topView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:topView];
-    [topView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(topView.superview);
-        make.right.equalTo(topView.superview);
-        make.top.equalTo(topView.superview);
-        make.height.mas_equalTo(44);
-    }];
+//    [topView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(topView.superview);
+//        make.right.equalTo(topView.superview);
+//        make.top.equalTo(topView.superview);
+//        make.height.mas_equalTo(44 * W_Hight_Zoom);
+//    }];
     
     _leftBtn =[[UIButton alloc]initWithFrame:CGRectMake(127 * W_Wide_Zoom , 7 * W_Hight_Zoom, 40 * W_Wide_Zoom , 30 * W_Hight_Zoom )];
     [_leftBtn setTitle:@"录像" forState:UIControlStateNormal];
@@ -58,7 +58,7 @@
     [topView addSubview:_leftBtn];
     
     
-    _lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(122 * W_Wide_Zoom, 40 * W_Hight_Zoom, 50 * W_Wide_Zoom, 1 * W_Hight_Zoom)];
+    _lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(122 * W_Wide_Zoom, 38 * W_Hight_Zoom, 50 * W_Wide_Zoom, 1 * W_Hight_Zoom)];
     _lineLabel.backgroundColor = GREEN_COLOR;
     [topView addSubview:_lineLabel];
     
@@ -103,7 +103,7 @@
     _leftBtn.selected = YES;
     _rightBtn.selected = NO;
     [UIView animateWithDuration:0.3 animations:^{
-        _lineLabel.frame = CGRectMake(122 * W_Wide_Zoom, 40 * W_Hight_Zoom, 50 * W_Wide_Zoom, 1 * W_Hight_Zoom);
+        _lineLabel.frame = CGRectMake(122 * W_Wide_Zoom, 38 * W_Hight_Zoom, 50 * W_Wide_Zoom, 1 * W_Hight_Zoom);
     }];
     
     [self.pageViewController setViewControllers:@[self.viewControllers[0]] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
@@ -113,7 +113,7 @@
     _leftBtn.selected = NO;
     _rightBtn.selected = YES;
     [UIView animateWithDuration:0.3 animations:^{
-        _lineLabel.frame = CGRectMake(202 * W_Wide_Zoom, 40 * W_Hight_Zoom, 50 * W_Wide_Zoom, 1 * W_Hight_Zoom);
+        _lineLabel.frame = CGRectMake(202 * W_Wide_Zoom, 38 * W_Hight_Zoom, 50 * W_Wide_Zoom, 1 * W_Hight_Zoom);
         
     }];
     

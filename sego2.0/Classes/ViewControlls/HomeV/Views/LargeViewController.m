@@ -46,7 +46,7 @@
     mytableView.backgroundColor =[UIColor blackColor];
     mytableView.pagingEnabled = YES;
     [self.view addSubview:mytableView];
-
+  //  mytableView.currentIndex = _indexxx;
     [mytableView reloadData];
     
 }
@@ -82,12 +82,14 @@
 
 - (void)QFTableView:(QFTableView *)fanView scrollToIndex:(NSInteger)index{
 
+    //这里好像并不能乱动，不然要崩
     if (_dataArray.count > 0) {
-         [self setNavTitle:[NSString stringWithFormat:@"%ld/%ld",index + 1,_dataArray.count]];
+        [self setNavTitle:[NSString stringWithFormat:@"%ld/%ld",index + 1,_dataArray.count]];
     }else{
-    
+        
         [self setNavTitle:@"0"];
     }
+    
    
     
 
@@ -99,7 +101,7 @@
 - (void)QFTableView:(QFTableView *)fanView setContentView:(UIView *)contentView ForIndex:(NSInteger)index
 {
     
-    
+
    // NSArray *imageArray = [self.model.imagename componentsSeparatedByString:@","];
   
     contentView.backgroundColor = [UIColor blackColor];

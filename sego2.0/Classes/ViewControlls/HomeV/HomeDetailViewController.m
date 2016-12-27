@@ -216,7 +216,7 @@ static NSString * cellId = @"homedetailviewellId";
         if (wocaca.count>0) {
             cell.centerImage.image = wocaca[indexPath.row];
         }else{
-        [cell.centerImage sd_setImageWithURL:[NSURL URLWithString:_resoucesArray[indexPath.row]] placeholderImage:[UIImage imageNamed:@"sego1.png"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        [cell.centerImage sd_setImageWithURL:[NSURL URLWithString:_resoucesArray[indexPath.row]] placeholderImage:[UIImage imageNamed:@"bigsego.png"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             if (image) {
                 cell.centerImage.image = [image imageByScalingProportionallyToSize:CGSizeMake(self.tableView.width, CGFLOAT_MAX)];
                 [wocaca addObject:cell.centerImage.image];
@@ -229,7 +229,7 @@ static NSString * cellId = @"homedetailviewellId";
         if (model.cutImage) {
             cell.centerImage.image = model.cutImage;
         }else{
-            [cell.centerImage sd_setImageWithURL:[NSURL URLWithString:model.thumbnails] placeholderImage:[UIImage imageNamed:@"sego1.png"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            [cell.centerImage sd_setImageWithURL:[NSURL URLWithString:model.thumbnails] placeholderImage:[UIImage imageNamed:@"bigsego.png"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 if (image) {
                     cell.centerImage.image = [image imageByScalingProportionallyToSize:CGSizeMake(self.tableView.width, CGFLOAT_MAX)];
                     model.cutImage = cell.centerImage.image;
@@ -250,7 +250,7 @@ static NSString * cellId = @"homedetailviewellId";
 
 
 -(void)celltouchubuttonTouch:(UIButton *)sender{
-    //NSInteger i = sender.tag - 6777;
+    NSInteger i = sender.tag - 6777;
 //    NSLog(@"%ld",i);
     //感觉多此一举，这里只需要点击时间就行了，反正传值
     HomeDetailModel * model = self.dataSource[0];
@@ -258,6 +258,7 @@ static NSString * cellId = @"homedetailviewellId";
     if ([model.type isEqualToString:@"p"]) {
         LargeViewController * largeVC =[[LargeViewController alloc]initWithNibName:@"LargeViewController" bundle:nil];
         largeVC.dataArray = _resoucesArray;
+        largeVC.indexxx = i;
         [self.navigationController pushViewController:largeVC animated:NO];
         
         

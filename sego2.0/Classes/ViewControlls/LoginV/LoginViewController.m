@@ -72,8 +72,8 @@
     [_numberTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(numberImage.mas_right).offset(14);
         make.centerY.equalTo(topView.mas_centerY).offset(1);
-        make.width.mas_equalTo(200);
-        
+        make.right.equalTo(topView.mas_right);
+        make.height.mas_equalTo(50);
     }];
     
     //第二个框
@@ -130,7 +130,9 @@
     [_passwordTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(passImage.mas_right).offset(14);
         make.centerY.equalTo(downView.mas_centerY).offset(1);
-        make.width.mas_equalTo(200);
+        //make.width.mas_equalTo(200);
+        make.right.equalTo(downView.mas_right);
+        make.height.mas_equalTo(50);
     }];
     
     _loginBtn = [[UIButton alloc]init];
