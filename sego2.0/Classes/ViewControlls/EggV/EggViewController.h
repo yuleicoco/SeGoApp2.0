@@ -15,6 +15,9 @@
 @property(nonatomic,strong)NSString * CodeMid;
 @property(nonatomic,assign)BOOL isOther;
 @property(nonatomic,assign)NSInteger tsumNum;
+@property (nonatomic,strong)NSString * deviceNum;
+
+@property (nonatomic,strong)NSString * termidNum;
 
 
 

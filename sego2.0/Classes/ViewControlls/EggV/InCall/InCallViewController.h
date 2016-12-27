@@ -32,8 +32,10 @@
 
 @property (nonatomic,strong)UIImageView * pointTouch;
 
-@property (nonatomic,strong)NSString * isTurmNum;
+@property (nonatomic,assign)NSInteger  isTurmNum;
 @property (nonatomic,assign)BOOL isOther;
+@property (nonatomic,strong)NSString * deviceNum;
+@property (nonatomic,strong)NSString * termidNum;
 
 
 

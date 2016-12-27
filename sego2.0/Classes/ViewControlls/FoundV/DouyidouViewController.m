@@ -122,6 +122,9 @@ static NSString * cellId = @"douyidouCellid";
              eggVC.DouMid = model1.mid;
              eggVC.isOther = YES;
              eggVC.tsumNum = [model.retVal[@"tsnum"] integerValue];
+             eggVC.deviceNum = model.retVal[@"deviceno"];
+             eggVC.termidNum = model.retVal[@"termid"];
+            
             [self.navigationController pushViewController:eggVC animated:NO];
         }
         

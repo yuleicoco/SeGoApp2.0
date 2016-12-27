@@ -514,20 +514,15 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
                 [self setUpBleDevice];
 
 
-            }else
-            {
-              
             }
-            
-            
-            
             break;
             
             // 蓝牙关闭时，提示用户打开蓝牙。
         case CBPeripheralManagerStatePoweredOff:
             FuckLog(@"Bluetooth powered off");
-            
-            [self showNeedBluetoothWaringDialog];
+             if ([AppUtil isBlankString:strTT]) {
+                  [self showNeedBluetoothWaringDialog];
+             }
             break;
             
         default:
@@ -549,6 +544,9 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
  *  @param alertView   提示窗
  *  @param buttonIndex 按钮序号 IOS 10 不允许跳转到系统设置界面
  */
+
+
+/*
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     // 进入蓝牙设置窗口。
     if (buttonIndex == 1) {
@@ -560,6 +558,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
         }
     }
 }
+*/
 
 
 

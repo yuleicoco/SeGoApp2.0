@@ -203,7 +203,10 @@
                 eggVC.CodeMid = model.retVal[@"mid"];
                 eggVC.isOther  = YES;
                 eggVC.tsumNum = [model.retVal[@"tsnum"] integerValue];
+                eggVC.deviceNum =model.retVal[@"deviceno"];
+                eggVC.termidNum =model.retVal[@"termid"];
                 [self.mainTabVC pushViewController:eggVC];
+                
             }
             
         }

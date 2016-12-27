@@ -51,13 +51,15 @@
     NSArray * arrBtn;
     
     //别人
-    NSString * isOtherDevice;
+ //   NSString * isOtherDevice;
     //
     NSString * isOherID;
     // 投食量
-    NSString * isTsnum;
+   //  NSString * isTsnum;
+  //   NSString * termidNum;
     
     NSTimer * moveTimer;
+    
     
     
     
@@ -104,6 +106,8 @@
                     //第一次用户接受
                 }else{
                     //用户拒绝
+                    return ;
+                    
                 }
             }];
             break;
@@ -177,13 +181,18 @@
      [self checkWifi];
     
 
+    /*
     if (isOther) {
         NSString * d = SearchMid.length>DouMid.length?SearchMid:(DouMid.length>CodeMid.length?DouMid:CodeMid);
+        
             [[AFHttpClient sharedAFHttpClient]checkMidFriend:d complete:^(BaseModel * model) {
                 FuckLog(@"%@",model);
                 isOtherDevice = model.retVal[@"deviceno"];
                 isOherID = model.retVal[@"mid"];
                 isTsnum = model.retVal[@"tsnum"];
+                termidNum = model.retVal[@"termid"];
+                
+                
             }];
         
         
@@ -194,6 +203,7 @@
         return;
         
     }
+     */
     
     
 }
@@ -337,7 +347,11 @@
             
             if (isOther) {
                 _incallVC.isOther = YES;
-                _incallVC.isTurmNum = isTsnum;
+                _incallVC.isTurmNum = self.tsumNum;
+                _incallVC.termidNum  = self.termidNum;
+                _incallVC.deviceNum = self.deviceNum;
+                
+                
                 
             }
             [_incallVC setCall:call];
@@ -942,7 +956,7 @@
     
     if (isOther) {
         
-          [self sipCall:isOtherDevice sipName:nil];
+          [self sipCall:self.deviceNum sipName:nil];
     }else
     {
     if ([AppUtil isBlankString:strDevicenume]) {
@@ -968,7 +982,7 @@
         
         if (isOther) {
             
-            [[AFHttpClient sharedAFHttpClient]DeviceUseMember:[AccountManager sharedAccountManager].loginModel.mid object:@"other" deviceno:isOtherDevice belong:isOherID starttime:locationString complete:^(BaseModel *model) {
+            [[AFHttpClient sharedAFHttpClient]DeviceUseMember:[AccountManager sharedAccountManager].loginModel.mid object:@"other" deviceno:self.deviceNum belong:isOherID starttime:locationString complete:^(BaseModel *model) {
     
                 [Defaluts setObject:model.content forKey:@"selfID"];
                 [Defaluts synchronize];

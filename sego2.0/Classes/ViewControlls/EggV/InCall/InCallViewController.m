@@ -91,6 +91,9 @@
 @synthesize FiveView;
 @synthesize pointTouch;
 @synthesize isOther;
+@synthesize termidNum;
+@synthesize deviceNum;
+
 
 
 
@@ -1268,9 +1271,18 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
         openLight = @"off";
     }
     sender.selected = !sender.selected;
+    
+    if (isOther) {
+        
+        [[AFHttpClient sharedAFHttpClient]LightOn:openLight deviceno:deviceNum termid:termidNum complete:^(BaseModel * model) {
+            NSLog(@"%@",model.retCode);
+        }];
+    }else{
     [[AFHttpClient sharedAFHttpClient]LightOn:openLight deviceno:strDevice termid:strTermid complete:^(BaseModel * model) {
          NSLog(@"%@",model.retCode);
     }];
+    }
+    
     
 
 }
@@ -1279,10 +1291,22 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)FoodClick:(UIButton *)sender
 {
     sender.selected = !sender.selected;
+    if (isOther) {
+        
+        
+        [[AFHttpClient sharedAFHttpClient]Sendfood:deviceNum termid:termidNum complete:^(BaseModel * model) {
+            sender.selected = !sender.selected;
+            NSLog(@"%@",model.retCode);
+        }];
+
+    }else{
+    
     [[AFHttpClient sharedAFHttpClient]Sendfood:strDevice termid:strTermid complete:^(BaseModel * model) {
         sender.selected = !sender.selected;
         NSLog(@"%@",model.retCode);
    }];
+    
+    }
     
     
 }
@@ -1293,18 +1317,18 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     // 第三方进来的
     if (isOther) {
         
-        if([_isTurmNum integerValue] <0){
+        if(_isTurmNum  <0){
            [self showSuccessHudWithHint:@"没有投食量"];
     }else
     {
-        tsumNum++;
-        if ([_isTurmNum integerValue]<tsumNum ) {
-            [self showSuccessHudWithHint:@"超过最大投食量"];
+      
+        if (_isTurmNum <tsumNum ) {
+            [self showSuccessHudWithHint:@"主人不允许投食"];
         }else
         {
             sender.selected = !sender.selected;
             NSString * strid =[Defaluts objectForKey:@"selfID"];
-            [[AFHttpClient sharedAFHttpClient]Rollfood:strid deviceno:strDevice termid:strTermid complete:^(BaseModel * model) {
+            [[AFHttpClient sharedAFHttpClient]Rollfood:strid deviceno:deviceNum termid:termidNum complete:^(BaseModel * model) {
                 sender.selected = !sender.selected;
                 NSLog(@"%@",model.retCode);
                 
@@ -1331,11 +1355,21 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)PhotoClick:(UIButton *)sender
 {
     sender.selected = !sender.selected;
+    
+    if (isOther) {
+        
+        [[AFHttpClient sharedAFHttpClient]Takephoto:deviceNum termid:termidNum complete:^(BaseModel * model) {
+            sender.selected = !sender.selected;
+            NSLog(@"%@",model.retCode);
+        }];
+
+    }else{
     [[AFHttpClient sharedAFHttpClient]Takephoto:strDevice termid:strTermid complete:^(BaseModel * model) {
         sender.selected = !sender.selected;
         NSLog(@"%@",model.retCode);
     }];
     
+    }
     
 
     
