@@ -184,7 +184,7 @@
 
 -(void)textViewDidEndEditing:(UITextView *)textView{
     if (_topTextView.text.length == 0) {
-        _placeholderLabel.text = @"请输入内容";
+        _placeholderLabel.text = @"说点什么吧!";
     }else{
         _placeholderLabel.text = @"";
     }

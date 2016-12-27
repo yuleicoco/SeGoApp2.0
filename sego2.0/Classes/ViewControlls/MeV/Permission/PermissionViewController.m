@@ -65,7 +65,7 @@ static NSString * cellId = @"permissontableviewCellId";
 
 -(void)creatButtonTouch{
     if (self.dataSource.count >= 3) {
-              [[AppUtil appTopViewController] showHint:@"最多只能创建3条规则哦!"];
+              [[AppUtil appTopViewController] showHint:@"最多只能创建2条规则哦!"];
     }else{
         NewPermissionViewController * perVc = [[NewPermissionViewController alloc]init];
         [self.navigationController pushViewController:perVc animated:NO];

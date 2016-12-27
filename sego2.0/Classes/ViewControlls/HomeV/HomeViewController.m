@@ -55,9 +55,21 @@ static NSString * cellId = @"hometableviewcellId";
 }
 
 -(void)doRightButtonTouch{
-    RepositoryViewController * repVc = [[RepositoryViewController alloc]init];
-    [self.navigationController pushViewController:repVc animated:NO];
+   
+    NSString * str  =  [Defaluts objectForKey:@"deviceNumber"];
+    NSString * str1  = [AccountManager sharedAccountManager].loginModel.deviceno;
+    if ([AppUtil isBlankString:str] && [AppUtil isBlankString:str1]) {
+        [[AppUtil appTopViewController]showHint:@"您还未绑定设备"];
+        
+    }else{
+        RepositoryViewController * repVc = [[RepositoryViewController alloc]init];
+        [self.navigationController pushViewController:repVc animated:NO];
+        
+    }
 
+    
+    
+    
 }
 
 -(void)setupView{

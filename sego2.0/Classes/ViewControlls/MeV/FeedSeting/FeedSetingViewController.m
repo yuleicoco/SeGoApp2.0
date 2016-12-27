@@ -60,7 +60,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
     _ondedayArray = [[NSMutableArray alloc]init];
     [self setNavTitle:@"喂食设置"];
     _dataArray = [[NSMutableArray alloc]init];
-    self.view.backgroundColor = [UIColor colorWithRed:236/255.0 green:236/255.0 blue:236/255.0 alpha:1];
+    self.view.backgroundColor = LIGHT_GRAYdcdc_COLOR;
     [self querWeishi];
 }
 
@@ -81,6 +81,12 @@ static NSString * cellId = @"fedseting2321232322313323231";
 
 -(void)setupView{
     [super setupView];
+    UIView * whiteView1 = [[UIView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 0 * W_Hight_Zoom, 375 * W_Wide_Zoom, 290 * W_Hight_Zoom)];
+    whiteView1.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:whiteView1];
+    
+    
+    
     _bigBtn = [[UIButton alloc]initWithFrame:CGRectMake(87.5 * W_Wide_Zoom, 80 * W_Hight_Zoom , 200 * W_Wide_Zoom, 200 * W_Hight_Zoom)];
     //_bigBtn.backgroundColor = [UIColor blueColor];
     [_bigBtn setImage:[UIImage imageNamed:@"weishi_onday.png"] forState:UIControlStateNormal];
@@ -93,10 +99,10 @@ static NSString * cellId = @"fedseting2321232322313323231";
     
     
     
-    UILabel * wenziLabel = [[UILabel alloc]initWithFrame:CGRectMake(30 * W_Wide_Zoom, 15 * W_Hight_Zoom, 100 * W_Wide_Zoom, 20 * W_Hight_Zoom)];
-    wenziLabel.text = @"喂食天数";
+    UILabel * wenziLabel = [[UILabel alloc]initWithFrame:CGRectMake(12 * W_Wide_Zoom, 15 * W_Hight_Zoom, 100 * W_Wide_Zoom, 20 * W_Hight_Zoom)];
+    wenziLabel.text = @"喂食模式";
     wenziLabel.textColor = [UIColor blackColor];
-    wenziLabel.font = [UIFont systemFontOfSize:14];
+    wenziLabel.font = [UIFont systemFontOfSize:20];
     [whiteView addSubview:wenziLabel];
     
     _oneDayButton = [[UIButton alloc]initWithFrame:CGRectMake(235 * W_Wide_Zoom, 16 * W_Hight_Zoom, 17 * W_Wide_Zoom, 17 * W_Hight_Zoom)];
@@ -109,7 +115,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
     UILabel * wenzi1 =[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_oneDayButton.frame) + 5, 15 * W_Hight_Zoom, 50 * W_Wide_Zoom, 20 * W_Hight_Zoom)];
     wenzi1.text = @"四餐";
     wenzi1.textColor = GREEN_COLOR;
-    wenzi1.font = [UIFont systemFontOfSize:13];
+    wenzi1.font = [UIFont systemFontOfSize:20];
     [whiteView addSubview:wenzi1];
   
 
@@ -124,7 +130,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
     UILabel * wenzi2 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_twoDayButton.frame) + 5, 15 * W_Hight_Zoom, 50 * W_Wide_Zoom, 20 * W_Hight_Zoom)];
     wenzi2.text = @"两餐";
     wenzi2.textColor = GREEN_COLOR;
-    wenzi2.font = [UIFont systemFontOfSize:13];
+    wenzi2.font = [UIFont systemFontOfSize:20];
     [whiteView addSubview:wenzi2];
     
     
@@ -162,24 +168,68 @@ static NSString * cellId = @"fedseting2321232322313323231";
     _isOneOrTwo = YES;
 
     
-    UIButton * sureBtn = [[UIButton alloc]initWithFrame:CGRectMake(221.25 * W_Wide_Zoom, 620 * W_Hight_Zoom, 120 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
-    sureBtn.backgroundColor = GREEN_COLOR;
-    [sureBtn setTitle:@"确定" forState:UIControlStateNormal];
-    [sureBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    sureBtn.titleLabel.font = [UIFont systemFontOfSize:13];
-    sureBtn.layer.cornerRadius = 5;
-    [self.view addSubview:sureBtn];
-    [sureBtn addTarget:self action:@selector(hahahahaha) forControlEvents:UIControlEventTouchUpInside];
+//    UIButton * sureBtn = [[UIButton alloc]initWithFrame:CGRectMake(221.25 * W_Wide_Zoom, 620 * W_Hight_Zoom, 120 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+//    sureBtn.backgroundColor = GREEN_COLOR;
+//    [sureBtn setTitle:@"确定" forState:UIControlStateNormal];
+//    [sureBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    sureBtn.titleLabel.font = [UIFont systemFontOfSize:13];
+//    sureBtn.layer.cornerRadius = 5;
+//    [self.view addSubview:sureBtn];
+//    [sureBtn addTarget:self action:@selector(hahahahaha) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    
+//    _sureBtn2 = [[UIButton alloc]initWithFrame:CGRectMake(33.75 * W_Wide_Zoom, 620 * W_Hight_Zoom, 120 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+//    _sureBtn2.backgroundColor = GREEN_COLOR;
+//    [_sureBtn2 setTitle:@"停用" forState:UIControlStateNormal];
+//    [_sureBtn2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    _sureBtn2.titleLabel.font = [UIFont systemFontOfSize:13];
+//    _sureBtn2.layer.cornerRadius = 5;
+//    [self.view addSubview:_sureBtn2];
+//    [_sureBtn2 addTarget:self action:@selector(stopWeishi) forControlEvents:UIControlEventTouchUpInside];
     
-    
-    _sureBtn2 = [[UIButton alloc]initWithFrame:CGRectMake(33.75 * W_Wide_Zoom, 620 * W_Hight_Zoom, 120 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
-    _sureBtn2.backgroundColor = GREEN_COLOR;
+    UIView * bottomview = [[UIView alloc]init];
+    bottomview.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:bottomview];
+    [bottomview mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(bottomview.superview);
+        make.right.equalTo(bottomview.superview);
+        make.bottom.equalTo(bottomview.superview);
+        make.height.mas_equalTo(50);
+        
+    }];
+
+    _sureBtn2= [[UIButton alloc]init];
     [_sureBtn2 setTitle:@"停用" forState:UIControlStateNormal];
-    [_sureBtn2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    _sureBtn2.titleLabel.font = [UIFont systemFontOfSize:13];
-    _sureBtn2.layer.cornerRadius = 5;
-    [self.view addSubview:_sureBtn2];
+    [_sureBtn2 setTitleColor:RGB(220, 220, 220) forState:UIControlStateNormal];
+    _sureBtn2.titleLabel.font = [UIFont systemFontOfSize:18];
     [_sureBtn2 addTarget:self action:@selector(stopWeishi) forControlEvents:UIControlEventTouchUpInside];
+     [bottomview addSubview:_sureBtn2];
+    [_sureBtn2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_sureBtn2.superview).offset(79);
+        make.centerY.equalTo(_sureBtn2.superview.mas_centerY);
+        
+    }];
+    
+    
+    UIButton * sureBtn = [[UIButton alloc]init];
+    [sureBtn setTitle:@"启用" forState:UIControlStateNormal];
+    [sureBtn setTitleColor:GREEN_COLOR forState:UIControlStateNormal];
+    sureBtn.titleLabel.font = [UIFont systemFontOfSize:18];
+    [sureBtn addTarget:self action:@selector(hahahahaha) forControlEvents:UIControlEventTouchUpInside];
+    [bottomview addSubview:sureBtn];
+    [sureBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(sureBtn.superview).offset(-79);
+        make.centerY.equalTo(sureBtn.superview.mas_centerY);
+        
+    }];
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 }
@@ -225,35 +275,35 @@ static NSString * cellId = @"fedseting2321232322313323231";
     _bigView2.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_bigView2];
 
-    _timeBtn5 = [[UIButton alloc]initWithFrame:CGRectMake(20 * W_Wide_Zoom, 15 * W_Hight_Zoom, 100 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    _timeBtn5 = [[UIButton alloc]initWithFrame:CGRectMake(12 * W_Wide_Zoom, 15 * W_Hight_Zoom, 80 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
     [_timeBtn5 setTitle:@"00:00" forState:UIControlStateNormal];
     [_timeBtn5 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    _timeBtn5.titleLabel.font = [UIFont systemFontOfSize:13];
+    _timeBtn5.titleLabel.font = [UIFont systemFontOfSize:20];
     [_bigView2 addSubview:_timeBtn5];
     _timeBtn5.tag = 15;
     [_timeBtn5 addTarget:self action:@selector(hehedada:) forControlEvents:UIControlEventTouchUpInside];
     
     
-    _timeBtn6 = [[UIButton alloc]initWithFrame:CGRectMake(20 * W_Wide_Zoom, 75 * W_Hight_Zoom, 100 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    _timeBtn6 = [[UIButton alloc]initWithFrame:CGRectMake(12 * W_Wide_Zoom, 75 * W_Hight_Zoom, 80 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
     [_timeBtn6 setTitle:@"00:00" forState:UIControlStateNormal];
     [_timeBtn6 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    _timeBtn6.titleLabel.font = [UIFont systemFontOfSize:13];
+    _timeBtn6.titleLabel.font = [UIFont systemFontOfSize:20];
     [_bigView2 addSubview:_timeBtn6];
     _timeBtn6.tag = 16;
     [_timeBtn6 addTarget:self action:@selector(hehedada:) forControlEvents:UIControlEventTouchUpInside];
 
     for (int i = 0 ; i < 2; i++) {
         
-        UILabel * lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 59 * W_Hight_Zoom + i * 60 * W_Hight_Zoom, 375 * W_Wide_Zoom, 1 * W_Hight_Zoom)];
+        UILabel * lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(12 * W_Wide_Zoom, 59 * W_Hight_Zoom + i * 60 * W_Hight_Zoom, 351 * W_Wide_Zoom, 1 * W_Hight_Zoom)];
         lineLabel.backgroundColor = LIGHT_GRAYdcdc_COLOR;
         [_bigView2 addSubview:lineLabel];
-        
+    
 
         
-        UILabel * tLabel = [[UILabel alloc]initWithFrame:CGRectMake(300 * W_Wide_Zoom, 15 * W_Hight_Zoom + i*60 * W_Hight_Zoom, 30 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+        UILabel * tLabel = [[UILabel alloc]initWithFrame:CGRectMake(350 * W_Wide_Zoom, 15 * W_Hight_Zoom + i*60 * W_Hight_Zoom, 30 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
         tLabel.text = [NSString stringWithFormat:@"t%d",i+1];
-        tLabel.textColor = [UIColor blackColor];
-        tLabel.font = [UIFont systemFontOfSize:13];
+        tLabel.textColor = GREEN_COLOR;
+        tLabel.font = [UIFont systemFontOfSize:20];
         [_bigView2 addSubview:tLabel];
     }
 
@@ -271,50 +321,50 @@ static NSString * cellId = @"fedseting2321232322313323231";
     [_bigView1 addSubview:_bigBtn11];
     
     
-    _timeBtn1 = [[UIButton alloc]initWithFrame:CGRectMake(20 * W_Wide_Zoom, 15 * W_Hight_Zoom, 100 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    _timeBtn1 = [[UIButton alloc]initWithFrame:CGRectMake(12 * W_Wide_Zoom, 15 * W_Hight_Zoom, 80 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
     [_timeBtn1 setTitle:@"00:00" forState:UIControlStateNormal];
     [_timeBtn1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    _timeBtn1.titleLabel.font = [UIFont systemFontOfSize:13];
+    _timeBtn1.titleLabel.font = [UIFont systemFontOfSize:20];
     [_bigView1 addSubview:_timeBtn1];
     _timeBtn1.tag = 11;
     [_timeBtn1 addTarget:self action:@selector(hehedada:) forControlEvents:UIControlEventTouchUpInside];
     
     
-    _timeBtn2 = [[UIButton alloc]initWithFrame:CGRectMake(20 * W_Wide_Zoom, 75 * W_Hight_Zoom, 100 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    _timeBtn2 = [[UIButton alloc]initWithFrame:CGRectMake(12 * W_Wide_Zoom, 75 * W_Hight_Zoom, 80 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
     [_timeBtn2 setTitle:@"00:00" forState:UIControlStateNormal];
     [_timeBtn2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    _timeBtn2.titleLabel.font = [UIFont systemFontOfSize:13];
+    _timeBtn2.titleLabel.font = [UIFont systemFontOfSize:20];
     [_bigView1 addSubview:_timeBtn2];
     _timeBtn2.tag = 12;
     [_timeBtn2 addTarget:self action:@selector(hehedada:) forControlEvents:UIControlEventTouchUpInside];
     
     
-    _timeBtn3 = [[UIButton alloc]initWithFrame:CGRectMake(20 * W_Wide_Zoom, 135 * W_Hight_Zoom, 100 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    _timeBtn3 = [[UIButton alloc]initWithFrame:CGRectMake(12 * W_Wide_Zoom, 135 * W_Hight_Zoom, 80 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
     [_timeBtn3 setTitle:@"00:00" forState:UIControlStateNormal];
     [_timeBtn3 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    _timeBtn3.titleLabel.font = [UIFont systemFontOfSize:13];
+    _timeBtn3.titleLabel.font = [UIFont systemFontOfSize:20];
     [_bigView1 addSubview:_timeBtn3];
     _timeBtn3.tag = 13;
     [_timeBtn3 addTarget:self action:@selector(hehedada:) forControlEvents:UIControlEventTouchUpInside];
     
-    _timeBtn4 = [[UIButton alloc]initWithFrame:CGRectMake(20 * W_Wide_Zoom, 195 * W_Hight_Zoom, 100 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    _timeBtn4 = [[UIButton alloc]initWithFrame:CGRectMake(12 * W_Wide_Zoom, 195 * W_Hight_Zoom, 80 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
     [_timeBtn4 setTitle:@"00:00" forState:UIControlStateNormal];
     [_timeBtn4 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    _timeBtn4.titleLabel.font = [UIFont systemFontOfSize:13];
+    _timeBtn4.titleLabel.font = [UIFont systemFontOfSize:20];
     [_bigView1 addSubview:_timeBtn4];
     _timeBtn4.tag = 14;
     [_timeBtn4 addTarget:self action:@selector(hehedada:) forControlEvents:UIControlEventTouchUpInside];
     
     for (int i = 0 ; i < 4; i++) {
         
-        UILabel * lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 59 * W_Hight_Zoom + i * 60 * W_Hight_Zoom, 375 * W_Wide_Zoom, 1 * W_Hight_Zoom)];
+        UILabel * lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(12 * W_Wide_Zoom, 59 * W_Hight_Zoom + i * 60 * W_Hight_Zoom, 351 * W_Wide_Zoom, 1 * W_Hight_Zoom)];
         lineLabel.backgroundColor = LIGHT_GRAYdcdc_COLOR;
         [_bigView1 addSubview:lineLabel];
         
-        UILabel * tLabel = [[UILabel alloc]initWithFrame:CGRectMake(300 * W_Wide_Zoom, 15 * W_Hight_Zoom + i*60 * W_Hight_Zoom, 30 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+        UILabel * tLabel = [[UILabel alloc]initWithFrame:CGRectMake(350 * W_Wide_Zoom, 15 * W_Hight_Zoom + i*60 * W_Hight_Zoom, 30 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
         tLabel.text = [NSString stringWithFormat:@"t%d",i+1];
-        tLabel.textColor = [UIColor blackColor];
-        tLabel.font = [UIFont systemFontOfSize:13];
+        tLabel.textColor = GREEN_COLOR;
+        tLabel.font = [UIFont systemFontOfSize:20];
         [_bigView1 addSubview:tLabel];
     }
 }
@@ -515,7 +565,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
     [self.dataSource removeAllObjects];
     [[AFHttpClient sharedAFHttpClient]queryFeedingtimeWithMid:[AccountManager sharedAccountManager].loginModel.mid status:@"1" complete:^(BaseModel *model) {
         if (model.retVal.count > 0 ) {
-            _sureBtn2.backgroundColor = GREEN_COLOR;
+            [_sureBtn2 setTitleColor:GREEN_COLOR forState:UIControlStateNormal];
             _sureBtn2.userInteractionEnabled = YES;
             _sourceDic = model.retVal;
            // [self.dataSource addObjectsFromArray:model.list];
@@ -551,7 +601,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
            // [self onedayView];
             //[self onedayButtonTouch];
             [self twoDayView];
-            _sureBtn2.backgroundColor = [UIColor grayColor];
+         //   _sureBtn2.backgroundColor = [UIColor grayColor];
             _sureBtn2.userInteractionEnabled = NO;
 //            [_timeBtn1 setTitle:@"00:00" forState:UIControlStateNormal];
 //            [_timeBtn2 setTitle:@"00:00" forState:UIControlStateNormal];
