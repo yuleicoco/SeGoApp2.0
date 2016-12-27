@@ -140,11 +140,11 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
              //   recordModel.typeArray = [recordModel.type componentsSeparatedByString:@","];
             }
             
-            if (model.list.count == 0) {
+            //if (model.list.count == 0) {
                 self.collectionView.mj_footer.hidden = YES;
-            }else{
-                self.collectionView.mj_footer.hidden = NO;
-            }
+            //}else{
+            //    self.collectionView.mj_footer.hidden = NO;
+          //  }
             
             
             [self.dataSource addObjectsFromArray:model.list];

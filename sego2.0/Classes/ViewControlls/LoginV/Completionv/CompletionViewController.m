@@ -65,7 +65,8 @@
     [_numberTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(numberLabel.mas_right).offset(13);
         make.centerY.equalTo(numberView.mas_centerY).offset(1);
-        make.width.mas_equalTo(230);
+        make.right.equalTo(numberView.mas_right);
+        make.height.mas_equalTo(50);
     }];
     
     
@@ -118,6 +119,9 @@
     [_vercationTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(verificationLabel.mas_right).offset(13);
         make.centerY.equalTo(verificationView.mas_centerY).offset(1);
+        make.right.equalTo(verificationView.mas_right);
+        make.height.mas_equalTo(50);
+        
     }];
     
     UIView * passwordView = [[UIView alloc]init];
@@ -170,7 +174,8 @@
     [_passwordTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(passwordLabel.mas_right).offset(13);
         make.centerY.equalTo(passwordView.mas_centerY).offset(1);
-        make.width.mas_equalTo(230);
+        make.right.equalTo(passwordView.mas_right);
+        make.height.mas_equalTo(50);
     }];
     
     

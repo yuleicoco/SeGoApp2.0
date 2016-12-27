@@ -168,10 +168,10 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     
     btnBind =[UIButton new];
     btnBind.layer.cornerRadius = 4;
-    btnBind.backgroundColor = GRAY_COLOR;
+    btnBind.backgroundColor = LIGHT_GRAYdcdc_COLOR;
     if ([AppUtil isBlankString:strTT]) {
          [btnBind setTitle:@"绑定设备" forState:UIControlStateNormal];
-         btnBind.backgroundColor = GRAY_COLOR;
+         btnBind.backgroundColor = LIGHT_GRAYdcdc_COLOR;
          btnBind.enabled = FALSE;
     }else
     {

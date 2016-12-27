@@ -58,7 +58,7 @@
             NSUserDefaults * defeults =[NSUserDefaults standardUserDefaults];
             [defeults setObject:model.content forKey:@"countfoucetip"];
             [defeults synchronize];
-
+            [self.tabBarController.tabBar hideBadgeOnItemIndex:3];
         }else{
             NSUserDefaults * defeults =[NSUserDefaults standardUserDefaults];
             [defeults setObject:model.content forKey:@"countfoucetip"];
