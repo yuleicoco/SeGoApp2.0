@@ -58,7 +58,7 @@
     [numberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(numberView.mas_centerY);
         make.left.equalTo(numberLabel.superview).offset(13);
-        
+        make.width.mas_equalTo(80);
     }];
     _numberTextfield = [[UITextField alloc]init];
     _numberTextfield.font = [UIFont systemFontOfSize:18];
@@ -105,9 +105,10 @@
     verificationLabel.text = @"验证码:";
     verificationLabel.textColor = [UIColor blackColor];
     verificationLabel.font = [UIFont systemFontOfSize:18];
-    [self.view addSubview:verificationLabel];
+    [verificationView addSubview:verificationLabel];
     [verificationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(verificationView.mas_centerY);
+       // make.left.equalTo(verificationLabel.superview.mas_left).offset(30);
         make.right.equalTo(numberLabel.mas_right);
         
     }];

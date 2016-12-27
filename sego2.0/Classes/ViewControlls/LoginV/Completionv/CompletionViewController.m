@@ -54,7 +54,7 @@
     [numberLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(numberView.mas_centerY);
         make.left.equalTo(numberLabel.superview).offset(13);
-        
+         make.width.mas_equalTo(80);
     }];
     _numberTextfield = [[UITextField alloc]init];
     _numberTextfield.font = [UIFont systemFontOfSize:18];
