@@ -473,6 +473,8 @@
 {
     [super  setupView];
    
+    NSLog(@"woowowoowowoowowoowowo");
+    
     
     
     // 指导界面
@@ -655,6 +657,9 @@
 // 更新约束
 - (void)updateviewMethod
 {
+    
+    NSLog(@"hahhhahhhahhhhahh");
+    
     // 背景
     [ImageBack mas_makeConstraints:^(MASConstraintMaker *make) {
         
@@ -690,9 +695,9 @@
     [btnOpen mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.height.equalTo(@45);
-        make.bottom.equalTo(qualityLB.mas_bottom).offset(90);
-        make.left.equalTo(self.view.superview.mas_left).with.offset(18);
-        make.right.equalTo(self.view.superview.mas_right).with.offset(-18);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-90);
+        make.left.equalTo(self.view.mas_left).with.offset(18);
+        make.right.equalTo(self.view.mas_right).with.offset(-18);
         
     }];
    
