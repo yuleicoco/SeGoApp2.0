@@ -672,7 +672,7 @@
         {
             make.centerX.mas_equalTo(self.view.mas_centerX);
           //  make.width.equalTo(self.view.subviews);
-            make.width.mas_equalTo(@335);
+            make.width.mas_equalTo(self.view);
             
             make.top.equalTo(self.view.superview.mas_top).offset(102);
             make.bottom.equalTo(self.view.superview.mas_bottom).offset(-260);
