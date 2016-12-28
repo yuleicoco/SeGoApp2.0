@@ -437,7 +437,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     if (timerEnd>35 && [AppUtil isBlankString:deviceTF.text]) {
         // 关闭服务
         [hud hide:TRUE];
-        [self showWarningTip:@"配置失败，请确保打开设备蓝牙"];
+        [self showWarningTip:@"未搜索到设备，请确保打开设备蓝牙"];
         timerEnd=0;
     }
     

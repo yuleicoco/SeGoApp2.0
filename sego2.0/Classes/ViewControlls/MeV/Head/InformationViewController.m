@@ -740,11 +740,13 @@ static NSString * cellId = @"InformationCellId";
     
     NSString * newStr = [NSString stringWithFormat:@"%@-%@-%@",str,str2,str3];
     [[AFHttpClient sharedAFHttpClient]modifyMemberWithMid:[AccountManager sharedAccountManager].loginModel.mid nickname:[AccountManager sharedAccountManager].loginModel.nickname address:[AccountManager sharedAccountManager].loginModel.address signature:[AccountManager sharedAccountManager].loginModel.signature pet_sex:[AccountManager sharedAccountManager].loginModel.pet_sex pet_birthday:newStr pet_race:[AccountManager sharedAccountManager].loginModel.pet_race complete:^(BaseModel *model) {
-        if (model) {
+        if ([model.retCode isEqualToString:@"0000"]) {
              [[AppUtil appTopViewController] showHint:@"修改成功"];
             LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
             [[AccountManager sharedAccountManager]login:loginModel];
             [self.tableView reloadData];
+        }else{
+        
         }
               [self hideHud];
     }];

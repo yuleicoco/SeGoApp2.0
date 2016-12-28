@@ -139,7 +139,7 @@
     _placeholderLabel = [[UILabel alloc]init];
     _placeholderLabel.textColor = [UIColor grayColor];
     _placeholderLabel.backgroundColor = [UIColor clearColor];
-    _placeholderLabel.text = @"请输入内容";
+    _placeholderLabel.text = @"说点什么吧!";
     _placeholderLabel.font = _topTextView.font;
     [_topTextView addSubview:_placeholderLabel];
     [_placeholderLabel mas_makeConstraints:^(MASConstraintMaker *make) {

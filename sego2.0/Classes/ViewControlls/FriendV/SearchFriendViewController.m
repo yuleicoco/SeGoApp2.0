@@ -77,7 +77,7 @@ static NSString * cellId = @"friendSearchCellid";
     [searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(searechLabel.superview).offset(-7);
         make.centerY.equalTo(searechLabel.superview.mas_centerY);
-        make.width.mas_equalTo(100);
+        make.width.mas_equalTo(50);
     }];
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {

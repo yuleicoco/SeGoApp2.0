@@ -55,11 +55,12 @@ static NSString * cellId = @"homedetailviewellId";
     _downLabel = [[UILabel alloc]init];
     _downLabel.textColor = [UIColor blackColor];
     _downLabel.font = [UIFont systemFontOfSize:18];
+    _downLabel.numberOfLines = 2;
     [downView addSubview:_downLabel];
     [_downLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_downLabel.superview).offset(12);
         make.centerY.equalTo(_downLabel.superview.mas_centerY);
-
+        make.width.mas_equalTo(360 * W_Wide_Zoom);
     }];
     self.tableView.frame = CGRectMake(0, 0, self.view.width, self.view.height-60);
     [self.tableView registerClass:[HomeDetailTableViewCell class] forCellReuseIdentifier:cellId];
@@ -123,15 +124,15 @@ static NSString * cellId = @"homedetailviewellId";
     
     
      
-    NSString * strUrl =[NSString stringWithFormat:@"http://180.97.81.213:15311/clientAction.do?method=client&nextPage=/s/article/article.jsp&aid=%@&mid=%@&access=outside",_aid,[AccountManager sharedAccountManager].loginModel.mid];
+    NSString * strUrl =[NSString stringWithFormat:@"http://180.97.80.227:15102/clientAction.do?method=client&nextPage=/s/article/article.jsp&aid=%@&mid=%@&access=outside",_aid,[AccountManager sharedAccountManager].loginModel.mid];
     //1、创建分享参数
     NSArray* imageArray = @[[UIImage imageNamed:@"sego.png"]];
     if (imageArray) {
         NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
         [shareParams SSDKSetupShareParamsByText:@"赛果不倒蛋"
-                                         images:@[@"http://a1.qpic.cn/psb?/V12wsJ4y3Lphqj/PpAkLpyPs7RdrIGeMpDcbPf63MW3OdjFqAS8s1s2pwY!/b/dCABAAAAAAAA&bo=gAKAAgAAAAADByI!&rf=viewer_4"]
+                                         images:@[@"https://thumbnail0.baidupcs.com/thumbnail/59010f7a5017de8ab3e17c2dd443962e?fid=512075035-250528-354982388780578&time=1482897600&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-fnKKMcZ1wUNAeqNIp9wk7KIME%2Fk%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=8407531671032735195&dp-callid=0&size=c710_u400&quality=100"]
                                             url:[NSURL URLWithString:strUrl]
-                                          title:@"图片分享"
+                                          title:@"赛果分享"
                                            type:SSDKContentTypeAuto];
         [ShareSDK showShareActionSheet:nil  items:nil
                            shareParams:shareParams
