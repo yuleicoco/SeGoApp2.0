@@ -62,7 +62,9 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:NSLocalizedString(@"tabBinding_title",nil)];
+    
+    
+    
     self.view.backgroundColor =GRAY_COLOR;
     isOpenPerOK = NO;
     
@@ -116,6 +118,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
 
 - (void)setupView
 {
+       [super setupView];
     
     NSString * strBing =[Defaluts objectForKey:PREF_DEVICE_NUMBER];
     NSString * strLogin =[AccountManager sharedAccountManager].loginModel.deviceno;
@@ -129,11 +132,19 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     strYY = st1.length>st2.length?st1:st2;
     
     
+   
+    if ([AppUtil isBlankString:strTT]) {
+        
+        [self setNavTitle:@"解除绑定"];
+    }else{
+        
+        [self setNavTitle:NSLocalizedString(@"tabBinding_title",nil)];
+    }
     
     
 
     
-    [super setupView];
+ 
     
     UIView * devNum =[UIView new];
     UIView * inCode =[UIView new];
@@ -177,7 +188,9 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     {
          [btnBind setTitle:@"解除绑定" forState:UIControlStateNormal];
          btnBind.enabled = TRUE;
-        btnBind.backgroundColor = GREEN_COLOR;
+         btnBind.backgroundColor = GREEN_COLOR;
+         [self setNavTitle:@"解除绑定"];
+        
         
     }
    
