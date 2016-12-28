@@ -164,7 +164,7 @@
         NSRange rang1 = [pboard.string rangeOfString:str11];
         NSRange rang2 = [pboard.string rangeOfString:str22];
         
-        NSString * strPLAYcode = [pboard.string substringWithRange:NSMakeRange(rang1.location + 1,rang2.location - 5)];
+        NSString * strPLAYcode = [pboard.string substringWithRange:NSMakeRange(rang1.location + 1,rang2.location - 9)];
         
         [self checkPlayCode:strPLAYcode];
         pboard.string  =@"";

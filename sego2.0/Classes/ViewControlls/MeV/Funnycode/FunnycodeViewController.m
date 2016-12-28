@@ -260,7 +260,7 @@
         if (imageArray) {
             NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
             [shareParams
-             SSDKSetupShareParamsByText:[NSString stringWithFormat:@"赛果分享[%@]此逗码%@之前有效，复制这条信息，打开赛果不倒蛋软件，即可控制分享者的设备开启远程互动(软件下载地址：http://www.segopet.com/site/download.jsp)", _doumaLabel.text,_timeoverLabel.text]
+             SSDKSetupShareParamsByText:[NSString stringWithFormat:@"赛果分享，此逗码[%@]%@之前有效，复制这条信息，打开不倒蛋APP，即可控制分享者的设备开启远程互动。软件下载地址：http://www.segopet.com/site/download.jsp", _doumaLabel.text,_timeoverLabel.text]
              images:nil
              url:nil
              title:@"赛果逗码分享"

@@ -57,6 +57,13 @@
 
 
 -(void)releaseInfo:(UIButton *)sender{
+    if (_topTextView.text.length > 35) {
+          [[AppUtil appTopViewController]showHint:@"只能输入35个字符哦!"];
+        return;
+    }
+    
+    
+    
     _isfabu = YES;
     sender.userInteractionEnabled = NO;
     [self showHudInView:self.view hint:@"正在保存..."];
@@ -139,7 +146,7 @@
     _placeholderLabel = [[UILabel alloc]init];
     _placeholderLabel.textColor = [UIColor grayColor];
     _placeholderLabel.backgroundColor = [UIColor clearColor];
-    _placeholderLabel.text = @"请输入内容";
+    _placeholderLabel.text = @"说点什么吧!";
     _placeholderLabel.font = _topTextView.font;
     [_topTextView addSubview:_placeholderLabel];
     [_placeholderLabel mas_makeConstraints:^(MASConstraintMaker *make) {
