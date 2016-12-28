@@ -661,7 +661,7 @@
     NSLog(@"hahhhahhhahhhhahh");
     
     // 背景
-    [ImageBack mas_makeConstraints:^(MASConstraintMaker *make) {
+    [ImageBack mas_remakeConstraints:^(MASConstraintMaker *make) {
         
         if ([strState isEqualToString:@"ds000"]) {
             make.center.equalTo(self.view);
@@ -670,12 +670,10 @@
         }else
             
         {
-//
-//            make.top.equalTo(self.view.superview.mas_top).offset(102);
-//            make.bottom.equalTo(self.view.superview.mas_bottom).offset(-220);
-            
             make.centerX.mas_equalTo(self.view.mas_centerX);
-            make.width.equalTo(self.view.superview);
+          //  make.width.equalTo(self.view.subviews);
+            make.width.mas_equalTo(@335);
+            
             make.top.equalTo(self.view.superview.mas_top).offset(102);
             make.bottom.equalTo(self.view.superview.mas_bottom).offset(-260);
             
@@ -769,7 +767,7 @@
 {
     setImage.hidden = YES;
     WifiViewController * wifiVC =[[WifiViewController alloc]init];
-    [self.navigationController pushViewController:wifiVC animated:YES];
+    [self.navigationController pushViewController:wifiVC animated:NO];
     
     
     
@@ -790,7 +788,7 @@
 {
     setImage.hidden = YES;
     bindVC =[[BindingViewController alloc]init];
-    [self.navigationController pushViewController:bindVC animated:YES];
+    [self.navigationController pushViewController:bindVC animated:NO];
     
 
     

@@ -323,7 +323,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     }else
     {
         
-        UIAlertController * alert =[UIAlertController alertControllerWithTitle:@"提示" message:@"确定解除绑定吗" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController * alert =[UIAlertController alertControllerWithTitle:@"提示" message:@"确定解除绑定吗？" preferredStyle:UIAlertControllerStyleAlert];
         
       
       
