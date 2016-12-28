@@ -112,12 +112,12 @@
     
     for (int i = 0; i<self.contentViews.count; i++) {
         UILabel * labelText =[[UILabel alloc]initWithFrame:CGRectMake(_scrollView.frame.size.width*(i+1), self.bounds.size.height-25,self.scrollView.frame.size.width*(counter ++), 25)];
-        labelText.backgroundColor =[UIColor colorWithRed:84/255.0 green:86/255.0 blue:90/255.0 alpha:0.2];
+      //  labelText.backgroundColor =[UIColor colorWithRed:84/255.0 green:86/255.0 blue:90/255.0 alpha:0.2];
 
         if (i>=self.textArr.count) {
-            labelText.text =@"";
+        //    labelText.text =@"";
         }else{
-        labelText.text = [NSString stringWithFormat:@"%@",self.textArr[self.currentPageIndex]];
+        //labelText.text = [NSString stringWithFormat:@"%@",self.textArr[self.currentPageIndex]];
         }
         labelText.textColor =[UIColor whiteColor];
         labelText.font =[UIFont systemFontOfSize:14];

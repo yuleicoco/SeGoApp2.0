@@ -13,7 +13,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         _topView = [[UIView alloc]init];
-        _topView.backgroundColor = GRAY_COLOR;
+        _topView.backgroundColor = LIGHT_GRAYdcdc_COLOR;
         [self addSubview:_topView];
         [_topView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(_topView.superview);
@@ -25,8 +25,7 @@
         _contentLabel = [[UILabel alloc]init];
         _contentLabel.textColor = [UIColor blackColor];
         _contentLabel.font = [UIFont systemFontOfSize:18];
-        _contentLabel.text = @"开心的小柯基";
-        _contentLabel.numberOfLines = 2;
+        //_contentLabel.text = @"开心的小柯基";
         [self addSubview:_contentLabel];
         [_contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(_contentLabel.superview).offset(12);

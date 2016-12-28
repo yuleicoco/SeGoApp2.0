@@ -49,7 +49,7 @@ static NSString * cellId = @"homedetailviewellId";
         
     }];
     
-    UIView * downView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 375, 39)];
+    UIView * downView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 375 * W_Wide_Zoom, 50 * W_Hight_Zoom)];
     downView.backgroundColor = [UIColor whiteColor];
     
     _downLabel = [[UILabel alloc]init];
