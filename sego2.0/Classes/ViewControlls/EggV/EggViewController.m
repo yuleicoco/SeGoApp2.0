@@ -984,10 +984,12 @@
         [dateformatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSString *  locationString=[dateformatter stringFromDate:senddate];
         
+         NSString * d = SearchMid.length>DouMid.length?SearchMid:(DouMid.length>CodeMid.length?DouMid:CodeMid);
+        
         
         if (isOther) {
             
-            [[AFHttpClient sharedAFHttpClient]DeviceUseMember:[AccountManager sharedAccountManager].loginModel.mid object:@"other" deviceno:self.deviceNum belong:isOherID starttime:locationString complete:^(BaseModel *model) {
+            [[AFHttpClient sharedAFHttpClient]DeviceUseMember:[AccountManager sharedAccountManager].loginModel.mid object:@"other" deviceno:self.deviceNum belong:d starttime:locationString complete:^(BaseModel *model) {
     
                 [Defaluts setObject:model.content forKey:@"selfID"];
                 [Defaluts synchronize];
