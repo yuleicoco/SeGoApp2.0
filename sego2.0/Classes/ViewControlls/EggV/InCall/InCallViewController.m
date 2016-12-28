@@ -1316,13 +1316,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
     // 第三方进来的
     if (isOther) {
-        
-        if(_isTurmNum  <0){
-           [self showSuccessHudWithHint:@"没有投食量"];
-    }else
-    {
-      
-        if (_isTurmNum <tsumNum ) {
+
+        if (_isTurmNum ==0 ) {
             [self showSuccessHudWithHint:@"主人不允许投食"];
         }else
         {
@@ -1334,9 +1329,10 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
                 
             }];
         }
-    }
+    
         
-    }else
+    }
+    else
     {
         
         sender.selected = !sender.selected;
