@@ -48,7 +48,7 @@
         _rightBtn = [[UIButton alloc]init];
         _rightBtn.backgroundColor = GREEN_COLOR;
         _rightBtn.layer.cornerRadius = 5;
-        [_rightBtn setTitle:@"互动" forState:UIControlStateNormal];
+        [_rightBtn setTitle:NSLocalizedString(@"find_interactive", nil) forState:UIControlStateNormal];
         _rightBtn.titleLabel.font = [UIFont systemFontOfSize:15];
         [_rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [self addSubview:_rightBtn];

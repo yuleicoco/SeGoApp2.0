@@ -20,7 +20,7 @@ static NSString * cellId = @"friendtableviewcellId";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"好友"];
+    [self setNavTitle:NSLocalizedString(@"tabRank", nil)];
     self.view.backgroundColor = GRAY_COLOR;
 }
 
@@ -65,7 +65,7 @@ static NSString * cellId = @"friendtableviewcellId";
     }];
     
     UILabel * newfriendLabel = [[UILabel alloc]init];
-    newfriendLabel.text = @"新的朋友";
+    newfriendLabel.text = NSLocalizedString(@"friends_new", nil);
     newfriendLabel.textColor = [UIColor blackColor];
     newfriendLabel.font = [UIFont systemFontOfSize:18];
     [topView addSubview:newfriendLabel];
@@ -207,7 +207,8 @@ static NSString * cellId = @"friendtableviewcellId";
 -(NSString*)tableView:(UITableView*)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     //昨滑的文字
-    return@"删除";
+    return NSLocalizedString(@"friends_dele", nil);
+    
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -232,9 +233,9 @@ static NSString * cellId = @"friendtableviewcellId";
         // [tableView reloadData];
         // 数据源也要相应删除一项
         FriendModel * model = self.dataSource[indexPath.row];
-        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您确定删除此好友吗？" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Warning", nil) message:NSLocalizedString(@"friends_suredel", nil) preferredStyle:UIAlertControllerStyleAlert];
 //
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure_bind", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
             [[AFHttpClient sharedAFHttpClient]delFriendWithMid:[AccountManager sharedAccountManager].loginModel.mid friend:model.mid complete:^(BaseModel *model) {
                 if (model) {
@@ -244,7 +245,7 @@ static NSString * cellId = @"friendtableviewcellId";
             }];
 
         }]];
-        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel_bind", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self.tableView reloadData];
         }]];
         [self presentViewController:alert animated:YES completion:nil];

@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"关于"];
+    [self setNavTitle:NSLocalizedString(@"me_aobout", nil)];
     self.view.backgroundColor = GRAY_COLOR;
 }
 

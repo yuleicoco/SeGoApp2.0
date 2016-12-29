@@ -45,7 +45,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavTitle:NSLocalizedString(@"wifiTitle",nil)];
-    listArr = @[ @"无加密", @"WPA/WPA2", @"WEP" ];
+    listArr = @[ @"Public", @"WPA/WPA2", @"WEP" ];
     curEncryption = [NSString stringWithFormat:@"1"];
     
     self.view.backgroundColor = GRAY_COLOR;
@@ -114,7 +114,7 @@
     btnBind =[UIButton new];
     btnBind.layer.cornerRadius = 4;
     btnBind.backgroundColor = GREEN_COLOR;
-    [btnBind setTitle:@"确定" forState:UIControlStateNormal];
+    [btnBind setTitle:NSLocalizedString(@"Sure_bind", nil) forState:UIControlStateNormal];
     [btnBind addTarget:self action:@selector(Surebtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnBind];
     [btnBind mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -129,7 +129,7 @@
     
     
     UILabel * labelMess=[UILabel new];
-    labelMess.text =@"加密方式";
+    labelMess.text =NSLocalizedString(@"wif_encryption", nil);
     labelMess.font =[UIFont systemFontOfSize:18];
     [self.view addSubview:labelMess];
     
@@ -148,12 +148,12 @@
     UILabel * wifiLB =[UILabel new];
     UILabel * wifips =[UILabel new];
     
-    deveLB.text =@"设备号:";
+    deveLB.text =NSLocalizedString(@"deviceNum", nil);
     deveLB.font = [UIFont systemFontOfSize:18];
-    wifiLB.text =@"WIFI名称:";
+    wifiLB.text =NSLocalizedString(@"wif_name", nil);
     wifiLB.font =[UIFont systemFontOfSize:18];
     
-    wifips.text =@"WIFI密码:";
+    wifips.text =NSLocalizedString(@"wif_code", nil);
     wifips.font =[UIFont systemFontOfSize:18];
     
     
@@ -162,9 +162,9 @@
     [wifiCode addSubview:wifips];
     
     
-    
+    // 27 MAS_LEFT
     [deveLB mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(devNum.mas_left).with.offset(27);
+        make.left.equalTo(devNum).with.offset(12);
         make.centerY.equalTo(devNum.mas_centerY);
         
         
@@ -343,7 +343,7 @@
             NSLog(@"Bluetooth powered on");
             
             hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            hud.labelText = @"正在配置设备网络，请等待...";
+            hud.labelText = NSLocalizedString(@"ing_net", nil);
             [self setUpBleDevice];
             
             break;
@@ -364,7 +364,7 @@
  *  显示打开蓝牙提示窗
  */
 - (void)showNeedBluetoothWaringDialog {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"你尚未打开蓝牙" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning", nil) message:NSLocalizedString(@"no_turnon", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"I_kown", nil) otherButtonTitles:nil, nil];
     [alert show];
 }
 
@@ -486,14 +486,14 @@
             // 将字符串分割为2个元素的数组。
             NSArray *array = [strResult componentsSeparatedByString:@","];
             if (array == nil || array.count != 2) {
-                [self showWarningTip:@"配置失败，请重新设置网络"];
+                [self showWarningTip:NSLocalizedString(@"faile_net", nil)];
                 [self stopSever];
                 return;
             }
             strResult = array[0];
             // 出错了。
             if (![strResult isEqualToString:@"OK"]) {
-                [self showWarningTip:@"配置失败，请重新设置网络"];
+                [self showWarningTip:NSLocalizedString(@"faile_net", nil)];
                 [self stopSever];
                 return;
             }
@@ -513,7 +513,7 @@
             
                 
             } else {
-                [self showWarningTip:@"配置失败，请重新设置网络"];
+                [self showWarningTip:NSLocalizedString(@"faile_net", nil)];
                 [self stopSever];
                 return;
             }
@@ -543,7 +543,7 @@
     if (timeEnd>35) {
         // 关闭服务
         [hud hide:TRUE];
-        [self showWarningTip:@"配置失败，请确保打开设备蓝牙"];
+        [self showWarningTip:NSLocalizedString(@"falie_bl", nil)];
         timeEnd =0;
     }
     
@@ -678,7 +678,7 @@
     // 更新选择按钮的文本。
     // OPEN
     if (indexPath.row == 0) {
-        [btn setTitle:@"无加密" forState:UIControlStateNormal];
+        [btn setTitle:@"Public" forState:UIControlStateNormal];
     }
     // WPA/WPA2
     else if (indexPath.row == 1) {

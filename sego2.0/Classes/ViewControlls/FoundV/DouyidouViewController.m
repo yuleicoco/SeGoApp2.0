@@ -23,7 +23,7 @@ static NSString * cellId = @"douyidouCellid";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setNavTitle:@"逗一逗"];
+    [self setNavTitle:NSLocalizedString(@"find_dou", nil)];
 //    if ([[[UIDevice currentDevice]systemVersion]floatValue]>=7.0) {
 //        
 //        self.edgesForExtendedLayout = UIRectEdgeNone;

@@ -27,7 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   [self setNavTitle:@"个人中心"];
+    [self setNavTitle:NSLocalizedString(@"tabPersonal", nil)];
     
   //  [self showBarButton:NAV_RIGHT title:@"设置" fontColor:GREEN_COLOR];
     
@@ -131,7 +131,7 @@
     }];
     
     UILabel * wenzhang = [[UILabel alloc]init];
-    wenzhang.text = @"文章";
+    wenzhang.text = NSLocalizedString(@"me_article", nil);
     wenzhang.textColor = [UIColor whiteColor];
     wenzhang.font = [UIFont systemFontOfSize:15];
     [self.view addSubview:wenzhang];
@@ -142,7 +142,7 @@
     }];
     
     UILabel * haoyou = [[UILabel alloc]init];
-    haoyou.text = @"好友";
+    haoyou.text = NSLocalizedString(@"tabRank", nil);
     haoyou.textColor = [UIColor whiteColor];
     haoyou.font = [UIFont systemFontOfSize:15];
     [self.view addSubview:haoyou];
@@ -199,7 +199,7 @@
     }];
     
     UILabel * doumaLabel = [[UILabel alloc]init];
-    doumaLabel.text = @"逗码";
+    doumaLabel.text = NSLocalizedString(@"me_douma", nil);
     doumaLabel.textColor = [UIColor blackColor];
     doumaLabel.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:doumaLabel];
@@ -232,7 +232,7 @@
     
 
     UILabel * quanxianLabel = [[UILabel alloc]init];
-    quanxianLabel.text = @"权限设置";
+    quanxianLabel.text = NSLocalizedString(@"me_Permission_settings", nil);
     quanxianLabel.textColor = [UIColor blackColor];
     quanxianLabel.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:quanxianLabel];
@@ -286,7 +286,7 @@
     }];
     
     UILabel * exchangeLabel = [[UILabel alloc]init];
-    exchangeLabel.text = @"修改密码";
+    exchangeLabel.text = NSLocalizedString(@"me_repair", nil);
     exchangeLabel.textColor = [UIColor blackColor];
     exchangeLabel.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:exchangeLabel];
@@ -317,7 +317,7 @@
     }];
     
     UILabel * aboutLabel = [[UILabel alloc]init];
-    aboutLabel.text = @"关于";
+    aboutLabel.text = NSLocalizedString(@"me_aobout", nil);
     aboutLabel.textColor = [UIColor blackColor];
     aboutLabel.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:aboutLabel];
@@ -353,7 +353,7 @@
     }];
     
     UILabel * loginoutLabel = [[UILabel alloc]init];
-    loginoutLabel.text = @"登 出";
+    loginoutLabel.text = NSLocalizedString(@"me_out", nil);
     loginoutLabel.textColor = [UIColor blackColor];
     loginoutLabel.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:loginoutLabel];
@@ -388,7 +388,7 @@
     NSString * str  =  [Defaluts objectForKey:@"deviceNumber"];
     NSString * str1  = [AccountManager sharedAccountManager].loginModel.deviceno;
     if ([AppUtil isBlankString:str] && [AppUtil isBlankString:str1]) {
-         [[AppUtil appTopViewController]showHint:@"您还未绑定设备"];
+         [[AppUtil appTopViewController]showHint:NSLocalizedString(@"me_panduan", nil)];
     }else{
         FunnycodeViewController * funnyVc = [[FunnycodeViewController alloc]init];
         [self.navigationController pushViewController:funnyVc animated:NO];
@@ -404,7 +404,7 @@
     NSString * str  =  [Defaluts objectForKey:@"deviceNumber"];
     NSString * str1  = [AccountManager sharedAccountManager].loginModel.deviceno;
     if ([AppUtil isBlankString:str] && [AppUtil isBlankString:str1]) {
-        [[AppUtil appTopViewController]showHint:@"您还未绑定设备"];
+        [[AppUtil appTopViewController]showHint:NSLocalizedString(@"me_panduan", nil)];
 
     }else{
     PermissionViewController * perVc = [[PermissionViewController alloc]init];
@@ -420,7 +420,7 @@
         [self.navigationController pushViewController:exchangVc animated:NO];
         
     }else{
-          [[AppUtil appTopViewController]showHint:@"第三方登录，不能修改密码哦亲"];
+          [[AppUtil appTopViewController]showHint:NSLocalizedString(@"me_3rd", nil)];
     }
     
     
@@ -450,14 +450,14 @@
 
     FuckLog(@"退出登录");
     
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您确定要退出登录吗？" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Warning", nil) message:NSLocalizedString(@"me_tips", nil) preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel_bind", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         
     }]];
 
-     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+     [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure_bind", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@NO];
     [[AccountManager sharedAccountManager]logout];

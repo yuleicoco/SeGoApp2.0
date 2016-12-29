@@ -21,7 +21,7 @@ static NSString * cellId = @"newfriendCellid";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"新的朋友"];
+    [self setNavTitle:NSLocalizedString(@"friends_new", nil)];
     self.view.backgroundColor = GRAY_COLOR;
     [self isreaddd];
 }
@@ -75,7 +75,7 @@ static NSString * cellId = @"newfriendCellid";
     }];
     
     UILabel * placeholderLabel = [[UILabel alloc]init];
-    placeholderLabel.text = @"手机号/昵称/设备号";
+    placeholderLabel.text = NSLocalizedString(@"friends_way", nil);
     placeholderLabel.textColor = RGB(153, 153, 153);
     placeholderLabel.font = [UIFont systemFontOfSize:18];
     [topBtn addSubview:placeholderLabel];
@@ -167,13 +167,13 @@ static NSString * cellId = @"newfriendCellid";
         cell.rightBtn.hidden = YES;
         cell.leftBtn.hidden = YES;
         if ([model.stype isEqualToString:@"00"]) {
-            cell.rightLabe.text = @"等待验证";
+            cell.rightLabe.text = NSLocalizedString(@"friends_wait", nil);
         }
         if ([model.stype isEqualToString:@"1"]) {
-             cell.rightLabe.text = @"已添加";
+             cell.rightLabe.text = NSLocalizedString(@"friends_add", nil);
         }
         if ([model.stype isEqualToString:@"2"]) {
-            cell.rightLabe.text = @"已拒绝";
+            cell.rightLabe.text = NSLocalizedString(@"friends_fail", nil);
         }
     }
     cell.rightBtn.tag = indexPath.row + 110;

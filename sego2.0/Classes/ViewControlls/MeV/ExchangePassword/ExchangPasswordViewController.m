@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"修改密码"];
+    [self setNavTitle:NSLocalizedString(@"me_repair", nil)];
     self.view.backgroundColor = GRAY_COLOR;
     
 }

@@ -20,6 +20,8 @@
 		342F799A1DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 342F79991DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.m */; };
 		3436EA611DDBFE0B005659B7 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436EA601DDBFE0B005659B7 /* Reachability.m */; };
 		3436EA651DDBFF5D005659B7 /* BePeripheralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436EA641DDBFF5D005659B7 /* BePeripheralViewController.m */; };
+		343EDA601E14A9CC00A7C20E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 343EDA621E14A9CC00A7C20E /* Localizable.strings */; };
+		343EDA671E14BE6400A7C20E /* English_tips.png in Resources */ = {isa = PBXBuildFile; fileRef = 343EDA661E14BE6400A7C20E /* English_tips.png */; };
 		345AB3DB1DD9AD5800025EEE /* egg_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3D81DD9AD5800025EEE /* egg_add.png */; };
 		345AB3DC1DD9AD5800025EEE /* egg_nodevcie.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3D91DD9AD5800025EEE /* egg_nodevcie.png */; };
 		345AB3EB1DD9AEA400025EEE /* halfAp.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3DF1DD9AEA400025EEE /* halfAp.png */; };
@@ -58,7 +60,6 @@
 		3461F5351DD2BB2B00E56298 /* FoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F5341DD2BB2B00E56298 /* FoundViewController.m */; };
 		3461F5391DD2BB5500E56298 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F5371DD2BB5500E56298 /* LoginViewController.m */; };
 		3461F53A1DD2BB5500E56298 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3461F5381DD2BB5500E56298 /* LoginViewController.xib */; };
-		3461F53F1DD2BFB800E56298 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3461F53E1DD2BFB800E56298 /* Localizable.strings */; };
 		3461F5441DD2CA0A00E56298 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F5431DD2CA0A00E56298 /* MeViewController.m */; };
 		3461F5471DD2CA2500E56298 /* EggViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461F5461DD2CA2500E56298 /* EggViewController.m */; };
 		3461F5521DD2CB4800E56298 /* tab_bangdan_dian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3461F5481DD2CB4800E56298 /* tab_bangdan_dian@2x.png */; };
@@ -390,6 +391,10 @@
 		3436EA601DDBFE0B005659B7 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		3436EA631DDBFF5D005659B7 /* BePeripheralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BePeripheralViewController.h; sourceTree = "<group>"; };
 		3436EA641DDBFF5D005659B7 /* BePeripheralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BePeripheralViewController.m; sourceTree = "<group>"; };
+		343EDA631E14A9D100A7C20E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		343EDA641E14A9EB00A7C20E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		343EDA651E14AA5B00A7C20E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		343EDA661E14BE6400A7C20E /* English_tips.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = English_tips.png; sourceTree = "<group>"; };
 		345AB3D81DD9AD5800025EEE /* egg_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_add.png; sourceTree = "<group>"; };
 		345AB3D91DD9AD5800025EEE /* egg_nodevcie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_nodevcie.png; sourceTree = "<group>"; };
 		345AB3DF1DD9AEA400025EEE /* halfAp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = halfAp.png; sourceTree = "<group>"; };
@@ -433,7 +438,6 @@
 		3461F5361DD2BB5500E56298 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		3461F5371DD2BB5500E56298 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		3461F5381DD2BB5500E56298 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		3461F53E1DD2BFB800E56298 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3461F5421DD2CA0A00E56298 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		3461F5431DD2CA0A00E56298 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		3461F5451DD2CA2500E56298 /* EggViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggViewController.h; sourceTree = "<group>"; };
@@ -1465,7 +1469,7 @@
 		3461F53D1DD2BD6500E56298 /* Strings */ = {
 			isa = PBXGroup;
 			children = (
-				3461F53E1DD2BFB800E56298 /* Localizable.strings */,
+				343EDA621E14A9CC00A7C20E /* Localizable.strings */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -2406,6 +2410,7 @@
 		34E665521DD1A3CA00FA41E8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				343EDA661E14BE6400A7C20E /* English_tips.png */,
 				3470D5451DEEC8420028EDAB /* lanch.png */,
 				34E665531DD1A43800FA41E8 /* Images */,
 				3461F53D1DD2BD6500E56298 /* Strings */,
@@ -3182,6 +3187,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 34FC41C91DD179F800A23A8F;
 			productRefGroup = 34FC41D31DD179F900A23A8F /* Products */;
@@ -3278,7 +3284,8 @@
 				3461F5521DD2CB4800E56298 /* tab_bangdan_dian@2x.png in Resources */,
 				34DB5CE81DD4129F00C51823 /* status-green.png in Resources */,
 				3461F5561DD2CB4800E56298 /* tab_faxian_dian@2x.png in Resources */,
-				3461F53F1DD2BFB800E56298 /* Localizable.strings in Resources */,
+				343EDA671E14BE6400A7C20E /* English_tips.png in Resources */,
+				343EDA601E14A9CC00A7C20E /* Localizable.strings in Resources */,
 				345AB3F31DD9AEA400025EEE /* 退出.png in Resources */,
 				345AB3DC1DD9AD5800025EEE /* egg_nodevcie.png in Resources */,
 				34ACCF3A1DDC510000AE2B98 /* xiala@2x.png in Resources */,
@@ -3561,6 +3568,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		343EDA621E14A9CC00A7C20E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				343EDA631E14A9D100A7C20E /* Base */,
+				343EDA641E14A9EB00A7C20E /* zh-Hans */,
+				343EDA651E14AA5B00A7C20E /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		34FC41DE1DD179F900A23A8F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

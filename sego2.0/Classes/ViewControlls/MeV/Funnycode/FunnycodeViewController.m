@@ -29,8 +29,8 @@
     self.view.backgroundColor = GRAY_COLOR;
     _isShare = NO;
     _sourceDic = [[NSDictionary alloc]init];
-    [self setNavTitle:@"逗码"];
-    [self showBarButton:NAV_RIGHT title:@"分享" fontColor:LIGHT_GRAYdcdc_COLOR hide:NO];
+    [self setNavTitle:NSLocalizedString(@"me_douma", nil)];
+    [self showBarButton:NAV_RIGHT title:NSLocalizedString(@"me_share", nil) fontColor:LIGHT_GRAYdcdc_COLOR hide:NO];
     
 }
 -(void)setupData{
@@ -74,7 +74,7 @@
         
     }];
     
-    NSArray * textArray = @[@"有效逗码",@"访问投食",@"有效时间"];
+    NSArray * textArray = @[NSLocalizedString(@"me_voidcode", nil),NSLocalizedString(@"me_food", nil),NSLocalizedString(@"me_voidtime", nil)];
     for (int i = 0 ; i < 3 ; i++ ) {
         UILabel * testLabel = [[UILabel alloc]init];
         testLabel.textColor = [UIColor blackColor];
@@ -93,7 +93,7 @@
     _doumaLabel = [[UILabel alloc]init];
     _doumaLabel.textColor = [UIColor blackColor];
     _doumaLabel.font = [UIFont systemFontOfSize:18];
-    _doumaLabel.text = @"暂无";
+    _doumaLabel.text =NSLocalizedString(@"me_no", nil);
     [topView addSubview:_doumaLabel];
     [_doumaLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(_doumaLabel.superview).offset(-12);
@@ -103,7 +103,7 @@
     }];
     
     _toushiLabel = [[UILabel alloc]init];
-    _toushiLabel.text = @"允许";
+    _toushiLabel.text =NSLocalizedString(@"me_share", nil);
     _toushiLabel.textColor = [UIColor blackColor];
     _toushiLabel.font = [UIFont systemFontOfSize:18];
     [topView addSubview:_toushiLabel];
@@ -125,7 +125,7 @@
     }];
     _timeoverLabel = [[UILabel alloc]init];
     _timeoverLabel.textColor = [UIColor blackColor];
-    _timeoverLabel.text = @"暂无";
+    _timeoverLabel.text = NSLocalizedString(@"me_no", nil);
     _timeoverLabel.font = [UIFont systemFontOfSize:18];
     [topView addSubview:_timeoverLabel];
     [_timeoverLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -135,7 +135,7 @@
 
     _doumaBtn = [[UIButton alloc]init];
     _doumaBtn.backgroundColor = GREEN_COLOR;
-    [_doumaBtn setTitle:@"生成我的逗码" forState:UIControlStateNormal];
+    [_doumaBtn setTitle:NSLocalizedString(@"me_doumapro", nil) forState:UIControlStateNormal];
     [_doumaBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     _doumaBtn.titleLabel.font = [UIFont systemFontOfSize:20];
     _doumaBtn.layer.cornerRadius =3;
@@ -152,7 +152,7 @@
     
     _shixiaoBtn = [[UIButton alloc]init];
     _shixiaoBtn.backgroundColor = GREEN_COLOR;
-    [_shixiaoBtn setTitle:@"立即失效" forState:UIControlStateNormal];
+    [_shixiaoBtn setTitle:NSLocalizedString(@"me_Immediately_void", nil) forState:UIControlStateNormal];
     [_shixiaoBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     _shixiaoBtn.titleLabel.font = [UIFont systemFontOfSize:20];
     _shixiaoBtn.layer.cornerRadius =3;
@@ -172,10 +172,10 @@
 }
 
 -(void)toushiButtonTouch{
-    if ([_toushiLabel.text isEqualToString:@"允许"]) {
-        _toushiLabel.text = @"不允许";
+    if ([_toushiLabel.text isEqualToString:NSLocalizedString(@"me_share", nil)]) {
+        _toushiLabel.text = NSLocalizedString(@"me_noshare", nil);
     }else{
-        _toushiLabel.text = @"允许";
+        _toushiLabel.text = NSLocalizedString(@"me_share", nil);
     }
 
 }
@@ -183,7 +183,7 @@
 
 -(void)doumaButtonTouch{
     NSString * tsStr = @"";
-    if ([_toushiLabel.text isEqualToString:@"允许"]) {
+    if ([_toushiLabel.text isEqualToString:NSLocalizedString(@"me_share", nil)]) {
         tsStr = @"1";
     }else{
         tsStr = @"0";
@@ -212,28 +212,28 @@
     [[AFHttpClient sharedAFHttpClient]queryPlayCodeWithMid:[AccountManager sharedAccountManager].loginModel.mid complete:^(BaseModel *model) {
         _sourceDic = model.retVal;
         if ([_sourceDic count] == 0 || [_sourceDic[@"status"] isEqualToString:@"0"] ) {
-            _doumaLabel.text = @"暂无";
-            _toushiLabel.text = @"允许";
-            _timeoverLabel.text = @"暂无";
+            _doumaLabel.text = NSLocalizedString(@"me_no", nil);
+            _toushiLabel.text = NSLocalizedString(@"me_share", nil);
+            _timeoverLabel.text =NSLocalizedString(@"me_no", nil);
             _shixiaoBtn.hidden = YES;
             _doumaBtn.hidden = NO;
             _isShare = NO;
             _toushiBtn.userInteractionEnabled=YES;
              _toushiLabel.textColor = [UIColor blackColor];
-            [self showBarButton:NAV_RIGHT title:@"分享" fontColor:LIGHT_GRAYdcdc_COLOR hide:NO];
+            [self showBarButton:NAV_RIGHT title:NSLocalizedString(@"me_share", nil) fontColor:LIGHT_GRAYdcdc_COLOR hide:NO];
         }else{
             _shixiaoBtn.hidden = NO;
             _doumaBtn.hidden = YES;
             _isShare = YES;
             _toushiLabel.textColor = LIGHT_GRAYdcdc_COLOR;
             _toushiBtn.userInteractionEnabled = NO;
-            [self showBarButton:NAV_RIGHT title:@"分享" fontColor:GREEN_COLOR hide:NO];
+            [self showBarButton:NAV_RIGHT title:NSLocalizedString(@"me_share", nil) fontColor:GREEN_COLOR hide:NO];
             _doumaLabel.text = _sourceDic[@"playcode"];
             
             if ([_sourceDic[@"tsnum"] isEqualToString:@"0"]) {
-                _toushiLabel.text = @"不允许";
+                _toushiLabel.text =  NSLocalizedString(@"me_noshare", nil);
             }else{
-                _toushiLabel.text = @"允许";
+                _toushiLabel.text = NSLocalizedString(@"me_share", nil);
             }
             _timeoverLabel.text = _sourceDic[@"endtime"];
             

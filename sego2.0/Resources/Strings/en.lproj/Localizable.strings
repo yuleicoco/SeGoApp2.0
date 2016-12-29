@@ -1,0 +1,94 @@
+/* 
+  Localizable.strings
+  sego2.0
+
+  Created by yulei on 16/11/9.
+  Copyright © 2016年 yulei. All rights reserved.
+*/
+
+CFBundleDisplayName = "sego2.0";
+
+//tab
+"tabSquare" = "Collection";
+"tabNear" = "Find";
+"tabEgg" = "Egg";
+"tabRank" = "Friends";
+"tabPersonal" = "Person";
+"tab_collect" =" My collection";
+
+
+// 不倒蛋
+"tabEgg_title" = "Egg";
+"tabBinding_title" = "Bind the device";
+"tabSett" ="Settings";
+"tab_open_btn"="Open interaction";
+"image_quilt" ="Picture quality";
+"quilt_one" ="Clear";
+"quilt_two" ="Smooth";
+"tab_wifi"="Wifi settings";
+"tab_food"="Feeding settings";
+
+
+// 好友
+"friends_new" ="New Friend";
+"friends_dele" ="Delete";
+"friends_suredel" ="Are you sure you want to delete this friend?";
+"friends_way" = "Phone number / nickname / device number";
+"friends_wait" ="Wait for verification";
+"friends_add"="already added";
+"friends_fail"="Has been Rejected";
+
+
+// 个人中心
+"me_article"="article";
+"me_douma"="Tease Code";
+"me_Permission_settings"="Permission settings";
+"me_repair"="change Password";
+"me_aobout"="About";
+"me_out" ="Sign out";
+"me_tips"= "Are you sure you want to sign out?";
+"me_panduan"="You have not bound the device yet";
+"me_3rd"="Third-party login, can not change the password";
+"me_share"="share";
+"me_noshare"="Not allowed";
+"me_no"="no";
+"me_Immediately_void" ="Immediately void";
+"me_doumapro" ="Generate my Code";
+"me_voidcode"= "Effective Code";
+"me_food"="Access to feeding";
+"me_voidtime"="Effective time";
+
+
+// 发现
+
+"find_dou" ="Tease a tease"; //Tease a tease
+"find_interactive" ="play";
+
+
+// wifi
+"wifiTitle" = "WIFI Setting";
+"INFO_NetNoReachable" = "当前网络不可用";
+"INFO_ReachableViaWWAN"= "当前非WIFI环境";
+"bindDevice" = "Bind the device";
+"solveaBinding" ="Unbind";
+"deviceNum" ="DeviceNum:";
+"deviceIncode"="AccessCode:";
+"Warring_bing" ="The device number does not exist";
+"Success_bing" ="Bind Success";
+"Warning" ="Tips";
+"Cancel_bind" = "Cancel";
+"Sure_bind" ="Sure";
+"Warning_Message" ="Are you sure to unbind??";
+"Solve_Success"="Unbundling success";
+"Find_device" ="Searching for equipment Please wait...";
+"find_noway" ="The device is not found, make sure Bluetooth is turned on";
+"I_kown" ="I konw";
+"no_turnon" ="You have not turned on Bluetooth";
+"Fail_seting" ="Configuration failed. Search the device again";
+"wif_encryption" ="Encryption";
+"wif_name" ="WIFI Name:";
+"wif_code" ="WIFI PS:";
+"faile_net" ="The configuration fails. Please reset the network";
+"falie_bl"= "Configuration failed, please make sure device Bluetooth is turned on";
+"ing_net" ="Configuring device network, please wait...";
+

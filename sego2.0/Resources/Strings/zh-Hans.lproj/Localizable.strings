@@ -1,0 +1,123 @@
+/* 
+  Localizable.strings
+  sego2.0
+
+  Created by yulei on 16/11/9.
+  Copyright © 2016年 yulei. All rights reserved.
+*/
+
+//tab
+"tabSquare" = "收藏";
+"tabNear" = "发现";
+"tabEgg" = "不倒蛋";
+"tabRank" = "好友";
+"tabPersonal" = "个人中心";
+"tab_collect" ="我的收藏";
+
+
+
+// 不倒蛋
+"tabEgg_title" = "不倒蛋";
+"tabBinding_title" = "绑定设备";
+"tabSett" ="设置";
+"tab_open_btn"="开启互动";
+"image_quilt" ="画面质量";
+"quilt_one" ="清晰";
+"quilt_two" ="流畅";
+"tab_wifi"="WIFI设置";
+"tab_food"="喂食设置";
+
+
+// 好友
+"friends_new" ="新的朋友";
+"friends_dele" ="删除";
+"friends_suredel" ="您确定删除此好友吗?";
+"friends_way" = "手机号/昵称/设备号";
+"friends_wait" ="等待验证";
+"friends_add"="已添加";
+"friends_fail"="已拒绝";
+
+
+// 个人中心
+"me_article"="文章";
+"me_douma"="逗码";
+"me_Permission_settings"="权限设置";
+"me_repair"="修改密码";
+"me_aobout"="关于";
+"me_out" ="登 出";
+"me_tips"= "您确定要退出登录吗？";
+"me_panduan"="您还未绑定设备";
+"me_3rd"="第三方登录，不能修改密码哦亲";
+"me_share"="分享";
+"me_noshare"="不允许";
+"me_no"="暂无";
+"me_Immediately_void" ="立即失效";
+"me_doumapro" ="生成我的逗码";
+"me_voidcode"= "有效逗码";
+"me_food"="访问投食";
+"me_voidtime"="有效时间";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 发现
+
+"find_dou" ="逗一逗"; //Tease a tease
+"find_interactive" ="互动";
+
+
+
+
+// wifi bind
+"wifiTitle" = "WIFI设置";
+"INFO_NetNoReachable" = "当前网络不可用";
+"INFO_ReachableViaWWAN"= "当前非WIFI环境";
+"bindDevice" = "绑定设备";
+"solveaBinding" ="解除绑定";
+"deviceNum" ="设备号:";
+"deviceIncode"="接入码:";
+"Warring_bing" ="该设备号不存在";
+"Success_bing" ="绑定成功";
+"Warning" ="温馨提示";
+"Cancel_bind" = "取消";
+"Sure_bind" ="确定";
+"Warning_Message" ="确定解除绑定吗?";
+"Solve_Success"="解绑成功";
+"Find_device" ="正在搜索设备请稍等...";
+"find_noway" ="未搜索到设备，请确保打开设备蓝牙";
+"I_kown" ="我知道了";
+"no_turnon" ="你尚未打开蓝牙";
+"Fail_seting" ="配置失败，请重新搜索设备";
+"wif_encryption" ="加密方式";
+"wif_name" ="WIFI名称:";
+"wif_code" ="WIFIPS:";
+"faile_net" ="配置失败，请重新设置网络";
+"falie_bl"= "配置失败，请确保打开设备蓝牙";
+"ing_net" ="正在配置设备网络，请等待...";
+
+
+
+
+
+
+
+
+
+
+
+
+

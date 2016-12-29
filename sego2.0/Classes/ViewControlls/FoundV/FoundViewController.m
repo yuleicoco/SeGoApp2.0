@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"发现"];
+    [self setNavTitle:NSLocalizedString(@"tabRank", nil)];
     self.view.backgroundColor = GRAY_COLOR;
 }
 
@@ -83,7 +83,7 @@
     }];
     
     UILabel * douLabel = [[UILabel alloc]init];
-    douLabel.text = @"逗一逗";
+    douLabel.text =NSLocalizedString(@"find_dou", nil);
     douLabel.textColor = [UIColor blackColor];
     douLabel.font = [UIFont systemFontOfSize:18];
     [whiteBtn addSubview:douLabel];

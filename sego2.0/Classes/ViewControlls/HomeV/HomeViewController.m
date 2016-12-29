@@ -48,8 +48,9 @@ static NSString * cellId = @"hometableviewcellId";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"我的收藏"];
-    [self showBarButton:NAV_RIGHT title:@"收藏" fontColor:GREEN_COLOR hide:NO];
+   
+    [self setNavTitle:NSLocalizedString(@"tab_collect", nil)];
+    [self showBarButton:NAV_RIGHT title:NSLocalizedString(@"tabSquare", nil) fontColor:GREEN_COLOR hide:NO];
     
 
 }

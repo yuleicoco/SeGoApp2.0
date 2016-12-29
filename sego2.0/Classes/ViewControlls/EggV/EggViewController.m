@@ -440,7 +440,7 @@
     {
         hide = hide;
     }
-    [self showBarButton:NAV_RIGHT title:@"设置" fontColor:GREEN_COLOR hide:hide];
+    [self showBarButton:NAV_RIGHT title:NSLocalizedString(@"tabSett", nil) fontColor:GREEN_COLOR hide:hide];
     
 }
 
@@ -473,7 +473,7 @@
 {
     [super  setupView];
    
-    NSLog(@"woowowoowowoowowoowowo");
+   
     
     
     
@@ -556,7 +556,7 @@
     UIButton * bdinBtn =[UIButton new];
     
     
-    qualityLB.text = @"画面质量:";
+    qualityLB.text = NSLocalizedString(@"image_quilt", nil);
     qualityLB.font =[UIFont systemFontOfSize:18];
     [self.view addSubview:qualityLB];
     
@@ -564,7 +564,7 @@
     
     btnOpen.layer.cornerRadius = 4;
     
-    [btnOpen setTitle:@"开启互动" forState:UIControlStateNormal];
+    [btnOpen setTitle:NSLocalizedString(@"tab_open_btn", nil) forState:UIControlStateNormal];
     [btnOpen addTarget:self action:@selector(OpenTouch:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnOpen];
     
@@ -573,13 +573,13 @@
     
     btnClean.tag = 1001;
     btnFluency.tag = 1002;
-    [btnClean setTitle:@"清晰" forState:UIControlStateNormal];
+    [btnClean setTitle:NSLocalizedString(@"quilt_one", nil) forState:UIControlStateNormal];
     btnClean.layer.cornerRadius = 2;
     btnClean.layer.borderWidth =0.6;
     
     [btnClean addTarget:self action:@selector(ChooseCleanbtn:) forControlEvents:UIControlEventTouchUpInside];
     btnClean.titleLabel.font =[UIFont systemFontOfSize:15];
-    [btnFluency setTitle:@"流畅" forState:UIControlStateNormal];
+    [btnFluency setTitle:NSLocalizedString(@"quilt_two", nil) forState:UIControlStateNormal];
     btnFluency.layer.cornerRadius = 2;
     btnFluency.layer.borderWidth =0.6;
     [btnFluency addTarget:self action:@selector(ChooseBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -629,15 +629,15 @@
     
     // 三个buton
     
-    [wifiBtn setTitle:@"WIFI设置" forState:UIControlStateNormal];
+    [wifiBtn setTitle:NSLocalizedString(@"tab_wifi", nil) forState:UIControlStateNormal];
     [wifiBtn addTarget:self action:@selector(wifiTouch:) forControlEvents:UIControlEventTouchUpInside];
     
     
     [foodBtn addTarget:self action:@selector(foodTouch:) forControlEvents:UIControlEventTouchUpInside];
-    [foodBtn setTitle:@"喂食设置" forState:UIControlStateNormal];
+    [foodBtn setTitle:NSLocalizedString(@"tab_food", nil) forState:UIControlStateNormal];
     
     [bdinBtn addTarget:self action:@selector(bdinTouch:) forControlEvents:UIControlEventTouchUpInside];
-    [bdinBtn setTitle:@"解除绑定" forState:UIControlStateNormal];
+    [bdinBtn setTitle:NSLocalizedString(@"solveaBinding", nil) forState:UIControlStateNormal];
     [setImage addSubview:wifiBtn];
     [setImage addSubview:foodBtn];
     [setImage addSubview:bdinBtn];

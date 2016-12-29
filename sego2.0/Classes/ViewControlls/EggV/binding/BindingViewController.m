@@ -135,10 +135,10 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
    
     if ([AppUtil isBlankString:strTT]) {
         
-        [self setNavTitle:@"解除绑定"];
+        [self setNavTitle:NSLocalizedString(@"bindDevice",nil)];
     }else{
         
-        [self setNavTitle:NSLocalizedString(@"tabBinding_title",nil)];
+        [self setNavTitle:NSLocalizedString(@"solveaBinding",nil)];
     }
     
     
@@ -181,15 +181,15 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     btnBind.layer.cornerRadius = 4;
     btnBind.backgroundColor = LIGHT_GRAYdcdc_COLOR;
     if ([AppUtil isBlankString:strTT]) {
-         [btnBind setTitle:@"绑定设备" forState:UIControlStateNormal];
+         [btnBind setTitle:NSLocalizedString(@"bindDevice",nil) forState:UIControlStateNormal];
          btnBind.backgroundColor = LIGHT_GRAYdcdc_COLOR;
          btnBind.enabled = FALSE;
     }else
     {
-         [btnBind setTitle:@"解除绑定" forState:UIControlStateNormal];
+         [btnBind setTitle:NSLocalizedString(@"solveaBinding",nil) forState:UIControlStateNormal];
          btnBind.enabled = TRUE;
          btnBind.backgroundColor = GREEN_COLOR;
-         [self setNavTitle:@"解除绑定"];
+        
         
         
     }
@@ -209,9 +209,9 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     
     UILabel * deveLB= [UILabel new];
     UILabel * incoLB =[UILabel new];
-    deveLB.text =@"设备号:";
+    deveLB.text =NSLocalizedString(@"deviceNum",nil);
     deveLB.font = [UIFont systemFontOfSize:18];
-    incoLB.text =@"接入码:";
+    incoLB.text =NSLocalizedString(@"deviceIncode",nil);
     incoLB.font =[UIFont systemFontOfSize:18];
     
     [devNum addSubview:deveLB];
@@ -298,10 +298,11 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     BOOL hasNetwork = [self checkConnectionAvailable];
     if (!hasNetwork) {
         return;
+        
     }
     NSString *strNumber = deviceTF.text;
     if ([AppUtil isBlankString:strNumber]) {
-        [self showWarningTip:@"设备号不存在"];
+        [self showWarningTip:NSLocalizedString(@"Warring_bing",nil)];
         return;
     }
     if ([AppUtil isBlankString:strTT]) {
@@ -309,7 +310,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
             FuckLog(@"%@",model);
             
             if ([model.retCode isEqualToString:@"0000"]) {
-                [self showWarningTip:@"绑定成功"];
+                [self showWarningTip:NSLocalizedString(@"Success_bing", nil)];
                 [Defaluts setObject:model.content forKey:TERMID_DEVICNUMER];
                 [Defaluts setObject:deviceTF.text forKey:PREF_DEVICE_NUMBER];
                 [Defaluts setValue:incodeTF.text forKey:@"incodeNum"];
@@ -336,16 +337,16 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     }else
     {
         
-        UIAlertController * alert =[UIAlertController alertControllerWithTitle:@"提示" message:@"确定解除绑定吗？" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController * alert =[UIAlertController alertControllerWithTitle:NSLocalizedString(@"Warning", nil) message:NSLocalizedString(@"Warning_Message", nil) preferredStyle:UIAlertControllerStyleAlert];
         
       
       
-        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel_bind", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
             
         }]];
         
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure_bind", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
             [self jiechuband];
             
@@ -369,7 +370,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
         if ([model.retCode isEqualToString:@"0000"]) {
             // 解除绑定成功
             // 提示
-            [self showWarningTip:@"解绑成功"];
+            [self showWarningTip:NSLocalizedString(@"Solve_Success", nil)];
             
             [Defaluts removeObjectForKey:PREF_DEVICE_NUMBER];
             [AccountManager sharedAccountManager].loginModel.deviceno=nil;
@@ -395,7 +396,8 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
 {
     // hud
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"正在搜索设备请稍等...";
+    hud.labelText = NSLocalizedString(@"Find_device", nil);
+    
 
     
 }
@@ -450,7 +452,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     if (timerEnd>35 && [AppUtil isBlankString:deviceTF.text]) {
         // 关闭服务
         [hud hide:TRUE];
-        [self showWarningTip:@"未搜索到设备，请确保打开设备蓝牙"];
+        [self showWarningTip:NSLocalizedString(@"find_noway", nil)];
         timerEnd=0;
     }
     
@@ -547,7 +549,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
  *  显示打开蓝牙提示窗
  */
 - (void)showNeedBluetoothWaringDialog {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"你尚未打开蓝牙" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Warning", nil) message:NSLocalizedString(@"no_turnon", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"I_kown", nil) otherButtonTitles:nil, nil];
     [alert show];
 }
 
@@ -677,14 +679,14 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
             // 将字符串分割为2个元素的数组。
             NSArray *array = [strResult componentsSeparatedByString:@","];
             if (array == nil || array.count != 2) {
-                [self showWarningTip:@"配置失败，请重新搜索设备"];
+                [self showWarningTip:NSLocalizedString(@"Fail_seting", nil)];
                 [self stopOverService];
                 return;
             }
             strResult = array[0];
             // 出错了。
             if (![strResult isEqualToString:@"OK"]) {
-                [self showWarningTip:@"配置失败，请重新搜索设备"];
+                [self showWarningTip:NSLocalizedString(@"Fail_seting", nil)];
                 [self stopOverService];
                 return;
                 
@@ -706,7 +708,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
             }
             
             else {
-                [self showWarningTip:@"配置失败，请重新搜索设备"];
+                [self showWarningTip:NSLocalizedString(@"Fail_seting", nil)];
                 
                 deviceTF.text = @"";
                 incodeTF.text = @"";
