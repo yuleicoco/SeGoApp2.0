@@ -47,7 +47,7 @@
 //        make.height.mas_equalTo(44 * W_Hight_Zoom);
 //    }];
     
-    _leftBtn =[[UIButton alloc]initWithFrame:CGRectMake(127 * W_Wide_Zoom , 7 * W_Hight_Zoom, 40 * W_Wide_Zoom , 30 * W_Hight_Zoom )];
+    _leftBtn =[[UIButton alloc]initWithFrame:CGRectMake(117 * W_Wide_Zoom , 7 * W_Hight_Zoom, 60 * W_Wide_Zoom , 30 * W_Hight_Zoom )];
     [_leftBtn setTitle:NSLocalizedString(@"resourece_video", nil) forState:UIControlStateNormal];
     _leftBtn.titleLabel.font = [UIFont systemFontOfSize:18];
     [_leftBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -63,7 +63,7 @@
     [topView addSubview:_lineLabel];
     
 
-    _rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(207 * W_Wide_Zoom, 7 * W_Hight_Zoom, 40 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    _rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(197 * W_Wide_Zoom, 7 * W_Hight_Zoom, 60 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
     [_rightBtn setTitle:NSLocalizedString(@"resourece_photo", nil) forState:UIControlStateNormal];
     _rightBtn.titleLabel.font = [UIFont systemFontOfSize:18];
     [_rightBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
