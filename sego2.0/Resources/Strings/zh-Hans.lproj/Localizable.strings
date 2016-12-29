@@ -117,6 +117,34 @@
 "incall_fe_allow"="主人不允许投食";
 
 
+// 登录
+"login_acc"="请输入账号";
+"login_ps"="请输入密码";
+"login"="登录";
+"login_regist"="新用户注册";
+"login_forget"="忘记密码?";
+"login_3rd"="第三方登录";
+"login_ing"="正在登录....";
+
+//注册
+"regist"="注册";
+"regist_ph"="手机号码:";
+"regist_pl"="请输入手机号码";
+"regist_pl_code"="请输入验证码";
+"regist_code"="验证码:";
+"regist_ps"="密码:";
+"regist_pl_ps"="请输入密码:";
+"regist_getcode"="获取验证码";
+"regist_reg"="注册";
+"regist_mess"="点击'regist'按钮，代表您已阅读并同意";
+"regist_mess_tips"="请输入正确格式的手机号码";
+"regist_code_tips"="输入正确的验证码";
+"regist_ing"="正在注册....";
+"regist_repair" ="正在修改....";
+
+
+
+
 
 
 
@@ -160,6 +188,12 @@
 "faile_net" ="配置失败，请重新设置网络";
 "falie_bl"= "配置失败，请确保打开设备蓝牙";
 "ing_net" ="正在配置设备网络，请等待...";
+
+// 添加好友
+"fr_add"="添加好友";
+"fr_search"="搜索";
+"fr_tips"="未找到相关用户";
+
 
 
 

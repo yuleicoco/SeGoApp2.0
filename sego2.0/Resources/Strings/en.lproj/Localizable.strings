@@ -80,11 +80,35 @@ CFBundleDisplayName = "sego2.0";
 // 修改密码
 "repair_oldps" ="Old password:";
 "repair_newps" ="New password:";
-"repair_oldps_en" ="Please enter old password:";
-"repair_newps_en" ="Please enter new password:";
+"repair_oldps_en" ="Please enter old password";
+"repair_newps_en" ="Please enter new password";
 "repair_oldfail_en"="The original password was entered incorrectly";
 "repair_newfail_en"="The old and new passwords can not be the same";
 "repair_success"="If the modification is successful, please log in again";
+// 登录
+"login_acc"="Please enter an account number";
+"login_ps"="Please enter a password";
+"login"="Login";
+"login_regist"="New User Registration";
+"login_forget"="forget password?";
+"login_3rd"="Third party login";
+"login_ing"="logging in....";
+//注册
+"regist"="Regist";
+"regist_ph"="Phone number:";
+"regist_pl"="Please enter the phone number";
+"regist_pl_code"="Please enter verification code";
+"regist_code"="Verification Code:";
+"regist_ps"="Password:";
+"regist_pl_ps"="Please enter a password:";
+"regist_getcode"="get verification code";
+"regist_reg"="Regist";
+"regist_mess"="Click the 'regist' button to indicate that you have read and agree";
+"regist_mess_tips"="Please enter a mobile phone number in the correct format";
+"regist_code_tips"="Enter the correct verification code";
+"regist_ing"="Registering....";
+"regist_repair" ="Modifying....";
+
 
 //访问规则
 "as_rule"="Access rules";
@@ -144,5 +168,11 @@ CFBundleDisplayName = "sego2.0";
 "incall_ca"="cast";
 "incall_ph"="Capture";
 "incall_fe_allow"="The host does not allow food";
+
+
+"fr_add"="add friend";
+"fr_search"="Seacrch";
+"fr_tips"="No related users found";
+
 
 

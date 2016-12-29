@@ -20,7 +20,7 @@ static NSString * cellId = @"friendSearchCellid";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"添加好友"];
+    [self setNavTitle:NSLocalizedString(@"fr_add", nil)];
     self.view.backgroundColor = GRAY_COLOR;
 }
 
@@ -49,7 +49,7 @@ static NSString * cellId = @"friendSearchCellid";
     }];
     
     _topTextfield = [[UITextField alloc]init];
-    _topTextfield.placeholder = @"手机/昵称/设备号";
+    _topTextfield.placeholder = NSLocalizedString(@"friends_way", nil);
     _topTextfield.font = [UIFont systemFontOfSize:18];
     _topTextfield.textColor = [UIColor blackColor];
     [topView addSubview:_topTextfield];
@@ -60,7 +60,7 @@ static NSString * cellId = @"friendSearchCellid";
     }];
     
     UILabel * searechLabel = [[UILabel alloc]init];
-    searechLabel.text = @"搜索";
+    searechLabel.text = NSLocalizedString(@"fr_search", nil);
     searechLabel.textColor = GREEN_COLOR;
     searechLabel.font = [UIFont systemFontOfSize:18];
     [topView addSubview:searechLabel];
@@ -102,7 +102,7 @@ static NSString * cellId = @"friendSearchCellid";
 -(void)loadDataSourceWithPage:(int)page{
     [[AFHttpClient sharedAFHttpClient]searchPeopleWithMid:[AccountManager sharedAccountManager].loginModel.mid condition:_topTextfield.text page:page size:REQUEST_PAGE_SIZE complete:^(BaseModel *model) {
         if (model.list.count == 0) {
-            [[AppUtil appTopViewController] showHint:@"未找到相关用户"];
+            [[AppUtil appTopViewController] showHint:NSLocalizedString(@"fr_tips", nil)];
              [self.dataSource removeAllObjects];
             [self.tableView reloadData];
                [self handleEndRefresh];
@@ -172,7 +172,7 @@ static NSString * cellId = @"friendSearchCellid";
     }else{
         cell.rightBtn.hidden = YES;
         cell.rightLabe.hidden = NO;
-        cell.rightLabe.text = @"已添加";
+        cell.rightLabe.text = NSLocalizedString(@"friends_add", nil);
     }
     
     cell.rightBtn.tag = indexPath.row + 2221;
@@ -196,7 +196,7 @@ static NSString * cellId = @"friendSearchCellid";
             sender.backgroundColor = [UIColor clearColor];
             sender.titleLabel.font = [UIFont systemFontOfSize:13];
             
-            [sender setTitle:@"等待验证" forState:UIControlStateNormal];
+            [sender setTitle:NSLocalizedString(@"friends_wait", nil) forState:UIControlStateNormal];
             [sender setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         }
 

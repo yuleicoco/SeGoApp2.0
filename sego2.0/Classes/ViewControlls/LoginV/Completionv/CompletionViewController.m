@@ -26,7 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"忘记密码"];
+    [self setNavTitle:NSLocalizedString(@"login_forget", nil)];
     self.view.backgroundColor = RGB(236, 237, 241);
     
     
@@ -47,7 +47,7 @@
     }];
     
     UILabel * numberLabel = [[UILabel alloc]init];
-    numberLabel.text = @"手机号码:";
+    numberLabel.text = NSLocalizedString(@"regist_ph", nil);
     numberLabel.textColor = [UIColor blackColor];
     numberLabel.font = [UIFont systemFontOfSize:18];
     [numberView addSubview:numberLabel];
@@ -58,7 +58,7 @@
     }];
     _numberTextfield = [[UITextField alloc]init];
     _numberTextfield.font = [UIFont systemFontOfSize:18];
-    _numberTextfield.placeholder = @"请输入手机号码";
+    _numberTextfield.placeholder = NSLocalizedString(@"regist_pl", nil);
      _numberTextfield.keyboardType = UIKeyboardTypeNumberPad;
     _numberTextfield.textColor = [UIColor blackColor];
     [self.view addSubview:_numberTextfield];
@@ -74,7 +74,7 @@
     _vercationBtn.backgroundColor = GREEN_COLOR;
     _vercationBtn.layer.cornerRadius = 5;
     
-    [_vercationBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+    [_vercationBtn setTitle:NSLocalizedString(@"regist_getcode", nil) forState:UIControlStateNormal];
     _vercationBtn.titleLabel.font = [UIFont systemFontOfSize:17];
     [_vercationBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_vercationBtn addTarget:self action:@selector(vercationbuttontouch) forControlEvents:UIControlEventTouchUpInside];
@@ -100,7 +100,7 @@
     }];
     
     UILabel * verificationLabel = [[UILabel alloc]init];
-    verificationLabel.text = @"验证码:";
+    verificationLabel.text = NSLocalizedString(@"regist_code", nil);
     verificationLabel.textColor = [UIColor blackColor];
     verificationLabel.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:verificationLabel];
@@ -112,7 +112,7 @@
     
     _vercationTextfield = [[UITextField alloc]init];
     _vercationTextfield.font = [UIFont systemFontOfSize:18];
-    _vercationTextfield.placeholder = @"请输入验证码";
+    _vercationTextfield.placeholder = NSLocalizedString(@"regist_code_tips", nil);
      _vercationTextfield.keyboardType = UIKeyboardTypeNumberPad;
     _vercationTextfield.textColor = [UIColor blackColor];
     [self.view addSubview:_vercationTextfield];
@@ -155,7 +155,7 @@
     
     
     UILabel * passwordLabel = [[UILabel alloc]init];
-    passwordLabel.text = @"密码:";
+    passwordLabel.text = NSLocalizedString(@"regist_ps", nil);
     passwordLabel.textColor = [UIColor blackColor];
     passwordLabel.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:passwordLabel];
@@ -167,7 +167,7 @@
     
     _passwordTextfield = [[UITextField alloc]init];
     _passwordTextfield.font = [UIFont systemFontOfSize:18];
-    _passwordTextfield.placeholder = @"请输入新密码";
+    _passwordTextfield.placeholder = NSLocalizedString(@"repair_newps_en", nil);
     //  _passwordTextfield.secureTextEntry = YES;
     _passwordTextfield.textColor = [UIColor blackColor];
     [self.view addSubview:_passwordTextfield];
@@ -235,7 +235,7 @@
     _registBtn = [[UIButton alloc]init];
     _registBtn.backgroundColor = GREEN_COLOR;
     _registBtn.layer.cornerRadius = 5;
-    [_registBtn setTitle:@"确 定" forState:UIControlStateNormal];
+    [_registBtn setTitle:NSLocalizedString(@"Sure_bind", nil) forState:UIControlStateNormal];
     [_registBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     _registBtn.titleLabel.font = [UIFont systemFontOfSize:20];
     [_registBtn addTarget:self action:@selector(regiestButtontouch) forControlEvents:UIControlEventTouchUpInside];
@@ -251,34 +251,34 @@
 }
 -(void)regiestButtontouch{
     if ([AppUtil isBlankString:_numberTextfield.text]) {
-        [[AppUtil appTopViewController] showHint:@"请输入账号"];
+        [[AppUtil appTopViewController] showHint:NSLocalizedString(@"regist_pl", nil)];
         return;
     }
     if (![AppUtil isValidateMobile:_numberTextfield.text]) {
-        [[AppUtil appTopViewController] showHint:@"请输入正确格式的手机号码"];
+        [[AppUtil appTopViewController] showHint:NSLocalizedString(@"regist_mess_tips", nil)];
         return;
     }
     if ([AppUtil isBlankString:_vercationTextfield.text]) {
-        [[AppUtil appTopViewController] showHint:@"请输入验证码"];
+        [[AppUtil appTopViewController] showHint:NSLocalizedString(@"regist_pl_code", nil)];
         return;
     }
     if ([AppUtil isBlankString:_passwordTextfield.text]) {
-        [[AppUtil appTopViewController] showHint:@"请输入密码"];
+        [[AppUtil appTopViewController] showHint:NSLocalizedString(@"regist_pl_ps", nil)];
         return;
     }
 
     if (![_numberTextfield.text isEqualToString:_achieveString]) {
-        [[AppUtil appTopViewController] showHint:@"请输入正确的手机号码"];
+        [[AppUtil appTopViewController] showHint:NSLocalizedString(@"regist_mess_tips", nil)];
         return;
     }
     
     if (![_vercationTextfield.text isEqualToString:_vercationNumber]) {
-        [[AppUtil appTopViewController] showHint:@"请输入正确的验证码"];
+        [[AppUtil appTopViewController] showHint:NSLocalizedString(@"regist_code_tips", nil)];
         return;
     }
     
     
-    [self showHudInView:self.view hint:@"正在修改..."];
+    [self showHudInView:self.view hint:NSLocalizedString(@"regist_repair", nil)];
 //    [[AFHttpClient sharedAFHttpClient]regiestWithPhone:_numberTextfield.text password:_passwordTextfield.text complete:^(BaseModel *model) {
 //        
 //        [self hideHud];
@@ -300,11 +300,11 @@
 
 -(void)vercationbuttontouch{
     if ([AppUtil isBlankString:_numberTextfield.text]) {
-        [[AppUtil appTopViewController] showHint:@"请输入账号"];
+        [[AppUtil appTopViewController] showHint:NSLocalizedString(@"regist_pl", nil)];
         return;
     }
     if (![AppUtil isValidateMobile:_numberTextfield.text]) {
-        [[AppUtil appTopViewController] showHint:@"请输入正确格式的手机号码"];
+        [[AppUtil appTopViewController] showHint:NSLocalizedString(@"regist_mess_tips", nil)];
         return;
     }
     
@@ -336,7 +336,7 @@
             dispatch_source_cancel(_timer);
             dispatch_async(dispatch_get_main_queue(), ^{
                 _vercationBtn.titleLabel.font = [UIFont systemFontOfSize:18  ];
-                [_vercationBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+                [_vercationBtn setTitle:NSLocalizedString(@"regist_getcode", nil) forState:UIControlStateNormal];
                 _vercationBtn.userInteractionEnabled = YES;
                 _vercationBtn.backgroundColor = GREEN_COLOR;
                 [_vercationBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
