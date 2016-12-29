@@ -140,11 +140,16 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
              //   recordModel.typeArray = [recordModel.type componentsSeparatedByString:@","];
             }
             
-            //if (model.list.count == 0) {
+            if (model.list.count == 0) {
                 self.collectionView.mj_footer.hidden = YES;
-            //}else{
-            //    self.collectionView.mj_footer.hidden = NO;
-          //  }
+            }else{
+                if (model.list.count<7) {
+                    self.collectionView.mj_footer.hidden = YES;
+                }else{
+                    self.collectionView.mj_footer.hidden = NO;
+                }
+
+            }
             
             
             [self.dataSource addObjectsFromArray:model.list];
@@ -152,7 +157,7 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
         }
         
         [self handleEndRefresh];
-          [self.collectionView reloadData];
+        [self.collectionView reloadData];
         
         
         
