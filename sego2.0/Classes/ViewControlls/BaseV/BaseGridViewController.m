@@ -56,7 +56,7 @@
     self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         
         if (self.pageSize > 0) {
-            if ((weakSelf.pageIndex )* REQUEST_PAGE_SIZE == weakSelf.dataSource.count) {
+            if (((weakSelf.pageIndex)*7) + 1  == weakSelf.dataSource.count) {
                 weakSelf.pageIndex++;
                 [weakSelf loadDataSourceWithPage:weakSelf.pageIndex];
             }else{
