@@ -44,7 +44,7 @@
     }];
     
     UILabel * numberLabel = [[UILabel alloc]init];
-    numberLabel.text = @"  原密码:";
+    numberLabel.text = NSLocalizedString(@"repair_oldps", nil);
     numberLabel.textColor = [UIColor blackColor];
     numberLabel.font = [UIFont systemFontOfSize:18];
     [numberView addSubview:numberLabel];
@@ -55,7 +55,7 @@
     }];
     _numberTextfield = [[UITextField alloc]init];
     _numberTextfield.font = [UIFont systemFontOfSize:18];
-    _numberTextfield.placeholder = @"请输入原密码";
+    _numberTextfield.placeholder = NSLocalizedString(@"repair_oldps_en", nil);
     _numberTextfield.textColor = [UIColor blackColor];
     [self.view addSubview:_numberTextfield];
     [_numberTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -78,7 +78,7 @@
     }];
     
     UILabel * passwordLabel = [[UILabel alloc]init];
-    passwordLabel.text = @"新密码:";
+    passwordLabel.text = NSLocalizedString(@"repair_newps", nil);
     passwordLabel.textColor = [UIColor blackColor];
     passwordLabel.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:passwordLabel];
@@ -90,7 +90,7 @@
     
     _passwordTextfield = [[UITextField alloc]init];
     _passwordTextfield.font = [UIFont systemFontOfSize:18];
-    _passwordTextfield.placeholder = @"请输入新密码";
+    _passwordTextfield.placeholder = NSLocalizedString(@"repair_newps_en", nil);
     _passwordTextfield.textColor = [UIColor blackColor];
     [self.view addSubview:_passwordTextfield];
     [_passwordTextfield mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -138,7 +138,7 @@
     _registBtn = [[UIButton alloc]init];
     _registBtn.backgroundColor = GREEN_COLOR;
     _registBtn.layer.cornerRadius = 3;
-    [_registBtn setTitle:@"确 定" forState:UIControlStateNormal];
+    [_registBtn setTitle:NSLocalizedString(@"Sure_bind", nil) forState:UIControlStateNormal];
     [_registBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     _registBtn.titleLabel.font = [UIFont systemFontOfSize:20];
     [_registBtn addTarget:self action:@selector(regiestButtontouch) forControlEvents:UIControlEventTouchUpInside];
@@ -156,21 +156,21 @@
 
 -(void)regiestButtontouch{
     if ([AppUtil isBlankString:_numberTextfield.text]) {
-         [[AppUtil appTopViewController]showHint:@"请输入原密码"];
+         [[AppUtil appTopViewController]showHint:NSLocalizedString(@"repair_oldps_en", nil)];
         return;
     }
     if (![[AccountManager sharedAccountManager].loginModel.password isEqualToString:_numberTextfield.text]) {
-        [[AppUtil appTopViewController]showHint:@"原密码输入错误"];
+        [[AppUtil appTopViewController]showHint:NSLocalizedString(@"repair_oldfail_en", nil)];
         return;
     }
     
     if ([AppUtil isBlankString:_passwordTextfield.text]) {
-          [[AppUtil appTopViewController]showHint:@"请输入新密码"];
+          [[AppUtil appTopViewController]showHint:NSLocalizedString(@"repair_newps_en", nil)];
         return;
     }
     
     if ([_passwordTextfield.text isEqualToString:[AccountManager sharedAccountManager].loginModel.password]) {
-        [[AppUtil appTopViewController]showHint:@"新旧密码不能相同哦"];
+        [[AppUtil appTopViewController]showHint:NSLocalizedString(@"repair_newfail_en", nil)];
         return;
         
     }
@@ -188,9 +188,9 @@
     
     [[AFHttpClient sharedAFHttpClient]exchangePasswordWithMid:[AccountManager sharedAccountManager].loginModel.mid password:_passwordTextfield.text complete:^(BaseModel *model) {
         if (model) {
-            UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"修改成功，请重新登录" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController * alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Warning", nil) message:NSLocalizedString(@"repair_success", nil) preferredStyle:UIAlertControllerStyleAlert];
 
-            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction *action) {
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Sure_bind", nil) style:(UIAlertActionStyleDefault) handler:^(UIAlertAction *action) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@NO];
                 [[AccountManager sharedAccountManager]logout];
                 

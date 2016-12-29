@@ -38,6 +38,14 @@ CFBundleDisplayName = "sego2.0";
 "friends_add"="already added";
 "friends_fail"="Has been Rejected";
 
+//资源库
+"resourece_video"="Video";
+"resourece_photo"="Capture";
+"resourece_box"="Resource library";
+"resourece_war"="Video or photo publishing can only be selectedindividually";
+"resourece_tips"="You can only select up to one video";
+"resourece_pic"="You can only select up to four pictures";
+
 
 // 个人中心
 "me_article"="article";
@@ -58,6 +66,38 @@ CFBundleDisplayName = "sego2.0";
 "me_food"="Access to feeding";
 "me_voidtime"="Effective time";
 
+//  关于
+"about_introduce" ="Product Introduction";
+"about_agree"="Feedback";
+"about_Registration"="Registration Agreement";
+"about_send"="send";
+"about_Feedback"="please enter Feedback content";
+"about_qq"="QQ, Email or phone";
+"about_question"="Your contact information will help us communicate and solve problems, only the staff can be seen";
+"about_sendting"="sending";
+"about_way"="Contact information";
+
+// 修改密码
+"repair_oldps" ="Old password:";
+"repair_newps" ="New password:";
+"repair_oldps_en" ="Please enter old password:";
+"repair_newps_en" ="Please enter new password:";
+"repair_oldfail_en"="The original password was entered incorrectly";
+"repair_newfail_en"="The old and new passwords can not be the same";
+"repair_success"="If the modification is successful, please log in again";
+
+//访问规则
+"as_rule"="Access rules";
+"as_newRul"="Create a new access rule";
+"as_tpis"="You can create up to two rules!";
+"as_allow"="allow";
+"as_all"="Everyone";
+"as_friend"="friends";
+"as_self"="self";
+"as_make"="Specify a friend";
+"as_moren"="Default rules can not be modified";
+"as_deleru"="Are you sure you want to delete this rule?";
+"as_deleno"="Enabled rules can not be deleted!";
 
 // 发现
 
@@ -91,4 +131,18 @@ CFBundleDisplayName = "sego2.0";
 "faile_net" ="The configuration fails. Please reset the network";
 "falie_bl"= "Configuration failed, please make sure device Bluetooth is turned on";
 "ing_net" ="Configuring device network, please wait...";
+
+// other
+"other_douma"="This code has failed tease";
+
+// incall
+
+
+"incall_vo"="voice";
+"incall_li"="ligh";
+"incall_fe"="feed";
+"incall_ca"="cast";
+"incall_ph"="Capture";
+"incall_fe_allow"="The host does not allow food";
+
 

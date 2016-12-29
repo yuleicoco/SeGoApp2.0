@@ -32,7 +32,7 @@ static NSString * cellId = @"permissontableviewCellId";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"访问规则"];
+    [self setNavTitle:NSLocalizedString(@"as_rule", nil)];
     self.view.backgroundColor = GRAY_COLOR;
 }
 
@@ -46,7 +46,7 @@ static NSString * cellId = @"permissontableviewCellId";
     
     UIButton * creatBtn = [[UIButton alloc]init];
     creatBtn.backgroundColor = GREEN_COLOR;
-    [creatBtn setTitle:@"新建访问规则" forState:UIControlStateNormal];
+    [creatBtn setTitle:NSLocalizedString(@"as_newRul", nil) forState:UIControlStateNormal];
     [creatBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     creatBtn.titleLabel.font = [UIFont systemFontOfSize:20];
     creatBtn.layer.cornerRadius = 3;
@@ -65,7 +65,7 @@ static NSString * cellId = @"permissontableviewCellId";
 
 -(void)creatButtonTouch{
     if (self.dataSource.count >= 3) {
-              [[AppUtil appTopViewController] showHint:@"最多只能创建2条规则哦!"];
+              [[AppUtil appTopViewController] showHint:NSLocalizedString(@"as_tpis", nil)];
     }else{
         NewPermissionViewController * perVc = [[NewPermissionViewController alloc]init];
         [self.navigationController pushViewController:perVc animated:NO];
@@ -112,9 +112,9 @@ static NSString * cellId = @"permissontableviewCellId";
     }
     cell.guizeNameLabel.text = model.rulesname;
     if ([model.tsnum isEqualToString:@"0"]) {
-        cell.rightLabel.text = @"不允许";
+        cell.rightLabel.text = NSLocalizedString(@"me_noshare", nil);
     }else{
-        cell.rightLabel.text = @"允许";
+        cell.rightLabel.text = NSLocalizedString(@"as_allow", nil);
     }
     
     if ([model.isuse isEqualToString:@"n"]) {
@@ -123,13 +123,13 @@ static NSString * cellId = @"permissontableviewCellId";
         cell.leftBtn.selected = YES;
     }
     if ([model.object isEqualToString:@"all"]) {
-        cell.leftLabel.text = @"所有人";
+        cell.leftLabel.text = NSLocalizedString(@"as_all", nil);
     }else if ([model.object isEqualToString:@"friend"]){
-        cell.leftLabel.text = @"好友";
+        cell.leftLabel.text = NSLocalizedString(@"as_friend", nil);
     }else if ([model.object isEqualToString:@"self"]){
-        cell.leftLabel.text = @"仅自己";
+        cell.leftLabel.text = NSLocalizedString(@"as_self", nil);
     }else if ([model.object isEqualToString:@"zd"]){
-        cell.leftLabel.text = @"指定好友";
+        cell.leftLabel.text = NSLocalizedString(@"as_make", nil);
     }
     
     cell.leftBtn.tag = indexPath.row + 22222;
@@ -157,7 +157,7 @@ static NSString * cellId = @"permissontableviewCellId";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-         [[AppUtil appTopViewController] showHint:@"默认规则不可以修改"];
+         [[AppUtil appTopViewController] showHint:NSLocalizedString(@"as_moren", nil)];
     }else{
         RuleModel * model = self.dataSource[indexPath.row];
         ExchangPermissionViewController * exchangVc = [[ExchangPermissionViewController alloc]init];
@@ -181,7 +181,7 @@ static NSString * cellId = @"permissontableviewCellId";
 -(NSString*)tableView:(UITableView*)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath*)indexPath
 {
     //昨滑的文字
-    return@"删除";
+    return NSLocalizedString(@"friends_dele", nil);
 }
 
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -207,11 +207,11 @@ static NSString * cellId = @"permissontableviewCellId";
 (UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         RuleModel * model = self.dataSource[indexPath.row];
-        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您确定删除此规则吗？" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Warning", nil) message:NSLocalizedString(@"as_deleru", nil) preferredStyle:UIAlertControllerStyleAlert];
         //
-        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure_bind", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             if ([model.isuse isEqualToString:@"y"]) {
-                [[AppUtil appTopViewController] showHint:@"已启用的规则不能删除!"];
+                [[AppUtil appTopViewController] showHint:NSLocalizedString(@"as_deleno", nil)];
                 [self.tableView reloadData];
             }else{
             
@@ -225,7 +225,7 @@ static NSString * cellId = @"permissontableviewCellId";
         }
         
         }]];
-        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel_bind", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [self.tableView reloadData];
         }]];
         [self presentViewController:alert animated:YES completion:nil];

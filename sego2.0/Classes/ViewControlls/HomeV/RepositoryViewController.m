@@ -31,7 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"资源库"];
+    [self setNavTitle:NSLocalizedString(@"resourece_box", nil)];
     self.view.backgroundColor = GRAY_COLOR;
 }
 
@@ -48,7 +48,7 @@
 //    }];
     
     _leftBtn =[[UIButton alloc]initWithFrame:CGRectMake(127 * W_Wide_Zoom , 7 * W_Hight_Zoom, 40 * W_Wide_Zoom , 30 * W_Hight_Zoom )];
-    [_leftBtn setTitle:@"录像" forState:UIControlStateNormal];
+    [_leftBtn setTitle:NSLocalizedString(@"resourece_video", nil) forState:UIControlStateNormal];
     _leftBtn.titleLabel.font = [UIFont systemFontOfSize:18];
     [_leftBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_leftBtn setTitleColor:GREEN_COLOR forState:UIControlStateSelected];
@@ -64,7 +64,7 @@
     
 
     _rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(207 * W_Wide_Zoom, 7 * W_Hight_Zoom, 40 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
-    [_rightBtn setTitle:@"抓拍" forState:UIControlStateNormal];
+    [_rightBtn setTitle:NSLocalizedString(@"resourece_photo", nil) forState:UIControlStateNormal];
     _rightBtn.titleLabel.font = [UIFont systemFontOfSize:18];
     [_rightBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_rightBtn setTitleColor:GREEN_COLOR forState:UIControlStateSelected];

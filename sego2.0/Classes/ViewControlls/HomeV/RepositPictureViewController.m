@@ -54,7 +54,7 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
     }];
     
     UIButton * dancelbtn = [[UIButton alloc]init];
-    [dancelbtn setTitle:@"取消" forState:UIControlStateNormal];
+    [dancelbtn setTitle:NSLocalizedString(@"Cancel_bind", nil) forState:UIControlStateNormal];
     [dancelbtn setTitleColor:GREEN_COLOR forState:UIControlStateNormal];
     dancelbtn.titleLabel.font = [UIFont systemFontOfSize:18];
      [dancelbtn addTarget:self action:@selector(dancelBtnToucch) forControlEvents:UIControlEventTouchUpInside];
@@ -67,7 +67,7 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
     }];
     
     _rightBtn = [[UIButton alloc]init];
-    [_rightBtn setTitle:@"确定" forState:UIControlStateNormal];
+    [_rightBtn setTitle:NSLocalizedString(@"Sure_bind", nil) forState:UIControlStateNormal];
     [_rightBtn setTitleColor:RGB(220, 220, 220) forState:UIControlStateNormal];
     _rightBtn.titleLabel.font = [UIFont systemFontOfSize:18];
     [_rightBtn.layer setMasksToBounds:YES];
@@ -304,7 +304,7 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
     NSUserDefaults * userdefautls = [NSUserDefaults standardUserDefaults];
     NSMutableArray * videoArrray = [userdefautls objectForKey:@"respositVideo"];
     if (videoArrray.count >0) {
-        [[AppUtil appTopViewController] showHint:@"只能单独选择视频或图片发布"];
+        [[AppUtil appTopViewController] showHint:NSLocalizedString(@"resourece_war", nil)];
         return;
     }
     
@@ -323,7 +323,7 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
             cell.rightBtn.selected = NO;
             [deleteOrUpdateArr removeObject:imageA[j]];//把要删除的图片从删除数组中删除
         }else{
-            [[AppUtil appTopViewController] showHint:@"您只能选择最多四张图片"];
+            [[AppUtil appTopViewController] showHint:NSLocalizedString(@"resourece_pic", nil)];
             return;
         }
     }else{

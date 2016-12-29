@@ -58,11 +58,63 @@
 "me_voidtime"="有效时间";
 
 
+//  关于
+"about_introduce" ="产品简介";
+"about_agree"="意见反馈";
+"about_Registration"="注册协议";
+"about_send"="发送";
+"about_Feedback"="请出入反馈内容";
+"about_qq"="QQ,邮箱或者电话";
+"about_question"="您的联系方式有助于我们沟通和解决问题，仅工作人员可见";
+"about_sendting"="正在发送";
+"about_way"="联系方式";
+
+// 修改密码
+"repair_oldps" ="  原密码:";
+"repair_newps" ="新密码:";
+"repair_oldps_en" ="请输入原密码:";
+"repair_newps_en" ="  请输入新密码:";
+"repair_oldfail_en"="原密码输入错误";
+"repair_newfail_en"="新旧密码不能相同哦";
+"repair_success"="修改成功,请重新登录";
+
+//访问规则
+"as_rule"="访问规则";
+"as_newRul"="新建访问规则";
+"as_tpis"="最多只能创建2条规则哦!";
+"as_allow"="允许";
+"as_all"="所有人";
+"as_friend"="好友";
+"as_self"="自己";
+"as_make"="指定好友";
+"as_moren"="默认规则不可以修改";
+"as_deleru"="您确定删除此规则吗?";
+"as_deleno"="已启用的规则不能删除!";
+
+//资源库
+"resourece_video"="录像";
+"resourece_photo"="抓拍";
+"resourece_box"="资源库";
+"resourece_war"="只能单独选择视频或图片发布";
+"resourece_tips"="您只能选择最多一个视频";
+"resourece_pic"="您只能选择最多四张图片";
 
 
 
+// other
+"other_douma"="此逗码已经失效";
 
 
+
+// incall
+
+
+"incall_vo"="声音";
+"incall_li"="开灯";
+"incall_fe"="喂食";
+"incall_ca"="投食";
+"incall_ph"="抓拍";
+"incall_fe_allow"="主人不允许投食";
 
 
 

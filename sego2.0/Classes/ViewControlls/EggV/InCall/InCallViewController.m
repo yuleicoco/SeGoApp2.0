@@ -703,7 +703,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }];
     
     NSArray * arrText;
-    arrText = @[@"声音",@"开灯",@"喂食",@"投食",@"抓拍"];
+    arrText = @[NSLocalizedString(@"incall_vo", nil),NSLocalizedString(@"incall_li", nil),NSLocalizedString(@"incall_fe", nil),NSLocalizedString(@"incall_ca", nil),NSLocalizedString(@"incall_ph", nil)];
     for (NSInteger  i=0; i<5; i++) {
         UILabel * newLable =LabeArr[i];
         newLable.text =arrText[i];
@@ -915,7 +915,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     }
 
     NSArray * arrText;
-    arrText = @[@"声音",@"开灯",@"喂食",@"投食",@"抓拍"];
+     arrText = @[NSLocalizedString(@"incall_vo", nil),NSLocalizedString(@"incall_li", nil),NSLocalizedString(@"incall_fe", nil),NSLocalizedString(@"incall_ca", nil),NSLocalizedString(@"incall_ph", nil)];
     for (NSInteger  i=0; i<5; i++) {
         UILabel * newLable =LabeArr[i];
         newLable.text =arrText[i];
@@ -1318,7 +1318,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     if (isOther) {
 
         if (_isTurmNum ==0 ) {
-            [self showSuccessHudWithHint:@"主人不允许投食"];
+            [self showSuccessHudWithHint:NSLocalizedString(@"incall_fe_allow", nil)];
         }else
         {
             sender.selected = !sender.selected;

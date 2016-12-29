@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"注册协议"];
+    [self setNavTitle:NSLocalizedString(@"about_Registration", nil)];
 }
 -(void)setupView{
     [super setupView];

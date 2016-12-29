@@ -73,7 +73,7 @@
     
     
     UILabel * chanpinLabel = [[UILabel alloc]init];
-    chanpinLabel.text = @"产品简介";
+    chanpinLabel.text = NSLocalizedString(@"about_introduce", nil);
     chanpinLabel.textColor = [UIColor blackColor];
     chanpinLabel.font = [UIFont systemFontOfSize:18];
     [downView addSubview:chanpinLabel];
@@ -95,7 +95,7 @@
     }];
     
     UILabel * yijianLabel = [[UILabel alloc]init];
-    yijianLabel.text = @"意见反馈";
+    yijianLabel.text = NSLocalizedString(@"about_agree", nil);
     yijianLabel.textColor = [UIColor blackColor];
     yijianLabel.font = [UIFont systemFontOfSize:18];
     [downView addSubview:yijianLabel];
@@ -119,7 +119,7 @@
     
     UILabel * zhucexieyiLabel = [[UILabel alloc]init];
     zhucexieyiLabel.textColor = [UIColor blackColor];
-    zhucexieyiLabel.text = @"注册协议";
+    zhucexieyiLabel.text = NSLocalizedString(@"about_Registration", nil);
     zhucexieyiLabel.font = [UIFont systemFontOfSize:18];
     [downView addSubview:zhucexieyiLabel];
     [zhucexieyiLabel mas_makeConstraints:^(MASConstraintMaker *make) {

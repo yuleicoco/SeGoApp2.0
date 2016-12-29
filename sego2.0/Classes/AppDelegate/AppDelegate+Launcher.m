@@ -195,7 +195,7 @@
             
             if ([model.retVal[@"status"] isEqualToString:@"0"]) {
                 // 失效
-                 [self.window.rootViewController showSuccessHudWithHint:@"此逗码已经失效"];
+                 [self.window.rootViewController showSuccessHudWithHint:NSLocalizedString(@"other_douma", nil)];
             }else
             {
                 
