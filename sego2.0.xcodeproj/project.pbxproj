@@ -21,7 +21,6 @@
 		3436EA611DDBFE0B005659B7 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436EA601DDBFE0B005659B7 /* Reachability.m */; };
 		3436EA651DDBFF5D005659B7 /* BePeripheralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3436EA641DDBFF5D005659B7 /* BePeripheralViewController.m */; };
 		343EDA601E14A9CC00A7C20E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 343EDA621E14A9CC00A7C20E /* Localizable.strings */; };
-		343EDA671E14BE6400A7C20E /* English_tips.png in Resources */ = {isa = PBXBuildFile; fileRef = 343EDA661E14BE6400A7C20E /* English_tips.png */; };
 		345AB3DB1DD9AD5800025EEE /* egg_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3D81DD9AD5800025EEE /* egg_add.png */; };
 		345AB3DC1DD9AD5800025EEE /* egg_nodevcie.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3D91DD9AD5800025EEE /* egg_nodevcie.png */; };
 		345AB3EB1DD9AEA400025EEE /* halfAp.png in Resources */ = {isa = PBXBuildFile; fileRef = 345AB3DF1DD9AEA400025EEE /* halfAp.png */; };
@@ -133,6 +132,7 @@
 		34CD6C321DE7EC9E00993834 /* right_egg.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CD6C2E1DE7EC9E00993834 /* right_egg.png */; };
 		34CD6C331DE7EC9E00993834 /* top_egg.png in Resources */ = {isa = PBXBuildFile; fileRef = 34CD6C2F1DE7EC9E00993834 /* top_egg.png */; };
 		34CFC4691DDC369B00444AA2 /* WifiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CFC4681DDC369B00444AA2 /* WifiViewController.m */; };
+		34D171071E16030200286421 /* English_tips.png in Resources */ = {isa = PBXBuildFile; fileRef = 34D171061E16030200286421 /* English_tips.png */; };
 		34D3C6D51DDAB97300529FF5 /* BindingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3C6D41DDAB97300529FF5 /* BindingViewController.m */; };
 		34D3C6E11DDAF43600529FF5 /* ShowWarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D3C6E01DDAF43600529FF5 /* ShowWarView.m */; };
 		34D841BB1DE003DE00C37303 /* AFHttpClient+RemoveDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D841BA1DE003DE00C37303 /* AFHttpClient+RemoveDevice.m */; };
@@ -394,7 +394,6 @@
 		343EDA631E14A9D100A7C20E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		343EDA641E14A9EB00A7C20E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		343EDA651E14AA5B00A7C20E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		343EDA661E14BE6400A7C20E /* English_tips.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = English_tips.png; sourceTree = "<group>"; };
 		345AB3D81DD9AD5800025EEE /* egg_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_add.png; sourceTree = "<group>"; };
 		345AB3D91DD9AD5800025EEE /* egg_nodevcie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = egg_nodevcie.png; sourceTree = "<group>"; };
 		345AB3DF1DD9AEA400025EEE /* halfAp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = halfAp.png; sourceTree = "<group>"; };
@@ -542,6 +541,7 @@
 		34CD6C2F1DE7EC9E00993834 /* top_egg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_egg.png; sourceTree = "<group>"; };
 		34CFC4671DDC369B00444AA2 /* WifiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiViewController.h; sourceTree = "<group>"; };
 		34CFC4681DDC369B00444AA2 /* WifiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiViewController.m; sourceTree = "<group>"; };
+		34D171061E16030200286421 /* English_tips.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = English_tips.png; sourceTree = "<group>"; };
 		34D3C6D31DDAB97300529FF5 /* BindingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindingViewController.h; sourceTree = "<group>"; };
 		34D3C6D41DDAB97300529FF5 /* BindingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindingViewController.m; sourceTree = "<group>"; };
 		34D3C6DF1DDAF43600529FF5 /* ShowWarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowWarView.h; sourceTree = "<group>"; };
@@ -2410,7 +2410,7 @@
 		34E665521DD1A3CA00FA41E8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				343EDA661E14BE6400A7C20E /* English_tips.png */,
+				34D171061E16030200286421 /* English_tips.png */,
 				3470D5451DEEC8420028EDAB /* lanch.png */,
 				34E665531DD1A43800FA41E8 /* Images */,
 				3461F53D1DD2BD6500E56298 /* Strings */,
@@ -3284,7 +3284,7 @@
 				3461F5521DD2CB4800E56298 /* tab_bangdan_dian@2x.png in Resources */,
 				34DB5CE81DD4129F00C51823 /* status-green.png in Resources */,
 				3461F5561DD2CB4800E56298 /* tab_faxian_dian@2x.png in Resources */,
-				343EDA671E14BE6400A7C20E /* English_tips.png in Resources */,
+				34D171071E16030200286421 /* English_tips.png in Resources */,
 				343EDA601E14A9CC00A7C20E /* Localizable.strings in Resources */,
 				345AB3F31DD9AEA400025EEE /* 退出.png in Resources */,
 				345AB3DC1DD9AD5800025EEE /* egg_nodevcie.png in Resources */,

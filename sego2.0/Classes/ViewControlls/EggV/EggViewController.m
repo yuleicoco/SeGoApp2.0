@@ -380,7 +380,15 @@
     // 设备不存在线
     if ([strState isEqualToString:@"ds000"]) {
         
+        NSString * str = langeC;
+        if ([str isEqualToString:@"en-CN"]) {
+            [ImageBack setImage:[UIImage imageNamed:@"English_tips"]];
+            
+        }else
+        {
         [ImageBack setImage:[UIImage imageNamed:@"egg_nodevcie"]];
+        }
+        
         btnAdd.hidden = NO;
         btnOpen.hidden = YES;
         [self hideSetTitle:YES];
@@ -512,7 +520,7 @@
     [self test];
     
     // en-CN  zh-Hans-CN
-   langeC
+
     
   
    

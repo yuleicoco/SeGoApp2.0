@@ -56,7 +56,7 @@
 #define rectTab self.tabBarController.tabBar.frame;
 
 
-#define langeC [[NSLocale preferredLanguages] objectAtIndex:0];
+#define  langeC [[NSLocale preferredLanguages] objectAtIndex:0];
 
 
 
