@@ -511,7 +511,8 @@
     
     [self test];
     
-    
+    // en-CN  zh-Hans-CN
+   langeC
     
   
    
