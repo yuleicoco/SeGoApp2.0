@@ -25,8 +25,8 @@ CFBundleDisplayName = "sego2.0";
 "image_quilt" ="Picture quality";
 "quilt_one" ="Clear";
 "quilt_two" ="Smooth";
-"tab_wifi"="Wifi settings";
-"tab_food"="Feeding settings";
+"tab_wifi"="Wifi setting";
+"tab_food"="Feeding setting";
 
 
 // 好友
@@ -173,6 +173,18 @@ CFBundleDisplayName = "sego2.0";
 "fr_add"="add friend";
 "fr_search"="Seacrch";
 "fr_tips"="No related users found";
+
+"feed_model"="Feeding settings";
+"feed_way"="Feeding mode";
+"feed_four"="Four meals";
+"feed_two"="Two meals";
+"feed_stop"="Inactive";
+"feed_start"="start using";
+"feed_stoping"="Inactive...";
+"feed_surefeed"="Are you sure you want to disable auto-feeding??";
+"feed_over"="complete";
+"feed_setting"="Setting up...";
+"feed_tips"="Please do not select the same time!";
 
 
 

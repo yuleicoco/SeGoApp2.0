@@ -58,7 +58,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
     [super viewDidLoad];
     _sourceDic = [[NSDictionary alloc]init];
     _ondedayArray = [[NSMutableArray alloc]init];
-    [self setNavTitle:@"喂食设置"];
+    [self setNavTitle:NSLocalizedString(@"feed_model", nil)];
     _dataArray = [[NSMutableArray alloc]init];
     self.view.backgroundColor = LIGHT_GRAYdcdc_COLOR;
     [self querWeishi];
@@ -100,7 +100,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
     
     
     UILabel * wenziLabel = [[UILabel alloc]initWithFrame:CGRectMake(12 * W_Wide_Zoom, 15 * W_Hight_Zoom, 100 * W_Wide_Zoom, 20 * W_Hight_Zoom)];
-    wenziLabel.text = @"喂食模式";
+    wenziLabel.text = NSLocalizedString(@"feed_way", nil);
     wenziLabel.textColor = [UIColor blackColor];
     wenziLabel.font = [UIFont systemFontOfSize:20];
     [whiteView addSubview:wenziLabel];
@@ -113,7 +113,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
       [_oneDayButton addTarget:self action:@selector(onedayButtonTouch) forControlEvents:UIControlEventTouchUpInside];
     
     UILabel * wenzi1 =[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_oneDayButton.frame) + 5, 15 * W_Hight_Zoom, 50 * W_Wide_Zoom, 20 * W_Hight_Zoom)];
-    wenzi1.text = @"四餐";
+    wenzi1.text = NSLocalizedString(@"feed_four", nil);
     wenzi1.textColor = GREEN_COLOR;
     wenzi1.font = [UIFont systemFontOfSize:20];
     [whiteView addSubview:wenzi1];
@@ -128,7 +128,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
 
     
     UILabel * wenzi2 = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_twoDayButton.frame) + 5, 15 * W_Hight_Zoom, 50 * W_Wide_Zoom, 20 * W_Hight_Zoom)];
-    wenzi2.text = @"两餐";
+    wenzi2.text = NSLocalizedString(@"feed_two", nil);
     wenzi2.textColor = GREEN_COLOR;
     wenzi2.font = [UIFont systemFontOfSize:20];
     [whiteView addSubview:wenzi2];
@@ -199,7 +199,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
     }];
 
     _sureBtn2= [[UIButton alloc]init];
-    [_sureBtn2 setTitle:@"停用" forState:UIControlStateNormal];
+    [_sureBtn2 setTitle:NSLocalizedString(@"feed_stop", nil) forState:UIControlStateNormal];
     [_sureBtn2 setTitleColor:RGB(220, 220, 220) forState:UIControlStateNormal];
     _sureBtn2.titleLabel.font = [UIFont systemFontOfSize:18];
     [_sureBtn2 addTarget:self action:@selector(stopWeishi) forControlEvents:UIControlEventTouchUpInside];
@@ -212,7 +212,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
     
     
     UIButton * sureBtn = [[UIButton alloc]init];
-    [sureBtn setTitle:@"启用" forState:UIControlStateNormal];
+    [sureBtn setTitle:NSLocalizedString(@"feed_start", nil) forState:UIControlStateNormal];
     [sureBtn setTitleColor:GREEN_COLOR forState:UIControlStateNormal];
     sureBtn.titleLabel.font = [UIFont systemFontOfSize:18];
     [sureBtn addTarget:self action:@selector(hahahahaha) forControlEvents:UIControlEventTouchUpInside];
@@ -235,9 +235,9 @@ static NSString * cellId = @"fedseting2321232322313323231";
 }
 
 -(void)stopWeishi{
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您确定要停用自动喂食吗？" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Warning", nil) message:NSLocalizedString(@"feed_surefeed", nil) preferredStyle:UIAlertControllerStyleAlert];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure_bind", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
       //  FeddingModel * model = self.dataSource[0];
         NSString * str  =  [Defaluts objectForKey:@"deviceNumber"];
         NSString * str1  = [AccountManager sharedAccountManager].loginModel.deviceno;
@@ -246,7 +246,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
         NSString * str3 = [Defaluts objectForKey:@"termid"];
         NSString * str4 = [AccountManager sharedAccountManager].loginModel.termid;
         NSString * termidstr = str3.length>str4.length?str3:str4;
-        [self showHudInView:self.view hint:@"正在停用..."];
+        [self showHudInView:self.view hint:NSLocalizedString(@"feed_stoping", nil)];
         [[AFHttpClient sharedAFHttpClient]cancelFeedingtimeWithbrid:_sourceDic[@"brid"] deviceno:deviceNum termid:termidstr complete:^(BaseModel *model) {
             [self hideHud];
             if (model) {
@@ -262,7 +262,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
     
     }]];
     
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel_bind", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
     }]];
     
@@ -407,7 +407,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
     
     _wanchengBtn = [[UIButton alloc]initWithFrame:CGRectMake(0* W_Wide_Zoom, 427 * W_Hight_Zoom, 375 * W_Wide_Zoom, 35 * W_Hight_Zoom)];
     _wanchengBtn.backgroundColor = [UIColor whiteColor];
-    [_wanchengBtn setTitle:@"完成" forState:UIControlStateNormal];
+    [_wanchengBtn setTitle:NSLocalizedString(@"feed_over", nil) forState:UIControlStateNormal];
     [_wanchengBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [[UIApplication sharedApplication].keyWindow addSubview:_wanchengBtn];
     [_wanchengBtn addTarget:self action:@selector(wanchengButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
@@ -524,12 +524,12 @@ static NSString * cellId = @"fedseting2321232322313323231";
     for (int i = 0 ; i < _dataArray.count - 1; i++) {
         for (int j = i + 1; j < _dataArray.count; j++) {
             if (_dataArray[i] == _dataArray[j]) {
-               [[AppUtil appTopViewController] showHint:@"请不要选择相同的时间哦，亲!"];
+               [[AppUtil appTopViewController] showHint:NSLocalizedString(@"feed_tips", nil)];
                 return;
             }
         }
     }
-    [self showHudInView:self.view hint:@"正在设置..."];
+    [self showHudInView:self.view hint:NSLocalizedString(@"feed_setting", nil)];
     NSString * timeStr = [_dataArray componentsJoinedByString:@","];
     NSLog(@"%@",timeStr);
     NSString * termidStr = [AccountManager sharedAccountManager].loginModel.termid ;

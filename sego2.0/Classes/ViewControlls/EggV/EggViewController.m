@@ -380,8 +380,8 @@
     // 设备不存在线
     if ([strState isEqualToString:@"ds000"]) {
         
-        NSString * str = langeC;
-        if ([str isEqualToString:@"en-CN"]) {
+        NSString * strlange = langeC;
+        if ([strlange isEqualToString:@"en-CN"]) {
             [ImageBack setImage:[UIImage imageNamed:@"English_tips"]];
             
         }else
@@ -715,7 +715,7 @@
         make.centerY.equalTo(qualityLB.mas_centerY);
         make.left.equalTo(qualityLB.mas_right).offset(15);
         make.top.equalTo(ImageBack.mas_bottom).offset(40);
-        make.width.mas_equalTo(50);
+        make.width.mas_equalTo(55);
         make.height.mas_equalTo(23);
         
         
@@ -726,7 +726,7 @@
         make.centerY.equalTo(qualityLB.mas_centerY);
         make.left.equalTo(btnClean.mas_right).offset(-1);
         make.top.equalTo(ImageBack.mas_bottom).offset(40);
-        make.width.mas_equalTo(50);
+        make.width.mas_equalTo(55);
         make.height.mas_equalTo(23);
         
     }];
@@ -743,7 +743,15 @@
     // 设置背景
     [setImage mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.size.mas_equalTo(CGSizeMake(115, 129));
+        NSString * strlange = langeC;
+        if ([strlange isEqualToString:@"en-CN"]) {
+
+        make.size.mas_equalTo(CGSizeMake(170, 129));
+        }else
+        { make.size.mas_equalTo(CGSizeMake(115, 129));
+            
+        }
+        
         make.right.equalTo(self.view).offset(-11);
         make.top.equalTo(self.view).offset(1);
         

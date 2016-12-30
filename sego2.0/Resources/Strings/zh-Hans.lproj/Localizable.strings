@@ -194,6 +194,19 @@
 "fr_search"="搜索";
 "fr_tips"="未找到相关用户";
 
+//喂食
+"feed_model"="喂食设置";
+"feed_way"="喂食模式";
+"feed_four"="四餐";
+"feed_two"="两餐";
+"feed_stop"="停用";
+"feed_start"="启用";
+"feed_stoping"="正在停用...";
+"feed_surefeed"="您确定要停用自动喂食吗?";
+"feed_over"="完成";
+"feed_setting"="正在设置...";
+"feed_tips"="请不要选择相同的时间哦，亲!";
+
 
 
 
