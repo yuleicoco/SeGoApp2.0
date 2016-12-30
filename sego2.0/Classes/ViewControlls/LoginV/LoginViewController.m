@@ -404,10 +404,25 @@
 
 -(void)regiestButtonTouch{
 
-    FuckLog(@"haha");
-    RegistViewController * registVc = [[RegistViewController alloc]init];
-    //registVc.navigationController.navigationBar.tintColor = [UIColor redColor];
-    [self.navigationController pushViewController:registVc animated:NO];
+ 
+//    RegistViewController * registVc = [[RegistViewController alloc]init];
+//    //registVc.navigationController.navigationBar.tintColor = [UIColor redColor];
+//    [self.navigationController pushViewController:registVc animated:NO];
+
+    // [self getCurrentLanguage];
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *currentLanguage = [languages objectAtIndex:0];
+    NSLog( @"%@" , currentLanguage);
+    if ([currentLanguage isEqualToString:@"zh-Hans-CN"]) {            RegistViewController * registVc = [[RegistViewController alloc]init];
+            //registVc.navigationController.navigationBar.tintColor = [UIColor redColor];
+        [self.navigationController pushViewController:registVc animated:NO];
+
+    }else{
+        
+       FuckLog(@"haha");
+    }
+    
+
     
 }
 
