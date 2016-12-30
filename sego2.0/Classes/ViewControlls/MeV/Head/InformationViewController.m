@@ -76,7 +76,7 @@ static NSString * cellId = @"InformationCellId";
     }];
     
     UILabel * headLabel = [[UILabel alloc]init];
-    headLabel.text = @"头像";
+    headLabel.text = NSLocalizedString(@"info_headimeg", nil);
     headLabel.textColor = [UIColor blackColor];
     headLabel.font = [UIFont systemFontOfSize:18];
     [self.view addSubview:headLabel];
@@ -147,7 +147,7 @@ static NSString * cellId = @"InformationCellId";
     
     
     _nameArray = [[NSArray alloc]init];
-    _nameArray = @[@"帐号",@"昵称",@"性别",@"家族",@"生日",@"签名"];
+    _nameArray = @[NSLocalizedString(@"info_acc", nil),NSLocalizedString(@"info_nic", nil),NSLocalizedString(@"info_sex", nil),NSLocalizedString(@"info_fam", nil),NSLocalizedString(@"info_bri", nil),NSLocalizedString(@"info_phto", nil)];
     
     
 
@@ -170,7 +170,7 @@ static NSString * cellId = @"InformationCellId";
         [[UIApplication sharedApplication].keyWindow addSubview:_littleDownView];
         [[UIApplication sharedApplication].keyWindow addSubview:_downWithView];
     }];
-    NSArray * nameArray = @[@"拍照",@"相册"];
+    NSArray * nameArray = @[NSLocalizedString(@"info_taph", nil),NSLocalizedString(@"info_cam", nil)];
     for (int i = 0; i < 2; i++) {
         UILabel * lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 0 * W_Hight_Zoom + i * 40 * W_Hight_Zoom, 375 * W_Wide_Zoom, 1 * W_Hight_Zoom)];
         lineLabel.backgroundColor = GRAY_COLOR;
@@ -185,7 +185,7 @@ static NSString * cellId = @"InformationCellId";
         [downButtones addTarget:self action:@selector(imageButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
     }
     UIButton * quxiaoButton = [[UIButton alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 0 * W_Hight_Zoom, 375 * W_Wide_Zoom, 40 * W_Hight_Zoom)];
-    [quxiaoButton setTitle:@"取消" forState:UIControlStateNormal];
+    [quxiaoButton setTitle:NSLocalizedString(@"Cancel_bind", nil) forState:UIControlStateNormal];
     [quxiaoButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     quxiaoButton.titleLabel.font = [UIFont systemFontOfSize:14];
     [_littleDownView addSubview:quxiaoButton];
@@ -277,10 +277,10 @@ static NSString * cellId = @"InformationCellId";
 
 -(void)changgeheadRequest{
     
-    [self showHudInView:self.view hint:@"正在修改..."];
+    [self showHudInView:self.view hint:NSLocalizedString(@"regist_repair", nil)];
     [[AFHttpClient sharedAFHttpClient]modifyHeadportraitWithMid: [AccountManager sharedAccountManager].loginModel.mid picture:_picstr complete:^(BaseModel *model) {
         [self hideHud];
-        [[AppUtil appTopViewController] showHint:@"修改成功"];
+        [[AppUtil appTopViewController] showHint:NSLocalizedString(@"info_re_su", nil)];
         LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
         [[AccountManager sharedAccountManager]login:loginModel];
         [[NSNotificationCenter defaultCenter]postNotificationName:@"meshuashua" object:nil];
@@ -322,17 +322,17 @@ static NSString * cellId = @"InformationCellId";
         cell.rightLabel.text = [AccountManager sharedAccountManager].loginModel.nickname;
     }
     if (indexPath.row == 2) {
-        if ([[AccountManager sharedAccountManager].loginModel.pet_sex isEqualToString:@"公"]) {
-            cell.rightLabel.text = @"公";
+        if ([[AccountManager sharedAccountManager].loginModel.pet_sex isEqualToString:NSLocalizedString(@"info_wen", nil)]) {
+            cell.rightLabel.text = NSLocalizedString(@"info_wen", nil);
         }else{
-            cell.rightLabel.text = @"母";
+            cell.rightLabel.text = NSLocalizedString(@"info_w", nil);
         }
     }
     if (indexPath.row == 3) {
         if ([[AccountManager sharedAccountManager].loginModel.pet_race isEqualToString:@"汪"]) {
-            cell.rightLabel.text = @"汪星人";
+            cell.rightLabel.text = NSLocalizedString(@"info_do", nil);
         }else{
-            cell.rightLabel.text = @"喵星人";
+            cell.rightLabel.text = NSLocalizedString(@"info_ca", nil);
         }
     }
     if (indexPath.row == 4) {
@@ -528,7 +528,7 @@ static NSString * cellId = @"InformationCellId";
     }];
 
     UILabel * danceLabel = [[UILabel alloc]init];
-    danceLabel.text = @"取消";
+    danceLabel.text = NSLocalizedString(@"Cancel_bind", nil);
     danceLabel.textColor = [UIColor blackColor];
     danceLabel.font = [UIFont systemFontOfSize:17];
     [_centerwhteView addSubview:danceLabel];
@@ -538,7 +538,7 @@ static NSString * cellId = @"InformationCellId";
     }];
     
     UILabel * sureLabel = [[UILabel alloc]init];
-    sureLabel.text = @"确定";
+    sureLabel.text = NSLocalizedString(@"Sure_bind", nil);
     sureLabel.textColor = [UIColor blackColor];
     sureLabel.font = [UIFont systemFontOfSize:17];
     [_centerwhteView addSubview:sureLabel];
@@ -594,10 +594,10 @@ static NSString * cellId = @"InformationCellId";
     [_exchangeTextfield resignFirstResponder];
     _bigBtn.hidden = YES;
     _centerwhteView.hidden = YES;
-        [self showHudInView:self.view hint:@"正在修改..."];
+        [self showHudInView:self.view hint:NSLocalizedString(@"regist_repair", nil)];
     [[AFHttpClient sharedAFHttpClient]modifyMemberWithMid:[AccountManager sharedAccountManager].loginModel.mid nickname:_exchangeTextfield.text address:[AccountManager sharedAccountManager].loginModel.address signature:[AccountManager sharedAccountManager].loginModel.signature pet_sex:[AccountManager sharedAccountManager].loginModel.pet_sex pet_birthday:[AccountManager sharedAccountManager].loginModel.pet_birthday pet_race:[AccountManager sharedAccountManager].loginModel.pet_race complete:^(BaseModel *model) {
         if (model) {
-             [[AppUtil appTopViewController] showHint:@"修改成功"];
+             [[AppUtil appTopViewController] showHint:NSLocalizedString(@"info_re_su", nil)];
             LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
             [[AccountManager sharedAccountManager]login:loginModel];
             [self.tableView reloadData];
@@ -682,7 +682,7 @@ static NSString * cellId = @"InformationCellId";
     }];
     
     UILabel * danceLabel = [[UILabel alloc]init];
-    danceLabel.text = @"取消";
+    danceLabel.text = NSLocalizedString(@"Cancel_bind", nil);
     danceLabel.textColor = [UIColor blackColor];
     danceLabel.font = [UIFont systemFontOfSize:17];
     [_centerwhteView addSubview:danceLabel];
@@ -692,7 +692,7 @@ static NSString * cellId = @"InformationCellId";
     }];
     
     UILabel * sureLabel = [[UILabel alloc]init];
-    sureLabel.text = @"确定";
+    sureLabel.text = NSLocalizedString(@"Sure_bind", nil);
     sureLabel.textColor = [UIColor blackColor];
     sureLabel.font = [UIFont systemFontOfSize:17];
     [_centerwhteView addSubview:sureLabel];
@@ -730,7 +730,7 @@ static NSString * cellId = @"InformationCellId";
     
     _bigBtn.hidden = YES;
     _centerwhteView.hidden = YES;
-    [self showHudInView:self.view hint:@"正在修改..."];
+    [self showHudInView:self.view hint:NSLocalizedString(@"regist_repair", nil)];
     NSString * str = [NSString stringWithFormat:@"%@",[self.yearArray objectAtIndex:[self.pickViewList selectedRowInComponent:0]]];
     str = [str substringToIndex:[str length]-1];
     NSString * str2 = [NSString stringWithFormat:@"%@",[self.monthArray objectAtIndex:[self.pickViewList selectedRowInComponent:1]]];
@@ -741,7 +741,7 @@ static NSString * cellId = @"InformationCellId";
     NSString * newStr = [NSString stringWithFormat:@"%@-%@-%@",str,str2,str3];
     [[AFHttpClient sharedAFHttpClient]modifyMemberWithMid:[AccountManager sharedAccountManager].loginModel.mid nickname:[AccountManager sharedAccountManager].loginModel.nickname address:[AccountManager sharedAccountManager].loginModel.address signature:[AccountManager sharedAccountManager].loginModel.signature pet_sex:[AccountManager sharedAccountManager].loginModel.pet_sex pet_birthday:newStr pet_race:[AccountManager sharedAccountManager].loginModel.pet_race complete:^(BaseModel *model) {
         if ([model.retCode isEqualToString:@"0000"]) {
-             [[AppUtil appTopViewController] showHint:@"修改成功"];
+             [[AppUtil appTopViewController] showHint:NSLocalizedString(@"info_re_su", nil)];
             LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
             [[AccountManager sharedAccountManager]login:loginModel];
             [self.tableView reloadData];
@@ -848,7 +848,7 @@ static NSString * cellId = @"InformationCellId";
 #pragma mark - 改签名
 -(void)exchangesignerView{
     UILabel * nameLabel = [[UILabel alloc]init];
-    nameLabel.text = @"修改签名";
+    nameLabel.text = NSLocalizedString(@"info_reau", nil);
     nameLabel.textColor = [UIColor blackColor];
     // nameLabel.text = [AccountManager sharedAccountManager].loginModel.nickname;
     nameLabel.font = [UIFont systemFontOfSize:17.5];
@@ -860,7 +860,7 @@ static NSString * cellId = @"InformationCellId";
     }];
     
     _exchangeTextfield = [[UITextField alloc]init];
-    _exchangeTextfield.placeholder = @"请输入签名";
+    _exchangeTextfield.placeholder = NSLocalizedString(@"info_en", nil);
     _exchangeTextfield.text = [AccountManager sharedAccountManager].loginModel.signature;
     _exchangeTextfield.textAlignment = NSTextAlignmentCenter;
     _exchangeTextfield.textColor = [UIColor blackColor];
@@ -895,7 +895,7 @@ static NSString * cellId = @"InformationCellId";
     }];
     
     UILabel * danceLabel = [[UILabel alloc]init];
-    danceLabel.text = @"取消";
+    danceLabel.text = NSLocalizedString(@"Cancel_bind", nil);
     danceLabel.textColor = [UIColor blackColor];
     danceLabel.font = [UIFont systemFontOfSize:17];
     [_centerwhteView addSubview:danceLabel];
@@ -905,7 +905,7 @@ static NSString * cellId = @"InformationCellId";
     }];
     
     UILabel * sureLabel = [[UILabel alloc]init];
-    sureLabel.text = @"确定";
+    sureLabel.text = NSLocalizedString(@"Sure_bind", nil);
     sureLabel.textColor = [UIColor blackColor];
     sureLabel.font = [UIFont systemFontOfSize:17];
     [_centerwhteView addSubview:sureLabel];
@@ -941,7 +941,7 @@ static NSString * cellId = @"InformationCellId";
 -(void)exchangesinertouch{
     FuckLog(@"改个签名吧");
     if (_exchangeTextfield.text.length>30) {
-           [[AppUtil appTopViewController] showHint:@"签名不能超过30个字哦!"];
+           [[AppUtil appTopViewController] showHint:NSLocalizedString(@"info_lenth", nil)];
         return;
     }
     
@@ -949,10 +949,10 @@ static NSString * cellId = @"InformationCellId";
        [_exchangeTextfield resignFirstResponder];
     _bigBtn.hidden = YES;
     _centerwhteView.hidden = YES;
-      [self showHudInView:self.view hint:@"正在修改..."];
+      [self showHudInView:self.view hint:NSLocalizedString(@"regist_repair", nil)];
     [[AFHttpClient sharedAFHttpClient]modifyMemberWithMid:[AccountManager sharedAccountManager].loginModel.mid nickname:[AccountManager sharedAccountManager].loginModel.nickname address:[AccountManager sharedAccountManager].loginModel.address signature:_exchangeTextfield.text pet_sex:[AccountManager sharedAccountManager].loginModel.pet_sex pet_birthday:[AccountManager sharedAccountManager].loginModel.pet_birthday pet_race:[AccountManager sharedAccountManager].loginModel.pet_race complete:^(BaseModel *model) {
         if (model) {
-              [[AppUtil appTopViewController] showHint:@"修改成功"];
+              [[AppUtil appTopViewController] showHint:NSLocalizedString(@"info_re_su", nil)];
             LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
             [[AccountManager sharedAccountManager]login:loginModel];
             [self.tableView reloadData];
