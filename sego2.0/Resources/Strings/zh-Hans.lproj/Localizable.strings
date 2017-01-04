@@ -209,7 +209,27 @@
 
 
 
-
+// 修改信息
+"info_headimeg"="头像";
+"info_acc"="账号";
+"info_nic"="头像";
+"info_sex"="性别";
+"info_fam"="家族";
+"info_bri"="生日";
+"info_phto"="签名";
+"info_taph"="拍照";
+"info_cam"="相册";
+"info_w"="母";
+"info_wen"="公";
+"info_do"="汪星人";
+"info_ca"="喵星人";
+"info_reau"="修改签名";
+"info_en"="请输入签名";
+"info_re_su"="修改成功";
+"info_lenth"="签名不能超过30个字哦";
+"info_y"="年";
+"info_m"="月";
+"info_d"="日";
 
 
 

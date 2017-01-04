@@ -186,5 +186,27 @@ CFBundleDisplayName = "sego2.0";
 "feed_setting"="Setting up...";
 "feed_tips"="Please do not select the same time!";
 
+// 修改信息
+"info_headimeg"="head portrait";
+"info_acc"="Account";
+"info_nic"="nickname";
+"info_sex"="sex";
+"info_fam"="family";
+"info_bri"="birthday";
+"info_phto"="autograph";
+"info_taph"="Take pictures";
+"info_cam"="Album";
+"info_w"="mother";
+"info_wen"="male";
+"info_do"="dog";
+"info_ca"="cat";
+"info_reau"="Modify the signature";
+"info_en"="Please enter a signature";
+"info_re_su"="Successfully modified";
+"info_lenth"="Signature can not exceed 30 words O";
+"info_y"="y";
+"info_m"="m";
+"info_d"="d";
+
 
 
