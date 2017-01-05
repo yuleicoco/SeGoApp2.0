@@ -3030,10 +3030,10 @@
 				7D17DFF71DFD332800628FFC /* PermissionViewController.m */,
 				7DE3D7731DFE443F00AC2695 /* NewPermissionViewController.h */,
 				7DE3D7741DFE443F00AC2695 /* NewPermissionViewController.m */,
-				7DF0758E1DFFF92D00A45824 /* ZdFriendViewController.h */,
-				7DF0758F1DFFF92D00A45824 /* ZdFriendViewController.m */,
 				7DE3D7781DFEA3FB00AC2695 /* ExchangPermissionViewController.h */,
 				7DE3D7791DFEA3FB00AC2695 /* ExchangPermissionViewController.m */,
+				7DF0758E1DFFF92D00A45824 /* ZdFriendViewController.h */,
+				7DF0758F1DFFF92D00A45824 /* ZdFriendViewController.m */,
 				7D65A3F91E012B66004B0B85 /* ZdExchangFriendViewController.h */,
 				7D65A3FA1E012B66004B0B85 /* ZdExchangFriendViewController.m */,
 			);

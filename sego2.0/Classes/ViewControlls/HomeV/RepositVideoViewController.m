@@ -341,7 +341,7 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
     }
     NSUserDefaults * nsuserdefaults = [NSUserDefaults standardUserDefaults];
     [nsuserdefaults setObject:deleteOrUpdateArr forKey:@"respositVideo"];
-    [nsuserdefaults synchronize];
+    //[nsuserdefaults synchronize];
     
 }
 

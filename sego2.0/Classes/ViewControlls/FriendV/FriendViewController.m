@@ -235,6 +235,11 @@ static NSString * cellId = @"friendtableviewcellId";
         FriendModel * model = self.dataSource[indexPath.row];
         UIAlertController * alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Warning", nil) message:NSLocalizedString(@"friends_suredel", nil) preferredStyle:UIAlertControllerStyleAlert];
 //
+       
+        [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel_bind", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.tableView reloadData];
+        }]];
+        
         [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure_bind", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
             [[AFHttpClient sharedAFHttpClient]delFriendWithMid:[AccountManager sharedAccountManager].loginModel.mid friend:model.mid complete:^(BaseModel *model) {
@@ -243,13 +248,19 @@ static NSString * cellId = @"friendtableviewcellId";
                     [tableView reloadData];
                 }
             }];
-
+            
         }]];
-        [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel_bind", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [self.tableView reloadData];
-        }]];
+        
+        
+        
+        
         [self presentViewController:alert animated:YES completion:nil];
     }
+    
+    
+    
+    
+    
 }
 
 

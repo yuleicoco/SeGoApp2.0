@@ -209,6 +209,13 @@ static NSString * cellId = @"permissontableviewCellId";
         RuleModel * model = self.dataSource[indexPath.row];
         UIAlertController * alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Warning", nil) message:NSLocalizedString(@"as_deleru", nil) preferredStyle:UIAlertControllerStyleAlert];
         //
+        
+        [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel_bind", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self.tableView reloadData];
+        }]];
+        
+        
+        
         [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure_bind", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             if ([model.isuse isEqualToString:@"y"]) {
                 [[AppUtil appTopViewController] showHint:NSLocalizedString(@"as_deleno", nil)];
@@ -217,7 +224,15 @@ static NSString * cellId = @"permissontableviewCellId";
             
             [[AFHttpClient sharedAFHttpClient]ruleDelWithRid:model.rid complete:^(BaseModel *model) {
                 if (model) {
-                    [[AppUtil appTopViewController] showHint:model.retDesc];
+                     NSString * langev = langeC;
+                    if ([langev isEqualToString:@"zh-Hans-CN"]) {
+                        [[AppUtil appTopViewController] showHint:model.retDesc];
+
+                    }else{
+                        [[AppUtil appTopViewController] showHint:@"Delete the success"];
+
+                    }
+                    
                     [self setupData];
                 }
                 
@@ -225,9 +240,7 @@ static NSString * cellId = @"permissontableviewCellId";
         }
         
         }]];
-        [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel_bind", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [self.tableView reloadData];
-        }]];
+      
         [self presentViewController:alert animated:YES completion:nil];
     }
 }

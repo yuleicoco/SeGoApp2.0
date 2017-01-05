@@ -51,6 +51,7 @@ singleton_implementation(AFHttpClient)
 
 - (AFHTTPRequestOperation *)POST:(NSString *)URLString parameters:(id)parameters result:(void (^)(BaseModel* model))result {
     
+    NSString * langvge = langeC;
     parameters[@"classes"] = @"appinterface";
     parameters[@"method"] = @"json";
     
@@ -60,7 +61,12 @@ singleton_implementation(AFHttpClient)
         BaseModel* model = [[BaseModel alloc] initWithDictionary:responseObject[@"jsondata"] error:&error];
         
         if (error || [model.retCode integerValue] != 0) {
-            [[AppUtil appTopViewController] showHint:error ? [error localizedDescription] : model.retDesc];
+            if ([langvge isEqualToString:@"zh-Hans-CN"]) {
+                [[AppUtil appTopViewController] showHint:error ? [error localizedDescription] : model.retDesc];
+
+            }else{
+              [[AppUtil appTopViewController] showHint:error ? [error localizedDescription] : @"The request failed"];
+            }
             
             if (result) {
                 result(nil);

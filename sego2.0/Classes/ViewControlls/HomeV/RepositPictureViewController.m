@@ -308,8 +308,6 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
         return;
     }
     
-    
-    
     NSInteger i = imageSender.view.tag/1000;//分区
     int j = imageSender.view.tag%1000;//每个分区的分组
     
@@ -353,7 +351,7 @@ static NSString *kRecordheaderIdentifier = @"RecordHeaderIdentifier";
     
     NSUserDefaults * userdefautls2 = [NSUserDefaults standardUserDefaults];
     [userdefautls2 setObject:deleteOrUpdateArr forKey:@"repositImage"];
-    [userdefautls2 synchronize];
+   // [userdefautls2 synchronize];
     
 }
 

@@ -24,9 +24,9 @@
     _isfabu = NO;
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = GRAY_COLOR;
-    [self setNavTitle:@"收藏"];
+    [self setNavTitle:NSLocalizedString(@"tabSquare", nil)];
     _releaseButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 30)];
-    [_releaseButton setTitle:@"保存" forState:normal];
+    [_releaseButton setTitle:NSLocalizedString(@"conllection_rightup", nil) forState:normal];
     [_releaseButton setTitleColor:GREEN_COLOR forState:UIControlStateNormal];
     _releaseButton.titleLabel.font = [UIFont systemFontOfSize:17];
     [_releaseButton addTarget:self action:@selector(releaseInfo:) forControlEvents:UIControlEventTouchUpInside];
@@ -37,14 +37,14 @@
 
 -(void)doLeftButtonTouch{
     if (_isfabu == NO) {
-        UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有发布内容，是否要退出？" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController * alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Warning", nil) message:NSLocalizedString(@"collection_fabutishi", nil) preferredStyle:UIAlertControllerStyleAlert];
         
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction *action) {
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Sure_bind", nil) style:(UIAlertActionStyleDefault) handler:^(UIAlertAction *action) {
             // 点击按钮后的方法直接在这里面写
             [self.navigationController popToRootViewControllerAnimated:NO];
         }];
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction *action) {
-            NSLog(@"取消");
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel_bind", nil) style:(UIAlertActionStyleCancel) handler:^(UIAlertAction *action) {
+           // NSLog(@"取消");
         }];
         [alertController addAction:okAction];
         [alertController addAction:cancelAction];
@@ -58,15 +58,15 @@
 
 -(void)releaseInfo:(UIButton *)sender{
     if (_topTextView.text.length > 35) {
-          [[AppUtil appTopViewController]showHint:@"只能输入35个字符哦!"];
+          [[AppUtil appTopViewController]showHint:NSLocalizedString(@"collection_tipps", nil)];
         return;
     }
-    
+    NSString * langvage = langeC;
     
     
     _isfabu = YES;
     sender.userInteractionEnabled = NO;
-    [self showHudInView:self.view hint:@"正在保存..."];
+    [self showHudInView:self.view hint:NSLocalizedString(@"collection_save", nil)];
     if ([_porv isEqualToString:@"v"]) {
         NSString * soureceString = [_soureArray componentsJoinedByString:@","];
         [[AFHttpClient sharedAFHttpClient]addArticleWithMid:[AccountManager sharedAccountManager].loginModel.mid content:_topTextView.text type:@"v" resources:soureceString complete:^(BaseModel *model) {
@@ -74,15 +74,31 @@
                // [[AppUtil appTopViewController]showHint:model.retDesc];
                  [self.navigationController popToRootViewControllerAnimated:NO];
                    [[NSNotificationCenter defaultCenter]postNotificationName:@"shuaxin" object:nil];
-               
+                if ([langvage isEqualToString:@"zh-Hans-CN"]) {
+                    
+                }else{
+                    [[AppUtil appTopViewController]showHint:@"Save success"];
+                }
+                
+            }else{
+                if ([langvage isEqualToString:@"zh-Hans-CN"]) {
+                    
+                }else{
+                    [[AppUtil appTopViewController]showHint:@"Save failed"];
+                }
+                
             }
             [self hideHud];
-            [[AppUtil appTopViewController]showHint:model.retDesc];
+            if ([langvage isEqualToString:@"zh-Hans-CN"]) {
+                       [[AppUtil appTopViewController]showHint:model.retDesc];
+            }else{
+    
+            }
+     
             _isfabu = NO;
             sender.userInteractionEnabled = YES;
             
         }];
-       // _isfabu = NO;
     }else{
         NSString * soureceString = [_ImageArray componentsJoinedByString:@","];
         [[AFHttpClient sharedAFHttpClient]addArticleWithMid:[AccountManager sharedAccountManager].loginModel.mid content:_topTextView.text type:@"p" resources:soureceString complete:^(BaseModel *model) {
@@ -90,15 +106,33 @@
                // [[AppUtil appTopViewController]showHint:model.retDesc];
                 [self.navigationController popToRootViewControllerAnimated:NO];
                    [[NSNotificationCenter defaultCenter]postNotificationName:@"shuaxin" object:nil];
-        }
-              [[AppUtil appTopViewController]showHint:model.retDesc];
+                if ([langvage isEqualToString:@"zh-Hans-CN"]) {
+                    
+                }else{
+                    [[AppUtil appTopViewController]showHint:@"Save success"];
+                }
+                
+                
+            }else{
+                if ([langvage isEqualToString:@"zh-Hans-CN"]) {
+                    
+                }else{
+                    [[AppUtil appTopViewController]showHint:@"Save failed"];
+                }
+            
+            
+            }
+         
+            if ([langvage isEqualToString:@"zh-Hans-CN"]) {
+                [[AppUtil appTopViewController]showHint:model.retDesc];
+            }else{
+                
+            }
+
             _isfabu = NO;
             [self hideHud];
             sender.userInteractionEnabled = YES;
         }];
-    
-
-       // _isfabu = NO;
     
     }
 
@@ -146,7 +180,7 @@
     _placeholderLabel = [[UILabel alloc]init];
     _placeholderLabel.textColor = [UIColor grayColor];
     _placeholderLabel.backgroundColor = [UIColor clearColor];
-    _placeholderLabel.text = @"说点什么吧!";
+    _placeholderLabel.text = NSLocalizedString(@"collection_saysome", nil);
     _placeholderLabel.font = _topTextView.font;
     [_topTextView addSubview:_placeholderLabel];
     [_placeholderLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -191,7 +225,7 @@
 
 -(void)textViewDidEndEditing:(UITextView *)textView{
     if (_topTextView.text.length == 0) {
-        _placeholderLabel.text = @"说点什么吧!";
+        _placeholderLabel.text = NSLocalizedString(@"collection_saysome", nil);
     }else{
         _placeholderLabel.text = @"";
     }

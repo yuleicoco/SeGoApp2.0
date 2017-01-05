@@ -70,10 +70,10 @@
 "about_way"="联系方式";
 
 // 修改密码
-"repair_oldps" ="  原密码:";
+"repair_oldps" ="原密码:";
 "repair_newps" ="新密码:";
-"repair_oldps_en" ="请输入原密码:";
-"repair_newps_en" ="  请输入新密码:";
+"repair_oldps_en" ="请输入原密码";
+"repair_newps_en" ="请输入新密码";
 "repair_oldfail_en"="原密码输入错误";
 "repair_newfail_en"="新旧密码不能相同哦";
 "repair_success"="修改成功,请重新登录";
@@ -90,6 +90,19 @@
 "as_moren"="默认规则不可以修改";
 "as_deleru"="您确定删除此规则吗?";
 "as_deleno"="已启用的规则不能删除!";
+"as_toushi"="投食:";
+"as_newRulll"="新建规则";
+"as_rulename"="规则名称";
+"as_Accessfood"="访问投食";
+"as_shuruname"="请输入规则名称";
+"as_setwhocan"="设置谁能访问我的设备";
+"as_sureee"="确 认";
+"as_pleaseselewho"="请选择谁能访问我的设备";
+"as_add"="正在添加...";
+"as_zishu"="规则名称不能超过11个字哦!";
+"as_exchangrule"="修改规则";
+"as_tipps"="您确定要放弃选择指定好友吗?";
+
 
 //资源库
 "resourece_video"="录像";
@@ -144,16 +157,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 // 发现
 
 "find_dou" ="逗一逗"; //Tease a tease
@@ -172,7 +175,7 @@
 "deviceIncode"="接入码:";
 "Warring_bing" ="该设备号不存在";
 "Success_bing" ="绑定成功";
-"Warning" ="温馨提示";
+"Warning" ="提示";
 "Cancel_bind" = "取消";
 "Sure_bind" ="确定";
 "Warning_Message" ="确定解除绑定吗?";
@@ -230,6 +233,24 @@
 "info_y"="年";
 "info_m"="月";
 "info_d"="日";
+"info_shurunicheng"="昵称不能为空哦!";
+"info_nichengtaichang"="昵称不能超过11个字哦!";
+"info_exchangname"="修改昵称";
+"info_pleasename"="请输入昵称";
+
+
+//收藏
+"collection_fabutishi"="您还没有发布内容，是否要退出?";
+"collection_tipps"="只能输入35个字符哦!";
+"collection_save"="正在保存...";
+"collection_saysome"="说点什么吧!";
+"conllection_rightup"="保存";
+
+//详情
+"details_d"="详情";
+"details_share"="分享";
+"details_tipps"="您确定要删除此收藏?";
+"details_dele"="正在删除...";
 
 
 

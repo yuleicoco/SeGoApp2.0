@@ -322,7 +322,7 @@ static NSString * cellId = @"InformationCellId";
         cell.rightLabel.text = [AccountManager sharedAccountManager].loginModel.nickname;
     }
     if (indexPath.row == 2) {
-        if ([[AccountManager sharedAccountManager].loginModel.pet_sex isEqualToString:NSLocalizedString(@"info_wen", nil)]) {
+        if ([[AccountManager sharedAccountManager].loginModel.pet_sex isEqualToString:@"公"]) {
             cell.rightLabel.text = NSLocalizedString(@"info_wen", nil);
         }else{
             cell.rightLabel.text = NSLocalizedString(@"info_w", nil);
@@ -481,7 +481,7 @@ static NSString * cellId = @"InformationCellId";
 -(void)exchangnameview{
     //_centerwhteView.backgroundColor = [UIColor redColor];
     UILabel * nameLabel = [[UILabel alloc]init];
-    nameLabel.text = @"修改昵称";
+    nameLabel.text = NSLocalizedString(@"info_exchangname", nil);
     nameLabel.textColor = [UIColor blackColor];
    // nameLabel.text = [AccountManager sharedAccountManager].loginModel.nickname;
     nameLabel.font = [UIFont systemFontOfSize:17.5];
@@ -493,7 +493,7 @@ static NSString * cellId = @"InformationCellId";
     }];
     
     _exchangeTextfield = [[UITextField alloc]init];
-    _exchangeTextfield.placeholder = @"请输入昵称";
+    _exchangeTextfield.placeholder = NSLocalizedString(@"info_pleasename", nil);
     _exchangeTextfield.text = [AccountManager sharedAccountManager].loginModel.nickname;
     _exchangeTextfield.textAlignment = NSTextAlignmentCenter;
     _exchangeTextfield.textColor = [UIColor blackColor];
@@ -572,20 +572,20 @@ static NSString * cellId = @"InformationCellId";
 }
 
 -(void)namedancebuttonTouch{
-    FuckLog(@"不改名字了");
+   // FuckLog(@"不改名字了");
        [_exchangeTextfield resignFirstResponder];
     _bigBtn.hidden = YES;
     _centerwhteView.hidden = YES;
 }
 
 -(void)namesurebuttonTouch{
-    FuckLog(@"还是改个名字吧");
+   // FuckLog(@"还是改个名字吧");
     if ([AppUtil isBlankString:_exchangeTextfield.text]) {
-         [[AppUtil appTopViewController] showHint:@"名字不能为空哦!"];
+         [[AppUtil appTopViewController] showHint:NSLocalizedString(@"info_shurunicheng", nil)];
         return;
     }
     if (_exchangeTextfield.text.length > 11) {
-        [[AppUtil appTopViewController] showHint:@"昵称不能超过11个字哦!"];
+        [[AppUtil appTopViewController] showHint:NSLocalizedString(@"info_nichengtaichang", nil)];
         return;
     }
     
@@ -614,6 +614,7 @@ static NSString * cellId = @"InformationCellId";
 //修改生日
 -(void)exchangeBirthdayView{
     
+    
     self.pickViewList = [[UIPickerView alloc]init];
     self.pickViewList.showsSelectionIndicator = YES;
     self.pickViewList.delegate = self;
@@ -629,30 +630,30 @@ static NSString * cellId = @"InformationCellId";
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy"];
     NSDate * date = [NSDate date];
-    NSString *currentYearString = [NSString stringWithFormat:@"%@年",[formatter stringFromDate:date]];
+    NSString *currentYearString = [NSString stringWithFormat:@"%@",[formatter stringFromDate:date]];
     [formatter setDateFormat:@"MM"];
-    NSString *currentMonthString = [NSString stringWithFormat:@"%ld月",(long)[[formatter stringFromDate:date] integerValue]];
+    NSString *currentMonthString = [NSString stringWithFormat:@"%ld",(long)[[formatter stringFromDate:date] integerValue]];
     
     // Get Current  Date
     [formatter setDateFormat:@"dd"];
-    NSString *currentDateString = [NSString stringWithFormat:@"%ld日",(long)[[formatter stringFromDate:date] integerValue]];
+    NSString *currentDateString = [NSString stringWithFormat:@"%ld",(long)[[formatter stringFromDate:date] integerValue]];
     
     self.yearArray = [[NSMutableArray alloc] init];
     for (int i = 1990; i <= 2060 ; i++)
     {
-        [self.yearArray addObject:[NSString stringWithFormat:@"%d年",i]];
+        [self.yearArray addObject:[NSString stringWithFormat:@"%d",i]];
     }
     
     self.monthArray = [[NSMutableArray alloc] init];
     for (int i = 1; i <= 12 ; i++)
     {
-        [self.monthArray addObject:[NSString stringWithFormat:@"%d月",i]];
+        [self.monthArray addObject:[NSString stringWithFormat:@"%d",i]];
     }
     
     self.daysArray = [[NSMutableArray alloc] init];
     for (int i = 1; i <= 31; i++)
     {
-        [self.daysArray addObject:[NSString stringWithFormat:@"%d日",i]];
+        [self.daysArray addObject:[NSString stringWithFormat:@"%d",i]];
     }
     [self.pickViewList selectRow:[self.yearArray indexOfObject:currentYearString] inComponent:0 animated:YES];
     [self.pickViewList selectRow:[self.monthArray indexOfObject:currentMonthString] inComponent:1 animated:YES];
@@ -732,11 +733,11 @@ static NSString * cellId = @"InformationCellId";
     _centerwhteView.hidden = YES;
     [self showHudInView:self.view hint:NSLocalizedString(@"regist_repair", nil)];
     NSString * str = [NSString stringWithFormat:@"%@",[self.yearArray objectAtIndex:[self.pickViewList selectedRowInComponent:0]]];
-    str = [str substringToIndex:[str length]-1];
+   // str = [str substringToIndex:[str length]-1];
     NSString * str2 = [NSString stringWithFormat:@"%@",[self.monthArray objectAtIndex:[self.pickViewList selectedRowInComponent:1]]];
-    str2 = [str2 substringToIndex:[str2 length]-1];
+    //str2 = [str2 substringToIndex:[str2 length]-1];
     NSString * str3 = [NSString stringWithFormat:@"%@",[self.daysArray objectAtIndex:[self.pickViewList selectedRowInComponent:2]]];
-    str3 = [str3 substringToIndex:[str3 length]-1];
+    //str3 = [str3 substringToIndex:[str3 length]-1];
     
     NSString * newStr = [NSString stringWithFormat:@"%@-%@-%@",str,str2,str3];
     [[AFHttpClient sharedAFHttpClient]modifyMemberWithMid:[AccountManager sharedAccountManager].loginModel.mid nickname:[AccountManager sharedAccountManager].loginModel.nickname address:[AccountManager sharedAccountManager].loginModel.address signature:[AccountManager sharedAccountManager].loginModel.signature pet_sex:[AccountManager sharedAccountManager].loginModel.pet_sex pet_birthday:newStr pet_race:[AccountManager sharedAccountManager].loginModel.pet_race complete:^(BaseModel *model) {

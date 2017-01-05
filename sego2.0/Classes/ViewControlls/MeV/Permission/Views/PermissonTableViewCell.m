@@ -56,12 +56,12 @@
         }];
         
         _toushiLabel = [[UILabel alloc]init];
-        _toushiLabel.text = @"投食:";
+        _toushiLabel.text = NSLocalizedString(@"as_toushi", nil);
         _toushiLabel.font = [UIFont systemFontOfSize:15];
         _toushiLabel.textColor = [UIColor blackColor];
         [self addSubview:_toushiLabel];
         [_toushiLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_toushiLabel.superview).offset(150);
+            make.left.equalTo(_toushiLabel.superview).offset(180);
             make.bottom.equalTo(_toushiLabel.superview).offset(-9);
         }];
         

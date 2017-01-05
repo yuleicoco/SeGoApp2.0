@@ -29,7 +29,7 @@ static NSString * cellId = @"homedetailviewellId";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:@"详情"];
+    [self setNavTitle:NSLocalizedString(@"details_d", nil)];
     self.view.backgroundColor = GRAY_COLOR;
     _resoucesArray = [[NSArray alloc]init];
 }
@@ -83,7 +83,7 @@ static NSString * cellId = @"homedetailviewellId";
     
     
     UIButton * dancelBtn = [[UIButton alloc]init];
-    [dancelBtn setTitle:@"删除" forState:UIControlStateNormal];
+    [dancelBtn setTitle:NSLocalizedString(@"friends_dele", nil) forState:UIControlStateNormal];
     [dancelBtn setTitleColor:GREEN_COLOR forState:UIControlStateNormal];
     dancelBtn.titleLabel.font = [UIFont systemFontOfSize:18];
     [dancelBtn addTarget:self action:@selector(dancelButtonTouch) forControlEvents:UIControlEventTouchUpInside];
@@ -96,7 +96,7 @@ static NSString * cellId = @"homedetailviewellId";
     
     
     UIButton * shareBtn = [[UIButton alloc]init];
-    [shareBtn setTitle:@"分享" forState:UIControlStateNormal];
+    [shareBtn setTitle:NSLocalizedString(@"details_share", nil) forState:UIControlStateNormal];
     [shareBtn setTitleColor:GREEN_COLOR forState:UIControlStateNormal];
     shareBtn.titleLabel.font = [UIFont systemFontOfSize:18];
     [shareBtn addTarget:self action:@selector(ShareBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -276,14 +276,20 @@ static NSString * cellId = @"homedetailviewellId";
 }
 
 -(void)dancelButtonTouch{
-    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"您确定要删除此收藏？" preferredStyle:UIAlertControllerStyleAlert];
+     NSString * langvage = langeC;
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Warning", nil) message:NSLocalizedString(@"details_tipps", nil) preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction *action) {
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Sure_bind", nil) style:(UIAlertActionStyleDefault) handler:^(UIAlertAction *action) {
         
-          [self showHudInView:self.view hint:@"正在删除..."];
+          [self showHudInView:self.view hint:NSLocalizedString(@"details_dele", nil)];
         [[AFHttpClient sharedAFHttpClient]delArticleWithMid:[AccountManager sharedAccountManager].loginModel.mid aid:_aid complete:^(BaseModel *model) {
-            if (model) {
-                [[AppUtil appTopViewController]showHint:model.retDesc];
+            if ([model.retCode isEqualToString:@"0000"]) {
+                if ([langvage isEqualToString:@"zh-Hans-CN"]) {
+                     [[AppUtil appTopViewController]showHint:model.retDesc];
+                }else{
+                     [[AppUtil appTopViewController]showHint:@"Delete the success"];
+                }
+               
               //  [self.navigationController popToRootViewControllerAnimated:NO];
                 [self.navigationController popViewControllerAnimated:NO];
 //                NSUserDefaults * userdafaults = [NSUserDefaults standardUserDefaults];
@@ -302,7 +308,7 @@ static NSString * cellId = @"homedetailviewellId";
         
         
     }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction *action) {
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel_bind", nil)style:(UIAlertActionStyleCancel) handler:^(UIAlertAction *action) {
         NSLog(@"取消");
     }];
     [alertController addAction:okAction];

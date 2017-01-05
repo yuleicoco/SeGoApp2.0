@@ -334,7 +334,7 @@
 
 -(void)vercationbuttontouch{
     if ([AppUtil isBlankString:_numberTextfield.text]) {
-        [[AppUtil appTopViewController] showHint:NSLocalizedString(@"regist_pl_code", nil)];
+        [[AppUtil appTopViewController] showHint:NSLocalizedString(@"regist_pl", nil)];
         return;
     }
     if (![AppUtil isValidateMobile:_numberTextfield.text]) {
