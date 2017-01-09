@@ -21,7 +21,9 @@
 
 #define BASE_URL_Test2 @"http://180.97.80.227:15102/"
 
-#define BASE_TEst_URL @"http://180.97.81.213:15311/"
+#define BASE_URL_S @"http://180.97.81.213:15102/"
+
+
 @interface AFHttpClient : AFHTTPRequestOperationManager
 
 /**
