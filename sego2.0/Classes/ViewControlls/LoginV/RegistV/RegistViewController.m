@@ -250,11 +250,13 @@
     downLabel.text = NSLocalizedString(@"regist_mess", nil);
     downLabel.textColor = UIColorFromHex(333333);
     downLabel.font = [UIFont systemFontOfSize:14];
+    downLabel.numberOfLines = 2;
     [self.view addSubview:downLabel];
     [downLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(downLabel.superview).offset(35);
        // make.top.equalTo(_registBtn.mas_bottom).offset(250);
         make.bottom.equalTo(downLabel.superview).offset(-23);
+        make.width.mas_equalTo(300);
         
     }];
     
@@ -275,6 +277,7 @@
     [xieyibtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(xieyiLabel.superview).offset(-35);
         make.bottom.equalTo(downLabel.mas_bottom);
+        make.width.mas_equalTo(100);
     }];
     
 
@@ -348,15 +351,15 @@
 -(void)provied{
     FuckLog(@"dada");
    
-    
     [[AFHttpClient sharedAFHttpClient]getCheckWithPhone:_numberTextfield.text type:@"register" complete:^(BaseModel *model) {
       
         if ([model.retCode isEqualToString:@"0000"]) {
             _achieveString = model.totalrecords;
             _vercationNumber = model.content;
              [self timeout];
+            [[AppUtil appTopViewController] showHint:model.retDesc];
         }
-      [[AppUtil appTopViewController] showHint:model.retDesc];
+ 
     }];
     
 }

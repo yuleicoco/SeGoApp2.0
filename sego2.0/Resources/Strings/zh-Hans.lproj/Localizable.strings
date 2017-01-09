@@ -45,7 +45,7 @@
 "me_repair"="修改密码";
 "me_aobout"="关于";
 "me_out" ="登 出";
-"me_tips"= "您确定要退出登录吗？";
+"me_tips"= "您确定要退出吗？";
 "me_panduan"="您还未绑定设备";
 "me_3rd"="第三方登录，不能修改密码哦亲";
 "me_share"="分享";
@@ -63,9 +63,9 @@
 "about_agree"="意见反馈";
 "about_Registration"="注册协议";
 "about_send"="发送";
-"about_Feedback"="请出入反馈内容";
+"about_Feedback"="请输入反馈内容";
 "about_qq"="QQ,邮箱或者电话";
-"about_question"="您的联系方式有助于我们沟通和解决问题，仅工作人员可见";
+"about_question"="您的联系方式有助于我们沟通和解决问题，仅工作人员可见!";
 "about_sendting"="正在发送";
 "about_way"="联系方式";
 
@@ -149,7 +149,7 @@
 "regist_pl_ps"="请输入密码:";
 "regist_getcode"="获取验证码";
 "regist_reg"="注册";
-"regist_mess"="点击'regist'按钮，代表您已阅读并同意";
+"regist_mess"="点击'注册'按钮，代表您已阅读并同意";
 "regist_mess_tips"="请输入正确格式的手机号码";
 "regist_code_tips"="输入正确的验证码";
 "regist_ing"="正在注册....";

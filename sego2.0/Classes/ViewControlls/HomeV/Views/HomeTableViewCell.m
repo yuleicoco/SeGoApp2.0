@@ -25,7 +25,6 @@
         _contentLabel = [[UILabel alloc]init];
         _contentLabel.textColor = [UIColor blackColor];
         _contentLabel.font = [UIFont systemFontOfSize:18];
-        //_contentLabel.text = @"开心的小柯基";
         [self addSubview:_contentLabel];
         [_contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(_contentLabel.superview).offset(12);
@@ -40,8 +39,8 @@
         [_centerImage mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(_centerImage.superview);
             make.right.equalTo(_centerImage.superview);
-            make.top.equalTo(_contentLabel.mas_bottom).offset(11.5);
-         //   make.bottom.equalTo(_centerImage.superview.mas_bottom);
+           // make.top.equalTo(_contentLabel.mas_bottom).offset(11.5);
+            make.bottom.equalTo(_centerImage.superview.mas_bottom);
             make.height.mas_equalTo(214);
         }];
 
