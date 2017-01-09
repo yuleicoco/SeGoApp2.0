@@ -77,7 +77,7 @@ static NSString * cellId = @"hometableviewcellId";
     [super setupView];
      self.Imagedatasouce = [[NSMutableArray alloc]init];
       _topScrollView = [[CycleScrollView alloc]initWithFrame:CGRectMake(0, 0, self.view.width, 170 * W_Hight_Zoom) animationDuration:3];
-     self.tableView.frame = CGRectMake(0, 0, self.view.width, self.view.height - STATUS_BAR_HEIGHT);
+     self.tableView.frame = CGRectMake(0, 0, self.view.width, self.view.height - TAB_BAR_HEIGHT);
     [self.tableView registerClass:[HomeTableViewCell class] forCellReuseIdentifier:cellId];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
