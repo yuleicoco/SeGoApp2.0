@@ -28,7 +28,7 @@
     // 启动逻辑入口
     [self launcherApplication:application didFinishLaunchingWithOptions:launchOptions];
     //分享
- //   [self shareSDKApplication:application didFinishLaunchingWithOptions:launchOptions];
+    [self shareSDKApplication:application didFinishLaunchingWithOptions:launchOptions];
     
     //sephone
     [self initSephoneVoip:application didFinishLaunchingWithOptions:launchOptions];
