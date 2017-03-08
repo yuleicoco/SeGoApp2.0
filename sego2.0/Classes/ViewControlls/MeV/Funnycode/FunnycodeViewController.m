@@ -103,7 +103,7 @@
     }];
     
     _toushiLabel = [[UILabel alloc]init];
-    _toushiLabel.text =NSLocalizedString(@"me_share", nil);
+    _toushiLabel.text =NSLocalizedString(@"me_yunxu", nil);
     _toushiLabel.textColor = [UIColor blackColor];
     _toushiLabel.font = [UIFont systemFontOfSize:18];
     [topView addSubview:_toushiLabel];
@@ -172,10 +172,10 @@
 }
 
 -(void)toushiButtonTouch{
-    if ([_toushiLabel.text isEqualToString:NSLocalizedString(@"me_share", nil)]) {
+    if ([_toushiLabel.text isEqualToString:NSLocalizedString(@"me_yunxu", nil)]) {
         _toushiLabel.text = NSLocalizedString(@"me_noshare", nil);
     }else{
-        _toushiLabel.text = NSLocalizedString(@"me_share", nil);
+        _toushiLabel.text = NSLocalizedString(@"me_yunxu", nil);
     }
 
 }
@@ -183,7 +183,7 @@
 
 -(void)doumaButtonTouch{
     NSString * tsStr = @"";
-    if ([_toushiLabel.text isEqualToString:NSLocalizedString(@"me_share", nil)]) {
+    if ([_toushiLabel.text isEqualToString:NSLocalizedString(@"me_yunxu", nil)]) {
         tsStr = @"1";
     }else{
         tsStr = @"0";
@@ -213,7 +213,7 @@
         _sourceDic = model.retVal;
         if ([_sourceDic count] == 0 || [_sourceDic[@"status"] isEqualToString:@"0"] ) {
             _doumaLabel.text = NSLocalizedString(@"me_no", nil);
-            _toushiLabel.text = NSLocalizedString(@"me_share", nil);
+            _toushiLabel.text = NSLocalizedString(@"me_yunxu", nil);
             _timeoverLabel.text =NSLocalizedString(@"me_no", nil);
             _shixiaoBtn.hidden = YES;
             _doumaBtn.hidden = NO;
@@ -233,7 +233,7 @@
             if ([_sourceDic[@"tsnum"] isEqualToString:@"0"]) {
                 _toushiLabel.text =  NSLocalizedString(@"me_noshare", nil);
             }else{
-                _toushiLabel.text = NSLocalizedString(@"me_share", nil);
+                _toushiLabel.text = NSLocalizedString(@"me_yunxu", nil);
             }
             _timeoverLabel.text = _sourceDic[@"endtime"];
             

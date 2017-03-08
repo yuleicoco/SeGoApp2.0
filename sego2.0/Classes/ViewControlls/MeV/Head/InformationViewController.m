@@ -605,7 +605,7 @@ static NSString * cellId = @"InformationCellId";
 
             
         }
-          [self hideHud];
+        
     }];
     
 }

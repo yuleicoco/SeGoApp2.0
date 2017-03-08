@@ -258,7 +258,6 @@
 		34DB5D2A1DD4159100C51823 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DB5D291DD4159100C51823 /* libresolv.9.tbd */; };
 		34DB5D2C1DD4159E00C51823 /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DB5D2B1DD4159E00C51823 /* libiconv.2.4.0.tbd */; };
 		34DB5D2E1DD415A900C51823 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34DB5D2D1DD415A900C51823 /* libc++.1.tbd */; };
-		34DB5D341DD41AA000C51823 /* AFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DB5D331DD41AA000C51823 /* AFHttpClient.m */; };
 		34DB5D371DD423C100C51823 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DB5D361DD423C100C51823 /* BaseModel.m */; };
 		34E3810E1DE5973C007501E1 /* top1.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E3810A1DE5973C007501E1 /* top1.png */; };
 		34E3810F1DE5973C007501E1 /* down1.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E3810B1DE5973C007501E1 /* down1.png */; };
@@ -271,7 +270,6 @@
 		34FA28361DEBE08600F13C85 /* jiantou.png in Resources */ = {isa = PBXBuildFile; fileRef = 34FA28331DEBE08600F13C85 /* jiantou.png */; };
 		34FC41D71DD179F900A23A8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41D61DD179F900A23A8F /* main.m */; };
 		34FC41DA1DD179F900A23A8F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41D91DD179F900A23A8F /* AppDelegate.m */; };
-		34FC41DD1DD179F900A23A8F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41DC1DD179F900A23A8F /* ViewController.m */; };
 		34FC41E01DD179F900A23A8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34FC41DE1DD179F900A23A8F /* Main.storyboard */; };
 		34FC41E31DD179F900A23A8F /* sego2_0.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34FC41E11DD179F900A23A8F /* sego2_0.xcdatamodeld */; };
 		34FC41E51DD179F900A23A8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34FC41E41DD179F900A23A8F /* Assets.xcassets */; };
@@ -301,6 +299,9 @@
 		7D02A9FA1DFAB7EF00C41A56 /* newpersonback.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D02A9F91DFAB7EF00C41A56 /* newpersonback.png */; };
 		7D0892B41DF8FC45001BBD98 /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0892B31DF8FC45001BBD98 /* IssueViewController.m */; };
 		7D0892B71DF9530C001BBD98 /* ArticlesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0892B61DF9530C001BBD98 /* ArticlesModel.m */; };
+		7D10BEFD1E2F17A600FD8438 /* AIncallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BEF91E2F17A600FD8438 /* AIncallViewController.m */; };
+		7D10BEFE1E2F17A600FD8438 /* AIncallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D10BEFA1E2F17A600FD8438 /* AIncallViewController.xib */; };
+		7D10BF021E2F660B00FD8438 /* PhoneTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D10BF011E2F660B00FD8438 /* PhoneTestViewController.m */; };
 		7D17DFF81DFD332800628FFC /* PermissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D17DFF71DFD332800628FFC /* PermissionViewController.m */; };
 		7D17DFFB1DFD340600628FFC /* AFHttpClient+Permission.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D17DFFA1DFD340600628FFC /* AFHttpClient+Permission.m */; };
 		7D17DFFF1DFD38F400628FFC /* PermissonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D17DFFE1DFD38F400628FFC /* PermissonTableViewCell.m */; };
@@ -321,6 +322,7 @@
 		7D3582B71DEE7BB60028F4B4 /* SearchFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3582B61DEE7BB60028F4B4 /* SearchFriendViewController.m */; };
 		7D3582BD1DEEB8870028F4B4 /* FriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3582BC1DEEB8870028F4B4 /* FriendModel.m */; };
 		7D3582C01DEECC9D0028F4B4 /* NewFriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3582BF1DEECC9D0028F4B4 /* NewFriendModel.m */; };
+		7D36376B1E2E266A00888944 /* AFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D36376A1E2E266A00888944 /* AFHttpClient.m */; };
 		7D38B21E1DDFF59A00404D05 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21A1DDFF59A00404D05 /* about.png */; };
 		7D38B21F1DDFF59A00404D05 /* douma.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21B1DDFF59A00404D05 /* douma.png */; };
 		7D38B2201DDFF59A00404D05 /* exchangepassword.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D38B21C1DDFF59A00404D05 /* exchangepassword.png */; };
@@ -344,6 +346,7 @@
 		7D65A4251E014E66004B0B85 /* weishi_onday.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D65A4231E014E66004B0B85 /* weishi_onday.png */; };
 		7D65A4261E014E66004B0B85 /* weishi_twoday.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D65A4241E014E66004B0B85 /* weishi_twoday.png */; };
 		7D708C701E023FC30003C981 /* UITabBar+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D708C6F1E023FC30003C981 /* UITabBar+Badge.m */; };
+		7D7285B61E30616200F72E86 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7285B51E30616200F72E86 /* ViewController.m */; };
 		7D72DAB41E10F66C0069AFE8 /* bigsego.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D72DAB31E10F66C0069AFE8 /* bigsego.png */; };
 		7D99357E1DFF8D9E006D5A17 /* sego1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D99357D1DFF8D9E006D5A17 /* sego1.png */; };
 		7D9935811DFF8F8C006D5A17 /* FunnycodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D9935801DFF8F8C006D5A17 /* FunnycodeViewController.m */; };
@@ -1093,8 +1096,6 @@
 		34DB5D291DD4159100C51823 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 		34DB5D2B1DD4159E00C51823 /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
 		34DB5D2D1DD415A900C51823 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
-		34DB5D321DD41AA000C51823 /* AFHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHttpClient.h; sourceTree = "<group>"; };
-		34DB5D331DD41AA000C51823 /* AFHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHttpClient.m; sourceTree = "<group>"; };
 		34DB5D351DD423C100C51823 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		34DB5D361DD423C100C51823 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		34E3810A1DE5973C007501E1 /* top1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top1.png; sourceTree = "<group>"; };
@@ -1113,8 +1114,6 @@
 		34FC41D61DD179F900A23A8F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		34FC41D81DD179F900A23A8F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
 		34FC41D91DD179F900A23A8F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
-		34FC41DB1DD179F900A23A8F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		34FC41DC1DD179F900A23A8F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		34FC41DF1DD179F900A23A8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		34FC41E21DD179F900A23A8F /* sego2_0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sego2_0.xcdatamodel; sourceTree = "<group>"; };
 		34FC41E41DD179F900A23A8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -1158,6 +1157,11 @@
 		7D0892B31DF8FC45001BBD98 /* IssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueViewController.m; sourceTree = "<group>"; };
 		7D0892B51DF9530C001BBD98 /* ArticlesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesModel.h; sourceTree = "<group>"; };
 		7D0892B61DF9530C001BBD98 /* ArticlesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesModel.m; sourceTree = "<group>"; };
+		7D10BEF81E2F17A600FD8438 /* AIncallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIncallViewController.h; sourceTree = "<group>"; };
+		7D10BEF91E2F17A600FD8438 /* AIncallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIncallViewController.m; sourceTree = "<group>"; };
+		7D10BEFA1E2F17A600FD8438 /* AIncallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AIncallViewController.xib; sourceTree = "<group>"; };
+		7D10BF001E2F660B00FD8438 /* PhoneTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneTestViewController.h; sourceTree = "<group>"; };
+		7D10BF011E2F660B00FD8438 /* PhoneTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneTestViewController.m; sourceTree = "<group>"; };
 		7D17DFF61DFD332800628FFC /* PermissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissionViewController.h; sourceTree = "<group>"; };
 		7D17DFF71DFD332800628FFC /* PermissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissionViewController.m; sourceTree = "<group>"; };
 		7D17DFF91DFD340600628FFC /* AFHttpClient+Permission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Permission.h"; sourceTree = "<group>"; };
@@ -1193,6 +1197,8 @@
 		7D3582BC1DEEB8870028F4B4 /* FriendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendModel.m; sourceTree = "<group>"; };
 		7D3582BE1DEECC9D0028F4B4 /* NewFriendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFriendModel.h; sourceTree = "<group>"; };
 		7D3582BF1DEECC9D0028F4B4 /* NewFriendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFriendModel.m; sourceTree = "<group>"; };
+		7D3637691E2E266A00888944 /* AFHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHttpClient.h; sourceTree = "<group>"; };
+		7D36376A1E2E266A00888944 /* AFHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHttpClient.m; sourceTree = "<group>"; };
 		7D38B21A1DDFF59A00404D05 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
 		7D38B21B1DDFF59A00404D05 /* douma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = douma.png; sourceTree = "<group>"; };
 		7D38B21C1DDFF59A00404D05 /* exchangepassword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exchangepassword.png; sourceTree = "<group>"; };
@@ -1231,6 +1237,8 @@
 		7D65A4241E014E66004B0B85 /* weishi_twoday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weishi_twoday.png; sourceTree = "<group>"; };
 		7D708C6E1E023FC30003C981 /* UITabBar+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+Badge.h"; sourceTree = "<group>"; };
 		7D708C6F1E023FC30003C981 /* UITabBar+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+Badge.m"; sourceTree = "<group>"; };
+		7D7285B41E30616200F72E86 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7D7285B51E30616200F72E86 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7D72DAB31E10F66C0069AFE8 /* bigsego.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigsego.png; sourceTree = "<group>"; };
 		7D99357D1DFF8D9E006D5A17 /* sego1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sego1.png; sourceTree = "<group>"; };
 		7D99357F1DFF8F8C006D5A17 /* FunnycodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunnycodeViewController.h; sourceTree = "<group>"; };
@@ -2662,8 +2670,8 @@
 		34E665641DD1A66600FA41E8 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				34DB5D321DD41AA000C51823 /* AFHttpClient.h */,
-				34DB5D331DD41AA000C51823 /* AFHttpClient.m */,
+				7D3637691E2E266A00888944 /* AFHttpClient.h */,
+				7D36376A1E2E266A00888944 /* AFHttpClient.m */,
 				7D65A4181E01485B004B0B85 /* AFHttpClient+FeedingClient.h */,
 				7D65A4191E01485B004B0B85 /* AFHttpClient+FeedingClient.m */,
 				7D17DFF91DFD340600628FFC /* AFHttpClient+Permission.h */,
@@ -2875,6 +2883,7 @@
 		34E665721DD1A84C00FA41E8 /* LoginV */ = {
 			isa = PBXGroup;
 			children = (
+				7D10BEF71E2F177400FD8438 /* fuckTest */,
 				7D626A3D1DD955DF002C0F8B /* Guide */,
 				7D626A3C1DD955CA002C0F8B /* RegistV */,
 				7D626A3B1DD955AC002C0F8B /* Completionv */,
@@ -2935,13 +2944,13 @@
 				34E665511DD1A38600FA41E8 /* Classes */,
 				34E665521DD1A3CA00FA41E8 /* Resources */,
 				3486D5FF1E07AC7900F7A82D /* sego.png */,
-				34FC41DB1DD179F900A23A8F /* ViewController.h */,
-				34FC41DC1DD179F900A23A8F /* ViewController.m */,
 				34FC41DE1DD179F900A23A8F /* Main.storyboard */,
 				34FC41E41DD179F900A23A8F /* Assets.xcassets */,
 				34FC41E61DD179F900A23A8F /* LaunchScreen.storyboard */,
 				34FC41E91DD179F900A23A8F /* Info.plist */,
 				34FC41E11DD179F900A23A8F /* sego2_0.xcdatamodeld */,
+				7D7285B41E30616200F72E86 /* ViewController.h */,
+				7D7285B51E30616200F72E86 /* ViewController.m */,
 				34FC41D51DD179F900A23A8F /* Supporting Files */,
 			);
 			path = sego2.0;
@@ -2974,6 +2983,18 @@
 				7D02A9F71DFAB65000C41A56 /* ExchangPasswordViewController.m */,
 			);
 			path = ExchangePassword;
+			sourceTree = "<group>";
+		};
+		7D10BEF71E2F177400FD8438 /* fuckTest */ = {
+			isa = PBXGroup;
+			children = (
+				7D10BF001E2F660B00FD8438 /* PhoneTestViewController.h */,
+				7D10BF011E2F660B00FD8438 /* PhoneTestViewController.m */,
+				7D10BEF81E2F17A600FD8438 /* AIncallViewController.h */,
+				7D10BEF91E2F17A600FD8438 /* AIncallViewController.m */,
+				7D10BEFA1E2F17A600FD8438 /* AIncallViewController.xib */,
+			);
+			path = fuckTest;
 			sourceTree = "<group>";
 		};
 		7D17DFFC1DFD37F800628FFC /* Views */ = {
@@ -3175,7 +3196,7 @@
 				TargetAttributes = {
 					34FC41D11DD179F900A23A8F = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 454LPD78S8;
+						DevelopmentTeam = ZMFX8728A9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -3285,6 +3306,7 @@
 				34DB5CE81DD4129F00C51823 /* status-green.png in Resources */,
 				3461F5561DD2CB4800E56298 /* tab_faxian_dian@2x.png in Resources */,
 				34D171071E16030200286421 /* English_tips.png in Resources */,
+				7D10BEFE1E2F17A600FD8438 /* AIncallViewController.xib in Resources */,
 				343EDA601E14A9CC00A7C20E /* Localizable.strings in Resources */,
 				345AB3F31DD9AEA400025EEE /* 退出.png in Resources */,
 				345AB3DC1DD9AD5800025EEE /* egg_nodevcie.png in Resources */,
@@ -3467,15 +3489,14 @@
 				34C495EC1DD1CD5400687606 /* UIButton+Blocks.m in Sources */,
 				7DD60BFB1DED876A0065D941 /* AFHttpClient+Friend.m in Sources */,
 				7D2911181DF553EF00B672F2 /* PhotoGrapgModel.m in Sources */,
-				34DB5D341DD41AA000C51823 /* AFHttpClient.m in Sources */,
 				34FFD5841DEC396800A392B4 /* SearchTableViewCell.m in Sources */,
 				7DE3D7751DFE443F00AC2695 /* NewPermissionViewController.m in Sources */,
 				7D0892B41DF8FC45001BBD98 /* IssueViewController.m in Sources */,
 				34FA28301DEBE07600F13C85 /* SearchDoumaViewController.m in Sources */,
 				7D626A401DD95636002C0F8B /* RegistViewController.m in Sources */,
 				34C495D71DD1CB2900687606 /* AppDelegate+Launcher.m in Sources */,
+				7D10BEFD1E2F17A600FD8438 /* AIncallViewController.m in Sources */,
 				7D02A9E91DFA7DD300C41A56 /* HomeDetailViewController.m in Sources */,
-				34FC41DD1DD179F900A23A8F /* ViewController.m in Sources */,
 				34C496031DD1D15900687606 /* MainTabViewController.m in Sources */,
 				34C495EE1DD1CD5400687606 /* UIView+TapBlocks.m in Sources */,
 				342F79881DDD7C640022FF09 /* AFHttpClient+DeviceStats.m in Sources */,
@@ -3530,10 +3551,12 @@
 				3461F5321DD2BB1B00E56298 /* FriendViewController.m in Sources */,
 				7D65A4221E014887004B0B85 /* FeedSetingTableViewCell.m in Sources */,
 				7DF075931E00011800A45824 /* ZdFriendTableViewCell.m in Sources */,
+				7D36376B1E2E266A00888944 /* AFHttpClient.m in Sources */,
 				7D65A41A1E01485B004B0B85 /* AFHttpClient+FeedingClient.m in Sources */,
 				34D3C6E11DDAF43600529FF5 /* ShowWarView.m in Sources */,
 				34DB5D371DD423C100C51823 /* BaseModel.m in Sources */,
 				34C495FA1DD1CD6C00687606 /* UIViewController+HUD.m in Sources */,
+				7D7285B61E30616200F72E86 /* ViewController.m in Sources */,
 				342F799A1DDDA85A0022FF09 /* AFHttpClient+AddDeviceInformation.m in Sources */,
 				345AB4291DD9B3C000025EEE /* InCallViewController.m in Sources */,
 				7DF075901DFFF92D00A45824 /* ZdFriendViewController.m in Sources */,
@@ -3548,6 +3571,7 @@
 				34DB5CA91DD4129E00C51823 /* SephoneUtils.m in Sources */,
 				7DC89EF31DEFD47300564BB3 /* RecommendModel.m in Sources */,
 				7D02A9EC1DFA859100C41A56 /* HomeDetailModel.m in Sources */,
+				7D10BF021E2F660B00FD8438 /* PhoneTestViewController.m in Sources */,
 				34FC41E31DD179F900A23A8F /* sego2_0.xcdatamodeld in Sources */,
 				34FFD5871DEC398500A392B4 /* AFHttpClient+Found.m in Sources */,
 				7DF0758D1DFFD65A00A45824 /* AFHttpClient+FunnyCode.m in Sources */,
@@ -3702,7 +3726,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = 454LPD78S8;
+				DEVELOPMENT_TEAM = ZMFX8728A9;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3736,7 +3760,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = 454LPD78S8;
+				DEVELOPMENT_TEAM = ZMFX8728A9;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

@@ -87,7 +87,4 @@ singleton_implementation(AFHttpClient)
 
 
 
-
-
-
 @end

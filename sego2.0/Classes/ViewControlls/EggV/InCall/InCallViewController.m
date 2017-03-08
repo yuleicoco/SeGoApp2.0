@@ -356,7 +356,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     [penSl setThumbImage:[UIImage imageNamed:@"penNormal"] forState:UIControlStateNormal];
     [penSl setThumbImage:[UIImage imageNamed:@"penSelect"] forState:UIControlStateHighlighted];
 
-    [ penSl addTarget:self action:@selector(penClicKbtn:) forControlEvents:UIControlEventTouchUpInside];
+    [ penSl addTarget:self action:@selector(penClicKbtn:) forControlEvents:UIControlEventValueChanged];
     
     [pesnBack addSubview:penSl];
     
@@ -1206,26 +1206,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     float valu = sender.value*100;
     int str =(int)valu;
     NSString * msg =[NSString stringWithFormat:@"control_pantilt,0,0,1,0,%d,%d",str,30];
-    
-    doubleTime++;
-    if (doubleTime%2 ==0) {
-        
-        int timeComparSecond =[self getTimeNow];
-        if (timeComparSecond - timeCompar<100) {
-            
-            // 不执行
-        }else{
-            
-            
             [self sendMessage:msg];
-        }
-        
-    }else{
-        
-        timeCompar = [self getTimeNow];
-        [self sendMessage:msg];
-        
-    }
 
     
     

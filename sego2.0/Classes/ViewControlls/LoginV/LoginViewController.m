@@ -11,8 +11,16 @@
 #import "CompletionViewController.h"
 #import "AFHttpClient+Account.h"
 #import <ShareSDKExtension/SSEThirdPartyLoginHelper.h>
+#import "PhoneTestViewController.h"
 
+#import "AIncallViewController.h"
 @interface LoginViewController ()
+{
+    //   CBPeripheralManager *peripheralManager;
+    UITextField * _numberTextfield;
+    UIButton * _loginBtn;
+
+}
 @property (nonatomic,strong)UIButton * loginBtn;
 @property (nonatomic,strong)UITextField * numberTextfield;
 @property (nonatomic,strong)UITextField * passwordTextfield;
@@ -20,8 +28,15 @@
 
 @implementation LoginViewController
 
+-(void)dadadwwsaodjwojdowd{
+    PhoneTestViewController * tex = [[PhoneTestViewController alloc]init];
+   // [self presentViewController:tex animated:NO completion:nil];
+    [self.navigationController pushViewController:tex animated:NO];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
    // self.navigationController.navigationBarHidden = YES;
    // self.view.backgroundColor = [UIColor blackColor];
     UIImageView * loginbackImage = [[UIImageView alloc]init];
@@ -31,6 +46,10 @@
         make.top.bottom.left.right.equalTo(loginbackImage.superview).insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
     
+//    UIButton * TextBtn = [[UIButton alloc]initWithFrame:CGRectMake(100, 100, 100, 100)];
+//    TextBtn.backgroundColor = [UIColor blackColor];
+//    [self.view addSubview:TextBtn];
+//    [TextBtn addTarget:self action:@selector(dadadwwsaodjwojdowd) forControlEvents:UIControlEventTouchUpInside];
     
     
     
@@ -408,7 +427,7 @@
 //    RegistViewController * registVc = [[RegistViewController alloc]init];
 //    //registVc.navigationController.navigationBar.tintColor = [UIColor redColor];
 //    [self.navigationController pushViewController:registVc animated:NO];
-
+    
     // [self getCurrentLanguage];
     //NSArray *languages = [NSLocale preferredLanguages];
   //  NSString *currentLanguage = [languages objectAtIndex:0];
@@ -460,7 +479,6 @@
     
 
 }
-
 
 
 
