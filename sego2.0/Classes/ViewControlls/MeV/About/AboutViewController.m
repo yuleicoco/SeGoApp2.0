@@ -49,7 +49,7 @@
     }];
     
     UILabel * banbenLabel = [[UILabel alloc]init];
-    banbenLabel.text = @"SEGO  V2.0";
+    banbenLabel.text = @"SEGO  V2.0.1";
     banbenLabel.textColor = [UIColor blackColor];
     banbenLabel.font = [UIFont systemFontOfSize:18];
     [topView addSubview:banbenLabel];
