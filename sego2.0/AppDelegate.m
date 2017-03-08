@@ -31,10 +31,10 @@
     [self shareSDKApplication:application didFinishLaunchingWithOptions:launchOptions];
     
     //sephone
-    [self initSephoneVoip:application didFinishLaunchingWithOptions:launchOptions];
+ //   [self initSephoneVoip:application didFinishLaunchingWithOptions:launchOptions];
     
-    
-  
+    //ceshiyongde 
+      [[SephoneManager instance]	startSephoneCore];
     return YES;
 }
 

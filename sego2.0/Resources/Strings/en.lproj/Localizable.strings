@@ -59,6 +59,7 @@ CFBundleDisplayName = "sego2.0";
 "me_3rd"="Third-party login, can not change the password";
 "me_share"="share";
 "me_noshare"="Not allowed";
+"me_yunxu"="allow";
 "me_no"="no";
 "me_Immediately_void" ="Immediately void";
 "me_doumapro" ="Generate my Code";

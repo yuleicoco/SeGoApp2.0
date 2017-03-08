@@ -50,6 +50,7 @@
 "me_3rd"="第三方登录，不能修改密码哦亲";
 "me_share"="分享";
 "me_noshare"="不允许";
+"me_yunxu"="允许";
 "me_no"="暂无";
 "me_Immediately_void" ="立即失效";
 "me_doumapro" ="生成我的逗码";
@@ -215,7 +216,7 @@
 // 修改信息
 "info_headimeg"="头像";
 "info_acc"="账号";
-"info_nic"="头像";
+"info_nic"="昵称";
 "info_sex"="性别";
 "info_fam"="家族";
 "info_bri"="生日";

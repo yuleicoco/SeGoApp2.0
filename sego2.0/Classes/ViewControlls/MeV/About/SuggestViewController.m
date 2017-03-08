@@ -93,39 +93,39 @@
 
 -(void)doRightButtonTouch{
     
-    if (isClick) {
-        if ([AppUtil isBlankString:_topTextfield.text]) {
-            [[AppUtil appTopViewController] showHint:NSLocalizedString(@"about_Feedback", nil)];
-            return;
-        }
-        if ([AppUtil isBlankString:_downTextfield.text]) {
-            [[AppUtil appTopViewController] showHint:NSLocalizedString(@"about_way", nil)];
-            return;
-        }
-        
-        [self showHudInView:self.view hint:NSLocalizedString(@"about_sendting", nil)];
-        isClick = NO;
-        [[AFHttpClient sharedAFHttpClient]addFeedbackWithMid:[AccountManager sharedAccountManager].loginModel.mid fconcent:_topTextfield.text fphone:_downTextfield.text complete:^(BaseModel *model) {
-            if (model) {
-                [self hideHud];
-                [self.navigationController popViewControllerAnimated:YES];
-            }else
-            {
-                
-                [self hideHud];
-            }
-            isClick  = YES;
-            
-        }];
-    }else
-    {
-        
-        return;
-        
-    }
-    
-    
-    
+//    if (isClick) {
+//        if ([AppUtil isBlankString:_topTextfield.text]) {
+//            [[AppUtil appTopViewController] showHint:NSLocalizedString(@"about_Feedback", nil)];
+//            return;
+//        }
+//        if ([AppUtil isBlankString:_downTextfield.text]) {
+//            [[AppUtil appTopViewController] showHint:NSLocalizedString(@"about_way", nil)];
+//            return;
+//        }
+//        
+//        [self showHudInView:self.view hint:NSLocalizedString(@"about_sendting", nil)];
+//        isClick = NO;
+//        [[AFHttpClient sharedAFHttpClient]addFeedbackWithMid:[AccountManager sharedAccountManager].loginModel.mid fconcent:_topTextfield.text fphone:_downTextfield.text complete:^(BaseModel *model) {
+//            if (model) {
+//                [self hideHud];
+//                [self.navigationController popViewControllerAnimated:YES];
+//            }else
+//            {
+//                
+//                [self hideHud];
+//            }
+//            isClick  = YES;
+//            
+//        }];
+//    }else
+//    {
+//        
+//        return;
+//        
+//    }
+//    
+//    
+//    
     
     
     

@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:NSLocalizedString(@"tabRank", nil)];
+    [self setNavTitle:NSLocalizedString(@"tabNear", nil)];
     self.view.backgroundColor = GRAY_COLOR;
 }
 

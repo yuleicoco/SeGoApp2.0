@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:NSLocalizedString(@"about_introduce", nil)];
+    [self setNavTitle:@"产品简介"];
 }
 
 -(void)setupView{
@@ -24,7 +24,7 @@
      self.view.backgroundColor = GRAY_COLOR;
     
     UIWebView * web = [[UIWebView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 0 * W_Hight_Zoom, 375 * W_Wide_Zoom, 727 * W_Hight_Zoom)];
-    NSString * str = BASE_URL_Test2;
+    NSString * str = @"http://180.97.80.227:15102/clientAction.do?method=client&nextPage=/";
     str = [str stringByAppendingString:@"s/function/function.jsp"];
     NSURL * url = [NSURL URLWithString:str];
     [web loadRequest:[NSURLRequest requestWithURL:url]];

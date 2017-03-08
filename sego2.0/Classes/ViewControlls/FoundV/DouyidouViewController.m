@@ -139,4 +139,38 @@ static NSString * cellId = @"douyidouCellid";
 }
 
 
+
+
+
+
+//if ([model.status isEqualToString:@"ds001"]) {
+//    cell.rightBtn.backgroundColor = GREEN_COLOR;
+//    [cell.rightBtn setTitle:@"开启" forState:UIControlStateNormal];
+//    [cell.rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    cell.rightBtn.userInteractionEnabled = YES;
+//    
+//}else if([model.status isEqualToString:@"ds002"]){
+//    //cell.rightBtn.hidden = YES;
+//    cell.rightBtn.backgroundColor = [UIColor clearColor];
+//    [cell.rightBtn setTitle:@"离线" forState:UIControlStateNormal];
+//    [cell.rightBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+//    cell.rightBtn.userInteractionEnabled = NO;
+//}else if ([model.status isEqualToString:@"ds003"]){
+//    cell.rightBtn.backgroundColor = [UIColor clearColor];
+//    [cell.rightBtn setTitle:@"通话中" forState:UIControlStateNormal];
+//    [cell.rightBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+//    cell.rightBtn.userInteractionEnabled = NO;
+//    
+//}else if ([model.status isEqualToString:@"ds004"]){
+//    cell.rightBtn.backgroundColor = [UIColor clearColor];
+//    [cell.rightBtn setTitle:@"上传中" forState:UIControlStateNormal];
+//    [cell.rightBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+//    cell.rightBtn.userInteractionEnabled = NO;
+//    
+//}
+
+
+
+
+
 @end

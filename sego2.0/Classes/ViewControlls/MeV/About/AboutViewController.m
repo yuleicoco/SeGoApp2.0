@@ -19,8 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle:NSLocalizedString(@"me_aobout", nil)];
-    self.view.backgroundColor = GRAY_COLOR;
+    [self setNavTitle:@"关于"];
+    self.view.backgroundColor = LIGHT_GRAY_COLOR;
 }
 
 -(void)setupView{
@@ -49,7 +49,7 @@
     }];
     
     UILabel * banbenLabel = [[UILabel alloc]init];
-    banbenLabel.text = @"SEGO  V2.0";
+    banbenLabel.text = @"SEGO  V2.0.1";
     banbenLabel.textColor = [UIColor blackColor];
     banbenLabel.font = [UIFont systemFontOfSize:18];
     [topView addSubview:banbenLabel];
@@ -73,7 +73,7 @@
     
     
     UILabel * chanpinLabel = [[UILabel alloc]init];
-    chanpinLabel.text = NSLocalizedString(@"about_introduce", nil);
+    chanpinLabel.text = @"产品简介";
     chanpinLabel.textColor = [UIColor blackColor];
     chanpinLabel.font = [UIFont systemFontOfSize:18];
     [downView addSubview:chanpinLabel];
@@ -95,7 +95,7 @@
     }];
     
     UILabel * yijianLabel = [[UILabel alloc]init];
-    yijianLabel.text = NSLocalizedString(@"about_agree", nil);
+    yijianLabel.text = @"意见反馈";
     yijianLabel.textColor = [UIColor blackColor];
     yijianLabel.font = [UIFont systemFontOfSize:18];
     [downView addSubview:yijianLabel];
@@ -119,7 +119,7 @@
     
     UILabel * zhucexieyiLabel = [[UILabel alloc]init];
     zhucexieyiLabel.textColor = [UIColor blackColor];
-    zhucexieyiLabel.text = NSLocalizedString(@"about_Registration", nil);
+    zhucexieyiLabel.text = @"注册协议";
     zhucexieyiLabel.font = [UIFont systemFontOfSize:18];
     [downView addSubview:zhucexieyiLabel];
     [zhucexieyiLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -168,23 +168,25 @@
 }
 
 -(void)firstButtonTouch{
-    FuckLog(@"产品简介");
+   // FuckLog(@"产品简介");
     IntroduceViewController * introVc = [[IntroduceViewController alloc]init];
     [self.navigationController pushViewController:introVc animated:NO];
 
 }
 
 -(void)secoendButtonTouch{
-    FuckLog(@"意见反馈");
+    //FuckLog(@"意见反馈");
     SuggestViewController * suggerVc = [[SuggestViewController alloc]init];
     [self.navigationController pushViewController:suggerVc animated:NO];
 }
 
 -(void)lastButtonTouch{
-    FuckLog(@"注册协议");
+    //FuckLog(@"注册协议");
     AgreementViewController * agreVc = [[AgreementViewController alloc]init];
     [self.navigationController pushViewController:agreVc animated:NO];
     
 }
+
+
 
 @end

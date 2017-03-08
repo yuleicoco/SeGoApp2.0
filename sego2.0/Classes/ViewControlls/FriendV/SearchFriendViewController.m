@@ -100,6 +100,14 @@ static NSString * cellId = @"friendSearchCellid";
 }
 
 -(void)loadDataSourceWithPage:(int)page{
+    if ([AppUtil isBlankString:_topTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入查找内容"];
+        self.tableView.hidden = YES;
+        [self.tableView reloadData];
+        [self handleEndRefresh];
+        return;
+    }
+    
     [[AFHttpClient sharedAFHttpClient]searchPeopleWithMid:[AccountManager sharedAccountManager].loginModel.mid condition:_topTextfield.text page:page size:REQUEST_PAGE_SIZE complete:^(BaseModel *model) {
         if (model.list.count == 0) {
             [[AppUtil appTopViewController] showHint:NSLocalizedString(@"fr_tips", nil)];
@@ -167,8 +175,14 @@ static NSString * cellId = @"friendSearchCellid";
     
     
     if ([model.isfriend isEqualToString:@""]) {
+        //下面的button点击事件会改变button的状态，所以这里要改回来
         cell.rightBtn.hidden = NO;
         cell.rightLabe.hidden = YES;
+        cell.rightBtn.backgroundColor = GREEN_COLOR;
+        cell.rightBtn.userInteractionEnabled = YES;
+        [cell.rightBtn setTitle:@"添加" forState:UIControlStateNormal];
+        cell.rightBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+        [cell.rightBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     }else{
         cell.rightBtn.hidden = YES;
         cell.rightLabe.hidden = NO;

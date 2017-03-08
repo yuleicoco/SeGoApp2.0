@@ -89,7 +89,6 @@ static NSString * cellId = @"zdFriendTableviewcellId";
         }else{
             self.tableView.mj_footer.hidden = NO;
         }
-        
         [self.tableView reloadData];
         [self handleEndRefresh];
 

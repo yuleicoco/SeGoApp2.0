@@ -17,7 +17,7 @@
 //分页请求个数
 #define REQUEST_PAGE_SIZE           10
 #define START_PAGE_INDEX            1
-
+#define LIGHT_GRAY_COLOR RGB(239, 242, 243)
 #define M_Wide 375
 #define M_Higth 667
 #define W_Wide_Zoom [UIScreen mainScreen].bounds.size.width/M_Wide
