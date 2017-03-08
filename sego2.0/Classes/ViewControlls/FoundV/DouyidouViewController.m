@@ -124,7 +124,6 @@ static NSString * cellId = @"douyidouCellid";
              eggVC.tsumNum = [model.retVal[@"tsnum"] integerValue];
              eggVC.deviceNum = model.retVal[@"deviceno"];
              eggVC.termidNum = model.retVal[@"termid"];
-            
             [self.navigationController pushViewController:eggVC animated:NO];
         }
         
