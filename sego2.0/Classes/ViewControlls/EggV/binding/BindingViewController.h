@@ -33,6 +33,7 @@ extern NSString *const SEGOEGG_PREFIX;
 @property (nonatomic,strong)UIButton * btnBind;
 @property (nonatomic,strong) MBProgressHUD *hud;
 @property (nonatomic,strong)ShowWarView * ShowView;
+@property (nonatomic,strong)NSString * strTT;
 
 
 

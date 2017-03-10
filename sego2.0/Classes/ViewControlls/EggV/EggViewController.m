@@ -60,6 +60,10 @@
     
     NSTimer * moveTimer;
     
+    NSString * DeviceNum;
+    NSString * TermidSt;
+    
+    
     
     
     
@@ -259,12 +263,15 @@
             FuckLog(@"%@",model);
             if ([model.retCode isEqualToString:@"0000"]) {
                 strState = [NSString stringWithFormat:@"%@",model.retVal[@"status"]];
+                DeviceNum =model.retVal[@"deviceno"];
+                TermidSt = model.retVal[@"termid"];
                 [self updateviewMethod];
                 
             }// 没有设备
             else if ([model.totalrecords isEqualToString:@"0"])
             {
                 strState = [NSString stringWithFormat:@"%@",@"ds000"];
+                
                 [self updateviewMethod];
                 
             }
@@ -279,12 +286,18 @@
         
         FuckLog(@"%@",model);
         if ([model.retCode isEqualToString:@"0000"]) {
-            
-            
             if ([AppUtil isBlankString:model.retVal[@"status"]]) {
                 strState = [NSString stringWithFormat:@"%@",@"ds000"];
+                [Defaluts removeObjectForKey:@"SBlogin"];
+                [Defaluts synchronize];
             }else{
             strState = [NSString stringWithFormat:@"%@",model.retVal[@"status"]];
+                DeviceNum =model.retVal[@"deviceno"];
+                TermidSt =@"123456";
+                [Defaluts setObject:DeviceNum forKey:@"SBlogin"];
+                [Defaluts synchronize];
+                
+                
             }
             [self updateviewMethod];
         
@@ -292,7 +305,10 @@
         else if ([model.totalrecords isEqualToString:@"0"])
         {
             strState = [NSString stringWithFormat:@"%@",@"ds000"];
+            
             [self updateviewMethod];
+            
+            
             
         }
         
@@ -794,6 +810,8 @@
 {
     setImage.hidden = YES;
     FeedSetingViewController * feedVc = [[FeedSetingViewController alloc]init];
+    feedVc.strTT =DeviceNum;
+    feedVc.strTe =TermidSt;
     [self.navigationController pushViewController:feedVc animated:NO];
     
     
@@ -805,6 +823,7 @@
 {
     setImage.hidden = YES;
     bindVC =[[BindingViewController alloc]init];
+    bindVC.strTT =DeviceNum;
     [self.navigationController pushViewController:bindVC animated:NO];
     
 

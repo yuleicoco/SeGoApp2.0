@@ -114,6 +114,7 @@ return _instance; \
 
 #define Defaluts  ([NSUserDefaults standardUserDefaults])
 #define Mid_S     ([AccountManager sharedAccountManager].loginModel.mid)
+#define LAGE_LOC  ([NSLocale preferredLanguages].firstObject)
 
 
 #endif /* Definition_h */

@@ -38,8 +38,8 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     int serviceNum;   // 添加成功的service数量
     BOOL isAccecptOk; // 是否接收结果成功
     BOOL isOpenPerOK; // 判断是否从机开始广播
-    NSString * strTT;
-    NSString * strYY;
+   
+  
     NSTimer * timerCheck;
     NSInteger  timerEnd;
     
@@ -57,6 +57,8 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
 @synthesize incodeTF;
 @synthesize ShowView;
 @synthesize hud;
+@synthesize strTT;
+
 
 
 
@@ -120,19 +122,6 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
 {
        [super setupView];
     
-    NSString * strBing =[Defaluts objectForKey:PREF_DEVICE_NUMBER];
-    NSString * strLogin =[AccountManager sharedAccountManager].loginModel.deviceno;
-    
-   NSString * st1 =[Defaluts objectForKey:@"incodeNum"];
-   NSString * st2 =[AccountManager sharedAccountManager].loginModel.termid;
-    
-    
-    
-    strTT = strBing.length>strLogin.length?strBing:strLogin;
-    strYY = st1.length>st2.length?st1:st2;
-    
-    
-   
     if ([AppUtil isBlankString:strTT]) {
         
         [self setNavTitle:NSLocalizedString(@"bindDevice",nil)];
@@ -243,7 +232,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
     }else
     {
         deviceTF.text =strTT;
-        incodeTF.text =strYY;
+        incodeTF.text =@"123456";
         
 
         
@@ -375,6 +364,7 @@ NSString *const SEGOEGG_PREFIX = @"segoegg";
             [Defaluts removeObjectForKey:PREF_DEVICE_NUMBER];
             [AccountManager sharedAccountManager].loginModel.deviceno=nil;
             [Defaluts removeObjectForKey:@"incodeNum"];
+            [Defaluts removeObjectForKey:@"SBlogin"];
             [Defaluts synchronize];
             deviceTF.text =@"";
             incodeTF.text =@"";

@@ -188,7 +188,7 @@
 "Fail_seting" ="配置失败，请重新搜索设备";
 "wif_encryption" ="加密方式";
 "wif_name" ="WIFI名称:";
-"wif_code" ="WIFIPS:";
+"wif_code" ="WIFI密码:";
 "faile_net" ="配置失败，请重新设置网络";
 "falie_bl"= "配置失败，请确保打开设备蓝牙";
 "ing_net" ="正在配置设备网络，请等待...";

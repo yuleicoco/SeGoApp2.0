@@ -103,7 +103,7 @@
     }];
     
     _toushiLabel = [[UILabel alloc]init];
-    _toushiLabel.text =NSLocalizedString(@"me_yunxu", nil);
+    //_toushiLabel.text =@"yunxu";
     _toushiLabel.textColor = [UIColor blackColor];
     _toushiLabel.font = [UIFont systemFontOfSize:18];
     [topView addSubview:_toushiLabel];

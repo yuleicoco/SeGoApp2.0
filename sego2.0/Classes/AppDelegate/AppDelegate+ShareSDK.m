@@ -12,6 +12,7 @@
 
 - (void)shareSDKApplication:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     [ShareSDK registerApp:@"85d250655d35" activePlatforms:
      @[
        @(SSDKPlatformTypeWechat),

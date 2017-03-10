@@ -385,9 +385,8 @@
 
 -(void)doumabuttonTouch{
     FuckLog(@"逗码");
-    NSString * str  =  [Defaluts objectForKey:@"deviceNumber"];
-    NSString * str1  = [AccountManager sharedAccountManager].loginModel.deviceno;
-    if ([AppUtil isBlankString:str] && [AppUtil isBlankString:str1]) {
+    NSString * str  =  [Defaluts objectForKey:@"SBlogin"];
+    if ([AppUtil isBlankString:str] ) {
          [[AppUtil appTopViewController]showHint:NSLocalizedString(@"me_panduan", nil)];
     }else{
         FunnycodeViewController * funnyVc = [[FunnycodeViewController alloc]init];
@@ -401,9 +400,8 @@
 
 -(void)quanxianbuttonTouch{
     FuckLog(@"权限设置");
-    NSString * str  =  [Defaluts objectForKey:@"deviceNumber"];
-    NSString * str1  = [AccountManager sharedAccountManager].loginModel.deviceno;
-    if ([AppUtil isBlankString:str] && [AppUtil isBlankString:str1]) {
+    NSString * str  =  [Defaluts objectForKey:@"SBlogin"];
+    if ( [AppUtil isBlankString:str]) {
         [[AppUtil appTopViewController]showHint:NSLocalizedString(@"me_panduan", nil)];
 
     }else{

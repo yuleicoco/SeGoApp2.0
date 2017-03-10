@@ -28,13 +28,29 @@
     // 启动逻辑入口
     [self launcherApplication:application didFinishLaunchingWithOptions:launchOptions];
     //分享
-    [self shareSDKApplication:application didFinishLaunchingWithOptions:launchOptions];
     
+    NSString *  language=  [NSLocale preferredLanguages].firstObject;
+   
+   if (![language  isEqual: @"en"]) {
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 9.0) {
+        NSRange range = [language rangeOfString:@"-" options:NSBackwardsSearch];
+        language = [language substringToIndex:range.location];
+        NSLog(@"223");
+        
+    }else
+    {
+        
+           [self shareSDKApplication:application didFinishLaunchingWithOptions:launchOptions];
+    }
+   }
+ 
+    
+      
     //sephone
  //   [self initSephoneVoip:application didFinishLaunchingWithOptions:launchOptions];
     
     //ceshiyongde 
-      [[SephoneManager instance]	startSephoneCore];
+    [[SephoneManager instance]	startSephoneCore];
     return YES;
 }
 

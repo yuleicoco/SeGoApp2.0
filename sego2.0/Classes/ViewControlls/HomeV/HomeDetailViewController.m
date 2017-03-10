@@ -124,7 +124,7 @@ static NSString * cellId = @"homedetailviewellId";
     
     
      
-    NSString * strUrl =[NSString stringWithFormat:@"http://180.97.80.227:15102/clientAction.do?method=client&nextPage=/s/article/article.jsp&aid=%@&mid=%@&access=outside",_aid,[AccountManager sharedAccountManager].loginModel.mid];
+    NSString * strUrl =[NSString stringWithFormat:@"http://180.97.81.213:15102/clientAction.do?method=client&nextPage=/s/article/article.jsp&aid=%@&mid=%@&access=outside",_aid,[AccountManager sharedAccountManager].loginModel.mid];
     //1、创建分享参数
     NSArray* imageArray = @[[UIImage imageNamed:@"sego.png"]];
     if (imageArray) {

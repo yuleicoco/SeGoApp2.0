@@ -53,6 +53,9 @@ static NSString * cellId = @"fedseting2321232322313323231";
 
 
 @implementation FeedSetingViewController
+@synthesize strTT;
+@synthesize strTe;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -133,60 +136,8 @@ static NSString * cellId = @"fedseting2321232322313323231";
     wenzi2.font = [UIFont systemFontOfSize:20];
     [whiteView addSubview:wenzi2];
     
-    
-    
-    
-
-    
-//    UIView * whiteView = [[UIView alloc]initWithFrame:CGRectMake(230 * W_Wide_Zoom, 300 * W_Hight_Zoom, 80 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
-//    whiteView.backgroundColor = [UIColor whiteColor];
-//    whiteView.layer.cornerRadius = 3;
-//    [self.view addSubview:whiteView];
-//    
-//    _oneDayButton = [[UIButton alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 0 * W_Hight_Zoom, 40 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
-//    [_oneDayButton setTitle:@"一天" forState:UIControlStateNormal];
-//    _oneDayButton.backgroundColor = [UIColor whiteColor];
-//    _oneDayButton.titleLabel.font = [UIFont systemFontOfSize:13];
-//    [_oneDayButton setTitleColor:GREEN_COLOR forState:UIControlStateNormal];
-//    [whiteView addSubview:_oneDayButton];
-//    [_oneDayButton addTarget:self action:@selector(onedayButtonTouch) forControlEvents:UIControlEventTouchUpInside];
-//    
-//
-//    
-//    _twoDayButton = [[UIButton alloc]initWithFrame:CGRectMake(40 * W_Wide_Zoom, 0 * W_Hight_Zoom, 40 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
-//    [_twoDayButton setTitle:@"两天" forState:UIControlStateNormal];
-//    _twoDayButton.backgroundColor = [UIColor whiteColor];
-//    _twoDayButton.titleLabel.font = [UIFont systemFontOfSize:13];
-//    [_twoDayButton setTitleColor:GREEN_COLOR forState:UIControlStateNormal];
-//    [whiteView addSubview:_twoDayButton];
-//    [_twoDayButton addTarget:self action:@selector(twoDayButtontouch) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    _moveView = [[UIView alloc]initWithFrame:CGRectMake(2 * W_Wide_Zoom, 2 * W_Hight_Zoom, 36 * W_Wide_Zoom, 26 * W_Hight_Zoom)];
-//    _moveView.backgroundColor = GREEN_COLOR;
-//    [whiteView addSubview:_moveView];
-    
     _isOneOrTwo = YES;
 
-    
-//    UIButton * sureBtn = [[UIButton alloc]initWithFrame:CGRectMake(221.25 * W_Wide_Zoom, 620 * W_Hight_Zoom, 120 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
-//    sureBtn.backgroundColor = GREEN_COLOR;
-//    [sureBtn setTitle:@"确定" forState:UIControlStateNormal];
-//    [sureBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    sureBtn.titleLabel.font = [UIFont systemFontOfSize:13];
-//    sureBtn.layer.cornerRadius = 5;
-//    [self.view addSubview:sureBtn];
-//    [sureBtn addTarget:self action:@selector(hahahahaha) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    
-//    _sureBtn2 = [[UIButton alloc]initWithFrame:CGRectMake(33.75 * W_Wide_Zoom, 620 * W_Hight_Zoom, 120 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
-//    _sureBtn2.backgroundColor = GREEN_COLOR;
-//    [_sureBtn2 setTitle:@"停用" forState:UIControlStateNormal];
-//    [_sureBtn2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    _sureBtn2.titleLabel.font = [UIFont systemFontOfSize:13];
-//    _sureBtn2.layer.cornerRadius = 5;
-//    [self.view addSubview:_sureBtn2];
-//    [_sureBtn2 addTarget:self action:@selector(stopWeishi) forControlEvents:UIControlEventTouchUpInside];
-    
     UIView * bottomview = [[UIView alloc]init];
     bottomview.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:bottomview];
@@ -238,16 +189,9 @@ static NSString * cellId = @"fedseting2321232322313323231";
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Warning", nil) message:NSLocalizedString(@"feed_surefeed", nil) preferredStyle:UIAlertControllerStyleAlert];
     
     [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure_bind", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-      //  FeddingModel * model = self.dataSource[0];
-        NSString * str  =  [Defaluts objectForKey:@"deviceNumber"];
-        NSString * str1  = [AccountManager sharedAccountManager].loginModel.deviceno;
-        NSString * deviceNum = str.length>str1.length?str:str1;
-        
-        NSString * str3 = [Defaluts objectForKey:@"termid"];
-        NSString * str4 = [AccountManager sharedAccountManager].loginModel.termid;
-        NSString * termidstr = str3.length>str4.length?str3:str4;
+       
         [self showHudInView:self.view hint:NSLocalizedString(@"feed_stoping", nil)];
-        [[AFHttpClient sharedAFHttpClient]cancelFeedingtimeWithbrid:_sourceDic[@"brid"] deviceno:deviceNum termid:termidstr complete:^(BaseModel *model) {
+        [[AFHttpClient sharedAFHttpClient]cancelFeedingtimeWithbrid:_sourceDic[@"brid"] deviceno:strTT termid:strTe complete:^(BaseModel *model) {
             [self hideHud];
             if (model) {
                 [[AppUtil appTopViewController] showHint:model.retDesc];
@@ -419,7 +363,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
     NSDateFormatter *pickerFormatter = [[NSDateFormatter alloc] init];// 创建一个日期格式器
     [pickerFormatter setDateFormat:@"HH:mm"];
     NSString *dateString = [pickerFormatter stringFromDate:pickerDate];
-  //  NSInteger i = (NSInteger)dateString;
+  
     if ([_panduanStr isEqualToString:@"11"]) {
          [_timeBtn1 setTitle:dateString forState:UIControlStateNormal];
     }else if ([_panduanStr isEqualToString:@"12"]){
@@ -479,11 +423,9 @@ static NSString * cellId = @"fedseting2321232322313323231";
     _bigView2.hidden = YES;
     _bigView1.hidden = NO;
     [self onedayView];
-//    [UIView animateWithDuration:0.3 animations:^{
-//        _moveView.frame = CGRectMake(2 * W_Wide_Zoom, 2 * W_Hight_Zoom, 36 * W_Wide_Zoom, 26 * W_Hight_Zoom);
-//    [[AppUtil appTopViewController] showHint:@"启用一天模式"];
+
          [_bigBtn setImage:[UIImage imageNamed:@"weishi_onday.png"] forState:UIControlStateNormal];
-//    }];
+
 }
 
 -(void)twoDayButtontouch{
@@ -494,12 +436,9 @@ static NSString * cellId = @"fedseting2321232322313323231";
     _twoDayButton.selected = YES;
      _isOneOrTwo = NO;
     [self twoDayView];
-//    [UIView animateWithDuration:0.3 animations:^{
-//        _moveView.frame = CGRectMake(42 * W_Wide_Zoom, 2 * W_Hight_Zoom, 36 * W_Wide_Zoom, 26 * W_Hight_Zoom);
-//         [[AppUtil appTopViewController] showHint:@"启用两天模式"];
+
          [_bigBtn setImage:[UIImage imageNamed:@"weishi_twoday.png"] forState:UIControlStateNormal];
-//    }];
-//
+
 }
 
 
@@ -531,16 +470,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
     }
     [self showHudInView:self.view hint:NSLocalizedString(@"feed_setting", nil)];
     NSString * timeStr = [_dataArray componentsJoinedByString:@","];
-    NSLog(@"%@",timeStr);
-    NSString * termidStr = [AccountManager sharedAccountManager].loginModel.termid ;
-    NSString * deviceno = [AccountManager sharedAccountManager].loginModel.deviceno;
-    if ([AppUtil isBlankString:termidStr]) {
-        NSUserDefaults * defaults =[NSUserDefaults standardUserDefaults];
-        deviceno = [defaults objectForKey:@"deviceNumber"];
-        termidStr= [defaults objectForKey:@"termid"];
-    }
-    
-    [[AFHttpClient sharedAFHttpClient]addFeedingtimeWithMid:[AccountManager sharedAccountManager].loginModel.mid type:typeStr times:timeStr deviceno:[AccountManager sharedAccountManager].loginModel.deviceno termid:[AccountManager sharedAccountManager].loginModel.termid complete:^(BaseModel *model) {
+    [[AFHttpClient sharedAFHttpClient]addFeedingtimeWithMid:Mid_S type:typeStr times:timeStr deviceno:strTT termid:strTe complete:^(BaseModel *model) {
         [self hideHud];
         if (model) {
             [[AppUtil appTopViewController] showHint:model.retDesc];
@@ -563,14 +493,13 @@ static NSString * cellId = @"fedseting2321232322313323231";
     [_timeBtn5 setTitle:@"" forState:UIControlStateNormal];
     [_timeBtn6 setTitle:@"" forState:UIControlStateNormal];
     [self.dataSource removeAllObjects];
-    [[AFHttpClient sharedAFHttpClient]queryFeedingtimeWithMid:[AccountManager sharedAccountManager].loginModel.mid status:@"1" complete:^(BaseModel *model) {
+    
+    
+    [[AFHttpClient sharedAFHttpClient]queryFeedingtimeWithMid:Mid_S status:@"1" complete:^(BaseModel *model) {
         if (model.retVal.count > 0 ) {
             [_sureBtn2 setTitleColor:GREEN_COLOR forState:UIControlStateNormal];
             _sureBtn2.userInteractionEnabled = YES;
             _sourceDic = model.retVal;
-           // [self.dataSource addObjectsFromArray:model.list];
-           // FeddingModel * model = self.dataSource[0];
-//            NSArray * array = [model.times componentsSeparatedByString:NSLocalizedString(@",", nil)];
             NSArray * array = [model.retVal[@"times"] componentsSeparatedByString:NSLocalizedString(@",", nil)];
             
             if ([model.retVal[@"type"] isEqualToString:@"one"]) {
@@ -578,7 +507,7 @@ static NSString * cellId = @"fedseting2321232322313323231";
                 _twoDayButton.selected = NO;
                 _isOneOrTwo = YES;
                 _moveView.frame = CGRectMake(2 * W_Wide_Zoom, 2 * W_Hight_Zoom, 36 * W_Wide_Zoom, 26 * W_Hight_Zoom);
-                //[[AppUtil appTopViewController] showHint:@"启用一天模式"];
+
                 _bigBtn.backgroundColor = [UIColor blueColor];
                 [self onedayView];
                 [_timeBtn1 setTitle:array[0] forState:UIControlStateNormal];
@@ -590,7 +519,6 @@ static NSString * cellId = @"fedseting2321232322313323231";
                 _twoDayButton.selected = YES;
                 _isOneOrTwo = NO;
                 _moveView.frame = CGRectMake(42 * W_Wide_Zoom, 2 * W_Hight_Zoom, 36 * W_Wide_Zoom, 26 * W_Hight_Zoom);
-               // [[AppUtil appTopViewController] showHint:@"启用两天模式"];
                 _bigBtn.backgroundColor = [UIColor redColor];
                 [self twoDayView];
                 [_timeBtn5 setTitle:array[0] forState:UIControlStateNormal];
@@ -598,16 +526,8 @@ static NSString * cellId = @"fedseting2321232322313323231";
             }
 
         }else{
-           // [self onedayView];
-            //[self onedayButtonTouch];
             [self twoDayView];
-         //   _sureBtn2.backgroundColor = [UIColor grayColor];
             _sureBtn2.userInteractionEnabled = NO;
-//            [_timeBtn1 setTitle:@"00:00" forState:UIControlStateNormal];
-//            [_timeBtn2 setTitle:@"00:00" forState:UIControlStateNormal];
-//            [_timeBtn3 setTitle:@"00:00" forState:UIControlStateNormal];
-//            [_timeBtn4 setTitle:@"00:00" forState:UIControlStateNormal];
-//
             _oneDayButton.selected = NO;
             _twoDayButton.selected = YES;
             _isOneOrTwo = NO;

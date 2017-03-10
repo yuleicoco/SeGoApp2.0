@@ -9,5 +9,8 @@
 #import "BaseTabViewController.h"
 
 @interface FeedSetingViewController : BaseTabViewController
+@property(nonatomic,strong)NSString * strTT;
+@property(nonatomic,strong)NSString * strTe;
+
 
 @end

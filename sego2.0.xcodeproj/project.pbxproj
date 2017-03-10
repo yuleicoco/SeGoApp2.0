@@ -3196,7 +3196,7 @@
 				TargetAttributes = {
 					34FC41D11DD179F900A23A8F = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = ZMFX8728A9;
+						DevelopmentTeam = 4UKEB375ND;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -3726,7 +3726,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = ZMFX8728A9;
+				DEVELOPMENT_TEAM = 4UKEB375ND;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3741,15 +3741,17 @@
 					IN_SEPHONE,
 				);
 				INFOPLIST_FILE = sego2.0/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib",
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.eggpet1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.eggpet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -3760,7 +3762,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				COMPRESS_PNG_FILES = NO;
-				DEVELOPMENT_TEAM = ZMFX8728A9;
+				DEVELOPMENT_TEAM = 4UKEB375ND;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -3771,17 +3773,20 @@
 					IN_SEPHONE,
 					VIDEO_ENABLED,
 					HAVE_SILK,
+					HAVE_OPENH264,
 				);
 				INFOPLIST_FILE = sego2.0/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib",
 					"$(PROJECT_DIR)/sego2.0/Classes/Sephone/SP_sdk/libsephone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.eggpet1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.eggpet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_PNG_TEXT = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
