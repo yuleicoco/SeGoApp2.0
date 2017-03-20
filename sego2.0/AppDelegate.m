@@ -31,17 +31,18 @@
     
     NSString *  language=  [NSLocale preferredLanguages].firstObject;
    
-   if (![language  isEqual: @"en"]) {
-    if ([UIDevice currentDevice].systemVersion.floatValue >= 9.0) {
-        NSRange range = [language rangeOfString:@"-" options:NSBackwardsSearch];
-        language = [language substringToIndex:range.location];
-        NSLog(@"223");
-        
-    }else
-    {
-        
-           [self shareSDKApplication:application didFinishLaunchingWithOptions:launchOptions];
-    }
+   if ([language  isEqual: @"zh-Hans-CN"]) {
+         [self shareSDKApplication:application didFinishLaunchingWithOptions:launchOptions];
+  
+   }else
+   {
+       if ([UIDevice currentDevice].systemVersion.floatValue >= 9.0) {
+        //   NSRange range = [language rangeOfString:@"-" options:NSBackwardsSearch];
+       //    language = [language substringToIndex:range.location];
+           NSLog(@"223");
+           
+       }
+       
    }
  
     

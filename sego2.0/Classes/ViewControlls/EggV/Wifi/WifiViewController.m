@@ -41,6 +41,8 @@
 @implementation WifiViewController
 @synthesize listArr;
 @synthesize hud;
+@synthesize is_Offline;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -197,7 +199,7 @@
     wifiPsTF.delegate = self;
     
     deviceTF.enabled = NO;
-    incodeTF.enabled = NO;
+    incodeTF.userInteractionEnabled = YES;
     wifips.userInteractionEnabled = YES;
     deviceTF.borderStyle = UITextBorderStyleNone;
     incodeTF.borderStyle =UITextBorderStyleNone;
@@ -217,8 +219,8 @@
     }];
     
     [incodeTF mas_makeConstraints:^(MASConstraintMaker *make) {
-        
         make.left.equalTo(wifiLB.mas_right).with.offset(13);
+        make.width.mas_equalTo(@200);
         make.centerY.equalTo(wifiView.mas_centerY);
         
     }];
@@ -305,25 +307,6 @@
         
         
     }];
-    
-
-    
-    
-    
-    
-//    if ([AppUtil isBlankString:wifiPsTF.text]) {
-//        
-//         btnBind.enabled = FALSE;
-//         return;
-//    }else
-//    {
-//        
-//        btnBind.enabled = TRUE;
-//        btnBind.backgroundColor = GREEN_COLOR;
-//        
-//    }
-    
-    
     
     
 }
@@ -579,10 +562,16 @@
 {
     
     
+    if (is_Offline) {
+        
+        [self showWarningTip:@"设备离线,不能设置网络"];
+    }else
+    {
     //链接wifi
     peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil options:nil];
     serviceNum = 0;
     isAccecptOk = NO;
+    }
   
 
 }

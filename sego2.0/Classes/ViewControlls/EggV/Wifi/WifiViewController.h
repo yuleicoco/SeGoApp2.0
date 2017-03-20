@@ -12,6 +12,8 @@
 @property (nonatomic,strong)NSArray * listArr;
 @property (nonatomic, weak) MBProgressHUD *hud;
 @property (nonatomic,strong)NSString * strDevice;
+@property (nonatomic,assign)BOOL is_Offline;
+
 
 
 @end

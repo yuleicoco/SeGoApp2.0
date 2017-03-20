@@ -62,6 +62,8 @@
     
     NSString * DeviceNum;
     NSString * TermidSt;
+    BOOL is_of;
+    
     
     
     
@@ -183,6 +185,8 @@
     } userInfo:@"Fire" repeats:YES];
      [self checkDeviceStats];
      [self checkWifi];
+    
+    is_of =NO;
     
 
     /*
@@ -367,8 +371,6 @@
                 _incallVC.termidNum  = self.termidNum;
                 _incallVC.deviceNum = self.deviceNum;
                 
-                
-                
             }
             [_incallVC setCall:call];
             [self presentViewController:_incallVC animated:YES completion:nil];
@@ -434,6 +436,7 @@
     //离线
     if ([strState isEqualToString:@"ds002"]) {
         [ImageBack setImage:[UIImage imageNamed:@"offline"]];
+        is_of  =YES;
         [self openGray];
         
           return;
@@ -683,8 +686,7 @@
 - (void)updateviewMethod
 {
     
-    NSLog(@"hahhhahhhahhhhahh");
-    
+    NSLog(@"约束更新");
     // 背景
     [ImageBack mas_remakeConstraints:^(MASConstraintMaker *make) {
         
@@ -693,7 +695,6 @@
             make.size.mas_equalTo(self.view);
             make.top.left.right.equalTo(@0);
         }else
-            
         {
             make.centerX.mas_equalTo(self.view.mas_centerX);
           //  make.width.equalTo(self.view.subviews);
@@ -800,6 +801,7 @@
 {
     setImage.hidden = YES;
     WifiViewController * wifiVC =[[WifiViewController alloc]init];
+    wifiVC.is_Offline = is_of;
     [self.navigationController pushViewController:wifiVC animated:NO];
     
     
